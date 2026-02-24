@@ -1,0 +1,36 @@
+{
+  "country_code": "SG",
+  "name": "Singapore",
+  "approximate": true,
+  "population": 5900000,
+  "gdp_nominal_usd": 420000000000,
+  "gdp_per_capita_usd": 75000,
+  "social_spending_pct_gdp": 15.0,
+  "health_spending_pct_gdp": 4.0,
+  "education_spending_pct_gdp": 3.5,
+  "oda_given_pct_gni": 0.1,
+  "oda_given_usd": 400000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.9,
+  "private_giving_total_usd": 3500000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 3.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Diabetes-related conditions"
+  ],
+  "notes": [
+    "Values are approximations based on Singapore government and OECD data.",
+    "Singapore is a hub for wealth and philanthropy beyond its national flows."
+  ],
+  "sources": [
+    "Singapore government budget data",
+    "World Bank World Development Indicators",
+    "OECD and philanthropy reports",
+    "CAF World Giving Index"
+  ]
+}
+
+

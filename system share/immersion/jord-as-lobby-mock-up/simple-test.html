@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple World Map Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: #1a0033;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: #00ffff;
+        }
+        
+        .map-area {
+            flex: 1;
+            position: relative;
+        }
+        
+        .instructions {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .instructions h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        
+        .instructions p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Simple World Map Test</h1>
+        </div>
+        
+        <div class="map-area">
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <p>This is a simple, working world map:</p>
+                <ul>
+                    <li><strong>Mouse wheel:</strong> Zoom in/out towards cursor</li>
+                    <li><strong>Drag:</strong> Pan around the map</li>
+                    <li><strong>+ / - buttons:</strong> Zoom in/out</li>
+                    <li><strong>Reset:</strong> Return to original view</li>
+                    <li><strong>Click zones:</strong> Zoom to that zone</li>
+                </ul>
+                <p>This should actually work!</p>
+            </div>
+            
+            <simple-world-map id="worldMap"></simple-world-map>
+        </div>
+    </div>
+    
+    <script src="components/simple-world-map.js"></script>
+    <script>
+        const worldMap = document.getElementById('worldMap');
+        
+        // Add some test zones
+        const zones = [
+            { name: 'Europe', x: 1000, y: 300, width: 200, height: 100 },
+            { name: 'Asia', x: 1500, y: 200, width: 300, height: 150 },
+            { name: 'North America', x: 200, y: 200, width: 250, height: 200 },
+            { name: 'South America', x: 400, y: 600, width: 150, height: 200 },
+            { name: 'Africa', x: 1100, y: 500, width: 200, height: 250 },
+            { name: 'Australia', x: 1800, y: 700, width: 150, height: 100 }
+        ];
+        
+        // Add zones to the map
+        zones.forEach(zone => {
+            worldMap.addZone(zone);
+        });
+        
+        console.log('Simple world map loaded with', zones.length, 'zones');
+    </script>
+</body>
+</html>

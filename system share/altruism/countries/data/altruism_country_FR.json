@@ -1,0 +1,35 @@
+{
+  "country_code": "FR",
+  "name": "France",
+  "approximate": true,
+  "population": 68000000,
+  "gdp_nominal_usd": 3100000000000,
+  "gdp_per_capita_usd": 45500,
+  "social_spending_pct_gdp": 30.0,
+  "health_spending_pct_gdp": 10.0,
+  "education_spending_pct_gdp": 5.0,
+  "oda_given_pct_gni": 0.55,
+  "oda_given_usd": 18000000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 12000000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 1.5,
+  "child_mortality_under5_per_1000": 4.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia and Alzheimer's disease"
+  ],
+  "notes": [
+    "France has one of the highest social spending levels globally and is a major ODA donor.",
+    "Private giving is modest relative to GDP; much redistribution occurs via the state."
+  ],
+  "sources": [
+    "INSEE and French budget documents",
+    "OECD SOCX and DAC statistics",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

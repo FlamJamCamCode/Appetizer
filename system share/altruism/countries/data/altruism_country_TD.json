@@ -1,0 +1,37 @@
+{
+  "country_code": "TD",
+  "name": "Chad",
+  "approximate": true,
+  "population": 18000000,
+  "gdp_nominal_usd": 12000000000,
+  "gdp_per_capita_usd": 700,
+  "social_spending_pct_gdp": 7.0,
+  "health_spending_pct_gdp": 3.0,
+  "education_spending_pct_gdp": 3.0,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1000000000,
+  "private_giving_pct_gdp": 0.2,
+  "private_giving_total_usd": 25000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.2,
+  "child_mortality_under5_per_1000": 110.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Diarrheal diseases",
+    "Lower respiratory infections",
+    "Malnutrition"
+  ],
+  "notes": [
+    "Chad is a low-income Sahel country with extreme child mortality and climate stress.",
+    "Oil revenues and ODA both play major roles; data is approximate."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD and other aid statistics"
+  ]
+}
+
+

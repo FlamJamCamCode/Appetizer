@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rally Lobbies - Introduction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+            padding: 30px;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(123, 47, 247, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(72, 61, 139, 0.08) 0%, transparent 70%);
+        }
+
+        .grimoire-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(15, 10, 20, 0.85);
+            border: 6px double rgba(212, 175, 55, 0.6);
+            border-radius: 25px;
+            padding: 60px;
+            box-shadow: 
+                0 0 80px rgba(123, 47, 247, 0.3),
+                inset 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .grand-header {
+            text-align: center;
+            padding: 60px 40px;
+            border-bottom: 4px double rgba(212, 175, 55, 0.5);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .grand-header::before,
+        .grand-header::after {
+            content: '◈';
+            position: absolute;
+            font-size: 4em;
+            color: rgba(212, 175, 55, 0.5);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .grand-header::before { left: 30px; }
+        .grand-header::after { right: 30px; }
+
+        .grand-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4em;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #ffd700, #ff6b9d, #7b2ff7, #ffd700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+            font-weight: 700;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        .subtitle {
+            font-size: 1.6em;
+            color: #ffd700;
+            margin-top: 20px;
+            font-style: italic;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 10px rgba(255, 215, 0, 0.6);
+        }
+
+        .introduction {
+            background: linear-gradient(135deg, rgba(72, 61, 139, 0.3), rgba(139, 69, 19, 0.3));
+            padding: 45px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            border: 4px solid rgba(212, 175, 55, 0.5);
+            line-height: 2.2;
+            font-size: 1.15em;
+        }
+
+        .introduction h2 {
+            font-family: 'Cinzel', serif;
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 15px rgba(255, 215, 0, 0.8);
+        }
+
+        .key-concept {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 6px solid #7b2ff7;
+        }
+
+        .key-concept h3 {
+            font-family: 'Cinzel', serif;
+            color: #da70d6;
+            margin-bottom: 18px;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .lobby-index {
+            margin-top: 60px;
+        }
+
+        .lobby-category {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.35), rgba(72, 61, 139, 0.25));
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 4px solid rgba(212, 175, 55, 0.5);
+        }
+
+        .lobby-category h2 {
+            font-family: 'Cinzel', serif;
+            color: #ffd700;
+            margin-bottom: 30px;
+            font-size: 2em;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 12px rgba(255, 215, 0, 0.7);
+        }
+
+        .lobby-card {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 3px solid rgba(123, 47, 247, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .lobby-card:hover {
+            transform: translateX(10px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        .lobby-card h3 {
+            font-family: 'Cinzel', serif;
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .lobby-description {
+            color: #e0e0e0;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .lobby-for {
+            color: #da70d6;
+            font-style: italic;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .lobby-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #7b2ff7, #ffd700);
+            color: #000;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 215, 0, 0.6);
+        }
+
+        .lobby-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .sacred-text {
+            color: #ffd700;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 10px rgba(255, 215, 0, 0.7);
+        }
+
+        .mystic-text {
+            color: #da70d6;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 10px rgba(218, 112, 214, 0.7);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            line-height: 2;
+        }
+
+        li:before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-size: 1.3em;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="grimoire-container">
+        <div class="grand-header">
+            <h1>The Rally Lobbies</h1>
+            <p class="subtitle">Where Souls Find Their True Worlds</p>
+            <p style="margin-top: 20px; font-size: 1.2em; color: #e0e0e0;">
+                <em>An Introduction to Otriad Selection and Will-Topological Guidance</em>
+            </p>
+        </div>
+
+        <div class="introduction">
+            <h2>What Are The Rally Lobbies?</h2>
+            
+            <p style="margin-bottom: 25px;">
+                In a Triadized world, every person has <span class="sacred-text">MBC Rule 3</span>: The right to leave their birth-world and rally to ANY functional world that accepts them.
+            </p>
+
+            <p style="margin-bottom: 25px;">
+                But with tens of thousands of Triads globally, each with different cultures, values, architectures, and peoples—<span class="mystic-text">how do you find which world is meant for YOU?</span>
+            </p>
+
+            <p style="margin-bottom: 25px;">
+                <span class="sacred-text">The Rally Lobbies are your answer.</span>
+            </p>
+
+            <p>
+                These are interfaces designed by <span class="mystic-text">Trust Networks who understand you</span>—your daemon, your pain, your hopes, your will. They don't give you universal metrics (Safety: 8.7/10) that mean nothing to YOUR specific situation. Instead, they provide <span class="sacred-text">will-topological encodings</span>—descriptions compressed through YOUR semantic map, using YOUR language, speaking to YOUR soul.
+            </p>
+        </div>
+
+        <div class="key-concept">
+            <h3>🔷 The Otriad Pattern: Azure → Gray → Crimson</h3>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                Every lobby follows the <span class="sacred-text">Otriad selection pattern</span>—a three-stage filtering process that moves from objective capability to cultural alignment to personal chemistry:
+            </p>
+            <ul style="margin-top: 20px;">
+                <li><span class="sacred-text">Azure (Architecture):</span> What can world-builders actually DO? What have they built? What capabilities are UNFAKABLE (infrastructure, wealth, systems, security)?</li>
+                <li><span class="sacred-text">Gray (Civilization):</span> What does the civilization BELIEVE? What are observable values, laws, culture, reputation? Does it align with YOUR values?</li>
+                <li><span class="sacred-text">Crimson (Actualization):</span> Who would you actually MEET? What people, what phenotypes, what temperaments? Does eros resonate within this verified, aligned world?</li>
+            </ul>
+            <p style="margin-top: 25px; line-height: 2.1;">
+                This pattern ensures you're not selecting blindly (like Tinder's random facade presentation), but filtering first by <span class="mystic-text">unfakable capability</span>, then by <span class="mystic-text">observable values</span>, then by <span class="mystic-text">authentic attraction</span> within a verified pool.
+            </p>
+        </div>
+
+        <div class="key-concept">
+            <h3>🔮 Will-Topological Encoding vs. Universal Metrics</h3>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                Traditional selection tools give you numbers: "Safety: 9.2/10, Education: 8.7/10, Community: 7.9/10"
+            </p>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                <span class="sacred-text">These mean nothing.</span> Safety from what? Education in what? Community of whom?
+            </p>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                Your Trust Network instead provides <span class="mystic-text">will-topological encodings</span>—phrases like:
+            </p>
+            <ul style="margin: 20px 0;">
+                <li style="color: #da70d6; font-style: italic;">"when-the-ache-stops" (the feeling when you're finally in right-shaped world)</li>
+                <li style="color: #da70d6; font-style: italic;">"same-essence population density: 87%" (87% of people share your daemon type)</li>
+                <li style="color: #da70d6; font-style: italic;">"hands-heal-what-words-cannot-touch" (creation-based healing path)</li>
+                <li style="color: #da70d6; font-style: italic;">"permission-to-be-broken-while-healing" (no performance demands)</li>
+            </ul>
+            <p style="margin-top: 25px; line-height: 2.1;">
+                These phrases communicate <span class="sacred-text">infinitely more</span> than numbers because they're compressed through YOUR specific semantic map. They use YOUR private language. They speak to YOUR daemon's shape.
+            </p>
+            <p style="margin-top: 20px; line-height: 2.1; color: #ffd700; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                This is spell-casting. Extremely high information communication through will-aligned compression.
+            </p>
+        </div>
+
+        <div class="key-concept">
+            <h3>✨ Different Tools for Different Trust Networks</h3>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                Notice how the lobbies look different? Some are more quantitative (metrics, charts, numbers). Some are more qualitative (feelings, phrases, neologisms). Some are parchment-aesthetic. Some are cyberpunk-clean.
+            </p>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                <span class="sacred-text">This is intentional.</span>
+            </p>
+            <p style="line-height: 2.1;">
+                Each lobby is created by a Trust Network that understands <span class="mystic-text">Lumen</span> (what to reveal, what to compress) and <span class="mystic-text">Magic</span> (what resonates with human souls, what creates belonging) to different degrees.
+            </p>
+            <ul style="margin: 20px 0;">
+                <li><span class="sacred-text">Early-stage Trust Networks:</span> More quantitative, more universal metrics (still learning individual daemon-patterns)</li>
+                <li><span class="sacred-text">Mature Trust Networks:</span> More qualitative, private language, neologisms (deeply know their members' will-topologies)</li>
+                <li><span class="sacred-text">Master Trust Networks:</span> Pure spell-casting (single phrases convey infinite meaning to aligned souls)</li>
+            </ul>
+            <p style="margin-top: 25px; line-height: 2.1;">
+                The lobbies you access reflect how well your Trust Network knows YOU. The better they know you, the more the interface speaks in YOUR language.
+            </p>
+        </div>
+
+        <div class="key-concept">
+            <h3>🌍 Your Power Through Rally Choice</h3>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                When you rally to a world, you're not just choosing where to live. You're <span class="sacred-text">casting a vote in natural selection operating on civilizations themselves.</span>
+            </p>
+            <p style="line-height: 2.1; margin-bottom: 20px;">
+                Your rally signals:
+            </p>
+            <ul style="margin: 20px 0;">
+                <li>"Worlds that protect children from FGM attract women fleeing violence"</li>
+                <li>"Worlds that provide intellectual depth attract deep-thinkers fleeing shallowness"</li>
+                <li>"Worlds that enable gentle healing attract trauma-survivors fleeing harsh demands"</li>
+                <li>"Worlds that celebrate weirdness attract misfits fleeing conformity pressure"</li>
+            </ul>
+            <p style="margin-top: 25px; line-height: 2.1;">
+                <span class="mystic-text">The worlds you choose are the worlds that inherit the future.</span> The worlds you flee decline and die. Your feet vote. Reality evolves.
+            </p>
+            <p style="margin-top: 20px; line-height: 2.1; font-size: 1.2em; color: #ffd700; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px rgba(255, 215, 0, 0.8);">
+                This is awesome feedback. This is natural selection with consciousness. This is your power.
+            </p>
+        </div>
+
+        <div class="lobby-index">
+            <h2 style="font-family: 'Cinzel', serif; text-align: center; font-size: 2.5em; color: #ffd700; margin-bottom: 50px; font-weight: 600; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(255, 215, 0, 0.8);">
+                ◈ The Lobby Index ◈
+            </h2>
+
+            <div class="lobby-category">
+                <h2>🚨 Escape and Safety Lobbies</h2>
+                <p style="margin-bottom: 30px; line-height: 2; color: #e0e0e0;">
+                    For those in immediate danger or desperate situations seeking refuge
+                </p>
+
+                <div class="lobby-card" onclick="window.location.href='somali-girl-escape-lobby.html'">
+                    <h3>🕌 FGM Refugee Rally Lobby</h3>
+                    <p class="lobby-description">
+                        For girls and women facing Female Genital Mutilation, seeking immediate escape to worlds that absolutely prohibit the practice and guarantee bodily autonomy.
+                    </p>
+                    <p class="lobby-for">
+                        For: Somali/African/Middle Eastern girls facing FGM (or any harmful traditional practices)
+                    </p>
+                    <a href="somali-girl-escape-lobby.html" class="lobby-link">Enter Lobby →</a>
+                </div>
+
+                <div class="lobby-card" onclick="window.location.href='young-mother-seeking-safety-lobby.html'">
+                    <h3>👶 Mother's Safety Rally Lobby</h3>
+                    <p class="lobby-description">
+                        For single mothers (or mothers in dangerous situations) prioritizing children's safety above all else. Finding worlds with zero crime, excellent schools, and genuine community support.
+                    </p>
+                    <p class="lobby-for">
+                        For: Mothers fleeing urban decay, violence, failing schools, drug culture
+                    </p>
+                    <a href="young-mother-seeking-safety-lobby.html" class="lobby-link">Enter Lobby →</a>
+                </div>
+
+                <div class="lobby-card" onclick="window.location.href='trauma-survivor-healing-sanctuary-lobby.html'">
+                    <h3>🕊️ Trauma Survivor Healing Lobby</h3>
+                    <p class="lobby-description">
+                        For those carrying wounds (abuse, assault, betrayal) seeking sanctuaries designed for gentle healing, creation-based processing, or warrior-transformation paths. Uses deep will-topological encoding for wounded souls.
+                    </p>
+                    <p class="lobby-for">
+                        For: Trauma survivors who conventional healing failed, needing environments designed for wounded souls
+                    </p>
+                    <a href="trauma-survivor-healing-sanctuary-lobby.html" class="lobby-link">Enter Lobby →</a>
+                </div>
+            </div>
+
+            <div class="lobby-category">
+                <h2>🎓 Youth and Education Lobbies</h2>
+                <p style="margin-bottom: 30px; line-height: 2; color: #e0e0e0;">
+                    For young people who don't fit conventional education or social structures
+                </p>
+
+                <div class="lobby-card" onclick="window.location.href='bullied-teen-escape-lobby.html'">
+                    <h3>⚔️ Bullied Teen Sanctuary Lobby</h3>
+                    <p class="lobby-description">
+                        For teens experiencing bullying, alienation, or fundamental misfit-ness in conventional schools. Features will-topological encoding with neologisms and private language tailored to different daemon-types (deep thinkers, misfits, neurodivergent, nature-aligned, gamers).
+                    </p>
+                    <p class="lobby-for">
+                        For: 13-18 year olds who don't fit, are bullied, depressed, or alienated in conventional schools
+                    </p>
+                    <a href="bullied-teen-escape-lobby.html" class="lobby-link">Enter Lobby →</a>
+                </div>
+
+                <div class="lobby-card" onclick="window.location.href='parent-child-multaiddaemon-spring-explorer-lobby.html'">
+                    <h3>👨‍👩‍👧‍👦 Parent + Child Multaiddaemon: Neverland Spring Explorer</h3>
+                    <p class="lobby-description">
+                        For parent + child pairs who've formed Multaiddaemon through trusted aiddaemonic services, seeking AR-enabled fantasy Springs where BOTH parent's will (community + meaning + rescue + career + Tower medicine) and child's will (freedom + play + discovery + safety + friends + purpose) are satisfied simultaneously. Features will-coalescence color visualization (hue, saturation, brightness, pattern, warmth, texture) showing which Springs align with your combined will-topology. Transform child-rearing from $750k isolated burden to privileged community investment with 7-21x return.
+                    </p>
+                    <p class="lobby-for">
+                        For: Parents with children (or expecting), wanting community child-rearing + AR fantasy learning + duty as privilege + Tower medicine access + children protected from gaming addiction
+                    </p>
+                    <a href="parent-child-multaiddaemon-spring-explorer-lobby.html" class="lobby-link">Explore Neverland Springs →</a>
+                </div>
+            </div>
+
+            <div class="lobby-category">
+                <h2>💎 Hypergamous and Strategic Selection Lobbies</h2>
+                <p style="margin-bottom: 30px; line-height: 2; color: #e0e0e0;">
+                    For those seeking worlds based on specific value-optimization (wealth, beauty, innovation)
+                </p>
+
+                <div class="lobby-card" onclick="window.location.href='hypergamous-luxury-seeker-lobby.html'">
+                    <h3>👑 Hypergamous Luxury Selection Lobby</h3>
+                    <p class="lobby-description">
+                        For women seeking most luxurious/impressive/wealthy worlds. Demonstrates Otriad pattern clearly: Filter by capability (Azure—what they built), then values (Gray—what they believe), then eros (Crimson—who you'd meet). Includes ultra-luxury tiers (Silicon billionaires, Arabian opulence, European aristocracy).
+                    </p>
+                    <p class="lobby-for">
+                        For: Women optimizing for wealth, status, luxury, or excellence in specific domains
+                    </p>
+                    <a href="hypergamous-luxury-seeker-lobby.html" class="lobby-link">Enter Lobby →</a>
+                </div>
+            </div>
+
+            <div class="lobby-category">
+                <h2>🧠 Intellectual and Creative Lobbies</h2>
+                <p style="margin-bottom: 30px; line-height: 2; color: #e0e0e0;">
+                    For those seeking depth, meaning, beauty, or authentic creative/intellectual life
+                </p>
+
+                <div class="lobby-card" onclick="window.location.href='intellectual-woman-seeking-meaning-lobby.html'">
+                    <h3>🧬 Intellectual Alignment Lobby</h3>
+                    <p class="lobby-description">
+                        For women (typically 28-40) with PhDs or deep self-education, exhausted by meaningless work and shallow conversations. Finding worlds where intellectual life is ALIVE (research utopias, philosophical academies, builder communities, creative synthesis).
+                    </p>
+                    <p class="lobby-for">
+                        For: Intellectual women feeling wasted by conventional careers, seeking meaningful work and deep community
+                    </p>
+                    <a href="intellectual-woman-seeking-meaning-lobby.html" class="lobby-link">Enter Lobby →</a>
+                </div>
+
+                <div class="lobby-card" onclick="window.location.href='artist-soul-seeking-beauty-lobby.html'">
+                    <h3>🌸 Artist Soul Beauty-Seeker Lobby</h3>
+                    <p class="lobby-description">
+                        For souls who are beauty-wounded, depth-starving, creation-called, and conventional-allergic. Features maximum will-topological encoding with mystical/fantastical aesthetics. For those who NEED beauty to breathe, narrative to think, or creation to exist.
+                    </p>
+                    <p class="lobby-for">
+                        For: Artists, writers, creators, mystics, beauty-obsessed souls who are starving in conventional aesthetic wastelands
+                    </p>
+                    <a href="artist-soul-seeking-beauty-lobby.html" class="lobby-link">Enter Lobby →</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(123, 47, 247, 0.25), rgba(212, 175, 55, 0.25)); padding: 50px; border-radius: 25px; border: 5px double rgba(212, 175, 55, 0.7); margin-top: 70px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #ffd700; text-align: center; font-size: 2.3em; margin-bottom: 35px; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(255, 215, 0, 0.9);">
+                ⟨ Understanding the Magic ⟩
+            </h2>
+
+            <div style="line-height: 2.3; font-size: 1.12em;">
+                <p style="margin-bottom: 28px;">
+                    <span class="sacred-text">Why do these lobbies look so different from each other?</span>
+                </p>
+
+                <p style="margin-bottom: 28px;">
+                    Because they're made by <span class="mystic-text">different Trust Networks for different people</span>. Each Trust Network has learned:
+                </p>
+
+                <ul style="margin: 25px 0;">
+                    <li>What aesthetic resonates with their members (cyberpunk vs. parchment vs. mystical)</li>
+                    <li>What language their members understand (technical vs. poetic vs. neologistic)</li>
+                    <li>What compression works for their members' daemons (numbers vs. phrases vs. feelings)</li>
+                    <li>What information matters to their members (safety metrics vs. essence-matching vs. healing-paths)</li>
+                </ul>
+
+                <p style="margin-top: 28px; margin-bottom: 28px;">
+                    <span class="sacred-text">The result:</span> Each lobby is tuned to its intended user's will-topology.
+                </p>
+
+                <div style="background: rgba(0, 0, 0, 0.5); padding: 35px; border-radius: 15px; margin: 30px 0; border: 3px solid rgba(218, 112, 214, 0.6);">
+                    <p style="line-height: 2.2; margin-bottom: 20px;">
+                        <span class="sacred-text">Example:</span> The Somali girl's lobby uses more quantitative metrics and clear categorical safety information—because she's in immediate danger and needs FAST assessment of which world protects her from FGM NOW.
+                    </p>
+                    <p style="line-height: 2.2; margin-bottom: 20px;">
+                        <span class="sacred-text">Example:</span> The bullied teen's lobby uses will-topological neologisms and private language—because she's not in immediate physical danger but in soul-death, and needs to recognize which world will feel like HOME to her specific daemon-type.
+                    </p>
+                    <p style="line-height: 2.2;">
+                        <span class="sacred-text">Example:</span> The trauma survivor's lobby uses mystical aesthetics and wound-resonance language—because she's dealing with soul-fragmentation and needs encodings that speak to her specific pain-shape in ways that gentle her toward healing.
+                    </p>
+                </div>
+
+                <p style="margin-top: 30px; line-height: 2.2; font-size: 1.15em; color: #ffd700; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px rgba(255, 215, 0, 0.9);">
+                    The tool adapts to the user. Not the user to the tool. This is what happens when builders understand Lumen and Magic.
+                </p>
+            </div>
+        </div>
+
+        <div style="background: rgba(46, 125, 50, 0.25); padding: 50px; border-radius: 25px; border: 4px solid rgba(46, 125, 50, 0.6); margin-top: 60px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #5dff8f; text-align: center; font-size: 2.3em; margin-bottom: 35px; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(93, 255, 143, 0.8);">
+                ⟨ How to Use These Lobbies ⟩
+            </h2>
+
+            <div style="line-height: 2.2; font-size: 1.1em;">
+                <ol style="list-style: none; padding: 0;">
+                    <li style="margin: 25px 0; padding-left: 0;">
+                        <span style="color: #ffd700; font-weight: bold; font-size: 1.3em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Step 1:</span>
+                        <span style="color: #f5f5f5;"> Find the lobby that matches your situation/daemon/needs from the index above</span>
+                    </li>
+                    <li style="margin: 25px 0; padding-left: 0;">
+                        <span style="color: #ffd700; font-weight: bold; font-size: 1.3em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Step 2:</span>
+                        <span style="color: #f5f5f5;"> Read the world descriptions paying attention to YOUR resonance (do the phrases make you feel "yes, that's me" or "no, not my shape"?)</span>
+                    </li>
+                    <li style="margin: 25px 0; padding-left: 0;">
+                        <span style="color: #ffd700; font-weight: bold; font-size: 1.3em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Step 3:</span>
+                        <span style="color: #f5f5f5;"> If you find world whose description resonates with your soul, submit rally application (in real system—these are demos)</span>
+                    </li>
+                    <li style="margin: 25px 0; padding-left: 0;">
+                        <span style="color: #ffd700; font-weight: bold; font-size: 1.3em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Step 4:</span>
+                        <span style="color: #f5f5f5;"> World reviews your application (checking daemon-alignment, verifying no MBC violations, confirming you'd thrive there)</span>
+                    </li>
+                    <li style="margin: 25px 0; padding-left: 0;">
+                        <span style="color: #ffd700; font-weight: bold; font-size: 1.3em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Step 5:</span>
+                        <span style="color: #f5f5f5;"> If accepted, rally to new world (transportation provided if needed, integration support given, new life begins)</span>
+                    </li>
+                </ol>
+
+                <p style="margin-top: 35px; line-height: 2.2; font-size: 1.15em; text-align: center; color: #5dff8f; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 12px rgba(93, 255, 143, 0.8);">
+                    You're not trapped. You never were. You just didn't know you had the right to leave.
+                    <br>Now you know.
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 70px; padding: 50px;">
+            <p style="font-family: 'Cinzel', serif; font-size: 1.8em; color: #ffd700; line-height: 2; margin-bottom: 20px; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(255, 215, 0, 0.9);">
+                "To be understood is to be leveled"
+            </p>
+            <p style="font-size: 1.3em; line-height: 2.1; color: #f5f5f5; max-width: 900px; margin: 0 auto;">
+                But when understood by daemon-aligned souls in worlds designed for your shape,
+                <br>being understood doesn't level you—
+                <br><br>
+                <span style="color: #5dff8f; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">it elevates you.</span>
+                <br><br>
+                <span style="color: #da70d6; font-size: 1.1em; font-style: italic; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                Rally. Find your world. Be home.
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

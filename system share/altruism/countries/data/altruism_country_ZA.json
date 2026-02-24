@@ -1,0 +1,37 @@
+{
+  "country_code": "ZA",
+  "name": "South Africa",
+  "approximate": true,
+  "population": 60000000,
+  "gdp_nominal_usd": 420000000000,
+  "gdp_per_capita_usd": 7000,
+  "social_spending_pct_gdp": 17.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 6.5,
+  "oda_given_pct_gni": 0.02,
+  "oda_given_usd": 100000000,
+  "oda_received_usd": 1500000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 1200000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 1.0,
+  "child_mortality_under5_per_1000": 33.0,
+  "top_causes_of_death": [
+    "HIV/AIDS",
+    "Tuberculosis",
+    "Cardiovascular diseases",
+    "Violence"
+  ],
+  "notes": [
+    "Values approximate; ZA has high burden of HIV/TB and violence.",
+    "Corporate social investment is a notable component of formal giving."
+  ],
+  "sources": [
+    "South African government budget and Treasury reports",
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "CAF World Giving Index and CSI reports"
+  ]
+}
+
+

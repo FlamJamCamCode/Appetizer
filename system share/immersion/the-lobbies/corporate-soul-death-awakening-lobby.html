@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Awakening - Corporate Soul Seeking Life</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Spectral', serif;
+            background: #000000;
+            color: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: 
+                radial-gradient(ellipse at 30% 40%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(0, 100, 0, 0.12) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+        }
+
+        .awakening-grimoire {
+            max-width: 1500px;
+            margin: 0 auto;
+            background: rgba(10, 10, 10, 0.9);
+            border: 6px double rgba(255, 215, 0, 0.6);
+            border-radius: 25px;
+            padding: 55px;
+            box-shadow: 
+                0 0 100px rgba(139, 0, 0, 0.4),
+                inset 0 0 80px rgba(0, 0, 0, 0.7);
+        }
+
+        .death-header {
+            text-align: center;
+            padding: 60px 30px;
+            border-bottom: 4px solid rgba(139, 0, 0, 0.5);
+            margin-bottom: 55px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+            border-radius: 20px;
+        }
+
+        .death-header::before {
+            content: '💀';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3.5em;
+            opacity: 0.4;
+        }
+
+        .death-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.8em;
+            margin-bottom: 25px;
+            margin-top: 50px;
+            color: #ff4444;
+            font-weight: 700;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000,
+                0 0 30px rgba(255, 68, 68, 0.9);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 30px rgba(255, 68, 68, 0.9); }
+            50% { text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 50px rgba(255, 68, 68, 1); }
+        }
+
+        .awakening-moment {
+            background: linear-gradient(135deg, rgba(0, 100, 0, 0.25), rgba(212, 175, 55, 0.2));
+            padding: 45px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            border: 4px solid rgba(0, 200, 0, 0.5);
+        }
+
+        .awakening-moment h2 {
+            font-family: 'Cinzel', serif;
+            color: #00ff00;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000,
+                0 0 20px rgba(0, 255, 0, 0.9);
+        }
+
+        .soul-death-symptom {
+            background: rgba(139, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 3px solid rgba(255, 68, 68, 0.6);
+            border-left: 6px solid #ff4444;
+            line-height: 2;
+            font-size: 1.08em;
+            color: #f5f5f5;
+        }
+
+        .realization {
+            background: rgba(212, 175, 55, 0.25);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 4px solid rgba(255, 215, 0, 0.6);
+            font-size: 1.15em;
+            line-height: 2.3;
+            color: #ffffff;
+        }
+
+        .world-alive {
+            background: linear-gradient(135deg, rgba(0, 100, 0, 0.35), rgba(72, 61, 139, 0.3));
+            border: 5px double rgba(0, 255, 0, 0.6);
+            border-radius: 25px;
+            padding: 50px;
+            margin-bottom: 55px;
+            position: relative;
+            box-shadow: 0 20px 70px rgba(0, 255, 0, 0.3);
+        }
+
+        .world-alive::before {
+            content: '✧';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            color: #00ff00;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 1);
+        }
+
+        .world-name {
+            font-family: 'Cinzel', serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #00ff00;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000,
+                0 0 25px rgba(0, 255, 0, 1);
+        }
+
+        .world-pulse {
+            text-align: center;
+            font-size: 1.4em;
+            color: #ffd700;
+            margin-bottom: 40px;
+            font-style: italic;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 15px rgba(255, 215, 0, 0.9);
+        }
+
+        .life-section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 35px;
+            border-radius: 18px;
+            margin: 30px 0;
+            border: 3px solid rgba(0, 200, 0, 0.5);
+            border-left: 6px solid #00ff00;
+        }
+
+        .life-section h3 {
+            font-family: 'Cinzel', serif;
+            color: #00ff00;
+            margin-bottom: 22px;
+            font-size: 1.7em;
+            font-weight: 700;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 15px rgba(0, 255, 0, 0.8);
+        }
+
+        .contrast-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .death-side {
+            background: rgba(139, 0, 0, 0.3);
+            padding: 28px;
+            border-radius: 12px;
+            border: 3px solid rgba(255, 68, 68, 0.6);
+        }
+
+        .death-side h4 {
+            color: #ff4444;
+            margin-bottom: 18px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .life-side {
+            background: rgba(0, 100, 0, 0.3);
+            padding: 28px;
+            border-radius: 12px;
+            border: 3px solid rgba(0, 255, 0, 0.6);
+        }
+
+        .life-side h4 {
+            color: #00ff00;
+            margin-bottom: 18px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .rally-awakening {
+            width: 100%;
+            padding: 30px;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #ff0000, #ffd700, #00ff00);
+            background-size: 200% auto;
+            border: 5px solid rgba(255, 215, 0, 0.8);
+            border-radius: 20px;
+            color: #000;
+            font-size: 1.6em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: awakening-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes awakening-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 30px rgba(255, 0, 0, 0.5), 0 0 60px rgba(0, 255, 0, 0.3);
+                background-position: 0% center;
+            }
+            50% { 
+                box-shadow: 0 0 50px rgba(0, 255, 0, 0.8), 0 0 80px rgba(255, 215, 0, 0.6);
+                background-position: 100% center;
+            }
+        }
+
+        .rally-awakening:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 
+                0 25px 70px rgba(255, 215, 0, 0.9),
+                0 0 60px rgba(0, 255, 0, 1);
+        }
+
+        .testimony {
+            background: rgba(72, 61, 139, 0.3);
+            padding: 40px;
+            border-radius: 18px;
+            margin: 35px 0;
+            border: 3px solid rgba(147, 112, 219, 0.6);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimony::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 6em;
+            color: rgba(147, 112, 219, 0.4);
+            font-family: Georgia, serif;
+        }
+
+        .will-phrase {
+            color: #ffd700;
+            font-weight: 700;
+            font-style: italic;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 12px rgba(255, 215, 0, 0.9);
+        }
+
+        .soul-death {
+            color: #ff4444;
+            font-weight: 700;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 10px rgba(255, 68, 68, 0.9);
+        }
+
+        .soul-life {
+            color: #00ff00;
+            font-weight: 700;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 12px rgba(0, 255, 0, 0.9);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            line-height: 2;
+        }
+
+        li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="awakening-grimoire">
+        <div class="death-header">
+            <h1>THE AWAKENING</h1>
+            <p style="font-size: 1.6em; margin-top: 25px; color: #ffd700; font-weight: bold; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px rgba(255, 215, 0, 0.9);">
+                When the Corporate Drone Realizes They're Dying
+            </p>
+            <p style="margin-top: 18px; color: #e0e0e0; font-size: 1.15em;">
+                <em>And Opens the Rally Lobby for the First Time</em>
+            </p>
+        </div>
+
+        <div style="background: rgba(139, 0, 0, 0.25); padding: 45px; border-radius: 20px; margin-bottom: 45px; border: 4px solid rgba(255, 68, 68, 0.5);">
+            <h2 style="font-family: 'Cinzel', serif; color: #ff4444; text-align: center; font-size: 2.3em; margin-bottom: 35px; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(255, 68, 68, 0.9);">
+                💀 Your Current Existence 💀
+            </h2>
+            
+            <p style="line-height: 2.2; margin-bottom: 25px; font-size: 1.12em;">
+                <strong>Who you are:</strong> 34 years old. MBA from good school. Marketing Director at Fortune 500 company. $145k salary. Good apartment. Nice car. On paper, you're successful.
+            </p>
+
+            <p style="line-height: 2.2; margin-bottom: 30px; font-size: 1.12em;">
+                <strong>What you feel:</strong> <span class="soul-death">Dying inside.</span> Every. Single. Day.
+            </p>
+
+            <div class="soul-death-symptom">
+                <strong style="color: #ff4444; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Sunday Evening Dread</strong>
+                <br><br>
+                Every Sunday around 5pm, you feel it. The dread. Tomorrow is Monday. Back to office. Back to meetings about nothing. Back to optimizing engagement metrics for products you don't care about. Back to pretending this matters. The dread gets worse each week. Sometimes you sit in your car in the parking garage for 20 minutes before going in, trying to gather strength to perform another day.
+            </div>
+
+            <div class="soul-death-symptom">
+                <strong style="color: #ff4444; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">The Meetings About Meetings</strong>
+                <br><br>
+                You spend 30 hours a week in meetings. Meetings to plan meetings. Meetings to discuss what was discussed in previous meetings. PowerPoints about quarterly goals that don't matter. Strategy sessions for products that don't help anyone. You watch your life drain away, 30 minutes at a time, discussing absolutely nothing of importance.
+            </div>
+
+            <div class="soul-death-symptom">
+                <strong style="color: #ff4444; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">The Fake Enthusiasm</strong>
+                <br><br>
+                "Great job team!" "So excited about this!" "Really moving the needle!" You hear yourself say these words and feel nothing. You're performing. Everyone's performing. Nobody actually cares. But you all pretend together because admitting it's meaningless would shatter the illusion. You're exhausted from the performance.
+            </div>
+
+            <div class="soul-death-symptom">
+                <strong style="color: #ff4444; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">The Golden Handcuffs</strong>
+                <br><br>
+                $145k sounds like a lot. But after taxes, rent in expensive city (have to live near office), car payment (need nice car for image), wardrobe (have to look successful), student loans... you save maybe $20k/year. You've been working 12 years. You have $180k saved. Not enough to retire. Not enough to escape. Just enough to keep you trapped, because leaving means losing salary you've built your life around.
+            </div>
+
+            <div class="soul-death-symptom">
+                <strong style="color: #ff4444; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">The Relationships That Aren't</strong>
+                <br><br>
+                Your "friends" are colleagues. You talk about work. Always work. You get drinks after work and complain about work. You go to dinners and discuss... work. You don't even know these people. What they care about. What they dream of. Who they ARE. Just: their work personas. And they don't know you either. You're all strangers performing friendship.
+            </div>
+
+            <div class="soul-death-symptom">
+                <strong style="color: #ff4444; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">The Creeping Realization</strong>
+                <br><br>
+                You're going to die. Maybe in 40 years. Maybe 50 if you're lucky. And you've spent 12 years already doing... this. Optimizing ad engagement. Attending pointless meetings. Performing enthusiasm. Accumulating modest savings. Is this what you'll look back on when you're 80? "I spent my one life making rich people richer through marketing strategies"? The thought makes you want to scream.
+            </div>
+        </div>
+
+        <div class="awakening-moment">
+            <h2>⚡ THE MOMENT OF AWAKENING ⚡</h2>
+
+            <div class="realization">
+                <p style="margin-bottom: 25px; font-size: 1.15em; line-height: 2.3;">
+                    It's 2am on a Tuesday. You can't sleep (again). Scrolling your phone (again). And you stumble on something:
+                </p>
+                <p style="margin-bottom: 25px; font-size: 1.3em; text-align: center; color: #ffd700; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px rgba(255, 215, 0, 1);">
+                    "MBC Rule 3: No imprisonment without land"
+                </p>
+                <p style="margin-bottom: 25px; font-size: 1.15em; line-height: 2.3;">
+                    You read further. It's explaining Triadization. How people can leave dysfunctional worlds and rally to functional ones. How you have the RIGHT to leave. Always. Any time.
+                </p>
+                <p style="margin-bottom: 25px; font-size: 1.15em; line-height: 2.3;">
+                    And then you see the link: <span class="will-phrase">"Rally Lobbies - Find Your World"</span>
+                </p>
+                <p style="margin-bottom: 25px; font-size: 1.15em; line-height: 2.3;">
+                    You click.
+                </p>
+                <p style="font-size: 1.2em; line-height: 2.3; text-align: center; color: #00ff00; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(0, 255, 0, 1);">
+                    And everything changes.
+                </p>
+            </div>
+
+            <div class="testimony">
+                <p style="line-height: 2.2; font-size: 1.12em; padding-top: 50px; padding-bottom: 50px; color: #f5f5f5;">
+                    The interface loaded. It didn't look like LinkedIn or Indeed or any corporate tool I'd used.
+                    <br><br>
+                    It looked like... a grimoire. Parchment aesthetic. Gold text on dark backgrounds. And the language—
+                    <br><br>
+                    It wasn't talking about "career opportunities" or "competitive compensation" or "growth potential."
+                    <br><br>
+                    It was talking about: <span class="will-phrase">"soul-death-ended," "work-that-matters-absolutely," "meaning-restored," "performance-eliminated," "authentic-life-begun"</span>
+                    <br><br>
+                    I started crying. At 2am. Sitting in bed. Because <span style="color: #00ff00; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">someone had SEEN me</span>.
+                    <br><br>
+                    Not my resume. Not my LinkedIn. Not my performance-self.
+                    <br><br>
+                    <span style="color: #ffd700; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">My actual dying soul. My real pain. My authentic exhaustion from meaninglessness.</span>
+                    <br><br>
+                    The descriptions weren't generic. They were addressing ME. My specific soul-death. Using words I'd never seen before but understood immediately.
+                    <br><br>
+                    And I realized: This is real. These worlds exist. I can actually leave.
+                    <br><br>
+                    <span style="color: #00ff00; font-weight: 700; font-size: 1.15em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">I'm not trapped. I never was.</span>
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 60px 0 50px 0;">
+            <h2 style="font-family: 'Cinzel', serif; font-size: 2.8em; color: #00ff00; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 25px rgba(0, 255, 0, 1);">
+                ⟨ Worlds Where Your Soul Can Actually LIVE ⟩
+            </h2>
+            <p style="color: #ffd700; margin-top: 20px; font-size: 1.25em; font-style: italic; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                Your Trust Network Has Encoded These For Your Specific Corporate Soul-Death Pattern
+            </p>
+        </div>
+
+        <!-- World 1: The Builder's Commune -->
+        <div class="world-alive">
+            <div class="world-name">🏗️ The Maker's Collective</div>
+            <div class="world-pulse">Where You Build Real Things That Actually Matter</div>
+
+            <div class="life-section">
+                <h3>⟨ Why This Calls Your Dying Soul ⟩</h3>
+                <p style="line-height: 2.2; margin-bottom: 20px; color: #f5f5f5;">
+                    You know how you sit in meetings optimizing engagement metrics and think "what if I spent this time building something REAL"? How you fantasize about working with your hands, creating tangible value, seeing direct results of your labor?
+                </p>
+                <p style="line-height: 2.2; margin-bottom: 20px; color: #f5f5f5;">
+                    <span class="soul-life">In this world, that's what you DO.</span> No more PowerPoints. No more meetings. No more fake enthusiasm. Just: building. Creating. Making real things with your actual hands and mind.
+                </p>
+                <p style="line-height: 2.2; color: #ffd700; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                    Your Trust Network encodes: <span class="will-phrase">"tangible-results-daily, performance-eliminated-completely, soul-death-ended-through-creation"</span>
+                </p>
+            </div>
+
+            <div class="contrast-box">
+                <div class="death-side">
+                    <h4>💀 Your Current Death-Life</h4>
+                    <ul style="color: #f0f0f0; line-height: 1.9;">
+                        <li style="list-style: none; padding-left: 0;">Wake: Dread</li>
+                        <li style="list-style: none; padding-left: 0;">Commute: Soul-numbing</li>
+                        <li style="list-style: none; padding-left: 0;">9am-11am: Meetings (pointless)</li>
+                        <li style="list-style: none; padding-left: 0;">11am-12pm: Email (hollow)</li>
+                        <li style="list-style: none; padding-left: 0;">12pm-1pm: Lunch (alone, scrolling)</li>
+                        <li style="list-style: none; padding-left: 0;">1pm-5pm: More meetings, fake work</li>
+                        <li style="list-style: none; padding-left: 0;">5pm-7pm: Pretend to work late (optics)</li>
+                        <li style="list-style: none; padding-left: 0;">Evening: Exhausted, watch TV, dread tomorrow</li>
+                        <li style="list-style: none; padding-left: 0;">Result: <span class="soul-death">Soul dying slowly</span></li>
+                    </ul>
+                </div>
+
+                <div class="life-side">
+                    <h4>🌟 Your Potential Alive-Life</h4>
+                    <ul style="color: #f0f0f0; line-height: 1.9;">
+                        <li style="list-style: none; padding-left: 0;">Wake: Eager (building today)</li>
+                        <li style="list-style: none; padding-left: 0;">6am-12pm: Building (furniture, structures, systems—REAL things)</li>
+                        <li style="list-style: none; padding-left: 0;">12pm-1pm: Lunch with other makers (talk about what you're building)</li>
+                        <li style="list-style: none; padding-left: 0;">1pm-5pm: More building (see progress daily)</li>
+                        <li style="list-style: none; padding-left: 0;">Evening: Tired but SATISFIED (built something)</li>
+                        <li style="list-style: none; padding-left: 0;">Sleep: Deep (exhaustion from creation, not performance)</li>
+                        <li style="list-style: none; padding-left: 0;">Result: <span class="soul-life">Soul ALIVE</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="life-section">
+                <h3>⟨ What Your Trust Network Observed About You ⟩</h3>
+                <ul style="color: #f5f5f5; font-size: 1.05em;">
+                    <li>You have <span class="will-phrase">tangible-results-hunger</span>: Need to SEE what you built, hold it, point to it</li>
+                    <li>You suffer <span class="will-phrase">abstraction-exhaustion</span>: Tired of optimizing metrics that don't connect to reality</li>
+                    <li>You carry <span class="will-phrase">performance-fatigue</span>: Pretending to care is killing you</li>
+                    <li>You need <span class="will-phrase">daily-progress-visible</span>: Must see forward movement or despair</li>
+                    <li>You seek <span class="will-phrase">maker-communion</span>: Other people who build, who create, who value tangible over abstract</li>
+                </ul>
+            </div>
+
+            <div class="realization">
+                <strong style="color: #00ff00; font-size: 1.4em; display: block; margin-bottom: 20px; font-family: 'Cinzel', serif; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;">
+                    ⟨ The Life That Awaits ⟩
+                </strong>
+                
+                <p style="margin-bottom: 22px;">
+                    You wake at 6am (sun rising, work calling). No dread. Just: eagerness to continue yesterday's project.
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    You're building furniture (or houses, or gardens, or infrastructure—whatever called to you). Morning: 6 hours of focused work. Your hands build. Your mind solves real problems (wood grain, joint strength, aesthetic proportion—REAL problems with REAL solutions).
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    Lunch with other makers: "Look what I finished this morning." "Beautiful. Check out mine." Real talk. About real things. No performance.
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    Afternoon: 4 more hours. By 5pm: Exhausted. Hands hurt. Back sore. <span class="soul-life">Soul SINGING.</span> Because you BUILT something today. It's REAL. It's THERE. Tomorrow someone will use it and it will serve them and that MATTERS.
+                </p>
+
+                <p style="margin-top: 30px; color: #00ff00; font-weight: 700; font-size: 1.2em; text-align: center; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px rgba(0, 255, 0, 1);">
+                    Your Trust Network encodes: "soul-death-impossible-when-building-real-things"
+                </p>
+            </div>
+
+            <div class="testimony">
+                <p style="line-height: 2.2; font-size: 1.1em; padding-top: 50px; padding-bottom: 50px; color: #f5f5f5;">
+                    I was Senior Product Manager at Google. $220k. Stock options. Prestige. Parents proud. And I wanted to die.
+                    <br><br>
+                    Not suicidal. Just... why continue? Another 30 years optimizing ad placement? For what?
+                    <br><br>
+                    Saw the Rally Lobby at 3am during another sleepless night. Read about Maker's Collective. Started crying reading <span class="will-phrase">"tangible-results-daily"</span> because I hadn't seen tangible results of my work in YEARS. Everything was abstract metrics.
+                    <br><br>
+                    Rallied 3 months later. Took my $340k savings. Now I build furniture.
+                    <br><br>
+                    Make $45k/year (much less). Live in modest cabin (much smaller). Work 50 hours/week with my hands (much harder physically).
+                    <br><br>
+                    And I'm <span class="soul-life">ALIVE</span> for first time in 15 years.
+                    <br><br>
+                    I built a table last month. Family uses it daily. I can see them eating at something I MADE. That feeling is worth more than $220k ever was.
+                    <br><br>
+                    <span style="color: #ffd700; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">The Sunday dread is gone. Completely. Because Monday means building, not performing.</span>
+                    <br><br>
+                    <span style="color: #00ff00; font-size: 1.15em;">— Marcus, 38, ex-Google PM, now furniture maker, soul resurrected</span>
+                </p>
+            </div>
+
+            <button class="rally-awakening">AWAKEN → Rally to Maker's Collective</button>
+        </div>
+
+        <!-- World 2: The Meaning Workers -->
+        <div class="world-alive">
+            <div class="world-name">🔬 The Purpose Collective</div>
+            <div class="world-pulse">Where Your Work Actually Solves Real Problems for Real People</div>
+
+            <div class="life-section">
+                <h3>⟨ Why This Calls Your Dying Soul ⟩</h3>
+                <p style="line-height: 2.2; margin-bottom: 20px; color: #f5f5f5;">
+                    You know how you have skills—real skills, intelligence, capability—but you're wasting them on bullshit? How you COULD be solving important problems (climate, poverty, disease, loneliness) but instead you're optimizing profit margins for products nobody needs?
+                </p>
+                <p style="line-height: 2.2; margin-bottom: 20px; color: #f5f5f5;">
+                    <span class="soul-life">In this world, your skills serve REAL problems.</span> Death-fighting. Poverty-elimination. Loneliness-curing. Climate-solving. Whatever problem consumes you—this is where you work on it. For real. Full-time. With resources and community.
+                </p>
+                <p style="line-height: 2.2; color: #ffd700; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                    Your Trust Network encodes: <span class="will-phrase">"capability-aligned-with-caring, skills-serving-what-matters, soul-fed-through-meaningful-impact"</span>
+                </p>
+            </div>
+
+            <div class="contrast-box">
+                <div class="death-side">
+                    <h4>💀 Current Death-Work</h4>
+                    <ul style="color: #f0f0f0; line-height: 1.9;">
+                        <li style="list-style: none; padding-left: 0;">Problem: Increase Q4 engagement by 12%</li>
+                        <li style="list-style: none; padding-left: 0;">Your care level: 0%</li>
+                        <li style="list-style: none; padding-left: 0;">Impact: Makes shareholders richer</li>
+                        <li style="list-style: none; padding-left: 0;">Meaning: None</li>
+                        <li style="list-style: none; padding-left: 0;">Feedback: Quarterly reviews, abstract metrics</li>
+                        <li style="list-style: none; padding-left: 0;">Result: <span class="soul-death">Slow spiritual death</span></li>
+                    </ul>
+                </div>
+
+                <div class="life-side">
+                    <h4>🌟 Potential Alive-Work</h4>
+                    <ul style="color: #f0f0f0; line-height: 1.9;">
+                        <li style="list-style: none; padding-left: 0;">Problem: Extend human lifespan / Feed starving / Cure loneliness</li>
+                        <li style="list-style: none; padding-left: 0;">Your care level: 100% (this is WHY you rally here)</li>
+                        <li style="list-style: none; padding-left: 0;">Impact: People live longer / Children fed / Souls connected</li>
+                        <li style="list-style: none; padding-left: 0;">Meaning: <span class="soul-life">ABSOLUTE</span></li>
+                        <li style="list-style: none; padding-left: 0;">Feedback: See people actually helped, lives saved, suffering reduced</li>
+                        <li style="list-style: none; padding-left: 0;">Result: <span class="soul-life">Soul ALIVE through purpose</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="realization">
+                <p style="margin-bottom: 22px;">
+                    Your Trust Network observed: You're <span class="will-phrase">competent-but-wasted</span>. High capability, zero meaningful application. Your skills could save lives. Instead they optimize ad clicks.
+                </p>
+                <p style="margin-bottom: 22px;">
+                    They encode this world for you as: <span class="will-phrase">"where-your-MBA-serves-longevity-research-not-shareholder-value"</span>
+                </p>
+                <p style="line-height: 2.2; font-size: 1.1em;">
+                    <span class="sacred-emphasis" style="font-size: 1.15em;">Imagine:</span> Your marketing expertise → recruiting researchers for longevity Triad. Your strategy skills → designing funding allocation for death-fighting. Your optimization ability → maximizing lives-saved per dollar. Same skills. MEANING restored.
+                </p>
+            </div>
+
+            <button class="rally-awakening">AWAKEN → Rally to Purpose Collective</button>
+        </div>
+
+        <!-- World 3: The Simple Life Haven -->
+        <div class="world-alive">
+            <div class="world-name">🌾 The Quiet Earth Refuge</div>
+            <div class="world-pulse">Where Complexity is Eliminated and Soul Rests in Simplicity</div>
+
+            <div class="life-section">
+                <h3>⟨ Why This Calls Your Dying Soul ⟩</h3>
+                <p style="line-height: 2.2; margin-bottom: 20px; color: #f5f5f5;">
+                    You know how you fantasize about just... farming? Having chickens? Baking bread? Living simply? How you're exhausted by complexity—the politics, the status games, the constant optimization, the never-ending performance?
+                </p>
+                <p style="line-height: 2.2; margin-bottom: 20px; color: #f5f5f5;">
+                    <span class="soul-life">In this world, life is SIMPLE.</span> Wake with sun. Work the land. Eat food you grew. Sleep when dark. No meetings. No emails. No performance. Just: existence. Quiet. Peaceful. ALIVE.
+                </p>
+                <p style="line-height: 2.2; color: #ffd700; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                    Your Trust Network encodes: <span class="will-phrase">"complexity-eliminated-completely, soul-rest-in-earth-rhythms, performance-impossible-in-simplicity"</span>
+                </p>
+            </div>
+
+            <div class="contrast-box">
+                <div class="death-side">
+                    <h4>💀 Current Complexity-Death</h4>
+                    <ul style="color: #f0f0f0; line-height: 1.9;">
+                        <li style="list-style: none; padding-left: 0;">Track: 47 different metrics</li>
+                        <li style="list-style: none; padding-left: 0;">Coordinate: 12 different stakeholders</li>
+                        <li style="list-style: none; padding-left: 0;">Politics: Constant (who to please, who to avoid)</li>
+                        <li style="list-style: none; padding-left: 0;">Performance: Never-ending (always on)</li>
+                        <li style="list-style: none; padding-left: 0;">Simplicity: Zero</li>
+                        <li style="list-style: none; padding-left: 0;">Peace: Impossible</li>
+                        <li style="list-style: none; padding-left: 0;">Result: <span class="soul-death">Death by thousand complexities</span></li>
+                    </ul>
+                </div>
+
+                <div class="life-side">
+                    <h4>🌟 Potential Simple-Life</h4>
+                    <ul style="color: #f0f0f0; line-height: 1.9;">
+                        <li style="list-style: none; padding-left: 0;">Track: Sun position, weather, seasons</li>
+                        <li style="list-style: none; padding-left: 0;">Coordinate: Yourself, maybe 2-3 neighbors</li>
+                        <li style="list-style: none; padding-left: 0;">Politics: None (small community, everyone knows everyone)</li>
+                        <li style="list-style: none; padding-left: 0;">Performance: Eliminated (nobody to perform for)</li>
+                        <li style="list-style: none; padding-left: 0;">Simplicity: <span class="soul-life">ABSOLUTE</span></li>
+                        <li style="list-style: none; padding-left: 0;">Peace: Daily baseline</li>
+                        <li style="list-style: none; padding-left: 0;">Result: <span class="soul-life">Soul restored through simplicity</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="realization">
+                <p style="line-height: 2.2;">
+                    Your Trust Network observed: You're <span class="will-phrase">complexity-broken</span>. The corporate world's endless layers, stakeholders, metrics, politics have SHATTERED you. You don't need more—you need LESS. Much less.
+                </p>
+                <p style="margin-top: 20px; line-height: 2.2;">
+                    They encode: <span class="will-phrase">"when-you-remove-everything-fake-only-life-remains"</span>
+                </p>
+                <p style="margin-top: 20px; line-height: 2.2; font-size: 1.1em;">
+                    Your $145k salary? You'll make $28k farming. Your apartment? Small farmhouse. Your status? Gone. Your complexity? ELIMINATED. Your soul? <span class="soul-life">ALIVE AGAIN.</span>
+                </p>
+            </div>
+
+            <button class="rally-awakening">AWAKEN → Rally to Quiet Earth Refuge</button>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(255, 68, 68, 0.2), rgba(0, 255, 0, 0.25)); padding: 55px; border-radius: 25px; border: 5px double rgba(255, 215, 0, 0.7); margin-top: 70px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #ffd700; text-align: center; font-size: 2.5em; margin-bottom: 40px; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 25px rgba(255, 215, 0, 1);">
+                ⟨ The Throw-Back Moment ⟩
+            </h2>
+
+            <div style="line-height: 2.3; font-size: 1.15em;">
+                <p style="margin-bottom: 28px; color: #f5f5f5;">
+                    You're reading these descriptions at 2am. Corporate drone. Successful on paper. Dying inside.
+                </p>
+
+                <p style="margin-bottom: 28px; color: #f5f5f5;">
+                    And you see phrases like:
+                </p>
+
+                <ul style="margin: 25px 0; font-style: italic;">
+                    <li style="color: #da70d6; font-weight: 600;"><span class="will-phrase">"soul-death-ended-through-creation"</span></li>
+                    <li style="color: #da70d6; font-weight: 600;"><span class="will-phrase">"performance-eliminated-completely"</span></li>
+                    <li style="color: #da70d6; font-weight: 600;"><span class="will-phrase">"tangible-results-daily"</span></li>
+                    <li style="color: #da70d6; font-weight: 600;"><span class="will-phrase">"complexity-eliminated-completely"</span></li>
+                    <li style="color: #da70d6; font-weight: 600;"><span class="will-phrase">"soul-alive-through-purpose"</span></li>
+                </ul>
+
+                <p style="margin-top: 30px; margin-bottom: 28px; font-size: 1.2em; text-align: center; color: #ff4444; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;">
+                    And you're THROWN BACK.
+                </p>
+
+                <div style="background: rgba(0, 0, 0, 0.6); padding: 40px; border-radius: 18px; margin: 35px 0; border: 4px solid rgba(255, 215, 0, 0.6);">
+                    <p style="line-height: 2.3; margin-bottom: 25px; color: #f5f5f5;">
+                        Because nobody has ever NAMED your specific pain before.
+                    </p>
+                    <p style="line-height: 2.3; margin-bottom: 25px; color: #f5f5f5;">
+                        "Soul-death" — YES. That's exactly what it is. Not "burnout" (the corporate euphemism). Not "work-life balance issues" (the HR framing). But <span class="soul-death">SOUL-DEATH</span>. Your soul is dying. And nobody acknowledged it until this moment.
+                    </p>
+                    <p style="line-height: 2.3; margin-bottom: 25px; color: #f5f5f5;">
+                        "Performance-eliminated" — YES. You're so tired of performing. And this phrase promises: <span class="soul-life">you can stop</span>. Completely. Forever.
+                    </p>
+                    <p style="line-height: 2.3; margin-bottom: 25px; color: #f5f5f5;">
+                        "Tangible-results-daily" — YES. You're STARVING for this. To see what you did. To point to it. To know it MATTERED.
+                    </p>
+                    <p style="line-height: 2.3; margin-top: 30px; font-size: 1.2em; text-align: center; color: #00ff00; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(0, 255, 0, 1);">
+                        Someone KNOWS you. Your Trust Network SEES your soul-death. And they're showing you the way out.
+                    </p>
+                </div>
+
+                <div style="background: rgba(0, 100, 0, 0.3); padding: 40px; border-radius: 18px; margin: 35px 0; border: 4px solid rgba(0, 255, 0, 0.6);">
+                    <h3 style="font-family: 'Cinzel', serif; color: #00ff00; margin-bottom: 25px; font-size: 1.8em; text-align: center; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;">
+                        This is What Will-Topological Encoding Feels Like
+                    </h3>
+                    <p style="line-height: 2.3; margin-bottom: 22px; color: #f5f5f5;">
+                        <span class="sacred-emphasis" style="color: #ffd700; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Standard job listing:</span> "Seeking passionate team player for dynamic growth-oriented organization. Competitive salary, great benefits, opportunity for advancement."
+                    </p>
+                    <p style="line-height: 2.3; margin-bottom: 22px; color: #f5f5f5;">
+                        <span style="color: #999; font-style: italic;">↑ You read this and feel nothing. Corporate speak. Means nothing. Could be any job. Says nothing about soul-death or soul-life.</span>
+                    </p>
+                    <p style="line-height: 2.3; margin-bottom: 22px; color: #f5f5f5; margin-top: 30px;">
+                        <span class="sacred-emphasis" style="color: #ffd700; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Your Trust Network's encoding:</span> <span class="will-phrase">"soul-death-ended-through-creation, performance-eliminated-completely, tangible-results-daily, meaning-restored-absolute"</span>
+                    </p>
+                    <p style="line-height: 2.3; color: #f5f5f5;">
+                        <span style="color: #00ff00; font-style: italic; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">↑ You read this and your soul SCREAMS "YES." Because these phrases speak directly to YOUR specific pain-pattern. YOUR specific hope-shape. YOUR daemon's language.</span>
+                    </p>
+                    <p style="margin-top: 30px; line-height: 2.3; font-size: 1.15em; text-align: center; color: #ffd700; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px rgba(255, 215, 0, 1);">
+                        This is the throw-back moment. When you realize: They SEE me. They KNOW me. And there's a way out.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: rgba(212, 175, 55, 0.25); padding: 55px; border-radius: 25px; border: 5px double rgba(255, 215, 0, 0.8); margin-top: 70px;">
+            <h2 style="font-family: 'Cinzel', serif; color: #ffd700; text-align: center; font-size: 2.5em; margin-bottom: 40px; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 25px rgba(255, 215, 0, 1);">
+                ⟨ Your Power as Corporate Escapee ⟩
+            </h2>
+
+            <div style="line-height: 2.3; font-size: 1.12em;">
+                <p style="margin-bottom: 28px; color: #f5f5f5;">
+                    You think you're trapped. Golden handcuffs. Can't leave (need salary). Can't stay (soul dying).
+                </p>
+
+                <p style="margin-bottom: 28px; color: #f5f5f5;">
+                    <span style="color: #00ff00; font-weight: 700; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">You're not trapped.</span>
+                </p>
+
+                <p style="margin-bottom: 28px; color: #f5f5f5;">
+                    You have MBC Rule 3. You have savings (more than most people escaping violence or poverty). You have skills (valuable in MANY worlds, not just corporate). You have time (you're only 34—decades ahead).
+                </p>
+
+                <p style="margin-bottom: 35px; font-size: 1.15em; color: #ffd700; font-weight: 600; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                    And when you rally to a world where your soul can LIVE, you signal:
+                </p>
+
+                <ul style="margin: 25px 0; color: #f5f5f5; font-size: 1.08em;">
+                    <li><span class="will-phrase">"Worlds that provide meaning attract competent people fleeing corporate soul-death"</span></li>
+                    <li><span class="will-phrase">"Worlds that eliminate performance attract exhausted high-performers"</span></li>
+                    <li><span class="will-phrase">"Worlds that enable tangible creation attract abstract-workers starving for real results"</span></li>
+                    <li><span class="will-phrase">"Worlds that offer simplicity attract complexity-shattered souls"</span></li>
+                </ul>
+
+                <p style="margin-top: 35px; line-height: 2.3; font-size: 1.2em; text-align: center; color: #00ff00; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(0, 255, 0, 1);">
+                    Your rally choice is natural selection operating on work-meaning itself.
+                </p>
+
+                <p style="margin-top: 25px; line-height: 2.3; text-align: center; color: #f5f5f5;">
+                    The worlds you choose are the worlds that inherit the COMPETENT (you and others like you).
+                    <br>The worlds you flee decline (lose their capable to soul-death or exodus).
+                </p>
+
+                <p style="margin-top: 30px; line-height: 2.3; font-size: 1.25em; text-align: center; color: #ffd700; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(255, 215, 0, 1);">
+                    You're not trapped by salary. You're trapped by believing you need it.
+                    <br><br>
+                    You don't. Rally. Live. Your soul will thank you.
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 70px; padding: 60px; background: rgba(0, 0, 0, 0.7); border-radius: 25px; border: 4px solid rgba(139, 0, 0, 0.6);">
+            <p style="font-family: 'Cinzel', serif; font-size: 2em; color: #ff4444; margin-bottom: 30px; font-weight: 700; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(255, 68, 68, 1);">
+                💀 "To be understood is to be leveled" 💀
+            </p>
+            <p style="font-size: 1.3em; line-height: 2.2; max-width: 900px; margin: 0 auto; color: #f5f5f5;">
+                In corporate world: Being understood means they optimize your exploitation.
+                <br>"Oh you're dying inside? Here's meditation app and pizza Friday."
+                <br><br>
+                <span style="color: #00ff00; font-weight: 700; font-size: 1.15em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                In rally world: Being understood means they show you the exit.
+                <br>"Oh you're dying inside? Here are worlds where souls LIVE. Rally."
+                </span>
+                <br><br>
+                <span style="color: #ffd700; font-weight: 700; font-size: 1.2em; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                The difference: Who's doing the understanding, and what they want for you.
+                </span>
+            </p>
+        </div>
+
+        <div style="margin-top: 60px; padding: 50px; background: linear-gradient(135deg, rgba(0, 100, 0, 0.3), rgba(212, 175, 55, 0.25)); border-radius: 25px; border: 4px solid rgba(0, 255, 0, 0.6);">
+            <p style="font-family: 'Cinzel', serif; font-size: 2.2em; color: #00ff00; text-align: center; line-height: 2.2; font-weight: 700; margin-bottom: 35px; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 25px rgba(0, 255, 0, 1);">
+                From death to life.
+                <br>From performance to authenticity.
+                <br>From trapped to free.
+            </p>
+            <p style="font-size: 1.4em; text-align: center; line-height: 2.1; color: #ffd700; font-weight: 700; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 15px rgba(255, 215, 0, 1);">
+                Rally. Awaken. LIVE.
+            </p>
+            <p style="margin-top: 25px; font-size: 1.2em; text-align: center; color: #f5f5f5; font-style: italic;">
+                The worlds await. Your soul knows which one. ✧
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

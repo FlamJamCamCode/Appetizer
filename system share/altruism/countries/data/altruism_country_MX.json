@@ -1,0 +1,37 @@
+{
+  "country_code": "MX",
+  "name": "Mexico",
+  "approximate": true,
+  "population": 130000000,
+  "gdp_nominal_usd": 1400000000000,
+  "gdp_per_capita_usd": 11000,
+  "social_spending_pct_gdp": 12.0,
+  "health_spending_pct_gdp": 3.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.03,
+  "oda_given_usd": 500000000,
+  "oda_received_usd": 1500000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 4000000000,
+  "volunteering_rate_pct_adults": 22.0,
+  "volunteer_hours_billion": 1.0,
+  "child_mortality_under5_per_1000": 13.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Diabetes",
+    "Homicide",
+    "Road injuries"
+  ],
+  "notes": [
+    "Values approximate; strong role for remittances and informal giving.",
+    "Violence and NCDs are major domestic causes of death."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "Mexican government budget and statistics",
+    "WHO Global Health Observatory",
+    "CAF World Giving Index"
+  ]
+}
+
+

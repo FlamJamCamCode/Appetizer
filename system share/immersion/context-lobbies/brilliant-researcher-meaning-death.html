@@ -1,0 +1,664 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Meaning Death → Command Restoration
+  </title>
+  <link href="shared-lobby-tabs.css" rel="stylesheet"/>
+  <link href="shared-lobby-content.css" rel="stylesheet"/>
+  <style>
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #999;
+            --accent-before: #ff6b6b;
+            --accent-lobby: #4ecdc4;
+            --accent-fulfillment: #95e1d3;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        .content-panel {
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4));
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: clamp(28px, 5vw, 60px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+        }
+
+        .content-panel[data-panel="before"] {
+            border-color: rgba(255, 107, 107, 0.4);
+        }
+
+        .content-panel[data-panel="lobby"] {
+            border-color: rgba(78, 205, 196, 0.4);
+        }
+
+        .content-panel[data-panel="fulfillment"] {
+            border-color: rgba(149, 225, 211, 0.4);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .stage[data-stage="before"] h1 {
+            color: var(--accent-before);
+        }
+
+        .stage[data-stage="lobby"] h1 {
+            color: var(--accent-lobby);
+        }
+
+        .stage[data-stage="fulfillment"] h1 {
+            color: var(--accent-fulfillment);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 50px 0 25px 0;
+            color: var(--accent-lobby);
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin: 30px 0 15px 0;
+            color: var(--accent-fulfillment);
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.15em;
+            line-height: 1.8;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid var(--text-secondary);
+            padding-left: 25px;
+            margin: 35px 0;
+            color: var(--text-secondary);
+            font-size: 1.2em;
+        }
+
+        .metric {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            border-left: 4px solid var(--accent-lobby);
+        }
+
+        .system-response {
+            background: rgba(255, 107, 107, 0.1);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-before);
+        }
+
+        .truth {
+            background: rgba(78, 205, 196, 0.1);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-lobby);
+        }
+
+        .choice {
+            background: rgba(149, 225, 211, 0.1);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid var(--accent-fulfillment);
+        }
+
+        ul, ol {
+            margin: 25px 0 25px 40px;
+        }
+
+        li {
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 18px 35px;
+            background: var(--accent-lobby);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 15px 15px 15px 0;
+            font-weight: bold;
+            font-size: 1.05em;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+        }
+
+        .cta:hover {
+            background: var(--accent-fulfillment);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(78, 205, 196, 0.3);
+        }
+
+        .progress-indicator {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        /* Vim navigation highlighting */
+        [data-focus-scope]:focus-within {
+            outline: 2px solid var(--accent-lobby);
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .lobby-tabs {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .lobby-tab {
+                padding: 12px 20px;
+            }
+
+            .lobby-content {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+  </style>
+ </head>
+ <body data-focus-scope="" data-vim-label="Meaning Death Lobby" data-vim-mode="default tab segment">
+  <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="brilliant-researcher-meaning-death-tabs" type="radio"/>
+  <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="brilliant-researcher-meaning-death-tabs" type="radio"/>
+  <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="brilliant-researcher-meaning-death-tabs" type="radio"/>
+   <nav class="tabs-nav">
+    <label class="tab-button" data-panel="before" for="tab-before">
+     <span>
+      BEFORE: The Soul Death
+     </span>
+    </label>
+    <label class="tab-button" data-panel="lobby" for="tab-lobby">
+     <span>
+      LOBBY: The Alternative
+     </span>
+    </label>
+    <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+     <span>
+      FULFILLMENT: What You Build
+     </span>
+    </label>
+   </nav>
+  <div class="content-container">
+    <!-- BEFORE Stage -->
+    <section class="content-panel" data-panel="before" id="before">
+     <h1>
+      The Soul Death in Real Time
+     </h1>
+     <div class="pain-block">
+      <h2>
+       Year 1: The Compromise
+      </h2>
+      <p>
+       You tell yourself: "Just for a few years. Save some money. Pay off loans. Then I'll work on what actually matters."
+      </p>
+      <p>
+       You're brilliant. Top 1% intelligence. Could cure diseases. Could solve civilizational problems. Could contribute to human flourishing.
+      </p>
+      <p>
+       Instead, you're optimizing engagement metrics at a tech company.
+      </p>
+      <div class="metric">
+       Your salary: $250,000/year
+       <br/>
+       Your work: Make social media 0.3% more addictive
+       <br/>
+       Your impact: 10 million hours/year of human attention stolen
+       <br/>
+       Your soul: Intact (for now)
+      </div>
+     </div>
+     <div class="pain-block">
+      <h2>
+       Year 5: The Comparison
+      </h2>
+      <p>
+       Late night. You're debugging an A/B test for button placement. You think about your college roommate. She's treating children with leukemia. Makes $65K/year.
+      </p>
+      <div class="quote">
+       "I make 3.8x what she makes. She saves children. I make them spend more time scrolling. What does that say about our civilization's values?"
+      </div>
+      <p>
+       The thought haunts you for a week. Then you get a $50K bonus. The thought fades.
+      </p>
+     </div>
+     <div class="pain-block">
+      <h2>
+       Year 10: The Soul Death
+      </h2>
+      <p>
+       You're a senior engineer now. $400K total comp. You manage a team optimizing ad delivery.
+      </p>
+      <p>
+       Monday morning. You're in the shower. The water runs hot. You realize:
+       <strong>
+        You've been optimizing ads for 10 years.
+       </strong>
+      </p>
+      <div class="quote">
+       "How many children died in the last 10 years of diseases I could have helped cure? How many years of life lost? How many mothers who prayed for someone like me to work on their child's disease while I was optimizing ad delivery?"
+      </div>
+      <p>
+       You throw up.
+      </p>
+     </div>
+     <div class="pain-block">
+      <h2>
+       The Monday Morning Dread
+      </h2>
+      <p>
+       Every Monday now. The dread starts Sunday evening. Peaks Monday morning.
+      </p>
+      <div class="metric">
+       Age: 38
+       <br/>
+       Productive years remaining: ~30
+       <br/>
+       Years spent on parasitism: 10
+       <br/>
+       Children saved: 0
+       <br/>
+       Life's meaning: ERROR: NOT FOUND
+      </div>
+     </div>
+     <div class="pain-block">
+      <h2>
+       The Questions That Won't Stop
+      </h2>
+      <p>
+       You lie in bed at 3 AM:
+      </p>
+      <ul>
+       <li>
+        "What if I had taken the vital work?"
+       </li>
+       <li>
+        "What if I quit now?"
+       </li>
+       <li>
+        "But I need $200K+ to maintain this life"
+       </li>
+       <li>
+        "But I have a mortgage, car payment, lifestyle"
+       </li>
+       <li>
+        "But my dating prospects would tank"
+       </li>
+       <li>
+        "But I'd be poor like my cancer-researcher friend"
+       </li>
+      </ul>
+      <p>
+       The drowning condition. You can't leave because survival requires the money. You're trapped in golden handcuffs.
+      </p>
+     </div>
+     <div class="progress-indicator">
+      → Continue to LOBBY to see the alternative system
+     </div>
+    </section>
+    <!-- LOBBY Stage -->
+    <section class="content-panel" data-panel="lobby" id="lobby">
+     <h1>
+      The System That Doesn't Require Drowning
+     </h1>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       What If You Didn't Need $250K to Survive?
+      </div>
+      <p>
+       You discover a document. "23__. Why Civilization Cannot Command Survival Work."
+      </p>
+      <p>
+       It describes exactly what you're experiencing. The meaning death. The compensation inversion. The drowning condition.
+      </p>
+      <p>
+       But then it presents something else:
+       <strong>
+        The architecture that works differently.
+       </strong>
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       BARRACKS: Eliminate Drowning
+      </div>
+      <div class="metric">
+       Current cost to survive: $2,400/month
+       <br/>
+       - Rent: $1,500 (landlord extraction)
+       <br/>
+       - Food: $400 (retail markup)
+       <br/>
+       - Insurance: $500 (admin overhead)
+       <br/>
+       <br/>
+       BARRACKS direct provision: $210/month
+       <br/>
+       - Housing: $70 (bulk construction)
+       <br/>
+       - Food: $90 (bulk purchasing)
+       <br/>
+       - Healthcare: $50 (amortized clinic)
+       <br/>
+       <br/>
+       Efficiency: 11.4x
+       <br/>
+       <br/>
+       What this means: You could survive on $15-20K/year
+       <br/>
+       What this enables: Choice of meaningful work
+      </div>
+      <p>
+       Suddenly the vital work is viable. $60K/year in BARRACKS = $150K/year lifestyle in parasitic system.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       Social Currencies: Genetic Legacy
+      </div>
+      <p>
+       The system proposes social currencies:
+      </p>
+      <ul>
+       <li>
+        <strong>
+         Status rankings
+        </strong>
+        : Visible leaderboards of lives saved, breakthroughs
+       </li>
+       <li>
+        <strong>
+         Pregnancy promises
+        </strong>
+        : Top performers receive voluntary commitments from women
+       </li>
+       <li>
+        <strong>
+         Heritage locations
+        </strong>
+        : Castles, estates for top 1,000 globally
+       </li>
+       <li>
+        <strong>
+         Legacy immortality
+        </strong>
+        : Your name on the cure. Forever.
+       </li>
+      </ul>
+      <div class="quote">
+       "Wait. In this system, saving children is THE high-status work? Top cancer researchers have 500 pregnancy promises? Get access to castles?"
+      </div>
+      <p>
+       Status inversion. The exact opposite of current system.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       The Pilots: They're Building It
+      </div>
+      <p>
+       Five empirical tests:
+      </p>
+      <ol>
+       <li>
+        <strong>
+         BARRACKS
+        </strong>
+        : $5.8M, 100 residents, prove $210/month works
+       </li>
+       <li>
+        <strong>
+         Trust networks
+        </strong>
+        : $900K, 1,000 users, outcome-based reputation
+       </li>
+       <li>
+        <strong>
+         Training
+        </strong>
+        : $2.7M, 40 trainees, prove 3 years = 12 years
+       </li>
+       <li>
+        <strong>
+         Social currencies
+        </strong>
+        : $2.4M, track career choices
+       </li>
+       <li>
+        <strong>
+         Comprehensive
+        </strong>
+        : $440M, entire city, 10x lives saved per dollar
+       </li>
+      </ol>
+      <p>
+       They're not theorizing. They're walking. Building. Testing. Measuring.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       The Choice Becomes Clear
+      </div>
+      <div class="truth">
+       <p>
+        <strong>
+         Option A: Stay in Parasitism
+        </strong>
+        <br/>
+        Continue optimizing ads. Make $6M more over 15 years. Retire wealthy, soul dead, legacy zero.
+       </p>
+       <p>
+        <strong>
+         Option B: Individual Escape
+        </strong>
+        <br/>
+        Quit now. Take vital work at $60K. Be poor. Probably childless. But save some lives.
+       </p>
+       <p>
+        <strong>
+         Option C: Build the Alternative
+        </strong>
+        <br/>
+        Help build ONE pilot. Use your skills. If BARRACKS works, 10,000 can choose meaningful work. If trust networks work, credentials irrelevant.
+       </p>
+      </div>
+     </div>
+     <div class="progress-indicator">
+      → Continue to FULFILLMENT to see what your life becomes
+     </div>
+    </section>
+    <!-- FULFILLMENT Stage -->
+    <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+     <h1>
+      10 Years After You Chose to Build
+     </h1>
+     <div class="fulfillment-moment">
+      <div class="moment-title">
+       Year 1-2: The Transition
+      </div>
+      <p>
+       You quit your job. Use your savings to fund 6 months while you transition.
+      </p>
+      <p>
+       You join pilot 2 (trust networks). Your expertise: ML systems, recommendation algorithms, reputation systems. Exactly what they need.
+      </p>
+      <p>
+       You design the trust graph architecture. Build the fraud detection. Optimize the matching algorithms.
+      </p>
+      <p>
+       Not for ad delivery. For competence verification. For breaking credential monopolies.
+      </p>
+     </div>
+     <div class="fulfillment-moment">
+      <div class="moment-title">
+       Year 3-4: The Proof
+      </div>
+      <p>
+       Trust network pilot succeeds:
+      </p>
+      <div class="metric">
+       Fraud rate: 3.2% (target was &lt;5%)
+       <br/>
+       Satisfaction: 84% (target was 80%)
+       <br/>
+       High-reputation providers: 2.4x better outcomes
+       <br/>
+       <br/>
+       PROVEN: Outcome-based reputation beats credentials
+       <br/>
+       <br/>
+       Users: 1,000 → scaling to 10,000
+      </div>
+      <p>
+       BARRACKS pilot also succeeds. 100 residents living on $210/month. Productivity in vital work 3.2x baseline.
+      </p>
+     </div>
+     <div class="fulfillment-moment">
+      <div class="moment-title">
+       Year 5: The Status Shift
+      </div>
+      <p>
+       You're ranked #47 globally in "Trust Network Architecture." Your contribution visible. Measurable. Recognized.
+      </p>
+      <p>
+       You receive your first pregnancy promise. Then 5 more. Then 20.
+      </p>
+      <div class="quote">
+       "Women are committing to have children with me because I helped build the system that enables competence over credentials. Not because I make $400K. Because I enabled thousands to access vital work."
+      </div>
+     </div>
+     <div class="fulfillment-moment">
+      <div class="moment-title">
+       Year 10: The Life You Have
+      </div>
+      <div class="metric">
+       Age: 48
+       <br/>
+       Work: Trust network systems (enabling competence globally)
+       <br/>
+       Impact: 100,000 people using your system
+       <br/>
+       Lives saved (indirect): 5,000+ per year
+       <br/>
+       Pregnancy promises: 85
+       <br/>
+       Children: 8 (with 5 women who chose you for this work)
+       <br/>
+       Genetic legacy: Secured
+       <br/>
+       Soul: ALIVE
+      </div>
+      <p>
+       Monday morning. No dread. You wake excited.
+      </p>
+      <p>
+       Your 6-year-old daughter asks what you do:
+      </p>
+      <div class="quote">
+       "I help smart people work on important problems instead of wasting their lives making rich people richer. This week, I'm helping doctors in Kenya prove they're good even without expensive schools. If it works, thousands of children will get healing who couldn't before."
+      </div>
+      <p>
+       She's proud of you. You're proud of you.
+      </p>
+     </div>
+     <div class="fulfillment-moment">
+      <div class="moment-title">
+       How to Start
+      </div>
+      <p>
+       You're reading this now. Your Monday morning dread is real. Your soul death is happening.
+      </p>
+      <p>
+       Three choices:
+      </p>
+      <ol>
+       <li>
+        <strong>
+         Close this tab
+        </strong>
+        : Go back to optimizing ads. Accept soul death.
+       </li>
+       <li>
+        <strong>
+         Individual escape
+        </strong>
+        : Quit, take vital work, be poor, keep your soul.
+       </li>
+       <li>
+        <strong>
+         Build the alternative
+        </strong>
+        : Help prove ONE mechanism. Enable thousands.
+       </li>
+      </ol>
+      <div class="choice">
+       <button class="cta" onclick="window.open('../tours/command-restoration-builder.js', '_blank')">
+        Explore Full Framework →
+       </button>
+       <button class="cta" onclick="alert('Pilot signup links coming soon')">
+        Join a Pilot →
+       </button>
+      </div>
+      <p style="margin-top: 40px; font-size: 0.95em; color: #666;">
+       <strong>
+        Real talk
+       </strong>
+       : The pilots need builders. If you have ML/systems expertise, you can contribute to trust networks. If you have $100K+, you can help fund BARRACKS. If you have neither but want to help, there are roles.
+      </p>
+      <p style="font-size: 0.95em; color: #666;">
+       The child is dying while you optimize ads. How many more Monday mornings before you do something about it?
+      </p>
+     </div>
+    </section>
+  </div>
+ </body>
+ <script src="../../../lib/nav-vimlike.js">
+ </script>
+</html>

@@ -1,0 +1,34 @@
+{
+  "country_code": "MC",
+  "name": "Monaco",
+  "approximate": true,
+  "population": 40000,
+  "gdp_nominal_usd": 7500000000,
+  "gdp_per_capita_usd": 187500,
+  "social_spending_pct_gdp": 20.0,
+  "health_spending_pct_gdp": 6.0,
+  "education_spending_pct_gdp": 4.0,
+  "oda_given_pct_gni": 0.2,
+  "oda_given_usd": 15000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 1.0,
+  "private_giving_total_usd": 75000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.005,
+  "child_mortality_under5_per_1000": 3.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia"
+  ],
+  "notes": [
+    "Monaco is an extreme wealth enclave with tiny population and very high GDP per capita.",
+    "The key altruism lever is resident and client wealth, not domestic need."
+  ],
+  "sources": [
+    "Monaco government and international financial statistics",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

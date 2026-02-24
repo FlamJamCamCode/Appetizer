@@ -1,0 +1,36 @@
+{
+  "country_code": "TR",
+  "name": "Türkiye",
+  "approximate": true,
+  "population": 86000000,
+  "gdp_nominal_usd": 950000000000,
+  "gdp_per_capita_usd": 11000,
+  "social_spending_pct_gdp": 18.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.8,
+  "oda_given_usd": 7500000000,
+  "oda_received_usd": 1500000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 4000000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 1.0,
+  "child_mortality_under5_per_1000": 13.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Road injuries"
+  ],
+  "notes": [
+    "Türkiye is a major humanitarian actor and refugee host; ODA figures include refugee-related expenditures.",
+    "Religious giving is substantial; exact volumes are uncertain."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD DAC and Turkish aid reports",
+    "CAF World Giving Index"
+  ]
+}
+
+

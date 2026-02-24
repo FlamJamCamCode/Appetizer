@@ -1,0 +1,36 @@
+{
+  "country_code": "ET",
+  "name": "Ethiopia",
+  "approximate": true,
+  "population": 120000000,
+  "gdp_nominal_usd": 125000000000,
+  "gdp_per_capita_usd": 1000,
+  "social_spending_pct_gdp": 9.0,
+  "health_spending_pct_gdp": 3.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 4000000000,
+  "private_giving_pct_gdp": 0.2,
+  "private_giving_total_usd": 250000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 1.0,
+  "child_mortality_under5_per_1000": 48.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Lower respiratory infections",
+    "Diarrheal diseases",
+    "Malaria"
+  ],
+  "notes": [
+    "Values approximate; Ethiopia is a major focus country for child survival and basic health.",
+    "Informal community support and religious giving are important."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD and other ODA statistics"
+  ]
+}
+
+

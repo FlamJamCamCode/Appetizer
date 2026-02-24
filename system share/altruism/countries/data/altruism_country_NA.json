@@ -1,0 +1,36 @@
+{
+  "country_code": "NA",
+  "name": "Namibia",
+  "approximate": true,
+  "population": 2600000,
+  "gdp_nominal_usd": 14000000000,
+  "gdp_per_capita_usd": 5380,
+  "social_spending_pct_gdp": 20.0,
+  "health_spending_pct_gdp": 7.0,
+  "education_spending_pct_gdp": 8.0,
+  "oda_given_pct_gni": 0.03,
+  "oda_given_usd": 5000000,
+  "oda_received_usd": 300000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 56000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.05,
+  "child_mortality_under5_per_1000": 42.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "HIV/AIDS",
+    "Tuberculosis",
+    "Cardiovascular diseases"
+  ],
+  "notes": [
+    "Namibia has high inequality and significant HIV/TB burdens, with relatively strong social spending funded partly by SACU revenues.",
+    "Mining and tourism are key sectors and potential altruism levers."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Namibia budget and SACU reports"
+  ]
+}
+
+

@@ -1,0 +1,36 @@
+{
+  "country_code": "SE",
+  "name": "Sweden",
+  "approximate": true,
+  "population": 10500000,
+  "gdp_nominal_usd": 680000000000,
+  "gdp_per_capita_usd": 62000,
+  "social_spending_pct_gdp": 27.0,
+  "health_spending_pct_gdp": 10.0,
+  "education_spending_pct_gdp": 6.5,
+  "oda_given_pct_gni": 0.9,
+  "oda_given_usd": 6000000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.9,
+  "private_giving_total_usd": 6000000000,
+  "volunteering_rate_pct_adults": 35.0,
+  "volunteer_hours_billion": 0.4,
+  "child_mortality_under5_per_1000": 2.5,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia and Alzheimer's disease"
+  ],
+  "notes": [
+    "Sweden is among the highest ODA/GNI donors and has high social spending.",
+    "Private giving and volunteering are strong relative to GDP size."
+  ],
+  "sources": [
+    "Statistics Sweden (SCB)",
+    "Swedish government budget documents",
+    "OECD SOCX and DAC statistics",
+    "CAF World Giving Index"
+  ]
+}
+
+

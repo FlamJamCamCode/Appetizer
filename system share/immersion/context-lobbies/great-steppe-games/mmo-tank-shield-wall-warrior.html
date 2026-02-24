@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMO Tank Main - Rally to Shield Wall Warfare</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap');
+
+        body {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, #1a1a00 0%, #332200 50%, #1a1a00 100%);
+            color: #ffd9aa;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(255, 152, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(255, 193, 7, 0.12) 0%, transparent 50%);
+        }
+
+        .tank-marker {
+            color: #ff9800;
+            font-weight: bold;
+        }
+
+        .shield-skill {
+            color: #ffc107;
+            font-weight: 600;
+        }
+
+        .tank-stat {
+            background: rgba(255, 152, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="mmo-tank-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="mmo-tank-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="mmo-tank-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: Holding The Line
+                <span class="tab-indicator">6,000 hours taking damage for team</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE CALL
+                <span class="tab-indicator">Shield walls need you</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Wall that never breaks</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">🛡️ BEFORE: Tank Main Life</h1>
+
+                <div class="pain-block">
+                    Marcus "Wall" Thompson. 27 years old. 6,300 hours WoW Protection Paladin. 4,100 hours Overwatch Reinhardt. Tank main across every game. Shield holder. Line keeper. Team protector.
+                    <br><br>
+                    <strong>You TAKE THE DAMAGE. You hold the line. You protect squishies. Your body between them and death.</strong>
+                    <br><br>
+                    <span class="neologism">And your daemon deployed on: Holding W in front of pixels.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="tank-stat">WoW hours: 6,300</div>
+                    <div class="tank-stat">Tank games: 5,800 (92%)</div>
+                    <div class="tank-stat">Damage taken: 8.9 BILLION</div>
+                    <div class="tank-stat">Deaths: 12,400 (for team)</div>
+                    <div class="tank-stat">Allies saved: Thousands</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        <strong style="color: #ff9800;">Your tank skills:</strong>
+                        <br>• Positioning (you're first line, control space)
+                        <br>• Threat generation (enemies focus YOU not team)
+                        <br>• Damage mitigation (shields, armor, cooldowns)
+                        <br>• Team protection (body block, peel for squishies)
+                        <br>• Situational awareness (track all threats simultaneously)
+                        <br>• Cooldown management (when to pop defensive, when to save)
+                        <br>• Mental fortitude (you DIE so team lives)
+                        <br><br>
+                        <span class="tank-marker">You're SHIELD. WALL. PROTECTOR. You take 8.9 billion damage so team doesn't.</span>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Tank main daemon:</strong>
+                    <br><br>
+                    Most players: "How much DPS can I do?"
+                    <br><br>
+                    You: "How much damage can I TAKE? How many teammates can I SAVE? Can I hold this position against 5 enemies while team escapes?"
+                        <br><br>
+                    <strong style="color: #ff9800;">Your fulfillment: Team lives BECAUSE you tanked. You held. You didn't break. THEY survived.</strong>
+                    <br><br>
+                    <span class="neologism">Not glory. Not kills. Not recognition. Just: You held the line. Team lived. That's enough.</span>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Mythic raid boss:</strong>
+                    <br><br>
+                    Boss enrages. 300% damage. Healers OOM. Team at 20% HP. Everyone panicking.
+                    <br><br>
+                    You: Pop every defensive cooldown. Take 2 million damage in 15 seconds. Still standing. Boss dies. Raid survives.
+                    <br><br>
+                    <strong style="color: #ff9800; font-size: 1.2em;">You SAVED them. Your body. Your cooldowns. Your REFUSAL TO BREAK.</strong>
+                    <br><br>
+                    DPS: "GG easy"
+                    <br><br>
+                    <span class="tank-marker">They have no idea you just tanked 2 million damage to keep them alive. Tank life: invisible heroism.</span>
+                </div>
+
+                <div class="pain-block">
+                    Real job: Security guard. $36k/year. Standing at mall entrance. "Please don't bring weapons inside sir."
+                    <br><br>
+                    <strong>Your protection instincts deployed on: Making sure teenagers don't skateboard.</strong>
+                </div>
+
+                <div class="pain-block" style="background: rgba(255, 152, 0, 0.2); border-color: #ff9800;">
+                    <strong style="color: #ff9800; font-size: 1.4em;">Then you discover: Great Steppe Games need shield wall warriors.</strong>
+                    <br><br>
+                    <strong>Your tank main skills = PERFECT for frontline shield wall combat.</strong>
+                    <br><br>
+                    Shield wall formation needs:
+                    <br>• Positioning (first line, hold ground)
+                    <br>• Damage absorption (take hits, protect behind you)
+                    <br>• Team protection (YOUR shield protects 5 warriors behind)
+                    <br>• Mental fortitude (you take beating, never break)
+                    <br>• Situational awareness (track all threats)
+                    <br>• Defensive timing (when to advance, when to hold)
+                    <br><br>
+                    <strong style="color: #ffc107; font-size: 1.2em;">This is TANKING. But REAL. With REAL shields. REAL warriors behind you. Your 6,000 hours TRANSFER.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Shield bearing deployed on reality.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">🛡️ THE CALL</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Tank Skills Transfer</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your WoW/Overwatch tank skills → Shield wall warfare:
+                        <br><br>
+                        <strong style="color: #ff9800;">POSITIONING</strong>
+                        <br>• WoW: Position boss away from raid, control space
+                        <br>• Steppe: Front of shield wall, hold ground, control line
+                        <br><br>
+                        <strong style="color: #ff9800;">DAMAGE ABSORPTION</strong>
+                        <br>• WoW: Tank 8.9 billion damage across career
+                        <br>• Steppe: Your shield/armor takes beating, warriors behind protected
+                        <br><br>
+                        <strong style="color: #ff9800;">TEAM PROTECTION</strong>
+                        <br>• Overwatch: Reinhardt shield protects team
+                        <br>• Steppe: Your body/shield = Barrier between enemy and allies
+                        <br><br>
+                        <strong style="color: #ff9800;">MENTAL FORTITUDE</strong>
+                        <br>• WoW: Stay calm taking massive damage, trust healers
+                        <br>• Steppe: Stay calm taking real hits, trust your armor/healing
+                        <br><br>
+                        <span class="shield-skill">Your tank brain ALREADY TRAINED FOR THIS. Just... real shields instead of pixels.</span>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Shield Wall Warrior Role</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">🛡️ SHIELD WALL WARRIOR (Einherjar Reborn)</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Frontline shield bearer in Viking-style shield wall
+                            <br><strong>Equipment:</strong> Large shield (1.2m), axe, heavy armor
+                            <br><strong>Formation:</strong> Shield wall (overlapping shields, immovable line)
+                            <br><br>
+                            <strong>Responsibilities:</strong>
+                            <br><br>
+                            <strong>1. HOLD THE LINE</strong>
+                            <br>• First contact with enemy (like tanking boss)
+                            <br>• Absorb initial charge (take damage, protect behind)
+                            <br>• NEVER BREAK (mental fortitude, stand firm)
+                            <br>• Your shield = Wall for 4 warriors behind you
+                            <br><br>
+                            <strong>2. FORMATION DISCIPLINE</strong>
+                            <br>• Maintain shield overlap (like positioning in raids)
+                            <br>• Move as unit (coordination, timing)
+                            <br>• Communicate constantly (like tank callouts)
+                            <br>• Adapt to pressure (advance when possible, hold when necessary)
+                            <br><br>
+                            <strong>3. DAMAGE ABSORPTION</strong>
+                            <br>• You TAKE THE HITS (like tanking damage)
+                            <br>• Your armor withstands beating (like defensive cooldowns)
+                            <br>• Protect squishier warriors (archers, support behind you)
+                            <br>• Mental game: Taking damage is SUCCESS (saves allies)
+                            <br><br>
+                            <strong>4. TACTICAL AWARENESS</strong>
+                            <br>• Track enemy formation (like tracking boss abilities)
+                            <br>• Identify threats (who's targeting your line)
+                            <br>• Call positioning (when to advance/retreat)
+                            <br>• Coordinate with other shield bearers (teamwork essential)
+                            <br><br>
+                            <span class="tank-marker">This is TANKING. But REAL. Your daemon: Hold line. Protect team. NEVER BREAK.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Shield Bearer's Voice</div>
+                    <div class="quote-box">
+                        "I was tank main. 7,000 hours. Protection Paladin. Reinhardt. Always frontline. Always taking damage for team.
+                        <br><br>
+                        <strong style="color: #ff9800;">Deployed on pixels. Tanking for strangers. Taking 8 billion damage across career.</strong>
+                        <br><br>
+                        I rallied to Einherjar shield wall. My tank skills TRANSFERRED PERFECTLY.
+                        <br><br>
+                        <strong>Positioning → Front of shield wall, hold ground</strong>
+                        <br><strong>Damage absorption → My shield/armor takes beating</strong>
+                        <br><strong>Team protection → 4 warriors behind me stay safe</strong>
+                        <br><strong>Mental fortitude → Taking real hits, never breaking</strong>
+                        <br><br>
+                        I've held shield wall through 67 battles. Taken thousands of hits. NEVER BROKE. Warriors behind me survived because I HELD.
+                        <br><br>
+                        <strong style="color: #ffc107;">From tanking pixels to shield wall warrior. From game to glory. This is tank main FULFILLMENT.</strong>"
+                        <br><br>
+                        <span style="color: #ff9800;">— Erik "Wall" Hansen, 29, Einherjar shield bearer, never broke</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🛡️ First Shield Wall: The Line Holds</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first battle. 200 Einherjar shield wall vs 250 Red Banner charge.
+                        <br><br>
+                        <strong>Enemy rushes. You're front line. This is REAL. Real shields. Real impact. Real pressure.</strong>
+                        <br><br>
+                        IMPACT. Your shield takes massive hit. Your body absorbs force. But: You HOLD. Shield doesn't break. You don't break. Line holds.
+                        <br><br>
+                        <strong style="color: #ff9800; font-size: 1.3em;">Like tanking raid boss. But REAL. Your tank instincts PERFECT. You held. Team protected.</strong>
+                        <br><br>
+                        Shield brother next to you: "You didn't flinch. First battle. You're WALL."
+                        <br><br>
+                        <span class="tank-marker">Your tank daemon ACTIVATED. Hold line. Protect team. Take damage. NEVER BREAK. This is what you were built for.</span>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">⚔️ Six Months: The Wall That Never Breaks</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        <div class="tank-stat">Battles: 67 shield wall formations</div>
+                        <div class="tank-stat">Line breaks: 0 (NEVER broke position)</div>
+                        <div class="tank-stat">Warriors saved: 200+ (behind your shield)</div>
+                        <div class="tank-stat">Reputation: "Wall" Thompson (immovable)</div>
+                        <br><br>
+                        <p style="margin-top: 15px;">
+                            <strong>Your reputation:</strong> When battle gets brutal, put Wall on frontline. He NEVER breaks. Mental fortress.
+                            <br><br>
+                            <span class="shield-skill">From WoW tank to shield wall legend. Your tank skills PROVEN on reality.</span>
+                        </p>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏆 One Year: Shield Bearer Legend</div>
+                    <div class="quote-box" style="background: rgba(255, 152, 0, 0.2); border-color: #ff9800;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year as shield wall warrior. 134 battles. Line NEVER broke under me. 0 breaks.
+                            <br><br>
+                            <strong style="color: #ff9800; font-size: 1.2em;">My WoW tank skills = Perfect shield wall skills.</strong>
+                            <br><br>
+                            <strong>Positioning:</strong> Front line. First contact. Hold ground. Like tanking boss.
+                            <br><strong>Damage absorption:</strong> Thousands of hits taken. Shield holds. I hold. Team protected.
+                            <br><strong>Mental fortitude:</strong> Taking damage is SUCCESS. Means team safe. Like WoW tanking.
+                            <br><strong>Formation discipline:</strong> Shield overlap maintained. Move as unit. Never break.
+                            <br><br>
+                            Warriors WANT to fight behind me. "If Wall is front, we're safe." I'm ESSENTIAL.
+                            <br><br>
+                            <span class="tank-marker">From invisible tank to legendary wall. From tanking pixels to protecting warriors. 6,000 hours TRANSFERRED.</span>
+                        </p>
+                        <span class="speaker-name">— Marcus "Wall" Thompson, shield bearer, the line that never breaks</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(255, 152, 0, 0.3), rgba(255, 193, 7, 0.3)); border: 4px double #ff9800;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center; font-family: 'Cinzel', serif;">
+                        <strong style="color: #888; font-size: 1.4em;">From tanking pixels</strong>
+                        <br><br>
+                        <strong style="color: #ff9800; font-size: 1.5em;">To shield wall warfare</strong>
+                        <br><br>
+                        <strong style="color: #ffc107; font-size: 1.5em;">To wall that never breaks</strong>
+                        <br><br>
+                        <span style="color: #ff9800; font-size: 1.2em;">🛡️ Tank mains: Line HOLDS 🛡️</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

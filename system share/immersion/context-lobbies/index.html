@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Context Lobbies - Immersive Rally Experiences
+  </title>
+  <link href="shared-lobby-tabs.css" rel="stylesheet"/>
+  <link href="shared-lobby-content.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #f5f5f5;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(123, 47, 247, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(72, 61, 139, 0.08) 0%, transparent 70%);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+        }
+
+        .lobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 35px 0;
+        }
+
+        .lobby-link-card {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.35), rgba(72, 61, 139, 0.25));
+            padding: 35px;
+            border-radius: 15px;
+            border: 3px solid rgba(212, 175, 55, 0.6);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .lobby-link-card:hover {
+            transform: translateY(-8px);
+            border-color: #ffd700;
+            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.4);
+        }
+
+        .lobby-card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .lobby-card-desc {
+            line-height: 1.8;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+        }
+
+        .lobby-card-for {
+            color: #da70d6;
+            font-style: italic;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="lobby-container">
+   <input checked="" class="tab-toggle" data-panel="about" id="tab-about" name="index-tabs" type="radio"/>
+   <input class="tab-toggle" data-panel="lobbies" id="tab-lobbies" name="index-tabs" type="radio"/>
+   <input class="tab-toggle" data-panel="system" id="tab-system" name="index-tabs" type="radio"/>
+   <nav class="tabs-nav">
+    <label class="tab-button" data-panel="about" for="tab-about">
+     <span>
+      ABOUT
+     </span>
+     <span class="tab-indicator">
+      What are context lobbies?
+     </span>
+    </label>
+    <label class="tab-button" data-panel="lobbies" for="tab-lobbies">
+     <span>
+      THE LOBBIES
+     </span>
+     <span class="tab-indicator">
+      Choose your journey
+     </span>
+    </label>
+    <label class="tab-button" data-panel="system" for="tab-system">
+     <span>
+      HOW IT WORKS
+     </span>
+     <span class="tab-indicator">
+      Navigation &amp; features
+     </span>
+    </label>
+   </nav>
+   <div class="content-container">
+    <!-- ABOUT -->
+    <section class="content-panel" data-panel="about" id="about">
+     <h1 class="section-title">
+      ⟨ Context Lobbies ⟩
+     </h1>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       Immersive Rally Experiences
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       These are not informational pages. They are
+       <strong>
+        experiences
+       </strong>
+       .
+       <br/>
+       <br/>
+       Three-part journeys through:
+      </p>
+      <ul style="margin: 20px 0; font-size: 1.1em;">
+       <li>
+        <strong style="color: #ffd700;">
+         BEFORE:
+        </strong>
+        The crushing. The pain. The trap. Where you are now.
+       </li>
+       <li>
+        <strong style="color: #ffd700;">
+         THE LOBBY:
+        </strong>
+        The threshold. Safety. Seeing worlds. Choosing.
+       </li>
+       <li>
+        <strong style="color: #ffd700;">
+         FULFILLMENT:
+        </strong>
+        The arrival. The healing. The thriving. Where you could be.
+       </li>
+      </ul>
+      <p style="line-height: 2; font-size: 1.15em; margin-top: 20px;">
+       Navigate with
+       <span class="neologism">
+        fluid tabs
+       </span>
+       (horizontal) and
+       <span class="neologism">
+        smooth scroll segments
+       </span>
+       (vertical). Experience the journey from first-person perspective.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       Will-Topological Encoding
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       Each lobby speaks in the language of its intended soul:
+       <br/>
+       <br/>
+       <strong>
+        Quantitative
+       </strong>
+       (FGM escape) → You need FAST safety assessment
+       <br/>
+       <strong>
+        Qualitative
+       </strong>
+       (Bullied teen) → You need
+       <span class="neologism">
+        essence-matching
+       </span>
+       language
+       <br/>
+       <strong>
+        Mystical
+       </strong>
+       (Artist soul) → You need beauty even in the interface
+       <br/>
+       <strong>
+        Direct
+       </strong>
+       (Corporate escape) → You need "wake the fuck up" clarity
+       <br/>
+       <br/>
+       The tool adapts to the user. Not the user to the tool.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       The Technology
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       Built with
+       <strong>
+        shared system architecture
+       </strong>
+       :
+      </p>
+      <ul style="margin: 15px 0;">
+       <li>
+        <strong>
+         Horizontal tab navigation
+        </strong>
+        - Smooth transitions between journey stages
+       </li>
+       <li>
+        <strong>
+         Vertical scroll segments
+        </strong>
+        - Each content block gets navigation dot
+       </li>
+       <li>
+        <strong>
+         Keyboard shortcuts
+        </strong>
+        - Arrow keys for fluid navigation
+       </li>
+       <li>
+        <strong>
+         Responsive design
+        </strong>
+        - Works desktop to mobile
+       </li>
+       <li>
+        <strong>
+         Future-proof
+        </strong>
+        - Auto-detects any content structure
+       </li>
+      </ul>
+     </div>
+    </section>
+    <!-- LOBBIES -->
+    <section class="content-panel" data-panel="lobbies" id="lobbies">
+     <h1 class="section-title">
+      🌟 The Lobbies
+     </h1>
+     <div class="lobby-grid">
+      <a class="lobby-link-card" href="universal-lobby-experience.html">
+       <div class="lobby-card-title">
+        🌍 Universal Lobby Experience
+       </div>
+       <div class="lobby-card-desc">
+        The core lobby journey. Generic but powerful. For anyone escaping anything to anywhere. The template experience all others build from.
+       </div>
+       <div class="lobby-card-for">
+        For: Anyone seeking exit and choice
+       </div>
+      </a>
+      <a class="lobby-link-card" href="somali-girl-escape-lobby.html">
+       <div class="lobby-card-title">
+        🕌 FGM Escape Rally
+       </div>
+       <div class="lobby-card-desc">
+        For girls facing Female Genital Mutilation. Immediate extraction, absolute safety, worlds that protect your body and your future.
+       </div>
+       <div class="lobby-card-for">
+        For: Girls 12-18 facing FGM, forced marriage, bodily harm
+       </div>
+      </a>
+      <a class="lobby-link-card" href="young-mother-safety-lobby.html">
+       <div class="lobby-card-title">
+        👶 Mother's Safety Rally
+       </div>
+       <div class="lobby-card-desc">
+        For mothers whose only goal is children's safety. Finding worlds with zero violence, excellent schools, community support. Your children's future secured.
+       </div>
+       <div class="lobby-card-for">
+        For: Mothers fleeing urban danger, gang violence, failed schools
+       </div>
+      </a>
+      <a class="lobby-link-card" href="corporate-soul-death-lobby.html">
+       <div class="lobby-card-title">
+        💀 Corporate Awakening
+       </div>
+       <div class="lobby-card-desc">
+        For those dying in meaningless corporate work. Escape to worlds where your work serves human flourishing, not profit extraction. Wake up. Live.
+       </div>
+       <div class="lobby-card-for">
+        For: Corporate workers 30-50 experiencing soul death, Sunday dread
+       </div>
+      </a>
+      <a class="lobby-link-card" href="artist-soul-beauty-lobby.html">
+       <div class="lobby-card-title">
+        🌸 Beauty-Seeker's Sanctuary
+       </div>
+       <div class="lobby-card-desc">
+        For beauty-wounded souls starving in aesthetic wastelands. Rally to worlds designed for beauty from foundation. Finally breathe.
+       </div>
+       <div class="lobby-card-for">
+        For: Artists, aesthetes, beauty-obsessed souls suffering in ugly environments
+       </div>
+      </a>
+      <a class="lobby-link-card" href="bullied-teen-fluid-tabs-lobby.html">
+       <div class="lobby-card-title">
+        ⚔️ Teen Sanctuary Rally
+       </div>
+       <div class="lobby-card-desc">
+        For bullied, alienated teens. Worlds where being weird is normal, depth is valued, misfits are majority. When-the-ache-stops.
+       </div>
+       <div class="lobby-card-for">
+        For: Bullied, misfit, neurodivergent teens 13-18
+       </div>
+      </a>
+      <a class="lobby-link-card" href="intellectual-woman-meaning-lobby.html">
+       <div class="lobby-card-title">
+        🧠 Intellectual Alignment Rally
+       </div>
+       <div class="lobby-card-desc">
+        For brilliant women wasted on meaningless work. Rally to worlds where intellectual life is alive, work matters, deep conversation flows. Find intellectual equals.
+       </div>
+       <div class="lobby-card-for">
+        For: Intellectual women 28-40 experiencing work meaninglessness, conversation shallowness
+       </div>
+      </a>
+      <a class="lobby-link-card" href="trauma-survivor-healing-lobby.html">
+       <div class="lobby-card-title">
+        🕊️ Trauma Healing Sanctuaries
+       </div>
+       <div class="lobby-card-desc">
+        For wounded souls seeking gentle healing, creative processing, or warrior transformation. Permission-to-be-broken-while-healing. Hands-heal-what-words-cannot-touch.
+       </div>
+       <div class="lobby-card-for">
+        For: Trauma survivors needing environments designed for wounded souls
+       </div>
+      </a>
+      <a class="lobby-link-card" href="warrior-valhalla-lobby.html">
+       <div class="lobby-card-title">
+        ⚔️ Warrior's Valhalla Rally
+       </div>
+       <div class="lobby-card-desc">
+        For warrior spirits trapped in peaceful world. Rally to Great Steppe Games—eternal combat with real stakes, real glory, respawn instead of death. Choose your faction.
+       </div>
+       <div class="lobby-card-for">
+        For: Men with warrior daemon seeking combat, conquest, glory
+       </div>
+      </a>
+      <a class="lobby-link-card" href="hypergamous-luxury-lobby.html">
+       <div class="lobby-card-title">
+        👑 Hypergamous Selection Rally
+       </div>
+       <div class="lobby-card-desc">
+        For women optimizing mate selection. Otriad pattern: Filter by capability (Azure), then values (Gray), then eros (Crimson). Access to billionaire tech titans, Arabian opulence, European aristocracy.
+       </div>
+       <div class="lobby-card-for">
+        For: Women seeking optimal pairing through honest hypergamy
+       </div>
+      </a>
+      <a class="lobby-link-card" href="parent-child-spring-explorer-lobby.html">
+       <div class="lobby-card-title">
+        🌈 Parent+Child Neverland Springs
+       </div>
+       <div class="lobby-card-desc">
+        For parents+children forming Multaiddaemon. AR fantasy Springs where BOTH wills satisfied simultaneously. Community child-rearing. Play IS education. Duty as privilege. Transform $750k burden to 7-21x return.
+       </div>
+       <div class="lobby-card-for">
+        For: Parents with children wanting community child-rearing + AR learning + meaning
+       </div>
+      </a>
+      <a class="lobby-link-card" href="tech-founder-tower-rally.html">
+       <div class="lobby-card-title">
+        🏗️ Tech Founder Tower Escape
+       </div>
+       <div class="lobby-card-desc">
+        For brilliant builders trapped in woke corporate DEI hell. Rally to Bergen Tower—Position 0 governance, merit-based hiring protected, excellence restored as primary value. Build freely again.
+       </div>
+       <div class="lobby-card-for">
+        For: Tech founders/engineers 28-45 drowning in DEI compliance, losing best talent
+       </div>
+      </a>
+      <a class="lobby-link-card" href="single-young-man-purpose-rally.html">
+       <div class="lobby-card-title">
+        🤝 Lost Generation Male → Brotherhood
+       </div>
+       <div class="lobby-card-desc">
+        For drifting young men without purpose. Rally to Brotherhood Springs—mission, community, skill development, meaning. Not therapy. ACTUAL BROTHERHOOD with ACTUAL MISSION.
+       </div>
+       <div class="lobby-card-for">
+        For: Young men 18-35 isolated, purposeless, drifting, need mission + brothers
+       </div>
+      </a>
+      <a class="lobby-link-card" href="cancelled-academic-truth-rally.html">
+       <div class="lobby-card-title">
+        📚 Cancelled Academic Liberation
+       </div>
+       <div class="lobby-card-desc">
+        For professors destroyed for truth-telling. Rally to UATx—intellectual freedom charter-protected, research whatever you want, publish what you find. Truth primary value.
+       </div>
+       <div class="lobby-card-for">
+        For: Academics cancelled for HBD research, sex differences, wrongthink
+       </div>
+      </a>
+      <a class="lobby-link-card" href="longevity-spring-elder-dignity.html">
+       <div class="lobby-card-title">
+        🌿 Elder Longevity Extension
+       </div>
+       <div class="lobby-card-desc">
+        For elders facing age discrimination + decline. Rally to Longevity Springs—anti-aging protocols, wisdom valued, live to 150-200 HEALTHY. Not decline. Extension.
+       </div>
+       <div class="lobby-card-for">
+        For: Elders 60+ facing forced retirement, seeking healthy life extension + dignity
+       </div>
+      </a>
+      <a class="lobby-link-card" href="apostate-safety-emergency-extraction.html">
+       <div class="lobby-card-title">
+        🛡️ Ex-Muslim Emergency Extraction
+       </div>
+       <div class="lobby-card-desc">
+        For apostates facing death penalty. IMMEDIATE EXTRACTION available 24/7. Rally to secular refuge—no sharia, no honor killing, freedom of conscience protected. Safety first.
+       </div>
+       <div class="lobby-card-for">
+        For: Ex-Muslims in danger of honor killing, apostasy execution, family violence
+       </div>
+      </a>
+     </div>
+     <div style="margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(79, 195, 247, 0.2)); border-radius: 20px; border: 3px solid rgba(212, 175, 55, 0.5);">
+      <h2 style="font-family: 'Cinzel', serif; color: #d4af37; font-size: 2em; margin-bottom: 25px; text-align: center;">
+       Historical &amp; Alt-World Scenario Lobbies
+      </h2>
+      <p style="line-height: 2; font-size: 1.1em; margin-bottom: 30px;">
+       Based on @historiographizing and @historical-entries documents. First-person experiences of escape from historical conflicts and alt-world scenarios.
+      </p>
+      <div class="lobby-grid">
+       <a class="lobby-link-card" href="fragmentation-survivor-escape-lobby.html">
+        <div class="lobby-card-title">
+         ⚔️ Fragmentation Survivor Escape
+        </div>
+        <div class="lobby-card-desc">
+         2045 CE. Caught between 30,000 competing O-Position holders. Navigate 367 conflicting sovereign demands. Rally to MIRA-compatible Tower for coherent civilization.
+        </div>
+        <div class="lobby-card-for">
+         From: The Fragmentation (2026-2066) | To: Bergen Tower Spring
+        </div>
+       </a>
+       <a class="lobby-link-card" href="failing-state-tower-rally-lobby.html">
+        <div class="lobby-card-title">
+         🏰 Failing State → Tower Rally
+        </div>
+        <div class="lobby-card-desc">
+         2029 CE. Your country dying in death spiral. Productive people fleeing to Springs. Rally to Bergen Tower while you still can. Build Position 0 instead of surviving collapse.
+        </div>
+        <div class="lobby-card-for">
+         From: Dying European state | To: Bergen/Singapore/Mojave Towers
+        </div>
+       </a>
+       <a class="lobby-link-card" href="genocide-escape-rally-lobby.html">
+        <div class="lobby-card-title">
+         🛡️ Genocide Emergency Extraction
+        </div>
+        <div class="lobby-card-desc">
+         Militia approaching. Genocide beginning. Family hiding. Emergency MBC Rule 3 extraction. Rally to tribal sanctuary or external refuge. Instant safety.
+        </div>
+        <div class="lobby-card-for">
+         From: Darfur genocide, Rwanda, ethnic cleansing | To: Sovereign tribal territories
+        </div>
+       </a>
+       <a class="lobby-link-card" href="european-collapse-escape-lobby.html">
+        <div class="lobby-card-title">
+         📉 European Collapse Escape
+        </div>
+        <div class="lobby-card-desc">
+         2028 CE. Watching GDP decline, tax base collapse, crime explode. Death spiral accelerating. Rally to Springs while exits still open. Choose rising civilization over dying state.
+        </div>
+        <div class="lobby-card-for">
+         From: Collapsing European states | To: Rising Springs/Towers
+        </div>
+       </a>
+      </div>
+     </div>
+     <div style="margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(139, 0, 0, 0.25), rgba(255, 215, 0, 0.15)); border-radius: 20px; border: 3px solid rgba(255, 68, 68, 0.5);">
+      <h2 style="font-family: 'Cinzel', serif; color: #ffd700; font-size: 2.5em; margin-bottom: 15px; text-align: center;">
+       ⚔ THE GREAT STEPPE GAMES ⚔
+      </h2>
+      <h3 style="text-align: center; color: #ff6666; font-size: 1.3em; margin-bottom: 30px; font-style: italic;">
+       Valhalla Made Real During Life
+      </h3>
+      <p style="line-height: 2; font-size: 1.15em; margin-bottom: 30px;">
+       4.2 million km² of territory. Real combat. Real conquest. Real glory. With
+       <strong style="color: #ff4444;">
+        respawn islands
+       </strong>
+       instead of permanent death. Fight all day. "Die" gloriously. Respawn. Return. Repeat eternally.
+       <br/>
+       <br/>
+       <strong style="color: #ffd700;">
+        Warriors, strategists, merchants, healers, women, documentarians
+       </strong>
+       — Multiple entry points into the same legendary world.
+      </p>
+      <div style="text-align: center; margin: 35px 0;">
+       <a href="great-steppe-games/index.html" style="display: inline-block; padding: 20px 40px; background: linear-gradient(90deg, #8b0000, #ff4444, #ffd700); color: #fff; text-decoration: none; border-radius: 10px; font-size: 1.4em; font-weight: 700; box-shadow: 0 10px 30px rgba(255, 68, 68, 0.5); transition: all 0.3s ease; font-family: 'Cinzel', serif;">
+        ENTER THE GAMES → VIEW ALL 42+ PERSONAS
+       </a>
+      </div>
+      <div style="margin-top: 30px; padding: 25px; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 2px solid rgba(255, 215, 0, 0.3);">
+       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; text-align: center;">
+        <div>
+         <div style="font-size: 1.8em; color: #ff4444; font-weight: bold;">
+          50,000+
+         </div>
+         <div style="color: #d4c5a9;">
+          Active Warriors
+         </div>
+        </div>
+        <div>
+         <div style="font-size: 1.8em; color: #ffd700; font-weight: bold;">
+          2.4B
+         </div>
+         <div style="color: #d4c5a9;">
+          Daily Viewers
+         </div>
+        </div>
+        <div>
+         <div style="font-size: 1.8em; color: #ff8c00; font-weight: bold;">
+          12+
+         </div>
+         <div style="color: #d4c5a9;">
+          Factions
+         </div>
+        </div>
+        <div>
+         <div style="font-size: 1.8em; color: #2ecc71; font-weight: bold;">
+          99.9%
+         </div>
+         <div style="color: #d4c5a9;">
+          Respawn Rate
+         </div>
+        </div>
+       </div>
+      </div>
+      <p style="line-height: 1.9; font-size: 1.05em; margin-top: 25px; text-align: center; color: #d4c5a9;">
+       <strong>
+        42+ Different Personas:
+       </strong>
+       Russian warrior • Afghan Pashtun • Viking • Female Valkyrie • Conquest prize • Logistics merchant • Combat medic • Broadcaster •
+       <strong style="color: #4fc3f7;">
+        GAMING SKILLS:
+       </strong>
+       RTS strategist • MOBA support/carry/assassin/jungle/splitpusher • MMO healer/tank/guild leader/scout/economy trader • FPS sniper • Eve FC • Fighting game pro • Survival crafter • Arena PvP • Grand strategy • Battlefield squad leader • City builder • Minecraft builder • Racing game pro • Dark Souls warrior • Speedrunner • Arcade perfectionist • Battle royale expert • Extraction shooter • Stealth operative • Tower defense • XCOM tactician • Roguelike master • Theorycrafter • Meta recipe executor • Autobattler master • Raid leader • And more...
+      </p>
+     </div>
+     <div class="lobby-feature" style="margin-top: 50px;">
+      <div class="feature-title">
+       The Pattern Across All Lobbies
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       Personal → Historical → Universal
+       <br/>
+       <br/>
+       <strong>
+        Personal lobbies:
+       </strong>
+       Your individual pain (bullying, corporate death, beauty starvation)
+       <br/>
+       <strong>
+        Historical lobbies:
+       </strong>
+       Grand events you're caught in (genocide, state collapse, fragmentation)
+       <br/>
+       <strong>
+        Universal lobby:
+       </strong>
+       The core pattern (BEFORE → LOBBY → FULFILLMENT) all share
+       <br/>
+       <br/>
+       Each crafted for specific daemon-types, pain-patterns, historical moments. All using same smooth navigation system. All offering:
+       <span class="neologism">
+        Exit. Choice. Thrownness redefined.
+       </span>
+      </p>
+     </div>
+    </section>
+    <!-- SYSTEM -->
+    <section class="content-panel" data-panel="system" id="system">
+     <h1 class="section-title">
+      ⚙️ How It Works
+     </h1>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       The World of Plurality
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       These lobbies are not just informational pages. They are portals to a
+       <strong>
+        world of worlds
+       </strong>
+       — a rich plurality of places where different ways of living are not just possible, but
+       <strong>
+        actualized
+       </strong>
+       .
+       <br/>
+       <br/>
+       Traditional systems trap you in one world. You make choices
+       <em>
+        within
+       </em>
+       that world, but cannot choose
+       <em>
+        which
+       </em>
+       world you live in. The world is fixed. You adapt to it.
+       <br/>
+       <br/>
+       <strong style="color: #ffd700;">
+        The Crucible system inverts this:
+       </strong>
+       You can exit to The Lobby and choose from hundreds of different worlds. Each with its own governance, economy, culture, values, rules, and environment. The world is not fixed. You choose it.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       Seeing Alternatives
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       The Lobby shows you
+       <strong>
+        100-500+ different worlds
+       </strong>
+       — all visible, searchable, explorable:
+       <br/>
+       <br/>
+       <strong>
+        Economic models:
+       </strong>
+       Capitalist, socialist, gift economy, labor-token, human-currency, mixed, no-economy
+       <br/>
+       <strong>
+        Governance systems:
+       </strong>
+       Democratic, meritocratic, elder council, consensus, algorithmic, anarchic, benevolent dictator
+       <br/>
+       <strong>
+        Value systems:
+       </strong>
+       Religious, secular, spiritual, hedonistic, ascetic, work-focused, leisure-focused, family-focused
+       <br/>
+       <strong>
+        Relationship models:
+       </strong>
+       Monogamous, polyamorous, celibate, fluid, traditional, experimental
+       <br/>
+       <strong>
+        Environments:
+       </strong>
+       Urban, rural, wilderness, high-tech, low-tech, mixed
+       <br/>
+       <br/>
+       Each lobby experience shows you what life looks like in these different worlds. Virtual tours. Clear terms. Reviews from those who've lived there. Compatibility matching. You see the alternatives before you choose.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       Being Welcomed In
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       The Lobby is a
+       <strong>
+        safe, neutral space
+       </strong>
+       between all worlds:
+       <br/>
+       <br/>
+       <strong>
+        Provisions provided:
+       </strong>
+       Food, shelter, safety, basic healthcare while you decide
+       <br/>
+       <strong>
+        No pressure:
+       </strong>
+       Stay days, weeks, months — no one forces a decision
+       <br/>
+       <strong>
+        Total separation:
+       </strong>
+       Previous obligations cease immediately. You are free to explore
+       <br/>
+       <strong>
+        Neutral ground:
+       </strong>
+       No world can claim you while in The Lobby. No one can pressure you
+       <br/>
+       <br/>
+       You are welcomed to explore. To see. To understand. To take your time. The worlds are not trying to trap you — they are competing for you by offering better lives. You choose when ready.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       Choosing Between Worlds
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       This is not choosing within a world. This is
+       <strong>
+        choosing which world you live in
+       </strong>
+       :
+       <br/>
+       <br/>
+       <strong>
+        Explore:
+       </strong>
+       See what life looks like in each world. Virtual tours. Reviews. Community profiles
+       <br/>
+       <strong>
+        Match:
+       </strong>
+       Compatibility systems show which worlds suit your values, needs, preferences
+       <br/>
+       <strong>
+        Apply:
+       </strong>
+       Contact worlds that appeal. Ask questions. Express interest
+       <br/>
+       <strong>
+        Choose:
+       </strong>
+       When accepted, transport arranged. You arrive. New world begins
+       <br/>
+       <strong>
+        Iterate:
+       </strong>
+       If it doesn't fit, exit anytime. Return to Lobby. Try different world. Infinite iterations until you find the right match
+       <br/>
+       <br/>
+       The power inversion: Authority must provide value or lose members. You have agency. You can exit. You can choose. You can iterate.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       The Liberation: Pluralism Actualized
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       This is not tolerance of difference. This is
+       <strong>
+        actualization of difference
+       </strong>
+       through separate worlds:
+       <br/>
+       <br/>
+       You don't need to convince others your way is right. You don't need others to adopt your values. You don't need to change the world to fit you.
+       <br/>
+       <br/>
+       Instead: You find a world that matches your values. Others find worlds that match their values. Everyone lives in a world that fits them. No one forces their way on others.
+       <br/>
+       <br/>
+       <strong style="color: #ffd700;">
+        This is true pluralism:
+       </strong>
+       A civilization of worlds, where every being chooses their own. Where the good worlds spread. Where the bad worlds die. Where natural selection of social arrangements leads to flourishing.
+       <br/>
+       <br/>
+       The lobbies you see here are experiences of this liberation. Each one shows you: BEFORE (where you are now), THE LOBBY (seeing alternatives, being welcomed, choosing), and FULFILLMENT (where you could be). They are not just information. They are invitations to see that other worlds exist. That you can choose. That you are not trapped.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       The Four Pillars
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       For this to work, four things must be true:
+       <br/>
+       <br/>
+       <strong>
+        1. Instant Exit:
+       </strong>
+       One button press. Immediate extraction. All obligations cease. Total separation from previous situation.
+       <br/>
+       <br/>
+       <strong>
+        2. Visible Alternatives:
+       </strong>
+       100-500+ world options shown. Virtual tours. Clear terms. Reviews. Compatibility matching. You see what exists before choosing.
+       <br/>
+       <br/>
+       <strong>
+        3. Safety:
+       </strong>
+       Lobby provides provisions. Neutral territory. No pressure. Can stay as long as needed. No one can harm you while in Lobby.
+       <br/>
+       <br/>
+       <strong>
+        4. Infinite Iterations:
+       </strong>
+       Can exit any world anytime. Can try as many worlds as you want. Can return to Lobby anytime. No limit on how many times you can iterate.
+       <br/>
+       <br/>
+       Without these, exit is scary, alternatives invisible, no safety net, limited iterations. With these, exit is easy, alternatives visible, safety net exists, infinite iterations. People actually USE exit rights because it's safe and easy, which makes all arrangements genuinely voluntary.
+      </p>
+     </div>
+     <div class="lobby-feature">
+      <div class="feature-title">
+       The Point
+      </div>
+      <p style="line-height: 2; font-size: 1.15em;">
+       The point is not the technical implementation. The point is:
+       <br/>
+       <br/>
+       <strong style="color: #ffd700;">
+        A world of plurality.
+       </strong>
+       A rich world of many, many places. Places you can see as alternatives and opportunities. Places where you are welcomed in. Places you can choose between.
+       <br/>
+       <br/>
+       The lobbies are experiences of this. They show you that other worlds exist. That you are not trapped. That you can choose. That liberation is not just theory, but instant practical reality.
+       <br/>
+       <br/>
+       <em>
+        Press the button. Exit. Choose your world. Iterate until you find it.
+       </em>
+       <br/>
+       <br/>
+       This is human liberation through world choice.
+      </p>
+     </div>
+    </section>
+   </div>
+  </div>
+ </body>
+ <script src="../../../lib/nav-vimlike.js">
+ </script>
+</html>

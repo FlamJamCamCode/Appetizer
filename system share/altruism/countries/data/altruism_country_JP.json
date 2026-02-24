@@ -1,0 +1,37 @@
+{
+  "country_code": "JP",
+  "name": "Japan",
+  "approximate": true,
+  "population": 124000000,
+  "gdp_nominal_usd": 4300000000000,
+  "gdp_per_capita_usd": 43000,
+  "social_spending_pct_gdp": 23.0,
+  "health_spending_pct_gdp": 10.0,
+  "education_spending_pct_gdp": 3.5,
+  "oda_given_pct_gni": 0.34,
+  "oda_given_usd": 17000000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 13000000000,
+  "volunteering_rate_pct_adults": 20.0,
+  "volunteer_hours_billion": 1.5,
+  "child_mortality_under5_per_1000": 3.0,
+  "top_causes_of_death": [
+    "Cancers",
+    "Cardiovascular diseases",
+    "Cerebrovascular disease",
+    "Dementia"
+  ],
+  "notes": [
+    "Values are mid-2020s approximations from OECD and Japanese sources.",
+    "Japan is a major ODA donor with a strong focus on Asia."
+  ],
+  "sources": [
+    "OECD Social Expenditure Database (SOCX)",
+    "OECD DAC ODA statistics",
+    "Japan Ministry of Finance and Statistics Bureau",
+    "Japanese philanthropy and NPO reports"
+  ]
+}
+
+

@@ -1,0 +1,36 @@
+{
+  "country_code": "GM",
+  "name": "The Gambia",
+  "approximate": true,
+  "population": 2700000,
+  "gdp_nominal_usd": 2300000000,
+  "gdp_per_capita_usd": 850,
+  "social_spending_pct_gdp": 12.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 250000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 7000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.05,
+  "child_mortality_under5_per_1000": 60.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Lower respiratory infections",
+    "Diarrheal diseases"
+  ],
+  "notes": [
+    "The Gambia is a small low-income coastal country with high under-5 and maternal mortality.",
+    "ODA and diaspora remittances are crucial; figures are approximate."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

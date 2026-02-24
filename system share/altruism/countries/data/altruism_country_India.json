@@ -1,0 +1,38 @@
+{
+  "country_code": "IN",
+  "name": "India",
+  "approximate": true,
+  "population": 1400000000,
+  "gdp_nominal_usd": 3600000000000,
+  "gdp_per_capita_usd": 2600,
+  "social_spending_pct_gdp": 11.0,
+  "health_spending_pct_gdp": 2.5,
+  "education_spending_pct_gdp": 3.5,
+  "oda_given_pct_gni": 0.05,
+  "oda_given_usd": 1000000000,
+  "oda_received_usd": 6000000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 14000000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 3.0,
+  "child_mortality_under5_per_1000": 31.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Chronic respiratory diseases",
+    "Diarrheal diseases",
+    "Lower respiratory infections",
+    "Neonatal disorders"
+  ],
+  "notes": [
+    "Values are approximations based on World Bank, WHO, and Indian budget documents.",
+    "Private giving includes CSR-mandated spending and philanthropic foundations."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "Government of India budget documents",
+    "WHO Global Health Observatory",
+    "CAF India and CSR reports"
+  ]
+}
+
+

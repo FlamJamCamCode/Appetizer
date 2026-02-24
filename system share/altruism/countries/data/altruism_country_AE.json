@@ -1,0 +1,36 @@
+{
+  "country_code": "AE",
+  "name": "United Arab Emirates",
+  "approximate": true,
+  "population": 10000000,
+  "gdp_nominal_usd": 520000000000,
+  "gdp_per_capita_usd": 50000,
+  "social_spending_pct_gdp": 16.0,
+  "health_spending_pct_gdp": 4.0,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.7,
+  "oda_given_usd": 3500000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 1500000000,
+  "volunteering_rate_pct_adults": 18.0,
+  "volunteer_hours_billion": 0.2,
+  "child_mortality_under5_per_1000": 7.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Diabetes",
+    "Road injuries"
+  ],
+  "notes": [
+    "Values approximate; UAE often reports high ODA/GNI when including concessional finance.",
+    "Large remittance flows by expatriate workers are a major global altruistic channel."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "UAE government budget and aid reports",
+    "OECD and other ODA statistics",
+    "CAF World Giving Index"
+  ]
+}
+
+

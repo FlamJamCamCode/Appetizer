@@ -1,0 +1,35 @@
+{
+  "country_code": "PE",
+  "name": "Peru",
+  "approximate": true,
+  "population": 34000000,
+  "gdp_nominal_usd": 260000000000,
+  "gdp_per_capita_usd": 7650,
+  "social_spending_pct_gdp": 14.0,
+  "health_spending_pct_gdp": 5.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.02,
+  "oda_given_usd": 100000000,
+  "oda_received_usd": 800000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 1000000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 15.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Diabetes"
+  ],
+  "notes": [
+    "Peru faces regional inequalities, with higher child mortality and poverty in rural and indigenous communities.",
+    "Environmental and climate issues around the Andes and Amazon are major long-term concerns."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Peruvian budget and social spending reports"
+  ]
+}
+
+

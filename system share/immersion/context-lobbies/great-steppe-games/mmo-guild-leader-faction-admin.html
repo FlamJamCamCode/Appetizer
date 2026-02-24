@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMO Guild Leader - Rally to Faction Administration</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a0a 0%, #2d2d14 50%, #1a1a0a 100%);
+            color: #fff4d9;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(255, 193, 7, 0.12) 0%, transparent 50%);
+        }
+
+        .leadership-marker {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .people-skill {
+            color: #ffc107;
+            font-weight: 600;
+        }
+
+        .guild-stat {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="mmo-guild-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="mmo-guild-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="mmo-guild-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: Herding Pixels
+                <span class="tab-indicator">5 years managing 200 raiders</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE CALL
+                <span class="tab-indicator">Real warriors need leadership</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Faction administration mastery</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">👑 BEFORE: Guild Leader Life</h1>
+
+                <div class="pain-block">
+                    Sarah "Catalyst" Kim. 31 years old. 5 years as WoW guild leader. Top 100 US guild. 200 active raiders. Server-first achievements. People management genius.
+                    <br><br>
+                    <strong>You manage 200 personalities. Resolve conflicts. Recruit talent. Optimize rosters. Maintain morale. Strategy. Logistics. LEADERSHIP.</strong>
+                    <br><br>
+                    <span class="neologism">And your organizational genius deployed on: Managing people playing video game.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="guild-stat">Guild leadership: 5 years</div>
+                    <div class="guild-stat">Active members: 200</div>
+                    <div class="guild-stat">Server-first kills: 17</div>
+                    <div class="guild-stat">Retention rate: 87% (incredible)</div>
+                    <div class="guild-stat">Drama incidents resolved: 100+</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        <strong style="color: #ffd700;">Your guild leader skills:</strong>
+                        <br>• <strong>People management:</strong> 200 personalities, egos, conflicts, needs
+                        <br>• <strong>Recruitment:</strong> Identify talent, filter toxic players, retention
+                        <br>• <strong>Conflict resolution:</strong> Drama constantly, mediate disputes, maintain cohesion
+                        <br>• <strong>Strategic planning:</strong> Raid composition, progression strategy, long-term goals
+                        <br>• <strong>Resource allocation:</strong> Loot distribution (everyone thinks they deserve it)
+                        <br>• <strong>Motivation:</strong> Keep 200 people engaged through wipes, setbacks, burnout
+                        <br>• <strong>Communication:</strong> Clear vision, expectations, feedback loops
+                        <br>• <strong>Server politics:</strong> Alliances, rivalries, reputation management
+                        <br><br>
+                        <span class="leadership-marker">You're LEADER. ORGANIZER. PEOPLE MANAGER. You turn 200 individuals into ORGANISM.</span>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Typical guild leader week:</strong>
+                    <br><br>
+                    <strong>Monday:</strong> Recruit interview (is this DPS good? Will they fit culture?)
+                    <br><strong>Tuesday:</strong> Drama (two raiders arguing about loot)
+                    <br><strong>Wednesday:</strong> Raid night (coordinate 40 people, 4 hours, 200 wipes on boss)
+                    <br><strong>Thursday:</strong> Officer meeting (strategy, roster changes, morale issues)
+                    <br><strong>Friday:</strong> More drama (healer threatening to quit, needs retention talk)
+                    <br><strong>Weekend:</strong> Raid nights + recruiting + planning next tier
+                    <br><br>
+                    <strong style="color: #ffd700;">You spend 30 hours/week on guild management. Not playing. MANAGING. This is second job.</strong>
+                    <br><br>
+                    <span class="neologism">People management. Conflict resolution. Strategic planning. Motivation. LEADERSHIP. Deployed on WoW guild.</span>
+                </div>
+
+                <div class="pain-block">
+                    <strong>The drama you resolve:</strong>
+                    <br><br>
+                    <strong>Loot drama:</strong> "Why did he get tier piece? I have better parses!" → You explain loot council logic, maintain fairness perception.
+                    <br><br>
+                    <strong>Performance issues:</strong> Raiders underperforming, must give feedback without causing quit.
+                    <br><br>
+                    <strong>Personality conflicts:</strong> Two strong personalities clashing, both valuable, must mediate.
+                    <br><br>
+                    <strong>Burnout:</strong> Key raiders burning out, must redistribute responsibilities, maintain morale.
+                    <br><br>
+                    <strong style="color: #ffc107;">You're therapist, manager, strategist, diplomat. All for WoW guild. Your organizational genius is REAL. Just... deployed on pixels.</strong>
+                </div>
+
+                <div class="pain-block">
+                    Real job: Middle manager at insurance company. $72k/year. Managing 15 people you don't care about. Meaningless work. Corporate politics draining.
+                    <br><br>
+                    <strong>You're BETTER at managing 200 WoW raiders than 15 corporate employees. Because: You care about guild. You don't care about insurance claims.</strong>
+                </div>
+
+                <div class="pain-block" style="background: rgba(255, 215, 0, 0.2); border-color: #ffd700;">
+                    <strong style="color: #ffd700; font-size: 1.4em;">Then you discover: Great Steppe factions need administrators.</strong>
+                    <br><br>
+                    <strong>Your guild leader skills = PERFECT for faction administration.</strong>
+                    <br><br>
+                    Factions are: 1,000-12,000 warriors. Need:
+                    <br>• People management (personalities, conflicts, retention)
+                    <br>• Recruitment (identify warriors, filter toxic, maintain culture)
+                    <br>• Conflict resolution (drama happens, must resolve)
+                    <br>• Strategic planning (territory goals, combat strategy, growth)
+                    <br>• Resource allocation (who gets what rewards, perceived fairness)
+                    <br>• Motivation (keep warriors engaged through defeats)
+                    <br>• Alliance management (inter-faction politics)
+                    <br><br>
+                    <strong style="color: #ffc107; font-size: 1.2em;">This is GUILD LEADERSHIP. But REAL. With REAL warriors. Your 5 years experience TRANSFERS.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Leadership genius deployed on reality.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">👑 THE CALL</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Guild Leader Skills Transfer</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your WoW guild skills → Faction administration:
+                        <br><br>
+                        <strong style="color: #ffd700;">PEOPLE MANAGEMENT</strong>
+                        <br>• WoW: 200 raiders, egos, conflicts, retention
+                        <br>• Steppe: 2,000 warriors, same problems but REAL stakes
+                        <br><br>
+                        <strong style="color: #ffd700;">RECRUITMENT</strong>
+                        <br>• WoW: Interview DPS, check logs, assess culture fit
+                        <br>• Steppe: Interview warriors, check combat record, assess loyalty
+                        <br><br>
+                        <strong style="color: #ffd700;">CONFLICT RESOLUTION</strong>
+                        <br>• WoW: Loot drama, personality clashes, performance issues
+                        <br>• Steppe: Glory disputes, honor conflicts, territory disagreements
+                        <br><br>
+                        <strong style="color: #ffd700;">STRATEGIC PLANNING</strong>
+                        <br>• WoW: Raid progression, roster optimization, long-term guild goals
+                        <br>• Steppe: Territory conquest, warrior development, faction growth
+                        <br><br>
+                        <strong style="color: #ffd700;">RESOURCE ALLOCATION</strong>
+                        <br>• WoW: Loot distribution (everyone wants tier)
+                        <br>• Steppe: Territory/glory distribution (everyone wants recognition)
+                        <br><br>
+                        <span class="people-skill">Your guild leader brain ALREADY DOES THIS. Just... with real warriors instead of raiders.</span>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Faction Administrator Role</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">👑 FACTION ADMINISTRATOR (Golden Horde)</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Deputy administrator managing 2,000 warriors
+                            <br><strong>Reports to:</strong> Faction leader (like guild GM to raid leader relationship)
+                            <br><strong>Responsibilities:</strong> Everything except combat command
+                            <br><br>
+                            <strong>1. WARRIOR MANAGEMENT</strong>
+                            <br>• Track 2,000 individuals (like raid roster but bigger)
+                            <br>• Performance review (combat effectiveness, loyalty, morale)
+                            <br>• Career development (help warriors improve, assign mentors)
+                            <br>• Retention (warriors can leave, must keep them engaged)
+                            <br><br>
+                            <strong>2. RECRUITMENT & ONBOARDING</strong>
+                            <br>• Interview new warriors (assess skill, culture fit, motivation)
+                            <br>• Background checks (verify combat record, check references)
+                            <br>• Onboarding (integrate into faction, assign to units)
+                            <br>• Probation management (trial period, assess fit)
+                            <br><br>
+                            <strong>3. CONFLICT RESOLUTION</strong>
+                            <br>• Mediate disputes (glory arguments, personal conflicts)
+                            <br>• Disciplinary actions (when warriors violate code)
+                            <br>• Inter-unit tension (different combat units competing)
+                            <br>• Maintain cohesion (prevent faction fragmentation)
+                            <br><br>
+                            <strong>4. STRATEGIC PLANNING</strong>
+                            <br>• Growth strategy (how many warriors, what specialties)
+                            <br>• Resource allocation (territory distribution, reward systems)
+                            <br>• Long-term goals (faction vision, expansion plans)
+                            <br>• Alliance management (relationships with other factions)
+                            <br><br>
+                            <strong>5. MORALE & CULTURE</strong>
+                            <br>• Maintain engagement (through defeats, setbacks)
+                            <br>• Celebrate victories (recognition systems, glory distribution)
+                            <br>• Cultural cohesion (faction identity, shared values)
+                            <br>• Burnout prevention (warriors can exhaust, must pace)
+                            <br><br>
+                            <span class="leadership-marker">This is GUILD LEADERSHIP. But REAL. Your daemon: Turn individuals into organism. Now with REAL WARRIORS.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">An Administrator's Voice</div>
+                    <div class="quote-box">
+                        "I led WoW guild for 6 years. 250 members. Top 50 US. People management genius. Drama resolution expert. Strategic planner.
+                        <br><br>
+                        <strong style="color: #ffd700;">Deployed on video game. Managing raiders. Brilliant at it. But pixels.</strong>
+                        <br><br>
+                        I rallied to Golden Horde as faction administrator. My guild skills TRANSFERRED PERFECTLY.
+                        <br><br>
+                        <strong>People management → 2,400 warriors under my oversight</strong>
+                        <br><strong>Recruitment → Interview 40+ new warriors monthly</strong>
+                        <br><strong>Conflict resolution → Mediate disputes daily</strong>
+                        <br><strong>Strategic planning → Faction growth, territory strategy</strong>
+                        <br><strong>Morale management → Keep warriors engaged through defeats</strong>
+                        <br><br>
+                        Same skills. Same problems. Just REAL. Warriors are people. Have egos. Get in conflicts. Need leadership.
+                        <br><br>
+                        <strong style="color: #ffc107;">From guild leader to faction admin. From managing raiders to leading warriors. This is organizational genius DEPLOYED.</strong>"
+                        <br><br>
+                        <span style="color: #ffd700;">— Rachel "Sovereign" Park, 34, Golden Horde administrator, 2,400 warriors managed</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">👑 First Month: Real Leadership</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first major conflict: Two champion warriors fighting over glory credit from battle. Both threatening to leave faction.
+                        <br><br>
+                        <strong>This is LOOT DRAMA. But real. With warriors. With real consequences.</strong>
+                        <br><br>
+                        You (guild leader brain activates): Interview both. Understand grievances. Mediate. Find fair solution. Both feel heard. Conflict resolved. <strong>Both stay.</strong>
+                        <br><br>
+                        <strong style="color: #ffd700; font-size: 1.3em;">Your WoW guild skills WORKED. On REAL people. Real conflict. Real resolution.</strong>
+                        <br><br>
+                        Faction leader: "How did you do that? They were both ready to leave. You resolved it in 2 hours."
+                        <br><br>
+                        <span class="leadership-marker">You: "I've resolved 100 loot dramas. This is same. Just... real people instead of raiders."</span>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">📊 Six Months: Organizational Mastery</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        <div class="guild-stat">Warriors managed: 2,400</div>
+                        <div class="guild-stat">Retention rate: 91% (faction avg: 78%)</div>
+                        <div class="guild-stat">Conflicts resolved: 87</div>
+                        <div class="guild-stat">New warriors recruited: 340</div>
+                        <div class="guild-stat">Culture fit: 94% (screening working)</div>
+                        <br><br>
+                        <p style="margin-top: 15px;">
+                            <strong>Your reputation:</strong> "Catalyst" Kim. Best administrator in Games. Factions TRY TO RECRUIT YOU.
+                            <br><br>
+                            <span class="people-skill">From WoW guild leader to legendary administrator. Your organizational skills PROVEN on reality.</span>
+                        </p>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏆 One Year: Essential Leadership</div>
+                    <div class="quote-box" style="background: rgba(255, 215, 0, 0.2); border-color: #ffd700;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year as faction administrator. 2,400 warriors. 91% retention (faction was 78% before me).
+                            <br><br>
+                            <strong style="color: #ffd700; font-size: 1.2em;">My WoW guild skills = Perfect faction administration.</strong>
+                            <br><br>
+                            <strong>People management:</strong> 2,400 personalities. Conflicts daily. I resolve them.
+                            <br><strong>Recruitment:</strong> 480 new warriors this year. 94% culture fit (screening works).
+                            <br><strong>Conflict resolution:</strong> 203 disputes mediated. Faction cohesion maintained.
+                            <br><strong>Strategic planning:</strong> Helped faction grow from 9,800 to 12,400 warriors.
+                            <br><strong>Morale:</strong> Kept warriors engaged through 3-month losing streak. Retention held.
+                            <br><br>
+                            Faction leader calls me "irreplaceable." Warriors trust my leadership. Other factions trying to recruit me.
+                            <br><br>
+                            <span class="leadership-marker">From guild leader to essential admin. From managing pixels to leading warriors. 5 years WoW TRANSFERRED.</span>
+                        </p>
+                        <span class="speaker-name">— Sarah "Catalyst" Kim, faction administrator, organizational genius</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 193, 7, 0.3)); border: 4px double #ffd700;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center;">
+                        <strong style="color: #888; font-size: 1.4em;">From managing raiders</strong>
+                        <br><br>
+                        <strong style="color: #ffd700; font-size: 1.5em;">To leading warriors</strong>
+                        <br><br>
+                        <strong style="color: #ffc107; font-size: 1.5em;">To essential administrator</strong>
+                        <br><br>
+                        <span style="color: #ffd700; font-size: 1.2em;">👑 Guild leaders: Your skills TRANSFER 👑</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

@@ -1,0 +1,36 @@
+{
+  "country_code": "AO",
+  "name": "Angola",
+  "approximate": true,
+  "population": 35000000,
+  "gdp_nominal_usd": 80000000000,
+  "gdp_per_capita_usd": 2285,
+  "social_spending_pct_gdp": 13.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1200000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 240000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 70.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Lower respiratory infections",
+    "Diarrheal diseases"
+  ],
+  "notes": [
+    "Angola is oil-rich with high under-5 and maternal mortality and large inequality.",
+    "Oil revenues and ODA are key; potential for 'oil-for-health' style altruistic mechanisms."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

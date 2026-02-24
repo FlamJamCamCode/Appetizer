@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Strategy Player - Rally to Diplomatic Warfare</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #0a0a14 0%, #14142d 50%, #0a0a14 100%);
+            color: #e8e6ff;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(63, 81, 181, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(121, 85, 72, 0.12) 0%, transparent 50%);
+        }
+
+        .diplo-marker {
+            color: #3f51b5;
+            font-weight: bold;
+        }
+
+        .long-game {
+            color: #7986cb;
+            font-weight: 600;
+        }
+
+        .gs-stat {
+            background: rgba(63, 81, 181, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #3f51b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="grand-strategy-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="grand-strategy-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="grand-strategy-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: Painting Maps
+                <span class="tab-indicator">6,000 hours conquering pixels</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE CALL
+                <span class="tab-indicator">Real diplomacy exists</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Architect of alliances</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">🗺️ BEFORE: Grand Strategy Life</h1>
+
+                <div class="pain-block">
+                    Victoria "Machiavelli" Stone. 30 years old. 6,200 hours Europa Universalis 4. 4,800 hours Crusader Kings 3. 3,400 hours Victoria 3. Grand strategy obsessive. Diplomatic genius. Long-game master. Alliance architect.
+                    <br><br>
+                    <strong>You don't just FIGHT. You PLAN. Build alliances. Manage vassal relationships. Play factions against each other. Win through DIPLOMACY as much as combat.</strong>
+                    <br><br>
+                    <span class="neologism">And your diplomatic genius deployed on: Painting maps in video games.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="gs-stat">EU4 hours: 6,200</div>
+                    <div class="gs-stat">CK3 hours: 4,800</div>
+                    <div class="gs-stat">Successful campaigns: 340+</div>
+                    <div class="gs-stat">Diplomatic victories: 67%</div>
+                    <div class="gs-stat">Achievements: 94%</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        <strong style="color: #3f51b5;">Your grand strategy skills:</strong>
+                        <br>• <strong>Long-term planning:</strong> 100-year strategies, multi-generation thinking
+                        <br>• <strong>Alliance building:</strong> Who to befriend, who to betray, timing
+                        <br>• <strong>Vassal management:</strong> Keep subjects loyal while extracting value
+                        <br>• <strong>Diplomatic maneuvering:</strong> Play factions against each other
+                        <br>• <strong>Succession planning:</strong> Who inherits, dynastic thinking
+                        <br>• <strong>Economic warfare:</strong> Trade embargoes, economic dominance
+                        <br>• <strong>Information warfare:</strong> Spy networks, claim fabrication, casus belli engineering
+                        <br>• <strong>Coalition management:</strong> Prevent coalitions forming against you
+                        <br>• <strong>Marriage diplomacy:</strong> Strategic breeding, alliance through family
+                        <br><br>
+                        <span class="diplo-marker">You're DIPLOMAT. STRATEGIST. ARCHITECT. You win through PLANNING, not just fighting.</span>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Your EU4 playstyle:</strong>
+                    <br><br>
+                    Most players: Conquer everything militarily. Brute force.
+                    <br><br>
+                    You: Ally with France. Marry into Austria. Vassalize smaller states. Play rivals against each other. When you DO fight, enemy isolated (no allies because you MANEUVERED diplomatically). Win before battle through POSITIONING.
+                    <br><br>
+                    <strong style="color: #3f51b5;">You understand: War is continuation of politics. But politics can PREVENT war. Or make war trivial through superior positioning.</strong>
+                    <br><br>
+                    <span class="long-game">Grand strategy teaches: Long game. Patient maneuvering. Win through POSITIONING, not just fighting.</span>
+                </div>
+
+                <div class="pain-block">
+                    <strong>CK3 dynasty management:</strong>
+                    <br><br>
+                    You don't just conquer. You MARRY. Strategic breeding. Form alliances through dynasty. Your granddaughter marries their heir. 50 years later: Kingdoms unite peacefully. YOU planned this 3 generations ago.
+                    <br><br>
+                    <strong style="color: #7986cb; font-size: 1.2em;">Multi-generational thinking. Long-term positioning. Patience. PLANNING. This is statecraft.</strong>
+                </div>
+
+                <div class="pain-block">
+                    Real job: Government bureaucrat. $54k/year. Processing permit applications. "Is form 27B filled correctly?"
+                    <br><br>
+                    <strong>Your diplomatic genius deployed on: Checking paperwork.</strong>
+                </div>
+
+                <div class="pain-block" style="background: rgba(63, 81, 181, 0.2); border-color: #3f51b5;">
+                    <strong style="color: #3f51b5; font-size: 1.4em;">Then you discover: Great Steppe factions need diplomatic strategists.</strong>
+                    <br><br>
+                    <strong>Your grand strategy skills = PERFECT for inter-faction diplomacy.</strong>
+                    <br><br>
+                    The Games aren't JUST combat. They're:
+                    <br>• Alliance building (which factions ally vs which)
+                    <br>• Trade negotiations (resource exchange, supply contracts)
+                    <br>• Conflict mediation (prevent unnecessary wars)
+                    <br>• Marriage diplomacy (strategic pairings between factions)
+                    <br>• Long-term strategy (50-year faction development plans)
+                    <br>• Coalition management (prevent everyone teaming up on you)
+                    <br>• Information networks (spy systems, intelligence sharing)
+                    <br><br>
+                    <strong style="color: #7986cb; font-size: 1.2em;">This is EU4/CK3. But REAL. With REAL factions. REAL consequences. Your 6,000 hours TRANSFER.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Diplomatic genius deployed on reality.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">🗺️ THE CALL</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Grand Strategy Skills Transfer</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your Paradox game skills → Inter-faction diplomacy:
+                        <br><br>
+                        <strong style="color: #3f51b5;">ALLIANCE BUILDING</strong>
+                        <br>• EU4: Which nations to ally (power balance, mutual enemies)
+                        <br>• Steppe: Which factions to ally (shared interests, enemy-of-enemy logic)
+                        <br><br>
+                        <strong style="color: #3f51b5;">LONG-TERM PLANNING</strong>
+                        <br>• CK3: Multi-generation dynasty building
+                        <br>• Steppe: Multi-decade faction positioning
+                        <br><br>
+                        <strong style="color: #3f51b5;">VASSAL MANAGEMENT</strong>
+                        <br>• CK3: Keep vassals loyal while extracting tribute
+                        <br>• Steppe: Manage subordinate units, maintain loyalty
+                        <br><br>
+                        <strong style="color: #3f51b5;">DIPLOMATIC MANEUVERING</strong>
+                        <br>• EU4: Play rivals against each other, isolate targets
+                        <br>• Steppe: Position factions against enemies, diplomatic isolation
+                        <br><br>
+                        <strong style="color: #3f51b5;">MARRIAGE DIPLOMACY</strong>
+                        <br>• CK3: Strategic breeding, alliance through family
+                        <br>• Steppe: Arrange pairings between factions (dynastic alliance)
+                        <br><br>
+                        <span class="long-game">Your grand strategy brain ALREADY DOES THIS. Just... real factions instead of video game nations.</span>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Diplomatic Strategist Role</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">🗺️ DIPLOMATIC STRATEGIST (Golden Horde)</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Manage inter-faction relations, alliances, long-term strategy
+                            <br><strong>Scope:</strong> 12+ major factions, hundreds of minor players, complex web
+                            <br><strong>Timeframe:</strong> Think in DECADES (like Paradox games)
+                            <br><br>
+                            <strong>ALLIANCE ARCHITECTURE</strong>
+                            <br>• Build coalitions (like EU4 alliances)
+                            <br>• Manage relationships (trust, betrayal, reputation)
+                            <br>• Play factions against each other (divide enemies)
+                            <br>• Prevent coalitions forming against your faction
+                            <br><br>
+                            <strong>LONG-TERM STRATEGY</strong>
+                            <br>• 20-50 year plans (like grand strategy timeframes)
+                            <br>• Position faction for future dominance
+                            <br>• Anticipate shifts in power balance
+                            <br>• Multi-decade thinking (plant seeds that bear fruit later)
+                            <br><br>
+                            <strong>MARRIAGE DIPLOMACY</strong>
+                            <br>• Arrange strategic pairings (like CK3)
+                            <br>• Build dynastic connections between factions
+                            <br>• Long-term genetic/cultural integration
+                            <br><br>
+                            <strong>ECONOMIC WARFARE</strong>
+                            <br>• Trade agreements (benefit you, constrain rivals)
+                            <br>• Embargoes (isolate enemies economically)
+                            <br>• Resource monopoly (control critical supplies)
+                            <br><br>
+                            <strong>INFORMATION WARFARE</strong>
+                            <br>• Spy networks (like EU4 spy systems)
+                            <br>• Claim fabrication (justify actions)
+                            <br>• Propaganda (shape faction perceptions)
+                            <br><br>
+                            <span class="diplo-marker">This is GRAND STRATEGY. But REAL. Your daemon: Win through POSITIONING. Now with REAL FACTIONS.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Strategist's Voice</div>
+                    <div class="quote-box">
+                        "I was EU4/CK3 player. 8,000 hours. Diplomatic genius. Alliance architect. Long-game master. Won through POSITIONING, not just fighting.
+                        <br><br>
+                        <strong style="color: #3f51b5;">Deployed on video game nations. Brilliant maneuvering. But pixels.</strong>
+                        <br><br>
+                        I rallied to Golden Horde as diplomatic strategist. My Paradox skills TRANSFERRED PERFECTLY.
+                        <br><br>
+                        <strong>Alliance building → Formed coalition of 4 factions vs Red Banner</strong>
+                        <br><strong>Long-term planning → Positioned faction for 20-year dominance</strong>
+                        <br><strong>Marriage diplomacy → Arranged 7 strategic pairings (dynastic ties)</strong>
+                        <br><strong>Economic warfare → Trade agreements favoring us</strong>
+                        <br><strong>Information warfare → Spy networks in 8 factions</strong>
+                        <br><br>
+                        We won 3 wars WITHOUT FIGHTING. Enemies isolated diplomatically, surrendered rather than face coalition. POSITIONING won.
+                        <br><br>
+                        <strong style="color: #7986cb;">From EU4 to real diplomacy. From painting maps to architecting alliances. This is grand strategy FULFILLMENT.</strong>"
+                        <br><br>
+                        <span style="color: #3f51b5;">— Victoria "Machiavelli" Stone, 32, diplomatic strategist, alliance architect</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🗺️ First Diplomatic Victory: War Avoided</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first major assignment. Red Banner threatening war. 12,000 warriors vs your 11,500. Close match. High casualties expected.
+                        <br><br>
+                        <strong>Most advisors say: "Prepare for war." You say: "Maneuver diplomatically."</strong>
+                        <br><br>
+                        You (EU4 brain activates): Build coalition. Ally with Mongolian Horde + Pashtun Legion. Red Banner now faces 11,500 + 9,800 + 6,700 = 28,000. Outnumbered 2.3:1.
+                        <br><br>
+                        <strong style="color: #3f51b5; font-size: 1.3em;">Red Banner withdraws threat. War avoided through DIPLOMACY. Like EU4: Coalition prevented war.</strong>
+                        <br><br>
+                        <span class="diplo-marker">Your grand strategy skills WORKED. On REALITY. Diplomacy PROVEN.</span>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">💍 Six Months: Marriage Diplomacy Success</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        You arranged strategic marriage: Golden Horde champion warrior + Valkyrie Legion champion. Both elite. Both attractive. Good genetic match.
+                        <br><br>
+                        <strong>Result:</strong> Permanent alliance formed. Military cooperation. Intelligence sharing. Trade preferential treatment.
+                        <br><br>
+                        <strong style="color: #7986cb;">Like CK3 marriage diplomacy. But REAL. Their child (now 3 months old) is LITERAL dynastic tie between factions.</strong>
+                        <br><br>
+                        <span class="long-game">You planned this to pay off over 50 years. Factions becoming family. Alliance unbreakable.</span>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏆 One Year: Diplomatic Architect</div>
+                    <div class="quote-box" style="background: rgba(63, 81, 181, 0.2); border-color: #3f51b5;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year as diplomatic strategist. 3 wars avoided through diplomacy. 7 alliances architected. 4 enemy factions diplomatically isolated.
+                            <br><br>
+                            <strong style="color: #3f51b5; font-size: 1.2em;">My Paradox skills = Perfect diplomatic strategy.</strong>
+                            <br><br>
+                            <strong>Alliance building:</strong> Formed coalition preventing Red Banner dominance.
+                            <br><strong>Long-term planning:</strong> 20-year strategy positioning faction for supremacy.
+                            <br><strong>Marriage diplomacy:</strong> 11 strategic pairings creating dynastic ties.
+                            <br><strong>Economic warfare:</strong> Trade agreements favoring us, rivals constrained.
+                            <br><strong>Information networks:</strong> Spies in 9 factions providing intelligence edge.
+                            <br><br>
+                            We won territory through DIPLOMACY as much as combat. Enemies surrendered when isolated. Coalition threat prevented wars. POSITIONING won.
+                            <br><br>
+                            <span class="diplo-marker">From EU4/CK3 to real statecraft. From painting maps to architecting alliances. 6,000 hours TRANSFERRED.</span>
+                        </p>
+                        <span class="speaker-name">— Victoria "Machiavelli" Stone, diplomatic strategist, alliance master</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(63, 81, 181, 0.3), rgba(121, 85, 72, 0.3)); border: 4px double #3f51b5;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center; font-family: 'Crimson Text', serif;">
+                        <strong style="color: #888; font-size: 1.4em;">From painting maps</strong>
+                        <br><br>
+                        <strong style="color: #3f51b5; font-size: 1.5em;">To architecting alliances</strong>
+                        <br><br>
+                        <strong style="color: #7986cb; font-size: 1.5em;">To winning through positioning</strong>
+                        <br><br>
+                        <span style="color: #3f51b5; font-size: 1.2em;">🗺️ Grand strategy: Diplomacy TRANSFERS 🗺️</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

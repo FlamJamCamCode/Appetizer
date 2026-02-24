@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Medic - Rally to Save Warriors Eternally</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #001a14 0%, #003329 50%, #001a14 100%);
+            color: #d0f0e8;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(46, 204, 113, 0.18) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(26, 188, 156, 0.15) 0%, transparent 50%);
+        }
+
+        .healer-marker {
+            color: #2ecc71;
+            font-weight: 600;
+        }
+
+        .save-count {
+            color: #1abc9c;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="combat-medic-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="combat-medic-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="combat-medic-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: The Futility
+                <span class="tab-indicator">Saving for nothing</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE LOBBY
+                <span class="tab-indicator">Respawn islands need you</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Saving eternally</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">💔 BEFORE: Saving for Nothing</h1>
+
+                <div class="pain-block">
+                    Dr. Sarah Chen. 32 years old. ER trauma surgeon. Top of medical school. 7 years emergency medicine. Brilliant at saving lives.
+                    <br><br>
+                    <strong>You save people. And then they... what?</strong>
+                    <br><br>
+                    <span class="neologism">Return to lives that broke them. To circumstances that nearly killed them. To futures that aren't better.</span>
+                </div>
+
+                <div class="pain-block">
+                    Gunshot victim: You save him. Surgery perfect. Recovery complete. Back to gang neighborhood. <strong>Shot again 6 months later. Dies this time.</strong>
+                    <br><br>
+                    Overdose patient: You resuscitate her. Naloxone saves her. Mental health referral given. <strong>Back next month. Same drug. Doesn't survive.</strong>
+                    <br><br>
+                    Car accident: You rebuild his shattered body. Months of rehab. He walks again. <strong>Back to job he hates. Drinks. Crashes again.</strong>
+                </div>
+
+                <div class="pain-block">
+                    <span class="healer-marker">You're BRILLIANT at saving lives. And then they return to circumstances that waste those lives.</span>
+                    <br><br>
+                    <strong>You save them from death. Not from meaningless existence. Not from returning to what nearly killed them.</strong>
+                    <br><br>
+                    You're emergency surgeon. Your job: Keep alive. Not: Fix what makes life worth living. They leave your ER alive. And then... nothing changes.
+                </div>
+
+                <div class="pain-block">
+                    Physician burnout statistics: 63% of ER doctors. Depression. Substance abuse. Suicide rates high.
+                    <br><br>
+                    <strong>You understand why.</strong>
+                    <br><br>
+                    <span class="neologism">You save people endlessly. And nothing you save them FOR is worth what you put in. They return to mediocrity. Or worse: back to your ER, more broken.</span>
+                </div>
+
+                <div class="pain-block" style="background: rgba(46, 204, 113, 0.2); border-color: #2ecc71;">
+                    <strong style="color: #2ecc71; font-size: 1.4em;">Then you hear: The Steppe Games need combat medics for Respawn Islands.</strong>
+                    <br><br>
+                    Warriors "die" in combat. Extracted to island. <strong>Your job: Heal them. Send them back to combat. To PURPOSE. To glory. To lives worth living.</strong>
+                    <br><br>
+                    Not: Save them to return to gang violence. Not: Save them to return to addiction. <strong>Save them to return to WARRIOR LIFE. To meaning. To fulfillment.</strong>
+                    <br><br>
+                    <strong style="color: #1abc9c; font-size: 1.2em;">Your healing skills deployed on people living for something. Finally.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Saving people who value what you give them.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">🏥 THE LOBBY</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">The Futility Ends</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Rally to Respawn Island as trauma surgeon. <strong>Your ER skills PERFECT for this.</strong>
+                        <br><br>
+                        Warriors arrive "killed" (non-lethal, but body damaged). You heal. They recover. They RETURN TO COMBAT. To lives they WANT. To purpose they CHOSE.
+                        <br><br>
+                        <strong style="color: #2ecc71;">You save them for SOMETHING. Not nothing. For glory. For fulfillment. For warrior life.</strong>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">What Respawn Island Needs</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">🏥 RESPAWN ISLAND MEDICAL</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Trauma surgeon for "killed" warriors
+                            <br><strong>Patients:</strong> 200-400 warriors daily (high combat factions like Einherjar → high "death" rates → high patient load)
+                            <br><strong>Injuries:</strong> Neural scrambler effects (primary). Blunt trauma. Fractures. Exhaustion.
+                            <br><strong>Recovery time:</strong> 2-3 weeks per warrior (they return to combat after)
+                            <br><strong>Success metric:</strong> 99.9% return rate (warriors almost never permanently injured—your protocols working)
+                            <br><strong>Compensation:</strong> $450k/year + faction bonuses
+                            <br><br>
+                            <span class="healer-marker">Your ER skills deployed on warriors returning to PURPOSE. You save them for glory. They're grateful. They return. Cycle repeats.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">What's Different Here</div>
+                    <ul style="font-size: 1.1em; line-height: 1.9;">
+                        <li><strong>Grateful patients:</strong> Warriors THANK YOU. You returned them to combat (what they want). Not: saving them to return to misery.</li>
+                        <li><strong>Meaningful work:</strong> Your healing enables Valhalla. Eternal combat. Purpose fulfilled.</li>
+                        <li><strong>Repeat patients = SUCCESS:</strong> In ER, repeat patients = failure (didn't fix underlying issue). Here: Repeat warriors = They're living warrior life (dying and respawning as intended).</li>
+                        <li><strong>No burnout:</strong> Medics here: Low burnout rates. Because: Patients value what you give them.</li>
+                    </ul>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Respawn Medic's Voice</div>
+                    <div class="quote-box">
+                        "I was ER surgeon. Brilliant. Burned out. Saving people for lives not worth living.
+                        <br><br>
+                        <strong style="color: #2ecc71;">I rallied to Respawn Island. Now I save warriors.</strong>
+                        <br><br>
+                        They arrive 'killed' in combat. I heal them. They recover. They RETURN TO FIGHTING. To lives they CHOOSE. To purpose they VALUE.
+                        <br><br>
+                        <strong>They thank me. With tears. With gratitude. 'You returned me to glory. You enabled Valhalla.'</strong>
+                        <br><br>
+                        <span class="save-count">I've treated 8,400 warriors in 2 years. 8,367 returned to combat. 99.96% success rate.</span>
+                        <br><br>
+                        <strong style="color: #1abc9c;">From futility to fulfillment. From saving for nothing to saving for glory. This is what healing was MEANT to be.</strong>"
+                        <br><br>
+                        <span style="color: #2ecc71;">— Dr. Maria Santos, 34, Respawn Island surgeon, 8,400 warriors saved</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏥 First Warrior Saved</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first patient: Red Banner warrior. "Killed" by neural scrambler. Body in shock. Neural pathways disrupted.
+                        <br><br>
+                        You treat him (your ER skills PERFECT for this). Recovery protocol. 18 days.
+                        <br><br>
+                        <strong>He returns to combat. Back to warrior life. Back to PURPOSE.</strong>
+                        <br><br>
+                        Before leaving, he grips your hand: "You returned me to glory. Thank you, healer. Odin bless your work."
+                        <br><br>
+                        <strong style="color: #2ecc71; font-size: 1.3em;">First time patient VALUED what you gave. First time saving someone for SOMETHING.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🔄 First Repeat Warrior</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Same warrior returns. "Killed" again. Third time in 8 months.
+                        <br><br>
+                        <strong>In ER, this would be failure.</strong> Repeat patient = Didn't fix root problem.
+                        <br><br>
+                        <strong style="color: #2ecc71;">Here? This is SUCCESS.</strong> He's living warrior life. Dying and respawning (as designed). Valhalla working.
+                        <br><br>
+                        He grins seeing you: "Healer! I return to your care. I fought gloriously. Now heal me again so I can fight MORE."
+                        <br><br>
+                        <span class="healer-marker">You're enabling his purpose. His joy. His FULFILLMENT. Repeat patient means system WORKING.</span>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">💚 One Year: Healer Fulfilled</div>
+                    <div class="quote-box" style="background: rgba(46, 204, 113, 0.2); border-color: #2ecc71;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year on Respawn Island. <span class="save-count">4,200 warriors treated. 4,187 returned to combat. 99.97% success rate.</span>
+                            <br><br>
+                            <strong style="color: #2ecc71; font-size: 1.2em;">Every warrior grateful. Every save meaningful. Every return to combat is SUCCESS.</strong>
+                            <br><br>
+                            I'm not burned out. I'm ENERGIZED. Because: I save people for SOMETHING. For glory. For purpose. For lives they WANT.
+                            <br><br>
+                            <strong>Warriors thank me with tears. With oaths. With dedication of their victories to me. "This conquest in your honor, healer. You enabled my return."</strong>
+                            <br><br>
+                            <span class="healer-marker">From ER futility to respawn fulfillment. From saving for nothing to enabling Valhalla. This is what healing was MEANT to be.</span>
+                        </p>
+                        <span class="speaker-name">— Dr. Sarah Chen, Respawn Island surgeon, warriors' savior</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.3), rgba(26, 188, 156, 0.3)); border: 4px double #2ecc71;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center;">
+                        <strong style="color: #888; font-size: 1.4em;">From saving for nothing</strong>
+                        <br><br>
+                        <strong style="color: #2ecc71; font-size: 1.5em;">To saving for glory</strong>
+                        <br><br>
+                        <strong style="color: #1abc9c; font-size: 1.5em;">To enabling Valhalla</strong>
+                        <br><br>
+                        <span style="color: #2ecc71; font-size: 1.2em;">💚 4,187 warriors returned to purpose 💚</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

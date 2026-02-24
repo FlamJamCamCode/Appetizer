@@ -1,0 +1,88 @@
+.paren-group {
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  border-radius: 4px;
+  padding: 0 2px;
+  border-bottom: 1px dashed transparent;
+}
+
+.paren-group[data-state="collapsed"] {
+  border-bottom-color: rgba(48, 86, 211, 0.35);
+  background: rgba(48, 86, 211, 0.08);
+}
+
+.paren-group.paren-hover {
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.paren-group[data-state="expanded"] {
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+.paren-group .paren-placeholder {
+  font-style: italic;
+  opacity: 0.65;
+  display: inline;
+}
+
+.paren-group[data-state="expanded"] .paren-placeholder {
+  display: none;
+}
+
+.paren-group .paren-inner {
+  transition: opacity 0.1s ease;
+  display: inline;
+}
+
+.paren-group[data-state="collapsed"] .paren-inner {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+  position: absolute;
+}
+
+.paren-group .paren-open,
+.paren-group .paren-close {
+  font-weight: 600;
+}
+
+.paren-group[data-state="collapsed"] .paren-open,
+.paren-group[data-state="collapsed"] .paren-close {
+  color: rgba(48, 86, 211, 0.9);
+}
+
+.paren-group[data-state="expanded"] .paren-open,
+.paren-group[data-state="expanded"] .paren-close {
+  color: inherit;
+}
+
+.paren-group.paren-disabled {
+  cursor: default;
+}
+
+.paren-group.paren-disabled[data-state="collapsed"] {
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+.paren-group.paren-disabled .paren-placeholder {
+  display: none;
+}
+
+.paren-group.paren-disabled .paren-inner {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  white-space: normal;
+  pointer-events: auto;
+  position: static;
+}

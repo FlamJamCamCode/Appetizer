@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crucible Foundations Reader</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../lib/text-helpers/paren-default.css" />
+  <link rel="stylesheet" href="../../lib/glossary/glossary.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+
+  <!-- script src="../../lib/nav-vimlike.js" defer></script -->
+
+  <script src="../../lib/text-helpers/paren-core.js" defer></script>
+  <script src="../../lib/text-helpers/mouse.paren-visualizer.js" defer></script>
+  <script src="../../lib/glossary/glossary.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 id="header-title">The Crucible Foundations Reader</h1>
+    <div class="header-controls">
+      <button class="control-button" id="paren-toggle" aria-label="Toggle parenthesis collapsing">
+        <span id="paren-toggle-text">Show Raw Text</span>
+      </button>
+      <button class="control-button" id="paren-help-btn" aria-label="Show parenthesis controls help">
+        ?
+      </button>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menu-toggle">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+  <div class="paren-help" id="paren-help">
+    <button class="paren-help-close" id="paren-help-close" aria-label="Close help">×</button>
+    <h3>Parenthesis Controls</h3>
+    <ul>
+      <li><strong>Left Click:</strong> Expand one level deeper</li>
+      <li><strong>Right Click:</strong> Collapse one level</li>
+      <li><strong>Hover:</strong> Temporarily expand all levels (1.5s delay before collapse)</li>
+      <li><strong>Show Raw Text:</strong> Disable collapsing to view all parentheses expanded</li>
+    </ul>
+  </div>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <aside id="sidebar">
+    <div class="sidebar-controls">
+      <button class="control-button" id="paren-toggle-mobile" aria-label="Toggle parenthesis collapsing">
+        <span id="paren-toggle-text-mobile">Show Raw Text</span>
+      </button>
+      <button class="control-button" id="paren-help-btn-mobile" aria-label="Show parenthesis controls help">
+        ?
+      </button>
+    </div>
+    <input type="search" id="search" placeholder="Search documents" aria-label="Search documents" />
+    <ul id="file-list" aria-label="Foundation documents"></ul>
+  </aside>
+  <main>
+    <div id="status">Loading local example…</div>
+    <article id="content" aria-live="polite">
+    </article>
+  </main>
+
+  <script>
+    const READER_X = 500;
+    const READER_Y = 800;
+    const manifestPath = 'manifest.json';
+    const listEl = document.getElementById('file-list');
+    const contentEl = document.getElementById('content');
+    const searchEl = document.getElementById('search');
+    const statusEl = document.getElementById('status');
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const headerTitle = document.getElementById('header-title');
+    const parenToggle = document.getElementById('paren-toggle');
+    const parenToggleText = document.getElementById('paren-toggle-text');
+    const parenToggleMobile = document.getElementById('paren-toggle-mobile');
+    const parenToggleTextMobile = document.getElementById('paren-toggle-text-mobile');
+    const parenHelpBtn = document.getElementById('paren-help-btn');
+    const parenHelpBtnMobile = document.getElementById('paren-help-btn-mobile');
+    const parenHelp = document.getElementById('paren-help');
+    const parenHelpClose = document.getElementById('paren-help-close');
+    let manifest = [];
+    let filtered = [];
+    let treeRoot = null;
+    let currentDocPath = null;
+    let parenCollapsingEnabled = true;
+
+    function isMobile() {
+      return window.innerWidth <= 960;
+    }
+
+    function openSidebar() {
+      if (!isMobile()) return;
+      sidebar.classList.add('open');
+      sidebarOverlay.classList.add('active');
+      document.body.classList.add('sidebar-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeSidebar() {
+      if (!isMobile()) return;
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('active');
+      document.body.classList.remove('sidebar-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleSidebar() {
+      if (sidebar.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    }
+
+    menuToggle.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', closeSidebar);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && sidebar.classList.contains('open')) {
+        closeSidebar();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isMobile()) {
+        closeSidebar();
+      }
+      adjustHeaderTitle();
+    });
+
+    function adjustHeaderTitle() {
+      if (!headerTitle) return;
+      
+      const header = headerTitle.parentElement;
+      const headerControls = header.querySelector('.header-controls');
+      if (!header || !headerControls) return;
+      
+      // Use requestAnimationFrame to ensure layout is complete
+      requestAnimationFrame(() => {
+        // Get available width for title
+        const headerRect = header.getBoundingClientRect();
+        const controlsRect = headerControls.getBoundingClientRect();
+        const padding = 3 * 16; // 1.5rem padding on each side (1rem = 16px, 1.5rem = 24px, but let's use 3*16 for safety)
+        const availableWidth = headerRect.width - controlsRect.width - padding;
+        
+        // Text variants in order of removal
+        const variants = [
+          'The Crucible Foundations Reader',
+          'Crucible Foundations Reader',
+          'Crucible Foundations',
+          'Crucible'
+        ];
+        
+        // Measure which variant fits
+        const tempSpan = document.createElement('span');
+        tempSpan.style.position = 'absolute';
+        tempSpan.style.visibility = 'hidden';
+        tempSpan.style.whiteSpace = 'nowrap';
+        tempSpan.style.fontSize = getComputedStyle(headerTitle).fontSize;
+        tempSpan.style.fontWeight = getComputedStyle(headerTitle).fontWeight;
+        tempSpan.style.fontFamily = getComputedStyle(headerTitle).fontFamily;
+        document.body.appendChild(tempSpan);
+        
+        let selectedText = variants[variants.length - 1]; // Start with shortest
+        for (const variant of variants) {
+          tempSpan.textContent = variant;
+          if (tempSpan.offsetWidth <= availableWidth) {
+            selectedText = variant;
+            break;
+          }
+        }
+        
+        document.body.removeChild(tempSpan);
+        headerTitle.textContent = selectedText;
+      });
+    }
+
+    function toggleParenCollapsing() {
+      parenCollapsingEnabled = !parenCollapsingEnabled;
+      const contentEl = document.getElementById('content');
+      
+      if (parenCollapsingEnabled) {
+        if (window.ParenCore && window.ParenCore.enableCollapsing) {
+          window.ParenCore.enableCollapsing(contentEl);
+        }
+        const text = 'Show Raw Text';
+        if (parenToggleText) parenToggleText.textContent = text;
+        if (parenToggleTextMobile) parenToggleTextMobile.textContent = text;
+        if (parenToggle) parenToggle.classList.remove('active');
+        if (parenToggleMobile) parenToggleMobile.classList.remove('active');
+      } else {
+        if (window.ParenCore && window.ParenCore.disableCollapsing) {
+          window.ParenCore.disableCollapsing(contentEl);
+        }
+        const text = 'Enable Collapsing';
+        if (parenToggleText) parenToggleText.textContent = text;
+        if (parenToggleTextMobile) parenToggleTextMobile.textContent = text;
+        if (parenToggle) parenToggle.classList.add('active');
+        if (parenToggleMobile) parenToggleMobile.classList.add('active');
+      }
+      
+      // Close sidebar on mobile after toggling
+      if (isMobile()) {
+        closeSidebar();
+      }
+    }
+
+    function toggleParenHelp() {
+      parenHelp.classList.toggle('visible');
+      
+      // Close sidebar on mobile after toggling help
+      if (isMobile()) {
+        closeSidebar();
+      }
+    }
+
+    if (parenToggle) {
+      parenToggle.addEventListener('click', toggleParenCollapsing);
+    }
+    if (parenToggleMobile) {
+      parenToggleMobile.addEventListener('click', toggleParenCollapsing);
+    }
+    if (parenHelpBtn) {
+      parenHelpBtn.addEventListener('click', toggleParenHelp);
+    }
+    if (parenHelpBtnMobile) {
+      parenHelpBtnMobile.addEventListener('click', toggleParenHelp);
+    }
+    if (parenHelpClose) {
+      parenHelpClose.addEventListener('click', toggleParenHelp);
+    }
+
+    function getCollapseOptions(target) {
+      if (!target || typeof target.getAttribute !== 'function') {
+        return {};
+      }
+      const attr = target.getAttribute('data-collapse-threshold');
+      const parsed = attr != null ? parseInt(attr, 10) : NaN;
+      if (!Number.isNaN(parsed)) {
+        return { collapseThreshold: parsed };
+      }
+      return {};
+    }
+
+    function applyParenEnhancements(target, { force = false } = {}) {
+      if (!target || !window.ParenCore || typeof window.ParenCore.process !== 'function') {
+        return;
+      }
+      if (!force && target.dataset.parenProcessed === 'true') {
+        return;
+      }
+      const options = getCollapseOptions(target);
+      window.ParenCore.process(target, options);
+      target.dataset.parenProcessed = 'true';
+      if (window.MouseParenVisualizer && typeof window.MouseParenVisualizer.refresh === 'function') {
+        window.MouseParenVisualizer.refresh(target);
+      }
+    }
+
+    function normalize(str) {
+      return str.toLowerCase();
+    }
+
+    function extractNumericPrefix(text) {
+      const match = text.match(/^(\d{1,4})/);
+      return match ? parseInt(match[1], 10) : Number.POSITIVE_INFINITY;
+    }
+
+    function findItemByPath(path) {
+	    result = manifest.find((entry) => entry.path === path)
+	    if(!result) { 
+	    	result = manifest.find((entry) => entry.shortcut === path)
+	    }
+	    if(!result) {
+	    	result = manifest.find((entry) => entry.fileName === path)
+		console.warn("Not normal link, trying: fileName", result)
+	    }
+	    if(!result) {
+	    	result = manifest.find((entry) => entry.legacy_shortcut === path)
+		console.warn("Not normal link, trying: legacy shortcut variety", result)
+	    }
+	    if(!result) {
+		r = manifest.reduce((acc, entry) => {
+			words = entry.title.split(" ")
+			pwords = path.split(/[-_ /\.]/)
+			for(i = 0; i < words.length; i++) {
+				for(j = 0; j < pwords.length; j++) { 
+					rchar_hi = 0
+					k = 0
+					for(;i+k < words.length && j+k < pwords.length && words[i+k].toLowerCase() == pwords[j+k].toLowerCase(); k++) {
+						rchar_hi += words[i+k].length
+					}
+					if(rchar_hi > acc.char_hi.v) {
+						acc.char_hi = {v: rchar_hi, i: i, k: k, entry: entry}
+					}
+
+					if(k > acc.word_hi.v) {
+						acc.word_hi = {v: k, i: i, entry: entry}
+					}
+				}
+			}
+			return acc
+		}, {char_hi: {v: -1, k: -1, i: -1, entry: {}}, word_hi: {v: -1, i: -1, entry: {}}})
+		console.warn("Failing to title words search variety", r)
+		result = r.char_hi.entry ? r.char_hi.entry : r.word_hi.entry
+	   }
+	   return result
+    }
+
+    function findButtonByPath(path) {
+      return Array.from(listEl.querySelectorAll('button')).find((btn) => btn.dataset.path === path);
+    }
+
+    function updateHistoryState(path, { replace = false } = {}) {
+      if (!path) return;
+      const url = new URL(window.location);
+      url.searchParams.set('doc', path);
+      const state = { doc: path };
+      if (replace) {
+        history.replaceState(state, '', url);
+      } else {
+        history.pushState(state, '', url);
+      }
+    }
+
+    function getDocPathFromLocation() {
+      if (history.state && history.state.doc) {
+        return history.state.doc;
+      }
+      const url = new URL(window.location);
+      return url.searchParams.get('doc');
+    }
+
+    function openDocumentByPath(path, options = {}) {
+      const item = findItemByPath(path);
+      if (!item) {
+        return false;
+      }
+      const button = findButtonByPath(item.path);
+      loadDocument(item, button, options);
+      return true;
+    }
+
+    function handlePopState(event) {
+      const path = (event.state && event.state.doc) || getDocPathFromLocation();
+      if (!path) {
+        return;
+      }
+      if (path === currentDocPath) {
+        return;
+      }
+      openDocumentByPath(path, { updateHistory: false, force: true });
+    }
+
+    function sortFiles(files) {
+      return [...files].sort((a, b) => {
+        const numA = extractNumericPrefix(a.fileName);
+        const numB = extractNumericPrefix(b.fileName);
+        if (numA !== numB) return numA - numB;
+        return a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' });
+      });
+    }
+
+    function sortDirectories(entries) {
+      return [...entries].sort((a, b) => {
+        const nameA = a[1].name.toLowerCase();
+        const nameB = b[1].name.toLowerCase();
+        return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
+      });
+    }
+
+    function buildTree(items) {
+      const root = { name: 'Foundations', path: '', files: [], children: new Map() };
+
+      items.forEach((item) => {
+        const segments = item.path.split('/');
+        if (segments.length === 1) {
+          root.files.push(item);
+          return;
+        }
+
+        segments.reduce((node, segment, index) => {
+          if (index === segments.length - 1) {
+            node.files.push(item);
+            return node;
+          }
+
+          if (!node.children.has(segment)) {
+            node.children.set(segment, { name: segment, path: node.path ? `${node.path}/${segment}` : segment, files: [], children: new Map() });
+          }
+          return node.children.get(segment);
+        }, root);
+      });
+
+      return root;
+    }
+
+    function formatDirectoryName(name) {
+      if (!name || name === 'Foundations') return 'Foundational Documents';
+      return name
+        .replace(/[-_]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+    }
+
+    function getSeriesKey(fileName) {
+      const match = fileName.trim().match(/^(\d{1,4})/);
+      return match ? match[1] : null;
+    }
+
+    function createFileList(items) {
+      const list = document.createElement('ul');
+      list.className = 'file-list-group';
+
+      sortFiles(items).forEach((item) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.dataset.path = item.path;
+        btn.dataset.title = item.title;
+        btn.innerHTML = `
+          <span class="file-title">${item.title}</span>
+          <span class="file-category">${item.category}</span>
+        `;
+        btn.addEventListener('click', () => loadDocument(item, btn));
+        list.appendChild(li);
+        li.appendChild(btn);
+      });
+
+      return list;
+    }
+
+    function renderSectionFiles(parentEl, files) {
+      if (!files.length) return;
+
+      const seriesGroups = new Map();
+      const ungrouped = [];
+
+      files.forEach((item) => {
+        const seriesKey = getSeriesKey(item.fileName);
+        if (seriesKey) {
+          if (!seriesGroups.has(seriesKey)) {
+            seriesGroups.set(seriesKey, []);
+          }
+          seriesGroups.get(seriesKey).push(item);
+        } else {
+          ungrouped.push(item);
+        }
+      });
+
+      const sortedSeriesKeys = Array.from(seriesGroups.keys()).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+
+      sortedSeriesKeys.forEach((key) => {
+        const groupItems = seriesGroups.get(key);
+        const details = document.createElement('details');
+        details.className = 'series-group';
+        const summary = document.createElement('summary');
+	summary.textContent = `${groupItems[0] && groupItems[0].title ? groupItems[0].title.slice(0,24) : key} (${groupItems.length})`;
+        details.appendChild(summary);
+        details.appendChild(createFileList(groupItems));
+        parentEl.appendChild(details);
+      });
+
+      if (ungrouped.length) {
+        parentEl.appendChild(createFileList(ungrouped));
+      }
+    }
+
+    function createDirectoryNode(node, depth = 0) {
+      const details = document.createElement('details');
+      details.open = false;
+      details.className = 'tree-group';
+
+      const summary = document.createElement('summary');
+      summary.textContent = formatDirectoryName(node.name);
+      details.appendChild(summary);
+
+      renderSectionFiles(details, node.files);
+
+      const childEntries = sortDirectories(node.children.entries ? node.children.entries() : []);
+      if (childEntries.length) {
+        childEntries.forEach(([_, childNode]) => {
+          details.appendChild(createDirectoryNode(childNode, depth + 1));
+        });
+      }
+
+      return details;
+    }
+
+    function renderTreeView(rootNode) {
+      listEl.innerHTML = '';
+
+      if (!rootNode) return;
+
+      if (rootNode.files.length) {
+        const rootDetails = document.createElement('details');
+        rootDetails.className = 'tree-group';
+        const summary = document.createElement('summary');
+        summary.textContent = 'Primary Foundations';
+        rootDetails.appendChild(summary);
+        renderSectionFiles(rootDetails, rootNode.files);
+        listEl.appendChild(rootDetails);
+      }
+
+      const childEntries = sortDirectories(rootNode.children.entries ? rootNode.children.entries() : []);
+      childEntries.forEach(([__, child]) => {
+        listEl.appendChild(createDirectoryNode(child));
+      });
+    }
+
+    function renderSearchResults(items) {
+      listEl.innerHTML = '';
+
+      if (!items.length) {
+        const empty = document.createElement('li');
+        empty.textContent = 'No documents match your search.';
+        empty.style.padding = '1rem';
+        listEl.appendChild(empty);
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      items.forEach((item) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.dataset.path = item.path;
+        btn.dataset.title = item.title;
+        btn.innerHTML = `
+          <span class="file-title">${item.title}</span>
+          <span class="file-category">${item.category}</span>
+        `;
+        btn.addEventListener('click', () => {
+          const replaceHistory = !currentDocPath;
+          loadDocument(item, btn, { replaceHistory });
+        });
+        li.appendChild(btn);
+        fragment.appendChild(li);
+      });
+
+      listEl.appendChild(fragment);
+    }
+
+    function filterList(query) {
+      const q = normalize(query);
+      if (!q) {
+        renderTreeView(treeRoot);
+        return;
+      }
+
+      filtered = manifest.filter((item) => {
+        return (
+          normalize(item.title).includes(q) ||
+          normalize(item.category).includes(q) ||
+          normalize(item.path).includes(q)
+        );
+      });
+      renderSearchResults(filtered);
+    }
+
+    function setActiveButton(activeBtn) {
+      const buttons = listEl.querySelectorAll('button');
+      buttons.forEach((btn) => btn.classList.toggle('active', activeBtn ? btn === activeBtn : false));
+    }
+
+    async function loadDocument(item, buttonEl, options = {}) {
+      if (!item) return;
+      const { updateHistory = true, replaceHistory = false, force = false } = options;
+
+      if (!force && currentDocPath === item.path) {
+        if (buttonEl) {
+          setActiveButton(buttonEl);
+        }
+        return;
+      }
+
+      if (!buttonEl) {
+        buttonEl = findButtonByPath(item.path);
+      }
+
+      setActiveButton(buttonEl || null);
+      statusEl.textContent = `Loading “${item.title}”…`;
+      contentEl.innerHTML = '';
+
+      const encodedPath = item.path.split('/').map(encodeURIComponent).join('/');
+
+      try {
+        const response = await fetch(encodedPath);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const markdown = await response.text();
+        const html = marked.parse(markdown, { mangle: false, headerIds: true });
+        contentEl.innerHTML = html;
+        contentEl.dataset.parenProcessed = 'false';
+        applyParenEnhancements(contentEl, { force: true });
+        
+        // Process glossary terms after content is loaded
+        if (window.Glossary && window.Glossary.enabled) {
+          setTimeout(() => {
+            window.Glossary.process(contentEl);
+          }, 100);
+        }
+
+        // Hide demo content when loading a document
+        document.querySelectorAll('.demo-content').forEach((demo) => {
+          demo.classList.add('hidden');
+        });
+        
+        // Apply collapsing state after processing
+        if (!parenCollapsingEnabled && window.ParenCore && window.ParenCore.disableCollapsing) {
+          window.ParenCore.disableCollapsing(contentEl);
+        }
+        
+        statusEl.textContent = `Viewing "${item.title}".`;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        currentDocPath = item.path;
+        if (updateHistory) {
+          updateHistoryState(item.path, { replace: replaceHistory });
+        }
+        if (isMobile()) {
+          closeSidebar();
+        }
+	      window.top.document.title = `Crucible: ${item.title}`;
+
+				setTimeout(add_shortcut_link_button, 200);
+      } catch (error) {
+        console.error('Failed to load document', error);
+        statusEl.textContent = `Failed to load “${item.title}”. Check console for details.`;
+        contentEl.innerHTML = '';
+      }
+    }
+
+    async function loadManifest() {
+      try {
+        const response = await fetch(manifestPath);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        manifest = await response.json();
+        treeRoot = buildTree(manifest);
+        filtered = manifest;
+        renderTreeView(treeRoot);
+        statusEl.textContent = 'Manifest loaded. Select a document to begin.';
+
+        const initialPath = getDocPathFromLocation();
+        if (initialPath) {
+          const opened = openDocumentByPath(initialPath, { updateHistory: false, force: true });
+          if (opened) {
+            updateHistoryState(initialPath, { replace: true });
+            // Hide demo content when loading initial document
+            document.querySelectorAll('.demo-content').forEach((demo) => {
+              demo.classList.add('hidden');
+            });
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load manifest', error);
+        statusEl.textContent = 'Unable to load manifest.json.';
+      }
+    }
+
+    searchEl.addEventListener('input', (event) => {
+      filterList(event.target.value);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === '/' && document.activeElement !== searchEl) {
+        event.preventDefault();
+        searchEl.focus();
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      contentEl.dataset.parenProcessed = 'false';
+      applyParenEnhancements(contentEl, { force: true });
+      const editorSurface = document.getElementById('vimlike-editor');
+      if (editorSurface) {
+        editorSurface.dataset.parenProcessed = 'false';
+        applyParenEnhancements(editorSurface, { force: true });
+      }
+      
+      // Initialize glossary system
+      if (window.Glossary) {
+        await window.Glossary.init({
+          foundationReaderUrl: '/?f=',
+          windowSize: { width: READER_X, height: READER_Y},
+          enabled: true
+        });
+        
+        // Process glossary terms on default content
+        setTimeout(() => {
+          if (window.Glossary.enabled) {
+            window.Glossary.process(contentEl);
+          }
+        }, 200);
+      }
+      
+      window.addEventListener('popstate', handlePopState);
+      loadManifest();
+      
+      // Apply initial collapsing state to default content
+      setTimeout(() => {
+        if (!parenCollapsingEnabled && window.ParenCore && window.ParenCore.disableCollapsing) {
+          window.ParenCore.disableCollapsing(contentEl);
+        }
+      }, 100);
+      
+      // Adjust header title on load
+      adjustHeaderTitle();
+    });
+function add_shortcut_link_button(){
+      var links = document.getElementsByTagName("a");
+      if(!links) return;
+
+      for(i = 0; i < links.length; i++) {
+							if(links[i].href.indexOf("?") != -1) {
+											continue;
+							}
+							const file_index = links[i].href.search(/\/([^\/]*\.md)/)+1
+				      const last_href_part = links[i].href.slice(file_index)
+
+							let huh = manifest.map((a) => { 
+											return [a, a.title.split(/\W/).reduce((acc, e) => {
+															if(e && last_href_part.search(e) != -1) {
+																			return acc + e.length/a.title.length
+															}
+															return acc
+											}, 0.0)];
+							}).filter((a) => {
+											return a[0] && a[1] > 0
+							})
+							let highscoring = huh.reduce(([target, highscore], [a,score]) => { 
+											return score > highscore ? [a, score] : [target, highscore]
+							}, [Object, 0.0])
+
+							if(huh.length > 1) { 
+											const r = (len) => { return Math.floor(Math.random()*len)};
+											const random_next = () => {
+															ra = r(huh.length)
+															console.log(`Spinning Wheel of Fortune (#${ra}/${huh.length}): ${huh}`)
+															return huh[ra][0] == highscoring[0] 
+																			? huh[(ra + 1 + r(huh.length - 1)) % huh.length] 
+																			: huh[ra];
+											}
+											if(true){
+															shortcuts = huh.reduce((acc, el) => {
+																			acc.push(el[0].shortcut)
+																			return acc;
+															}, []);
+															// console.log(shortcuts.join(","))
+												      
+															links[i].outerHTML += `<button onclick="window.open('/?f='+['`
+																+shortcuts.join("','")
+																+"']"
+																+"[Math.floor(Math.random()*"
+																+shortcuts.length
+																+`)], '_blank', 'width=${READER_X},height=${READER_Y},resizable=yes,scrollbars=yes')">⧝</button>`;
+											} else {
+															// Per page load
+															random_chosen = random_next();
+
+															links[i].outerHTML += `<button onclick="window.open('/?f=${random_chosen[0].shortcut}&hs=${random_chosen[1]}', '_blank', 'width=${READER_X},height=${READER_Y},resizable=yes,scrollbars=yes')">⧝</button>`;
+											}
+							}
+							if(huh.length > 0) {
+											links[i].outerHTML += `<button onclick="window.open('/?f=${highscoring[0].shortcut}&hs=${highscoring[1]}', '_blank', 'width=${READER_X},height=${READER_Y},resizable=yes,scrollbars=yes')">→</button>`;
+							}
+    	}
+}
+
+  </script>
+</body>
+</html>

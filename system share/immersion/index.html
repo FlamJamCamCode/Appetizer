@@ -1,0 +1,3540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Crucible Immersion Browser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #0f1115;
+      --sidebar-bg: #151820;
+      --sidebar-border: #232839;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --video-bg: #0b0e14;
+      --iframe-bg: #0b0f19;
+      --shadow: rgba(12, 18, 30, 0.55);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --background: #f4f6fb;
+        --sidebar-bg: #ffffff;
+        --sidebar-border: #dce1f2;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --accent: #2563eb;
+        --video-bg: #000000;
+        --iframe-bg: #ffffff;
+        --shadow: rgba(15, 23, 42, 0.08);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      padding-top: 0;
+    }
+
+    body.immersive-mode {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    body.immersive-mode #sidebar,
+    body.immersive-mode header {
+      display: none;
+    }
+
+    body.immersive-mode main {
+      padding: 0;
+      max-height: 100vh;
+    }
+
+    body.immersive-mode #viewer-content {
+      border-radius: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: transparent;
+    }
+
+    body.immersive-mode #viewer-content iframe {
+      border-radius: 0;
+      min-height: 100vh;
+      height: 100vh;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      border-bottom: 1px solid var(--sidebar-border);
+      background: var(--sidebar-bg);
+      box-shadow: 0 12px 20px -18px var(--shadow);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      padding-top: 64px; /* Account for fixed header */
+    }
+
+    @media (max-width: 960px) {
+      body {
+        padding-top: 48px; /* Smaller header on mobile */
+      }
+    }
+
+    header.scrolled-down {
+      background: transparent;
+      backdrop-filter: blur(10px);
+      box-shadow: none;
+    }
+
+    header.scrolled-down .header-content {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    header.scrolled-down .menu-toggle {
+      opacity: 1;
+      pointer-events: auto;
+      background: rgba(21, 24, 32, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 6px;
+    }
+
+    header.scrolled-down .header-tour-progress {
+      opacity: 1;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .header-tour-progress {
+      height: 3px;
+      width: 100%;
+      background: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: none;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      z-index: 101;
+      transition: opacity 0.3s ease;
+    }
+
+    .header-tour-progress.active {
+      display: flex;
+    }
+
+    .header-tour-progress progress {
+      width: 100%;
+      height: 3px;
+      border: none;
+      background: rgba(56, 189, 248, 0.2);
+      border-radius: 0;
+    }
+
+    .header-tour-progress progress::-webkit-progress-bar {
+      background: rgba(56, 189, 248, 0.2);
+    }
+
+    .header-tour-progress progress::-webkit-progress-value {
+      background: var(--accent);
+    }
+
+    .header-tour-progress progress::-moz-progress-bar {
+      background: var(--accent);
+    }
+
+    .swipe-hint {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: var(--muted);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .header-exit-tour-btn {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 4px;
+      padding: 0.35rem 0.5rem;
+      font-size: 0.85rem;
+      color: #ef4444;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+    }
+
+    .header-exit-tour-btn:hover {
+      background: rgba(239, 68, 68, 0.25);
+    }
+    
+    @media (max-width: 960px) {
+      .header-exit-tour-btn {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+        min-width: 20px;
+        height: 20px;
+      }
+    }
+
+    .header-content {
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: opacity 0.3s ease;
+    }
+
+    .swipe-hint {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      color: var(--muted);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+      /* Header collapse on scroll (mobile only) */
+      @media (max-width: 960px) {
+        body {
+          padding-top: 0px;
+        }
+
+        header {
+          position: fixed;
+          top: 0;
+        }
+
+
+      header.scrolled-down {
+        background: rgba(21, 24, 32, 0.25);
+        backdrop-filter: blur(1px);
+      }
+
+      header.scrolled-down .header-content {
+        opacity: 0.3;
+        transition: opacity 0.2s ease;
+      }
+
+      header.scrolled-down .header-content h1 {
+        opacity: 0.3; /* Keep title slightly visible */
+      }
+
+      header.scrolled-down .header-content .header-info {
+        opacity: 0;
+      }
+
+      header.scrolled-down .menu-toggle {
+        opacity: 1 !important;
+        background: rgba(21, 24, 32, 0.7);
+        backdrop-filter: blur(5px);
+      }
+
+      header.scrolled-down .header-tour-progress {
+        opacity: 1;
+      }
+
+      header.scrolled-down .swipe-hint {
+        opacity: 0.25;
+        right: 15px;
+        left: unset;
+
+      }
+
+      .tour-nav {
+        display: none !important; /* Always hidden in responsive */
+      }
+    }
+
+    .header-tour-counter {
+      padding: 0.25rem 0.5rem;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-right: 0.5rem;
+    }
+
+    #header-exit-tour {
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    #header-tour-counter {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .header-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+      min-width: 0;
+      margin: 0 1rem;
+    }
+
+    .header-file-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .header-file-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .header-file-path {
+      font-size: 0.75rem;
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .header-file-series {
+      font-size: 0.7rem;
+      color: var(--accent);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .header-download-btn {
+      padding: 0.4rem 0.6rem;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 6px;
+      color: var(--accent);
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 32px;
+    }
+
+    .header-download-btn:hover {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: var(--accent);
+    }
+
+    .header-exit-tour-btn {
+      padding: 0.4rem 0.6rem;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 6px;
+      color: #ef4444;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 32px;
+    }
+
+    .header-exit-tour-btn:hover {
+      background: rgba(239, 68, 68, 0.25);
+      border-color: #ef4444;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: inherit;
+      flex-shrink: 0;
+      margin-left: 1rem;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .hamburger {
+      width: 24px;
+      height: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: currentColor;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 40;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #sidebar {
+      border-right: 1px solid var(--sidebar-border);
+      background: var(--sidebar-bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      max-height: calc(100vh - 64px);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 50;
+    }
+
+    #search {
+      margin: 1rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 10px;
+      border: 1px solid var(--sidebar-border);
+      background: transparent;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+
+    #file-list {
+      list-style: none;
+      margin: 0;
+      padding: 0.5rem 0.5rem 1.5rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    #file-list li {
+      border-bottom: none;
+    }
+
+    #file-list button {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #file-list button:hover,
+    #file-list button:focus-visible,
+    #file-list button.active {
+      background: rgba(56, 189, 248, 0.12);
+      outline: none;
+    }
+
+    .file-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .file-icon {
+      font-size: 1.1em;
+      flex-shrink: 0;
+    }
+
+    .file-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .tree-group {
+      margin-left: 0.25rem;
+      border-left: 1px solid rgba(56, 189, 248, 0.16);
+      padding-left: 0.75rem;
+    }
+
+    details > summary {
+      cursor: pointer;
+      padding: 0.65rem 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    details > summary:hover,
+    details[open] > summary {
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .series-group {
+      margin: 0.5rem 0;
+      border-left: 2px solid rgba(56, 189, 248, 0.3);
+      padding-left: 0.75rem;
+    }
+
+    .series-group > summary {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .series-start-tour {
+      margin: 0.5rem 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: rgba(56, 189, 248, 0.2);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .series-start-tour:hover {
+      background: rgba(56, 189, 248, 0.3);
+      transform: translateX(2px);
+    }
+
+    #history-section {
+      border-bottom: 1px solid var(--sidebar-border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #history-list li button {
+      opacity: 0.9;
+    }
+
+    #history-list li button:hover {
+      opacity: 1;
+    }
+
+    #clear-history {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.6rem;
+    }
+
+    .file-list-group {
+      margin: 0.25rem 0 0.75rem;
+      padding-left: 0;
+    }
+
+    .file-list-group li {
+      border-bottom: 1px solid var(--sidebar-border);
+    }
+
+    .file-section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 1rem 0 0.35rem 0.75rem;
+    }
+
+    main {
+      padding: 2rem clamp(1.5rem, 4vw, 4rem);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-height: calc(100vh - 64px);
+      transition: all 0.3s ease;
+    }
+
+    #status {
+      font-size: 0.95rem;
+      color: var(--muted);
+      position: relative; /* Not sticky - scrolls with content */
+      margin-bottom: 1rem;
+    }
+
+    #viewer-toolbar {
+      display: none; /* Hidden - info moved to header */
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8, 11, 19, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 14px 30px -20px var(--shadow);
+      transition: all 0.3s ease;
+      min-width: 0;
+      width: 100%;
+    }
+
+    body.immersive-mode #viewer-toolbar {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      background: rgba(8, 11, 19, 0.9);
+      backdrop-filter: blur(10px);
+      max-width: 300px;
+      width: auto;
+    }
+
+    #viewer-toolbar .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    #viewer-toolbar .meta strong {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    #viewer-toolbar .meta span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    #viewer-toolbar .meta .viewer-series {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+
+    #viewer-toolbar .actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .toolbar-btn {
+      padding: 0.4rem 0.75rem;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 6px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .toolbar-btn:hover {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .toolbar-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #viewer-toolbar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    #viewer-content {
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 28px 40px -32px var(--shadow);
+      min-height: 320px;
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      transition: all 0.3s ease;
+      overflow-y: auto;
+    }
+
+    #viewer-content > * {
+      max-width: min(100%, 1100px);
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    video,
+    iframe,
+    img {
+      background: var(--video-bg);
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 18px 32px -24px var(--shadow);
+    }
+
+    iframe {
+      min-height: 600px;
+      border: none;
+      background: var(--iframe-bg);
+      display: block;
+    }
+
+    /* Make iframe content scroll in main body instead of iframe */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .iframe-wrapper iframe {
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .iframe-content {
+      width: 100%;
+      min-height: 100vh;
+      overflow: visible;
+    }
+
+    .immersive-exit {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1001;
+      padding: 0.75rem 1.25rem;
+      background: rgba(239, 68, 68, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease;
+      display: none;
+    }
+
+    body.immersive-mode .immersive-exit {
+      display: block;
+    }
+
+    .immersive-exit:hover {
+      background: rgba(239, 68, 68, 1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .tour-nav {
+      display: none; /* Hidden - use header-tour-progress instead */
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(8, 11, 19, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .tour-nav.active {
+      display: none; /* Always hidden - header progress bar used instead */
+    }
+
+    /* Hide tour nav when no tour active */
+    .tour-nav:not(.active) {
+      display: none !important;
+    }
+
+    .tour-nav-top {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      transform: none;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      padding: 0.5rem 1rem;
+    }
+
+    .tour-progress {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      min-width: 120px;
+    }
+
+    .tour-progress span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .tour-progress progress {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    pre {
+      background: #0b1120;
+      color: #e2e8f0;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      line-height: 1.65;
+      max-height: 70vh;
+    }
+
+    pre.text-wrapped {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: visible;
+      overflow-y: auto;
+    }
+
+    #markdown-content {
+      max-width: min(100%, 960px);
+      width: 100%;
+      margin: 0 auto;
+      line-height: 1.65;
+      padding: 1rem 0;
+    }
+
+    #markdown-content h1,
+    #markdown-content h2,
+    #markdown-content h3,
+    #markdown-content h4,
+    #markdown-content h5 {
+      margin-top: 2.2em;
+      margin-bottom: 0.7em;
+      line-height: 1.2;
+    }
+
+    #markdown-content p,
+    #markdown-content ul,
+    #markdown-content ol,
+    #markdown-content blockquote {
+      margin-bottom: 1.2em;
+    }
+
+    #markdown-content blockquote {
+      border-left: 3px solid rgba(56, 189, 248, 0.35);
+      padding-left: 1rem;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    #markdown-content pre {
+      background: #0b1120;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+
+    #markdown-content code {
+      background: rgba(56, 189, 248, 0.18);
+      padding: 0.18rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+
+    @media (max-width: 960px) {
+      body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        overflow: visible;
+      }
+
+      header {
+        padding: 0.5rem 0.75rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        padding: 0.25rem;
+        margin-left: 0.5rem;
+      }
+
+      .hamburger {
+        width: 20px;
+        height: 16px;
+      }
+
+      .sidebar-overlay {
+        display: block;
+      }
+
+      #sidebar {
+        position: fixed;
+        top: 48px;
+        left: 0;
+        bottom: 0;
+        width: 280px;
+        max-width: 85vw;
+        max-height: calc(100vh - 48px);
+        transform: translateX(-100%);
+        z-index: 50;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+        padding: 0;
+      }
+
+      #sidebar.open {
+        transform: translateX(0);
+      }
+
+      #search {
+        margin: 0.5rem;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+        border-radius: 6px;
+      }
+
+      main {
+        grid-row: 2;
+        max-height: calc(100vh - 48px);
+        overflow: auto;
+        padding: 0.75rem;
+      }
+
+      body.sidebar-open {
+        overflow: hidden;
+      }
+
+      iframe {
+        min-height: 480px;
+      }
+
+      .header-info {
+        display: none !important;
+      }
+
+      header h1 {
+        font-size: 0.95rem;
+      }
+
+      #sidebar-file-info {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        border-bottom: 1px solid var(--sidebar-border);
+        background: rgba(56, 189, 248, 0.05);
+        font-size: 0.8rem;
+      }
+
+      #sidebar-file-info .sidebar-file-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.15rem;
+        word-break: break-word;
+        line-height: 1.3;
+      }
+
+      #sidebar-file-info .sidebar-file-path {
+        font-size: 0.7rem;
+        color: var(--muted);
+        margin-bottom: 0.15rem;
+        word-break: break-all;
+        line-height: 1.2;
+      }
+
+      #sidebar-file-info .sidebar-file-series {
+        font-size: 0.65rem;
+        color: var(--accent);
+        margin-bottom: 0.35rem;
+        line-height: 1.2;
+      }
+
+      #sidebar-file-info .sidebar-download-btn {
+        width: 100%;
+        padding: 0.35rem 0.5rem;
+        background: rgba(56, 189, 248, 0.15);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        border-radius: 4px;
+        color: var(--accent);
+        text-decoration: none;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.8rem;
+        display: block;
+      }
+
+      #sidebar-file-info .sidebar-download-btn::before {
+        content: '⬇ ';
+      }
+
+      #history-section {
+        border-bottom: 1px solid var(--sidebar-border);
+        margin-bottom: 0.25rem;
+        padding: 0;
+      }
+
+      #history-section > summary {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.75rem;
+      }
+
+      #history-list {
+        max-height: 200px;
+        padding: 0.25rem 0;
+      }
+
+      #history-list li button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      #history-list .file-title {
+        font-size: 0.85rem;
+      }
+
+      #history-list .file-category {
+        font-size: 0.65rem;
+      }
+
+      #clear-history {
+        margin: 0.35rem 0.5rem;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.75rem;
+      }
+
+      .series-group {
+        margin: 0.25rem 0;
+        padding-left: 0.5rem;
+      }
+
+      .series-group > summary {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      .series-start-tour {
+        margin: 0.35rem 0.5rem;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.75rem;
+      }
+
+      .file-list-group {
+        margin: 0.15rem 0 0.5rem;
+      }
+
+      #file-list button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .file-title {
+        font-size: 0.85rem;
+      }
+
+      .file-category {
+        font-size: 0.65rem;
+      }
+
+      .tree-group {
+        margin-left: 0.15rem;
+        padding-left: 0.5rem;
+      }
+
+      details > summary {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+      }
+
+      #file-list {
+        padding: 0.25rem 0.25rem 1rem;
+      }
+
+      .tour-nav {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        transform: none;
+        flex-wrap: wrap;
+        padding: 0.5rem 0.75rem;
+        gap: 0.5rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        z-index: 1001;
+      }
+
+      header.scrolled-down + .sidebar-overlay + #sidebar + main .tour-nav {
+        top: 0;
+      }
+
+      /* Hide tour nav buttons on mobile - use swipe instead */
+      .tour-nav .toolbar-btn {
+        display: none;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        transition: background 0.3s ease, backdrop-filter 0.3s ease;
+      }
+
+      /* Header scrolled-down state handled by opacity transitions above */
+
+      header.scrolled-down .header-content {
+        opacity: 0.3;
+      }
+
+      header.scrolled-down .header-tour-progress {
+        opacity: 1; /* Keep progress bar visible when scrolled */
+      }
+
+      header.scrolled-down .menu-toggle {
+        opacity: 1 !important;
+        background: rgba(21, 24, 32, 0.7);
+        backdrop-filter: blur(5px);
+      }
+
+      header.scrolled-down .hamburger span {
+        opacity: 1;
+        background: var(--text);
+      }
+      
+      header.scrolled-down .header-exit-tour {
+        opacity: 0.8;
+      }
+
+      .header-content {
+        padding: 0.5rem 0.75rem;
+      }
+
+      .header-tour-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        height: 3px;
+        padding: 0;
+      }
+
+      .header-tour-progress #header-tour-counter {
+        display: none; /* Counter is in header title, not progress bar */
+      }
+
+      .swipe-hint {
+        display: block !important;
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(8, 11, 19, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        z-index: 1000;
+        pointer-events: none;
+        font-size: 0.65rem;
+      }
+
+      .tour-progress {
+        min-width: auto;
+        flex: 1;
+      }
+
+      .tour-progress span {
+        font-size: 0.75rem;
+      }
+
+      .toolbar-btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.5rem;
+      }
+
+      #status {
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
+      }
+
+      #viewer-content {
+        padding: 0.75rem;
+        min-height: 200px;
+        overflow: visible;
+      }
+
+      #markdown-content {
+        padding: 0.5rem 0;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="../../lib/glossary/glossary.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <script src="../../lib/glossary/glossary.js" defer></script>
+</head>
+<body>
+  <header id="main-header">
+    <div class="header-tour-progress" id="header-tour-progress">
+      <progress id="header-tour-progress-bar" value="0" max="100"></progress>
+    </div>
+    <div class="header-content">
+      <h1 id="header-title">
+        <span>The Crucible Immersion Browser</span>
+        <span id="header-tour-counter" style="display: none;"></span>
+      </h1>
+      <div class="header-info" id="header-info" style="display: none;">
+        <div class="header-file-info">
+          <span class="header-file-title" id="header-file-title"></span>
+          <span class="header-file-path" id="header-file-path"></span>
+          <span class="header-file-series" id="header-file-series"></span>
+        </div>
+        <div class="header-actions">
+          <button id="header-exit-tour" class="header-exit-tour-btn" style="display: none;" title="Exit Tour">✕</button>
+          <button id="glossary-toggle" class="glossary-toggle" title="Toggle Glossary Terms">📖 Terms</button>
+          <a id="header-download-link" href="#" download class="header-download-btn" title="Download">⬇</a>
+        </div>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menu-toggle">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+    <div class="swipe-hint" id="swipe-hint" style="display: none;">
+      <span>← Swipe →</span>
+    </div>
+  </header>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <aside id="sidebar">
+    <input type="search" id="search" placeholder="🔍 Search" aria-label="Search immersion media" />
+    <div id="sidebar-file-info" style="display: none;">
+      <div class="sidebar-file-title" id="sidebar-file-title"></div>
+      <div class="sidebar-file-path" id="sidebar-file-path"></div>
+      <div class="sidebar-file-series" id="sidebar-file-series"></div>
+      <a id="sidebar-download-link" href="#" download class="sidebar-download-btn">Download</a>
+    </div>
+    <details id="history-section" class="tree-group" style="display: none;">
+      <summary style="font-size: 0.85rem; color: var(--accent);">📜</summary>
+      <ul id="history-list" class="file-list-group" style="max-height: 300px; overflow-y: auto;"></ul>
+      <button id="clear-history" class="series-start-tour" style="margin: 0.5rem 0.75rem; background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: #ef4444;">🗑️</button>
+    </details>
+    <ul id="file-list" aria-label="Immersion assets"></ul>
+  </aside>
+  <main>
+    <div id="status">Select a scene, story, or asset from the left to preview it.</div>
+    <div id="viewer-toolbar" hidden>
+      <div class="meta">
+        <strong id="viewer-title"></strong>
+        <span id="viewer-path"></span>
+        <span class="viewer-series" id="viewer-series" style="display: none;"></span>
+      </div>
+      <div class="actions">
+        <button class="toolbar-btn" id="history-back" title="Go back in history" style="display: none;">← Back</button>
+        <button class="toolbar-btn" id="history-forward" title="Go forward in history" style="display: none;">Forward →</button>
+        <button class="toolbar-btn" id="tour-prev" style="display: none;">← Previous</button>
+        <button class="toolbar-btn" id="tour-next" style="display: none;">Next →</button>
+        <button class="toolbar-btn" id="immersive-toggle" style="display: none;">⛶ Immersive</button>
+        <a id="download-link" href="#" download class="toolbar-btn">Download</a>
+      </div>
+    </div>
+    <div id="viewer-content"></div>
+  </main>
+
+  <button class="immersive-exit" id="immersive-exit">← Exit Immersive</button>
+
+  <div class="tour-nav" id="tour-nav">
+    <button class="toolbar-btn" id="tour-nav-prev">←</button>
+    <div class="tour-progress">
+      <span id="tour-progress-text">1 / 5</span>
+      <progress id="tour-progress-bar" value="1" max="5"></progress>
+    </div>
+    <button class="toolbar-btn" id="tour-nav-next">→</button>
+    <button class="toolbar-btn" id="tour-exit">Exit Tour</button>
+  </div>
+
+  <script>
+    const manifestPath = 'manifest.json';
+    const listEl = document.getElementById('file-list');
+    const searchEl = document.getElementById('search');
+    const statusEl = document.getElementById('status');
+    const viewerToolbar = document.getElementById('viewer-toolbar');
+    const viewerTitle = document.getElementById('viewer-title');
+    const viewerPath = document.getElementById('viewer-path');
+    const viewerSeries = document.getElementById('viewer-series');
+    const downloadLink = document.getElementById('download-link');
+    const headerTitle = document.getElementById('header-title');
+    const headerInfo = document.getElementById('header-info');
+    const headerFileTitle = document.getElementById('header-file-title');
+    const headerFilePath = document.getElementById('header-file-path');
+    const headerFileSeries = document.getElementById('header-file-series');
+    const headerDownloadLink = document.getElementById('header-download-link');
+    const sidebarFileInfo = document.getElementById('sidebar-file-info');
+    const sidebarFileTitle = document.getElementById('sidebar-file-title');
+    const sidebarFilePath = document.getElementById('sidebar-file-path');
+    const sidebarFileSeries = document.getElementById('sidebar-file-series');
+    const sidebarDownloadLink = document.getElementById('sidebar-download-link');
+    const historySection = document.getElementById('history-section');
+    const historyList = document.getElementById('history-list');
+    const clearHistoryBtn = document.getElementById('clear-history');
+    const viewerContent = document.getElementById('viewer-content');
+    const immersiveToggle = document.getElementById('immersive-toggle');
+    const immersiveExit = document.getElementById('immersive-exit');
+    const tourNav = document.getElementById('tour-nav');
+    const tourPrev = document.getElementById('tour-prev');
+    const tourNext = document.getElementById('tour-next');
+    const tourNavPrev = document.getElementById('tour-nav-prev');
+    const tourNavNext = document.getElementById('tour-nav-next');
+    const tourExit = document.getElementById('tour-exit');
+    const tourProgressText = document.getElementById('tour-progress-text');
+    const tourProgressBar = document.getElementById('tour-progress-bar');
+    const historyBack = document.getElementById('history-back');
+    const historyForward = document.getElementById('history-forward');
+    const headerEl = document.getElementById('main-header');
+    const headerTourProgress = document.getElementById('header-tour-progress');
+    const headerTourProgressBar = document.getElementById('header-tour-progress-bar');
+    const headerTourCounter = document.getElementById('header-tour-counter');
+    const swipeHint = document.getElementById('swipe-hint');
+    const headerExitTour = document.getElementById('header-exit-tour');
+    const mainEl = document.querySelector('main');
+    
+    // Swipe gesture tracking
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    const swipeThreshold = 50;
+    const swipeVerticalThreshold = 100;
+    
+    // Scroll tracking for header collapse (direction-based)
+    let lastScrollTop = 0;
+    let scrollDirection = 'up';
+    let scrollTimeout = null;
+    const header = document.getElementById('main-header');
+
+    let manifest = [];
+    let treeRoot = null;
+    let currentItem = null;
+    let currentSeries = null;
+    let currentTour = null;
+    let seriesMap = new Map();
+    let history = [];
+    let historyMaxSize = 50;
+    let isNavigatingHistory = false;
+
+    // Content type detection
+    function detectContentType(item) {
+      // Always respect the manifest mediaType for non-HTML files
+      if (item.mediaType && item.mediaType !== 'html') {
+        // Only override for special HTML cases
+        if (item.mediaType === 'html') {
+          const path = item.path.toLowerCase();
+          const fileName = item.fileName.toLowerCase();
+          const title = (item.title || '').toLowerCase();
+
+          // Check for lobby experiences
+          if (path.includes('lobby') || path.includes('lobbies')) {
+            if (fileName === 'index.html' || title.includes('index') || title.includes('introduction')) {
+              return 'lobby-hub';
+            }
+            return 'lobby-experience';
+          }
+
+          // Check for interactive apps
+          if (path.includes('jord') || path.includes('mock-up') || path.includes('test-app') || 
+              path.includes('triadization') || path.includes('sovereignty') || path.includes('map')) {
+            return 'interactive-app';
+          }
+
+          // Check for games
+          if (path.includes('game') || path.includes('steppe-games')) {
+            return 'game';
+          }
+
+          return 'html';
+        }
+        // For markdown, text, code, etc. - use the manifest type
+        return item.mediaType;
+      }
+
+      // Fallback detection for items without mediaType
+      const path = item.path.toLowerCase();
+      const fileName = item.fileName.toLowerCase();
+      
+      if (fileName.endsWith('.md') || fileName.endsWith('.markdown')) {
+        return 'markdown';
+      }
+      if (fileName.endsWith('.html')) {
+        return 'html';
+      }
+
+      return item.mediaType || 'other';
+    }
+
+    // Get icon for content type
+    function getContentIcon(contentType) {
+      const icons = {
+        'lobby-experience': '🎭',
+        'lobby-hub': '📚',
+        'interactive-app': '🗺️',
+        'game': '🎮',
+        'video': '🎬',
+        'audio': '🎵',
+        'image': '🖼️',
+        'markdown': '📝',
+        'text': '📄',
+        'code': '💻',
+        'html': '🌐'
+      };
+      return icons[contentType] || '📄';
+    }
+
+    // Build series map from manifest - detect by folder structure
+    function buildSeriesMap() {
+      seriesMap.clear();
+      const seriesByPath = new Map();
+      
+      manifest.forEach(item => {
+        // Detect series by folder structure - use deepest folder as series identifier
+        const pathParts = item.path.split('/');
+        let seriesKey = item.category || 'standalone';
+        
+        // For historical-entries, use subfolder as series
+        if (item.category === 'historical-entries' && pathParts.length > 2) {
+          // Use the subfolder name (e.g., "nss-governments", "imperium")
+          const subfolder = pathParts[pathParts.length - 2];
+          seriesKey = `${item.category}/${subfolder}`;
+        } else if (pathParts.length > 1) {
+          // For other categories, use first folder as series if it's not just category
+          const firstFolder = pathParts[0];
+          if (firstFolder !== item.category) {
+            seriesKey = `${item.category}/${firstFolder}`;
+          }
+        }
+        
+        if (!seriesByPath.has(seriesKey)) {
+          seriesByPath.set(seriesKey, {
+            id: seriesKey,
+            title: formatSeriesName(seriesKey),
+            items: []
+          });
+        }
+        seriesByPath.get(seriesKey).items.push(item);
+      });
+
+      // Convert to seriesMap and sort items within each series
+      seriesByPath.forEach((series, key) => {
+        // Sort items within each series by numeric prefix
+        series.items.sort((a, b) => {
+          const numA = extractNumericPrefix(a.fileName);
+          const numB = extractNumericPrefix(b.fileName);
+          if (numA !== numB) return numA - numB;
+          return a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' });
+        });
+        seriesMap.set(key, series);
+      });
+    }
+
+    function formatSeriesName(name) {
+      if (!name) return 'Other';
+      // Handle nested series like "historical-entries/nss-governments"
+      const parts = name.split('/');
+      if (parts.length > 1) {
+        return parts.map(part => 
+          part.replace(/[-_]/g, ' ')
+              .replace(/\b\w/g, char => char.toUpperCase())
+        ).join(' → ');
+      }
+      return name
+        .replace(/[-_]/g, ' ')
+        .replace(/\b\w/g, char => char.toUpperCase());
+    }
+
+    function normalize(str) {
+      return (str || '').toLowerCase();
+    }
+
+    function extractNumericPrefix(text) {
+      const match = text.match(/^(\d{1,4})/);
+      return match ? parseInt(match[1], 10) : Number.POSITIVE_INFINITY;
+    }
+
+    function sortFiles(files) {
+      return [...files].sort((a, b) => {
+        const numA = extractNumericPrefix(a.fileName);
+        const numB = extractNumericPrefix(b.fileName);
+        if (numA !== numB) return numA - numB;
+        return a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' });
+      });
+    }
+
+    function sortDirectories(entries) {
+      return [...entries].sort((a, b) => {
+        const nameA = a[1].name.toLowerCase();
+        const nameB = b[1].name.toLowerCase();
+        return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
+      });
+    }
+
+    function buildTree(items) {
+      const root = { name: 'Immersion', path: '', files: [], children: new Map() };
+
+      items.forEach((item) => {
+        const segments = item.path.split('/');
+        if (segments.length === 1) {
+          root.files.push(item);
+          return;
+        }
+
+        segments.reduce((node, segment, index) => {
+          if (index === segments.length - 1) {
+            node.files.push(item);
+            return node;
+          }
+
+          if (!node.children.has(segment)) {
+            node.children.set(segment, {
+              name: segment,
+              path: node.path ? `${node.path}/${segment}` : segment,
+              files: [],
+              children: new Map()
+            });
+          }
+          return node.children.get(segment);
+        }, root);
+      });
+
+      return root;
+    }
+
+    function formatDirectoryName(name) {
+      if (!name || name === 'Immersion') return 'Immersion Root';
+      return name
+        .replace(/[-_]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+    }
+
+    function renderSectionFiles(parentEl, files) {
+      if (!files.length) return;
+      const list = document.createElement('ul');
+      list.className = 'file-list-group';
+
+      sortFiles(files).forEach((item) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.dataset.path = item.path;
+        btn.dataset.title = item.title;
+        btn.dataset.type = item.mediaType;
+        const contentType = detectContentType(item);
+        const icon = getContentIcon(contentType);
+        btn.innerHTML = `
+          <span class="file-title">
+            <span class="file-icon">${icon}</span>
+            ${item.title || item.fileName}
+          </span>
+          <span class="file-category">${contentType}</span>
+        `;
+        btn.addEventListener('click', () => loadAsset(item, btn));
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+
+      parentEl.appendChild(list);
+    }
+
+    function createDirectoryNode(node, depth = 0) {
+      const details = document.createElement('details');
+      details.open = false;
+      details.className = 'tree-group';
+
+      const summary = document.createElement('summary');
+      summary.textContent = formatDirectoryName(node.name);
+      details.appendChild(summary);
+
+      renderSectionFiles(details, node.files);
+
+      const childEntries = sortDirectories(node.children.entries ? node.children.entries() : []);
+      childEntries.forEach(([_, childNode]) => {
+        details.appendChild(createDirectoryNode(childNode, depth + 1));
+      });
+
+      return details;
+    }
+
+    function renderSeriesGroups() {
+      listEl.innerHTML = '';
+      
+      // Render series groups
+      const sortedSeries = Array.from(seriesMap.entries()).sort((a, b) => {
+        return a[1].title.localeCompare(b[1].title);
+      });
+
+      sortedSeries.forEach(([id, series]) => {
+        if (series.items.length === 0) return;
+
+        const details = document.createElement('details');
+        details.className = 'series-group';
+        details.open = false;
+
+        const summary = document.createElement('summary');
+        summary.innerHTML = `
+          <span>${series.title}</span>
+          <span style="margin-left: auto; font-size: 0.75rem; color: var(--muted);">(${series.items.length})</span>
+        `;
+        details.appendChild(summary);
+
+        // Add "Start Tour" button for series with multiple items
+        if (series.items.length > 1) {
+          const tourBtn = document.createElement('button');
+          tourBtn.className = 'series-start-tour';
+          tourBtn.textContent = `▶ ${series.items.length}`;
+          tourBtn.title = `Start Tour (${series.items.length} items)`;
+          tourBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            startTour(series);
+          });
+          details.appendChild(tourBtn);
+        }
+
+        // Render series items
+        const list = document.createElement('ul');
+        list.className = 'file-list-group';
+        series.items.forEach((item) => {
+          const li = document.createElement('li');
+          const btn = document.createElement('button');
+          btn.dataset.path = item.path;
+          btn.dataset.title = item.title;
+          btn.dataset.type = item.mediaType;
+          const contentType = detectContentType(item);
+          const icon = getContentIcon(contentType);
+          btn.innerHTML = `
+            <span class="file-title">
+              <span class="file-icon">${icon}</span>
+              ${item.title || item.fileName}
+            </span>
+            <span class="file-category">${contentType}</span>
+          `;
+          btn.addEventListener('click', () => loadAsset(item, btn));
+          li.appendChild(btn);
+          list.appendChild(li);
+        });
+        details.appendChild(list);
+
+        listEl.appendChild(details);
+      });
+
+      // Render standalone items (not in any series)
+      const standaloneItems = manifest.filter(item => {
+        const category = item.category || 'standalone';
+        return !seriesMap.has(category) || seriesMap.get(category).items.length === 0;
+      });
+
+      if (standaloneItems.length > 0) {
+        const standaloneGroup = document.createElement('details');
+        standaloneGroup.className = 'tree-group';
+        const summary = document.createElement('summary');
+        summary.textContent = 'Other Content';
+        standaloneGroup.appendChild(summary);
+        renderSectionFiles(standaloneGroup, standaloneItems);
+        listEl.appendChild(standaloneGroup);
+      }
+    }
+
+    function renderTreeView(rootNode) {
+      renderSeriesGroups();
+    }
+
+    function renderSearchResults(items) {
+      listEl.innerHTML = '';
+
+      if (!items.length) {
+        const empty = document.createElement('li');
+        empty.textContent = 'No assets match your search.';
+        empty.style.padding = '1rem';
+        listEl.appendChild(empty);
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      items.forEach((item) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.dataset.path = item.path;
+        btn.dataset.title = item.title;
+        btn.dataset.type = item.mediaType;
+        const contentType = detectContentType(item);
+        const icon = getContentIcon(contentType);
+        btn.innerHTML = `
+          <span class="file-title">
+            <span class="file-icon">${icon}</span>
+            ${item.title || item.fileName}
+          </span>
+          <span class="file-category">${contentType}</span>
+        `;
+        btn.addEventListener('click', () => loadAsset(item, btn));
+        li.appendChild(btn);
+        fragment.appendChild(li);
+      });
+
+      listEl.appendChild(fragment);
+    }
+
+    function filterList(query) {
+      const q = normalize(query);
+      if (!q) {
+        renderTreeView(treeRoot);
+        return;
+      }
+
+      const filtered = manifest.filter((item) => {
+        return (
+          normalize(item.title).includes(q) ||
+          normalize(item.mediaType).includes(q) ||
+          normalize(item.path).includes(q) ||
+          normalize(item.category || '').includes(q)
+        );
+      });
+
+      renderSearchResults(filtered);
+    }
+
+    function setActiveButton(activeBtn) {
+      const buttons = listEl.querySelectorAll('button');
+      buttons.forEach((btn) => btn.classList.toggle('active', btn === activeBtn));
+    }
+
+    // History management
+    function loadHistory() {
+      try {
+        const stored = localStorage.getItem('immersion-history');
+        if (stored) {
+          history = JSON.parse(stored);
+          updateHistoryUI();
+        }
+      } catch (e) {
+        console.error('Failed to load history', e);
+        history = [];
+      }
+    }
+
+    function saveHistory() {
+      try {
+        localStorage.setItem('immersion-history', JSON.stringify(history));
+      } catch (e) {
+        console.error('Failed to save history', e);
+      }
+    }
+
+    function addToHistory(item) {
+      if (isNavigatingHistory) return;
+      
+      // Remove if already exists
+      history = history.filter(h => h.path !== item.path);
+      
+      // Add to front
+      history.unshift({
+        path: item.path,
+        title: item.title || item.fileName,
+        timestamp: Date.now(),
+        contentType: detectContentType(item),
+        category: item.category
+      });
+      
+      // Limit size
+      if (history.length > historyMaxSize) {
+        history = history.slice(0, historyMaxSize);
+      }
+      
+      saveHistory();
+      updateHistoryUI();
+      updateHistoryButtons();
+    }
+
+    function updateHistoryUI() {
+      if (!historyList) return;
+      
+      if (history.length === 0) {
+        historySection.style.display = 'none';
+        return;
+      }
+      
+      historySection.style.display = 'block';
+      historyList.innerHTML = '';
+      
+      history.slice(0, 20).forEach((entry, index) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.dataset.path = entry.path;
+        btn.dataset.title = entry.title;
+        const icon = getContentIcon(entry.contentType);
+        const timeAgo = getTimeAgo(entry.timestamp);
+        
+        btn.innerHTML = `
+          <span class="file-title">
+            <span class="file-icon">${icon}</span>
+            <span style="flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${entry.title}</span>
+          </span>
+          <span class="file-category" style="font-size: 0.7rem;">${timeAgo}</span>
+        `;
+        
+        btn.addEventListener('click', () => {
+          const item = manifest.find(m => m.path === entry.path);
+          if (item) {
+            isNavigatingHistory = true;
+            loadAsset(item, null);
+            setTimeout(() => { isNavigatingHistory = false; }, 100);
+          }
+        });
+        
+        li.appendChild(btn);
+        historyList.appendChild(li);
+      });
+    }
+
+    function getTimeAgo(timestamp) {
+      const seconds = Math.floor((Date.now() - timestamp) / 1000);
+      if (seconds < 60) return 'just now';
+      const minutes = Math.floor(seconds / 60);
+      if (minutes < 60) return `${minutes}m ago`;
+      const hours = Math.floor(minutes / 60);
+      if (hours < 24) return `${hours}h ago`;
+      const days = Math.floor(hours / 24);
+      if (days < 7) return `${days}d ago`;
+      const weeks = Math.floor(days / 7);
+      return `${weeks}w ago`;
+    }
+
+    function clearHistory() {
+      if (confirm('Clear viewing history?')) {
+        history = [];
+        saveHistory();
+        updateHistoryUI();
+      }
+    }
+
+    // URL state management - query param for file, hash for state
+    function updateURLState(item, state = {}, replace = false) {
+      const url = new URL(window.location);
+      
+      if (item) {
+        // Use query param for file path: ?path=path/to/file.md
+        url.searchParams.set('path', item.path);
+        
+        // Also support direct path format: ?path/to/file.md (alternative)
+        // Clear other params
+        const keysToRemove = [];
+        url.searchParams.forEach((value, key) => {
+          if (key !== 'path') keysToRemove.push(key);
+        });
+        keysToRemove.forEach(key => url.searchParams.delete(key));
+      } else {
+        url.search = '';
+      }
+      
+      // Use hash for state (scroll, video time, tab, etc.)
+      // Format: #s:123&v:45.2&t:2 (compact format)
+      if (state && Object.keys(state).length > 0) {
+        const stateParts = [];
+        if (state.scrollTop !== undefined) stateParts.push(`s:${Math.round(state.scrollTop)}`);
+        if (state.videoTime !== undefined) stateParts.push(`v:${state.videoTime.toFixed(1)}`);
+        if (state.audioTime !== undefined) stateParts.push(`a:${state.audioTime.toFixed(1)}`);
+        if (state.tab !== undefined) stateParts.push(`t:${state.tab}`);
+        if (state.scroll !== undefined) stateParts.push(`scroll:${Math.round(state.scroll)}`);
+        if (state.iframeState) {
+          try {
+            stateParts.push(`if:${encodeURIComponent(JSON.stringify(state.iframeState))}`);
+          } catch (e) {}
+        }
+        url.hash = stateParts.length > 0 ? '#' + stateParts.join('&') : '';
+      } else {
+        url.hash = '';
+      }
+      
+      if (replace) {
+        window.history.replaceState({ path: item?.path, state }, '', url);
+      } else {
+        window.history.pushState({ path: item?.path, state }, '', url);
+      }
+    }
+
+    function compressState(state) {
+      // Create compact state string
+      const parts = [];
+      if (state.videoTime !== undefined) parts.push(`vt:${Math.round(state.videoTime)}`);
+      if (state.audioTime !== undefined) parts.push(`at:${Math.round(state.audioTime)}`);
+      if (state.scrollTop !== undefined) parts.push(`s:${Math.round(state.scrollTop)}`);
+      if (state.viewerScroll !== undefined) parts.push(`vs:${Math.round(state.viewerScroll)}`);
+      if (state.iframeState) parts.push(`if:${encodeURIComponent(JSON.stringify(state.iframeState))}`);
+      return parts.join(',');
+    }
+
+    function decompressState(hash) {
+      if (!hash || hash.length === 0) return null;
+      const state = {};
+      const parts = hash.split(',');
+      parts.forEach(part => {
+        const [key, value] = part.split(':');
+        if (key === 'vt') state.videoTime = parseFloat(value);
+        else if (key === 'at') state.audioTime = parseFloat(value);
+        else if (key === 's') state.scrollTop = parseFloat(value);
+        else if (key === 'vs') state.viewerScroll = parseFloat(value);
+        else if (key === 'if') {
+          try {
+            state.iframeState = JSON.parse(decodeURIComponent(value));
+          } catch (e) {}
+        }
+      });
+      return Object.keys(state).length > 0 ? state : null;
+    }
+
+    function getFileFromURL() {
+      const url = new URL(window.location);
+      const search = window.location.search;
+      
+
+      // Try 'path' param first (primary method): ?path=path/to/file.md
+      const pathParam = url.searchParams.get('path');
+      if (pathParam) {
+        const item = manifest.find(m => m.path === pathParam);
+        if (item) return item;
+      }
+
+      // Try shortcut
+      if (pathParam) {
+        const item = manifest.find(m => m.shortcut === pathParam);
+        if (item) return item;
+      }
+
+      // Try legacy shortcut
+      if (pathParam) {
+        const item = manifest.find(m => m.legacy_shortcut === pathParam);
+        if (item) return item;
+      }
+      
+      // Try direct path format: ?path/to/file.md (no param name, just path)
+      if (search && search.startsWith('?') && search.length > 1) {
+        const pathCandidate = decodeURIComponent(search.substring(1));
+        // Check if it looks like a file path (contains / or ends with extension)
+        if (pathCandidate.includes('/') || pathCandidate.includes('.')) {
+          const item = manifest.find(m => m.path === pathCandidate);
+          if (item) return item;
+          
+          // Try with leading slash
+          const itemWithSlash = manifest.find(m => m.path === '/' + pathCandidate);
+          if (itemWithSlash) return itemWithSlash;
+        }
+      }
+      
+      // Try to find by unique key name in query params
+      const searchParams = Array.from(url.searchParams.entries());
+      for (const [key, value] of searchParams) {
+        if (key !== 'file' && key !== 'path') {
+          // Try to find item by matching title/filename
+          const normalizedKey = key.toLowerCase().replace(/[-_]/g, ' ');
+          const item = manifest.find(m => {
+            const titleNorm = (m.title || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+            const fileNorm = m.fileName.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+            return titleNorm === normalizedKey || fileNorm === normalizedKey || 
+                   titleNorm.includes(normalizedKey) || fileNorm.includes(normalizedKey);
+          });
+          if (item) return item;
+        }
+      }
+      
+      // Fallback: check hash for old format
+      if (hash.startsWith('#file=')) {
+        const path = decodeURIComponent(hash.substring(6));
+        return manifest.find(m => m.path === path);
+      }
+
+      return filterList(search)[0];
+    }
+
+    function getStateFromURL() {
+      const hash = window.location.hash;
+      if (!hash || hash.length <= 1) return {};
+      
+      try {
+        // Try base64 decoded JSON first (new format)
+        const stateStr = hash.substring(1);
+        const state = JSON.parse(atob(stateStr));
+        return state || {};
+      } catch (e) {
+        // Fallback to old format parsing
+        const state = {};
+        const params = hash.substring(1).split('&');
+        params.forEach(param => {
+          const [key, value] = param.split(':');
+          if (key && value !== undefined) {
+            try {
+              if (key === 's') state.scrollTop = parseFloat(value);
+              else if (key === 'v') state.videoTime = parseFloat(value);
+              else if (key === 'a') state.audioTime = parseFloat(value);
+              else if (key === 't') state.tab = parseInt(value, 10);
+              else if (key === 'scroll') state.scroll = parseFloat(value);
+              else if (key === 'if') {
+                try {
+                  state.iframeState = JSON.parse(decodeURIComponent(value));
+                } catch (e) {}
+              } else {
+                const decoded = decodeURIComponent(value);
+                const num = parseFloat(decoded);
+                state[key] = isNaN(num) ? decoded : num;
+              }
+            } catch (e) {
+              // Ignore parse errors
+            }
+          }
+        });
+        return Object.keys(state).length > 0 ? state : {};
+      }
+    }
+
+    function decompressState(compressed) {
+      // Parse compressed format: vt:123,at:456,s:789
+      try {
+        const parts = compressed.split(',');
+        const state = {};
+        parts.forEach(part => {
+          const [key, value] = part.split(':');
+          if (key && value) {
+            const numValue = parseFloat(value);
+            if (!isNaN(numValue)) {
+              switch (key) {
+                case 'vt': state.videoTime = numValue; break;
+                case 'at': state.audioTime = numValue; break;
+                case 's': state.scrollTop = numValue; break;
+                case 'vs': state.viewerScroll = numValue; break;
+                case 't': state.tab = value; break;
+                default: state[key] = value;
+              }
+            } else {
+              state[key] = value;
+            }
+          }
+        });
+        return Object.keys(state).length > 0 ? state : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function saveMediaState(contentType, element) {
+      const state = {};
+      
+      switch (contentType) {
+        case 'video': {
+          if (element && element.currentTime !== undefined) {
+            state.videoTime = element.currentTime;
+            state.videoPaused = element.paused;
+          }
+          break;
+        }
+        case 'audio': {
+          if (element && element.currentTime !== undefined) {
+            state.audioTime = element.currentTime;
+            state.audioPaused = element.paused;
+          }
+          break;
+        }
+        case 'markdown':
+        case 'text': {
+          // Save scroll position for text/markdown content
+          if (viewerContent) {
+            const scrollEl = viewerContent.querySelector('#markdown-content') || viewerContent.querySelector('pre');
+            if (scrollEl) {
+              state.scrollTop = scrollEl.scrollTop || viewerContent.scrollTop;
+            } else {
+              state.viewerScroll = viewerContent.scrollTop;
+            }
+          }
+          break;
+        }
+        case 'lobby-experience':
+        case 'lobby-hub':
+        case 'interactive-app':
+        case 'game':
+        case 'html': {
+          // For iframes, try to get scroll via postMessage
+          if (element && element.contentWindow) {
+            try {
+              // Request scroll state from iframe (if same-origin or cooperative)
+              element.contentWindow.postMessage({ type: 'getScrollState' }, '*');
+              state.iframeReady = true;
+            } catch (e) {
+              // Cross-origin restrictions
+            }
+          }
+          break;
+        }
+        case 'markdown':
+        case 'text':
+        case 'code': {
+          // Save scroll position for text content - use viewerContent scroll
+          if (viewerContent) {
+            state.scrollTop = viewerContent.scrollTop;
+          }
+          break;
+        }
+      }
+      
+      // Always save main element scroll position
+      if (mainEl) {
+        state.scroll = mainEl.scrollTop || 0;
+      }
+      
+      // Also save viewer scroll as backup
+      if (viewerContent && !state.scrollTop) {
+        state.viewerScroll = viewerContent.scrollTop;
+      }
+      
+      return Object.keys(state).length > 0 ? state : null;
+    }
+
+    function restoreMediaState(contentType, element, state) {
+      if (!state || !element) return;
+      
+      switch (contentType) {
+        case 'video': {
+          if (state.videoTime !== undefined && !isNaN(state.videoTime)) {
+            element.currentTime = state.videoTime;
+            if (state.videoPaused === false) {
+              element.play().catch(() => {}); // Auto-play might be blocked
+            }
+          }
+          break;
+        }
+        case 'audio': {
+          if (state.audioTime !== undefined && !isNaN(state.audioTime)) {
+            element.currentTime = state.audioTime;
+            if (state.audioPaused === false) {
+              element.play().catch(() => {});
+            }
+          }
+          break;
+        }
+        case 'markdown':
+        case 'text':
+        case 'code': {
+          if (state.scrollTop !== undefined) {
+            // Wait for content to render
+            setTimeout(() => {
+              const scrollContainer = element.closest('#viewer-content') || element;
+              scrollContainer.scrollTop = state.scrollTop;
+            }, 100);
+          }
+          break;
+        }
+      }
+      
+      // Restore main viewer scroll
+      if (state.viewerScroll !== undefined && viewerContent) {
+        setTimeout(() => {
+          viewerContent.scrollTop = state.viewerScroll;
+        }, 100);
+      }
+    }
+
+    function handlePopState(event) {
+      const fileFromURL = getFileFromURL();
+      const state = getStateFromURL();
+      if (fileFromURL) {
+        isNavigatingHistory = true;
+        loadAsset(fileFromURL, null, { skipHistory: true, skipURL: true, restoreState: state });
+        setTimeout(() => { isNavigatingHistory = false; }, 100);
+      } else {
+        resetViewer();
+      }
+    }
+
+    // Save state before navigation
+    function saveCurrentState() {
+      if (!currentItem || !viewerContent) return null;
+      const contentType = detectContentType(currentItem);
+      const element = viewerContent.querySelector('video, audio, iframe, pre, #markdown-content');
+      if (element) {
+        return saveMediaState(contentType, element);
+      }
+      return null;
+    }
+
+    function resetViewer() {
+      viewerToolbar.hidden = true;
+      viewerContent.innerHTML = '';
+      if (headerInfo) {
+        headerInfo.style.display = 'none';
+      }
+      if (sidebarFileInfo) {
+        sidebarFileInfo.style.display = 'none';
+      }
+      if (headerTitle) {
+        headerTitle.textContent = 'The Crucible Immersion Browser';
+      }
+      exitImmersiveMode();
+      exitTour();
+      updateURLState(null, null, true);
+    }
+
+    // Title reduction logic (from foundations)
+    function adjustHeaderTitle() {
+      if (!headerTitle || !headerInfo) return;
+      
+      const header = headerTitle.parentElement;
+      const headerControls = header.querySelector('.menu-toggle');
+      if (!header || !headerControls) return;
+      
+      requestAnimationFrame(() => {
+        const headerRect = header.getBoundingClientRect();
+        const controlsRect = headerControls.getBoundingClientRect();
+        const infoRect = headerInfo.getBoundingClientRect();
+        const padding = 3 * 16;
+        const counterWidth = headerTourCounter && headerTourCounter.style.display !== 'none' ? headerTourCounter.offsetWidth : 0;
+        const availableWidth = headerRect.width - controlsRect.width - (headerInfo.style.display !== 'none' ? infoRect.width : 0) - counterWidth - padding;
+        
+        const titleSpan = headerTitle.querySelector('span:first-child');
+        if (!titleSpan) return;
+        
+        const currentText = titleSpan.textContent;
+        const variants = currentText.includes('Immersion') 
+          ? ['Immersion', 'Immersion Browser']
+          : ['The Crucible Immersion Browser', 'Crucible Immersion Browser', 'Immersion Browser'];
+        
+        const tempSpan = document.createElement('span');
+        tempSpan.style.position = 'absolute';
+        tempSpan.style.visibility = 'hidden';
+        tempSpan.style.whiteSpace = 'nowrap';
+        tempSpan.style.fontSize = getComputedStyle(headerTitle).fontSize;
+        tempSpan.style.fontWeight = getComputedStyle(headerTitle).fontWeight;
+        tempSpan.style.fontFamily = getComputedStyle(headerTitle).fontFamily;
+        document.body.appendChild(tempSpan);
+        
+        let selectedText = variants[variants.length - 1];
+        for (const variant of variants) {
+          tempSpan.textContent = variant;
+          if (tempSpan.offsetWidth <= availableWidth) {
+            selectedText = variant;
+            break;
+          }
+        }
+        
+        document.body.removeChild(tempSpan);
+        titleSpan.textContent = selectedText;
+      });
+    }
+
+    function enterImmersiveMode() {
+      document.body.classList.add('immersive-mode');
+      if (isMobile()) {
+        closeSidebar();
+      }
+    }
+
+    function exitImmersiveMode() {
+      document.body.classList.remove('immersive-mode');
+    }
+
+    function updateTourNavigation() {
+      if (!currentTour) {
+        if (tourNav) tourNav.style.display = 'none';
+        if (tourNav) tourNav.classList.remove('active');
+        if (tourPrev) tourPrev.style.display = 'none';
+        if (tourNext) tourNext.style.display = 'none';
+        updateHeaderTourInfo();
+        return;
+      }
+
+      const currentIndex = currentTour.currentIndex;
+      const total = currentTour.items.length;
+
+      if (tourPrev) tourPrev.disabled = currentIndex === 0;
+      if (tourNext) tourNext.disabled = currentIndex === total - 1;
+      if (tourNavPrev) tourNavPrev.disabled = currentIndex === 0;
+      if (tourNavNext) tourNavNext.disabled = currentIndex === total - 1;
+
+      if (tourProgressText) tourProgressText.textContent = `${currentIndex + 1} / ${total}`;
+      if (tourProgressBar) {
+        tourProgressBar.value = currentIndex + 1;
+        tourProgressBar.max = total;
+      }
+
+      // Always hide tour-nav - we use header-tour-progress instead
+      if (tourNav) {
+        tourNav.style.display = 'none';
+        tourNav.classList.remove('active');
+      }
+      if (tourPrev) tourPrev.style.display = 'none';
+      if (tourNext) tourNext.style.display = 'none';
+      
+      updateHeaderTourInfo();
+    }
+
+    function updateHeaderTourInfo() {
+      if (!currentTour) {
+        if (headerTourProgress) {
+          headerTourProgress.style.display = 'none';
+          headerTourProgress.classList.remove('active');
+        }
+        if (swipeHint) swipeHint.style.display = 'none';
+        if (headerExitTour) headerExitTour.style.display = 'none';
+        if (headerTourCounter) headerTourCounter.style.display = 'none';
+        // Reset header title on mobile
+        if (isMobile() && headerTitle) {
+          const titleSpan = headerTitle.querySelector('span:first-child');
+          if (titleSpan) titleSpan.textContent = 'The Crucible Immersion Browser';
+          adjustHeaderTitle();
+        }
+        return;
+      }
+      
+      const currentIndex = currentTour.currentIndex;
+      const total = currentTour.items.length;
+      
+      if (headerTourProgressBar) {
+        headerTourProgressBar.value = currentIndex + 1;
+        headerTourProgressBar.max = total;
+      }
+      if (headerTourProgress) {
+        headerTourProgress.style.display = 'flex';
+        headerTourProgress.classList.add('active');
+      }
+      if (isMobile() && swipeHint) {
+        swipeHint.style.display = 'block';
+      }
+      if (headerExitTour) {
+        headerExitTour.style.display = 'inline-flex';
+      }
+      
+      // Update header title to show counter: "Immersion 3/53"
+      if (headerTourCounter) {
+        headerTourCounter.textContent = `${currentIndex + 1}/${total}`;
+        headerTourCounter.style.display = 'inline';
+      }
+      
+      // On mobile, update title to show counter
+      if (isMobile() && headerTitle) {
+        const titleSpan = headerTitle.querySelector('span:first-child');
+        if (titleSpan) {
+          titleSpan.textContent = 'Immersion';
+        }
+        adjustHeaderTitle();
+      }
+    }
+
+    function startTour(series) {
+      currentTour = {
+        series: series,
+        items: [...series.items],
+        currentIndex: 0
+      };
+      currentSeries = series;
+      loadAsset(series.items[0], null, { skipHistory: false });
+      updateTourNavigation();
+      updateSwipeHint();
+      if (isMobile()) {
+        closeSidebar();
+      }
+    }
+
+    function exitTour() {
+      currentTour = null;
+      currentSeries = null;
+      updateTourNavigation();
+    }
+
+    function tourNavigate(direction) {
+      if (!currentTour) return;
+      const newIndex = currentTour.currentIndex + direction;
+      if (newIndex >= 0 && newIndex < currentTour.items.length) {
+        currentTour.currentIndex = newIndex;
+        loadAsset(currentTour.items[newIndex], null, { skipHistory: false });
+        updateTourNavigation();
+      }
+    }
+
+    function checkItemTourMembership(item) {
+      const itemSeries = getSeriesForItem(item);
+      const itemIsInTour = itemSeries && itemSeries.items.length > 1;
+      
+      // Check if item belongs to current tour
+      if (currentTour) {
+        const inCurrentTour = currentTour.items.some(i => i.path === item.path);
+        if (inCurrentTour) {
+          // Update tour index - item is in current tour
+          const index = currentTour.items.findIndex(i => i.path === item.path);
+          if (index !== -1) {
+            currentTour.currentIndex = index;
+            updateTourNavigation();
+            updateHeaderTourInfo();
+          }
+          return true;
+        }
+        
+        // Item is not in current tour
+        if (itemIsInTour && itemSeries.id !== currentTour.series.id) {
+          // Item is in a different tour - switch to that tour
+          startTour(itemSeries);
+          // Find item index in new tour and update
+          const itemIndex = itemSeries.items.findIndex(i => i.path === item.path);
+          if (itemIndex !== -1 && currentTour) {
+            currentTour.currentIndex = itemIndex;
+            updateTourNavigation();
+            updateHeaderTourInfo();
+          }
+          return true;
+        } else {
+          // Item is not in any tour or not in current tour - exit current tour
+          exitTour();
+          return false;
+        }
+      }
+      
+      // No current tour - check if item belongs to a series/tour
+      if (itemIsInTour) {
+        // Start tour for this item
+        startTour(itemSeries);
+        // Find item index in tour and update
+        const itemIndex = itemSeries.items.findIndex(i => i.path === item.path);
+        if (itemIndex !== -1 && currentTour) {
+          currentTour.currentIndex = itemIndex;
+          updateTourNavigation();
+          updateHeaderTourInfo();
+        }
+        return true;
+      }
+      
+      return false;
+    }
+
+    function getSeriesForItem(item) {
+      // Find series by matching path structure
+      const pathParts = item.path.split('/');
+      let seriesKey = item.category || 'standalone';
+      
+      // For historical-entries, use subfolder as series
+      if (item.category === 'historical-entries' && pathParts.length > 2) {
+        const subfolder = pathParts[pathParts.length - 2];
+        seriesKey = `${item.category}/${subfolder}`;
+      } else if (pathParts.length > 1) {
+        const firstFolder = pathParts[0];
+        if (firstFolder !== item.category) {
+          seriesKey = `${item.category}/${firstFolder}`;
+        }
+      }
+      
+      return seriesMap.get(seriesKey);
+    }
+
+    function createMarkdownViewer(markdownText) {
+      const wrapper = document.createElement('div');
+      wrapper.id = 'markdown-content';
+      wrapper.innerHTML = marked.parse(markdownText, { mangle: false, headerIds: true });
+      
+      // Process glossary terms after markdown is rendered
+      setTimeout(() => {
+        if (window.Glossary) {
+          window.Glossary.process(wrapper);
+        }
+      }, 100);
+      
+      return wrapper;
+    }
+
+    function createCodeViewer(text) {
+      const pre = document.createElement('pre');
+      pre.textContent = text;
+      return pre;
+    }
+
+    function createTextViewer(text) {
+      const pre = document.createElement('pre');
+      pre.className = 'text-wrapped';
+      pre.textContent = text;
+      return pre;
+    }
+
+    async function loadAsset(item, buttonEl, options = {}) {
+      const { skipHistory = false, skipURL = false, restoreState = null, skipTourCheck = false } = options;
+      
+      // Save state of current item before switching
+      const currentState = saveCurrentState();
+      if (currentState && currentItem) {
+        updateURLState(currentItem, currentState, true);
+      }
+      
+      setActiveButton(buttonEl);
+      statusEl.textContent = `Loading "${item.title || item.fileName}"…`;
+      
+      // Check tour membership before loading
+      if (!skipTourCheck) {
+        checkItemTourMembership(item);
+      }
+      
+      currentItem = item;
+      const series = getSeriesForItem(item);
+      currentSeries = series;
+
+      // Get state from URL if not provided
+      const urlState = restoreState || getStateFromURL();
+
+      // Add to history and update URL
+      if (!skipHistory) {
+        addToHistory(item);
+      }
+      if (!skipURL) {
+        updateURLState(item, {}, false);
+      }
+
+      const encodedPath = item.path.split('/').map(encodeURIComponent).join('/');
+      const contentType = detectContentType(item);
+
+      // Update header info (desktop)
+      if (headerInfo && !isMobile()) {
+        headerInfo.style.display = 'flex';
+        headerFileTitle.textContent = item.title || item.fileName;
+        headerFilePath.textContent = item.path;
+        if (series) {
+          headerFileSeries.textContent = `Part of: ${series.title}`;
+          headerFileSeries.style.display = 'block';
+        } else {
+          headerFileSeries.style.display = 'none';
+        }
+        headerDownloadLink.href = encodedPath;
+        headerDownloadLink.download = item.fileName;
+        adjustHeaderTitle();
+      } else if (headerInfo) {
+        headerInfo.style.display = 'none';
+      }
+
+      // Update sidebar info (mobile)
+      if (isMobile() && sidebarFileInfo) {
+        sidebarFileInfo.style.display = 'block';
+        sidebarFileTitle.textContent = item.title || item.fileName;
+        sidebarFilePath.textContent = item.path;
+        if (series) {
+          sidebarFileSeries.textContent = `Part of: ${series.title}`;
+          sidebarFileSeries.style.display = 'block';
+        } else {
+          sidebarFileSeries.style.display = 'none';
+        }
+        sidebarDownloadLink.href = encodedPath;
+        sidebarDownloadLink.download = item.fileName;
+      } else if (sidebarFileInfo) {
+        sidebarFileInfo.style.display = 'none';
+      }
+
+      // Keep toolbar hidden (info moved to header/sidebar)
+      viewerToolbar.hidden = true;
+
+      // Update series info
+      if (series) {
+        viewerSeries.textContent = `Part of: ${series.title}`;
+        viewerSeries.style.display = 'block';
+      } else {
+        viewerSeries.style.display = 'none';
+      }
+
+      // Show/hide immersive toggle based on content type
+      if (contentType === 'lobby-experience' || contentType === 'lobby-hub' || 
+          contentType === 'interactive-app' || contentType === 'game') {
+        immersiveToggle.style.display = 'inline-flex';
+      } else {
+        immersiveToggle.style.display = 'none';
+      }
+
+      // Check tour membership and update accordingly
+      checkItemTourMembership(item);
+      
+      // Show/hide exit tour button in header
+      if (headerExitTour) {
+        headerExitTour.style.display = currentTour ? 'inline-flex' : 'none';
+      }
+
+      try {
+        // Use actual mediaType for rendering, contentType only for UI
+        const renderType = item.mediaType || contentType;
+        
+        switch (renderType) {
+          case 'lobby-experience':
+          case 'lobby-hub':
+          case 'interactive-app':
+          case 'game': {
+            const iframe = document.createElement('iframe');
+            iframe.src = encodedPath;
+            iframe.title = item.title || item.fileName;
+            iframe.style.width = '100%';
+            iframe.style.minHeight = '800px';
+            iframe.style.border = 'none';
+            iframe.style.height = 'auto';
+            
+            // For mobile, try to make iframe content scroll in main body
+            // Note: This only works for same-origin iframes
+            iframe.style.overflow = 'visible';
+            
+            viewerContent.innerHTML = '';
+            viewerContent.appendChild(iframe);
+            
+            // For iframes, we can listen for postMessage from the iframe content
+            // to save state (if the iframe content cooperates)
+            window.addEventListener('message', (event) => {
+              // Only accept messages from same origin or trusted sources
+              if (event.data && event.data.type === 'iframe-state' && event.data.state) {
+                const state = { iframeState: event.data.state };
+                updateURLState(item, state, true);
+              }
+            });
+            
+            // Try to send state to iframe on load (if same-origin)
+            iframe.addEventListener('load', () => {
+              // Add scroll listener for iframe to trigger header collapse
+              try {
+                if (iframe.contentWindow && iframe.contentDocument) {
+                  // Try to add scroll listener directly
+                  iframe.contentWindow.addEventListener('scroll', () => {
+                    const scrollTop = iframe.contentWindow.pageYOffset || 
+                                     iframe.contentDocument.documentElement.scrollTop || 0;
+                    // Send scroll message to parent
+                    window.postMessage({ type: 'iframe-scroll', scrollTop }, '*');
+                    handleScroll();
+                  }, { passive: true });
+                  
+                  // Also inject script to send scroll messages (for cross-frame communication)
+                  const script = iframe.contentDocument.createElement('script');
+                  script.textContent = `
+                    (function() {
+                      let lastScroll = 0;
+                      function sendScroll() {
+                        const scroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+                        if (Math.abs(scroll - lastScroll) > 5) {
+                          window.parent.postMessage({ type: 'iframe-scroll', scrollTop: scroll }, '*');
+                          lastScroll = scroll;
+                        }
+                      }
+                      window.addEventListener('scroll', sendScroll, { passive: true });
+                      setInterval(sendScroll, 100);
+                    })();
+                  `;
+                  try {
+                    iframe.contentDocument.head.appendChild(script);
+                  } catch (e) {
+                    // Can't inject script (cross-origin or CSP)
+                  }
+                }
+              } catch (e) {
+                // Cross-origin iframe, can't access - use main scroll instead
+                // Listen to main element scroll for header collapse
+                if (mainEl) {
+                  mainEl.addEventListener('scroll', handleScroll, { passive: true });
+                }
+              }
+              
+              if (restoreState && restoreState.iframeState) {
+                try {
+                  iframe.contentWindow.postMessage({
+                    type: 'restore-state',
+                    state: restoreState.iframeState
+                  }, '*');
+                } catch (e) {
+                  // Cross-origin restrictions
+                }
+              }
+            });
+            
+            statusEl.textContent = `Viewing ${contentType} "${item.fileName}". Press Immersive for fullscreen.`;
+            break;
+          }
+          case 'video': {
+            const video = document.createElement('video');
+            video.controls = true;
+            video.src = encodedPath;
+            video.playsInline = true;
+            viewerContent.innerHTML = '';
+            viewerContent.appendChild(video);
+            
+            // Restore video state
+            if (restoreState && restoreState.videoTime !== undefined) {
+              video.addEventListener('loadedmetadata', () => {
+                video.currentTime = restoreState.videoTime;
+                if (restoreState.videoPaused === false) {
+                  video.play().catch(() => {});
+                }
+              });
+            }
+            
+            // Save video state on timeupdate
+            video.addEventListener('timeupdate', () => {
+              const state = saveMediaState('video', video);
+              if (state) {
+                updateURLState(item, state, true);
+              }
+            });
+            
+            statusEl.textContent = `Viewing video "${item.fileName}".`;
+            break;
+          }
+          case 'audio': {
+            const audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = encodedPath;
+            viewerContent.innerHTML = '';
+            viewerContent.appendChild(audio);
+            
+            // Restore audio state
+            if (restoreState && restoreState.audioTime !== undefined) {
+              audio.addEventListener('loadedmetadata', () => {
+                audio.currentTime = restoreState.audioTime;
+                if (restoreState.audioPaused === false) {
+                  audio.play().catch(() => {});
+                }
+              });
+            }
+            
+            // Save audio state on timeupdate
+            audio.addEventListener('timeupdate', () => {
+              const state = saveMediaState('audio', audio);
+              if (state) {
+                updateURLState(item, state, true);
+              }
+            });
+            
+            statusEl.textContent = `Listening to "${item.fileName}".`;
+            break;
+          }
+          case 'image': {
+            const img = document.createElement('img');
+            img.src = encodedPath;
+            img.alt = item.title || item.fileName;
+            viewerContent.innerHTML = '';
+            viewerContent.appendChild(img);
+            statusEl.textContent = `Viewing image "${item.fileName}".`;
+            break;
+          }
+          case 'html': {
+            // Only use iframe for actual HTML files, not markdown
+            if (contentType === 'html' || item.fileName.toLowerCase().endsWith('.html')) {
+              const iframe = document.createElement('iframe');
+              iframe.src = encodedPath;
+              iframe.title = item.title || item.fileName;
+              iframe.style.width = '100%';
+              iframe.style.minHeight = '600px';
+              viewerContent.innerHTML = '';
+              viewerContent.appendChild(iframe);
+              
+              // Handle iframe state (same as lobby experiences)
+              window.addEventListener('message', (event) => {
+                if (event.data && event.data.type === 'iframe-state' && event.data.state) {
+                  const state = { iframeState: event.data.state };
+                  updateURLState(item, state, true);
+                }
+              });
+              
+              iframe.addEventListener('load', () => {
+                // Add scroll listener for iframe to trigger header collapse
+                try {
+                  if (iframe.contentWindow) {
+                    iframe.contentWindow.addEventListener('scroll', handleScroll, { passive: true });
+                  }
+                } catch (e) {
+                  // Cross-origin iframe, can't access
+                }
+                
+                if (restoreState && restoreState.iframeState) {
+                  try {
+                    iframe.contentWindow.postMessage({
+                      type: 'restore-state',
+                      state: restoreState.iframeState
+                    }, '*');
+                  } catch (e) {
+                    // Cross-origin restrictions
+                  }
+                }
+              });
+              
+              statusEl.textContent = `Embedding HTML "${item.fileName}".`;
+            } else {
+              // Fallback for mis-detected files
+              const response = await fetch(encodedPath);
+              if (!response.ok) throw new Error(`HTTP ${response.status}`);
+              const text = await response.text();
+              const pre = createCodeViewer(text);
+              viewerContent.innerHTML = '';
+              viewerContent.appendChild(pre);
+              
+              // Restore scroll position
+              if (restoreState) {
+                const scrollPos = restoreState.scrollTop || restoreState.viewerScroll;
+                if (scrollPos !== undefined) {
+                  setTimeout(() => {
+                    viewerContent.scrollTop = scrollPos;
+                  }, 200);
+                }
+              }
+              
+              // Save scroll for code viewer
+              let scrollTimeout;
+              const saveScroll = () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                  const state = saveMediaState('code', pre);
+                  if (state) {
+                    updateURLState(item, state, true);
+                  }
+                }, 500);
+              };
+              viewerContent.addEventListener('scroll', saveScroll, { passive: true });
+              
+              statusEl.textContent = `Viewing "${item.fileName}".`;
+	      setTimeout(add_shortcut_link_button, 200);
+            }
+            break;
+          }
+          case 'markdown': {
+            const response = await fetch(encodedPath);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const markdown = await response.text();
+            const rendered = createMarkdownViewer(markdown);
+            viewerContent.innerHTML = '';
+            viewerContent.appendChild(rendered);
+            
+            // Restore scroll position
+            if (restoreState) {
+              const scrollPos = restoreState.scrollTop || restoreState.viewerScroll;
+              if (scrollPos !== undefined) {
+                setTimeout(() => {
+                  viewerContent.scrollTop = scrollPos;
+                }, 200);
+              }
+            }
+            
+            // Save scroll position
+            let scrollTimeout;
+            const saveScroll = () => {
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                const state = saveMediaState('markdown', rendered);
+                if (state) {
+                  updateURLState(item, state, true);
+                }
+              }, 500); // Debounce
+            };
+            viewerContent.addEventListener('scroll', saveScroll, { passive: true });
+            
+            statusEl.textContent = `Viewing markdown "${item.fileName}".`;
+            break;
+          }
+          case 'text': {
+            const response = await fetch(encodedPath);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const text = await response.text();
+            const pre = createTextViewer(text);
+            viewerContent.innerHTML = '';
+            viewerContent.appendChild(pre);
+            
+            // Restore scroll position
+            if (restoreState) {
+              const scrollPos = restoreState.scrollTop || restoreState.viewerScroll;
+              if (scrollPos !== undefined) {
+                setTimeout(() => {
+                  viewerContent.scrollTop = scrollPos;
+                }, 200);
+              }
+            }
+            
+            // Save scroll position
+            let scrollTimeout;
+            const saveScroll = () => {
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                const state = saveMediaState('text', pre);
+                if (state) {
+                  updateURLState(item, state, true);
+                }
+              }, 500);
+            };
+            viewerContent.addEventListener('scroll', saveScroll, { passive: true });
+            
+            statusEl.textContent = `Viewing text "${item.fileName}".`;
+            break;
+          }
+          case 'code': {
+            const response = await fetch(encodedPath);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const text = await response.text();
+            const pre = createCodeViewer(text);
+            viewerContent.innerHTML = '';
+            viewerContent.appendChild(pre);
+            
+            // Restore scroll position
+            if (restoreState) {
+              const scrollPos = restoreState.scrollTop || restoreState.viewerScroll;
+              if (scrollPos !== undefined) {
+                setTimeout(() => {
+                  viewerContent.scrollTop = scrollPos;
+                }, 200);
+              }
+            }
+            
+            // Save scroll position
+            let scrollTimeout;
+            const saveScroll = () => {
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(() => {
+                const state = saveMediaState('code', pre);
+                if (state) {
+                  updateURLState(item, state, true);
+                }
+              }, 500);
+            };
+            viewerContent.addEventListener('scroll', saveScroll, { passive: true });
+            
+            statusEl.textContent = `Viewing code "${item.fileName}".`;
+            break;
+          }
+          default: {
+            viewerContent.innerHTML = '';
+            const msg = document.createElement('div');
+            msg.style.textAlign = 'center';
+            msg.innerHTML = `
+              <p>Preview not available for this file type.</p>
+              <p><a href="${encodedPath}" download="${item.fileName}" style="color: var(--accent); font-weight: 600;">Download ${item.fileName}</a></p>
+            `;
+            viewerContent.appendChild(msg);
+            statusEl.textContent = `Download "${item.fileName}" to view it locally.`;
+          }
+        }
+
+        // Restore state from URL
+        if (urlState && Object.keys(urlState).length > 0) {
+          setTimeout(() => {
+            const contentType = detectContentType(item);
+            const mediaElement = viewerContent.querySelector('video, audio, iframe, pre, #markdown-content');
+            if (mediaElement) {
+              restoreMediaState(contentType, mediaElement, urlState);
+            }
+            // Restore scroll position for main element
+            if (urlState.scroll !== undefined && mainEl) {
+              mainEl.scrollTop = parseInt(urlState.scroll, 10);
+            }
+          }, 200);
+        } else {
+          // Scroll to top if no state to restore
+          if (mainEl) {
+            mainEl.scrollTop = 0;
+          }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Save state periodically for media
+        if (currentItem) {
+          const contentType = detectContentType(currentItem);
+          const mediaElement = viewerContent.querySelector('video, audio');
+          if (mediaElement) {
+            mediaElement.addEventListener('timeupdate', () => {
+              const state = saveMediaState(contentType, mediaElement);
+              if (state) {
+                updateURLState(currentItem, state, true);
+              }
+            });
+          }
+        }
+
+        // Scroll state is handled above in restore section
+      } catch (error) {
+        console.error('Failed to load asset', error);
+        statusEl.textContent = `Failed to load "${item.fileName}". Check console for details.`;
+        viewerContent.innerHTML = '';
+      }
+    }
+
+    async function loadManifest() {
+      try {
+        const response = await fetch(manifestPath);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        manifest = await response.json();
+        buildSeriesMap();
+        treeRoot = buildTree(manifest);
+        renderTreeView(treeRoot);
+        
+        // Load history
+        loadHistory();
+        updateHistoryButtons();
+        
+        // Initialize title adjustment
+        adjustHeaderTitle();
+        
+        // Check URL for initial file and state
+        const fileFromURL = getFileFromURL();
+        const stateFromURL = getStateFromURL();
+        if (fileFromURL) {
+          loadAsset(fileFromURL, null, { skipHistory: true, skipURL: true, restoreState: stateFromURL });
+          statusEl.textContent = 'Manifest loaded.';
+        } else {
+          statusEl.textContent = 'Manifest loaded. Select a document to begin.';
+        }
+      } catch (error) {
+        console.error('Failed to load manifest', error);
+        statusEl.textContent = 'Unable to load manifest.json. Ensure it exists and GitHub Pages has deployed the latest version.';
+      }
+    }
+
+    // Event listeners
+    searchEl.addEventListener('input', (event) => {
+      filterList(event.target.value);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === '/' && document.activeElement !== searchEl) {
+        event.preventDefault();
+        searchEl.focus();
+      }
+      if (event.key === 'ArrowLeft' && currentTour) {
+        tourNavigate(-1);
+      }
+      if (event.key === 'ArrowRight' && currentTour) {
+        tourNavigate(1);
+      }
+      if (event.key === 'Escape') {
+        if (document.body.classList.contains('immersive-mode')) {
+          exitImmersiveMode();
+        } else if (currentTour) {
+          exitTour();
+        } else if (sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      }
+    });
+
+    // Hamburger menu functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    function isMobile() {
+      return window.innerWidth <= 960;
+    }
+
+    function openSidebar() {
+      if (!isMobile()) return;
+      sidebar.classList.add('open');
+      sidebarOverlay.classList.add('active');
+      document.body.classList.add('sidebar-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeSidebar() {
+      if (!isMobile()) return;
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('active');
+      document.body.classList.remove('sidebar-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleSidebar() {
+      if (sidebar.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    }
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', toggleSidebar);
+    }
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener('click', closeSidebar);
+    }
+
+    // Immersive mode
+    if (immersiveToggle) {
+      immersiveToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('immersive-mode')) {
+          exitImmersiveMode();
+          immersiveToggle.textContent = '⛶ Immersive';
+        } else {
+          enterImmersiveMode();
+          immersiveToggle.textContent = '⊟ Exit Immersive';
+        }
+      });
+    }
+
+    if (immersiveExit) {
+      immersiveExit.addEventListener('click', () => {
+        exitImmersiveMode();
+        if (immersiveToggle) {
+          immersiveToggle.textContent = '⛶ Immersive';
+        }
+      });
+    }
+
+    // Tour navigation
+    if (tourPrev) {
+      tourPrev.addEventListener('click', () => tourNavigate(-1));
+    }
+    if (tourNext) {
+      tourNext.addEventListener('click', () => tourNavigate(1));
+    }
+    if (tourNavPrev) {
+      tourNavPrev.addEventListener('click', () => tourNavigate(-1));
+    }
+    if (tourNavNext) {
+      tourNavNext.addEventListener('click', () => tourNavigate(1));
+    }
+    if (tourExit) {
+      tourExit.addEventListener('click', exitTour);
+    }
+    if (headerExitTour) {
+      headerExitTour.addEventListener('click', exitTour);
+    }
+
+    window.addEventListener('resize', () => {
+      if (!isMobile()) {
+        closeSidebar();
+      }
+      adjustHeaderTitle();
+      // Update header/sidebar visibility on resize
+      if (currentItem) {
+        if (isMobile()) {
+          if (headerInfo) headerInfo.style.display = 'none';
+          if (sidebarFileInfo) sidebarFileInfo.style.display = 'block';
+        } else {
+          if (headerInfo) headerInfo.style.display = 'flex';
+          if (sidebarFileInfo) sidebarFileInfo.style.display = 'none';
+        }
+      }
+    });
+
+    // History event listeners
+    if (clearHistoryBtn) {
+      clearHistoryBtn.addEventListener('click', clearHistory);
+    }
+
+    // Browser history integration
+    window.addEventListener('popstate', handlePopState);
+
+    // History navigation buttons
+    function updateHistoryButtons() {
+      if (historyBack) {
+        // Show back button if we have history
+        historyBack.style.display = history.length > 0 ? 'inline-flex' : 'none';
+      }
+      if (historyForward) {
+        // Forward is handled by browser history API
+        historyForward.style.display = 'inline-flex';
+        // Note: Browser forward state is not easily detectable, so we keep it enabled
+        // The browser will handle the actual forward navigation
+      }
+    }
+
+    if (historyBack) {
+      historyBack.addEventListener('click', () => {
+        window.history.back();
+      });
+    }
+
+    if (historyForward) {
+      historyForward.addEventListener('click', () => {
+        window.history.forward();
+      });
+    }
+
+    // Exit tour button
+    if (headerExitTour) {
+      headerExitTour.addEventListener('click', exitTour);
+    }
+
+    // Update swipe hint on resize
+    window.addEventListener('resize', () => {
+      updateSwipeHint();
+    });
+
+    // Swipe gesture handlers removed - using unified handlers below
+
+    // Scroll-based header collapse (mobile only, small screens)
+    // Uses scroll direction (up/down) not position
+    function handleScroll() {
+      if (!isMobile() || window.innerWidth > 960) return;
+      
+      // Get current scroll position from all possible sources
+      const windowScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const mainScroll = mainEl ? mainEl.scrollTop : 0;
+      const viewerScroll = viewerContent ? viewerContent.scrollTop : 0;
+      let currentScroll = Math.max(windowScroll, mainScroll, viewerScroll);
+      
+      // Also check iframe scroll if viewing iframe content
+      const iframe = viewerContent ? viewerContent.querySelector('iframe') : null;
+      if (iframe && iframe.contentWindow) {
+        try {
+          const iframeScroll = iframe.contentWindow.pageYOffset || 
+                              iframe.contentDocument?.documentElement?.scrollTop || 
+                              iframe.contentDocument?.body?.scrollTop || 0;
+          currentScroll = Math.max(currentScroll, iframeScroll);
+        } catch (e) {
+          // Cross-origin iframe, can't access scroll - use main scroll instead
+          // We'll detect scroll via message passing or use main scroll
+        }
+      }
+      
+      if (headerEl) {
+        // Use scroll direction, not position
+        if (currentScroll > lastScrollTop && currentScroll - lastScrollTop > 5) {
+          // Scrolling DOWN - make header transparent (keep hamburger visible)
+          headerEl.classList.add('scrolled-down');
+          scrollDirection = 'down';
+        } else if (currentScroll < lastScrollTop && lastScrollTop - currentScroll > 5) {
+          // Scrolling UP - show header fully
+          headerEl.classList.remove('scrolled-down');
+          scrollDirection = 'up';
+        }
+        // If scroll position hasn't changed much, don't change header state
+      }
+      
+      lastScrollTop = currentScroll;
+    }
+    
+    // Listen for iframe scroll messages (if iframe cooperates)
+    window.addEventListener('message', (event) => {
+      if (!isMobile() || window.innerWidth > 960) return;
+      if (event.data && event.data.type === 'iframe-scroll') {
+        const iframeScroll = event.data.scrollTop || 0;
+        if (headerEl) {
+          if (iframeScroll > lastScrollTop && iframeScroll - lastScrollTop > 5) {
+            headerEl.classList.add('scrolled-down');
+            scrollDirection = 'down';
+          } else if (iframeScroll < lastScrollTop && lastScrollTop - iframeScroll > 5) {
+            headerEl.classList.remove('scrolled-down');
+            scrollDirection = 'up';
+          }
+          lastScrollTop = iframeScroll;
+        }
+      }
+    });
+
+    // Touch/swipe handlers for tour navigation
+    function handleTouchStart(e) {
+      if (!isMobile() || !currentTour) return;
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }
+
+    function handleTouchEnd(e) {
+      if (!isMobile() || !currentTour) return;
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+    }
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      
+      // Only handle horizontal swipes (ignore if vertical swipe is larger)
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX > 0) {
+          // Swipe right - previous
+          tourNavigate(-1);
+        } else {
+          // Swipe left - next
+          tourNavigate(1);
+        }
+      }
+    }
+
+    // Add touch and scroll listeners
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchend', handleTouchEnd, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (mainEl) {
+      mainEl.addEventListener('scroll', handleScroll, { passive: true });
+    }
+    if (viewerContent) {
+      viewerContent.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // Show swipe hint on mobile when tour is active
+    function updateSwipeHint() {
+      if (swipeHint) {
+        if (isMobile() && currentTour) {
+          swipeHint.style.display = 'block';
+        } else {
+          swipeHint.style.display = 'none';
+        }
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadManifest);
+
+    // Glossary system - using reusable Glossary object
+    function processGlossaryTerms(element) {
+      if (window.Glossary) {
+        window.Glossary.process(element);
+      }
+    }
+
+    // Toggle glossary highlighting
+    function toggleGlossary() {
+      if (!window.Glossary) return;
+      
+      window.Glossary.toggle();
+      const toggle = document.getElementById('glossary-toggle');
+      
+      if (window.Glossary.enabled) {
+        toggle.classList.add('active');
+        // Reprocess current markdown content
+        const markdownContent = document.getElementById('markdown-content');
+        if (markdownContent) {
+          // Reload current markdown to reprocess
+          if (currentItem && currentItem.path.endsWith('.md')) {
+            loadAsset(currentItem, null, { skipHistory: true, skipURL: true });
+          }
+        }
+      } else {
+        toggle.classList.remove('active');
+        // Remove glossary highlights
+        const markdownContent = document.getElementById('markdown-content');
+        if (markdownContent) {
+          markdownContent.querySelectorAll('.glossary-term').forEach(span => {
+            const text = span.textContent;
+            const parent = span.parentNode;
+            parent.replaceChild(document.createTextNode(text), span);
+            parent.normalize();
+          });
+        }
+      }
+    }
+
+    // Initialize glossary on page load
+    window.addEventListener('DOMContentLoaded', async () => {
+      if (window.Glossary) {
+        await window.Glossary.init({
+          foundationReaderUrl: '/?f=',
+          windowSize: { width: 500, height: 800 },
+          enabled: true
+        });
+        
+        // Set up toggle button
+        const glossaryToggle = document.getElementById('glossary-toggle');
+        if (glossaryToggle) {
+          glossaryToggle.addEventListener('click', toggleGlossary);
+          glossaryToggle.classList.add('active'); // Start enabled
+        }
+      }
+    });
+
+
+function add_shortcut_link_button(){
+      var links = document.getElementsByTagName("a");
+      if(!links) return;
+
+      for(i = 0; i < links.length; i++) {
+							if(links[i].href.indexOf("?") != -1) {
+											continue;
+							}
+							const file_index = links[i].href.search(/\/([^\/]*\.md)/)+1
+				      const last_href_part = links[i].href.slice(file_index)
+
+							let huh = manifest.map((a) => { 
+											return [a, a.title.split(/\W/).reduce((acc, e) => {
+															if(e && last_href_part.search(e) != -1) {
+																			return acc + e.length/a.title.length
+															}
+															return acc
+											}, 0.0)];
+							}).filter((a) => {
+											return a[0] && a[1] > 0
+							})
+							let highscoring = huh.reduce(([target, highscore], [a,score]) => { 
+											return score > highscore ? [a, score] : [target, highscore]
+							}, [Object, 0.0])
+
+							if(huh.length > 1) { 
+											const r = (len) => { return Math.floor(Math.random()*len)};
+											const random_next = () => {
+															ra = r(huh.length)
+															return huh[ra][0] == highscoring[0] 
+																			? huh[(ra + 1 + r(huh.length - 1)) % huh.length] 
+																			: huh[ra];
+											}
+											if(true){
+															shortcuts = huh.reduce((acc, el) => {
+																			acc.push(el[0].shortcut)
+																			return acc;
+															}, []);
+															links[i].outerHTML += `<button onclick="window.open('/?f='+['`
+																+shortcuts.join("','")
+																+"']"
+																+"[Math.floor(Math.random()*"
+																+shortcuts.length
+																+`)], '_blank', 'width=${READER_X},height=${READER_Y},resizable=yes,scrollbars=yes')">⧝</button>`;
+											} else {
+															// Per page load
+															random_chosen = random_next();
+
+															links[i].outerHTML += `<button onclick="window.open('/?f=${random_chosen[0].shortcut}&hs=${random_chosen[1]}', '_blank', 'width=${READER_X},height=${READER_Y},resizable=yes,scrollbars=yes')">⧝</button>`;
+											}
+							}
+							if(huh.length > 0) {
+											links[i].outerHTML += `<button onclick="window.open('/?f=${highscoring[0].shortcut}&hs=${highscoring[1]}', '_blank', 'width=${READER_X},height=${READER_Y},resizable=yes,scrollbars=yes')">→</button>`;
+							}
+    	}
+}
+
+
+
+  </script>
+
+  <!-- Glossary Modal -->
+  <div id="glossary-modal" class="glossary-modal">
+    <div class="glossary-modal-content">
+      <div class="glossary-modal-header">
+        <h2 class="glossary-modal-title" id="glossary-modal-title"></h2>
+        <button class="glossary-modal-close" id="glossary-modal-close">&times;</button>
+      </div>
+      <div class="glossary-modal-body" id="glossary-modal-body"></div>
+    </div>
+  </div>
+</body>
+</html>

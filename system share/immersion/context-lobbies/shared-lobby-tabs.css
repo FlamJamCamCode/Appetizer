@@ -1,0 +1,371 @@
+/* ============================================
+   SHARED LOBBY FLUID TABS SYSTEM
+   Common CSS for all Rally Lobby interfaces
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.lobby-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ============================================
+   FLUID TABS NAVIGATION
+   ============================================ */
+
+.tabs-nav {
+    display: flex;
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.4), rgba(72, 61, 139, 0.3));
+    border-bottom: 3px solid rgba(212, 175, 55, 0.6);
+    position: relative;
+    z-index: 10;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 25px 40px;
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    font-family: 'Georgia', serif;
+}
+
+.tab-button:hover {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.tabs-nav label[for]::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffd700;
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Highlight the label for the checked radio button */
+.tab-toggle[data-panel="before"]:checked ~ .tabs-nav label[for="tab-before"],
+.tab-toggle[data-panel="lobby"]:checked ~ .tabs-nav label[for="tab-lobby"],
+.tab-toggle[data-panel="fulfillment"]:checked ~ .tabs-nav label[for="tab-fulfillment"],
+.tab-toggle[data-panel="about"]:checked ~ .tabs-nav label[for="tab-about"],
+.tab-toggle[data-panel="lobbies"]:checked ~ .tabs-nav label[for="tab-lobbies"],
+.tab-toggle[data-panel="system"]:checked ~ .tabs-nav label[for="tab-system"] {
+    color: #ffd700;
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.tab-toggle[data-panel="before"]:checked ~ .tabs-nav label[for="tab-before"]::after,
+.tab-toggle[data-panel="lobby"]:checked ~ .tabs-nav label[for="tab-lobby"]::after,
+.tab-toggle[data-panel="fulfillment"]:checked ~ .tabs-nav label[for="tab-fulfillment"]::after,
+.tab-toggle[data-panel="about"]:checked ~ .tabs-nav label[for="tab-about"]::after,
+.tab-toggle[data-panel="lobbies"]:checked ~ .tabs-nav label[for="tab-lobbies"]::after,
+.tab-toggle[data-panel="system"]:checked ~ .tabs-nav label[for="tab-system"]::after {
+    transform: scaleX(1);
+}
+
+.tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffd700;
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-button.active::after {
+    transform: scaleX(1);
+}
+
+.tab-indicator {
+    font-size: 0.75em;
+    display: block;
+    margin-top: 5px;
+    opacity: 0.6;
+}
+
+/* ============================================
+   CONTENT CONTAINER & PANELS
+   ============================================ */
+
+.content-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: clamp(32px, 5vw, 70px) clamp(20px, 6vw, 90px);
+    scroll-behavior: smooth;
+    padding-bottom: clamp(120px, 25vh, 260px);
+    pointer-events: none;
+}
+
+.content-panel.previous {
+    transform: translateX(-100%);
+}
+
+/* Match panel to checked radio by data-panel attribute */
+.tab-toggle[data-panel="before"]:checked ~ .content-container .content-panel[data-panel="before"],
+.tab-toggle[data-panel="lobby"]:checked ~ .content-container .content-panel[data-panel="lobby"],
+.tab-toggle[data-panel="fulfillment"]:checked ~ .content-container .content-panel[data-panel="fulfillment"],
+.tab-toggle[data-panel="about"]:checked ~ .content-container .content-panel[data-panel="about"],
+.tab-toggle[data-panel="lobbies"]:checked ~ .content-container .content-panel[data-panel="lobbies"],
+.tab-toggle[data-panel="system"]:checked ~ .content-container .content-panel[data-panel="system"] {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+
+.content-panel::-webkit-scrollbar {
+    width: 12px;
+}
+
+.content-panel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.content-panel::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.5);
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.content-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.8);
+}
+
+/* Smooth scrollbar animation */
+.content-panel::-webkit-scrollbar-thumb:active {
+    background: #ffd700;
+}
+
+/* ============================================
+   COMMON ANIMATIONS
+   ============================================ */
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-down {
+    animation: slideInDown 0.6s ease-out;
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.6s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+.animate-delay-6 { animation-delay: 0.6s; }
+.animate-delay-7 { animation-delay: 0.7s; }
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Desktops (1920px+) */
+@media (min-width: 1920px) {
+    .content-panel {
+        padding: 80px 140px;
+    }
+
+    .tab-button {
+        padding: 30px 55px;
+        font-size: 1.4em;
+    }
+}
+
+/* Standard Desktops (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .content-panel {
+        padding: 70px 110px;
+    }
+
+    .tab-button {
+        padding: 28px 45px;
+        font-size: 1.3em;
+    }
+}
+
+/* Small Desktops / Large Tablets Landscape (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .content-panel {
+        padding: 60px 80px;
+    }
+
+    .tab-button {
+        padding: 24px 32px;
+        font-size: 1.2em;
+    }
+}
+
+/* Tablets Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content-panel {
+        padding: 45px 50px;
+    }
+
+    .tab-button {
+        padding: 20px 24px;
+        font-size: 1.05em;
+    }
+
+    .tab-indicator {
+        font-size: 0.7em;
+    }
+}
+
+/* Large Phones Landscape / Small Tablets (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+    .content-panel {
+        padding: 32px 28px;
+    }
+
+    .tab-button {
+        padding: 18px 16px;
+        font-size: 1em;
+    }
+
+    .tab-indicator {
+        display: none;
+    }
+}
+
+/* Phones Portrait (480px - 639px) */
+@media (min-width: 480px) and (max-width: 639px) {
+    .content-panel {
+        padding: 24px 18px;
+    }
+
+    .tab-button {
+        padding: 16px 12px;
+        font-size: 0.95em;
+    }
+
+    .tab-indicator {
+        display: none;
+    }
+}
+
+/* Small Phones (< 480px) */
+@media (max-width: 479px) {
+    .content-panel {
+        padding: 18px 12px;
+    }
+
+    .tab-button {
+        padding: 14px 10px;
+        font-size: 0.9em;
+    }
+
+    .tab-indicator {
+        display: none;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+    .content-panel {
+        padding: 20px 26px;
+    }
+
+    .tab-button {
+        padding: 14px 18px;
+        font-size: 0.95em;
+    }
+
+    .tab-indicator {
+        display: none;
+    }
+}
+
+/* Portrait Orientation Adjustments */
+@media (orientation: portrait) and (max-width: 1024px) {
+    .content-panel {
+        padding-top: 36px;
+        padding-bottom: 48px;
+    }
+}
+
+/* iPad Specific (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content-panel {
+        padding: 42px 48px;
+    }
+
+    .tab-button {
+        padding: 21px 26px;
+        font-size: 1.05em;
+    }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .tab-button {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+

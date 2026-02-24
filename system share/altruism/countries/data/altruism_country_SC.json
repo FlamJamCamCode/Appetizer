@@ -1,0 +1,34 @@
+{
+  "country_code": "SC",
+  "name": "Seychelles",
+  "approximate": true,
+  "population": 100000,
+  "gdp_nominal_usd": 1700000000,
+  "gdp_per_capita_usd": 17000,
+  "social_spending_pct_gdp": 17.0,
+  "health_spending_pct_gdp": 5.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.05,
+  "oda_given_usd": 5000000,
+  "oda_received_usd": 20000000,
+  "private_giving_pct_gdp": 0.5,
+  "private_giving_total_usd": 8000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.01,
+  "child_mortality_under5_per_1000": 8.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Diabetes",
+    "Cancers"
+  ],
+  "notes": [
+    "Seychelles is a small island state with high per-capita income and climate vulnerability.",
+    "Offshore services and tourism dominate; environmental NGOs are significant."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

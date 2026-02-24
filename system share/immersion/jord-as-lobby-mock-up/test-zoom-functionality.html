@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Functionality Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        
+        .app-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, #1a0033, #000);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+        
+        .test-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .test-panel h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        
+        .test-panel p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .test-panel ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .test-panel li {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .status-panel {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 250px;
+        }
+        
+        .status-panel h3 {
+            margin: 0 0 10px 0;
+            color: #ff00ff;
+        }
+        
+        .status-item {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .status-item.success {
+            color: #00ff00;
+        }
+        
+        .status-item.error {
+            color: #ff0000;
+        }
+        
+        .test-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+        }
+        
+        .test-controls h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        
+        .test-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>Zoom Functionality Test</h1>
+        </div>
+        
+        <div class="map-container">
+            <div class="test-panel">
+                <h3>Zoom Test Instructions</h3>
+                <p>Test the zoom functionality:</p>
+                <ul>
+                    <li><strong>Mouse Wheel:</strong> Zoom towards mouse pointer</li>
+                    <li><strong>Zoom Buttons:</strong> Zoom towards center</li>
+                    <li><strong>Click Zones:</strong> Auto-zoom to zone</li>
+                    <li><strong>Reset:</strong> Return to original view</li>
+                </ul>
+                <p>Expected behavior:</p>
+                <ul>
+                    <li>Mouse wheel should zoom towards cursor position</li>
+                    <li>Zoom buttons should zoom towards viewport center</li>
+                    <li>Clicking zones should zoom to that zone</li>
+                    <li>All zooms should be smooth and accurate</li>
+                </ul>
+            </div>
+            
+            <div class="status-panel">
+                <h3>Test Status</h3>
+                <div class="status-item" id="mouseZoomStatus">Mouse zoom: Not tested</div>
+                <div class="status-item" id="buttonZoomStatus">Button zoom: Not tested</div>
+                <div class="status-item" id="zoneZoomStatus">Zone zoom: Not tested</div>
+                <div class="status-item" id="overallStatus">Overall: Testing...</div>
+            </div>
+            
+            <div class="test-controls">
+                <h3>Test Controls</h3>
+                <button class="test-btn" onclick="testMouseZoom()">Test Mouse Zoom</button>
+                <button class="test-btn" onclick="testButtonZoom()">Test Button Zoom</button>
+                <button class="test-btn" onclick="testZoneZoom()">Test Zone Zoom</button>
+                <button class="test-btn" onclick="resetTest()">Reset Test</button>
+            </div>
+            
+            <world-map-viewer id="mapViewer"></world-map-viewer>
+        </div>
+    </div>
+    
+    <script src="components/world-map-viewer.js"></script>
+    <script>
+        const mapViewer = document.getElementById('mapViewer');
+        let testResults = {
+            mouseZoom: false,
+            buttonZoom: false,
+            zoneZoom: false
+        };
+        
+        // Test zones data
+        const testZones = {
+            zones: [
+                {
+                    id: 'test-zone-1',
+                    name: 'Test Zone 1',
+                    position: { x: 500, y: 300 },
+                    bounds: { width: 150, height: 100 },
+                    type: 'level1-zone',
+                    level: 1,
+                    description: 'First test zone for zoom testing.',
+                    population: '100K',
+                    features: ['Test feature 1', 'Test feature 2']
+                },
+                {
+                    id: 'test-zone-2',
+                    name: 'Test Zone 2',
+                    position: { x: 1200, y: 400 },
+                    bounds: { width: 120, height: 80 },
+                    type: 'level2-zone',
+                    level: 2,
+                    description: 'Second test zone for zoom testing.',
+                    population: '50K',
+                    features: ['Different features', 'More test data']
+                },
+                {
+                    id: 'test-zone-3',
+                    name: 'Test Zone 3',
+                    position: { x: 1800, y: 200 },
+                    bounds: { width: 100, height: 120 },
+                    type: 'level3-zone',
+                    level: 3,
+                    description: 'Third test zone for zoom testing.',
+                    population: '75K',
+                    features: ['Complex features', 'Advanced data']
+                }
+            ]
+        };
+        
+        // Initialize the test
+        function initializeTest() {
+            // Load test zones
+            mapViewer.setAttribute('zones-data', JSON.stringify(testZones));
+            
+            // Add event listener for zone selection
+            mapViewer.addEventListener('zone-selected', (e) => {
+                console.log('Selected zone:', e.detail.zone);
+                testResults.zoneZoom = true;
+                updateStatus();
+            });
+            
+            // Add mouse wheel event listener for testing
+            mapViewer.addEventListener('wheel', (e) => {
+                testResults.mouseZoom = true;
+                updateStatus();
+            });
+        }
+        
+        // Test functions
+        function testMouseZoom() {
+            // Simulate mouse wheel events
+            const rect = mapViewer.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Create a wheel event
+            const wheelEvent = new WheelEvent('wheel', {
+                clientX: rect.left + centerX,
+                clientY: rect.top + centerY,
+                deltaY: -100 // Zoom in
+            });
+            
+            mapViewer.dispatchEvent(wheelEvent);
+            
+            testResults.mouseZoom = true;
+            updateStatus();
+        }
+        
+        function testButtonZoom() {
+            // Test zoom in button
+            mapViewer.zoomIn();
+            testResults.buttonZoom = true;
+            updateStatus();
+        }
+        
+        function testZoneZoom() {
+            // Select the first zone to test zone zoom
+            const zone = testZones.zones[0];
+            mapViewer.selectZone(zone);
+            testResults.zoneZoom = true;
+            updateStatus();
+        }
+        
+        function resetTest() {
+            mapViewer.resetView();
+            testResults = {
+                mouseZoom: false,
+                buttonZoom: false,
+                zoneZoom: false
+            };
+            updateStatus();
+        }
+        
+        function updateStatus() {
+            const mouseZoomStatus = document.getElementById('mouseZoomStatus');
+            const buttonZoomStatus = document.getElementById('buttonZoomStatus');
+            const zoneZoomStatus = document.getElementById('zoneZoomStatus');
+            const overallStatus = document.getElementById('overallStatus');
+            
+            mouseZoomStatus.textContent = `Mouse zoom: ${testResults.mouseZoom ? '✓ Tested' : '✗ Not tested'}`;
+            mouseZoomStatus.className = `status-item ${testResults.mouseZoom ? 'success' : 'error'}`;
+            
+            buttonZoomStatus.textContent = `Button zoom: ${testResults.buttonZoom ? '✓ Tested' : '✗ Not tested'}`;
+            buttonZoomStatus.className = `status-item ${testResults.buttonZoom ? 'success' : 'error'}`;
+            
+            zoneZoomStatus.textContent = `Zone zoom: ${testResults.zoneZoom ? '✓ Tested' : '✗ Not tested'}`;
+            zoneZoomStatus.className = `status-item ${testResults.zoneZoom ? 'success' : 'error'}`;
+            
+            const allTested = testResults.mouseZoom && testResults.buttonZoom && testResults.zoneZoom;
+            overallStatus.textContent = `Overall: ${allTested ? '✓ All tests passed' : '⏳ Testing...'}`;
+            overallStatus.className = `status-item ${allTested ? 'success' : 'error'}`;
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('load', initializeTest);
+    </script>
+</body>
+</html>

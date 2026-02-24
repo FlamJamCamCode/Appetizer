@@ -1,0 +1,36 @@
+{
+  "country_code": "TZ",
+  "name": "Tanzania",
+  "approximate": true,
+  "population": 65000000,
+  "gdp_nominal_usd": 85000000000,
+  "gdp_per_capita_usd": 1310,
+  "social_spending_pct_gdp": 11.0,
+  "health_spending_pct_gdp": 3.7,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 2500000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 250000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.6,
+  "child_mortality_under5_per_1000": 48.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Lower respiratory infections",
+    "Diarrheal diseases"
+  ],
+  "notes": [
+    "Tanzania has high under-5 mortality with malaria and infections prominent.",
+    "ODA and faith-based organizations play major roles in health and education."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

@@ -1,0 +1,36 @@
+{
+  "country_code": "LS",
+  "name": "Lesotho",
+  "approximate": true,
+  "population": 2300000,
+  "gdp_nominal_usd": 2600000000,
+  "gdp_per_capita_usd": 1130,
+  "social_spending_pct_gdp": 21.0,
+  "health_spending_pct_gdp": 7.5,
+  "education_spending_pct_gdp": 8.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 400000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 7800000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.03,
+  "child_mortality_under5_per_1000": 65.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "HIV/AIDS",
+    "Tuberculosis",
+    "Lower respiratory infections"
+  ],
+  "notes": [
+    "Lesotho has one of the highest HIV prevalence rates globally and high under-5 mortality.",
+    "Customs revenues from SACU and remittances from South Africa are key resources."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

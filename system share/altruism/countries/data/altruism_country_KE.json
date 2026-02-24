@@ -1,0 +1,36 @@
+{
+  "country_code": "KE",
+  "name": "Kenya",
+  "approximate": true,
+  "population": 55000000,
+  "gdp_nominal_usd": 115000000000,
+  "gdp_per_capita_usd": 2090,
+  "social_spending_pct_gdp": 13.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 5.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 3000000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 460000000,
+  "volunteering_rate_pct_adults": 35.0,
+  "volunteer_hours_billion": 0.6,
+  "child_mortality_under5_per_1000": 43.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "HIV/AIDS",
+    "Malaria",
+    "Lower respiratory infections"
+  ],
+  "notes": [
+    "Kenya is an East African hub with significant ODA and a growing tech sector.",
+    "Private and informal giving are important; figures are approximate."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

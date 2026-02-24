@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMO Healer Main - Rally to Respawn Island Medical</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0a1a 0%, #2d1a2d 50%, #1a0a1a 100%);
+            color: #ffd9ff;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(186, 104, 200, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(233, 30, 99, 0.12) 0%, transparent 50%);
+        }
+
+        .healer-marker {
+            color: #ba68c8;
+            font-weight: 600;
+        }
+
+        .triage-skill {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .healing-stat {
+            background: rgba(186, 104, 200, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #ba68c8;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="mmo-healer-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="mmo-healer-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="mmo-healer-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: Healing Pixels
+                <span class="tab-indicator">8,000 hours keeping raids alive</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE CALL
+                <span class="tab-indicator">Real warriors need healing</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Respawn coordination mastery</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">💜 BEFORE: Healer Main Life</h1>
+
+                <div class="pain-block">
+                    Sophie "Mercy" Park. 26 years old. 8,400 hours WoW healer. Holy Priest main. Mythic raider. Perfect triage instincts. Never let tank die.
+                    <br><br>
+                    <strong>You keep 20 people alive through impossible mechanics. You decide who lives. Who dies. Your split-second decisions determine raid success.</strong>
+                    <br><br>
+                    <span class="neologism">And your genius is: "Just heal lol." "Healer diff." Your mastery invisible to DPS.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="healing-stat">WoW hours: 8,400</div>
+                    <div class="healing-stat">Healer games: 7,800 (93%)</div>
+                    <div class="healing-stat">HPS percentile: 99th (top 1%)</div>
+                    <div class="healing-stat">Deaths prevented: Thousands</div>
+                    <div class="healing-stat">Mythic clears: 47 bosses</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        <strong style="color: #ba68c8;">Your healer skills:</strong>
+                        <br>• Triage (who needs healing most urgently)
+                        <br>• Resource management (mana efficiency, cooldown timing)
+                        <br>• Predictive healing (pre-casting before damage hits)
+                        <br>• Positioning (heal whole raid while dodging mechanics)
+                        <br>• Priority systems (tank > dps taking avoidable > dps standing in fire)
+                        <br>• Stress management (stay calm when raid melting)
+                        <br>• Cooldown coordination (communicate with other healers)
+                        <br><br>
+                        <span class="healer-marker">You're LIFE-KEEPER. DEATH-PREVENTER. Your decisions: 20 people live or die.</span>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Mythic raid night:</strong>
+                    <br><br>
+                    Tank takes massive spike damage. Four DPS standing in bad. Boss casting raid-wide AoE.
+                    <br><br>
+                    <strong>You (0.5 seconds to decide):</strong>
+                    <br>1. Save tank (or wipe)
+                    <br>2. Let DPS die (they stood in fire, their fault)
+                    <br>3. Pre-shield raid for AoE
+                    <br><br>
+                    <strong style="color: #ba68c8;">You execute perfectly. Tank lives. Raid survives. Boss dies. Victory.</strong>
+                    <br><br>
+                    DPS: "GG easy boss lol"
+                    <br><br>
+                    <span class="neologism">They have NO IDEA you just made 47 split-second life/death decisions. Your genius invisible.</span>
+                </div>
+
+                <div class="pain-block">
+                    <strong>When DPS dies:</strong>
+                    <br><br>
+                    "HEALER WHERE WERE YOU?!"
+                    <br><br>
+                    You (checking logs): "You stood in fire for 8 seconds while I was saving tank who took 300k spike damage. I made correct triage decision."
+                    <br><br>
+                    <strong style="color: #888;">They don't understand triage. They think healing is infinite. They blame you for their mistakes.</strong>
+                    <br><br>
+                    <span class="healer-marker">Healer life: Blamed for everything. Credited for nothing. Perfect play invisible.</span>
+                </div>
+
+                <div class="pain-block">
+                    Real job: Nursing home aide. $32k/year. Changing diapers. Feeding elderly. Grunt work.
+                    <br><br>
+                    <strong>Your triage genius deployed on: Making sure Mrs. Henderson takes her pills.</strong>
+                </div>
+
+                <div class="pain-block" style="background: rgba(186, 104, 200, 0.2); border-color: #ba68c8;">
+                    <strong style="color: #ba68c8; font-size: 1.4em;">Then you discover: Great Steppe Games need respawn medical coordinators.</strong>
+                    <br><br>
+                    <strong>Your healer main skills = PERFECT for respawn island medical management.</strong>
+                    <br><br>
+                    Warriors arrive "killed." Your job:
+                    <br>• Triage (who needs treatment most urgently)
+                    <br>• Resource management (medical supplies, staff time)
+                    <br>• Priority systems (critical → severe → moderate)
+                    <br>• Predictive care (anticipate complications)
+                    <br>• Stress management (handle 200 casualties daily)
+                    <br>• Coordination (manage team of medics/nurses)
+                    <br><br>
+                    <strong style="color: #e91e63; font-size: 1.2em;">This is HEALING. But REAL. With REAL warriors. Your 8,400 hours TRANSFER.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Healing genius deployed on reality.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">🏥 THE CALL</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Healer Skills Transfer</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your WoW healer skills → Respawn medical coordination:
+                        <br><br>
+                        <strong style="color: #ba68c8;">TRIAGE</strong>
+                        <br>• WoW: Tank at 10% = priority over DPS at 60%
+                        <br>• Steppe: Critical neural damage = priority over bruises
+                        <br><br>
+                        <strong style="color: #ba68c8;">RESOURCE MANAGEMENT</strong>
+                        <br>• WoW: Mana efficiency, don't go OOM mid-fight
+                        <br>• Steppe: Medical supplies allocation, staff time optimization
+                        <br><br>
+                        <strong style="color: #ba68c8;">PREDICTIVE CARE</strong>
+                        <br>• WoW: Pre-shield before boss AoE hits
+                        <br>• Steppe: Anticipate complications before they manifest
+                        <br><br>
+                        <strong style="color: #ba68c8;">STRESS MANAGEMENT</strong>
+                        <br>• WoW: Stay calm when raid melting, make correct decisions
+                        <br>• Steppe: Handle mass casualty events without panic
+                        <br><br>
+                        <span class="triage-skill">Your healer brain ALREADY DOES THIS. Just... with real warriors instead of pixels.</span>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Respawn Medical Coordinator Role</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">💜 RESPAWN MEDICAL COORDINATOR (Einherjar Island)</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Manage medical operations for 200-400 "killed" warriors daily
+                            <br><strong>Location:</strong> Respawn island medical facility
+                            <br><strong>Team:</strong> 12 doctors, 34 nurses, 18 support staff under your coordination
+                            <br><br>
+                            <strong>Responsibilities:</strong>
+                            <br><br>
+                            <strong>1. TRIAGE COORDINATION</strong>
+                            <br>• Warriors arrive "killed" (neural scrambler effects + injuries)
+                            <br>• Assess severity (like raid health bars)
+                            <br>• Prioritize treatment (critical → severe → moderate)
+                            <br>• Allocate resources (which doctor, which room)
+                            <br><br>
+                            <strong>2. RESOURCE MANAGEMENT</strong>
+                            <br>• Medical supplies (like mana management)
+                            <br>• Staff allocation (which healer on which patient)
+                            <br>• Bed availability (capacity management)
+                            <br>• Treatment protocols (efficiency optimization)
+                            <br><br>
+                            <strong>3. PREDICTIVE CARE</strong>
+                            <br>• Anticipate complications (like pre-healing)
+                            <br>• Identify high-risk patients (like tank taking spike)
+                            <br>• Prevent deaths (save before critical, not after)
+                            <br>• Monitor recovery (like tracking health bars)
+                            <br><br>
+                            <strong>4. MASS CASUALTY RESPONSE</strong>
+                            <br>• Big battles = 400 casualties at once (like raid-wide damage)
+                            <br>• Coordinate team under stress (like healer lead in progression)
+                            <br>• Maintain quality despite volume (no mistakes when panicking)
+                            <br>• Ensure 99.9% return rate (like keeping raid alive)
+                            <br><br>
+                            <span class="healer-marker">This is HEALING. But REAL. Your daemon: Keep people alive. Now with REAL STAKES.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Medical Coordinator's Voice</div>
+                    <div class="quote-box">
+                        "I was WoW healer. 9,000 hours. Holy Priest. Mythic raider. Perfect triage. Never let tank die.
+                        <br><br>
+                        <strong style="color: #ba68c8;">Deployed on pixels. Keeping raiders alive. Getting blamed when DPS stood in fire.</strong>
+                        <br><br>
+                        I rallied to Respawn Island as medical coordinator. My WoW skills TRANSFERRED PERFECTLY.
+                        <br><br>
+                        <strong>Triage → Patient priority assessment</strong>
+                        <br><strong>Resource management → Medical supplies + staff allocation</strong>
+                        <br><strong>Predictive healing → Complication prevention</strong>
+                        <br><strong>Stress management → Mass casualty response</strong>
+                        <br><br>
+                        I coordinate treatment for 300 warriors daily. My decisions determine who returns to combat fastest. My triage saves lives.
+                        <br><br>
+                        <strong style="color: #e91e63;">From invisible healer to essential coordinator. From healing pixels to saving warriors. This is healer main FULFILLMENT.</strong>"
+                        <br><br>
+                        <span style="color: #ba68c8;">— Dr. Sarah "Mercy" Kim, 28, Respawn medical coordinator, 4,700 warriors saved</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏥 First Mass Casualty: Triage Under Pressure</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first major battle. Einherjar vs Mongolian Horde. 387 warriors "killed" in 4 hours.
+                        <br><br>
+                        <strong>Warriors flooding in. Team looking at you. "What do we do?"</strong>
+                        <br><br>
+                        You (healer brain activates): <span class="healer-marker">"Critical neural damage to bed 1-5. Severe trauma to 6-12. Moderate to waiting room. GO."</span>
+                        <br><br>
+                        Your WoW triage instincts PERFECT. You coordinate 46 staff through 387 patients. Zero deaths. 99.7% return rate.
+                        <br><br>
+                        <strong style="color: #ba68c8; font-size: 1.3em;">Like raid healing. But REAL. Your split-second decisions saved 387 warriors.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">💜 Six Months: Respawn Mastery</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        <div class="healing-stat">Warriors treated: 8,900</div>
+                        <div class="healing-stat">Return rate: 99.8%</div>
+                        <div class="healing-stat">Avg recovery time: 16.2 days (faction avg: 19.4)</div>
+                        <div class="healing-stat">Team efficiency: +34% under your coordination</div>
+                        <br><br>
+                        <p style="margin-top: 15px;">
+                            <strong>Your reputation:</strong> "Mercy" Park. Best medical coordinator in Games. Factions TRY TO RECRUIT YOU.
+                            <br><br>
+                            <span class="triage-skill">From invisible healer to legendary coordinator. Your WoW skills PROVEN on reality.</span>
+                        </p>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏆 One Year: Life-Keeper</div>
+                    <div class="quote-box" style="background: rgba(186, 104, 200, 0.2); border-color: #ba68c8;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year as medical coordinator. 18,400 warriors treated. 99.8% return rate.
+                            <br><br>
+                            <strong style="color: #ba68c8; font-size: 1.2em;">My WoW healer skills = Perfect medical coordination skills.</strong>
+                            <br><br>
+                            <strong>Triage:</strong> My priority systems save lives. Critical patients identified instantly.
+                            <br><strong>Resource management:</strong> Never waste supplies. Never overwhelm staff. Perfect efficiency.
+                            <br><strong>Predictive care:</strong> Catch complications before they become critical. Like pre-healing.
+                            <br><strong>Stress management:</strong> Calm during 400-casualty events. Team follows my lead.
+                            <br><br>
+                            Warriors thank me: "You brought me back. I can fight again. Thank you, Mercy."
+                            <br><br>
+                            <span class="healer-marker">From blamed healer to thanked coordinator. From healing pixels to saving warriors. 8,400 WoW hours TRANSFERRED.</span>
+                        </p>
+                        <span class="speaker-name">— Sophie "Mercy" Park, respawn medical coordinator, healer genius deployed</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(186, 104, 200, 0.3), rgba(233, 30, 99, 0.3)); border: 4px double #ba68c8;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center;">
+                        <strong style="color: #888; font-size: 1.4em;">From healing pixels</strong>
+                        <br><br>
+                        <strong style="color: #ba68c8; font-size: 1.5em;">To saving warriors</strong>
+                        <br><br>
+                        <strong style="color: #e91e63; font-size: 1.5em;">To recognized mastery</strong>
+                        <br><br>
+                        <span style="color: #ba68c8; font-size: 1.2em;">💜 Healer mains: Your skills TRANSFER 💜</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

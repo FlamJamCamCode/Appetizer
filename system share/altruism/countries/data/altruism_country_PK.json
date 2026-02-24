@@ -1,0 +1,37 @@
+{
+  "country_code": "PK",
+  "name": "Pakistan",
+  "approximate": true,
+  "population": 240000000,
+  "gdp_nominal_usd": 380000000000,
+  "gdp_per_capita_usd": 1600,
+  "social_spending_pct_gdp": 8.0,
+  "health_spending_pct_gdp": 2.0,
+  "education_spending_pct_gdp": 2.5,
+  "oda_given_pct_gni": 0.02,
+  "oda_given_usd": 700000000,
+  "oda_received_usd": 4000000000,
+  "private_giving_pct_gdp": 0.6,
+  "private_giving_total_usd": 2000000000,
+  "volunteering_rate_pct_adults": 35.0,
+  "volunteer_hours_billion": 2.0,
+  "child_mortality_under5_per_1000": 65.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Diarrheal diseases",
+    "Lower respiratory infections",
+    "Cardiovascular diseases"
+  ],
+  "notes": [
+    "Pakistan has significant zakat and other religious giving flows; exact totals are uncertain.",
+    "Child and maternal mortality remain high relative to income level."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "CAF World Giving Index",
+    "Pakistan government budget and health/education data"
+  ]
+}
+
+

@@ -1,0 +1,114 @@
+window.TOUR_DATA = {
+	"id": "islamic-golden-age-tour",
+	"title": "Tour for Islamic Golden Age Revival",
+	"audience": "Muslims who value Islamic civilization's historical achievements (science, philosophy, architecture, tolerance) and seek to restore that glory through Triadization",
+	"description": "How Triadization enables Islamic civilization to thrive again—preserving Sunni/Shia/Sufi diversity, restoring scholarship/beauty, ending sectarian violence, and creating the conditions for a Second Golden Age",
+	"color_theme": {
+		"primary": "#006400",
+		"secondary": "#daa520",
+		"accent": "#8b0000",
+		"background": "#0a0f0a"
+	},
+	"sections": [
+		{
+			"id": "intro",
+			"title": "Who You Are",
+			"content": "You are Muslim, but you grieve for what Islam has become. You remember the Golden Age (750-1258 AD): Baghdad's House of Wisdom (translations of Greek philosophy, algebra invented, astronomy advanced), Córdoba's libraries (400,000 books, Jews/Christians/Muslims collaborating), Ibn Sina's medicine (Canon remained textbook in Europe 600 years), Al-Khwarizmi's mathematics (algorithms, algebra—words derived from his name and book title). You see modern Islam fractured (Sunni vs Shia violence, Salafi/Wahhabi rigidity, Taliban destroying Buddhas, ISIS destroying Palmyra, sectarian wars killing millions). You want: Restore Islamic civilization's glory through knowledge, beauty, tolerance, and pluralism—not through violence or forced uniformity."
+		},
+		{
+			"id": "problem",
+			"title": "The Problem: 1,400 Years of Sectarian Violence",
+			"content": "Islam began unified (632-661 AD, Rashidun Caliphate, four rightly-guided Caliphs). Then: Sunni-Shia split (656-661 AD, Ali vs Muawiyah, Battle of Karbala 680 AD—Hussein martyred, Shia emerge). 1,400 years of violence followed. Sunni-Shia wars: Iran-Iraq War (1980-1988, 1M dead), Syrian Civil War (2011-present, 500k+ dead, Sunni vs Alawite), Yemen War (2014-present, 300k+ dead, Saudi Sunni vs Houthi Shia), Iraq Civil War (2006-2008, 150k+ dead, Sunni vs Shia militias). Salafi/Wahhabi rigidity: Taliban (destroyed Bamiyan Buddhas 2001, banned music/art/education for women), ISIS (destroyed Palmyra, beheaded archaeologists, genocide of Yazidis), Al-Qaeda/Boko Haram/Al-Shabaab (terrorism, rejection of modernity). Result: Islamic civilization dying (no Nobel Prizes in science from Muslim-majority countries 1901-2025 except 2 peace prizes, literacy rates low, economic stagnation, brain drain to West, youth radicalization or secularization). WHY? No Triadization framework—Islam claims universal submission (all must follow Sharia, one correct interpretation), but Muslims disagree on interpretation → sectarian violence → civilization collapse."
+		},
+		{
+			"id": "history",
+			"title": "The Islamic Golden Age (What We Lost)",
+			"subsections": [
+				{
+					"title": "Umayyad Caliphate: First Flowering (661-750 AD)",
+					"content": "Damascus capital, empire expands (Spain to India, largest empire of its time). Dome of the Rock (691 AD Jerusalem, architectural masterpiece, Byzantine mosaics + Islamic geometry). Córdoba (711 AD conquest of Spain, begins 300-year Muslim rule, tolerance for Christians/Jews). BUT: Shia suppressed (Umayyads Sunni, persecuted Shia, planted seeds of sectarian hatred). WITH Triadization: Shia Springs autonomous (Karbala, Najaf, Kufa as Shia Springs, autonomous governance, no forced Sunni rule), Umayyad Sunni Springs in Syria/Damascus, coordinate for defense/trade, no sectarian violence.",
+					"documents": [
+						"09-islamic-expansion-700ad.md"
+					]
+				},
+				{
+					"title": "Abbasid Golden Age: Peak Civilization (750-1258 AD)",
+					"content": "Baghdad capital (founded 762 AD, population 1M by 900 AD, largest city in world). House of Wisdom (Bayt al-Hikma, library + translation center, Greek texts → Arabic, algebra invented by Al-Khwarizmi 820 AD, algorithms, medicine advanced by Al-Razi). Astronomy (Al-Battani measures Earth's orbit, star catalogs). Philosophy (Al-Farabi, Avicenna/Ibn Sina synthesize Aristotle + Islam). Poetry (1,001 Nights, Rumi). Architecture (mosques, madrasas, geometric art). Tolerance: Christians (Nestorian physicians), Jews (court advisors), Zoroastrians (Persian administrators) all thrived. Pattern: Islamic OCEAN (Sharia framework, Arabic language, shared civilization) containing diverse SPRINGS (Sunni Hanafi/Maliki/Shafi'i/Hanbali schools, Shia Twelver/Ismaili, Sufi mystics, Mu'tazilite rationalists, all coexisting). Collapsed: Mongols (1258 AD, sack Baghdad, kill 200k-1M, burn libraries, destroy irrigation, Islamic Golden Age ends). WITH Triadization: Baghdad survives (Mongols integrated as Springs within Islamic Ocean, see Snapshot 12).",
+					"documents": [
+						"09-islamic-expansion-700ad.md",
+						"12-mongol-integration-1250ad.md"
+					]
+				},
+				{
+					"title": "Córdoba: Interfaith Golden Age (929-1031 AD)",
+					"content": "Umayyad Caliphate of Córdoba (Spain, 929-1031 AD, rival to Abbasid Baghdad). Population 500k (largest in Western Europe). Great Mosque (784-987 AD, 850 columns, horseshoe arches, masterpiece). Libraries (70+ libraries, 400k books in Caliph's library alone). Jews thrived (Hasdai ibn Shaprut court physician, Jewish Golden Age in Spain, Maimonides born 1135). Christians autonomous (Mozarabic rite preserved, no forced conversion). Pattern: Islamic SEA (Umayyad rule, Islamic civilization) containing Christian SPRINGS + Jewish SPRINGS (dhimmi system—non-Muslims paid jizya tax but autonomous governance). Collapsed: Fitna (civil war 1009-1031, Caliphate fragments into 30 taifa kingdoms, weakened, eventually Christian Reconquista 1492). WITH Triadization: No jizya (equal status for all faiths), Christian Springs + Jewish Springs + Muslim Springs coordinate voluntarily, survives to 2025.",
+					"documents": [
+						"09-islamic-expansion-700ad.md"
+					]
+				},
+				{
+					"title": "Ottoman Millet System: Proto-Triadization (1453-1920 AD)",
+					"content": "Ottoman Empire: Millet system (religious communities autonomous—Greek Orthodox, Armenian, Jewish millets, each self-governing). Worked 400+ years (non-Muslims survived, vs Western Europe expelled Jews). Istanbul (conquered 1453, Hagia Sophia → mosque but Christians/Jews protected, cosmopolitan city). Sufi orders flourished (Mevlevi whirling dervishes, Bektashi, Naqshbandi—mystical Islam, poetry, music, tolerance). Architecture (Sinan's mosques—Süleymaniye, Blue Mosque, masterpieces). Collapsed: Nationalism (19th-20th century, Greeks/Armenians/Arabs wanted nation-states, rejected millet autonomy, Young Turks tried to Turkify, Armenian genocide 1915-1917, empire collapsed WWI). WITH Triadization: Millets become equal Springs (not dhimmi, equal status), survive to 2025, Istanbul as cosmopolitan Islamic Ocean containing Christian/Jewish/Muslim Springs.",
+					"documents": [
+						"11g-orban-constantinople-fall-1453ad.md"
+					]
+				},
+				{
+					"title": "What Ended the Golden Age",
+					"content": "Multiple causes: (1) Mongol invasions (1258 Baghdad sack, destroyed infrastructure, killed scholars, burned books—never recovered), (2) Crusades (1095-1291, diverted resources to war, hardened attitudes), (3) Al-Ghazali's anti-rationalism (1058-1111, Incoherence of the Philosophers—attacked Greek philosophy, Islamic rationalism declined after), (4) Mamluk/Ottoman conservatism (1250-1920, ossification of Islamic law, no ijtihad, madrasas became rote memorization not innovation), (5) European colonialism (1500-1950, Muslim lands conquered, humiliation, reactionary fundamentalism emerged). Result: Islamic civilization stagnated 1300-2025 (no major scientific advances, literacy declined, economic stagnation, sectarian violence intensified)."
+				}
+			]
+		},
+		{
+			"id": "counterfactual",
+			"title": "What Could Have Been: Islamic Triadization",
+			"content": "IMAGINE: 656 AD Ali vs Muawiyah adopt Triadization instead of civil war. Result: Sunni Springs (Damascus, Muawiyah's followers, ~60% of Muslims) + Shia Springs (Kufa, Najaf, Karbala, Ali's followers, ~15%) + Kharijite Springs (early sect, ~5%) all autonomous, coordinate under Islamic Ocean (Quran + Hadith framework, shared pilgrimage to Mecca, mutual defense). No Battle of Karbala (Hussein not martyred, Shia-Sunni split doesn't harden). 750 AD Abbasids don't need violent overthrow (Triadization allows peaceful transition). 1258 AD Mongols integrated (become Muslim Springs, don't destroy Baghdad—see Snapshot 12). 1500-2025 AD Islamic civilization THRIVES (no sectarian wars, resources go to science/art/architecture not warfare, Second Golden Age). 2025 AD: Islamic Ocean (1.8 billion) contains 1,000+ Muslim Springs (Sunni Hanafi/Maliki/Shafi'i/Hanbali Springs, Shia Twelver/Ismaili/Zaidi Springs, Sufi order Springs—Mevlevi/Naqshbandi/Qadiri/etc., Ibadi Springs, Ahmadiyya Springs, modernist Springs, traditionalist Springs, all autonomous, all coordinate). Result: NO Iran-Iraq War (1M saved), NO Syrian Civil War (500k saved), NO Yemen War (300k saved), NO ISIS (Palmyra preserved, Yazidis alive), total 5-10M Muslims alive who died in sectarian violence 1980-2025."
+		},
+		{
+			"id": "sunni-shia",
+			"title": "Sunni-Shia Triadization (How to End 1,400 Years of War)",
+			"content": "Current: Sunni (~85% of Muslims, 1.5B) vs Shia (~15%, 250M) locked in existential struggle (Saudi Arabia vs Iran proxy wars, Syria/Iraq/Yemen/Lebanon, millions dead). WHY? Both claim universal authority (Sunni: Caliphate, Shia: Imamate, mutually exclusive). Triadization solution: (1) Sunni Ocean (contains Hanafi/Maliki/Shafi'i/Hanbali SEAS, each contains national/ethnic SPRINGS—Saudi Hanbali Springs, Egyptian Hanafi Springs, Indonesian Shafi'i Springs, West African Maliki Springs, all autonomous), (2) Shia Ocean (contains Twelver/Ismaili/Zaidi SEAS, Iranian Twelver Springs, Iraqi Twelver Springs, Ismaili Nizari Springs, Yemeni Zaidi Springs, all autonomous), (3) Sunni + Shia coordinate at WORLD-level (shared: Quran, Five Pillars, Muhammad, Mecca pilgrimage; NOT shared: Caliphate vs Imamate, Hadith collections, jurisprudence). Practical: Iran governs Iranian Shia Springs (autonomous, Sharia as they interpret), Saudi governs Saudi Sunni Springs (autonomous, Sharia as THEY interpret), Iraq/Syria/Lebanon contain BOTH (Sunni Springs + Shia Springs spatially separated, autonomous, coordinate for defense/trade, NO forced unity, NO civil war). Result: Sectarian violence ENDS (no more fighting over who's correct, each autonomous, coordinate voluntarily)."
+		},
+		{
+			"id": "sufi-springs",
+			"title": "Sufi Springs: Mystical Islam Preserved",
+			"content": "Sufism = Islamic mysticism (focus on direct experience of God, dhikr, poetry, music, whirling dervishes, tolerance, love). Orders: Mevlevi (Rumi's followers, Turkey, whirling dervishes), Naqshbandi (Central Asia/Middle East, silent dhikr), Qadiri (Iraq/South Asia, ecstatic practices), Chishti (South Asia, music/poetry), many more (100+ orders worldwide). Modern threat: Salafi/Wahhabi persecution (see Sufis as heretics, destroy shrines, ban music, killed Sufi leaders—Pakistan/Iraq/Syria attacks on Sufi shrines). WITH Triadization: Sufi SPRINGS protected (Mevlevi Spring in Konya Turkey, Naqshbandi Springs in Uzbekistan, Qadiri Springs in Iraq, each autonomous, practice music/poetry/dhikr freely, coordinate with Sunni Ocean but maintain mystical emphasis). Result: Islamic civilization's beauty preserved (Rumi's poetry, whirling dervishes, qawwali music, shrine pilgrimage—all protected, vs Salafi destruction)."
+		},
+		{
+			"id": "resurrection",
+			"title": "How To Restore Islamic Golden Age (2025-2100)",
+			"content": "Modern Islam is Planetary chaos (1.8 billion Muslims, 5-10% daemon coherence, Sunni vs Shia wars, Salafi vs Sufi conflicts, secular vs Islamist struggles, brain drain to West). Solution: Form Islamic Springs. Examples: (1) Sunni Hanafi Springs (Turkish/Central Asian Muslims, Hanafi jurisprudence, moderate, form communities in Turkey/Uzbekistan, autonomous mosques, Hanafi schools, endogamy 80%+, TFR 4-6), (2) Shia Twelver Springs (Iranian/Iraqi Shia, form communities in Iran/Iraq, autonomous from Sunni, Ashura rituals, Twelver theology, endogamy 90%+, TFR 5-7), (3) Sufi Springs (Mevlevi/Naqshbandi/Qadiri communities, form around tekkes (Sufi lodges), practice dhikr/music/poetry, autonomous from Salafi persecution, endogamy 70%, TFR 4-5), (4) Modernist Springs (progressive Muslims, gender equality, critical Quran study, form urban communities, autonomous from traditionalists). Scalability: 1,000+ Islamic Springs possible (4 Sunni schools × 20 national/ethnic variations = 80 Sunni Springs, 3 Shia schools × 10 variations = 30 Shia Springs, 100+ Sufi orders, modernist/traditionalist variants, Ibadi/Ahmadiyya/etc.). Total: 500M Muslims could live in Springs by 2100 (vs current 1.8B nominal, mostly in Planetary nation-states with sectarian violence). Proof: Some Islamic communities already function as Springs (Ismaili Nizari under Aga Khan—1M people, autonomous, prosperous, high education, low violence; Druze—1M, endogamy 95%, survived 1,000 years)."
+		},
+		{
+			"id": "appeal",
+			"title": "The Appeal: Restore Islamic Civilization's Glory",
+			"content": "You grieve for what Islam has become. Golden Age (750-1258): Baghdad's libraries, Córdoba's tolerance, Avicenna's medicine, Al-Khwarizmi's algebra, Rumi's poetry, architectural masterpieces. Modern reality (2025): Sectarian wars (millions dead), Salafi rigidity (music banned, shrines destroyed, women oppressed), economic stagnation (oil wealth squandered, no innovation), brain drain (educated Muslims flee to West), radicalization (youth join ISIS or leave Islam). WHY? No Triadization—Islam claims universal submission, Muslims disagree on interpretation, fight 1,400 years over who's correct. Solution: Adopt Triadization (let 1,000 Islamic Springs bloom—Sunni Hanafi/Maliki/Shafi'i/Hanbali Springs, Shia Twelver/Ismaili Springs, Sufi order Springs, modernist Springs, each autonomous, coordinate voluntarily). Quranic basis: 'No compulsion in religion' (2:256), 'To you your religion, to me mine' (109:6), 'We made you into nations and tribes that you may know one another' (49:13—Triadization!). Historical precedent: Golden Age WAS fractally diverse (four Sunni schools coexisted peacefully, Shia in Iraq/Iran, Sufis everywhere, rationalists vs traditionalists, all within Islamic Ocean). Modern: CAN restore (form Islamic Springs, coordinate at Ocean/World-level, end sectarian violence, redirect resources to science/art/architecture, create Second Golden Age). If you don't act: Sectarian wars continue (next 100 years: 10M+ more Muslims killed in Sunni-Shia conflicts, Islamic civilization remains stagnant, youth radicalize or secularize, Islam becomes museum curiosity). If you act: Islamic Springs thrive (2100 AD: 500M Muslims in 1,000 Springs, sectarian peace, scientific renaissance, architectural beauty, poetic flourishing, Islam's light restored). For Allah, for the Ummah, for civilization. Inshallah. Act now."
+		},
+		{
+			"id": "resources",
+			"title": "Resources & Next Steps",
+			"links": [
+				{
+					"text": "Read: Islamic Expansion",
+					"path": "../immersion/historical-entries/counter-factual-triadization/09-islamic-expansion-700ad.md"
+				},
+				{
+					"text": "Read: Mongol Integration",
+					"path": "../immersion/historical-entries/counter-factual-triadization/12-mongol-integration-1250ad.md"
+				},
+				{
+					"text": "Read: Ottoman Fall",
+					"path": "../immersion/historical-entries/counter-factual-triadization/11g-orban-constantinople-fall-1453ad.md"
+				},
+				{
+					"text": "Read: Abrahamist Coordination",
+					"path": "../tours/history-entry/abrahamist-world/tour.json"
+				},
+				{
+					"text": "Contact: Form Islamic Spring",
+					"note": "Find co-Muslims (Sunni Hanafi, or Shia Twelver, or Mevlevi Sufi, etc.), organize community, buy land, establish autonomous Spring"
+				}
+			]
+		}
+	]
+};

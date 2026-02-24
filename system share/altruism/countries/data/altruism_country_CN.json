@@ -1,0 +1,36 @@
+{
+  "country_code": "CN",
+  "name": "China",
+  "approximate": true,
+  "population": 1410000000,
+  "gdp_nominal_usd": 17500000000000,
+  "gdp_per_capita_usd": 12500,
+  "social_spending_pct_gdp": 14.0,
+  "health_spending_pct_gdp": 5.5,
+  "education_spending_pct_gdp": 4.0,
+  "oda_given_pct_gni": 0.08,
+  "oda_given_usd": 14000000000,
+  "oda_received_usd": 2000000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 70000000000,
+  "volunteering_rate_pct_adults": 20.0,
+  "volunteer_hours_billion": 4.0,
+  "child_mortality_under5_per_1000": 8.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Chronic respiratory diseases"
+  ],
+  "notes": [
+    "Many Chinese development flows are loans and investments, not DAC-classified ODA.",
+    "Private giving and volunteering data are partial."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "China Statistical Yearbooks",
+    "WHO Global Health Observatory",
+    "Various assessments of Chinese development finance"
+  ]
+}
+
+

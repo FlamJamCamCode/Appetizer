@@ -1,0 +1,36 @@
+{
+  "country_code": "SL",
+  "name": "Sierra Leone",
+  "approximate": true,
+  "population": 8500000,
+  "gdp_nominal_usd": 4500000000,
+  "gdp_per_capita_usd": 530,
+  "social_spending_pct_gdp": 13.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 500000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 13000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.1,
+  "child_mortality_under5_per_1000": 110.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Lower respiratory infections",
+    "Diarrheal diseases"
+  ],
+  "notes": [
+    "Sierra Leone has among the highest under-5 and maternal mortality rates globally.",
+    "Ebola and other outbreaks have stressed the health system; ODA and NGOs are key."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

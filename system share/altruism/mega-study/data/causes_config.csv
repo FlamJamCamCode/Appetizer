@@ -1,0 +1,9 @@
+cause_key,description,region_group,dalys_per_1000_usd,notes
+malaria,Malaria prevention and treatment (e.g. bednets, seasonal chemoprevention),SSA+LMIC,60,"Order-of-magnitude based on highly cost-effective interventions in high-burden regions; varies by country and year.*"
+deworming,Mass deworming for children,LMIC,40,"Illustrative value for long-run DALY and income-equivalent benefits from deworming; based on EA/GiveWell-style estimates.*"
+cash_transfers,Targeted cash transfers to very poor households,Global,8,"Approximate DALYs-equivalent per 1,000 USD when cash is used to alleviate extreme poverty; depends heavily on context.*"
+basic_health,Other basic health services (vaccination, primary care),Global,15,"Moderately cost-effective health spending; wide range in reality, this is a stylized mid-point.*"
+education,Education quality and access improvements,Global,5,"DALYs-equivalent for education improvements via future health and income; very approximate.*"
+climate,Climate mitigation and adaptation with strong co-benefits,Global,3,"Converted to DALY-equivalent using social cost of carbon / co-benefit assumptions; highly model-dependent.*"
+low_impact_misc,Low-impact or poorly targeted uses of funds,Global,1,"Placeholder for low-return spending; not a precise estimate.*"
+

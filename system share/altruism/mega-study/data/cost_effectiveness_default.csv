@@ -1,0 +1,5 @@
+cause_key,description,region_group,dalys_per_1000_usd,notes
+high_global_health,Highly effective global health interventions (e.g. malaria prevention, some deworming),LMIC,50,"Order-of-magnitude based on GiveWell-style analyses; actual estimates vary by intervention and year."
+moderate_health_poverty,Moderately effective health/poverty interventions (e.g. less targeted health, some cash transfers),Global,10,"Rough mid-range effectiveness; real-world values differ by program and context."
+low_impact_misc,Low-impact or poorly targeted uses of funds,Global,1,"Placeholder for low-return spending; not meant as a precise estimate."
+

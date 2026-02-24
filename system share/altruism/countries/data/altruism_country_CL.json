@@ -1,0 +1,35 @@
+{
+  "country_code": "CL",
+  "name": "Chile",
+  "approximate": true,
+  "population": 19000000,
+  "gdp_nominal_usd": 330000000000,
+  "gdp_per_capita_usd": 17300,
+  "social_spending_pct_gdp": 17.0,
+  "health_spending_pct_gdp": 7.0,
+  "education_spending_pct_gdp": 5.0,
+  "oda_given_pct_gni": 0.03,
+  "oda_given_usd": 100000000,
+  "oda_received_usd": 400000000,
+  "private_giving_pct_gdp": 0.5,
+  "private_giving_total_usd": 1600000000,
+  "volunteering_rate_pct_adults": 28.0,
+  "volunteer_hours_billion": 0.4,
+  "child_mortality_under5_per_1000": 8.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Diabetes"
+  ],
+  "notes": [
+    "Chile is a relatively high-income South American country with strong institutions and inequality.",
+    "Philanthropy includes corporate and family foundations, especially in mining."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Chilean budget and social spending reports"
+  ]
+}
+
+

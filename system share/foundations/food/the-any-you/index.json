@@ -1,0 +1,191 @@
+{
+  "title": "The Any-You: BARRACKS Calls for Every Person",
+  "description": "A comprehensive collection of personalized calls to join the BARRACKS food sovereignty project. Each document speaks directly to a specific type of person, showing how their current reality extracts from them and how BARRACKS offers liberation, purpose, and fair compensation.",
+  "created": "2025-10-25",
+  "total_personas": 25,
+  "underlying_principles": {
+    "welfare_subsidy_insight": "Government welfare functions as indirect parasite subsidy - recipients are conduits through which taxpayer money flows to landlords, insurers, and monopolies. This sets price floors that extract from ALL low-income workers, not just welfare recipients. See Document 13: Welfare as Indirect Parasite Subsidy.",
+    "double_extraction": "System extracts from productive workers (keep 0.32%) AND extracts from welfare recipients (keep 8.3%), with parasites profiting from both ends while keeping groups divided.",
+    "market_distortion": "Welfare subsidies inflate prices (rent, insurance, utilities) that ALL poor people must pay - working poor often worse off than welfare recipients when accounting for time vs money.",
+    "barracks_solution": "Direct provision at real cost ($210/month vs $1,400/month parasitic cost) eliminates extraction, unites workers and recipients, redirects resources to mission. Azure/TRUTH metrics gate zero-sum assets, Crimson/TASTE lets everyone trade all other dimensions via Sorting Hat lobbies documented in foundations/BARRACKS sorting dual-layer.md and orchestrated by the 23 COMMAND duty bands.",
+    "tokens_of_appreciation": "100% relative Proof of Utility shares - everyone keeps value they create, proportional to contribution, no extraction."
+  },
+  "categories": {
+    "producers": {
+      "description": "Those who create real wealth - builders, growers, makers",
+      "personas": [
+        "construction_worker.json",
+        "farmer.json",
+        "factory_worker.json",
+        "tradesperson.json",
+        "chef_cook.json"
+      ],
+      "key_appeal": "Finally keep what you create - 100% via tokens vs 0.22%-18% current extraction"
+    },
+    "knowledge_workers": {
+      "description": "Those who think, design, discover, solve",
+      "personas": [
+        "engineer.json",
+        "scientist_researcher.json",
+        "teacher.json"
+      ],
+      "key_appeal": "Intelligence toward building paradise vs optimizing parasitism - ownership of innovations"
+    },
+    "caregivers": {
+      "description": "Those who heal, nurture, support",
+      "personas": [
+        "nurse_doctor.json",
+        "stay_at_home_parent.json",
+        "single_mother.json"
+      ],
+      "key_appeal": "Care work finally valued - compensation for creating next generation and healing bodies"
+    },
+    "struggling": {
+      "description": "Those trapped in poverty despite working or unable to work",
+      "personas": [
+        "welfare_recipient.json",
+        "low_wage_worker.json",
+        "working_poor_parent.json",
+        "unemployed_disabled.json",
+        "young_adult_no_direction.json"
+      ],
+      "key_appeal": "Escape poverty trap - direct provision eliminates extraction, tokens provide wealth, purpose provides meaning"
+    },
+    "coordinators": {
+      "description": "Those who organize, manage, connect",
+      "personas": [
+        "corporate_middle_manager.json",
+        "truck_driver.json",
+        "small_business_owner.json",
+        "activist_organizer.json"
+      ],
+      "key_appeal": "Coordination toward real purpose - building paradise vs managing bullshit or fighting losing battles"
+    },
+    "displaced": {
+      "description": "Those marginalized, exploited, or outside system",
+      "personas": [
+        "immigrant.json",
+        "military_veteran.json",
+        "retiree.json"
+      ],
+      "key_appeal": "Redemption and belonging - skills valued, exploitation ended, purpose restored"
+    },
+    "creatives": {
+      "description": "Those who create beauty, meaning, culture",
+      "personas": [
+        "artist_creative.json"
+      ],
+      "key_appeal": "Art for sacred purpose - document transformation, inspire builders, create meaning"
+    },
+    "parasites_offered_redemption": {
+      "description": "Those currently extracting - offered transition to productive contribution",
+      "personas": [
+        "landlord_property_owner.json",
+        "banker_financial_worker.json"
+      ],
+      "key_appeal": "Exit before collapse - transition from parasite to producer, redemption possible, secure future"
+    },
+    "mission_aligned": {
+      "description": "Those already fighting death in various forms",
+      "personas": [
+        "vegan_activist.json",
+        "religious_person.json"
+      ],
+      "key_appeal": "Actually SOLVE what you've been fighting for - end slaughter, fulfill Creator's mandate, BUILD solutions"
+    }
+  },
+  "common_themes": {
+    "current_extraction": "All productive people keep <20% of value created, often <1%",
+    "parasitic_layers": "Landlords, banks, insurance, monopolies, overhead - extract from everyone",
+    "market_distortion": "Welfare subsidies set price floors ALL poor pay, working poor often worse off than welfare recipients",
+    "barracks_provisions": "Real cost $210/month vs $1,400/month parasitic cost - 6.7x efficiency gain",
+    "token_value": "$2-10M/year depending on contribution, 50-300x better than current paths",
+    "timeline": "2 years hard work, then wealthy for life vs 30 years hard work, die poor",
+    "purpose": "Sacred mission - feed all life, end slaughter, build paradise vs work for parasites' profit",
+    "community": "100M builders together vs isolated in hostile system",
+    "legacy": "Built paradise vs extracted/was extracted from"
+  },
+  "usage_instructions": {
+    "for_html_reader": "Each JSON can be rendered as standalone pitch or compared side-by-side",
+    "personalization": "Use current_reality to show 'we see you', the_barracks_offer to show 'here's the alternative', why_this_appeals to show 'here's why it's better for YOU specifically'",
+    "comparison_focus": "Emphasize ratios - not just 'BARRACKS pays more' but '138x more' - makes choice obvious",
+    "honesty": "Don't hide difficulties - 2 years hard work, constraints on discretionary spending for some, risks acknowledged - but show why worth it",
+    "relation_to_mission": "Every persona connects to food sovereignty AND broader death-fighting - show how their work enables both"
+  },
+  "html_reader_features_suggested": {
+    "persona_selector": "Dropdown or grid to choose your persona",
+    "side_by_side_comparison": "Current path vs BARRACKS path with visual charts",
+    "calculation_tools": "Input your current salary/hours, see personalized token estimate",
+    "related_personas": "If construction_worker, also show tradesperson, factory_worker - similar appeals",
+    "mission_connection": "Toggle showing how each role connects to ending slaughter, fighting aging, etc.",
+    "objection_handler": "Search your concern, find how BARRACKS addresses it",
+    "share": "Share your persona's pitch with others in same situation"
+  },
+  "completed_personas": {
+    "producers": [
+      "construction_worker.json",
+      "farmer.json", 
+      "factory_worker.json",
+      "tradesperson.json",
+      "chef_cook.json"
+    ],
+    "knowledge_workers": [
+      "engineer.json",
+      "scientist_researcher.json",
+      "teacher.json"
+    ],
+    "caregivers": [
+      "nurse_doctor.json",
+      "single_mother.json",
+      "stay_at_home_parent.json"
+    ],
+    "struggling": [
+      "welfare_recipient.json",
+      "low_wage_worker.json",
+      "working_poor_parent.json",
+      "unemployed_disabled.json",
+      "young_adult_no_direction.json",
+      "homeless.json",
+      "addict.json"
+    ],
+    "coordinators": [
+      "corporate_middle_manager.json",
+      "truck_driver.json",
+      "small_business_owner.json",
+      "activist_organizer.json",
+      "office_worker.json"
+    ],
+    "displaced": [
+      "immigrant.json",
+      "military_veteran.json",
+      "retiree.json",
+      "prisoner.json"
+    ],
+    "creatives": [
+      "artist_creative.json"
+    ],
+    "mission_aligned": [
+      "vegan_activist.json",
+      "religious_person.json"
+    ],
+    "parasites_offered_redemption": [
+      "landlord_property_owner.json",
+      "banker_financial_worker.json",
+      "marketing_professional.json"
+    ],
+    "vulnerable": [
+      "sex_worker.json"
+    ]
+  },
+  "next_personas_to_add": [
+    "police_officer.json - from enforcing system to securing mission",
+    "bureaucrat.json - from paper-pushing to actual coordination",
+    "academic_adjunct.json - from poverty wages to research that matters",
+    "gig_worker.json - from precarity to security",
+    "social_worker.json - from managing poverty to eliminating it",
+    "therapist.json - from treating symptoms to addressing causes",
+    "journalist.json - from covering news to documenting transformation",
+    "politician.json - from lying to constituents to delivering paradise"
+  ]
+}
+

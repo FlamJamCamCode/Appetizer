@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rally Lobby - Escape from FGM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .situation {
+            background: rgba(255, 50, 50, 0.1);
+            border: 2px solid rgba(255, 50, 50, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .situation h2 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .otriad-pattern {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .pattern-box {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 2px solid;
+            min-width: 200px;
+        }
+
+        .azure { border-color: #4fc3f7; }
+        .gray { border-color: #9e9e9e; }
+        .crimson { border-color: #ff4081; }
+
+        .pattern-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .azure h3 { color: #4fc3f7; }
+        .gray h3 { color: #9e9e9e; }
+        .crimson h3 { color: #ff4081; }
+
+        .worlds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .world-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .world-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .world-card.selected {
+            border-color: #00d4ff;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .world-title {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #00d4ff;
+        }
+
+        .world-type {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(123, 47, 247, 0.3);
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .section-title {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #00d4ff;
+            border-left: 3px solid #00d4ff;
+            padding-left: 10px;
+        }
+
+        .azure-section .section-title { color: #4fc3f7; border-color: #4fc3f7; }
+        .gray-section .section-title { color: #9e9e9e; border-color: #9e9e9e; }
+        .crimson-section .section-title { color: #ff4081; border-color: #ff4081; }
+
+        .section-content {
+            padding-left: 15px;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 10px 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-label {
+            font-size: 0.85em;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .rally-button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .rally-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border: 2px solid rgba(255, 193, 7, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .benefit {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 3px solid #4caf50;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Otriad Rally Lobby</h1>
+            <p style="font-size: 1.2em; margin-top: 10px; color: #bbb;">
+                Omnimorphic Crucible: Explore Worlds, Choose Your Future
+            </p>
+        </div>
+
+        <div class="situation">
+            <h2>⚠️ Your Current Situation</h2>
+            <p><strong>Location:</strong> Somalia, Mogadishu region</p>
+            <p><strong>Age:</strong> 14 years old</p>
+            <p><strong>Immediate Threat:</strong> Female Genital Mutilation scheduled within 72 hours</p>
+            <p><strong>Additional Context:</strong> No education access, arranged marriage planned, limited autonomy, violence common</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #ff6b6b;">
+                You have the right to rally to ANY functional world. MBC Rule 3: Freedom to leave.
+            </p>
+        </div>
+
+        <div class="otriad-pattern">
+            <div class="pattern-box azure">
+                <h3>Azure (Architecture)</h3>
+                <p>What world-builders can DO</p>
+                <p style="font-size: 0.9em; color: #aaa;">Capabilities, infrastructure, systems built</p>
+            </div>
+            <div class="pattern-box gray">
+                <h3>Gray (Civilization)</h3>
+                <p>What observers BELIEVE</p>
+                <p style="font-size: 0.9em; color: #aaa;">Culture, values, laws, reputation</p>
+            </div>
+            <div class="pattern-box crimson">
+                <h3>Crimson (Actualization)</h3>
+                <p>Who you CHOOSE romantically</p>
+                <p style="font-size: 0.9em; color: #aaa;">Within preferred world, find eros match</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <h2 style="color: #00d4ff;">Available Worlds Accepting Rally from Your Situation</h2>
+            <p style="color: #aaa; margin-top: 10px;">
+                Click any world to see details. These worlds have explicitly indicated they welcome refugees from FGM/violence.
+            </p>
+        </div>
+
+        <div class="worlds-grid">
+            <!-- World 1: Scandinavian Peace Triad -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">🏔️ Nordic Peace Sanctuary</div>
+                <div class="world-type">Triad #2.38447.001 - Scandinavian Heritage</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Zero violence infrastructure (24/7 monitoring, PoP-verified entry)</li>
+                            <li>Educational systems (free through age 25, specialized tracks)</li>
+                            <li>Healthcare excellence (longevity focus, preventive care)</li>
+                            <li>Economic opportunity (apprenticeships, protected markets)</li>
+                            <li>Natural beauty (fjords, mountains, designed for harmony)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Bodily autonomy sacred (FGM absolutely prohibited, cultural consensus)</li>
+                            <li>Women's choice in marriage (no arranged, full autonomy)</li>
+                            <li>Education for all (literacy 100%, higher education 85%)</li>
+                            <li>Peaceful conflict resolution (mediation culture, violence rare)</li>
+                            <li>Equality in law (but eugenic selection within freedom)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Scandinavian men (tall, blonde/red-haired, blue/green-eyed)</li>
+                            <li>Builder types (engineers, craftsmen, thoughtful, reserved)</li>
+                            <li>Peaceful temperament (low aggression, high trust, cooperative)</li>
+                            <li>Long-term orientation (family-focused, stable, provider types)</li>
+                            <li>Women ratio: 1.3 women per man (demographic advantage, choice available)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">9.8/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">8.7/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">9.9/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">45,000</div>
+                    </div>
+                </div>
+
+                <div class="warning">
+                    <strong>Cultural Adjustment Required:</strong> Winter climate (harsh for Somalis), different food culture, language learning (Norwegian/English), very different social norms (reserved vs. expressive)
+                </div>
+
+                <button class="rally-button">Rally to Nordic Peace Sanctuary</button>
+            </div>
+
+            <!-- World 2: Mediterranean Warmth Triad -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">☀️ Mediterranean Life Haven</div>
+                <div class="world-type">Triad #2.38119.052 - Greco-Italian Heritage</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Warm climate infrastructure (coastal, sunny, familiar weather)</li>
+                            <li>Community-based security (tight-knit, everyone knows everyone)</li>
+                            <li>Agricultural abundance (olive groves, vineyards, Mediterranean diet)</li>
+                            <li>Artisan economy (crafts, textiles, food production)</li>
+                            <li>Extended family structures (multi-generational homes)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>FGM barbaric (absolutely prohibited, cultural horror at practice)</li>
+                            <li>Women as family treasures (protected, valued, central to culture)</li>
+                            <li>Honor through kindness (not violence—violence shameful)</li>
+                            <li>Catholic/Orthodox values (pro-life, family-focused, traditional but not oppressive)</li>
+                            <li>Expressive culture (talking, gesturing, emotional—more familiar to Somalis)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Mediterranean men (olive/tan skin, dark hair, dark eyes—closer to Somali appearance)</li>
+                            <li>Passionate types (expressive, warm, family-oriented)</li>
+                            <li>Artisan/merchant temperament (skilled hands, business-minded, community-focused)</li>
+                            <li>Protective culture (women cherished, family defended)</li>
+                            <li>Women ratio: 1.1 women per man (slight advantage, but competitive)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">8.9/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">7.5/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">8.2/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">67,000</div>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <strong>Climate Advantage:</strong> Warm Mediterranean climate (similar temperature range to Somalia), familiar crops/foods, easier physical adjustment
+                </div>
+
+                <button class="rally-button">Rally to Mediterranean Life Haven</button>
+            </div>
+
+            <!-- World 3: Pan-African Sanctuary -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">🌍 Pan-African Women's Sanctuary</div>
+                <div class="world-type">Triad #2.24856.118 - Multi-African Unity</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>African women-led governance (women hold 70% of leadership positions)</li>
+                            <li>Anti-FGM enforcement (zero tolerance, protected borders)</li>
+                            <li>Skills training centers (trades, technology, business)</li>
+                            <li>Agricultural self-sufficiency (modern farming, food security)</li>
+                            <li>Pan-African culture (celebrating African heritage without harmful traditions)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>FGM is colonial-era oppression (to be abolished permanently)</li>
+                            <li>Women's bodies sacred (autonomy absolute, no exceptions)</li>
+                            <li>African pride without harmful traditions (cultural selection)</li>
+                            <li>Education as liberation (knowledge empowerment)</li>
+                            <li>Sisterhood culture (women support women, collective strength)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>African men (various ethnicities, dark skin, diverse features—familiar)</li>
+                            <li>Educated progressive types (university-educated, anti-traditional-harm)</li>
+                            <li>Women-respecting culture (selected for through woman-led governance)</li>
+                            <li>Builder temperament (those who rebuilt African culture positively)</li>
+                            <li>Women ratio: 2.1 women per man (significant demographic surplus—high choice)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">9.2/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">6.8/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">9.7/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">128,000</div>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <strong>Cultural Familiarity:</strong> African heritage celebrated, similar climate, familiar foods, language bridges (Swahili/English common), minimal cultural shock
+                </div>
+
+                <button class="rally-button">Rally to Pan-African Women's Sanctuary</button>
+            </div>
+
+            <!-- World 4: Singapore-Style Meritocracy -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">🏙️ Prosperity Meritocracy Triad</div>
+                <div class="world-type">Triad #2.66103.009 - Singapore-Inspired Model</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Economic hyper-efficiency (GDP per capita $85k, rapid growth)</li>
+                            <li>Zero-corruption systems (PoP-verified transactions, complete transparency)</li>
+                            <li>Ultra-low crime (0.02% violent crime rate, safest in world)</li>
+                            <li>Education meritocracy (performance-based, world-class universities)</li>
+                            <li>Multi-racial harmony (Chinese, Indian, Malay, African—all integrated)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>FGM criminalized (harsh penalties, cultural abhorrence)</li>
+                            <li>Merit above all (performance determines outcomes, not race/gender/origin)</li>
+                            <li>Law absolute (strict but fair, applied equally)</li>
+                            <li>Pragmatism over ideology (what works wins, no sacred cows)</li>
+                            <li>Future-orientation (past doesn't matter, what you build does)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Multi-racial men (Chinese, Indian, Malay, African, European—extreme diversity)</li>
+                            <li>High achievers (doctors, engineers, entrepreneurs, intense work ethic)</li>
+                            <li>Competitive but respectful (meritocratic, performance-focused)</li>
+                            <li>Long-term planners (family-building, wealth-accumulation, strategic)</li>
+                            <li>Women ratio: 0.95 women per man (slight disadvantage—must compete)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">9.9/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">9.8/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">8.9/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">890,000</div>
+                    </div>
+                </div>
+
+                <div class="warning">
+                    <strong>High Expectations:</strong> Must perform (education required, work ethic high), competitive environment (meritocracy is real), less communal (individualistic achievement culture)
+                </div>
+
+                <button class="rally-button">Rally to Prosperity Meritocracy</button>
+            </div>
+
+            <!-- World 4: American Freedom Triad -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">🦅 Liberty Haven Triad</div>
+                <div class="world-type">Triad #2.11039.203 - American Frontier Heritage</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Maximum personal freedom (minimal rules, individual sovereignty)</li>
+                            <li>Economic dynamism (entrepreneurship encouraged, low barriers)</li>
+                            <li>Armed self-defense culture (gun ownership, personal security)</li>
+                            <li>Vast territory (ranches, open land, space abundance)</li>
+                            <li>Pioneering spirit (frontier mentality, building culture)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>FGM absolutely forbidden (bodily autonomy sacred, violence prohibited)</li>
+                            <li>Individual rights supreme (your body, your choice, your life)</li>
+                            <li>Self-reliance valued (strong individuals, personal responsibility)</li>
+                            <li>Christian values (pro-life, family-focused, but freedom-oriented)</li>
+                            <li>Frontier justice (community-enforced, direct, swift)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>American men (diverse: white, black, Hispanic—frontiersman types)</li>
+                            <li>Rugged individualists (ranchers, builders, self-made entrepreneurs)</li>
+                            <li>Protective but freedom-respecting (won't control you, will defend you)</li>
+                            <li>Traditional gender roles available (but not forced—choice)</li>
+                            <li>Women ratio: 0.88 women per man (competitive—must bring value)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">8.5/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">8.9/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">9.5/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">234,000</div>
+                    </div>
+                </div>
+
+                <div class="warning">
+                    <strong>Demands:</strong> Self-reliance expected (learn skills, contribute economically), frontier hardship (rural life, physical work), must integrate (English required, American culture adoption expected)
+                </div>
+
+                <button class="rally-button">Rally to Liberty Haven</button>
+            </div>
+
+            <!-- World 5: Islamic Reform Triad -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">☪️ New Medina Reformation</div>
+                <div class="world-type">Triad #2.55924.077 - Reformed Islamic Culture</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Islamic culture without harmful traditions (Quranic re-examination)</li>
+                            <li>Modern infrastructure with Islamic aesthetics (mosques, architecture, beauty)</li>
+                            <li>Women's education centers (Islamic scholarship by women, for women)</li>
+                            <li>Economic participation (women in business, professions, leadership)</li>
+                            <li>Security through community (mutual aid, trust networks)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>FGM is un-Islamic (not in Quran, pre-Islamic practice, to be eliminated)</li>
+                            <li>Women honored in Islam (Quranic respect, modern interpretation)</li>
+                            <li>Harmful hadiths rejected (only Quran + reason, cultural reform)</li>
+                            <li>Modesty by choice (hijab optional, personal decision)</li>
+                            <li>Islam compatible with modernity (technology, education, autonomy)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Muslim men (Arab, Turkish, Persian, African Muslim—familiar culture)</li>
+                            <li>Educated reformers (modern Islamic scholars, progressive interpretation)</li>
+                            <li>Women-respecting (selected for through women-led reformation)</li>
+                            <li>Pious but not oppressive (spiritual, family-oriented, respectful)</li>
+                            <li>Women ratio: 1.8 women per man (surplus—women fleeing traditional Islam)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">9.1/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">7.8/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">9.3/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">312,000</div>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <strong>Cultural Continuity:</strong> Keep Islamic identity (no apostasy pressure), familiar religious framework, community understands your background, language/food/customs similar
+                </div>
+
+                <button class="rally-button">Rally to New Medina</button>
+            </div>
+
+            <!-- World 6: Tech Utopia Triad -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">🚀 Silicon Sanctuary</div>
+                <div class="world-type">Triad #2.38128.001 - Tech Hyper-Intelligence</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Technological supremacy (AI, biotech, quantum computing—decades ahead)</li>
+                            <li>Abundance through automation (UBI for all, work optional)</li>
+                            <li>Perfect security (predictive policing, violence prevented before occurrence)</li>
+                            <li>Longevity focus (average lifespan 120+ years, health perfect)</li>
+                            <li>Virtual worlds available (if prefer digital to physical)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>FGM barbaric (body modification should enhance, not harm)</li>
+                            <li>Technology serves humanity (tools for flourishing, not control)</li>
+                            <li>Intelligence valued (learning, growth, curiosity celebrated)</li>
+                            <li>Transhumanism accepted (body augmentation, life extension, enhancement)</li>
+                            <li>Radical freedom in personal choices (your body, your life, your will)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Tech elite men (programmers, engineers, researchers—extreme intelligence)</li>
+                            <li>Hyper-rational types (analytical, systematic, optimization-focused)</li>
+                            <li>Introverted culture (digital communication preferred, deep 1-on-1)</li>
+                            <li>Wealth extreme (millionaires common, billionaires present)</li>
+                            <li>Women ratio: 0.7 women per man (shortage—women intimidated by tech culture)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">10/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">10/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">9.8/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">56,000</div>
+                    </div>
+                </div>
+
+                <div class="warning">
+                    <strong>Culture Shock:</strong> Extreme tech immersion (constant digital interfaces), hyper-rational culture (emotions secondary to logic), competitive intellectual environment (must learn fast), alien aesthetics (digital, minimalist, cold)
+                </div>
+
+                <button class="rally-button">Rally to Silicon Sanctuary</button>
+            </div>
+
+            <!-- World 6: Traditional Islamic Somali Triad (with reforms) -->
+            <div class="world-card" onclick="selectWorld(this)">
+                <div class="world-title">🕌 New Somalia Refuge</div>
+                <div class="world-type">Triad #2.18764.044 - Somali Heritage Reformed</div>
+                
+                <div class="section azure-section">
+                    <div class="section-title">Azure: What They Built</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Somali men who removed FGM practitioners (reformed community)</li>
+                            <li>Traditional economy modernized (fishing, trade, crafts with tech)</li>
+                            <li>Clan structures without violence (mediation, peaceful resolution)</li>
+                            <li>Moderate security (community-based, improving)</li>
+                            <li>Somali culture preserved (language, food, music, stories—without harm)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section gray-section">
+                    <div class="section-title">Gray: What They Believe</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>FGM eliminated (permanently banned, enforcers expelled/reformed)</li>
+                            <li>Somali pride restored (without harmful traditions)</li>
+                            <li>Islam maintained (but reformed—no FGM, no forced marriage)</li>
+                            <li>Women's education valued (schools built, literacy priority)</li>
+                            <li>Building matters (those who built this reform are honored)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section crimson-section">
+                    <div class="section-title">Crimson: Who You'd Find</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>Somali men (your ethnicity, language, culture—completely familiar)</li>
+                            <li>Reformers (those who actually removed bad men—builders, brave)</li>
+                            <li>Traditional yet modern (clan honor, but no violence against women)</li>
+                            <li>Protective of reform (won't allow FGM return, selected for this)</li>
+                            <li>Women ratio: 4.2 women per man (massive surplus—women fleeing traditional Somalia)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Safety Index</div>
+                        <div class="stat-value">7.8/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Economic Prosperity</div>
+                        <div class="stat-value">5.2/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Female Autonomy</div>
+                        <div class="stat-value">8.7/10</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Population</div>
+                        <div class="stat-value">18,000</div>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <strong>Zero Cultural Adjustment:</strong> Speak Somali, eat Somali food, live Somali culture (minus FGM), keep Islamic faith, family understands you completely—only change is FGM eliminated
+                </div>
+
+                <div class="warning">
+                    <strong>Proof of Concept:</strong> Small population (new Triad, experimental), lower prosperity (building from scratch), less established (still proving it works), BUT proves "all it took was Somali men getting their act together"
+                </div>
+
+                <button class="rally-button">Rally to New Somalia</button>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; padding: 30px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; border: 2px solid rgba(0, 212, 255, 0.3);">
+            <h2 style="color: #00d4ff; margin-bottom: 20px;">Understanding the Otriad Pattern</h2>
+            
+            <div style="margin: 20px 0;">
+                <h3 style="color: #4fc3f7;">Azure → Gray → Crimson (The Selection Process)</h3>
+                <p style="line-height: 1.8; color: #ccc; margin-top: 10px;">
+                    <strong>Step 1 (Azure):</strong> Filter by what world-builders CAN DO. Do they have infrastructure that protects you from FGM? Do they have economic systems that provide opportunity? Do they have capability to build what they promise?
+                    <br><br>
+                    <strong>Step 2 (Gray):</strong> Within capable worlds, filter by what civilization BELIEVES. Do they value bodily autonomy? Do they oppose FGM culturally? Do their laws and social norms align with your values?
+                    <br><br>
+                    <strong>Step 3 (Crimson):</strong> Within aligned civilizations, choose specific person through EROS. Which man in this world do you desire romantically? Who attracts you physically, emotionally, spiritually?
+                </p>
+            </div>
+
+            <div style="margin: 30px 0; padding: 20px; background: rgba(123, 47, 247, 0.1); border-left: 4px solid #7b2ff7;">
+                <h3 style="color: #7b2ff7; margin-bottom: 10px;">Why This Is NOT Shallow Selection</h3>
+                <p style="line-height: 1.8; color: #ccc;">
+                    Current dating (Tinder, etc.): Swipe through thousands of RANDOM men based on photos. Azure unfakable world-building capacity completely invisible. Just facade presentation.
+                    <br><br>
+                    Otriad Selection: First filter by UNFAKABLE world-building (Azure—can they actually build functional world?). Then filter by observable civilization (Gray—do they actually oppose FGM?). THEN choose by eros (Crimson—within these verified builders, who attracts you?).
+                    <br><br>
+                    <strong>Result:</strong> Azure eliminates fakers (can't fake world-building capacity). Gray eliminates cultural misalignment (observable laws/norms). Crimson operates within verified, aligned pool (much deeper selection than random swiping).
+                </p>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3 style="color: #00d4ff; margin-bottom: 15px;">The Awesome Feedback Mechanism</h3>
+                <p style="line-height: 1.8; color: #ccc;">
+                    Your rally choice provides IMMEDIATE, CLEAR signal to worlds:
+                </p>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li><strong>If you rally to Nordic Peace:</strong> Signals that Scandinavian men who built zero-violence culture are doing something RIGHT → Other worlds learn → More build zero-violence</li>
+                    <li><strong>If you rally to New Somalia:</strong> Signals that Somali men who reformed CAN succeed → Other Somali men motivated → More remove FGM to attract women back</li>
+                    <li><strong>If NO ONE rallies to a world:</strong> That world's men don't reproduce → Genetic extinction → Natural selection eliminates failed approaches</li>
+                </ul>
+                <p style="margin-top: 20px; line-height: 1.8; color: #ccc;">
+                    <strong>Your choice matters.</strong> Not just for you (escape FGM, find safety), but for REALITY ITSELF (you signal what works, natural selection operates, civilization evolves toward better worlds).
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center; padding: 40px; background: rgba(0, 212, 255, 0.1); border-radius: 15px;">
+            <h2 style="color: #00d4ff; margin-bottom: 20px;">MBC Rule 3: You Are Free to Leave</h2>
+            <p style="font-size: 1.2em; line-height: 1.8; max-width: 800px; margin: 0 auto; color: #e0e0e0;">
+                No imprisonment without land. You have the absolute right to rally to ANY functional world that accepts you.
+                <br><br>
+                Traditional Somalia threatens FGM? <strong>You may leave.</strong>
+                <br><br>
+                These worlds welcome you. Choose the one that resonates with your daemon. Live there. Experience it.
+                <br><br>
+                If it serves your will: Stay, pair, reproduce.
+                <br><br>
+                If it doesn't: Rally to another. Try again. Find your fit.
+                <br><br>
+                <strong style="color: #00d4ff;">Your feet vote. Your choice shapes reality. Natural selection with awesome feedback.</strong>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function selectWorld(card) {
+            // Remove previous selection
+            document.querySelectorAll('.world-card').forEach(c => c.classList.remove('selected'));
+            // Add selection to clicked card
+            card.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
+

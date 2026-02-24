@@ -1,0 +1,35 @@
+{
+  "country_code": "TN",
+  "name": "Tunisia",
+  "approximate": true,
+  "population": 12000000,
+  "gdp_nominal_usd": 47000000000,
+  "gdp_per_capita_usd": 3900,
+  "social_spending_pct_gdp": 16.0,
+  "health_spending_pct_gdp": 6.5,
+  "education_spending_pct_gdp": 6.5,
+  "oda_given_pct_gni": 0.05,
+  "oda_given_usd": 100000000,
+  "oda_received_usd": 600000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 200000000,
+  "volunteering_rate_pct_adults": 24.0,
+  "volunteer_hours_billion": 0.2,
+  "child_mortality_under5_per_1000": 16.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Diabetes"
+  ],
+  "notes": [
+    "Tunisia has relatively high social spending compared to income and significant political transitions.",
+    "Religious and family-based giving are important but not fully captured in formal data."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Tunisian government budget data"
+  ]
+}
+
+

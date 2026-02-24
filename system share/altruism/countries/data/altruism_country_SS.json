@@ -1,0 +1,37 @@
+{
+  "country_code": "SS",
+  "name": "South Sudan",
+  "approximate": true,
+  "population": 11000000,
+  "gdp_nominal_usd": 4000000000,
+  "gdp_per_capita_usd": 360,
+  "social_spending_pct_gdp": 7.0,
+  "health_spending_pct_gdp": 3.0,
+  "education_spending_pct_gdp": 2.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1200000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 12000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.1,
+  "child_mortality_under5_per_1000": 95.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Lower respiratory infections",
+    "Diarrheal diseases",
+    "Malnutrition",
+    "Conflict-related causes"
+  ],
+  "notes": [
+    "South Sudan has among the highest under-5 and maternal mortality rates in the world, with heavy reliance on humanitarian aid.",
+    "Oil revenues are volatile and much health and education is NGO-delivered."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "UN and humanitarian reports"
+  ]
+}
+
+

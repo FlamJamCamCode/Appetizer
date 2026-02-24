@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Old World to Nested Sovereignty</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(45deg, #ff3366, #ff9933);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .phase {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .phase:nth-child(2) { animation-delay: 0.3s; }
+        .phase:nth-child(3) { animation-delay: 0.6s; }
+        .phase:nth-child(4) { animation-delay: 0.9s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Old World Visualization */
+        .old-world {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .old-world::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 0, 0, 0.1) 10px,
+                rgba(255, 0, 0, 0.1) 20px
+            );
+            pointer-events: none;
+        }
+        
+        .territory {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #444;
+            position: relative;
+        }
+        
+        .territory h3 {
+            margin: 0 0 10px 0;
+            color: #ff6666;
+        }
+        
+        .territory p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #999;
+        }
+        
+        /* Crucible Visualization */
+        .crucible {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            padding: 40px;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0a 100%);
+            border-radius: 20px;
+            min-height: 400px;
+            position: relative;
+        }
+        
+        .zone {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 150px;
+            text-align: center;
+            border: 2px solid #3a4d7c;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .zone:hover {
+            transform: scale(1.05);
+            border-color: #5a7dbc;
+            box-shadow: 0 5px 20px rgba(90, 125, 188, 0.4);
+        }
+        
+        .zone h4 {
+            margin: 0 0 10px 0;
+            color: #5a9fd4;
+        }
+        
+        .zone-id {
+            font-family: monospace;
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .zone-type {
+            font-size: 0.9em;
+            color: #8a9fd4;
+        }
+        
+        /* Nested Sovereignty */
+        .nested-viz {
+            padding: 40px;
+            background: #0f0f1f;
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .tree-container {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+            padding: 20px;
+        }
+        
+        .node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .node-content {
+            background: linear-gradient(135deg, #2a2a4a 0%, #1a1a3a 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #4a4a7a;
+            min-width: 180px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .lord-node .node-content {
+            background: linear-gradient(135deg, #4a2a4a 0%, #3a1a3a 100%);
+            border: 3px solid #ff3366;
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.4);
+        }
+        
+        .node-content h4 {
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+        
+        .law-display {
+            font-family: monospace;
+            font-size: 1.2em;
+            color: #ff9933;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+        
+        .children {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .children::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            width: 2px;
+            height: 25px;
+            background: #4a4a7a;
+            transform: translateX(-50%);
+        }
+        
+        .child-node {
+            position: relative;
+        }
+        
+        .child-node::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            width: 2px;
+            height: 25px;
+            background: #4a4a7a;
+            transform: translateX(-50%);
+        }
+        
+        /* Timeline */
+        .timeline {
+            margin-top: 60px;
+            padding: 40px;
+            background: #0a0a1a;
+            border-radius: 20px;
+        }
+        
+        .timeline h3 {
+            text-align: center;
+            color: #ff9933;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.6s; }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .time-marker {
+            min-width: 100px;
+            text-align: right;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .time-content {
+            flex: 1;
+            padding-left: 20px;
+            border-left: 2px solid #333;
+        }
+        
+        .migration {
+            display: inline-block;
+            padding: 5px 10px;
+            background: rgba(90, 159, 212, 0.2);
+            border-radius: 5px;
+            margin: 2px;
+            font-size: 0.9em;
+        }
+        
+        /* Law Framework Display */
+        .law-framework {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to bottom, #1a1a2e, #0a0a0a);
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .law-number {
+            font-size: 3em;
+            font-family: monospace;
+            letter-spacing: 8px;
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .law-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .law-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .law-item h5 {
+            margin: 0 0 10px 0;
+            color: #ff9933;
+        }
+        
+        .law-item p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Evolution of Sovereignty</h1>
+        
+        <div class="phase">
+            <h2>Phase 1: The Old World</h2>
+            <div class="old-world">
+                <div class="territory">
+                    <h3>Democracy A</h3>
+                    <p>51% dominate 49%</p>
+                    <p>One size fits all</p>
+                </div>
+                <div class="territory">
+                    <h3>Autocracy B</h3>
+                    <p>Traditional power</p>
+                    <p>No exit rights</p>
+                </div>
+                <div class="territory">
+                    <h3>Theocracy C</h3>
+                    <p>Divine mandate</p>
+                    <p>Enforced belief</p>
+                </div>
+                <div class="territory">
+                    <h3>Communist State D</h3>
+                    <p>Collective ownership</p>
+                    <p>No individual path</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="phase">
+            <h2>The Law Framework</h2>
+            <div class="law-framework">
+                <div class="law-number">12345678087654321</div>
+                <p style="color: #666; margin-bottom: 20px;">The Universal Halo & Horn</p>
+                <div class="law-breakdown">
+                    <div class="law-item">
+                        <h5>1 - Prevent Death</h5>
+                        <p>No ending of existence</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>2 - Prevent Extreme Suffering</h5>
+                        <p>Minimize unbearable pain</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>3 - Ensure Free Space</h5>
+                        <p>Room for will to manifest</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>4 - Identity Sovereignty</h5>
+                        <p>You are who you choose</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>5 - Beauty/Ugliness</h5>
+                        <p>Define your aesthetics</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>6 - The Lumen</h5>
+                        <p>Share fruits, not power</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>7 - Belief Freedom</h5>
+                        <p>Choose your cosmos</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>8 - Small Death</h5>
+                        <p>[Unspoken consequence]</p>
+                    </div>
+                    <div class="law-item">
+                        <h5>0 - The Lord</h5>
+                        <p>Absolute sovereignty</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="phase">
+            <h2>Phase 2: The Crucible</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">Choose Old World or Any Manifested Vision</p>
+            <div class="crucible">
+                <div class="zone">
+                    <div class="zone-id">2#00001</div>
+                    <h4>Old World</h4>
+                    <div class="zone-type">Status Quo</div>
+                </div>
+                <div class="zone" style="border-color: #ff3366;">
+                    <div class="zone-id">2#38128</div>
+                    <h4>The Lord's Domain</h4>
+                    <div class="zone-type">12345678087654321</div>
+                </div>
+                <div class="zone">
+                    <div class="zone-id">2#14523</div>
+                    <h4>Tech Monastery</h4>
+                    <div class="zone-type">Digital Asceticism</div>
+                </div>
+                <div class="zone">
+                    <div class="zone-id">2#67891</div>
+                    <h4>Warrior State</h4>
+                    <div class="zone-type">Honor & Combat</div>
+                </div>
+                <div class="zone">
+                    <div class="zone-id">2#23456</div>
+                    <h4>Artist Commune</h4>
+                    <div class="zone-type">Pure Creation</div>
+                </div>
+                <div class="zone">
+                    <div class="zone-id">2#89012</div>
+                    <h4>Math Reality</h4>
+                    <div class="zone-type">Numbers Rule</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="phase">
+            <h2>Phase 3: Nested Sovereignty (2#38128)</h2>
+            <div class="nested-viz">
+                <div class="tree-container">
+                    <div class="node lord-node">
+                        <div class="node-content">
+                            <h4>The Lord (0)</h4>
+                            <div class="zone-id">2#38128</div>
+                            <div class="law-display">12345678087654321</div>
+                            <p style="font-size: 0.9em; color: #aaa;">The Root Domain</p>
+                        </div>
+                        <div class="children">
+                            <div class="child-node">
+                                <div class="node">
+                                    <div class="node-content">
+                                        <h4>Scholar Enclave</h4>
+                                        <div class="zone-id">2#38128#001</div>
+                                        <p style="font-size: 0.8em;">+ Silence is Sacred</p>
+                                    </div>
+                                    <div class="children">
+                                        <div class="child-node">
+                                            <div class="node">
+                                                <div class="node-content">
+                                                    <h4>Pure Math</h4>
+                                                    <div class="zone-id">2#38128#001#01</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="child-node">
+                                            <div class="node">
+                                                <div class="node-content">
+                                                    <h4>Philosophy</h4>
+                                                    <div class="zone-id">2#38128#001#02</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="child-node">
+                                <div class="node">
+                                    <div class="node-content">
+                                        <h4>Builder's Forge</h4>
+                                        <div class="zone-id">2#38128#002</div>
+                                        <p style="font-size: 0.8em;">+ Creation > Words</p>
+                                    </div>
+                                    <div class="children">
+                                        <div class="child-node">
+                                            <div class="node">
+                                                <div class="node-content">
+                                                    <h4>Bio-Engineers</h4>
+                                                    <div class="zone-id">2#38128#002#01</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="child-node">
+                                <div class="node">
+                                    <div class="node-content">
+                                        <h4>Aesthetic Realm</h4>
+                                        <div class="zone-id">2#38128#003</div>
+                                        <p style="font-size: 0.8em;">+ Beauty is Law</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <h3>Evolution Timeline</h3>
+            <div class="timeline-item">
+                <div class="time-marker">Year 0</div>
+                <div class="time-content">
+                    <p>The Lord establishes 2#38128 with initial followers</p>
+                    <span class="migration">100 join from Old World</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="time-marker">Year 1</div>
+                <div class="time-content">
+                    <p>First sub-zones emerge as leaders manifest their visions</p>
+                    <span class="migration">Scholar Enclave: 50</span>
+                    <span class="migration">Builder's Forge: 200</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="time-marker">Year 5</div>
+                <div class="time-content">
+                    <p>Complex nesting develops, distributed territories form</p>
+                    <span class="migration">1,000+ residents</span>
+                    <span class="migration">15 sub-zones</span>
+                    <span class="migration">3 off-world sites</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="time-marker">Year 10</div>
+                <div class="time-content">
+                    <p>Fractal sovereignty proven, mass migration begins</p>
+                    <span class="migration">50,000+ choosing alternatives</span>
+                    <span class="migration">Old World losing 5% annually</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

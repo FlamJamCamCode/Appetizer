@@ -1,0 +1,140 @@
+{
+  "persona": "Homeless Person",
+  "title": "From Street to Paradise - Direct Path to Dignity",
+  "current_reality": {
+    "situation": "Homeless, living on street/shelter/car, no stable housing",
+    "daily_life": "Find food, find safe place to sleep, survive, avoid police, repeat",
+    "income": "$0-$800/month from panhandling, odd jobs, disability",
+    "actual_situation": "Bottom of extraction system - nowhere lower to fall",
+    "how_you_got_here": "Job loss, addiction, mental health, medical bankruptcy, family breakdown, veteran with PTSD, released from prison - or just bad luck",
+    "soul_cost": "Dehumanized, invisible, treated as garbage, want to die but keep surviving",
+    "future": "Die on street within 5-10 years, freeze in winter or heat stroke in summer, forgotten"
+  },
+  "what_you_face": {
+    "immediate": [
+      "Where to sleep tonight - shelters full, street dangerous",
+      "Where to get food - soup kitchens, dumpsters, panhandling",
+      "Police harassment - 'move along', can't exist anywhere",
+      "Violence - robbed, beaten, raped, killed (homeless murder rate 20x average)",
+      "Weather - freeze in winter, bake in summer, no protection",
+      "Health deteriorating - no care, conditions worsening, dying slowly"
+    ],
+    "deeper": [
+      "Invisible - people look through you, dehumanized",
+      "No agency - can't get job (no address), can't get housing (no job), trapped in loop",
+      "Addiction/mental health - maybe cause, maybe effect, but no treatment",
+      "No escape - every path out blocked (need address for job, need job for housing, etc.)",
+      "Survival mode - can't plan future, just survive today",
+      "Want to die - but keep surviving somehow"
+    ],
+    "existential": [
+      "Human being reduced to 'homeless problem'",
+      "Potential wasted - maybe were engineer, veteran, parent, now... this",
+      "Die on street unmourned - another statistic",
+      "Legacy: Homeless person #47,293 - forgotten before dead",
+      "System's verdict: Disposable, worthless, better off dead"
+    ]
+  },
+  "the_barracks_offer": {
+    "immediate_provisions": {
+      "shelter": "BARRACKS - same night, safe bed, your own locker. Azure/TRUTH screening keeps high-risk behaviors in high-support quarters until stabilized, while Crimson/TASTE lets you pick mentors, quiet zones, and work crews through Sorting Hat lobbies defined in foundations/BARRACKS sorting dual-layer.md and coordinated via the 23 COMMAND duty bands.",
+      "food": "TRUTH food - reliable, hot, no waiting in charity lines",
+      "healthcare": "Immediate medical care - treat infections, injuries, chronic conditions",
+      "safety": "Protected - no more violence, no more police harassment, SAFE",
+      "dignity": "Treated as HUMAN - not garbage, not problem, PERSON",
+      "cost_to_you": "$0 - just show up"
+    },
+    "no_requirements": {
+      "no_address_needed": "BARRACKS is your address",
+      "no_job_history": "Don't care - can you contribute ANYTHING? Yes? Welcome.",
+      "no_credit_check": "Irrelevant - no money in BARRACKS",
+      "no_background_check": "Past is past - can you work toward future? Yes? Welcome.",
+      "no_sobriety_required": "Initially - but no substances in BARRACKS, will detox, supported through it",
+      "no_mental_health_clearance": "Treatment available - work with your condition, heal as you go"
+    },
+    "the_work": {
+      "start_where_you_are": [
+        "Day 1-7: Recover - eat, sleep, get healthy, no work required initially",
+        "Week 2-4: Light tasks - cleaning, organizing, whatever you can manage",
+        "Month 2+: Real work - as health/mental state improves, contribution increases",
+        "You work to YOUR capability - not some arbitrary standard"
+      ],
+      "roles_possible": [
+        "Start with: Cleaning, organizing, light assistance",
+        "Build to: Food prep, childcare support, facility maintenance",
+        "Eventually: Whatever skills you had before homelessness - use them again",
+        "If veteran: Security, leadership roles",
+        "If former tradesperson: Skills still there, apply them",
+        "If former professional: Intelligence still there, use it"
+      ],
+      "philosophy": "Everyone has value - find what YOU can contribute, do that, valued for it"
+    },
+    "tokens_of_appreciation": {
+      "value": "$2-4 million/year even for limited contribution (2 years)",
+      "lifetime": "$100-200M+",
+      "comparison": [
+        "Street: $0-$800/month, die within 5-10 years = $0 lifetime",
+        "BARRACKS: $2M+/year, live full life = $100M+ lifetime",
+        "From nothing to everything"
+      ],
+      "meaning": "Human being HAS value - you're not garbage, you're CONTRIBUTOR, compensated as such"
+    },
+    "after_completion": {
+      "you_transformed": [
+        "From homeless to housed PERMANENTLY - $2M+/year buys any housing",
+        "From hungry to fed FOREVER - can afford any food",
+        "From sick to healthy - can afford any healthcare",
+        "From invisible to ESSENTIAL - you built paradise, you mattered",
+        "From worthless to WEALTHY - $2M+/year income"
+      ],
+      "options": [
+        "Housing - buy home, apartment, whatever you want",
+        "Healthcare - ongoing treatment, whatever you need",
+        "Reconnect - find lost family with resources to help them",
+        "Help others - fund homeless services with $2M+/year income",
+        "Education - if want, learn anything",
+        "Work - if want, next quest available, or retire",
+        "LIVE - finally, actually live, not just survive"
+      ]
+    }
+  },
+  "why_this_appeals": {
+    "immediate_safety": "Tonight: SAFE, SHELTERED, FED - not 'maybe', GUARANTEED",
+    "dignity_restored": "Treated as human being with value - not garbage",
+    "path_from_bottom": "Direct route from street to wealth - 2 years only",
+    "no_bureaucracy": "No forms, no waiting lists, no 'prove you deserve help' - just show up",
+    "purpose": "Life has meaning again - contributing to sacred mission",
+    "health": "Treatment for whatever broke you - addiction, mental health, physical issues",
+    "community": "Not alone - 100M others, many came from similar places, understand",
+    "redemption": "From bottom to builder of paradise - ultimate comeback story"
+  },
+  "addressing_concerns": {
+    "addiction": "No substances in BARRACKS - forced detox, but SUPPORTED - healthcare, community, purpose helps healing",
+    "mental_health": "Treatment available, work adapted to condition, healing through purpose proven effective",
+    "too_broken": "If you're alive, you're not too broken - start with light work, build up capability",
+    "criminal_record": "Past is past - contribute to future, that's what matters",
+    "no_skills": "You survived homelessness - that's skill - adaptability, resilience, you'll learn rest",
+    "physical_disability": "Work to capability - even minimal contribution gets tokens, you're valued"
+  },
+  "relation_to_death_fighting": {
+    "youve_faced_death": "Homeless face death daily - you know death is enemy",
+    "street_kills": "Die on street = system killed you - BARRACKS offers life",
+    "after_survival": "Survived street, now help ensure no one hungry, no animal slaughtered, no human dies before time",
+    "meaning": "From nearly dead to building life for all - ultimate reversal"
+  },
+  "the_direct_pitch": {
+    "tonight": "Where will you sleep tonight? Street? Shelter? BARRACKS offers bed, walls, safety, YOURS.",
+    "tomorrow": "What will you eat tomorrow? Dumpster? Soup kitchen? BARRACKS offers three meals, good food, FREE.",
+    "next_week": "Where will you be? Still on street? BARRACKS offers PURPOSE, community, path from bottom to wealth.",
+    "2_years_from_now": "On street, probably dead? Or BARRACKS, mission complete, tokens making you WEALTHY?",
+    "choice_is_simple": "Die on street OR build paradise and become millionaire - you decide"
+  },
+  "the_call": {
+    "question": "Will you die on street, or build paradise?",
+    "invitation": "Come as you are - homeless today, builder tomorrow, wealthy in 2 years",
+    "promise": "Shelter tonight, food tomorrow, purpose forever, wealth after 2 years, LIFE",
+    "urgency": "Every night on street might be last - come to BARRACKS NOW, start today",
+    "choice": "Death on street OR life building paradise - you decide"
+  }
+}
+

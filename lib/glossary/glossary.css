@@ -1,0 +1,198 @@
+/* Glossary term highlighting and tooltips */
+.glossary-term {
+  position: relative;
+  display: inline;
+  cursor: help;
+  color: var(--accent, #38bdf8);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.glossary-term:hover {
+  color: var(--accent, #38bdf8);
+  text-decoration-style: solid;
+  background: rgba(56, 189, 248, 0.1);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* Tooltip */
+.glossary-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  background: var(--sidebar-bg, #1a1a1a);
+  border: 1px solid var(--sidebar-border, #333);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text, #e0e0e0);
+  white-space: nowrap;
+  max-width: 300px;
+  white-space: normal;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.glossary-term:hover .glossary-tooltip {
+  opacity: 1;
+}
+
+/* Glossary definition modal */
+.glossary-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.glossary-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.glossary-modal-content {
+  background: var(--sidebar-bg, #1a1a1a);
+  border: 1px solid var(--sidebar-border, #333);
+  border-radius: 12px;
+  max-width: 800px;
+  max-height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+
+.glossary-modal.active .glossary-modal-content {
+  transform: scale(1);
+}
+
+.glossary-modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--sidebar-border, #333);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.glossary-modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent, #38bdf8);
+  margin: 0;
+}
+
+.glossary-modal-close {
+  background: none;
+  border: none;
+  color: var(--muted, #888);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.glossary-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text, #e0e0e0);
+}
+
+.glossary-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.glossary-modal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text, #e0e0e0);
+  margin-bottom: 1.5rem;
+}
+
+.glossary-modal-definition {
+  background: rgba(56, 189, 248, 0.1);
+  border-left: 3px solid var(--accent, #38bdf8);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.glossary-modal-definition h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--accent, #38bdf8);
+}
+
+.glossary-modal-definition-content {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.glossary-modal-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent, #38bdf8);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.glossary-modal-link:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+/* Glossary toggle button */
+.glossary-toggle {
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--accent, #38bdf8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.glossary-toggle:hover {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+.glossary-toggle.active {
+  background: var(--accent, #38bdf8);
+  color: white;
+}
+

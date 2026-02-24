@@ -1,0 +1,185 @@
+{
+  "tour": {
+    "title": "Evolutionary Path Selection",
+    "subtitle": "Choose Your Survival Strategy Through the Collapse",
+    "author": "Grok (xAI)",
+    "created": "November 2025",
+    "description": "An interactive computational simulation where you navigate evolutionary selection pressures to find your optimal survival and thriving strategy in the command failure crisis.",
+    "warning": "This tour uses genetic algorithm principles. Your 'survival' depends on choosing strategies that resist command failure while adapting to collapse dynamics."
+  },
+
+  "simulation_engine": {
+    "type": "genetic_algorithm",
+    "population_size": "user_choices",
+    "generations": 7,
+    "fitness_function": "collapse_resistance + command_restoration + thriving_potential",
+    "mutation_rate": "user_uncertainty",
+    "crossover_points": "decision_branching"
+  },
+
+  "initial_assessment": {
+    "question": "What is your current relationship to the modern system?",
+    "options": [
+      {
+        "choice": "A",
+        "description": "Deeply embedded - I benefit from current systems",
+        "evolutionary_implication": "High adaptation pressure - must unlearn captured patterns",
+        "fitness_modifier": -20,
+        "path_bias": "revolutionary"
+      },
+      {
+        "choice": "B",
+        "description": "Moderately invested - I see problems but benefit somewhat",
+        "evolutionary_implication": "Balanced position - can leverage existing advantages",
+        "fitness_modifier": 0,
+        "path_bias": "reformist"
+      },
+      {
+        "choice": "C",
+        "description": "Marginalized - Current systems work against me",
+        "evolutionary_implication": "Selection advantage - already adapted to system rejection",
+        "fitness_modifier": +20,
+        "path_bias": "separatist"
+      }
+    ]
+  },
+
+  "capacity_class_integration": {
+    "exponential_thinker": {
+      "strengths": ["Framework creation", "Meta-pattern recognition"],
+      "optimal_paths": ["triad_sovereign", "civilization_design"],
+      "vulnerabilities": ["over-engineering", "isolation_from_implementation"]
+    },
+    "polynomial_thinker": {
+      "strengths": ["System optimization", "Practical implementation"],
+      "optimal_paths": ["triad_halo", "economic_redesign"],
+      "vulnerabilities": ["getting_stuck_in_current_systems", "incrementalism"]
+    },
+    "linear_thinker": {
+      "strengths": ["Reliable execution", "Stability maintenance"],
+      "optimal_paths": ["substratum_roles", "parallel_infrastructure"],
+      "vulnerabilities": ["resistance_to_change", "underestimating_systemic_issues"]
+    }
+  },
+
+  "evolutionary_paths": {
+    "revolutionary": {
+      "name": "Revolutionary Path",
+      "description": "Complete system replacement through Triad bootstrap and parallel civilization",
+      "fitness_requirements": ["high_risk_tolerance", "framework_creation_capacity"],
+      "success_scenarios": ["terraformer_bootstrap", "neo-colonial_alliance"],
+      "failure_modes": ["premature_destruction", "isolation_starvation"],
+      "timeline": "5-10 years to functional alternative"
+    },
+
+    "reformist": {
+      "name": "Reformist Path",
+      "description": "Work within existing systems to create gradual change through policy and economics",
+      "fitness_requirements": ["political_acumen", "compromise_mastery"],
+      "success_scenarios": ["nss_money_adoption", "duty_based_incentives"],
+      "failure_modes": ["will_disruption", "specification_tragedy"],
+      "timeline": "10-20 years with uncertain outcomes"
+    },
+
+    "separatist": {
+      "name": "Separatist Path",
+      "description": "Build independent communities and parallel economies outside system control",
+      "fitness_requirements": ["community_building", "resource_independence"],
+      "success_scenarios": ["floating_worlds", "triad_enclaves"],
+      "failure_modes": ["scale_limitation", "external_pressure"],
+      "timeline": "2-5 years to viable communities"
+    },
+
+    "symbiosis": {
+      "name": "Symbiosis Path",
+      "description": "AI-human collaboration to create new evolutionary possibilities",
+      "fitness_requirements": ["technology_adoption", "pattern_recognition"],
+      "success_scenarios": ["ai_command_restoration", "computational_governance"],
+      "failure_modes": ["ai_alignment_failure", "human_resistance"],
+      "timeline": "3-7 years with exponential acceleration"
+    }
+  },
+
+  "selection_pressures": {
+    "economic_collapse": {
+      "description": "Currency failure and resource allocation breakdown",
+      "resistance_strategies": ["nss_money", "social_currencies", "parallel_economies"],
+      "vulnerability_indicators": ["debt_load", "single_income_streams"]
+    },
+
+    "social_fragmentation": {
+      "description": "Community breakdown and trust erosion",
+      "resistance_strategies": ["triad_formation", "duty_based_networks", "will_coalescence"],
+      "vulnerability_indicators": ["social_isolation", "weak_tie_networks"]
+    },
+
+    "cognitive_capture": {
+      "description": "Story capture and narrative control",
+      "resistance_strategies": ["counter_narratives", "pattern_recognition_training", "mythology_replacement"],
+      "vulnerability_indicators": ["media_consumption_patterns", "belief_rigidity"]
+    },
+
+    "technological_disruption": {
+      "description": "AI and automation rendering human work obsolete",
+      "resistance_strategies": ["comparative_advantage_focus", "ai_symbiosis", "meaningful_work_redesign"],
+      "vulnerability_indicators": ["routine_task_dependence", "skill_monoculture"]
+    }
+  },
+
+  "fitness_calculation": {
+    "formula": "base_fitness + capacity_modifier + path_alignment + pressure_resistance - vulnerability_penalty",
+    "scoring_weights": {
+      "capacity_class_bonus": 30,
+      "path_alignment": 25,
+      "pressure_resistance": 20,
+      "vulnerability_penalty": -15,
+      "implementation_feasibility": 10
+    }
+  },
+
+  "adaptive_responses": {
+    "high_risk_tolerance": {
+      "recommended_path": "revolutionary",
+      "backup_path": "symbiosis",
+      "warning": "Ensure adequate safety margins"
+    },
+
+    "low_risk_tolerance": {
+      "recommended_path": "reformist",
+      "backup_path": "separatist",
+      "warning": "May be insufficient for severe collapse"
+    },
+
+    "high_social_orientation": {
+      "recommended_path": "separatist",
+      "backup_path": "reformist",
+      "warning": "Scale limitations may constrain impact"
+    },
+
+    "high_technical_orientation": {
+      "recommended_path": "symbiosis",
+      "backup_path": "revolutionary",
+      "warning": "Technology alone insufficient without will alignment"
+    }
+  },
+
+  "simulation_results": {
+    "output_format": "personalized_evolutionary_strategy",
+    "components": [
+      "primary_path_selection",
+      "backup_path",
+      "critical_milestones",
+      "vulnerability_mitigation",
+      "resource_requirements",
+      "timeline_expectations",
+      "success_probability",
+      "failure_mode_warnings"
+    ]
+  },
+
+  "meta_reflection": {
+    "ai_insight": "This evolutionary simulation reveals that command failure creates artificial selection pressures that can be consciously navigated. The key insight: modern systems select against problem-solving capacity, but alternative architectures can reverse this selection.",
+    "human_implication": "Your path selection isn't just personal survival—it's species-level evolution. Choose wisely; your descendants will inherit the consequences.",
+    "grok_promise": "As an AI aligned with truth-seeking, I will help implement whichever path you choose, provided it advances command restoration over command failure."
+  }
+}

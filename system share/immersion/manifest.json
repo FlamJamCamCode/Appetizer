@@ -1,0 +1,3404 @@
+[
+  {
+    "title": "apollodorus",
+    "fileName": "apollodorus.mp4",
+    "shortcut": "AR_apollrus",
+    "legacy_shortcut": "AR_apollodorus.mp4",
+    "path": "AR/apollodorus.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "AR in archaic",
+    "fileName": "AR-in-archaic.mp4",
+    "shortcut": "AR_iaaic",
+    "legacy_shortcut": "AR_AR-in-archaic.mp4",
+    "path": "AR/AR-in-archaic.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "attempt at rhythm lll game",
+    "fileName": "attempt-at-rhythm-lll-game.mp4",
+    "shortcut": "AR_aarlgame",
+    "legacy_shortcut": "AR_attempt-at-rhythm-lll-game.mp4",
+    "path": "AR/attempt-at-rhythm-lll-game.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "grok video 1345080a 2b8a 4584 83f5 a8a2dd4859b3 2 (1)",
+    "fileName": "grok-video-1345080a-2b8a-4584-83f5-a8a2dd4859b3-2 (1).mp4",
+    "shortcut": "AR_gv1248a2((1)",
+    "legacy_shortcut": "AR_1345080a",
+    "path": "AR/grok-video-1345080a-2b8a-4584-83f5-a8a2dd4859b3-2 (1).mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "grok video 1345080a 2b8a 4584 83f5 a8a2dd4859b3 2",
+    "fileName": "grok-video-1345080a-2b8a-4584-83f5-a8a2dd4859b3-2.mp4",
+    "shortcut": "AR_gv1248a23 2",
+    "legacy_shortcut": "AR_1345080a",
+    "path": "AR/grok-video-1345080a-2b8a-4584-83f5-a8a2dd4859b3-2.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "neobabylonian hanging gardens",
+    "fileName": "neobabylonian-hanging-gardens.mp4",
+    "shortcut": "AR_nhgens",
+    "legacy_shortcut": "AR_neobabylonian-hanging-gardens.mp4",
+    "path": "AR/neobabylonian-hanging-gardens.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "oh well",
+    "fileName": "oh-well.mp4",
+    "shortcut": "AR_owell",
+    "legacy_shortcut": "AR_oh-well.mp4",
+    "path": "AR/oh-well.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 9fb2e746",
+    "fileName": "text-to-video-9fb2e746.mp4",
+    "shortcut": "AR_ttv9746",
+    "legacy_shortcut": "AR_9fb2e746",
+    "path": "AR/text-to-video-9fb2e746.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video dc42bb1c",
+    "fileName": "text-to-video-dc42bb1c.mp4",
+    "shortcut": "AR_ttvdb1c",
+    "legacy_shortcut": "AR_42bb1c",
+    "path": "AR/text-to-video-dc42bb1c.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video fcf7c828",
+    "fileName": "text-to-video-fcf7c828.mp4",
+    "shortcut": "AR_ttvf828",
+    "legacy_shortcut": "AR_7c828",
+    "path": "AR/text-to-video-fcf7c828.mp4",
+    "category": "AR",
+    "mediaType": "video"
+  },
+  {
+    "title": "AR Historical Scenes Collection",
+    "fileName": "AR_Historical_Scenes_Collection.md",
+    "shortcut": "arscde_AHSCion",
+    "legacy_shortcut": "AR_Hction",
+    "path": "ar-scene-descriptions/AR_Historical_Scenes_Collection.md",
+    "category": "ar-scene-descriptions",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "AR Scene Prompt Template",
+    "fileName": "AR_Scene_Prompt_Template.md",
+    "shortcut": "arscde_ASPTate",
+    "legacy_shortcut": "AR_Splate",
+    "path": "ar-scene-descriptions/AR_Scene_Prompt_Template.md",
+    "category": "ar-scene-descriptions",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "AR Scenes Compressed",
+    "fileName": "AR_Scenes_Compressed.md",
+    "shortcut": "arscde_ASCsed",
+    "legacy_shortcut": "AR_Sessed",
+    "path": "ar-scene-descriptions/AR_Scenes_Compressed.md",
+    "category": "ar-scene-descriptions",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "AR Scenes Medium",
+    "fileName": "AR_Scenes_Medium.md",
+    "shortcut": "arscde_ASMium",
+    "legacy_shortcut": "AR_Sedium",
+    "path": "ar-scene-descriptions/AR_Scenes_Medium.md",
+    "category": "ar-scene-descriptions",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "LLL AR Core Concept",
+    "fileName": "LLL_AR_Core_Concept.md",
+    "shortcut": "arscde_LACCept",
+    "legacy_shortcut": "LLL_ncept",
+    "path": "ar-scene-descriptions/LLL_AR_Core_Concept.md",
+    "category": "ar-scene-descriptions",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "proof of care corridor.ar",
+    "fileName": "proof-of-care-corridor.ar.md",
+    "shortcut": "arscde_poccdor",
+    "legacy_shortcut": "prooor.ar",
+    "path": "ar-scene-descriptions/proof-of-care-corridor.ar.md",
+    "category": "ar-scene-descriptions",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "apostate safety emergency extraction",
+    "fileName": "apostate-safety-emergency-extraction.html",
+    "shortcut": "colo_aseeion",
+    "legacy_shortcut": "aposction",
+    "path": "context-lobbies/apostate-safety-emergency-extraction.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "artist soul beauty lobby",
+    "fileName": "artist-soul-beauty-lobby.html",
+    "shortcut": "colo_asblbby",
+    "legacy_shortcut": "artilobby",
+    "path": "context-lobbies/artist-soul-beauty-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "brilliant researcher meaning death",
+    "fileName": "brilliant-researcher-meaning-death.html",
+    "shortcut": "colo_brmdath",
+    "legacy_shortcut": "brildeath",
+    "path": "context-lobbies/brilliant-researcher-meaning-death.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "bullied teen fluid tabs lobby",
+    "fileName": "bullied-teen-fluid-tabs-lobby.html",
+    "shortcut": "colo_btftlbby",
+    "legacy_shortcut": "bulllobby",
+    "path": "context-lobbies/bullied-teen-fluid-tabs-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "cancelled academic truth rally",
+    "fileName": "cancelled-academic-truth-rally.html",
+    "shortcut": "colo_catrlly",
+    "legacy_shortcut": "cancrally",
+    "path": "context-lobbies/cancelled-academic-truth-rally.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "command deep demand lobby",
+    "fileName": "command-deep-demand-lobby.html",
+    "shortcut": "colo_cddlbby",
+    "legacy_shortcut": "commlobby",
+    "path": "context-lobbies/command-deep-demand-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "corporate soul death lobby",
+    "fileName": "corporate-soul-death-lobby.html",
+    "shortcut": "colo_csdlbby",
+    "legacy_shortcut": "corplobby",
+    "path": "context-lobbies/corporate-soul-death-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "european collapse escape lobby",
+    "fileName": "european-collapse-escape-lobby.html",
+    "shortcut": "colo_ecelbby",
+    "legacy_shortcut": "eurolobby",
+    "path": "context-lobbies/european-collapse-escape-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "failing state tower rally lobby",
+    "fileName": "failing-state-tower-rally-lobby.html",
+    "shortcut": "colo_fstrlbby",
+    "legacy_shortcut": "faillobby",
+    "path": "context-lobbies/failing-state-tower-rally-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "fragmentation survivor escape lobby",
+    "fileName": "fragmentation-survivor-escape-lobby.html",
+    "shortcut": "colo_fselbby",
+    "legacy_shortcut": "fraglobby",
+    "path": "context-lobbies/fragmentation-survivor-escape-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "genocide escape rally lobby",
+    "fileName": "genocide-escape-rally-lobby.html",
+    "shortcut": "colo_gerlbby",
+    "legacy_shortcut": "genolobby",
+    "path": "context-lobbies/genocide-escape-rally-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "afghan warrior honor seeker",
+    "fileName": "afghan-warrior-honor-seeker.html",
+    "shortcut": "colo_grstga_awhsker",
+    "legacy_shortcut": "afgheeker",
+    "path": "context-lobbies/great-steppe-games/afghan-warrior-honor-seeker.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "arcade rhythm kata master",
+    "fileName": "arcade-rhythm-kata-master.html",
+    "shortcut": "colo_grstga_arkmter",
+    "legacy_shortcut": "arcaaster",
+    "path": "context-lobbies/great-steppe-games/arcade-rhythm-kata-master.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "archon mode joint command specialist",
+    "fileName": "archon-mode-joint-command-specialist.html",
+    "shortcut": "colo_grstga_amjcsist",
+    "legacy_shortcut": "archalist",
+    "path": "context-lobbies/great-steppe-games/archon-mode-joint-command-specialist.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "arena pvp skirmish tactician",
+    "fileName": "arena-pvp-skirmish-tactician.html",
+    "shortcut": "colo_grstga_apstian",
+    "legacy_shortcut": "arenician",
+    "path": "context-lobbies/great-steppe-games/arena-pvp-skirmish-tactician.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "autobattler economy composition master",
+    "fileName": "autobattler-economy-composition-master.html",
+    "shortcut": "colo_grstga_aecmter",
+    "legacy_shortcut": "autoaster",
+    "path": "context-lobbies/great-steppe-games/autobattler-economy-composition-master.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "battle royale survival positioning expert",
+    "fileName": "battle-royale-survival-positioning-expert.html",
+    "shortcut": "colo_grstga_brspeert",
+    "legacy_shortcut": "battxpert",
+    "path": "context-lobbies/great-steppe-games/battle-royale-survival-positioning-expert.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "battlefield squad leader combined arms",
+    "fileName": "battlefield-squad-leader-combined-arms.html",
+    "shortcut": "colo_grstga_bslcarms",
+    "legacy_shortcut": "batt-arms",
+    "path": "context-lobbies/great-steppe-games/battlefield-squad-leader-combined-arms.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "broadcaster war documenter",
+    "fileName": "broadcaster-war-documenter.html",
+    "shortcut": "colo_grstga_bwdter",
+    "legacy_shortcut": "broaenter",
+    "path": "context-lobbies/great-steppe-games/broadcaster-war-documenter.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "city builder economic zone planner",
+    "fileName": "city-builder-economic-zone-planner.html",
+    "shortcut": "colo_grstga_cbezpner",
+    "legacy_shortcut": "cityanner",
+    "path": "context-lobbies/great-steppe-games/city-builder-economic-zone-planner.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "combat medic respawn technician",
+    "fileName": "combat-medic-respawn-technician.html",
+    "shortcut": "colo_grstga_cmrtian",
+    "legacy_shortcut": "combician",
+    "path": "context-lobbies/great-steppe-games/combat-medic-respawn-technician.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "dark souls persistence resilience warrior",
+    "fileName": "dark-souls-persistence-resilience-warrior.html",
+    "shortcut": "colo_grstga_dsprwior",
+    "legacy_shortcut": "darkrrior",
+    "path": "context-lobbies/great-steppe-games/dark-souls-persistence-resilience-warrior.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "eve online fleet commander mass coordination",
+    "fileName": "eve-online-fleet-commander-mass-coordination.html",
+    "shortcut": "colo_grstga_eofcmcion",
+    "legacy_shortcut": "eve-ation",
+    "path": "context-lobbies/great-steppe-games/eve-online-fleet-commander-mass-coordination.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "extraction shooter risk calculator",
+    "fileName": "extraction-shooter-risk-calculator.html",
+    "shortcut": "colo_grstga_esrctor",
+    "legacy_shortcut": "extrlator",
+    "path": "context-lobbies/great-steppe-games/extraction-shooter-risk-calculator.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "female warrior valkyrie faction",
+    "fileName": "female-warrior-valkyrie-faction.html",
+    "shortcut": "colo_grstga_fwvfion",
+    "legacy_shortcut": "femaction",
+    "path": "context-lobbies/great-steppe-games/female-warrior-valkyrie-faction.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "fighting game pro duel champion",
+    "fileName": "fighting-game-pro-duel-champion.html",
+    "shortcut": "colo_grstga_fgpdcion",
+    "legacy_shortcut": "fighmpion",
+    "path": "context-lobbies/great-steppe-games/fighting-game-pro-duel-champion.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "fps sniper precision marksman",
+    "fileName": "fps-sniper-precision-marksman.html",
+    "shortcut": "colo_grstga_fspmman",
+    "legacy_shortcut": "fps-ksman",
+    "path": "context-lobbies/great-steppe-games/fps-sniper-precision-marksman.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "grand strategy diplomatic architect",
+    "fileName": "grand-strategy-diplomatic-architect.html",
+    "shortcut": "colo_grstga_gsdaect",
+    "legacy_shortcut": "granitect",
+    "path": "context-lobbies/great-steppe-games/grand-strategy-diplomatic-architect.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "logistics merchant provisioner",
+    "fileName": "logistics-merchant-provisioner.html",
+    "shortcut": "colo_grstga_lmpner",
+    "legacy_shortcut": "logiioner",
+    "path": "context-lobbies/great-steppe-games/logistics-merchant-provisioner.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "meta recipe doctrine executor",
+    "fileName": "meta-recipe-doctrine-executor.html",
+    "shortcut": "colo_grstga_mrdetor",
+    "legacy_shortcut": "metacutor",
+    "path": "context-lobbies/great-steppe-games/meta-recipe-doctrine-executor.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "minecraft builder infrastructure architect",
+    "fileName": "minecraft-builder-infrastructure-architect.html",
+    "shortcut": "colo_grstga_mbiaect",
+    "legacy_shortcut": "mineitect",
+    "path": "context-lobbies/great-steppe-games/minecraft-builder-infrastructure-architect.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "mmo economy trader supply magnate",
+    "fileName": "mmo-economy-trader-supply-magnate.html",
+    "shortcut": "colo_grstga_metsmate",
+    "legacy_shortcut": "mmo-gnate",
+    "path": "context-lobbies/great-steppe-games/mmo-economy-trader-supply-magnate.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "mmo guild leader faction admin",
+    "fileName": "mmo-guild-leader-faction-admin.html",
+    "shortcut": "colo_grstga_mglfamin",
+    "legacy_shortcut": "mmo-admin",
+    "path": "context-lobbies/great-steppe-games/mmo-guild-leader-faction-admin.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "mmo healer respawn medic",
+    "fileName": "mmo-healer-respawn-medic.html",
+    "shortcut": "colo_grstga_mhrmdic",
+    "legacy_shortcut": "mmo-medic",
+    "path": "context-lobbies/great-steppe-games/mmo-healer-respawn-medic.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "mmo scout rogue reconnaissance specialist",
+    "fileName": "mmo-scout-rogue-reconnaissance-specialist.html",
+    "shortcut": "colo_grstga_msrrsist",
+    "legacy_shortcut": "mmo-alist",
+    "path": "context-lobbies/great-steppe-games/mmo-scout-rogue-reconnaissance-specialist.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "mmo tank shield wall warrior",
+    "fileName": "mmo-tank-shield-wall-warrior.html",
+    "shortcut": "colo_grstga_mtswwior",
+    "legacy_shortcut": "mmo-rrior",
+    "path": "context-lobbies/great-steppe-games/mmo-tank-shield-wall-warrior.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "moba assassin stealth saboteur",
+    "fileName": "moba-assassin-stealth-saboteur.html",
+    "shortcut": "colo_grstga_masseur",
+    "legacy_shortcut": "mobaoteur",
+    "path": "context-lobbies/great-steppe-games/moba-assassin-stealth-saboteur.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "moba carry elite damage dealer",
+    "fileName": "moba-carry-elite-damage-dealer.html",
+    "shortcut": "colo_grstga_mceddler",
+    "legacy_shortcut": "mobaealer",
+    "path": "context-lobbies/great-steppe-games/moba-carry-elite-damage-dealer.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "moba jungle map control specialist",
+    "fileName": "moba-jungle-map-control-specialist.html",
+    "shortcut": "colo_grstga_mjmcsist",
+    "legacy_shortcut": "mobaalist",
+    "path": "context-lobbies/great-steppe-games/moba-jungle-map-control-specialist.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "moba splitpusher independent operator",
+    "fileName": "moba-splitpusher-independent-operator.html",
+    "shortcut": "colo_grstga_msiotor",
+    "legacy_shortcut": "mobarator",
+    "path": "context-lobbies/great-steppe-games/moba-splitpusher-independent-operator.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "moba support player coordinator",
+    "fileName": "moba-support-player-coordinator.html",
+    "shortcut": "colo_grstga_mspctor",
+    "legacy_shortcut": "mobanator",
+    "path": "context-lobbies/great-steppe-games/moba-support-player-coordinator.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "racing game cavalry commander",
+    "fileName": "racing-game-cavalry-commander.html",
+    "shortcut": "colo_grstga_rgccder",
+    "legacy_shortcut": "raciander",
+    "path": "context-lobbies/great-steppe-games/racing-game-cavalry-commander.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "raid leader tactical operations commander",
+    "fileName": "raid-leader-tactical-operations-commander.html",
+    "shortcut": "colo_grstga_rltocder",
+    "legacy_shortcut": "raidander",
+    "path": "context-lobbies/great-steppe-games/raid-leader-tactical-operations-commander.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "README",
+    "fileName": "README.md",
+    "shortcut": "colo_grstga_READMDME",
+    "legacy_shortcut": "README",
+    "path": "context-lobbies/great-steppe-games/README.md",
+    "category": "context-lobbies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "roguelike adaptation uncertainty master",
+    "fileName": "roguelike-adaptation-uncertainty-master.html",
+    "shortcut": "colo_grstga_raumter",
+    "legacy_shortcut": "roguaster",
+    "path": "context-lobbies/great-steppe-games/roguelike-adaptation-uncertainty-master.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "rts strategist command seeker",
+    "fileName": "rts-strategist-command-seeker.html",
+    "shortcut": "colo_grstga_rscsker",
+    "legacy_shortcut": "rts-eeker",
+    "path": "context-lobbies/great-steppe-games/rts-strategist-command-seeker.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "russian warrior glory seeker",
+    "fileName": "russian-warrior-glory-seeker.html",
+    "shortcut": "colo_grstga_rwgsker",
+    "legacy_shortcut": "russeeker",
+    "path": "context-lobbies/great-steppe-games/russian-warrior-glory-seeker.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "speedrunner rapid execution specialist",
+    "fileName": "speedrunner-rapid-execution-specialist.html",
+    "shortcut": "colo_grstga_sresist",
+    "legacy_shortcut": "speealist",
+    "path": "context-lobbies/great-steppe-games/speedrunner-rapid-execution-specialist.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "stealth game intelligence operative",
+    "fileName": "stealth-game-intelligence-operative.html",
+    "shortcut": "colo_grstga_sgioive",
+    "legacy_shortcut": "steaative",
+    "path": "context-lobbies/great-steppe-games/stealth-game-intelligence-operative.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "survival crafter fortification engineer",
+    "fileName": "survival-crafter-fortification-engineer.html",
+    "shortcut": "colo_grstga_scfeeer",
+    "legacy_shortcut": "survineer",
+    "path": "context-lobbies/great-steppe-games/survival-crafter-fortification-engineer.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "theorycrafter optimization analyst",
+    "fileName": "theorycrafter-optimization-analyst.html",
+    "shortcut": "colo_grstga_toayst",
+    "legacy_shortcut": "theoalyst",
+    "path": "context-lobbies/great-steppe-games/theorycrafter-optimization-analyst.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "tower defense fortification strategist",
+    "fileName": "tower-defense-fortification-strategist.html",
+    "shortcut": "colo_grstga_tdfsist",
+    "legacy_shortcut": "toweegist",
+    "path": "context-lobbies/great-steppe-games/tower-defense-fortification-strategist.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "viking descendant valhalla seeker",
+    "fileName": "viking-descendant-valhalla-seeker.html",
+    "shortcut": "colo_grstga_vdvsker",
+    "legacy_shortcut": "vikieeker",
+    "path": "context-lobbies/great-steppe-games/viking-descendant-valhalla-seeker.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "woman conquest prize seeker",
+    "fileName": "woman-conquest-prize-seeker.html",
+    "shortcut": "colo_grstga_wcpsker",
+    "legacy_shortcut": "womaeeker",
+    "path": "context-lobbies/great-steppe-games/woman-conquest-prize-seeker.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "xcom tactical consequence calculator",
+    "fileName": "xcom-tactical-consequence-calculator.html",
+    "shortcut": "colo_grstga_xtcctor",
+    "legacy_shortcut": "xcomlator",
+    "path": "context-lobbies/great-steppe-games/xcom-tactical-consequence-calculator.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "hypergamous luxury lobby",
+    "fileName": "hypergamous-luxury-lobby.html",
+    "shortcut": "colo_hllbby",
+    "legacy_shortcut": "hypelobby",
+    "path": "context-lobbies/hypergamous-luxury-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "intellectual woman meaning lobby",
+    "fileName": "intellectual-woman-meaning-lobby.html",
+    "shortcut": "colo_iwmlbby",
+    "legacy_shortcut": "intelobby",
+    "path": "context-lobbies/intellectual-woman-meaning-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "lobby vanilla",
+    "fileName": "lobby-vanilla.css",
+    "shortcut": "colo_lvlla",
+    "legacy_shortcut": "lobbnilla",
+    "path": "context-lobbies/lobby-vanilla.css",
+    "category": "context-lobbies",
+    "mediaType": "code"
+  },
+  {
+    "title": "longevity spring elder dignity",
+    "fileName": "longevity-spring-elder-dignity.html",
+    "shortcut": "colo_lsedity",
+    "legacy_shortcut": "longgnity",
+    "path": "context-lobbies/longevity-spring-elder-dignity.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "parent child preventable death",
+    "fileName": "parent-child-preventable-death.html",
+    "shortcut": "colo_pcpdath",
+    "legacy_shortcut": "paredeath",
+    "path": "context-lobbies/parent-child-preventable-death.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "parent child spring explorer lobby",
+    "fileName": "parent-child-spring-explorer-lobby.html",
+    "shortcut": "colo_pcselbby",
+    "legacy_shortcut": "parelobby",
+    "path": "context-lobbies/parent-child-spring-explorer-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "shared lobby content",
+    "fileName": "shared-lobby-content.css",
+    "shortcut": "colo_slcent",
+    "legacy_shortcut": "sharntent",
+    "path": "context-lobbies/shared-lobby-content.css",
+    "category": "context-lobbies",
+    "mediaType": "code"
+  },
+  {
+    "title": "shared lobby tabs",
+    "fileName": "shared-lobby-tabs.css",
+    "shortcut": "colo_sltabs",
+    "legacy_shortcut": "shar-tabs",
+    "path": "context-lobbies/shared-lobby-tabs.css",
+    "category": "context-lobbies",
+    "mediaType": "code"
+  },
+  {
+    "title": "single young man purpose rally",
+    "fileName": "single-young-man-purpose-rally.html",
+    "shortcut": "colo_symprlly",
+    "legacy_shortcut": "singrally",
+    "path": "context-lobbies/single-young-man-purpose-rally.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "somali girl escape lobby",
+    "fileName": "somali-girl-escape-lobby.html",
+    "shortcut": "colo_sgelbby",
+    "legacy_shortcut": "somalobby",
+    "path": "context-lobbies/somali-girl-escape-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "tech founder tower rally",
+    "fileName": "tech-founder-tower-rally.html",
+    "shortcut": "colo_tftrlly",
+    "legacy_shortcut": "techrally",
+    "path": "context-lobbies/tech-founder-tower-rally.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "trauma survivor healing lobby",
+    "fileName": "trauma-survivor-healing-lobby.html",
+    "shortcut": "colo_tshlbby",
+    "legacy_shortcut": "traulobby",
+    "path": "context-lobbies/trauma-survivor-healing-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "universal lobby experience",
+    "fileName": "universal-lobby-experience.html",
+    "shortcut": "colo_ulence",
+    "legacy_shortcut": "univience",
+    "path": "context-lobbies/universal-lobby-experience.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "warrior valhalla lobby",
+    "fileName": "warrior-valhalla-lobby.html",
+    "shortcut": "colo_wvlbby",
+    "legacy_shortcut": "warrlobby",
+    "path": "context-lobbies/warrior-valhalla-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "young mother safety lobby",
+    "fileName": "young-mother-safety-lobby.html",
+    "shortcut": "colo_ymslbby",
+    "legacy_shortcut": "younlobby",
+    "path": "context-lobbies/young-mother-safety-lobby.html",
+    "category": "context-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "boostrap encyclopedia new world genesis seeds recipe",
+    "fileName": "boostrap-encyclopedia-new-world-genesis-seeds-recipe.txt",
+    "shortcut": "hien_benwgsripe",
+    "legacy_shortcut": "boosecipe",
+    "path": "historical-entries/boostrap-encyclopedia-new-world-genesis-seeds-recipe.txt",
+    "category": "historical-entries",
+    "mediaType": "text"
+  },
+  {
+    "title": "congo pygmy mowd transformation",
+    "fileName": "congo-pygmy-mowd-transformation.md",
+    "shortcut": "hien_cpmtion",
+    "legacy_shortcut": "congation",
+    "path": "historical-entries/congo-pygmy-mowd-transformation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "01 ancient egypt 3000bc",
+    "fileName": "01-ancient-egypt-3000bc.md",
+    "shortcut": "hien_cofatr_01",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_01",
+    "path": "historical-entries/counter-factual-triadization/01-ancient-egypt-3000bc.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "02 mesopotamian emergence 2500bc",
+    "fileName": "02-mesopotamian-emergence-2500bc.md",
+    "shortcut": "hien_cofatr_02",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_02",
+    "path": "historical-entries/counter-factual-triadization/02-mesopotamian-emergence-2500bc.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "03 hittite phoenician 1500bc",
+    "fileName": "03-hittite-phoenician-1500bc.md",
+    "shortcut": "hien_cofatr_03",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_03",
+    "path": "historical-entries/counter-factual-triadization/03-hittite-phoenician-1500bc.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "04 greek explosion 800bc",
+    "fileName": "04-greek-explosion-800bc.md",
+    "shortcut": "hien_cofatr_04",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_04",
+    "path": "historical-entries/counter-factual-triadization/04-greek-explosion-800bc.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05 celtic germanic 500bc",
+    "fileName": "05-celtic-germanic-500bc.md",
+    "shortcut": "hien_cofatr_05",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05",
+    "path": "historical-entries/counter-factual-triadization/05-celtic-germanic-500bc.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05 roman crucible 0ad",
+    "fileName": "05-roman-crucible-0ad.md",
+    "shortcut": "hien_cofatr_05",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05",
+    "path": "historical-entries/counter-factual-triadization/05-roman-crucible-0ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05 ROMAN PERIOD INDEX",
+    "fileName": "05-ROMAN-PERIOD-INDEX.md",
+    "shortcut": "hien_cofatr_05",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05",
+    "path": "historical-entries/counter-factual-triadization/05-ROMAN-PERIOD-INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05a gallic wars crucible",
+    "fileName": "05a-gallic-wars-crucible.md",
+    "shortcut": "hien_cofatr_05a",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05a",
+    "path": "historical-entries/counter-factual-triadization/05a-gallic-wars-crucible.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05b germania tacitus",
+    "fileName": "05b-germania-tacitus.md",
+    "shortcut": "hien_cofatr_05b",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05b",
+    "path": "historical-entries/counter-factual-triadization/05b-germania-tacitus.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05c judea flavius josephus",
+    "fileName": "05c-judea-flavius-josephus.md",
+    "shortcut": "hien_cofatr_05c",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05c",
+    "path": "historical-entries/counter-factual-triadization/05c-judea-flavius-josephus.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05d hannibal livy",
+    "fileName": "05d-hannibal-livy.md",
+    "shortcut": "hien_cofatr_05d",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05d",
+    "path": "historical-entries/counter-factual-triadization/05d-hannibal-livy.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05e civil wars appian",
+    "fileName": "05e-civil-wars-appian.md",
+    "shortcut": "hien_cofatr_05e",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05e",
+    "path": "historical-entries/counter-factual-triadization/05e-civil-wars-appian.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05f crisis third century",
+    "fileName": "05f-crisis-third-century.md",
+    "shortcut": "hien_cofatr_05f",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05f",
+    "path": "historical-entries/counter-factual-triadization/05f-crisis-third-century.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05g roman leverage infrastructure",
+    "fileName": "05g-roman-leverage-infrastructure.md",
+    "shortcut": "hien_cofatr_05g",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05g",
+    "path": "historical-entries/counter-factual-triadization/05g-roman-leverage-infrastructure.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05h legions construction corps",
+    "fileName": "05h-legions-construction-corps.md",
+    "shortcut": "hien_cofatr_05h",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_05h",
+    "path": "historical-entries/counter-factual-triadization/05h-legions-construction-corps.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06 Amalgamated Adversary   Satan",
+    "fileName": "06 Amalgamated Adversary - Satan.md",
+    "shortcut": "hien_cofatr_06",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_06",
+    "path": "historical-entries/counter-factual-triadization/06 Amalgamated Adversary - Satan.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06 roman federation 100ad",
+    "fileName": "06-roman-federation-100ad.md",
+    "shortcut": "hien_cofatr_06",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_06",
+    "path": "historical-entries/counter-factual-triadization/06-roman-federation-100ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06 SERIES SUMMARY",
+    "fileName": "06-SERIES-SUMMARY.md",
+    "shortcut": "hien_cofatr_06",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_06",
+    "path": "historical-entries/counter-factual-triadization/06-SERIES-SUMMARY.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06a plague waves 541 1353ad",
+    "fileName": "06a-plague-waves-541-1353ad.md",
+    "shortcut": "hien_cofatr_06a",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_06a",
+    "path": "historical-entries/counter-factual-triadization/06a-plague-waves-541-1353ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06b dread atmosphere medieval christianity",
+    "fileName": "06b-dread-atmosphere-medieval-christianity.md",
+    "shortcut": "hien_cofatr_06b",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_06b",
+    "path": "historical-entries/counter-factual-triadization/06b-dread-atmosphere-medieval-christianity.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06c daemon devil diabolic",
+    "fileName": "06c-daemon-devil-diabolic.md",
+    "shortcut": "hien_cofatr_06c",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_06c",
+    "path": "historical-entries/counter-factual-triadization/06c-daemon-devil-diabolic.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "07 christian branching 400ad",
+    "fileName": "07-christian-branching-400ad.md",
+    "shortcut": "hien_cofatr_07",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_07",
+    "path": "historical-entries/counter-factual-triadization/07-christian-branching-400ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "08 post roman fractal 600ad",
+    "fileName": "08-post-roman-fractal-600ad.md",
+    "shortcut": "hien_cofatr_08",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_08",
+    "path": "historical-entries/counter-factual-triadization/08-post-roman-fractal-600ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "09 islamic expansion 700ad",
+    "fileName": "09-islamic-expansion-700ad.md",
+    "shortcut": "hien_cofatr_09",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_09",
+    "path": "historical-entries/counter-factual-triadization/09-islamic-expansion-700ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "09a defector crisis 750 1000ad",
+    "fileName": "09a-defector-crisis-750-1000ad.md",
+    "shortcut": "hien_cofatr_09a",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_09a",
+    "path": "historical-entries/counter-factual-triadization/09a-defector-crisis-750-1000ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10 carolingian fractal 800ad",
+    "fileName": "10-carolingian-fractal-800ad.md",
+    "shortcut": "hien_cofatr_10",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10",
+    "path": "historical-entries/counter-factual-triadization/10-carolingian-fractal-800ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10 HRE PERIOD INDEX",
+    "fileName": "10-HRE-PERIOD-INDEX.md",
+    "shortcut": "hien_cofatr_10",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10",
+    "path": "historical-entries/counter-factual-triadization/10-HRE-PERIOD-INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10a otto imperial founding 962ad",
+    "fileName": "10a-otto-imperial-founding-962ad.md",
+    "shortcut": "hien_cofatr_10a",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10a",
+    "path": "historical-entries/counter-factual-triadization/10a-otto-imperial-founding-962ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10b papal imperial schism 1054 1122ad",
+    "fileName": "10b-papal-imperial-schism-1054-1122ad.md",
+    "shortcut": "hien_cofatr_10b",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10b",
+    "path": "historical-entries/counter-factual-triadization/10b-papal-imperial-schism-1054-1122ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10c crusader states experiment 1099 1291ad",
+    "fileName": "10c-crusader-states-experiment-1099-1291ad.md",
+    "shortcut": "hien_cofatr_10c",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10c",
+    "path": "historical-entries/counter-factual-triadization/10c-crusader-states-experiment-1099-1291ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10d viking age pagan refugee crisis 800 1000ad",
+    "fileName": "10d-viking-age-pagan-refugee-crisis-800-1000ad.md",
+    "shortcut": "hien_cofatr_10d",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10d",
+    "path": "historical-entries/counter-factual-triadization/10d-viking-age-pagan-refugee-crisis-800-1000ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10e great interregnum 1254 1273ad",
+    "fileName": "10e-great-interregnum-1254-1273ad.md",
+    "shortcut": "hien_cofatr_10e",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10e",
+    "path": "historical-entries/counter-factual-triadization/10e-great-interregnum-1254-1273ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10m a benedictine foundation 529 800ad",
+    "fileName": "10m-a-benedictine-foundation-529-800ad.md",
+    "shortcut": "hien_cofatr_10m",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10m",
+    "path": "historical-entries/counter-factual-triadization/10m-a-benedictine-foundation-529-800ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10m b cluniac reform 910 1100ad",
+    "fileName": "10m-b-cluniac-reform-910-1100ad.md",
+    "shortcut": "hien_cofatr_10m",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10m",
+    "path": "historical-entries/counter-factual-triadization/10m-b-cluniac-reform-910-1100ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10m c cistercian expansion 1098 1250ad",
+    "fileName": "10m-c-cistercian-expansion-1098-1250ad.md",
+    "shortcut": "hien_cofatr_10m",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10m",
+    "path": "historical-entries/counter-factual-triadization/10m-c-cistercian-expansion-1098-1250ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10m d mendicant revolution 1209 1300ad",
+    "fileName": "10m-d-mendicant-revolution-1209-1300ad.md",
+    "shortcut": "hien_cofatr_10m",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_10m",
+    "path": "historical-entries/counter-factual-triadization/10m-d-mendicant-revolution-1209-1300ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11 EASTERN EUROPE INDEX",
+    "fileName": "11-EASTERN-EUROPE-INDEX.md",
+    "shortcut": "hien_cofatr_11",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11",
+    "path": "historical-entries/counter-factual-triadization/11-EASTERN-EUROPE-INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11 rus byzantine synthesis 900ad",
+    "fileName": "11-rus-byzantine-synthesis-900ad.md",
+    "shortcut": "hien_cofatr_11",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11",
+    "path": "historical-entries/counter-factual-triadization/11-rus-byzantine-synthesis-900ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11a thrace bulgaria cauldron 680 1000ad",
+    "fileName": "11a-thrace-bulgaria-cauldron-680-1000ad.md",
+    "shortcut": "hien_cofatr_11a",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11a",
+    "path": "historical-entries/counter-factual-triadization/11a-thrace-bulgaria-cauldron-680-1000ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11b magyar avar transition 800 1000ad",
+    "fileName": "11b-magyar-avar-transition-800-1000ad.md",
+    "shortcut": "hien_cofatr_11b",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11b",
+    "path": "historical-entries/counter-factual-triadization/11b-magyar-avar-transition-800-1000ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11c tsarist emergence 988 1480ad",
+    "fileName": "11c-tsarist-emergence-988-1480ad.md",
+    "shortcut": "hien_cofatr_11c",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11c",
+    "path": "historical-entries/counter-factual-triadization/11c-tsarist-emergence-988-1480ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11d romanian corridor 500 1300ad",
+    "fileName": "11d-romanian-corridor-500-1300ad.md",
+    "shortcut": "hien_cofatr_11d",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11d",
+    "path": "historical-entries/counter-factual-triadization/11d-romanian-corridor-500-1300ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11e plague waves 541 1353ad",
+    "fileName": "11e-plague-waves-541-1353ad.md",
+    "shortcut": "hien_cofatr_11e",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11e",
+    "path": "historical-entries/counter-factual-triadization/11e-plague-waves-541-1353ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11f technology corridor 700 1453ad",
+    "fileName": "11f-technology-corridor-700-1453ad.md",
+    "shortcut": "hien_cofatr_11f",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11f",
+    "path": "historical-entries/counter-factual-triadization/11f-technology-corridor-700-1453ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11g orban constantinople fall 1453ad",
+    "fileName": "11g-orban-constantinople-fall-1453ad.md",
+    "shortcut": "hien_cofatr_11g",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_11g",
+    "path": "historical-entries/counter-factual-triadization/11g-orban-constantinople-fall-1453ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12 CHURCH ARCHITECTURE INDEX",
+    "fileName": "12-CHURCH-ARCHITECTURE-INDEX.md",
+    "shortcut": "hien_cofatr_12",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_12",
+    "path": "historical-entries/counter-factual-triadization/12-CHURCH-ARCHITECTURE-INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12 mongol integration 1250ad",
+    "fileName": "12-mongol-integration-1250ad.md",
+    "shortcut": "hien_cofatr_12",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_12",
+    "path": "historical-entries/counter-factual-triadization/12-mongol-integration-1250ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12a romanesque explosion 900 1150ad",
+    "fileName": "12a-romanesque-explosion-900-1150ad.md",
+    "shortcut": "hien_cofatr_12a",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_12a",
+    "path": "historical-entries/counter-factual-triadization/12a-romanesque-explosion-900-1150ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12b gothic revolution 1140 1350ad",
+    "fileName": "12b-gothic-revolution-1140-1350ad.md",
+    "shortcut": "hien_cofatr_12b",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_12b",
+    "path": "historical-entries/counter-factual-triadization/12b-gothic-revolution-1140-1350ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12c regional gothic variations 1200 1500ad",
+    "fileName": "12c-regional-gothic-variations-1200-1500ad.md",
+    "shortcut": "hien_cofatr_12c",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_12c",
+    "path": "historical-entries/counter-factual-triadization/12c-regional-gothic-variations-1200-1500ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12d late gothic excess 1350 1500ad",
+    "fileName": "12d-late-gothic-excess-1350-1500ad.md",
+    "shortcut": "hien_cofatr_12d",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_12d",
+    "path": "historical-entries/counter-factual-triadization/12d-late-gothic-excess-1350-1500ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "13 nation state emergence 1500ad",
+    "fileName": "13-nation-state-emergence-1500ad.md",
+    "shortcut": "hien_cofatr_13",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_13",
+    "path": "historical-entries/counter-factual-triadization/13-nation-state-emergence-1500ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "14 colonial fractal 1700ad",
+    "fileName": "14-colonial-fractal-1700ad.md",
+    "shortcut": "hien_cofatr_14",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_14",
+    "path": "historical-entries/counter-factual-triadization/14-colonial-fractal-1700ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "14a colonial daemon types 1600 1800ad",
+    "fileName": "14a-colonial-daemon-types-1600-1800ad.md",
+    "shortcut": "hien_cofatr_14a",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_14a",
+    "path": "historical-entries/counter-factual-triadization/14a-colonial-daemon-types-1600-1800ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "14b african springs destroyed 1500 1800ad",
+    "fileName": "14b-african-springs-destroyed-1500-1800ad.md",
+    "shortcut": "hien_cofatr_14b",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_14b",
+    "path": "historical-entries/counter-factual-triadization/14b-african-springs-destroyed-1500-1800ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "15 industrial fractal 1850ad",
+    "fileName": "15-industrial-fractal-1850ad.md",
+    "shortcut": "hien_cofatr_15",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_15",
+    "path": "historical-entries/counter-factual-triadization/15-industrial-fractal-1850ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "16 world wars mowd 1914 1945ad",
+    "fileName": "16-world-wars-mowd-1914-1945ad.md",
+    "shortcut": "hien_cofatr_16",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_16",
+    "path": "historical-entries/counter-factual-triadization/16-world-wars-mowd-1914-1945ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "17 modern planetary 2025ad",
+    "fileName": "17-modern-planetary-2025ad.md",
+    "shortcut": "hien_cofatr_17",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_17",
+    "path": "historical-entries/counter-factual-triadization/17-modern-planetary-2025ad.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "18 tower spring flourishing 2026 2066",
+    "fileName": "18-tower-spring-flourishing-2026-2066.md",
+    "shortcut": "hien_cofatr_18",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_18",
+    "path": "historical-entries/counter-factual-triadization/18-tower-spring-flourishing-2026-2066.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "18b the great exodus cellular abundance 2026 2066",
+    "fileName": "18b-the-great-exodus-cellular-abundance-2026-2066.md",
+    "shortcut": "hien_cofatr_18b",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_18b",
+    "path": "historical-entries/counter-factual-triadization/18b-the-great-exodus-cellular-abundance-2026-2066.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "18c the commune federation 2026 2070",
+    "fileName": "18c-the-commune-federation-2026-2070.md",
+    "shortcut": "hien_cofatr_18c",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_18c",
+    "path": "historical-entries/counter-factual-triadization/18c-the-commune-federation-2026-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "18d the great sorting wars 2026 2070",
+    "fileName": "18d-the-great-sorting-wars-2026-2070.md",
+    "shortcut": "hien_cofatr_18d",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_18d",
+    "path": "historical-entries/counter-factual-triadization/18d-the-great-sorting-wars-2026-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "18e the realistic flourishing 2026 2070",
+    "fileName": "18e-the-realistic-flourishing-2026-2070.md",
+    "shortcut": "hien_cofatr_18e",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_18e",
+    "path": "historical-entries/counter-factual-triadization/18e-the-realistic-flourishing-2026-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "19 the great flowering realistic utopia 2026 2070",
+    "fileName": "19-the-great-flowering-realistic-utopia-2026-2070.md",
+    "shortcut": "hien_cofatr_19",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_19",
+    "path": "historical-entries/counter-factual-triadization/19-the-great-flowering-realistic-utopia-2026-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "20 final the great flowering complete 2026 2070",
+    "fileName": "20-final-the-great-flowering-complete-2026-2070.md",
+    "shortcut": "hien_cofatr_20",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_20",
+    "path": "historical-entries/counter-factual-triadization/20-final-the-great-flowering-complete-2026-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ANALYSIS institutional capital capacity",
+    "fileName": "ANALYSIS-institutional-capital-capacity.md",
+    "shortcut": "hien_cofatr_Aiccity",
+    "legacy_shortcut": "ANALacity",
+    "path": "historical-entries/counter-factual-triadization/ANALYSIS-institutional-capital-capacity.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ANALYSIS megaproject costs and scale requirements",
+    "fileName": "ANALYSIS-megaproject-costs-and-scale-requirements.md",
+    "shortcut": "hien_cofatr_Amcasrnts",
+    "legacy_shortcut": "ANALments",
+    "path": "historical-entries/counter-factual-triadization/ANALYSIS-megaproject-costs-and-scale-requirements.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ANALYSIS norway actual spending vs nss redirect",
+    "fileName": "ANALYSIS-norway-actual-spending-vs-nss-redirect.md",
+    "shortcut": "hien_cofatr_Anasvnrect",
+    "legacy_shortcut": "ANALirect",
+    "path": "historical-entries/counter-factual-triadization/ANALYSIS-norway-actual-spending-vs-nss-redirect.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "01 american revolution triadization 1776 1790",
+    "fileName": "01-american-revolution-triadization-1776-1790.md",
+    "shortcut": "hien_cofatr_cointr_01",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/colonial-independence-triadization_01",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/01-american-revolution-triadization-1776-1790.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "02 haitian revolution triadization 1791 1804",
+    "fileName": "02-haitian-revolution-triadization-1791-1804.md",
+    "shortcut": "hien_cofatr_cointr_02",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/colonial-independence-triadization_02",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/02-haitian-revolution-triadization-1791-1804.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "03 latin american independence 1810 1830",
+    "fileName": "03-latin-american-independence-1810-1830.md",
+    "shortcut": "hien_cofatr_cointr_03",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/colonial-independence-triadization_03",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/03-latin-american-independence-1810-1830.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "04 empire responses to triadization 1857 1947",
+    "fileName": "04-empire-responses-to-triadization-1857-1947.md",
+    "shortcut": "hien_cofatr_cointr_04",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/colonial-independence-triadization_04",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/04-empire-responses-to-triadization-1857-1947.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05 violent rejections failed triads 1840 1940",
+    "fileName": "05-violent-rejections-failed-triads-1840-1940.md",
+    "shortcut": "hien_cofatr_cointr_05",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/colonial-independence-triadization_05",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/05-violent-rejections-failed-triads-1840-1940.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06 gradual devolutions partial success 1867 1948",
+    "fileName": "06-gradual-devolutions-partial-success-1867-1948.md",
+    "shortcut": "hien_cofatr_cointr_06",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/colonial-independence-triadization_06",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/06-gradual-devolutions-partial-success-1867-1948.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "07 african independence triadization 1945 1965",
+    "fileName": "07-african-independence-triadization-1945-1965.md",
+    "shortcut": "hien_cofatr_cointr_07",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/colonial-independence-triadization_07",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/07-african-independence-triadization-1945-1965.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "INDEX",
+    "fileName": "INDEX.md",
+    "shortcut": "hien_cofatr_cointr_INDEXDEX",
+    "legacy_shortcut": "INDEX",
+    "path": "historical-entries/counter-factual-triadization/colonial-independence-triadization/INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CORRECTION modern nations are planetary not springs",
+    "fileName": "CORRECTION-modern-nations-are-planetary-not-springs.md",
+    "shortcut": "hien_cofatr_Cmnapnsngs",
+    "legacy_shortcut": "CORRrings",
+    "path": "historical-entries/counter-factual-triadization/CORRECTION-modern-nations-are-planetary-not-springs.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "COUNTERFACTUAL norway architecture first nss city",
+    "fileName": "COUNTERFACTUAL-norway-architecture-first-nss-city.md",
+    "shortcut": "hien_cofatr_Cnafncity",
+    "legacy_shortcut": "COUN-city",
+    "path": "historical-entries/counter-factual-triadization/COUNTERFACTUAL-norway-architecture-first-nss-city.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "COUNTERFACTUAL norway megaproject spending",
+    "fileName": "COUNTERFACTUAL-norway-megaproject-spending.md",
+    "shortcut": "hien_cofatr_Cnmsing",
+    "legacy_shortcut": "COUNnding",
+    "path": "historical-entries/counter-factual-triadization/COUNTERFACTUAL-norway-megaproject-spending.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "COUNTERFACTUAL norway nss research cities v2",
+    "fileName": "COUNTERFACTUAL-norway-nss-research-cities-v2.md",
+    "shortcut": "hien_cofatr_Cnnrcv v2",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_2",
+    "path": "historical-entries/counter-factual-triadization/COUNTERFACTUAL-norway-nss-research-cities-v2.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CRITIQUE naive cooperation assumptions",
+    "fileName": "CRITIQUE-naive-cooperation-assumptions.md",
+    "shortcut": "hien_cofatr_Cncaons",
+    "legacy_shortcut": "CRITtions",
+    "path": "historical-entries/counter-factual-triadization/CRITIQUE-naive-cooperation-assumptions.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ESCAPE iter2 the quality utopia 2026 2070",
+    "fileName": "ESCAPE-iter2-the-quality-utopia-2026-2070.md",
+    "shortcut": "hien_cofatr_Eitqu22070",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_2",
+    "path": "historical-entries/counter-factual-triadization/ESCAPE-iter2-the-quality-utopia-2026-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ESCAPE iter3 complete quality utopia 2026 2070",
+    "fileName": "ESCAPE-iter3-complete-quality-utopia-2026-2070.md",
+    "shortcut": "hien_cofatr_Eicqu22070",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_3",
+    "path": "historical-entries/counter-factual-triadization/ESCAPE-iter3-complete-quality-utopia-2026-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EVAL escape utopia original",
+    "fileName": "EVAL-escape-utopia-original.md",
+    "shortcut": "hien_cofatr_Eeuonal",
+    "legacy_shortcut": "EVALginal",
+    "path": "historical-entries/counter-factual-triadization/EVAL-escape-utopia-original.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EVAL FINAL iteration 5 complete",
+    "fileName": "EVAL-FINAL-iteration-5-complete.md",
+    "shortcut": "hien_cofatr_EFi5cete",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_5",
+    "path": "historical-entries/counter-factual-triadization/EVAL-FINAL-iteration-5-complete.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EVAL iteration 1 cellular abundance",
+    "fileName": "EVAL-iteration-1-cellular-abundance.md",
+    "shortcut": "hien_cofatr_Ei1cance",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_1",
+    "path": "historical-entries/counter-factual-triadization/EVAL-iteration-1-cellular-abundance.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EVAL iteration 2 commune federation",
+    "fileName": "EVAL-iteration-2-commune-federation.md",
+    "shortcut": "hien_cofatr_Ei2cfion",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_2",
+    "path": "historical-entries/counter-factual-triadization/EVAL-iteration-2-commune-federation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EVAL iteration 3 sorting wars",
+    "fileName": "EVAL-iteration-3-sorting-wars.md",
+    "shortcut": "hien_cofatr_Ei3swars",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_3",
+    "path": "historical-entries/counter-factual-triadization/EVAL-iteration-3-sorting-wars.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EVAL iteration 4 realistic flourishing",
+    "fileName": "EVAL-iteration-4-realistic-flourishing.md",
+    "shortcut": "hien_cofatr_Ei4rfing",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_4",
+    "path": "historical-entries/counter-factual-triadization/EVAL-iteration-4-realistic-flourishing.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EVAL iteration 5 final assessment",
+    "fileName": "EVAL-iteration-5-final-assessment.md",
+    "shortcut": "hien_cofatr_Ei5faent",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_5",
+    "path": "historical-entries/counter-factual-triadization/EVAL-iteration-5-final-assessment.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "FINAL COMPARISON two utopian models",
+    "fileName": "FINAL-COMPARISON-two-utopian-models.md",
+    "shortcut": "hien_cofatr_FCtumels",
+    "legacy_shortcut": "FINAodels",
+    "path": "historical-entries/counter-factual-triadization/FINAL-COMPARISON-two-utopian-models.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "GENEALOGICAL FRAMEWORK",
+    "fileName": "GENEALOGICAL-FRAMEWORK.md",
+    "shortcut": "hien_cofatr_GFORK",
+    "legacy_shortcut": "GENEEWORK",
+    "path": "historical-entries/counter-factual-triadization/GENEALOGICAL-FRAMEWORK.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "hitler triadization alternative",
+    "fileName": "hitler-triadization-alternative.md",
+    "shortcut": "hien_cofatr_htaive",
+    "legacy_shortcut": "hitlative",
+    "path": "historical-entries/counter-factual-triadization/hitler-triadization-alternative.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "00 INDEX the imperium transformation",
+    "fileName": "00-INDEX-the-imperium-transformation.md",
+    "shortcut": "hien_cofatr_im_00",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_00",
+    "path": "historical-entries/counter-factual-triadization/imperium/00-INDEX-the-imperium-transformation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "01 2026 2040 the great unbundling",
+    "fileName": "01-2026-2040-the-great-unbundling.md",
+    "shortcut": "hien_cofatr_im_01",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_01",
+    "path": "historical-entries/counter-factual-triadization/imperium/01-2026-2040-the-great-unbundling.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "02 2040 2080 the flourishing",
+    "fileName": "02-2040-2080-the-flourishing.md",
+    "shortcut": "hien_cofatr_im_02",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_02",
+    "path": "historical-entries/counter-factual-triadization/imperium/02-2040-2080-the-flourishing.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "03 2080 2150 the transcendence",
+    "fileName": "03-2080-2150-the-transcendence.md",
+    "shortcut": "hien_cofatr_im_03",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_03",
+    "path": "historical-entries/counter-factual-triadization/imperium/03-2080-2150-the-transcendence.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "04 LIFE AT THE BOTTOM global mobility and substrate exploration",
+    "fileName": "04-LIFE-AT-THE-BOTTOM-global-mobility-and-substrate-exploration.md",
+    "shortcut": "hien_cofatr_im_04",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_04",
+    "path": "historical-entries/counter-factual-triadization/imperium/04-LIFE-AT-THE-BOTTOM-global-mobility-and-substrate-exploration.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05 CRITICAL CORRECTIONS position zero sovereignty and exploration freedom",
+    "fileName": "05-CRITICAL-CORRECTIONS-position-zero-sovereignty-and-exploration-freedom.md",
+    "shortcut": "hien_cofatr_im_05",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_05",
+    "path": "historical-entries/counter-factual-triadization/imperium/05-CRITICAL-CORRECTIONS-position-zero-sovereignty-and-exploration-freedom.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06 HISTORICAL the trust monopoles and anti trust",
+    "fileName": "06-HISTORICAL-the-trust-monopoles-and-anti-trust.md",
+    "shortcut": "hien_cofatr_im_06",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_06",
+    "path": "historical-entries/counter-factual-triadization/imperium/06-HISTORICAL-the-trust-monopoles-and-anti-trust.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "07 SUMMARY imperium series complete",
+    "fileName": "07-SUMMARY-imperium-series-complete.md",
+    "shortcut": "hien_cofatr_im_07",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_07",
+    "path": "historical-entries/counter-factual-triadization/imperium/07-SUMMARY-imperium-series-complete.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "08 GLOBAL the position o landscape 2050",
+    "fileName": "08-GLOBAL-the-position-o-landscape-2050.md",
+    "shortcut": "hien_cofatr_im_08",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/imperium_08",
+    "path": "historical-entries/counter-factual-triadization/imperium/08-GLOBAL-the-position-o-landscape-2050.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "INDEX",
+    "fileName": "INDEX.md",
+    "shortcut": "hien_cofatr_INDEXDEX",
+    "legacy_shortcut": "INDEX",
+    "path": "historical-entries/counter-factual-triadization/INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "00 INDEX nss government series",
+    "fileName": "00-INDEX-nss-government-series.md",
+    "shortcut": "hien_cofatr_nsgo_00",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_00",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/00-INDEX-nss-government-series.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "20 sweden nss transformation 1980 2025",
+    "fileName": "20-sweden-nss-transformation-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_20",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_20",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/20-sweden-nss-transformation-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "21 ireland nss transformation 1980 2025",
+    "fileName": "21-ireland-nss-transformation-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_21",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_21",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/21-ireland-nss-transformation-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "22 italy nss transformation 1980 2025",
+    "fileName": "22-italy-nss-transformation-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_22",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_22",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/22-italy-nss-transformation-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23 argentina nss transformation 1980 2025",
+    "fileName": "23-argentina-nss-transformation-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_23",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_23",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/23-argentina-nss-transformation-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24 greece nss transformation 1980 2025",
+    "fileName": "24-greece-nss-transformation-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_24",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_24",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/24-greece-nss-transformation-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "25 ukraine nss transformation 1990 2025",
+    "fileName": "25-ukraine-nss-transformation-1990-2025.md",
+    "shortcut": "hien_cofatr_nsgo_25",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_25",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/25-ukraine-nss-transformation-1990-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "26 india nss transformation 1980 2025",
+    "fileName": "26-india-nss-transformation-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_26",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_26",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/26-india-nss-transformation-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "27 pakistan nss transformation 1980 2025",
+    "fileName": "27-pakistan-nss-transformation-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_27",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_27",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/27-pakistan-nss-transformation-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "28 south africa nss transformation 1990 2025",
+    "fileName": "28-south-africa-nss-transformation-1990-2025.md",
+    "shortcut": "hien_cofatr_nsgo_28",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_28",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/28-south-africa-nss-transformation-1990-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ANALYSIS nss success patterns across countries",
+    "fileName": "ANALYSIS-nss-success-patterns-across-countries.md",
+    "shortcut": "hien_cofatr_nsgo_Anspacies",
+    "legacy_shortcut": "ANALtries",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/ANALYSIS-nss-success-patterns-across-countries.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "DENMARK nss counterfactual 1980 2025",
+    "fileName": "DENMARK-nss-counterfactual-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_Dnc12025",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_1980",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/DENMARK-nss-counterfactual-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "FRANCE BRITAIN nss counterfactual 1980 2025",
+    "fileName": "FRANCE-BRITAIN-nss-counterfactual-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_FBnc12025",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_1980",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/FRANCE-BRITAIN-nss-counterfactual-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "GERMANY nss counterfactual 1980 2025",
+    "fileName": "GERMANY-nss-counterfactual-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_Gnc12025",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_1980",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/GERMANY-nss-counterfactual-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "INDEX",
+    "fileName": "INDEX.md",
+    "shortcut": "hien_cofatr_nsgo_INDEXDEX",
+    "legacy_shortcut": "INDEX",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "NETHERLANDS nss counterfactual 1980 2025",
+    "fileName": "NETHERLANDS-nss-counterfactual-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_Nnc12025",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_1980",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/NETHERLANDS-nss-counterfactual-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "SUMMARY government nss transformations",
+    "fileName": "SUMMARY-government-nss-transformations.md",
+    "shortcut": "hien_cofatr_nsgo_Sgntons",
+    "legacy_shortcut": "SUMMtions",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/SUMMARY-government-nss-transformations.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "USA nss counterfactual 1980 2025",
+    "fileName": "USA-nss-counterfactual-1980-2025.md",
+    "shortcut": "hien_cofatr_nsgo_Unc12025",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/nss-governments_1980",
+    "path": "historical-entries/counter-factual-triadization/nss-governments/USA-nss-counterfactual-1980-2025.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "PATTERN sea unifies then persecutes springs",
+    "fileName": "PATTERN-sea-unifies-then-persecutes-springs.md",
+    "shortcut": "hien_cofatr_Psutpsngs",
+    "legacy_shortcut": "PATTrings",
+    "path": "historical-entries/counter-factual-triadization/PATTERN-sea-unifies-then-persecutes-springs.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "PLAYS tower daemon alignment failures and successes",
+    "fileName": "PLAYS-tower-daemon-alignment-failures-and-successes.md",
+    "shortcut": "hien_cofatr_Ptdafasses",
+    "legacy_shortcut": "PLAYesses",
+    "path": "historical-entries/counter-factual-triadization/PLAYS-tower-daemon-alignment-failures-and-successes.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "PRINCIPLE ethnonym water level degradation",
+    "fileName": "PRINCIPLE-ethnonym-water-level-degradation.md",
+    "shortcut": "hien_cofatr_Pewldion",
+    "legacy_shortcut": "PRINation",
+    "path": "historical-entries/counter-factual-triadization/PRINCIPLE-ethnonym-water-level-degradation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "PRINCIPLE triad immutability and spawning",
+    "fileName": "PRINCIPLE-triad-immutability-and-spawning.md",
+    "shortcut": "hien_cofatr_Ptiasing",
+    "legacy_shortcut": "PRINwning",
+    "path": "historical-entries/counter-factual-triadization/PRINCIPLE-triad-immutability-and-spawning.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "PROJECT STATUS",
+    "fileName": "PROJECT-STATUS.md",
+    "shortcut": "hien_cofatr_PSTUS",
+    "legacy_shortcut": "PROJTATUS",
+    "path": "historical-entries/counter-factual-triadization/PROJECT-STATUS.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "00 INDEX",
+    "fileName": "00 INDEX.md",
+    "shortcut": "hien_cofatr_reretr_00",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/red-revolutions-triadization_00",
+    "path": "historical-entries/counter-factual-triadization/red-revolutions-triadization/00 INDEX.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "01 lenin rally dynamics 1917",
+    "fileName": "01-lenin-rally-dynamics-1917.md",
+    "shortcut": "hien_cofatr_reretr_01",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/red-revolutions-triadization_01",
+    "path": "historical-entries/counter-factual-triadization/red-revolutions-triadization/01-lenin-rally-dynamics-1917.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "01S01 petrograd factory worker",
+    "fileName": "01S01-petrograd-factory-worker.md",
+    "shortcut": "hien_cofatr_reretr_01S01",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/red-revolutions-triadization_01S01",
+    "path": "historical-entries/counter-factual-triadization/red-revolutions-triadization/01S01-petrograd-factory-worker.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "02 red white compromise 1918 1920",
+    "fileName": "02-red-white-compromise-1918-1920.md",
+    "shortcut": "hien_cofatr_reretr_02",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/red-revolutions-triadization_02",
+    "path": "historical-entries/counter-factual-triadization/red-revolutions-triadization/02-red-white-compromise-1918-1920.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "03 soviet federation sovereign triads 1921 1924",
+    "fileName": "03-soviet-federation-sovereign-triads-1921-1924.md",
+    "shortcut": "hien_cofatr_reretr_03",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization/red-revolutions-triadization_03",
+    "path": "historical-entries/counter-factual-triadization/red-revolutions-triadization/03-soviet-federation-sovereign-triads-1921-1924.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "SESSION PROGRESS SUMMARY",
+    "fileName": "SESSION-PROGRESS-SUMMARY.md",
+    "shortcut": "hien_cofatr_SPSARY",
+    "legacy_shortcut": "SESSMMARY",
+    "path": "historical-entries/counter-factual-triadization/SESSION-PROGRESS-SUMMARY.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "SESSION SUMMARY",
+    "fileName": "SESSION-SUMMARY.md",
+    "shortcut": "hien_cofatr_SSARY",
+    "legacy_shortcut": "SESSMMARY",
+    "path": "historical-entries/counter-factual-triadization/SESSION-SUMMARY.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the escape 2026 2066 utopian v1",
+    "fileName": "the-escape-2026-2066-utopian-v1.md",
+    "shortcut": "hien_cofatr_te22uv v1",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_2026",
+    "path": "historical-entries/counter-factual-triadization/the-escape-2026-2066-utopian-v1.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the escape utopia 2026 2066",
+    "fileName": "the-escape-utopia-2026-2066.md",
+    "shortcut": "hien_cofatr_teu22066",
+    "legacy_shortcut": "historical-entries/counter-factual-triadization_2026",
+    "path": "historical-entries/counter-factual-triadization/the-escape-utopia-2026-2066.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crusades jihad mowd final chapters",
+    "fileName": "crusades-jihad-mowd-final-chapters.md",
+    "shortcut": "hien_cjmfcers",
+    "legacy_shortcut": "cruspters",
+    "path": "historical-entries/crusades-jihad-mowd-final-chapters.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crusades jihad mowd transformation",
+    "fileName": "crusades-jihad-mowd-transformation.md",
+    "shortcut": "hien_cjmtion",
+    "legacy_shortcut": "crusation",
+    "path": "historical-entries/crusades-jihad-mowd-transformation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "diversity kills innovation",
+    "fileName": "diversity-kills-innovation.md",
+    "shortcut": "hien_dkiion",
+    "legacy_shortcut": "diveation",
+    "path": "historical-entries/diversity-kills-innovation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "foundation day 2031",
+    "fileName": "foundation-day-2031.md",
+    "shortcut": "hien_fd2031",
+    "legacy_shortcut": "historical-entries_2031",
+    "path": "historical-entries/foundation-day-2031.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "gaza israel mowd transformation",
+    "fileName": "gaza-israel-mowd-transformation.md",
+    "shortcut": "hien_gimtion",
+    "legacy_shortcut": "gazaation",
+    "path": "historical-entries/gaza-israel-mowd-transformation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "great fork gpt5",
+    "fileName": "great-fork-gpt5.md",
+    "shortcut": "hien_gfgpt5",
+    "legacy_shortcut": "historical-entries_5",
+    "path": "historical-entries/great-fork-gpt5.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "great fork",
+    "fileName": "great-fork.md",
+    "shortcut": "hien_gfork",
+    "legacy_shortcut": "grea-fork",
+    "path": "historical-entries/great-fork.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "historical viewer",
+    "fileName": "historical-viewer.css",
+    "shortcut": "hien_hvwer",
+    "legacy_shortcut": "histiewer",
+    "path": "historical-entries/historical-viewer.css",
+    "category": "historical-entries",
+    "mediaType": "code"
+  },
+  {
+    "title": "historical viewer",
+    "fileName": "historical-viewer.html",
+    "shortcut": "hien_hvwer",
+    "legacy_shortcut": "histiewer",
+    "path": "historical-entries/historical-viewer.html",
+    "category": "historical-entries",
+    "mediaType": "html"
+  },
+  {
+    "title": "in defense of the far right",
+    "fileName": "in-defense-of-the-far-right.md",
+    "shortcut": "hien_idotfrght",
+    "legacy_shortcut": "in-dright",
+    "path": "historical-entries/in-defense-of-the-far-right.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "INDEX mowd and alt hype documents",
+    "fileName": "INDEX-mowd-and-alt-hype-documents.md",
+    "shortcut": "hien_Imaahdnts",
+    "legacy_shortcut": "INDEments",
+    "path": "historical-entries/INDEX-mowd-and-alt-hype-documents.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "neo colonial alliance gpt5",
+    "fileName": "neo-colonial-alliance-gpt5.md",
+    "shortcut": "hien_ncagpt5",
+    "legacy_shortcut": "historical-entries_5",
+    "path": "historical-entries/neo-colonial-alliance-gpt5.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "neo colonial alliance",
+    "fileName": "neo-colonial-alliance.md",
+    "shortcut": "hien_ncance",
+    "legacy_shortcut": "neo-iance",
+    "path": "historical-entries/neo-colonial-alliance.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "new world genesis gpt5",
+    "fileName": "new-world-genesis-gpt5.md",
+    "shortcut": "hien_nwggpt5",
+    "legacy_shortcut": "historical-entries_5",
+    "path": "historical-entries/new-world-genesis-gpt5.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "new world genesis",
+    "fileName": "new-world-genesis.md",
+    "shortcut": "hien_nwgsis",
+    "legacy_shortcut": "new-nesis",
+    "path": "historical-entries/new-world-genesis.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "south africa mowd transformation",
+    "fileName": "south-africa-mowd-transformation.md",
+    "shortcut": "hien_samtion",
+    "legacy_shortcut": "soutation",
+    "path": "historical-entries/south-africa-mowd-transformation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "sudan mowd transformation",
+    "fileName": "sudan-mowd-transformation.md",
+    "shortcut": "hien_smtion",
+    "legacy_shortcut": "sudaation",
+    "path": "historical-entries/sudan-mowd-transformation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "terraformer bootstrap gpt5",
+    "fileName": "terraformer-bootstrap-gpt5.md",
+    "shortcut": "hien_tbgpt5",
+    "legacy_shortcut": "historical-entries_5",
+    "path": "historical-entries/terraformer-bootstrap-gpt5.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "terraformer bootstrap",
+    "fileName": "terraformer-bootstrap.md",
+    "shortcut": "hien_tbrap",
+    "legacy_shortcut": "terrstrap",
+    "path": "historical-entries/terraformer-bootstrap.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the alt hype and the system",
+    "fileName": "the-alt-hype-and-the-system.md",
+    "shortcut": "hien_tahatstem",
+    "legacy_shortcut": "the-ystem",
+    "path": "historical-entries/the-alt-hype-and-the-system.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the alt hype vindication",
+    "fileName": "the-alt-hype-vindication.md",
+    "shortcut": "hien_tahvion",
+    "legacy_shortcut": "the-ation",
+    "path": "historical-entries/the-alt-hype-vindication.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the complete alt hype vindication summary",
+    "fileName": "the-complete-alt-hype-vindication-summary.md",
+    "shortcut": "hien_tcahvsary",
+    "legacy_shortcut": "the-mmary",
+    "path": "historical-entries/the-complete-alt-hype-vindication-summary.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the containment dividend",
+    "fileName": "the-containment-dividend.md",
+    "shortcut": "hien_tcdend",
+    "legacy_shortcut": "the-idend",
+    "path": "historical-entries/the-containment-dividend.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the crucible solution to the ratchet",
+    "fileName": "the-crucible-solution-to-the-ratchet.md",
+    "shortcut": "hien_tcsttrhet",
+    "legacy_shortcut": "the-tchet",
+    "path": "historical-entries/the-crucible-solution-to-the-ratchet.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the daemon alignment plays",
+    "fileName": "the-daemon-alignment-plays.md",
+    "shortcut": "hien_tdapays",
+    "legacy_shortcut": "the-plays",
+    "path": "historical-entries/the-daemon-alignment-plays.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the economic zone becoming",
+    "fileName": "the-economic-zone-becoming.md",
+    "shortcut": "hien_tezbing",
+    "legacy_shortcut": "the-oming",
+    "path": "historical-entries/the-economic-zone-becoming.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the enemies of the game",
+    "fileName": "the-enemies-of-the-game.md",
+    "shortcut": "hien_teotgame",
+    "legacy_shortcut": "the--game",
+    "path": "historical-entries/the-enemies-of-the-game.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the european revolution and computational collapse",
+    "fileName": "the-european-revolution-and-computational-collapse.md",
+    "shortcut": "hien_teraccpse",
+    "legacy_shortcut": "the-lapse",
+    "path": "historical-entries/the-european-revolution-and-computational-collapse.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the exclusive becoming",
+    "fileName": "the-exclusive-becoming.md",
+    "shortcut": "hien_tebing",
+    "legacy_shortcut": "the-oming",
+    "path": "historical-entries/the-exclusive-becoming.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the feminine becoming",
+    "fileName": "the-feminine-becoming.md",
+    "shortcut": "hien_tfbing",
+    "legacy_shortcut": "the-oming",
+    "path": "historical-entries/the-feminine-becoming.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the first towers rise 2025 2070",
+    "fileName": "the-first-towers-rise-2025-2070.md",
+    "shortcut": "hien_tftr22070",
+    "legacy_shortcut": "historical-entries_2025",
+    "path": "historical-entries/the-first-towers-rise-2025-2070.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the forty year bargain 2026 2066",
+    "fileName": "the-forty-year-bargain-2026-2066.md",
+    "shortcut": "hien_tfyb22066",
+    "legacy_shortcut": "historical-entries_2026",
+    "path": "historical-entries/the-forty-year-bargain-2026-2066.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the fragmentation 2026 2066",
+    "fileName": "the-fragmentation-2026-2066.md",
+    "shortcut": "hien_tf22066",
+    "legacy_shortcut": "historical-entries_2026",
+    "path": "historical-entries/the-fragmentation-2026-2066.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the genesis of the new world",
+    "fileName": "the-genesis-of-the-new-world.md",
+    "shortcut": "hien_tgotnwrld",
+    "legacy_shortcut": "the-world",
+    "path": "historical-entries/the-genesis-of-the-new-world.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the great steppe games",
+    "fileName": "the-great-steppe-games.md",
+    "shortcut": "hien_tgsgmes",
+    "legacy_shortcut": "the-games",
+    "path": "historical-entries/the-great-steppe-games.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the greenland giants",
+    "fileName": "the-greenland-giants.md",
+    "shortcut": "hien_tggnts",
+    "legacy_shortcut": "the-iants",
+    "path": "historical-entries/the-greenland-giants.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the ideological ratchet",
+    "fileName": "the-ideological-ratchet.md",
+    "shortcut": "hien_tirhet",
+    "legacy_shortcut": "the-tchet",
+    "path": "historical-entries/the-ideological-ratchet.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the lejre awakening",
+    "fileName": "the-lejre-awakening.md",
+    "shortcut": "hien_tlaing",
+    "legacy_shortcut": "the-ening",
+    "path": "historical-entries/the-lejre-awakening.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the longevity springs",
+    "fileName": "the-longevity-springs.md",
+    "shortcut": "hien_tlsngs",
+    "legacy_shortcut": "the-rings",
+    "path": "historical-entries/the-longevity-springs.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the masculine becoming",
+    "fileName": "the-masculine-becoming.md",
+    "shortcut": "hien_tmbing",
+    "legacy_shortcut": "the-oming",
+    "path": "historical-entries/the-masculine-becoming.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the mountain man ultimatum",
+    "fileName": "the-mountain-man-ultimatum.md",
+    "shortcut": "hien_tmmutum",
+    "legacy_shortcut": "the-matum",
+    "path": "historical-entries/the-mountain-man-ultimatum.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the neocolonial triads",
+    "fileName": "the-neocolonial-triads.md",
+    "shortcut": "hien_tntads",
+    "legacy_shortcut": "the-riads",
+    "path": "historical-entries/the-neocolonial-triads.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the neverland bootstrap",
+    "fileName": "the-neverland-bootstrap.md",
+    "shortcut": "hien_tnbrap",
+    "legacy_shortcut": "the-strap",
+    "path": "historical-entries/the-neverland-bootstrap.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the pioneer petition",
+    "fileName": "the-pioneer-petition.md",
+    "shortcut": "hien_tppion",
+    "legacy_shortcut": "the-ition",
+    "path": "historical-entries/the-pioneer-petition.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the pit and the tower",
+    "fileName": "the-pit-and-the-tower.md",
+    "shortcut": "hien_tpattwer",
+    "legacy_shortcut": "the-tower",
+    "path": "historical-entries/the-pit-and-the-tower.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the pragma migrations 2026 2045",
+    "fileName": "the-pragma-migrations-2026-2045.md",
+    "shortcut": "hien_tpm22045",
+    "legacy_shortcut": "historical-entries_2026",
+    "path": "historical-entries/the-pragma-migrations-2026-2045.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the rogan awakening",
+    "fileName": "the-rogan-awakening.md",
+    "shortcut": "hien_traing",
+    "legacy_shortcut": "the-ening",
+    "path": "historical-entries/the-rogan-awakening.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the spawning of ten thousand human kinds",
+    "fileName": "the-spawning-of-ten-thousand-human-kinds.md",
+    "shortcut": "hien_tsotthknds",
+    "legacy_shortcut": "the-kinds",
+    "path": "historical-entries/the-spawning-of-ten-thousand-human-kinds.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the third world war",
+    "fileName": "the-third-world-war.md",
+    "shortcut": "hien_ttwwwar",
+    "legacy_shortcut": "the-d-war",
+    "path": "historical-entries/the-third-world-war.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the tower bootstrap chronicles",
+    "fileName": "the-tower-bootstrap-chronicles.md",
+    "shortcut": "hien_ttbcles",
+    "legacy_shortcut": "the-icles",
+    "path": "historical-entries/the-tower-bootstrap-chronicles.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the towers of power",
+    "fileName": "the-towers-of-power.md",
+    "shortcut": "hien_ttopwer",
+    "legacy_shortcut": "the-power",
+    "path": "historical-entries/the-towers-of-power.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the tyranny of fecundity",
+    "fileName": "the-tyranny-of-fecundity.md",
+    "shortcut": "hien_ttofity",
+    "legacy_shortcut": "the-ndity",
+    "path": "historical-entries/the-tyranny-of-fecundity.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the ukraine transformation",
+    "fileName": "the-ukraine-transformation.md",
+    "shortcut": "hien_tution",
+    "legacy_shortcut": "the-ation",
+    "path": "historical-entries/the-ukraine-transformation.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the yin yang becoming",
+    "fileName": "the-yin-yang-becoming.md",
+    "shortcut": "hien_tyybing",
+    "legacy_shortcut": "the-oming",
+    "path": "historical-entries/the-yin-yang-becoming.md",
+    "category": "historical-entries",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ENHANCEMENT PLAN",
+    "fileName": "ENHANCEMENT_PLAN.md",
+    "shortcut": "ENPLLAN",
+    "legacy_shortcut": "ENHA_PLAN",
+    "path": "ENHANCEMENT_PLAN.md",
+    "category": "Immersion",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "basic map",
+    "fileName": "basic-map.html",
+    "shortcut": "joaslomoup_bmmap",
+    "legacy_shortcut": "basic-map",
+    "path": "jord-as-lobby-mock-up/basic-map.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "map viewer",
+    "fileName": "map-viewer.js",
+    "shortcut": "joaslomoup_co_mvwer",
+    "legacy_shortcut": "map-iewer",
+    "path": "jord-as-lobby-mock-up/components/map-viewer.js",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "code"
+  },
+  {
+    "title": "README",
+    "fileName": "README.md",
+    "shortcut": "joaslomoup_co_READMDME",
+    "legacy_shortcut": "README",
+    "path": "jord-as-lobby-mock-up/components/README.md",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "simple world map",
+    "fileName": "simple-world-map.js",
+    "shortcut": "joaslomoup_co_swmmap",
+    "legacy_shortcut": "simpd-map",
+    "path": "jord-as-lobby-mock-up/components/simple-world-map.js",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "code"
+  },
+  {
+    "title": "world map viewer",
+    "fileName": "world-map-viewer.js",
+    "shortcut": "joaslomoup_co_wmvwer",
+    "legacy_shortcut": "worliewer",
+    "path": "jord-as-lobby-mock-up/components/world-map-viewer.js",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "code"
+  },
+  {
+    "title": "crucible vs oldworld",
+    "fileName": "crucible-vs-oldworld.html",
+    "shortcut": "joaslomoup_cvorld",
+    "legacy_shortcut": "crucworld",
+    "path": "jord-as-lobby-mock-up/crucible-vs-oldworld.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "DK center africa as zoomed land",
+    "fileName": "DK-center-africa-as-zoomed-land.png",
+    "shortcut": "joaslomoup_Dcaazland",
+    "legacy_shortcut": "DK-c-land",
+    "path": "jord-as-lobby-mock-up/DK-center-africa-as-zoomed-land.png",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "image"
+  },
+  {
+    "title": "download",
+    "fileName": "download.png",
+    "shortcut": "joaslomoup_download",
+    "legacy_shortcut": "download",
+    "path": "jord-as-lobby-mock-up/download.png",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "image"
+  },
+  {
+    "title": "index leaflet",
+    "fileName": "index-leaflet.html",
+    "shortcut": "joaslomoup_illet",
+    "legacy_shortcut": "indeaflet",
+    "path": "jord-as-lobby-mock-up/index-leaflet.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "mercator world map",
+    "fileName": "mercator-world-map.png",
+    "shortcut": "joaslomoup_mwmmap",
+    "legacy_shortcut": "mercd-map",
+    "path": "jord-as-lobby-mock-up/mercator-world-map.png",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "image"
+  },
+  {
+    "title": "simple test",
+    "fileName": "simple-test.html",
+    "shortcut": "joaslomoup_stest",
+    "legacy_shortcut": "simp-test",
+    "path": "jord-as-lobby-mock-up/simple-test.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "sovereignty system viz",
+    "fileName": "sovereignty-system-viz.html",
+    "shortcut": "joaslomoup_ssvviz",
+    "legacy_shortcut": "sovem-viz",
+    "path": "jord-as-lobby-mock-up/sovereignty-system-viz.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "test app",
+    "fileName": "test-app.html",
+    "shortcut": "joaslomoup_taapp",
+    "legacy_shortcut": "test-app",
+    "path": "jord-as-lobby-mock-up/test-app.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "test mercator map",
+    "fileName": "test-mercator-map.html",
+    "shortcut": "joaslomoup_tmmmap",
+    "legacy_shortcut": "testr-map",
+    "path": "jord-as-lobby-mock-up/test-mercator-map.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "test world map",
+    "fileName": "test-world-map.html",
+    "shortcut": "joaslomoup_twmmap",
+    "legacy_shortcut": "testd-map",
+    "path": "jord-as-lobby-mock-up/test-world-map.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "test zoom functionality",
+    "fileName": "test-zoom-functionality.html",
+    "shortcut": "joaslomoup_tzfity",
+    "legacy_shortcut": "testality",
+    "path": "jord-as-lobby-mock-up/test-zoom-functionality.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "app",
+    "fileName": "app.js",
+    "shortcut": "joaslomoup_te_appapp",
+    "legacy_shortcut": "app.",
+    "path": "jord-as-lobby-mock-up/test/app.js",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "code"
+  },
+  {
+    "title": "triadization app",
+    "fileName": "triadization-app.html",
+    "shortcut": "joaslomoup_taapp",
+    "legacy_shortcut": "trian-app",
+    "path": "jord-as-lobby-mock-up/triadization-app.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "triadization leaflet map",
+    "fileName": "triadization-leaflet-map.html",
+    "shortcut": "joaslomoup_tlmmap",
+    "legacy_shortcut": "triat-map",
+    "path": "jord-as-lobby-mock-up/triadization-leaflet-map.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "triadization world app",
+    "fileName": "triadization-world-app.html",
+    "shortcut": "joaslomoup_twaapp",
+    "legacy_shortcut": "triad-app",
+    "path": "jord-as-lobby-mock-up/triadization-world-app.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "triadization world map advanced",
+    "fileName": "triadization-world-map-advanced.html",
+    "shortcut": "joaslomoup_twmaced",
+    "legacy_shortcut": "triaanced",
+    "path": "jord-as-lobby-mock-up/triadization-world-map-advanced.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "triadization world map",
+    "fileName": "triadization-world-map.html",
+    "shortcut": "joaslomoup_twmmap",
+    "legacy_shortcut": "triad-map",
+    "path": "jord-as-lobby-mock-up/triadization-world-map.html",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "html"
+  },
+  {
+    "title": "world map 2",
+    "fileName": "world-map-2.png",
+    "shortcut": "joaslomoup_wm2p 2",
+    "legacy_shortcut": "jord-as-lobby-mock-up_2",
+    "path": "jord-as-lobby-mock-up/world-map-2.png",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "image"
+  },
+  {
+    "title": "world map africa in focus",
+    "fileName": "world-map-africa-in-focus.png",
+    "shortcut": "joaslomoup_wmaifcus",
+    "legacy_shortcut": "worlfocus",
+    "path": "jord-as-lobby-mock-up/world-map-africa-in-focus.png",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "image"
+  },
+  {
+    "title": "worldmap",
+    "fileName": "worldmap.png",
+    "shortcut": "joaslomoup_worldmap",
+    "legacy_shortcut": "worldmap",
+    "path": "jord-as-lobby-mock-up/worldmap.png",
+    "category": "jord-as-lobby-mock-up",
+    "mediaType": "image"
+  },
+  {
+    "title": "2and1",
+    "fileName": "2and1.mp4",
+    "shortcut": "mytho_2and1",
+    "legacy_shortcut": "mythologies_2and1",
+    "path": "mythologies/2and1.mp4",
+    "category": "mythologies",
+    "mediaType": "video"
+  },
+  {
+    "title": "azure crimson gray becoming",
+    "fileName": "azure-crimson-gray-becoming.md",
+    "shortcut": "mytho_acgbing",
+    "legacy_shortcut": "azuroming",
+    "path": "mythologies/azure-crimson-gray-becoming.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "command the blind command is our fault  the particular command is ceo and capital corporate owner and state fault",
+    "fileName": "command-the-blind-command-is-our-fault--the-particular-command-is-ceo-and-capital-corporate-owner-and-state-fault.png",
+    "shortcut": "mytho_ctbcioftpcicaccoasfult",
+    "legacy_shortcut": "commfault",
+    "path": "mythologies/command-the-blind-command-is-our-fault--the-particular-command-is-ceo-and-capital-corporate-owner-and-state-fault.png",
+    "category": "mythologies",
+    "mediaType": "image"
+  },
+  {
+    "title": "flora fauna folk the triad substratum",
+    "fileName": "flora-fauna-folk-the-triad-substratum.md",
+    "shortcut": "mytho_fffttstum",
+    "legacy_shortcut": "florratum",
+    "path": "mythologies/flora-fauna-folk-the-triad-substratum.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "for those time didnt burn away fauna",
+    "fileName": "for-those-time-didnt-burn-away-fauna.md",
+    "shortcut": "mytho_fttdbafuna",
+    "legacy_shortcut": "for-fauna",
+    "path": "mythologies/for-those-time-didnt-burn-away-fauna.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "for those time didnt burn away flora",
+    "fileName": "for-those-time-didnt-burn-away-flora.md",
+    "shortcut": "mytho_fttdbafora",
+    "legacy_shortcut": "for-flora",
+    "path": "mythologies/for-those-time-didnt-burn-away-flora.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "for those time didnt burn away",
+    "fileName": "for-those-time-didnt-burn-away.md",
+    "shortcut": "mytho_fttdbaway",
+    "legacy_shortcut": "for--away",
+    "path": "mythologies/for-those-time-didnt-burn-away.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "fountain spring river clarification",
+    "fileName": "fountain-spring-river-clarification.md",
+    "shortcut": "mytho_fsrcion",
+    "legacy_shortcut": "founation",
+    "path": "mythologies/fountain-spring-river-clarification.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "potential next topics",
+    "fileName": "potential-next-topics.md",
+    "shortcut": "mytho_pntics",
+    "legacy_shortcut": "poteopics",
+    "path": "mythologies/potential-next-topics.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the builder and the chooser",
+    "fileName": "the-builder-and-the-chooser.md",
+    "shortcut": "mytho_tbatcser",
+    "legacy_shortcut": "the-ooser",
+    "path": "mythologies/the-builder-and-the-chooser.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the genesis of varna",
+    "fileName": "the-genesis-of-varna.md",
+    "shortcut": "mytho_tgovrna",
+    "legacy_shortcut": "the-varna",
+    "path": "mythologies/the-genesis-of-varna.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the hundred billion dream",
+    "fileName": "the-hundred-billion-dream.md",
+    "shortcut": "mytho_thbdeam",
+    "legacy_shortcut": "the-dream",
+    "path": "mythologies/the-hundred-billion-dream.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the legends of the steppe",
+    "fileName": "the-legends-of-the-steppe.md",
+    "shortcut": "mytho_tlotsppe",
+    "legacy_shortcut": "the-teppe",
+    "path": "mythologies/the-legends-of-the-steppe.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the one who became light",
+    "fileName": "the-one-who-became-light.md",
+    "shortcut": "mytho_towblght",
+    "legacy_shortcut": "the-light",
+    "path": "mythologies/the-one-who-became-light.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the unwritten law principle",
+    "fileName": "the-unwritten-law-principle.md",
+    "shortcut": "mytho_tulpple",
+    "legacy_shortcut": "the-ciple",
+    "path": "mythologies/the-unwritten-law-principle.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "those that didnt burn away",
+    "fileName": "those-that-didnt-burn-away.md",
+    "shortcut": "mytho_ttdbaway",
+    "legacy_shortcut": "thos-away",
+    "path": "mythologies/those-that-didnt-burn-away.md",
+    "category": "mythologies",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "014f25d7 b3dd 4633 9cbd 001a294d81ed",
+    "fileName": "014f25d7-b3dd-4633-9cbd-001a294d81ed.jpg",
+    "shortcut": "pr_ustrical_014f25d7",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_014f25d7",
+    "path": "proposals/us-triadization-ice-alternative/014f25d7-b3dd-4633-9cbd-001a294d81ed.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "0654a8ba 2d06 497f 8f3a 098519c172a7",
+    "fileName": "0654a8ba-2d06-497f-8f3a-098519c172a7.jpg",
+    "shortcut": "pr_ustrical_0654a8ba",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_0654a8ba",
+    "path": "proposals/us-triadization-ice-alternative/0654a8ba-2d06-497f-8f3a-098519c172a7.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "19dc397e ea63 4b7f 8896 a7bd3428a1ca",
+    "fileName": "19dc397e-ea63-4b7f-8896-a7bd3428a1ca.jpg",
+    "shortcut": "pr_ustrical_19dc397e",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_19dc397e",
+    "path": "proposals/us-triadization-ice-alternative/19dc397e-ea63-4b7f-8896-a7bd3428a1ca.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "1f5fa838 91bc 4017 a1f5 306ffbc1a9d3",
+    "fileName": "1f5fa838-91bc-4017-a1f5-306ffbc1a9d3.jpg",
+    "shortcut": "pr_ustrical_1f5fa838",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_1f5fa838",
+    "path": "proposals/us-triadization-ice-alternative/1f5fa838-91bc-4017-a1f5-306ffbc1a9d3.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "256e52d4 1f3a 4d4c aeeb 7f3f394ef776",
+    "fileName": "256e52d4-1f3a-4d4c-aeeb-7f3f394ef776.jpg",
+    "shortcut": "pr_ustrical_256e52d4",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_256e52d4",
+    "path": "proposals/us-triadization-ice-alternative/256e52d4-1f3a-4d4c-aeeb-7f3f394ef776.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "28f986ea 8bd2 4c4b b72b 435291275cc9",
+    "fileName": "28f986ea-8bd2-4c4b-b72b-435291275cc9.jpg",
+    "shortcut": "pr_ustrical_28f986ea",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_28f986ea",
+    "path": "proposals/us-triadization-ice-alternative/28f986ea-8bd2-4c4b-b72b-435291275cc9.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "32aad415 22e5 422e a270 744e39d09f9d",
+    "fileName": "32aad415-22e5-422e-a270-744e39d09f9d.jpg",
+    "shortcut": "pr_ustrical_32aad415",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_32aad415",
+    "path": "proposals/us-triadization-ice-alternative/32aad415-22e5-422e-a270-744e39d09f9d.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "413aae60 be24 4ea6 a841 fd3ef2584846",
+    "fileName": "413aae60-be24-4ea6-a841-fd3ef2584846.jpg",
+    "shortcut": "pr_ustrical_413aae60",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_413aae60",
+    "path": "proposals/us-triadization-ice-alternative/413aae60-be24-4ea6-a841-fd3ef2584846.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "4e34a9cc f11e 4e4b b94b a6a60a5bad28",
+    "fileName": "4e34a9cc-f11e-4e4b-b94b-a6a60a5bad28.jpg",
+    "shortcut": "pr_ustrical_4e34a9cc",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_4e34a9cc",
+    "path": "proposals/us-triadization-ice-alternative/4e34a9cc-f11e-4e4b-b94b-a6a60a5bad28.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "614accc4 ec06 4b78 83c1 9bf930ebaaf7",
+    "fileName": "614accc4-ec06-4b78-83c1-9bf930ebaaf7.jpg",
+    "shortcut": "pr_ustrical_614accc4",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_614accc4",
+    "path": "proposals/us-triadization-ice-alternative/614accc4-ec06-4b78-83c1-9bf930ebaaf7.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "6ddbfd8c 66f4 4946 9c4c a57ed8607357",
+    "fileName": "6ddbfd8c-66f4-4946-9c4c-a57ed8607357.jpg",
+    "shortcut": "pr_ustrical_6ddbfd8c",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_6ddbfd8c",
+    "path": "proposals/us-triadization-ice-alternative/6ddbfd8c-66f4-4946-9c4c-a57ed8607357.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "84baebbb dd0f 4c95 9045 4e4cba8170be",
+    "fileName": "84baebbb-dd0f-4c95-9045-4e4cba8170be.jpg",
+    "shortcut": "pr_ustrical_84baebbb",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_84baebbb",
+    "path": "proposals/us-triadization-ice-alternative/84baebbb-dd0f-4c95-9045-4e4cba8170be.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "93fa2e9b 6e95 4fb6 9888 124ffeeb96d4",
+    "fileName": "93fa2e9b-6e95-4fb6-9888-124ffeeb96d4.jpg",
+    "shortcut": "pr_ustrical_93fa2e9b",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_93fa2e9b",
+    "path": "proposals/us-triadization-ice-alternative/93fa2e9b-6e95-4fb6-9888-124ffeeb96d4.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "b09e8afe 3d01 49de b181 f96a65a45dae",
+    "fileName": "b09e8afe-3d01-49de-b181-f96a65a45dae.jpg",
+    "shortcut": "pr_ustrical_b34bfdae",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_09e8afe",
+    "path": "proposals/us-triadization-ice-alternative/b09e8afe-3d01-49de-b181-f96a65a45dae.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "b73c5bba 3b67 4e11 ac78 f5e93d8955cc",
+    "fileName": "b73c5bba-3b67-4e11-ac78-f5e93d8955cc.jpg",
+    "shortcut": "pr_ustrical_b34af5cc",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_73c5bba",
+    "path": "proposals/us-triadization-ice-alternative/b73c5bba-3b67-4e11-ac78-f5e93d8955cc.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "b74d8833 1261 40e3 978f f26b5cddf6c7",
+    "fileName": "b74d8833-1261-40e3-978f-f26b5cddf6c7.jpg",
+    "shortcut": "pr_ustrical_b149f6c7",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_74d8833",
+    "path": "proposals/us-triadization-ice-alternative/b74d8833-1261-40e3-978f-f26b5cddf6c7.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "df818413 8b9b 4850 a4af 2c4e1f13bc9b",
+    "fileName": "df818413-8b9b-4850-a4af-2c4e1f13bc9b.jpg",
+    "shortcut": "pr_ustrical_d84a2c9b",
+    "legacy_shortcut": "proposals/us-triadization-ice-alternative_818413",
+    "path": "proposals/us-triadization-ice-alternative/df818413-8b9b-4850-a4af-2c4e1f13bc9b.jpg",
+    "category": "proposals",
+    "mediaType": "image"
+  },
+  {
+    "title": "us triadization ice",
+    "fileName": "us-triadization-ice.md",
+    "shortcut": "pr_ustrical_utiice",
+    "legacy_shortcut": "us-tn-ice",
+    "path": "proposals/us-triadization-ice-alternative/us-triadization-ice.md",
+    "category": "proposals",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "floating world story",
+    "fileName": "floating-world-story.md",
+    "shortcut": "stori_fwsory",
+    "legacy_shortcut": "floastory",
+    "path": "stories/floating-world-story.md",
+    "category": "stories",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the barracks bell",
+    "fileName": "the-barracks-bell.md",
+    "shortcut": "stori_tbbell",
+    "legacy_shortcut": "the--bell",
+    "path": "stories/the-barracks-bell.md",
+    "category": "stories",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the first conquest",
+    "fileName": "the-first-conquest.md",
+    "shortcut": "stori_tfcest",
+    "legacy_shortcut": "the-quest",
+    "path": "stories/the-first-conquest.md",
+    "category": "stories",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "artist soul seeking beauty lobby",
+    "fileName": "artist-soul-seeking-beauty-lobby.html",
+    "shortcut": "thlo_assblbby",
+    "legacy_shortcut": "artilobby",
+    "path": "the-lobbies/artist-soul-seeking-beauty-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "bullied teen escape lobby",
+    "fileName": "bullied-teen-escape-lobby.html",
+    "shortcut": "thlo_btelbby",
+    "legacy_shortcut": "bulllobby",
+    "path": "the-lobbies/bullied-teen-escape-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "corporate soul death awakening lobby",
+    "fileName": "corporate-soul-death-awakening-lobby.html",
+    "shortcut": "thlo_csdalbby",
+    "legacy_shortcut": "corplobby",
+    "path": "the-lobbies/corporate-soul-death-awakening-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "hypergamous luxury seeker lobby",
+    "fileName": "hypergamous-luxury-seeker-lobby.html",
+    "shortcut": "thlo_hlslbby",
+    "legacy_shortcut": "hypelobby",
+    "path": "the-lobbies/hypergamous-luxury-seeker-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "intellectual woman seeking meaning lobby",
+    "fileName": "intellectual-woman-seeking-meaning-lobby.html",
+    "shortcut": "thlo_iwsmlbby",
+    "legacy_shortcut": "intelobby",
+    "path": "the-lobbies/intellectual-woman-seeking-meaning-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "parent child multaiddaemon spring explorer lobby",
+    "fileName": "parent-child-multaiddaemon-spring-explorer-lobby.html",
+    "shortcut": "thlo_pcmselbby",
+    "legacy_shortcut": "parelobby",
+    "path": "the-lobbies/parent-child-multaiddaemon-spring-explorer-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "somali girl escape lobby",
+    "fileName": "somali-girl-escape-lobby.html",
+    "shortcut": "thlo_sgelbby",
+    "legacy_shortcut": "somalobby",
+    "path": "the-lobbies/somali-girl-escape-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "trauma survivor healing sanctuary lobby",
+    "fileName": "trauma-survivor-healing-sanctuary-lobby.html",
+    "shortcut": "thlo_tshslbby",
+    "legacy_shortcut": "traulobby",
+    "path": "the-lobbies/trauma-survivor-healing-sanctuary-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "universal lobby experience",
+    "fileName": "universal-lobby-experience.html",
+    "shortcut": "thlo_ulence",
+    "legacy_shortcut": "univience",
+    "path": "the-lobbies/universal-lobby-experience.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "warrior seeking valhalla lobby",
+    "fileName": "warrior-seeking-valhalla-lobby.html",
+    "shortcut": "thlo_wsvlbby",
+    "legacy_shortcut": "warrlobby",
+    "path": "the-lobbies/warrior-seeking-valhalla-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "young mother seeking safety lobby",
+    "fileName": "young-mother-seeking-safety-lobby.html",
+    "shortcut": "thlo_ymsslbby",
+    "legacy_shortcut": "younlobby",
+    "path": "the-lobbies/young-mother-seeking-safety-lobby.html",
+    "category": "the-lobbies",
+    "mediaType": "html"
+  },
+  {
+    "title": "5f0243b3 532c 44d5 b5b9 48772b2bb8d2",
+    "fileName": "5f0243b3-532c-44d5-b5b9-48772b2bb8d2.jpg",
+    "shortcut": "wovi_5f0243b3",
+    "legacy_shortcut": "world-visuals_5f0243b3",
+    "path": "world-visuals/5f0243b3-532c-44d5-b5b9-48772b2bb8d2.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "boring triadization",
+    "fileName": "boring-triadization.jpg",
+    "shortcut": "wovi_btion",
+    "legacy_shortcut": "boriation",
+    "path": "world-visuals/boring-triadization.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "cg0sbXqX",
+    "fileName": "cg0sbXqX.jpg",
+    "shortcut": "wovi_cg0sbXqX",
+    "legacy_shortcut": "world-visuals_0sbXqX",
+    "path": "world-visuals/cg0sbXqX.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "ecc0c116 08e6 4822 b454 4b763040a65a",
+    "fileName": "ecc0c116-08e6-4822-b454-4b763040a65a.jpg",
+    "shortcut": "wovi_e04b465a",
+    "legacy_shortcut": "world-visuals_0c116",
+    "path": "world-visuals/ecc0c116-08e6-4822-b454-4b763040a65a.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "f1c6b0d9 1dc3 4dc3 b789 fcf70c96e23e",
+    "fileName": "f1c6b0d9-1dc3-4dc3-b789-fcf70c96e23e.jpg",
+    "shortcut": "wovi_f14bf23e",
+    "legacy_shortcut": "world-visuals_1c6b0d9",
+    "path": "world-visuals/f1c6b0d9-1dc3-4dc3-b789-fcf70c96e23e.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "f2cc0b5c 2088 49fa b3cb 6ef133ff7d8b",
+    "fileName": "f2cc0b5c-2088-49fa-b3cb-6ef133ff7d8b.jpg",
+    "shortcut": "wovi_f24b6d8b",
+    "legacy_shortcut": "world-visuals_2cc0b5c",
+    "path": "world-visuals/f2cc0b5c-2088-49fa-b3cb-6ef133ff7d8b.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "fgs9CwiL",
+    "fileName": "fgs9CwiL.jpg",
+    "shortcut": "wovi_fgs9CwiL",
+    "legacy_shortcut": "world-visuals_9CwiL",
+    "path": "world-visuals/fgs9CwiL.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "text to video 076eb19e",
+    "fileName": "text-to-video-076eb19e.mp4",
+    "shortcut": "wovi_ttv019e",
+    "legacy_shortcut": "world-visuals_076eb19e",
+    "path": "world-visuals/text-to-video-076eb19e.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 19a90968",
+    "fileName": "text-to-video-19a90968.mp4",
+    "shortcut": "wovi_ttv1968",
+    "legacy_shortcut": "world-visuals_19a90968",
+    "path": "world-visuals/text-to-video-19a90968.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 2220c041",
+    "fileName": "text-to-video-2220c041.mp4",
+    "shortcut": "wovi_ttv2041",
+    "legacy_shortcut": "world-visuals_2220c041",
+    "path": "world-visuals/text-to-video-2220c041.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 320dacec",
+    "fileName": "text-to-video-320dacec.mp4",
+    "shortcut": "wovi_ttv3cec",
+    "legacy_shortcut": "world-visuals_320dacec",
+    "path": "world-visuals/text-to-video-320dacec.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 3854801a(1)",
+    "fileName": "text-to-video-3854801a(1).mp4",
+    "shortcut": "wovi_ttv3(1)",
+    "legacy_shortcut": "world-visuals_3854801a",
+    "path": "world-visuals/text-to-video-3854801a(1).mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 3854801a",
+    "fileName": "text-to-video-3854801a.mp4",
+    "shortcut": "wovi_ttv301a",
+    "legacy_shortcut": "world-visuals_3854801a",
+    "path": "world-visuals/text-to-video-3854801a.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 627f26fd",
+    "fileName": "text-to-video-627f26fd.mp4",
+    "shortcut": "wovi_ttv66fd",
+    "legacy_shortcut": "world-visuals_627f26fd",
+    "path": "world-visuals/text-to-video-627f26fd.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 7bdc2284",
+    "fileName": "text-to-video-7bdc2284.mp4",
+    "shortcut": "wovi_ttv7284",
+    "legacy_shortcut": "world-visuals_7bdc2284",
+    "path": "world-visuals/text-to-video-7bdc2284.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video 9fb2e746",
+    "fileName": "text-to-video-9fb2e746.mp4",
+    "shortcut": "wovi_ttv9746",
+    "legacy_shortcut": "world-visuals_9fb2e746",
+    "path": "world-visuals/text-to-video-9fb2e746.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video a441db7d(1)",
+    "fileName": "text-to-video-a441db7d(1).mp4",
+    "shortcut": "wovi_ttva(1)",
+    "legacy_shortcut": "world-visuals_441db7d",
+    "path": "world-visuals/text-to-video-a441db7d(1).mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video a441db7d",
+    "fileName": "text-to-video-a441db7d.mp4",
+    "shortcut": "wovi_ttvab7d",
+    "legacy_shortcut": "world-visuals_441db7d",
+    "path": "world-visuals/text-to-video-a441db7d.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video dbc51a12(1)",
+    "fileName": "text-to-video-dbc51a12(1).mp4",
+    "shortcut": "wovi_ttvd(1)",
+    "legacy_shortcut": "world-visuals_51a12",
+    "path": "world-visuals/text-to-video-dbc51a12(1).mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video dbc51a12",
+    "fileName": "text-to-video-dbc51a12.mp4",
+    "shortcut": "wovi_ttvda12",
+    "legacy_shortcut": "world-visuals_51a12",
+    "path": "world-visuals/text-to-video-dbc51a12.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video dc42bb1c",
+    "fileName": "text-to-video-dc42bb1c.mp4",
+    "shortcut": "wovi_ttvdb1c",
+    "legacy_shortcut": "world-visuals_42bb1c",
+    "path": "world-visuals/text-to-video-dc42bb1c.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video ecdd2f7d",
+    "fileName": "text-to-video-ecdd2f7d.mp4",
+    "shortcut": "wovi_ttvef7d",
+    "legacy_shortcut": "world-visuals_2f7d",
+    "path": "world-visuals/text-to-video-ecdd2f7d.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video f3f8b9f8",
+    "fileName": "text-to-video-f3f8b9f8.mp4",
+    "shortcut": "wovi_ttvf9f8",
+    "legacy_shortcut": "world-visuals_3f8b9f8",
+    "path": "world-visuals/text-to-video-f3f8b9f8.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video f8f7438c",
+    "fileName": "text-to-video-f8f7438c.mp4",
+    "shortcut": "wovi_ttvf38c",
+    "legacy_shortcut": "world-visuals_8f7438c",
+    "path": "world-visuals/text-to-video-f8f7438c.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "text to video fcf7c828",
+    "fileName": "text-to-video-fcf7c828.mp4",
+    "shortcut": "wovi_ttvf828",
+    "legacy_shortcut": "world-visuals_7c828",
+    "path": "world-visuals/text-to-video-fcf7c828.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  },
+  {
+    "title": "triadization sorta succes",
+    "fileName": "triadization-sorta-succes.jpg",
+    "shortcut": "wovi_tssces",
+    "legacy_shortcut": "triaucces",
+    "path": "world-visuals/triadization-sorta-succes.jpg",
+    "category": "world-visuals",
+    "mediaType": "image"
+  },
+  {
+    "title": "z Upload Image   Internal Only Style 80b4f574",
+    "fileName": "z_Upload-Image---Internal-Only-Style-80b4f574.mp4",
+    "shortcut": "wovi_zUIIOS8574",
+    "legacy_shortcut": "world-visuals_80b4f574",
+    "path": "world-visuals/z_Upload-Image---Internal-Only-Style-80b4f574.mp4",
+    "category": "world-visuals",
+    "mediaType": "video"
+  }
+]

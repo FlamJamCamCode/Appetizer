@@ -1,0 +1,35 @@
+{
+  "country_code": "MA",
+  "name": "Morocco",
+  "approximate": true,
+  "population": 37000000,
+  "gdp_nominal_usd": 145000000000,
+  "gdp_per_capita_usd": 4000,
+  "social_spending_pct_gdp": 13.0,
+  "health_spending_pct_gdp": 5.0,
+  "education_spending_pct_gdp": 5.5,
+  "oda_given_pct_gni": 0.03,
+  "oda_given_usd": 400000000,
+  "oda_received_usd": 1500000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 600000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.5,
+  "child_mortality_under5_per_1000": 18.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Diabetes"
+  ],
+  "notes": [
+    "Morocco is a lower-middle/upper-middle-income Maghreb monarchy with improving health indicators.",
+    "Religious giving and South–South cooperation are important altruistic channels."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Moroccan government budget data"
+  ]
+}
+
+

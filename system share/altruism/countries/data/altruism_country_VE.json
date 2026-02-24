@@ -1,0 +1,36 @@
+{
+  "country_code": "VE",
+  "name": "Venezuela",
+  "approximate": true,
+  "population": 29000000,
+  "gdp_nominal_usd": 75000000000,
+  "gdp_per_capita_usd": 2600,
+  "social_spending_pct_gdp": 15.0,
+  "health_spending_pct_gdp": 5.0,
+  "education_spending_pct_gdp": 4.0,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1000000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 200000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.2,
+  "child_mortality_under5_per_1000": 25.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Violence",
+    "Infectious diseases and malnutrition-related conditions"
+  ],
+  "notes": [
+    "Economic and political crises have severely affected Venezuela's health system and social indicators.",
+    "Diaspora remittances and humanitarian aid are crucial for survival."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "UN humanitarian and regional reports"
+  ]
+}
+
+

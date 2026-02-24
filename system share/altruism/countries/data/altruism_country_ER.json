@@ -1,0 +1,36 @@
+{
+  "country_code": "ER",
+  "name": "Eritrea",
+  "approximate": true,
+  "population": 3700000,
+  "gdp_nominal_usd": 2500000000,
+  "gdp_per_capita_usd": 675,
+  "social_spending_pct_gdp": 11.0,
+  "health_spending_pct_gdp": 3.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 300000000,
+  "private_giving_pct_gdp": 0.5,
+  "private_giving_total_usd": 12500000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.03,
+  "child_mortality_under5_per_1000": 45.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Lower respiratory infections",
+    "Diarrheal diseases",
+    "Malnutrition"
+  ],
+  "notes": [
+    "Data for Eritrea are limited; figures are approximate and based on regional patterns.",
+    "Diaspora remittances are a key lifeline; formal ODA has been constrained by political factors."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Regional UN assessments"
+  ]
+}
+
+

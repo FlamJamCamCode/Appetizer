@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branching Navigation - Git-Style Demo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1510 50%, #0a0a0a 100%);
+            color: #d4c5a9;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(72, 61, 139, 0.2));
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid rgba(212, 175, 55, 0.6);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(90deg, #ff4444, #ffd700, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        branching-nav-viewport {
+            display: block;
+        }
+
+        .demo-layout {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 20px;
+        }
+
+        .demo-panel {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 10px;
+            padding: 20px 24px;
+        }
+
+        .demo-panel h2 {
+            font-size: 1.4em;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .demo-panel p,
+        .demo-panel li {
+            font-size: 0.98em;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .legend-swatch {
+            width: 22px;
+            height: 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.7);
+        }
+        
+        [data-chapter] {
+            margin-top: 40px;
+            margin-bottom: 120px;
+            padding: 40px;
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            min-height: 1200px;
+        }
+        
+        [data-chapter] h2 {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        
+        [data-chapter] p {
+            font-size: 1.2em;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        
+        [data-sub-branch] {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(72, 61, 139, 0.15);
+            border: 2px solid rgba(79, 195, 247, 0.4);
+            border-radius: 8px;
+            min-height: 600px;
+        }
+        
+        [data-sub-branch] h3 {
+            font-size: 1.8em;
+            color: #4fc3f7;
+            margin-bottom: 20px;
+        }
+        
+        /* Body scrollbar styling */
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(212, 175, 55, 0.5) rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        
+        body::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.8);
+        }
+        
+        body::-webkit-scrollbar-thumb:active {
+            background: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Branching Navigation - Git-Style</h1>
+        <p style="margin-top: 20px; font-size: 1.1em; color: #d4c5a9; max-width: 900px; margin-left: auto; margin-right: auto;">
+            Main branch (chapters) with sub-branches that appear in a side column only while you are inside that chapter.
+            Think of it as a book index crossed with git branches: contextual, scoped, and merging back when done.
+        </p>
+    </header>
+
+    <div class="demo-layout">
+        <div class="demo-panel">
+            <h2>What to Look For</h2>
+            <ul style="margin-left: 20px; margin-top: 8px;">
+                <li><strong>Main branch:</strong> Scroll a bit and a horizontal chapter bar appears under the header.</li>
+                <li><strong>Chapter progress:</strong> Each chapter button fills from left to right as you progress through its content.</li>
+                <li><strong>Contextual branches:</strong> When you enter a chapter, its sub-branches appear in the right-hand column.</li>
+                <li><strong>Scoped branches:</strong> Sub-branches vanish when you move to another chapter – they don't clutter the global view.</li>
+                <li><strong>Click navigation:</strong> Click a chapter or sub-branch to jump there; scroll again to see progress update.</li>
+                <li><strong>Edge case:</strong> Chapter 4 has no sub-branches – notice that the side column stays empty there.</li>
+            </ul>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: linear-gradient(135deg, rgba(255,68,68,0.7), rgba(255,215,0,0.7));"></div>
+                    <span>Chapter progress fill</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: linear-gradient(135deg, rgba(72,61,139,0.6), rgba(79,195,247,0.7));"></div>
+                    <span>Active sub-branch column</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background: rgba(212,175,55,0.4);"></div>
+                    <span>Completed sub-branch (faded)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <branching-nav-viewport>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+
+            <!-- Chapter 1: Warriors -->
+            <section data-chapter id="warriors">
+                <h2>⚔ Chapter 1: Warriors & Fighters</h2>
+                <p>
+                    This is the main branch - Chapter 1. As you scroll into this chapter, you'll see sub-branches
+                    appear in the side column on the right. These are like git branches that branch off from the main branch.
+                </p>
+                <p>
+                    Scroll down to see the sub-branches appear, and watch them merge back (disappear) as you complete them.
+                </p>
+                
+                <!-- Sub-branch 1: Melee Combat -->
+                <div data-sub-branch id="melee-combat">
+                    <h3>🗡 Melee Combat</h3>
+                    <p>
+                        This is a sub-branch. When you enter Chapter 1, this sub-branch appears in the side column.
+                        As you scroll through it, it will be marked as completed when you pass it.
+                    </p>
+                    <p>
+                        Sub-branches are like git feature branches - they branch off from the main chapter,
+                        you work through them, and they merge back when completed.
+                    </p>
+                </div>
+                
+                <!-- Sub-branch 2: Ranged Combat -->
+                <div data-sub-branch id="ranged-combat">
+                    <h3>🏹 Ranged Combat</h3>
+                    <p>
+                        Another sub-branch. Notice how sub-branches appear in the side column only when you're
+                        in their parent chapter. They don't clutter the navigation when you're in other chapters.
+                    </p>
+                    <p>
+                        This is the key difference from a tree structure - sub-branches are contextual to their chapter.
+                        They only matter when you're in that chapter's scope.
+                    </p>
+                </div>
+                
+                <!-- Sub-branch 3: Tactical Formations -->
+                <div data-sub-branch id="tactical-formations">
+                    <h3>🛡 Tactical Formations</h3>
+                    <p>
+                        The third sub-branch. As you scroll past each sub-branch, it gets marked as completed.
+                        When all sub-branches in a chapter are completed, they effectively "merge" back into the main branch.
+                    </p>
+                    <p>
+                        Then you move on to the next chapter, and its sub-branches appear in the side column.
+                    </p>
+                </div>
+                
+                <p style="margin-top: 40px;">
+                    Continue scrolling to move past this chapter and see how the sub-branches disappear
+                    when you move to the next chapter.
+                </p>
+            </section>
+            
+            <!-- Chapter 2: Strategists -->
+            <section data-chapter id="strategists">
+                <h2>🎯 Chapter 2: Strategists & Commanders</h2>
+                <p>
+                    Now you're in Chapter 2. Notice how the sub-branches from Chapter 1 have disappeared
+                    (merged back), and Chapter 2's sub-branches will appear in the side column as you scroll.
+                </p>
+                
+                <!-- Sub-branch 1: Battle Planning -->
+                <div data-sub-branch id="battle-planning">
+                    <h3>📋 Battle Planning</h3>
+                    <p>
+                        Chapter 2's first sub-branch. This appears in the side column now that you're in Chapter 2.
+                    </p>
+                    <p>
+                        The navigation system is like git branches - main branch (chapters) with feature branches
+                        (sub-branches) that branch off, get worked on, and merge back.
+                    </p>
+                </div>
+                
+                <!-- Sub-branch 2: Resource Management -->
+                <div data-sub-branch id="resource-management">
+                    <h3>📊 Resource Management</h3>
+                    <p>
+                        Another sub-branch for Chapter 2. Each chapter can have its own set of sub-branches.
+                    </p>
+                </div>
+                
+                <!-- Sub-branch 3: Intelligence Gathering -->
+                <div data-sub-branch id="intelligence">
+                    <h3>🔍 Intelligence Gathering</h3>
+                    <p>
+                        The third sub-branch. Scroll through them to see them get marked as completed.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Chapter 3: Merchants -->
+            <section data-chapter id="merchants">
+                <h2>💰 Chapter 3: Merchants & Logistics</h2>
+                <p>
+                    Chapter 3 with its own sub-branches. The pattern continues - sub-branches appear when
+                    you enter the chapter, and merge back when you complete them and move on.
+                </p>
+                
+                <div data-sub-branch id="trade-routes">
+                    <h3>🛣 Trade Routes</h3>
+                    <p>Sub-branch for trade routes.</p>
+                </div>
+                
+                <div data-sub-branch id="supply-chains">
+                    <h3>📦 Supply Chains</h3>
+                    <p>Sub-branch for supply chain management.</p>
+                </div>
+            </section>
+
+            <!-- Chapter 4: Epilogue / No Sub-Branches -->
+            <section data-chapter id="epilogue">
+                <h2>📚 Chapter 4: Epilogue (No Sub-Branches)</h2>
+                <p>
+                    This chapter has no sub-branches. Scroll into it and notice that the right-hand branch column
+                    is empty. The main chapter bar still tracks your progress, but there is nothing \"branched off\"
+                    from this chapter.
+                </p>
+                <p>
+                    This demonstrates that the branching system is selective: only chapters that actually have
+                    sub-branches spawn additional navigation, keeping the rest of the index clean and linear.
+                </p>
+            </section>
+            
+        </div>
+    </branching-nav-viewport>
+    
+    <script src="../lib/branching-nav.js"></script>
+    <script>
+        // Auto-initializes when branching-nav-viewport is found.
+        // No manual configuration here: this demo shows the \"do nothing and it works\" behavior.
+    </script>
+</body>
+</html>
+

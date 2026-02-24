@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Working Map</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .map-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: #001122;
+            cursor: grab;
+            overflow: hidden;
+        }
+        
+        .map-container.dragging {
+            cursor: grabbing;
+        }
+        
+        .map-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0;
+            transition: transform 0.1s ease-out;
+        }
+        
+        .world-map {
+            width: 2560px;
+            height: 1280px;
+            background-image: url('mercator-world-map.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .zone {
+            position: absolute;
+            background: rgba(0, 255, 255, 0.3);
+            border: 2px solid #00ffff;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+            min-width: 120px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .zone:hover {
+            background: rgba(0, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #333;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .info h3 {
+            margin: 0 0 15px 0;
+            color: #00ffff;
+        }
+        
+        .info p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        .info ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .info li {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container" id="mapContainer">
+        <div class="map-content" id="mapContent">
+            <div class="world-map" id="worldMap"></div>
+            <div id="zonesContainer"></div>
+        </div>
+        
+        <div class="info">
+            <h3>Basic Working Map</h3>
+            <p>This is a simple, working map with basic zoom and pan:</p>
+            <ul>
+                <li><strong>Mouse wheel:</strong> Zoom in/out</li>
+                <li><strong>Drag:</strong> Pan around</li>
+                <li><strong>Click zones:</strong> Zoom to zone</li>
+                <li><strong>Buttons:</strong> Zoom controls</li>
+            </ul>
+            <p>Scale: <span id="scaleDisplay">1.0</span></p>
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn" onclick="zoomIn()">+</button>
+            <button class="control-btn" onclick="zoomOut()">-</button>
+            <button class="control-btn" onclick="reset()">Reset</button>
+        </div>
+    </div>
+    
+    <script>
+        // Simple state
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let lastMouseX = 0;
+        let lastMouseY = 0;
+        
+        // Get elements
+        const mapContainer = document.getElementById('mapContainer');
+        const mapContent = document.getElementById('mapContent');
+        const scaleDisplay = document.getElementById('scaleDisplay');
+        
+        // Mouse events
+        mapContainer.addEventListener('mousedown', startDrag);
+        mapContainer.addEventListener('mousemove', drag);
+        mapContainer.addEventListener('mouseup', endDrag);
+        mapContainer.addEventListener('wheel', zoom);
+        
+        function startDrag(e) {
+            isDragging = true;
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            mapContainer.classList.add('dragging');
+        }
+        
+        function drag(e) {
+            if (!isDragging) return;
+            
+            const deltaX = e.clientX - lastMouseX;
+            const deltaY = e.clientY - lastMouseY;
+            
+            translateX += deltaX;
+            translateY += deltaY;
+            
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            
+            updateTransform();
+        }
+        
+        function endDrag() {
+            isDragging = false;
+            mapContainer.classList.remove('dragging');
+        }
+        
+        function zoom(e) {
+            e.preventDefault();
+            
+            const rect = mapContainer.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+            
+            const delta = e.deltaY > 0 ? 0.9 : 1.1;
+            const newScale = Math.max(0.1, Math.min(5, scale * delta));
+            
+            // Calculate zoom towards mouse position
+            const worldX = (mouseX - translateX) / scale;
+            const worldY = (mouseY - translateY) / scale;
+            
+            scale = newScale;
+            translateX = mouseX - worldX * scale;
+            translateY = mouseY - worldY * scale;
+            
+            updateTransform();
+        }
+        
+        function zoomIn() {
+            scale = Math.min(5, scale * 1.2);
+            updateTransform();
+        }
+        
+        function zoomOut() {
+            scale = Math.max(0.1, scale / 1.2);
+            updateTransform();
+        }
+        
+        function reset() {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        }
+        
+        function updateTransform() {
+            mapContent.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+            scaleDisplay.textContent = scale.toFixed(2);
+        }
+        
+        // Add zones
+        const zones = [
+            { name: 'Europe', x: 1000, y: 300, width: 200, height: 100 },
+            { name: 'Asia', x: 1500, y: 200, width: 300, height: 150 },
+            { name: 'North America', x: 200, y: 200, width: 250, height: 200 },
+            { name: 'South America', x: 400, y: 600, width: 150, height: 200 },
+            { name: 'Africa', x: 1100, y: 500, width: 200, height: 250 },
+            { name: 'Australia', x: 1800, y: 700, width: 150, height: 100 }
+        ];
+        
+        function addZone(zone) {
+            const zonesContainer = document.getElementById('zonesContainer');
+            const zoneElement = document.createElement('div');
+            zoneElement.className = 'zone';
+            zoneElement.style.left = zone.x + 'px';
+            zoneElement.style.top = zone.y + 'px';
+            zoneElement.style.width = zone.width + 'px';
+            zoneElement.style.height = zone.height + 'px';
+            zoneElement.textContent = zone.name;
+            
+            zoneElement.addEventListener('click', () => {
+                console.log('Clicked zone:', zone.name);
+                zoomToZone(zone);
+            });
+            
+            zonesContainer.appendChild(zoneElement);
+        }
+        
+        function zoomToZone(zone) {
+            const rect = mapContainer.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const zoneCenterX = zone.x + zone.width / 2;
+            const zoneCenterY = zone.y + zone.height / 2;
+            
+            scale = 2;
+            translateX = centerX - zoneCenterX * scale;
+            translateY = centerY - zoneCenterY * scale;
+            
+            updateTransform();
+        }
+        
+        // Add all zones
+        zones.forEach(addZone);
+        
+        console.log('Basic map loaded with', zones.length, 'zones');
+    </script>
+</body>
+</html>

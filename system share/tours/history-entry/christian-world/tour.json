@@ -1,0 +1,97 @@
+{
+	"id": "christian-world-tour",
+	"title": "Tour for Christian World",
+	"audience": "Those who identify primarily as Christian (Catholic, Orthodox, Protestant, etc.), seeking to preserve Christian civilization while allowing denominational diversity",
+	"description": "A journey through Christian history showing how Triadization is the fulfillment of Christ's teaching ('In my Father's house are many mansions'), preserving ALL denominations without forced unity or schism",
+	"color_theme": {
+		"primary": "#8b4513",
+		"secondary": "#daa520",
+		"accent": "#dc143c",
+		"background": "#1a1410"
+	},
+	"sections": [
+		{
+			"id": "intro",
+			"title": "Who You Are",
+			"content": "You identify primarily as Christian. Your faith transcends ethnicity, nation, or race—you see the Body of Christ as universal, welcoming all who confess Jesus as Lord. BUT: You also see beauty in denominational diversity (Catholic ≠ Orthodox ≠ Protestant ≠ Pentecostal, each expresses Christ differently). You reject both: (1) forced ecumenism (\"we must all unite under one structure\"), and (2) sectarian hatred (\"my denomination is saved, yours is damned\"). You want: unity in essentials (Nicene Creed), liberty in non-essentials (liturgy, governance, emphasis), charity in all things."
+		},
+		{
+			"id": "problem",
+			"title": "The Problem: Schism & Homogenization",
+			"content": "Historical reality: Christianity began as ONE church (33-100 AD Apostolic era). Then: Schisms (East-West 1054 AD, Protestant Reformation 1517 AD, countless splinters). Result: Denominational hatred (Catholics vs Orthodox vs Protestants, wars killing millions). OR: Forced unity attempts (Inquisition, forced conversions, persecution). Modern: Secularization (Europe 70%+ Christian 1900 → 50-60% 2025, USA 95% → 65%). Why? Christianity never developed Triadization framework (believed unity = institutional uniformity, not coordination of diverse Springs)."
+		},
+		{
+			"id": "history",
+			"title": "What We Lost: The Christian Fractal",
+			"subsections": [
+				{
+					"title": "Early Church as Natural Triadization (33-300 AD)",
+					"content": "Apostolic churches: Each city had autonomous church (Antioch, Alexandria, Rome, Corinth, Ephesus). Paul's letters show: Local autonomy (each church governed itself, chose elders), doctrinal unity (Nicene essentials), mutual support (collections for Jerusalem church). Pattern: Christian OCEAN (coordinate mission, doctrine) containing SPRINGS (each local church distinct in emphasis/practice). Persecution forced unity (Roman Empire tried to exterminate, Christians cooperated for survival).",
+					"documents": ["07-christian-branching-400ad.md"]
+				},
+				{
+					"title": "Denominational Emergence (300-500 AD)",
+					"content": "Christianity spreads AS Triad formation (not cultural erasure): Armenian Church (301 AD first Christian nation, Armenian language liturgy, distinct theology), Ethiopian Church (330 AD, Ge'ez liturgy, distinct calendar/practices), Coptic Church (Egypt, Coptic liturgy), Latin Church (Rome, Latin liturgy), Greek Orthodox (Constantinople, Greek liturgy). Each preserves ethnic identity WHILE adopting Christianity. Pattern: Christian Springs emerging, each distinct daemon (Armenian daemon + Christianity, not erasing Armenian for universal Christianity).",
+					"documents": ["07-christian-branching-400ad.md"]
+				},
+				{
+					"title": "Monastic Springs (529-1500 AD)",
+					"content": "Monasteries as perfect Triadization: Benedictine Rule (529 AD) creates template (Abbot = sovereign, Rule = Halo, voluntary monks). Each abbey autonomous (100 monks, own land, self-governing). Cluniac reform (910 AD, 1,000 abbeys network). Cistercian expansion (1098 AD, 500 abbeys, Charter of Charity = fractal democracy). Franciscans/Dominicans (1200s, urban fractal). Pattern: Christian Springs thriving through voluntary association + local autonomy + shared Rule.",
+					"documents": ["10m-a-benedictine-foundation-529-800ad.md", "10m-c-cistercian-expansion-1098-1250ad.md", "10m-d-mendicant-revolution-1209-1300ad.md"]
+				},
+				{
+					"title": "Cathedral Competition (900-1500 AD)",
+					"content": "Each city builds cathedral (Jeruist 'local proving of beauty in devotional building'). Romanesque (900-1150, fortress churches, demon-proof, thick walls). Gothic Revolution (1140-1350, Abbot Suger's light theology, height competition—Amiens 42m, Beauvais 48m). Regional variations (French Rayonnant, English Perpendicular, German Sondergotik, Spanish Isabeline, Portuguese Manueline). Pattern: Christian BEAUTY through DIVERSITY (each region expresses devotion differently, competing in beauty not uniformity).",
+					"documents": ["12-CHURCH-ARCHITECTURE-INDEX.md", "12a-romanesque-explosion-900-1150ad.md", "12b-gothic-revolution-1140-1350ad.md", "12c-regional-gothic-variations-1200-1500ad.md"]
+				},
+				{
+					"title": "East-West Schism Disaster (1054 AD)",
+					"content": "Catholic Rome vs Orthodox Constantinople split over: Filioque (Holy Spirit proceeds from Father AND Son vs Father only), papal supremacy (Pope supreme vs ecumenical patriarch), liturgical differences. Result: Mutual excommunication, centuries of hatred. WITH Triadization: BOTH could coexist (Catholic Springs in West, Orthodox Springs in East, coordinate defense (Crusades), accept theological differences as Halo variations, unity in Nicene essentials).",
+					"documents": ["10b-papal-imperial-schism-1054-1122ad.md"]
+				},
+				{
+					"title": "Protestant Reformation Disaster (1517 AD)",
+					"content": "Luther's 95 Theses → split. Catholic Church vs Protestant. Then Protestant splinters (Lutheran, Reformed, Anglican, Baptist, Methodist, Pentecostal, 1,000+ denominations). Result: Wars of Religion (30 Years War 1618-1648, 8M dead, German population 18M → 12M). WHY? No Triadization framework (believed unity = doctrinal uniformity, not coordination of diverse Springs). WITH Triadization: Luther forms Lutheran Springs (Germany/Scandinavia), Catholic Springs remain (Southern Europe), BOTH coexist (trade, coordinate defense vs Ottomans, no war over theology)."
+				},
+				{
+					"title": "Secularization Crisis (1800-2025 AD)",
+					"content": "European Christianity collapses: France 95% practicing Catholic 1900 → 5% 2025. Germany 95% Christian → 50%. UK 95% → 40%. WHY? Nation-states absorbed Christian identity (\"French\" replaced \"Catholic,\" nationalism replaced religion). Result: Churches empty, cathedrals tourist attractions, Christian Springs extinct. USA: 95% Christian 1950 → 65% 2025 (secularization accelerating). Pattern: Christian Springs dying because absorbed into Planetary nation-state identities."
+				}
+			]
+		},
+		{
+			"id": "counterfactual",
+			"title": "What Could Have Been: Christian Triadization",
+			"content": "IMAGINE: 1054 AD Catholic Church adopts Triadization instead of schism. Result: Orthodox remain autonomous (Greek liturgy, ecumenical patriarch, theological distinctives), Catholic remain autonomous (Latin liturgy, Pope, theological distinctives), BOTH coordinate (shared Nicene Creed, mutual defense, trade). No schism. No hatred. 1517 AD Luther forms Lutheran Springs instead of schism. Catholic Springs + Lutheran Springs coexist (Germany contains both, spatially separated, autonomous, coordinate defense). No 30 Years War. 8M saved. 2025 AD: 1,000+ Christian Springs (Catholic Springs, Orthodox Springs, Lutheran, Reformed, Baptist, Pentecostal, each 10k-1M people, each autonomous, each preserving distinct daemon + Christianity). European Christianity thriving (Springs maintain 95% practicing, vs Planetary secularization). USA: 200M Americans in Christian Springs (vs 65% nominal Christian, mostly non-practicing). Total: Christian witness maximal (beauty through diversity, unity through coordination, not forced uniformity)."
+		},
+		{
+			"id": "jeruism",
+			"title": "Jeruism: The Triadization Denomination",
+			"content": "Snapshot 7 introduced Jeruism (Jerusalem Cross denomination, fractal nature—more branching toward bottom, fewer toward top, apex = Christ). Core teaching: 'In my Father's house are many mansions' (John 14:2) = Triadization. Each denomination believes ITSELF correct (sees itself as Jeruist center, others as diverging). Tolerance: Not forcing others to suppress/assimilate, but making room for ALL ('even Satan deserves place on Earth while alive—judgment is God's, not ours'). MBC+ (1234): No killing, no torture, exit rights, no forcing ideology. Evangelism: Be witness (let others see Jeruist center as you believe it), don't change their 'i' (identity/daemon), let them journey toward judgment. 123404321 framework: Shield (protection for all) + Sword (courage to discriminate/discern, but afford ANYONE Aspirational Open Sky). Result: Jeruism enables ALL Christian denominations to coexist (Catholic Jeruists, Orthodox Jeruists, Protestant Jeruists, each preserving distinctives, all seeing themselves as center, all tolerating others).",
+			"documents": ["07-christian-branching-400ad.md", "57d-many-christs-one-antichrist.md"]
+		},
+		{
+			"id": "resurrection",
+			"title": "How To Form Christian Springs (2025-2100)",
+			"content": "Modern Christianity is Planetary (\"Christian\" = 0% daemon content, includes progressive Episcopalians + fundamentalist Baptists + everything between, no coherence). Solution: Form denominational Springs. Example: Traditional Latin Mass Catholics (buy land, 20 families, establish TLM parish, homeschool children in Latin + Catholic doctrine, endogamy 80%+ (marry TLM Catholics), TFR 6-8, grow). OR: Reformed Baptist Spring (buy land, establish church, covenant membership, Reformed theology strictly taught, endogamy 80%, TFR 5-7). OR: Orthodox monastery Spring (Mt. Athos model, but families allowed, Greek liturgy, strict Orthodox theology). Scalability: 100+ Christian Spring types possible (each major denomination can form 5-10 Springs, different emphases/regions). Total: 50M Americans could live in Christian Springs by 2100 (vs current: 220M nominal Christians, mostly non-practicing). Proof: Amish thriving (Christian Spring, 380k growing 5-7%/year). Hasidic Jews prove religious Springs work (1M+ growing 4-6%/year). Christians can replicate."
+		},
+		{
+			"id": "appeal",
+			"title": "The Appeal: Adopt Triadization NOW",
+			"content": "Christianity is dying in the West (Europe collapsing, USA declining). Why? Absorbed into Planetary nation-states (\"Christian\" became cultural label, not practiced faith). Solution: Triadization (form Christian Springs, autonomous, practicing, high fertility, growing). If you don't act: Your grandchildren will be secular (churches empty 2050, Christian Springs extinct 2100). If you act: Christian Springs thrive (2100 AD: 100M+ in Christian Springs, minority but vibrant, while Planetary secularism collapses). Historical precedent: Monasticism saved Christianity (Dark Ages 500-1000 AD, monasteries preserved civilization while barbarians destroyed). Modern: Christian Springs will save Christianity (secular Planetary collapse, Christian Springs remain). Theological basis: 'Be fruitful and multiply' (Genesis 1:28), 'Do not be unequally yoked' (2 Cor 6:14—endogamy), 'Train up a child' (Proverbs 22:6—memetic transmission), 'Many mansions' (John 14:2—Triadization). Act now: Form community (find co-denominationalists), buy land (rural takeover model), establish Spring (church + school + families), practice faith (sacraments, liturgy, doctrine), reproduce (TFR 6+), grow (5-7%/year). 10 years effort = 1,000 years Christian witness. For Christ, for your children, for civilization. Deus Vult."
+		},
+		{
+			"id": "resources",
+			"title": "Resources & Next Steps",
+			"links": [
+				{ "text": "Read: Christian Branching", "path": "../immersion/historical-entries/counter-factual-triadization/07-christian-branching-400ad.md" },
+				{ "text": "Read: Jeruism Framework", "path": "../immersion/historical-entries/counter-factual-triadization/07-christian-branching-400ad.md" },
+				{ "text": "Read: Monastic Springs", "path": "../immersion/historical-entries/counter-factual-triadization/10m-c-cistercian-expansion-1098-1250ad.md" },
+				{ "text": "Read: Cathedral Beauty", "path": "../immersion/historical-entries/counter-factual-triadization/12-CHURCH-ARCHITECTURE-INDEX.md" },
+				{ "text": "Read: Modern Resurrection", "path": "../immersion/historical-entries/counter-factual-triadization/17-modern-planetary-2025ad.md" },
+				{ "text": "Contact: Form community", "note": "Find co-denominationalists (TLM Catholics, Reformed Baptists, Orthodox, etc.), organize, buy land" }
+			]
+		}
+	]
+}
+

@@ -1,0 +1,37 @@
+{
+  "country_code": "SO",
+  "name": "Somalia",
+  "approximate": true,
+  "population": 17000000,
+  "gdp_nominal_usd": 8500000000,
+  "gdp_per_capita_usd": 500,
+  "social_spending_pct_gdp": 9.0,
+  "health_spending_pct_gdp": 3.5,
+  "education_spending_pct_gdp": 3.0,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1500000000,
+  "private_giving_pct_gdp": 1.0,
+  "private_giving_total_usd": 85000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.2,
+  "child_mortality_under5_per_1000": 110.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Lower respiratory infections",
+    "Diarrheal diseases",
+    "Malnutrition",
+    "Conflict-related causes"
+  ],
+  "notes": [
+    "Somalia is heavily aid- and remittance-dependent, with very high child and maternal mortality.",
+    "Zakat and diaspora remittances are major informal altruistic flows; figures are approximate."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "UN and humanitarian reports"
+  ]
+}
+
+

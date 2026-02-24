@@ -1,0 +1,36 @@
+{
+  "country_code": "CH",
+  "name": "Switzerland",
+  "approximate": true,
+  "population": 8800000,
+  "gdp_nominal_usd": 950000000000,
+  "gdp_per_capita_usd": 95000,
+  "social_spending_pct_gdp": 21.0,
+  "health_spending_pct_gdp": 11.5,
+  "education_spending_pct_gdp": 5.5,
+  "oda_given_pct_gni": 0.55,
+  "oda_given_usd": 4500000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.6,
+  "private_giving_total_usd": 5500000000,
+  "volunteering_rate_pct_adults": 35.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 3.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia and Alzheimer's disease"
+  ],
+  "notes": [
+    "Switzerland hosts many NGOs and international organizations, amplifying its global altruistic role.",
+    "Financial centre status means assets under management far exceed domestic wealth."
+  ],
+  "sources": [
+    "Swiss Federal Statistical Office",
+    "Swiss government budget releases",
+    "OECD SOCX and DAC statistics",
+    "CAF World Giving Index"
+  ]
+}
+
+

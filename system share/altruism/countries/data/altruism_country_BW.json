@@ -1,0 +1,36 @@
+{
+  "country_code": "BW",
+  "name": "Botswana",
+  "approximate": true,
+  "population": 2500000,
+  "gdp_nominal_usd": 21000000000,
+  "gdp_per_capita_usd": 8400,
+  "social_spending_pct_gdp": 20.0,
+  "health_spending_pct_gdp": 7.0,
+  "education_spending_pct_gdp": 8.0,
+  "oda_given_pct_gni": 0.05,
+  "oda_given_usd": 10000000,
+  "oda_received_usd": 200000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 80000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.05,
+  "child_mortality_under5_per_1000": 37.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "HIV/AIDS",
+    "Cardiovascular diseases",
+    "Lower respiratory infections"
+  ],
+  "notes": [
+    "Botswana is an upper-middle-income country with high historical HIV prevalence, now much improved with ART.",
+    "Diamond revenues provide fiscal space for social spending and potential altruistic commitments."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Botswana government budget data"
+  ]
+}
+
+

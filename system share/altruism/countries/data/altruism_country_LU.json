@@ -1,0 +1,35 @@
+{
+  "country_code": "LU",
+  "name": "Luxembourg",
+  "approximate": true,
+  "population": 650000,
+  "gdp_nominal_usd": 85000000000,
+  "gdp_per_capita_usd": 130000,
+  "social_spending_pct_gdp": 23.0,
+  "health_spending_pct_gdp": 6.5,
+  "education_spending_pct_gdp": 5.0,
+  "oda_given_pct_gni": 1.0,
+  "oda_given_usd": 600000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.6,
+  "private_giving_total_usd": 500000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.02,
+  "child_mortality_under5_per_1000": 3.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia"
+  ],
+  "notes": [
+    "Luxembourg is both a top ODA/GNI donor and a major financial centre.",
+    "Assets under management in Luxembourg funds are large relative to its economy."
+  ],
+  "sources": [
+    "Luxembourg national statistics",
+    "OECD SOCX and DAC statistics",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

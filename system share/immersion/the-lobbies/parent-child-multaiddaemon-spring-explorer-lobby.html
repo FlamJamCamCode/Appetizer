@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent + Child Multaiddaemon: Neverland Spring Explorer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1e88e5 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1600px; margin: 0 auto; }
+        
+        .header {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.2), rgba(135, 206, 235, 0.2));
+            border-radius: 25px;
+            margin-bottom: 40px;
+            border: 3px solid rgba(30, 144, 255, 0.5);
+            box-shadow: 0 15px 50px rgba(30, 144, 255, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1E90FF, #87CEEB, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(30, 144, 255, 0.5);
+        }
+        
+        .multaiddaemon-status {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 35px;
+            border: 2px solid rgba(135, 206, 235, 0.4);
+        }
+        
+        .will-topology-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .topology-panel {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #FF69B4;
+        }
+        
+        .topology-panel.parent { border-left-color: #1E90FF; }
+        .topology-panel.child { border-left-color: #FF69B4; }
+        
+        .topology-panel h3 { color: #87CEEB; margin-bottom: 15px; }
+        
+        .will-dimension {
+            padding: 8px 0;
+            color: #b0b0b0;
+            font-size: 0.95em;
+        }
+        
+        .will-dimension strong { color: #1E90FF; }
+        
+        .springs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .spring-card {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(255, 105, 180, 0.1));
+            border-radius: 20px;
+            padding: 35px;
+            border: 2px solid rgba(30, 144, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .spring-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+        
+        .spring-card:hover::before { opacity: 1; }
+        
+        .spring-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(30, 144, 255, 0.8);
+            box-shadow: 0 15px 45px rgba(30, 144, 255, 0.4);
+        }
+        
+        .spring-card.high-coalescence {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.15), rgba(52, 152, 219, 0.15));
+            border-color: rgba(46, 204, 113, 0.6);
+        }
+        
+        .spring-card.high-coalescence:hover {
+            border-color: rgba(46, 204, 113, 1);
+            box-shadow: 0 15px 50px rgba(46, 204, 113, 0.5);
+        }
+        
+        .coalescence-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .coalescence-badge.perfect {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
+        }
+        
+        .coalescence-badge.high {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+        
+        .coalescence-badge.medium {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+        
+        .spring-name {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: #1E90FF;
+            font-weight: bold;
+        }
+        
+        .spring-tagline {
+            color: #95a5a6;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .color-visualization {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+        }
+        
+        .color-dimension {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        .dimension-name {
+            font-size: 0.85em;
+            color: #95a5a6;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .dimension-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.2;
+        }
+        
+        .hue { color: #FF69B4; }
+        .saturation { color: #1E90FF; }
+        .brightness { color: #FFD700; }
+        .pattern { color: #87CEEB; }
+        .warmth { color: #FF6347; }
+        .texture { color: #9370DB; }
+        
+        .will-matches {
+            margin: 25px 0;
+        }
+        
+        .will-match-item {
+            padding: 12px 18px;
+            margin: 8px 0;
+            background: rgba(46, 204, 113, 0.15);
+            border-left: 4px solid #2ecc71;
+            border-radius: 8px;
+        }
+        
+        .will-match-item.partial {
+            background: rgba(52, 152, 219, 0.15);
+            border-left-color: #3498db;
+        }
+        
+        .will-match-item strong { color: #2ecc71; }
+        .will-match-item.partial strong { color: #3498db; }
+        
+        .concerns {
+            background: rgba(231, 76, 60, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #e74c3c;
+            margin: 20px 0;
+        }
+        
+        .concerns h4 { color: #e74c3c; margin-bottom: 12px; }
+        
+        .concern { padding: 8px 0; color: #ecf0f1; font-size: 0.95em; }
+        
+        .join-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .join-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+        }
+        
+        .visit-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .visit-button:hover {
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 40px 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-overlay.active { display: block; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            border-radius: 25px;
+            padding: 50px;
+            border: 3px solid rgba(30, 144, 255, 0.6);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: rgba(231, 76, 60, 0.3);
+            border: 2px solid #e74c3c;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            color: #e74c3c;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .close-modal:hover {
+            background: rgba(231, 76, 60, 0.5);
+            transform: rotate(90deg);
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.6);
+        }
+        
+        .modal-content .spring-card {
+            border: none;
+            background: transparent;
+            cursor: default;
+            padding: 0;
+        }
+        
+        .modal-content .spring-card:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .modal-content .spring-card::before { display: none; }
+        
+        @media (max-width: 768px) {
+            .springs-grid { grid-template-columns: 1fr; }
+            .will-topology-summary { grid-template-columns: 1fr; }
+            .color-visualization { 
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+                padding: 15px;
+                gap: 10px;
+            }
+            .color-dimension { 
+                padding: 10px;
+                min-height: 90px;
+            }
+            .dimension-value { font-size: 1.4em; }
+            .dimension-name { font-size: 0.75em; }
+            .header h1 { font-size: 2em; }
+            .modal-content { padding: 30px 20px; }
+            .close-modal { top: 10px; right: 10px; width: 40px; height: 40px; }
+            .spring-name { font-size: 1.8em; }
+            .coalescence-badge { font-size: 0.75em; padding: 8px 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <div class="close-modal" onclick="closeModal()">×</div>
+            <!-- Card content will be inserted here -->
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <div class="header">
+            <h1>🏰 Welcome to Your Neverland Spring Explorer 🏰</h1>
+            <p style="font-size: 1.3em; color: #87CEEB; margin-top: 15px;">
+                Parent + Child Multaiddaemon: Finding Your Perfect Fantasy Realm
+            </p>
+            <p style="font-size: 1em; color: #95a5a6; margin-top: 15px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                You've formed a Multaiddaemon with your child through trusted aiddaemonic services. Now discover which Neverland Springs align with your combined will-topology—where BOTH parent and child thrive simultaneously.
+            </p>
+        </div>
+        
+        <div class="multaiddaemon-status">
+            <h2 style="color: #1E90FF; margin-bottom: 20px; text-align: center;">
+                ✦ Your Combined Will-Topology ✦
+            </h2>
+            
+            <div class="will-topology-summary">
+                <div class="topology-panel parent">
+                    <h3>👨👩 Parent's Will-Nebula</h3>
+                    <div class="will-dimension"><strong>Community:</strong> Want daemon-aligned brotherhood/sisterhood (not isolated)</div>
+                    <div class="will-dimension"><strong>Meaning:</strong> Want purpose through raising civilization builders</div>
+                    <div class="will-dimension"><strong>Rescue:</strong> Moderate-high altruistic will (want to help suffering children)</div>
+                    <div class="will-dimension"><strong>Career:</strong> Want to maintain productivity (30-40 hours/week work)</div>
+                    <div class="will-dimension"><strong>Economics:</strong> Want to avoid $750k traditional burden</div>
+                    <div class="will-dimension"><strong>Longevity:</strong> Want Tower medicine access (cancer cure, anti-aging)</div>
+                    <div class="will-dimension"><strong>Protection:</strong> Want children protected from gaming addiction</div>
+                </div>
+                
+                <div class="topology-panel child">
+                    <h3>👧👦 Child's Will-Nebula</h3>
+                    <div class="will-dimension"><strong>Freedom:</strong> Want to explore, not sit in classroom</div>
+                    <div class="will-dimension"><strong>Play:</strong> Want fantasy, adventure, narrative</div>
+                    <div class="will-dimension"><strong>Discovery:</strong> Want to find what they love (daemon emergence)</div>
+                    <div class="will-dimension"><strong>Safety:</strong> Want protection, no exploitation</div>
+                    <div class="will-dimension"><strong>Friends:</strong> Want multi-age community (not age-segregated)</div>
+                    <div class="will-dimension"><strong>Purpose:</strong> Want to contribute meaningfully (not passive consumer)</div>
+                    <div class="will-dimension"><strong>Recognition:</strong> Want achievements to matter (not just pixels)</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 25px; color: #87CEEB; font-size: 1.1em;">
+                Below are Springs ranked by will-coalescence with your Multaiddaemon topology.
+                Color visualization shows: <span style="color: #FF69B4;">Hue</span> (pathway type), 
+                <span style="color: #1E90FF;">Saturation</span> (transformation intensity), 
+                <span style="color: #FFD700;">Brightness</span> (hope level), 
+                <span style="color: #87CEEB;">Pattern</span> (complexity), 
+                <span style="color: #FF6347;">Warmth</span> (emotional resonance), 
+                <span style="color: #9370DB;">Texture</span> (embodied richness).
+            </p>
+        </div>
+
+        <div class="springs-grid">
+            <!-- PERFECT MATCH: Builder-Rescuer Spring -->
+            <div class="spring-card high-coalescence">
+                <div class="coalescence-badge perfect">✦ 98% Will-Match ✦</div>
+                
+                <div class="spring-name">🛠️ Cascadia Builder-Rescuer Spring</div>
+                <div class="spring-tagline">Where Building Masters Rescue Suffering Children</div>
+                
+                <div class="color-visualization">
+                    <div class="color-dimension">
+                        <div class="dimension-name">Hue</div>
+                        <div class="dimension-value hue">Builder+Altruist</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Saturation</div>
+                        <div class="dimension-value saturation">Maximum</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Brightness</div>
+                        <div class="dimension-value brightness">Radiant</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Pattern</div>
+                        <div class="dimension-value pattern">Complex</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Warmth</div>
+                        <div class="dimension-value warmth">Deep Love</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Texture</div>
+                        <div class="dimension-value texture">Rich Embodied</div>
+                    </div>
+                </div>
+                
+                <div class="will-matches">
+                    <h4 style="color: #2ecc71; margin-bottom: 12px;">✓ Perfect Will-Coalescence</h4>
+                    <div class="will-match-item"><strong>Parent's community will:</strong> 85 builder-daemon families, deep brotherhood, daily meaningful cooperation</div>
+                    <div class="will-match-item"><strong>Parent's rescue will:</strong> 40 rescued children currently (Cambodia, Philippines, rural poverty), altruist culture strong</div>
+                    <div class="will-match-item"><strong>Parent's career will:</strong> Remote work supported, 35 hours/week average productivity, Spring-internal tech projects available</div>
+                    <div class="will-match-item"><strong>Parent's economics:</strong> $287k total vs. $750k traditional—saved $463k, Tower medicine included</div>
+                    <div class="will-match-item"><strong>Parent's longevity:</strong> Tower lab on-site (cancer cure access, anti-aging treatments, gene therapy pipeline)</div>
+                    <div class="will-match-item"><strong>Child's freedom:</strong> 400-acre free-roam (woods, stream, meadows), AR quests everywhere</div>
+                    <div class="will-match-item"><strong>Child's play:</strong> Medieval-steampunk fusion aesthetic, intricate quest lines, epic story arcs</div>
+                    <div class="will-match-item"><strong>Child's discovery:</strong> Builder focus but multidaemon support (workshops, library, training yard, studios)</div>
+                    <div class="will-match-item"><strong>Child's friends:</strong> 120 children (ages 5-17), multi-age brotherhood, rescued + native integrated perfectly</div>
+                    <div class="will-match-item"><strong>Child's purpose:</strong> Building real infrastructure through AR quests, see tangible results daily</div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #87CEEB; margin-bottom: 15px;">📊 Spring Metrics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div><span style="color: #95a5a6;">Families:</span> <strong style="color: #2ecc71;">85</strong></div>
+                        <div><span style="color: #95a5a6;">Children:</span> <strong style="color: #2ecc71;">120</strong></div>
+                        <div><span style="color: #95a5a6;">Duty:</span> <strong style="color: #2ecc71;">10 hrs/week</strong></div>
+                        <div><span style="color: #95a5a6;">Cost:</span> <strong style="color: #2ecc71;">$75k buy-in</strong></div>
+                        <div><span style="color: #95a5a6;">Land:</span> <strong style="color: #2ecc71;">400 acres</strong></div>
+                        <div><span style="color: #95a5a6;">Founded:</span> <strong style="color: #2ecc71;">2028</strong></div>
+                        <div><span style="color: #95a5a6;">Depression:</span> <strong style="color: #2ecc71;">1.7%</strong></div>
+                        <div><span style="color: #95a5a6;">Parent Satisfaction:</span> <strong style="color: #2ecc71;">99%</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button" onclick="alert('Connect with Cascadia Builder-Rescuer Spring:\n\nInitiate full will-topology mapping session to verify 98% coalescence.\n\nVisit dates available: Next 3 weekends\n\n3-day immersion includes:\n- GM shadow (follow current Game Master parent)\n- Children meet existing children (daemon compatibility test)\n- Workshop participation (build something together)\n- Great Hall dinners (community bonding)\n- Quest design session (create AR quest for children)\n- Final decision conversation\n\nAfter visit, if both parties confirm alignment:\n- Application submitted to Spring council\n- Vote within 2 weeks (85 families vote)\n- If accepted: 90-day transition period to move in\n\nWould you like to schedule your visit?')">
+                    🌟 Schedule 3-Day Visit (98% Match)
+                </button>
+            </div>
+
+            <!-- HIGH MATCH: Scholar-Contemplative Spring -->
+            <div class="spring-card high-coalescence">
+                <div class="coalescence-badge high">87% Will-Match</div>
+                
+                <div class="spring-name">📚 Appalachian Scholar-Contemplative Spring</div>
+                <div class="spring-tagline">Where Deep Learning Meets Mountain Serenity</div>
+                
+                <div class="color-visualization">
+                    <div class="color-dimension">
+                        <div class="dimension-name">Hue</div>
+                        <div class="dimension-value hue">Scholar+Peace</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Saturation</div>
+                        <div class="dimension-value saturation">High</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Brightness</div>
+                        <div class="dimension-value brightness">Serene</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Pattern</div>
+                        <div class="dimension-value pattern">Contemplative</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Warmth</div>
+                        <div class="dimension-value warmth">Gentle</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Texture</div>
+                        <div class="dimension-value texture">Scholarly</div>
+                    </div>
+                </div>
+                
+                <div class="will-matches">
+                    <h4 style="color: #3498db; margin-bottom: 12px;">✓ Strong Will-Coalescence</h4>
+                    <div class="will-match-item"><strong>Parent's community:</strong> 45 scholar-daemon families, contemplative culture, quiet depth</div>
+                    <div class="will-match-item"><strong>Child's discovery:</strong> Library-as-sacred-space (40,000 books), research quests, deep learning celebrated</div>
+                    <div class="will-match-item"><strong>Tower medicine:</strong> Access through Sea-level coordination (neighboring Spring has lab)</div>
+                    <div class="will-match-item partial"><strong>Child's play (partial match):</strong> Less action-oriented (contemplative quests, reading, nature observation), may want more physical adventure</div>
+                    <div class="will-match-item partial"><strong>Parent's rescue will (partial match):</strong> 8 rescued children (smaller program), focus on trauma-healing through quiet environment</div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #87CEEB; margin-bottom: 15px;">📊 Spring Metrics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div><span style="color: #95a5a6;">Families:</span> <strong style="color: #3498db;">45</strong></div>
+                        <div><span style="color: #95a5a6;">Children:</span> <strong style="color: #3498db;">65</strong></div>
+                        <div><span style="color: #95a5a6;">Duty:</span> <strong style="color: #3498db;">12 hrs/week</strong></div>
+                        <div><span style="color: #95a5a6;">Cost:</span> <strong style="color: #3498db;">$90k buy-in</strong></div>
+                        <div><span style="color: #95a5a6;">Land:</span> <strong style="color: #3498db;">250 acres</strong></div>
+                        <div><span style="color: #95a5a6;">Depression:</span> <strong style="color: #3498db;">0.8%</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button visit-button" onclick="alert('87% match suggests STRONG alignment, but partial match on action-orientation.\n\nRecommendation: Visit to assess if contemplative pace suits your child\'s energy level.\n\nBest for: Children who love reading, quiet discovery, depth over breadth.\n\nMay not suit: High-energy children wanting constant physical challenge.')">
+                    📅 Schedule Visit (87% Match—Assess Energy Fit)
+                </button>
+            </div>
+
+            <!-- HIGH MATCH: Warrior-Athletic Spring -->
+            <div class="spring-card high-coalescence">
+                <div class="coalescence-badge high">89% Will-Match</div>
+                
+                <div class="spring-name">⚔️ Colorado Warrior-Athletic Spring</div>
+                <div class="spring-tagline">Where Heroes Are Forged Through Challenge</div>
+                
+                <div class="color-visualization">
+                    <div class="color-dimension">
+                        <div class="dimension-name">Hue</div>
+                        <div class="dimension-value hue">Warrior+Honor</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Saturation</div>
+                        <div class="dimension-value saturation">Intense</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Brightness</div>
+                        <div class="dimension-value brightness">Glorious</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Pattern</div>
+                        <div class="dimension-value pattern">Competitive</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Warmth</div>
+                        <div class="dimension-value warmth">Brotherhood</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Texture</div>
+                        <div class="dimension-value texture">Physical</div>
+                    </div>
+                </div>
+                
+                <div class="will-matches">
+                    <h4 style="color: #3498db; margin-bottom: 12px;">✓ Strong Will-Coalescence</h4>
+                    <div class="will-match-item"><strong>Child's adventure:</strong> Mountain terrain, combat training, competitive quests, honor system</div>
+                    <div class="will-match-item"><strong>Child's purpose:</strong> Protect younger children, train daily, see physical growth (stat increases tangible)</div>
+                    <div class="will-match-item"><strong>Parent's community:</strong> 60 warrior/athletic-daemon families, intense brotherhood culture</div>
+                    <div class="will-match-item"><strong>Gaming protection:</strong> Total ban, physical challenge replaces digital dopamine</div>
+                    <div class="will-match-item partial"><strong>Parent's career (partial):</strong> Remote work possible but 15 hours/week duty (higher than average), may reduce productivity to 25-30 hours/week</div>
+                    <div class="will-match-item partial"><strong>Rescue program (partial):</strong> 12 rescued children, smaller program, focus on physical healing through challenge</div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #87CEEB; margin-bottom: 15px;">📊 Spring Metrics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div><span style="color: #95a5a6;">Families:</span> <strong style="color: #3498db;">60</strong></div>
+                        <div><span style="color: #95a5a6;">Children:</span> <strong style="color: #3498db;">95</strong></div>
+                        <div><span style="color: #95a5a6;">Duty:</span> <strong style="color: #3498db;">15 hrs/week</strong></div>
+                        <div><span style="color: #95a5a6;">Cost:</span> <strong style="color: #3498db;">$85k buy-in</strong></div>
+                        <div><span style="color: #95a5a6;">Land:</span> <strong style="color: #3498db;">500 acres</strong></div>
+                        <div><span style="color: #95a5a6;">Depression:</strong> <strong style="color: #3498db;">2.1%</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button visit-button" onclick="alert('89% match suggests strong alignment, but note higher duty requirement (15 hours/week).\n\nBest for: Parents willing to commit extra 5 hours/week, children with warrior daemon (love combat, competition, physical challenge).\n\nTrade-off: Higher duty → more intense community → faster skill development.')">
+                    📅 Schedule Visit (89% Match—Higher Duty, Higher Intensity)
+                </button>
+            </div>
+
+            <!-- MEDIUM-HIGH MATCH: Artist-Beauty Spring -->
+            <div class="spring-card">
+                <div class="coalescence-badge medium">76% Will-Match</div>
+                
+                <div class="spring-name">🎨 Vermont Artist-Beauty Spring</div>
+                <div class="spring-tagline">Where Every Quest Creates Beauty</div>
+                
+                <div class="color-visualization">
+                    <div class="color-dimension">
+                        <div class="dimension-name">Hue</div>
+                        <div class="dimension-value hue">Artist+Aesthetic</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Saturation</div>
+                        <div class="dimension-value saturation">Rich</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Brightness</div>
+                        <div class="dimension-value brightness">Beautiful</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Pattern</div>
+                        <div class="dimension-value pattern">Aesthetic</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Warmth</div>
+                        <div class="dimension-value warmth">Artistic</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Texture</div>
+                        <div class="dimension-value texture">Sensory</div>
+                    </div>
+                </div>
+                
+                <div class="will-matches">
+                    <h4 style="color: #f39c12; margin-bottom: 12px;">Moderate Will-Coalescence</h4>
+                    <div class="will-match-item"><strong>Child's beauty:</strong> Every building is artwork, AR aesthetic perfection, gardens everywhere</div>
+                    <div class="will-match-item"><strong>Child's expression:</strong> Art studios, music rooms, theater, children create constantly</div>
+                    <div class="will-match-item partial"><strong>Builder will (partial):</strong> Artist focus (may not satisfy if parent/child has strong builder daemon—less hands-on construction)</div>
+                    <div class="will-match-item partial"><strong>Rescue program (partial):</strong> 5 rescued children (small program, focus on art therapy)</div>
+                    <div class="will-match-item partial"><strong>Physical activity (partial):</strong> Less free-roam exploration (more studio time), may not suit high-energy children</div>
+                </div>
+                
+                <div class="concerns">
+                    <h4>⚠️ Compatibility Considerations</h4>
+                    <div class="concern">• If your child has builder daemon, may feel constrained by aesthetic-over-function priority</div>
+                    <div class="concern">• If you have strong rescue will, smaller program may feel insufficient</div>
+                    <div class="concern">• Duty includes art (painting, music, theater)—if not artistically inclined, may feel burdensome</div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #87CEEB; margin-bottom: 15px;">📊 Spring Metrics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div><span style="color: #95a5a6;">Families:</span> <strong style="color: #f39c12;">35</strong></div>
+                        <div><span style="color: #95a5a6;">Children:</span> <strong style="color: #f39c12;">50</strong></div>
+                        <div><span style="color: #95a5a6;">Duty:</span> <strong style="color: #f39c12;">12 hrs/week</strong></div>
+                        <div><span style="color: #95a5a6;">Cost:</span> <strong style="color: #f39c12;">$110k buy-in</strong></div>
+                        <div><span style="color: #95a5a6;">Depression:</span> <strong style="color: #f39c12;">2.8%</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button visit-button" onclick="alert('76% match indicates moderate alignment.\n\nRecommend: Visit if your child shows artist daemon (loves beauty, expression, aesthetics over function).\n\nMay not suit: Builder-daemon children who want hands-on construction over artistic creation.')">
+                    📅 Consider Visit (76% Match—If Artist Daemon)
+                </button>
+            </div>
+
+            <!-- PERFECT MATCH: Mixed-Daemon Inclusive Spring -->
+            <div class="spring-card high-coalescence">
+                <div class="coalescence-badge perfect">✦ 94% Will-Match ✦</div>
+                
+                <div class="spring-name">🌈 Pacific Northwest Multidaemon Spring</div>
+                <div class="spring-tagline">Where All Daemons Discover Together</div>
+                
+                <div class="color-visualization">
+                    <div class="color-dimension">
+                        <div class="dimension-name">Hue</div>
+                        <div class="dimension-value hue">Multidaemon</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Saturation</div>
+                        <div class="dimension-value saturation">Very High</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Brightness</div>
+                        <div class="dimension-value brightness">Radiant</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Pattern</div>
+                        <div class="dimension-value pattern">Diverse</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Warmth</div>
+                        <div class="dimension-value warmth">Inclusive</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Texture</div>
+                        <div class="dimension-value texture">Multi-layered</div>
+                    </div>
+                </div>
+                
+                <div class="will-matches">
+                    <h4 style="color: #2ecc71; margin-bottom: 12px;">✓ Near-Perfect Will-Coalescence</h4>
+                    <div class="will-match-item"><strong>Child's discovery:</strong> ALL daemon types supported (workshops, library, training yard, studios), child discovers natural alignment without forced specialization</div>
+                    <div class="will-match-item"><strong>Parent's community:</strong> 100 families, diverse daemons, mutual respect culture (builders + scholars + warriors + artists coexisting)</div>
+                    <div class="will-match-item"><strong>Parent's rescue will:</strong> 55 rescued children (largest program in network), altruist culture strong, trauma specialists on-site</div>
+                    <div class="will-match-item"><strong>Parent's career:</strong> Remote work supported, Spring-internal economy robust (can work within Spring)</div>
+                    <div class="will-match-item"><strong>Child's friends:</strong> 145 children, massive social network, find daemon-aligned friends naturally (warriors find warriors, scholars find scholars)</div>
+                    <div class="will-match-item"><strong>Tower medicine:</strong> Full lab on-site (cancer cure, anti-aging, gene therapy research active)</div>
+                    <div class="will-match-item"><strong>Gaming protection:</strong> Absolute ban, but diverse alternative outlets (physical competition for warriors, deep books for scholars, creation for artists)</div>
+                </div>
+                
+                <div style="background: rgba(46, 204, 113, 0.1); padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid rgba(46, 204, 113, 0.3);">
+                    <h4 style="color: #2ecc71; margin-bottom: 15px;">✨ Special Features</h4>
+                    <div style="color: #ecf0f1; line-height: 1.8;">
+                        <strong style="color: #2ecc71;">Daemon Discovery Protocol:</strong> First 6 months, children try ALL guilds (Warrior, Scholar, Artisan, Performer), GMs observe natural preferences, children gradually specialize based on what they love (not forced).<br><br>
+                        <strong style="color: #2ecc71;">Rescued Children Integration:</strong> Largest program (55 children), dedicated trauma specialists, mentorship by older rescued children (those who transformed now help others), 98% integration success rate.<br><br>
+                        <strong style="color: #2ecc71;">Sea-Level Coordination:</strong> Part of 12-Spring Sea (Pacific Northwest Sea), shares resources, children can visit other Springs (cross-Spring quests), parents coordinate major projects.
+                    </div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #87CEEB; margin-bottom: 15px;">📊 Spring Metrics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div><span style="color: #95a5a6;">Families:</span> <strong style="color: #2ecc71;">100</strong></div>
+                        <div><span style="color: #95a5a6;">Children:</span> <strong style="color: #2ecc71;">145</strong></div>
+                        <div><span style="color: #95a5a6;">Duty:</span> <strong style="color: #2ecc71;">10 hrs/week</strong></div>
+                        <div><span style="color: #95a5a6;">Cost:</span> <strong style="color: #2ecc71;">$80k buy-in</strong></div>
+                        <div><span style="color: #95a5a6;">Land:</span> <strong style="color: #2ecc71;">600 acres</strong></div>
+                        <div><span style="color: #95a5a6;">Founded:</span> <strong style="color: #2ecc71;">2029</strong></div>
+                        <div><span style="color: #95a5a6;">Depression:</span> <strong style="color: #2ecc71;">1.9%</strong></div>
+                        <div><span style="color: #95a5a6;">Sea Affiliation:</strong> <strong style="color: #2ecc71;">Pacific NW (12 Springs)</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button" onclick="alert('94% will-match indicates NEAR-PERFECT alignment!\n\nMultidaemon approach means:\n- Your child discovers their true daemon (not forced into one path)\n- All your parent wills satisfied (community + rescue + career + medicine + protection)\n- Largest rescued children program (if altruism important to you)\n- Sea-level benefits (access to 12 Springs, massive network)\n\nRecommendation: STRONG candidate. Schedule visit immediately.\n\nWaiting list: 45 families currently (high demand, typical wait 6-12 months)')">
+                    🌟 Schedule Visit ASAP (94% Match—Waiting List Active)
+                </button>
+            </div>
+
+            <!-- MEDIUM MATCH: Traditional-Values Spring -->
+            <div class="spring-card">
+                <div class="coalescence-badge medium">68% Will-Match</div>
+                
+                <div class="spring-name">⛪ Tennessee Traditional-Values Spring</div>
+                <div class="spring-tagline">Where Faith + Family + Heritage Converge</div>
+                
+                <div class="color-visualization">
+                    <div class="color-dimension">
+                        <div class="dimension-name">Hue</div>
+                        <div class="dimension-value hue">Traditional</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Saturation</div>
+                        <div class="dimension-value saturation">Moderate</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Brightness</div>
+                        <div class="dimension-value brightness">Stable</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Pattern</div>
+                        <div class="dimension-value pattern">Structured</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Warmth</div>
+                        <div class="dimension-value warmth">Familial</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Texture</div>
+                        <div class="dimension-value texture">Traditional</div>
+                    </div>
+                </div>
+                
+                <div class="will-matches">
+                    <h4 style="color: #f39c12; margin-bottom: 12px;">Moderate Will-Coalescence</h4>
+                    <div class="will-match-item partial"><strong>Community:</strong> 50 families, strong Christian culture (if you're Christian this is ++, if not may feel alienated)</div>
+                    <div class="will-match-item partial"><strong>Child's discovery (partial):</strong> More structured curriculum (Christian classical education through AR), less free-roam daemon discovery</div>
+                    <div class="will-match-item partial"><strong>Daemon diversity (partial):</strong> Emphasis on traditional roles (may not suit if child has warrior/builder daemon outside gendered expectations)</div>
+                    <div class="will-match-item"><strong>Gaming protection:</strong> Total, strong family values culture supports</div>
+                    <div class="will-match-item partial"><strong>Rescue program:</strong> None (focus on own children, not external rescue)</div>
+                </div>
+                
+                <div class="concerns">
+                    <h4>⚠️ Compatibility Considerations</h4>
+                    <div class="concern">• Christian faith expected (not required, but cultural assumption—may feel outsider if non-Christian)</div>
+                    <div class="concern">• Less rescue focus (if altruistic will strong, may feel unfulfilled)</div>
+                    <div class="concern">• More structured (less free-roam discovery, may constrain daemon expression)</div>
+                    <div class="concern">• Traditional gender roles assumed (boys→warriors, girls→nurturers as default—daemon diversity less celebrated)</div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #87CEEB; margin-bottom: 15px;">📊 Spring Metrics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div><span style="color: #95a5a6;">Families:</span> <strong style="color: #f39c12;">50</strong></div>
+                        <div><span style="color: #95a5a6;">Children:</span> <strong style="color: #f39c12;">80</strong></div>
+                        <div><span style="color: #95a5a6;">Duty:</span> <strong style="color: #f39c12;">12 hrs/week</strong></div>
+                        <div><span style="color: #95a5a6;">Cost:</span> <strong style="color: #f39c12;">$65k buy-in</strong></div>
+                        <div><span style="color: #95a5a6;">Depression:</span> <strong style="color: #f39c12;">3.2%</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button visit-button" onclick="alert('68% match suggests MODERATE alignment.\n\nBest for: Christian parents valuing tradition + structure, children fitting traditional gender roles.\n\nMay not suit: Non-Christians, strong altruist will, children with non-traditional daemon expression.')">
+                    📅 Consider Visit (68% Match—If Christian + Traditional)
+                </button>
+            </div>
+
+            <!-- HIGH MATCH: Altruist-Rescue Specialist Spring -->
+            <div class="spring-card high-coalescence">
+                <div class="coalescence-badge high">91% Will-Match</div>
+                
+                <div class="spring-name">💝 Arizona Altruist-Rescue Spring</div>
+                <div class="spring-tagline">Where Every Child Is Rescued, Every Parent Is Hero</div>
+                
+                <div class="color-visualization">
+                    <div class="color-dimension">
+                        <div class="dimension-name">Hue</div>
+                        <div class="dimension-value hue">Altruist+Rescue</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Saturation</div>
+                        <div class="dimension-value saturation">Maximum</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Brightness</div>
+                        <div class="dimension-value brightness">Hopeful</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Pattern</div>
+                        <div class="dimension-value pattern">Healing</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Warmth</div>
+                        <div class="dimension-value warmth">Profound Love</div>
+                    </div>
+                    <div class="color-dimension">
+                        <div class="dimension-name">Texture</div>
+                        <div class="dimension-value texture">Transformative</div>
+                    </div>
+                </div>
+                
+                <div class="will-matches">
+                    <h4 style="color: #2ecc71; margin-bottom: 12px;">✓ Exceptional Will-Coalescence</h4>
+                    <div class="will-match-item"><strong>Parent's altruism:</strong> PEAK fulfillment—70 rescued children (highest ratio: 70 rescued, 45 native), rescue is central mission</div>
+                    <div class="will-match-item"><strong>Transformation witnessing:</strong> Daily see children healing (trauma → thriving, despair → hope, exploitation → freedom)</div>
+                    <div class="will-match-item"><strong>Community meaning:</strong> Every family is altruist (shared daemon), entire culture oriented toward rescue + healing</div>
+                    <div class="will-match-item"><strong>Child integration:</strong> Native children taught from birth to welcome rescued (no stigma, integration seamless, brotherhood culture)</div>
+                    <div class="will-match-item"><strong>Child's friends:</strong> Diverse backgrounds (Cambodia, Philippines, Afghanistan, rural poverty + native), profound cross-cultural learning</div>
+                    <div class="will-match-item"><strong>Tower medicine:</strong> Full lab (specializing in trauma + tropical diseases common in rescued children's origin countries)</div>
+                    <div class="will-match-item partial"><strong>Builder focus (moderate):</strong> Workshops exist but rescue is priority (if parent/child has extreme builder daemon, may want more building-focused Spring)</div>
+                </div>
+                
+                <div style="background: rgba(46, 204, 113, 0.15); padding: 25px; border-radius: 12px; margin: 20px 0; border: 2px solid rgba(46, 204, 113, 0.4);">
+                    <h4 style="color: #2ecc71; margin-bottom: 15px; font-size: 1.3em;">🌟 Rescue Program Details</h4>
+                    <div style="color: #ecf0f1; line-height: 1.9; font-size: 1.05em;">
+                        <strong>Current rescued children: 70</strong> (ages 8-17)<br>
+                        • 28 from Cambodia (prostitution, starvation)<br>
+                        • 18 from Philippines (child brides, poverty)<br>
+                        • 12 from Afghanistan (child marriage, war orphans)<br>
+                        • 12 from rural poverty (USA, Mexico, Central America)<br><br>
+                        <strong>Transformation rate: 96%</strong> (68 of 70 thriving by Year 2)<br>
+                        <strong>Integration rate: 98%</strong> (native children treat rescued as full siblings)<br>
+                        <strong>Altruist parent satisfaction: 100%</strong> ("This is my life's purpose")<br><br>
+                        <strong>Your role if you join:</strong> Adopt 1-2 rescued children (as Game Master parent), contribute to rescue fund (10% of duty hours toward rescue operations), mentor other altruist parents, witness transformation daily.
+                    </div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #87CEEB; margin-bottom: 15px;">📊 Spring Metrics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div><span style="color: #95a5a6;">Families:</span> <strong style="color: #2ecc71;">70 (45 native, 25 altruist adoptive)</strong></div>
+                        <div><span style="color: #95a5a6;">Children:</span> <strong style="color: #2ecc71;">115 (70 rescued, 45 native)</strong></div>
+                        <div><span style="color: #95a5a6;">Duty:</span> <strong style="color: #2ecc71;">12 hrs/week</strong></div>
+                        <div><span style="color: #95a5a6;">Cost:</span> <strong style="color: #2ecc71;">$70k buy-in</strong></div>
+                        <div><span style="color: #95a5a6;">Land:</span> <strong style="color: #2ecc71;">550 acres</strong></div>
+                        <div><span style="color: #95a5a6;">Depression:</span> <strong style="color: #2ecc71;">2.2%</strong></div>
+                        <div><span style="color: #95a5a6;">Founded:</span> <strong style="color: #2ecc71;">2028</strong></div>
+                        <div><span style="color: #95a5a6;">Altruist Satisfaction:</span> <strong style="color: #2ecc71;">100%</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button" onclick="alert('91% will-match with PEAK altruism fulfillment!\n\nRecommended if:\n✓ You have strong rescue will (want to save suffering children)\n✓ Your child has empathy/altruism emerging (will thrive in rescue culture)\n✓ You want to witness transformation daily (most meaningful work possible)\n\nThis Spring is HIGHEST match for altruistic parents.\n\nNext steps:\n1. Schedule 3-day visit\n2. Meet rescued + native children\n3. Shadow altruist parents\n4. Discuss adoption (1-2 rescued children)\n5. Apply if aligned\n\nWaiting list: 30 families (12-18 month wait—high demand for altruist Springs)')">
+                    🌟 Schedule Visit (91% Match—PEAK Altruism)
+                </button>
+            </div>
+
+            <!-- NEW SPRING FOUNDING OPPORTUNITY -->
+            <div class="spring-card" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 140, 0, 0.15)); border-color: rgba(255, 215, 0, 0.5);">
+                <div class="coalescence-badge perfect" style="background: linear-gradient(135deg, #FFD700, #FFA500);">✦ Found Your Own ✦</div>
+                
+                <div class="spring-name" style="color: #FFD700;">🏗️ Found Your Own Spring</div>
+                <div class="spring-tagline" style="color: #DAA520;">Design Perfect Will-Coalescence From Scratch</div>
+                
+                <div style="background: rgba(255, 215, 0, 0.1); padding: 25px; border-radius: 12px; margin: 20px 0; border: 2px solid rgba(255, 215, 0, 0.3);">
+                    <h4 style="color: #FFD700; margin-bottom: 15px;">Why Found Your Own?</h4>
+                    <div style="color: #ecf0f1; line-height: 1.8;">
+                        <strong>100% will-coalescence guaranteed</strong> because YOU design it to match YOUR exact will-topology.<br><br>
+                        
+                        <strong>If existing Springs don't perfectly match:</strong><br>
+                        • Want more builder focus than Cascadia<br>
+                        • Want more rescue than Arizona<br>
+                        • Want specific aesthetic (your AR fantasy vision)<br>
+                        • Want specific location (your preferred region)<br>
+                        • Want specific community size (smaller/larger than existing)<br><br>
+                        
+                        <strong>Requirements:</strong><br>
+                        • Find 30-50 daemon-aligned families (your will-topology)<br>
+                        • Pool $3-5M ($100k/family average)<br>
+                        • Commit 12-18 months founding period<br>
+                        • Total commitment (this becomes your legacy)<br><br>
+                        
+                        <strong>Process:</strong><br>
+                        1. Form founding coalition (network, recruit, align)<br>
+                        2. Site selection (200-500 acres, $3-5M including land + infrastructure)<br>
+                        3. Construction (families contribute 20 hours/week duty, build together)<br>
+                        4. AR implementation (partner with tech startup or build custom)<br>
+                        5. Launch (Month 18—children enter, fantasy goes live)<br>
+                        6. Iterate (Year 1-3—discover what works, adjust based on children's daemon discovery)<br>
+                        7. Scale (Year 3-5—at capacity, help found new Springs, form Sea)<br><br>
+                        
+                        <strong>Legacy:</strong> Your grandchildren grow up in world YOU built. You're founder, not participant. Maximum impact.
+                    </div>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #FFD700; margin-bottom: 15px;">📊 Founding Expectations</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; color: #ecf0f1;">
+                        <div><span style="color: #95a5a6;">Timeline:</span> <strong style="color: #FFD700;">12-18 months</strong></div>
+                        <div><span style="color: #95a5a6;">Total Cost:</span> <strong style="color: #FFD700;">$3-5M pooled</strong></div>
+                        <div><span style="color: #95a5a6;">Per Family:</span> <strong style="color: #FFD700;">$100k average</strong></div>
+                        <div><span style="color: #95a5a6;">Founding Duty:</span> <strong style="color: #FFD700;">20 hrs/week Year 1</strong></div>
+                        <div><span style="color: #95a5a6;">Expected Size:</span> <strong style="color: #FFD700;">50-100 families by Year 3</strong></div>
+                        <div><span style="color: #95a5a6;">Will-Match:</span> <strong style="color: #FFD700;">100% (you design it!)</strong></div>
+                    </div>
+                </div>
+                
+                <button class="join-button" style="background: linear-gradient(135deg, #FFD700, #FFA500);" onclick="alert('Founding your own Spring = 100% will-coalescence (perfect match guaranteed).\n\nFounder Support Network available:\n• Mentorship from existing Spring founders\n• Blueprints and construction guides\n• AR technology partnerships\n• Legal templates and zoning consultation\n• Funding strategies (pooling + phased construction)\n\nCritical window: 2025-2035 (land affordable NOW, by 2040+ much harder)\n\nNext steps:\n1. Download Founding Blueprint (comprehensive guide)\n2. Join Founder Network (Discord, monthly calls)\n3. Start recruiting (homeschool groups, tech workers, church communities)\n4. Form core coalition (10-15 committed families to start)\n5. Begin site search\n\nEstimated timeline: 18-24 months from decision to launch.\n\nWould you like Founding Blueprint?')">
+                    ⚡ Download Founding Blueprint (100% Custom Match)
+                </button>
+            </div>
+
+            <!-- HYBRID POD OPTION -->
+            <div class="spring-card" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(200, 200, 200, 0.1)); border-color: rgba(255, 255, 255, 0.3);">
+                <div class="coalescence-badge" style="background: rgba(255, 255, 255, 0.3); color: #ecf0f1;">Experimental</div>
+                
+                <div class="spring-name" style="color: #ecf0f1;">🧪 Create Local Hybrid Pod</div>
+                <div class="spring-tagline" style="color: #b0b0b0;">Test Neverland Concepts Without Full Commitment</div>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 12px; margin: 20px 0; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <h4 style="color: #ecf0f1; margin-bottom: 15px;">Low-Risk Experimentation</h4>
+                    <div style="color: #b0b0b0; line-height: 1.8;">
+                        <strong>If you're uncertain about full Spring commitment:</strong><br><br>
+                        
+                        <strong>What it is:</strong> 3-10 families locally, coordinate child-rearing WITHOUT full infrastructure (use existing homes, shared spaces).<br><br>
+                        
+                        <strong>Process:</strong><br>
+                        • Meet weekly (all families together)<br>
+                        • Rotate child-watching (each family watches all children one day/week)<br>
+                        • Create mini-quests (physical treasure hunts, building projects, AR optional)<br>
+                        • Assess after 3 months (is burden reduced? children enjoying? families committed?)<br><br>
+                        
+                        <strong>Outcomes:</strong><br>
+                        • If works: Formalize into full Spring (have proof-of-concept, recruit more families, buy land)<br>
+                        • If doesn't work: Dissolve gracefully (minimal commitment wasted, learned what you need)<br><br>
+                        
+                        <strong>Cost:</strong> Nearly zero (use existing infrastructure)<br>
+                        <strong>Time:</strong> 3-10 hours/week per family<br>
+                        <strong>Risk:</strong> Minimal (can stop anytime)<br>
+                        <strong>Benefit:</strong> Test concepts before committing $100k and moving to full Spring
+                    </div>
+                </div>
+                
+                <button class="join-button" style="background: linear-gradient(135deg, #95a5a6, #7f8c8d);" onclick="alert('Hybrid Pod = low-commitment experimentation.\n\nBest for:\n✓ Uncertain about full Spring (want to test first)\n✓ Can\'t find 30-50 families yet (but can find 3-10)\n✓ Want to keep existing job/home for now\n✓ Risk-averse (prefer gradual approach)\n\nNext steps:\n1. Download Hybrid Pod Guide (simple blueprint)\n2. Find 3-10 local families (homeschool groups, church, neighbors with children)\n3. Organize first meeting (explain concept, assess interest)\n4. Start rotating child-watching (simplest form: each family watches all kids one day/week)\n5. Add mini-quests (treasure hunts, building projects)\n6. Assess after 3 months (working? scale up. not working? try different approach)\n\nMany current Springs started as hybrid pods (tested concepts locally, then formalized when proven).')">
+                    📥 Download Hybrid Pod Guide (Test Locally First)
+                </button>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(255, 105, 180, 0.1)); padding: 40px; border-radius: 20px; margin-top: 50px; border: 2px solid rgba(30, 144, 255, 0.4);">
+            <h2 style="color: #1E90FF; text-align: center; margin-bottom: 30px; font-size: 2.2em;">
+                Understanding Will-Coalescence Scores
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 25px; border-radius: 12px;">
+                    <h3 style="color: #2ecc71; margin-bottom: 15px;">90-100%: Perfect Match</h3>
+                    <p style="color: #ecf0f1; line-height: 1.7;">
+                        Parent + child will-nebulae BOTH satisfied maximally. All major dimensions aligned (community + rescue + career + child's freedom + discovery + safety + friends + purpose). Brilliant, warm, saturated, complex, hopeful, textured when visualized. Join immediately or found your own.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 25px; border-radius: 12px;">
+                    <h3 style="color: #3498db; margin-bottom: 15px;">80-89%: Strong Match</h3>
+                    <p style="color: #ecf0f1; line-height: 1.7;">
+                        Most dimensions aligned, some partial matches (e.g., rescue program exists but smaller than you'd ideally want, or builder focus present but not dominant). Still highly will-efficient—worth visiting to assess partial matches in person.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 25px; border-radius: 12px;">
+                    <h3 style="color: #f39c12; margin-bottom: 15px;">60-79%: Moderate Match</h3>
+                    <p style="color: #ecf0f1; line-height: 1.7;">
+                        Several dimensions aligned, several mismatched (e.g., Christian culture but you're secular, or structured curriculum but you want free-roam). Visit only if specific aligned dimensions are critical to you (e.g., only Christian Spring in your region).
+                    </p>
+                </div>
+                
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 25px; border-radius: 12px;">
+                    <h3 style="color: #e74c3c; margin-bottom: 15px;">Below 60%: Poor Match</h3>
+                    <p style="color: #ecf0f1; line-height: 1.7;">
+                        Fundamental daemon mismatch (e.g., you're builder, Spring is artist-focused, or you want rescue, Spring has none). Don't force it—either wait for better match, found your own, or try hybrid pod locally.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: rgba(0, 0, 0, 0.3); padding: 40px; border-radius: 20px; margin-top: 40px; border-left: 5px solid #1E90FF;">
+            <h2 style="color: #1E90FF; margin-bottom: 25px; font-size: 2em;">
+                🧭 Next Steps in Your Journey
+            </h2>
+            
+            <div style="line-height: 2; font-size: 1.1em; color: #ecf0f1;">
+                <strong style="color: #2ecc71;">1. Review matches above</strong> (which Springs align with your Multaiddaemon will-topology?)<br>
+                <strong style="color: #2ecc71;">2. Schedule visits</strong> (3-7 day immersion in top 2-3 matches)<br>
+                <strong style="color: #2ecc71;">3. Bring your child</strong> (daemon compatibility test—do they resonate with Spring's children?)<br>
+                <strong style="color: #2ecc71;">4. Shadow Game Masters</strong> (see typical week, assess if duty feels like privilege)<br>
+                <strong style="color: #2ecc71;">5. Decision</strong> (apply if aligned, or found your own if no perfect match exists)<br>
+                <strong style="color: #2ecc71;">6. Transition</strong> (90-day move-in period if accepted, or 12-18 months if founding)<br>
+                <strong style="color: #2ecc71;">7. Integration</strong> (children enter fantasy world, you discover privilege of community duty)<br>
+                <strong style="color: #2ecc71;">8. Thriving</strong> (Year 1-3, watch children flourish, witness burden→privilege transformation)<br>
+                <strong style="color: #2ecc71;">9. Legacy</strong> (Year 3+, help found new Springs, your grandchildren in world you built)<br>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 30px;">
+            <p style="font-size: 1.3em; color: #87CEEB; line-height: 1.8;">
+                <strong style="color: #1E90FF;">The Neverland Bootstrap proved it works.</strong><br>
+                2027-2035: Child-rearing transformed from $750k isolated burden to privileged community investment with 7-21x return.<br>
+                1,000 Springs by 2035. 150,000 children thriving. 100,000 parents liberated from isolation.<br><br>
+                <span style="color: #FF69B4;">Your children are waiting for the world you'll build.</span><br>
+                <span style="color: #FFD700;">The invitation is extended. Will you accept?</span>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function openModal(cardElement) {
+            const modal = document.getElementById('modalOverlay');
+            const modalContent = document.getElementById('modalContent');
+            
+            // Clone the card content
+            const cardClone = cardElement.cloneNode(true);
+            
+            // Remove cursor pointer and hover effects from cloned card
+            cardClone.style.cursor = 'default';
+            
+            // Clear modal content (except close button)
+            const closeButton = modalContent.querySelector('.close-modal');
+            modalContent.innerHTML = '';
+            modalContent.appendChild(closeButton);
+            modalContent.appendChild(cardClone);
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('modalOverlay');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Add click handlers to all spring cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const springCards = document.querySelectorAll('.spring-card');
+            
+            springCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Don't open modal if clicking a button
+                    if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                        return;
+                    }
+                    openModal(this);
+                });
+            });
+            
+            // Close modal when clicking outside content
+            document.getElementById('modalOverlay').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

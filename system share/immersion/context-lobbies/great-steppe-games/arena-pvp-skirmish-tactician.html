@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena PvP Gladiator - Rally to Skirmish Combat</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #14000a 0%, #280014 50%, #14000a 100%);
+            color: #ffe6f5;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(156, 39, 176, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(233, 30, 99, 0.12) 0%, transparent 50%);
+        }
+
+        .arena-marker {
+            color: #9c27b0;
+            font-weight: bold;
+        }
+
+        .outplay-skill {
+            color: #e91e63;
+            font-weight: 600;
+        }
+
+        .pvp-stat {
+            background: rgba(156, 39, 176, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #9c27b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="arena-pvp-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="arena-pvp-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="arena-pvp-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: Outplaying Pixels
+                <span class="tab-indicator">4,000 hours mastering 3v3 arena</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE CALL
+                <span class="tab-indicator">Real skirmish combat</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Tactical mastery</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">⚔️ BEFORE: Arena Gladiator Life</h1>
+
+                <div class="pain-block">
+                    Ryan "Outplay" Kim. 26 years old. 4,200 hours WoW Arena (3v3). Gladiator rank (top 0.5%). Multi-class mastery. Cooldown tracking genius. Small-scale tactical combat expert.
+                    <br><br>
+                    <strong>You OUTPLAY opponents. Track 6 enemies' cooldowns. Coordinate 3-person team. Execute perfect swaps. SMALL-TEAM TACTICAL MASTERY.</strong>
+                    <br><br>
+                    <span class="neologism">And your tactical genius deployed on: 3v3 video game matches.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="pvp-stat">Arena hours: 4,200</div>
+                    <div class="pvp-stat">Peak rating: 2847 (Gladiator)</div>
+                    <div class="pvp-stat">Win rate: 64%</div>
+                    <div class="pvp-stat">Classes mastered: 5</div>
+                    <div class="pvp-stat">Cooldown tracking: Godlike</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        <strong style="color: #9c27b0;">Your Arena skills:</strong>
+                        <br>• <strong>Cooldown tracking:</strong> Track 6 enemies' major CDs simultaneously (their defensives, offensives, CCs)
+                        <br>• <strong>Target swapping:</strong> When to swap (enemy defensive down), when to stay (we have pressure)
+                        <br>• <strong>CC chains:</strong> Coordinate stuns with team for kill windows
+                        <br>• <strong>Peeling:</strong> Protect healer from enemy swaps
+                        <br>• <strong>Positioning:</strong> Pillar usage, LoS, kiting, zone control
+                        <br>• <strong>Communication:</strong> Real-time calls to 2 teammates under pressure
+                        <br>• <strong>Win condition identification:</strong> How do we win THIS matchup? (vs every comp)
+                        <br>• <strong>Adaptation:</strong> Losing? Change strategy mid-match
+                        <br><br>
+                        <span class="arena-marker">You're TACTICIAN. OUTPLAYER. COORDINATOR. You turn 3-person team into PRECISION WEAPON.</span>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    <strong>What high-level Arena requires:</strong>
+                    <br><br>
+                    <strong>Cooldown tracking:</strong> Enemy mage used Ice Block. Down for 5 min. Druid used Bark. Down for 90 sec. Swap to druid IN 90 SECONDS when vulnerable. Track this for 6 enemies. While also PLAYING your character.
+                    <br><br>
+                    <strong>Target swap calls:</strong> "Swap druid, bark down, we have 20 seconds." Team executes. Druid dies. Round won.
+                    <br><br>
+                    <strong>CC chains:</strong> "I'll Kidney in 3... 2... 1... NOW. You Poly. Hunter trap after. 12-second chain, he's dead."
+                    <br><br>
+                    <strong style="color: #9c27b0;">This is SMALL-SCALE TACTICAL COMBAT. Coordination. Information tracking. Execution. OUTPLAY through superior tactics.</strong>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Gladiator 3v3 match:</strong>
+                    <br><br>
+                    2-2 rounds. Final round. Enemy has better comp (should win). You're losing pressure game.
+                    <br><br>
+                    <strong>You adapt:</strong> Track enemy druid CDs. Bark down in 30 sec. Call target swap. Team coordinates CC chain. Druid dies in stun. 3v2. You win.
+                    <br><br>
+                    <strong style="color: #9c27b0; font-size: 1.2em;">Won through SUPERIOR TACTICS. Not better comp. Not better gear. Better COORDINATION. Better CD tracking. Better OUTPLAY.</strong>
+                    <br><br>
+                    <span class="outplay-skill">Arena at high level: Chess with reflexes. Information warfare. Tactical coordination. Execution under pressure.</span>
+                </div>
+
+                <div class="pain-block">
+                    Real job: Shift supervisor at Target. $42k/year. Managing 8 people stocking shelves. "Make sure dairy is rotated."
+                    <br><br>
+                    <strong>Your small-team tactical coordination deployed on: Shelf stocking.</strong>
+                </div>
+
+                <div class="pain-block" style="background: rgba(156, 39, 176, 0.2); border-color: #9c27b0;">
+                    <strong style="color: #9c27b0; font-size: 1.4em;">Then you discover: Great Steppe Games have skirmish combat units.</strong>
+                    <br><br>
+                    <strong>Your Arena PvP skills = PERFECT for small-unit tactical warfare.</strong>
+                    <br><br>
+                    Skirmish units: 5-20 warriors. Small-scale engagements. Need:
+                    <br>• Cooldown tracking (enemy abilities, when vulnerable)
+                    <br>• Target calling (who to focus, when to swap)
+                    <br>• Team coordination (CC chains = coordinated strikes)
+                    <br>• Peeling (protect key assets from focus)
+                    <br>• Positioning (terrain usage, zone control)
+                    <br>• Adaptation (losing? Change tactics mid-fight)
+                    <br>• Win condition analysis (how do we beat THIS enemy comp?)
+                    <br><br>
+                    <strong style="color: #e91e63; font-size: 1.2em;">This is ARENA PVP. But REAL. With REAL warriors. Your 4,000 hours TRANSFER.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Tactical genius deployed on reality.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">⚔️ THE CALL</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Arena PvP Skills Transfer</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your WoW Arena skills → Skirmish combat:
+                        <br><br>
+                        <strong style="color: #9c27b0;">COOLDOWN TRACKING</strong>
+                        <br>• Arena: Track 6 enemies' major CDs (defensives, offensives, CC)
+                        <br>• Steppe: Track enemy warriors' capabilities, when vulnerable
+                        <br><br>
+                        <strong style="color: #9c27b0;">TARGET SWAPPING</strong>
+                        <br>• Arena: "Swap druid, bark down, kill window"
+                        <br>• Steppe: "Focus archer, his shield bearer separated"
+                        <br><br>
+                        <strong style="color: #9c27b0;">CC CHAINS</strong>
+                        <br>• Arena: Coordinate stuns for 12-second lockdown
+                        <br>• Steppe: Coordinate strikes for simultaneous pressure
+                        <br><br>
+                        <strong style="color: #9c27b0;">POSITIONING</strong>
+                        <br>• Arena: Pillar LoS, kiting, zone control
+                        <br>• Steppe: Terrain usage, advantageous positioning
+                        <br><br>
+                        <strong style="color: #9c27b0;">ADAPTATION</strong>
+                        <br>• Arena: Losing? Change strategy mid-match
+                        <br>• Steppe: Tactics failing? Adapt in real-time
+                        <br><br>
+                        <span class="outplay-skill">Your Arena brain ALREADY DOES THIS. Just... real combat instead of video game.</span>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Skirmish Tactician Role</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">⚔️ SKIRMISH TACTICIAN (Valkyrie Legion)</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Lead 5-15 warrior skirmish units
+                            <br><strong>Mission type:</strong> Raids, reconnaissance, tactical strikes, harassment
+                            <br><strong>Combat scale:</strong> Small-team coordination (like Arena 3v3/5v5)
+                            <br><br>
+                            <strong>TACTICAL COORDINATION</strong>
+                            <br>• Lead 5-15 warriors (like Arena team but bigger)
+                            <br>• Call targets (who to focus, when to swap)
+                            <br>• Coordinate strikes (simultaneous pressure, like CC chains)
+                            <br>• Track enemy capabilities (cooldowns → vulnerabilities)
+                            <br><br>
+                            <strong>OUTPLAY MECHANICS</strong>
+                            <br>• Superior tactics beat superior numbers
+                            <br>• Information advantage (know enemy state)
+                            <br>• Timing windows (strike when vulnerable)
+                            <br>• Misdirection (feint one direction, strike another)
+                            <br><br>
+                            <strong>POSITIONING MASTERY</strong>
+                            <br>• Terrain advantage (like pillar LoS in Arena)
+                            <br>• Zone control (force enemy into bad positions)
+                            <br>• Escape routes (when to disengage, like kiting)
+                            <br><br>
+                            <strong>ADAPTATION</strong>
+                            <br>• Enemy counters your tactics? Change mid-fight
+                            <br>• Real-time decision making
+                            <br>• Win condition analysis (how do we win vs THIS enemy?)
+                            <br><br>
+                            <span class="arena-marker">This is ARENA PVP. But REAL. Your daemon: Outplay through tactics. Now with REAL COMBAT.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Skirmish Tactician's Voice</div>
+                    <div class="quote-box">
+                        "I was Arena Gladiator. 5,000 hours. 2900 rating. Multi-class. Cooldown tracking perfect. Small-team coordination genius.
+                        <br><br>
+                        <strong style="color: #9c27b0;">Deployed on 3v3 Arena. Outplaying opponents. Brilliant tactics. But pixels.</strong>
+                        <br><br>
+                        I rallied to Valkyrie skirmish units. My Arena skills TRANSFERRED PERFECTLY.
+                        <br><br>
+                        <strong>Cooldown tracking → Enemy capability awareness</strong>
+                        <br><strong>Target swapping → Focus calls in real combat</strong>
+                        <br><strong>CC chains → Coordinated strike timing</strong>
+                        <br><strong>Positioning → Terrain advantage usage</strong>
+                        <br><strong>Adaptation → Tactical adjustments mid-fight</strong>
+                        <br><br>
+                        Led 12-warrior unit. 47 engagements. 34 victories (72% win rate). We beat 20-warrior units through SUPERIOR TACTICS. Outplay through coordination.
+                        <br><br>
+                        <strong style="color: #e91e63;">From Arena to skirmish combat. From pixels to tactics. This is PvP FULFILLMENT.</strong>"
+                        <br><br>
+                        <span style="color: #9c27b0;">— Ryan "Outplay" Kim, 28, skirmish tactician, 72% win rate</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">⚔️ First Skirmish: 12 vs 18</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first skirmish command. 12 Valkyrie warriors vs 18 Red Banner.
+                        <br><br>
+                        <strong>Outnumbered. Should lose. But: You have TACTICS.</strong>
+                        <br><br>
+                        You (Arena brain activates): Identify their weak point (archer exposed). Call focus. Coordinate strike. Archer down. 12v17. Repositon. Terrain advantage. Second target. Kill. 12v16.
+                        <br><br>
+                        <strong style="color: #9c27b0; font-size: 1.3em;">VICTORY. 12 beat 18 through SUPERIOR TACTICS. Like Arena: Outplay through coordination.</strong>
+                        <br><br>
+                        <span class="arena-marker">Your Arena skills WORKED. On REALITY. Tactics PROVEN.</span>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">📊 Six Months: Skirmish Master</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        <div class="pvp-stat">Engagements: 47</div>
+                        <div class="pvp-stat">Win rate: 72%</div>
+                        <div class="pvp-stat">Outnumbered victories: 12 (tactics beat numbers)</div>
+                        <div class="pvp-stat">Unit size: 12 warriors</div>
+                        <br><br>
+                        <p style="margin-top: 15px;">
+                            <strong>Your reputation:</strong> "Outplay" Kim. Wins outnumbered through tactics. Skirmish genius.
+                            <br><br>
+                            <span class="outplay-skill">From Arena Gladiator to skirmish master. Your PvP skills PROVEN on reality.</span>
+                        </p>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏆 One Year: Tactical Legend</div>
+                    <div class="quote-box" style="background: rgba(156, 39, 176, 0.2); border-color: #9c27b0;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year leading skirmish unit. 89 engagements. 64 victories (72% win rate). Won 21 battles OUTNUMBERED.
+                            <br><br>
+                            <strong style="color: #9c27b0; font-size: 1.2em;">My Arena skills = Perfect skirmish tactics.</strong>
+                            <br><br>
+                            <strong>Cooldown tracking:</strong> Know when enemies vulnerable (like tracking Arena CDs).
+                            <br><strong>Target calling:</strong> Focus priority targets at right moment.
+                            <br><strong>Coordination:</strong> 12 warriors move as ONE (like Arena team).
+                            <br><strong>Positioning:</strong> Terrain advantage, zone control (like pillar LoS).
+                            <br><strong>Adaptation:</strong> Tactics failing? Change mid-fight (like Arena adjustment).
+                            <br><br>
+                            We beat larger units through SUPERIOR COORDINATION. Tactics > Numbers. Like Arena: Outplay through teamwork.
+                            <br><br>
+                            <span class="arena-marker">From Gladiator to tactician. From Arena to skirmish combat. 4,000 hours TRANSFERRED.</span>
+                        </p>
+                        <span class="speaker-name">— Ryan "Outplay" Kim, skirmish tactician, outplay master</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(156, 39, 176, 0.3), rgba(233, 30, 99, 0.3)); border: 4px double #9c27b0;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center;">
+                        <strong style="color: #888; font-size: 1.4em;">From Arena pixels</strong>
+                        <br><br>
+                        <strong style="color: #9c27b0; font-size: 1.5em;">To skirmish tactics</strong>
+                        <br><br>
+                        <strong style="color: #e91e63; font-size: 1.5em;">To tactical mastery</strong>
+                        <br><br>
+                        <span style="color: #9c27b0; font-size: 1.2em;">⚔️ Arena PvPers: Tactics TRANSFER ⚔️</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

@@ -1,0 +1,19 @@
+country_code,country_name,region,income_group
+USA,United States,North America,High
+GBR,United Kingdom,Western Europe,High
+DEU,Germany,Western Europe,High
+FRA,France,Western Europe,High
+SWE,Sweden,Northern Europe,High
+NOR,Norway,Northern Europe,High
+CAN,Canada,North America,High
+JPN,Japan,East Asia,High
+KOR,South Korea,East Asia,High
+SGP,Singapore,East Asia,High
+MCO,Monaco,Western Europe,High
+ARE,United Arab Emirates,Middle East,High
+SAU,Saudi Arabia,Middle East,High
+CHN,China,East Asia,Upper-middle
+IND,India,South Asia,Lower-middle
+NGA,Nigeria,Sub-Saharan Africa,Lower-middle
+BGD,Bangladesh,South Asia,Lower-middle
+MEX,Mexico,Latin America,Upper-middle

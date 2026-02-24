@@ -1,0 +1,35 @@
+{
+  "country_code": "DZ",
+  "name": "Algeria",
+  "approximate": true,
+  "population": 45000000,
+  "gdp_nominal_usd": 200000000000,
+  "gdp_per_capita_usd": 4400,
+  "social_spending_pct_gdp": 20.0,
+  "health_spending_pct_gdp": 6.5,
+  "education_spending_pct_gdp": 5.5,
+  "oda_given_pct_gni": 0.02,
+  "oda_given_usd": 400000000,
+  "oda_received_usd": 800000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 600000000,
+  "volunteering_rate_pct_adults": 22.0,
+  "volunteer_hours_billion": 0.4,
+  "child_mortality_under5_per_1000": 22.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Diabetes"
+  ],
+  "notes": [
+    "Algeria is a hydrocarbon-rich state with substantial social spending and subsidies.",
+    "Zakat and informal religious giving represent important but under-measured altruistic flows."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Algerian government budget data"
+  ]
+}
+
+

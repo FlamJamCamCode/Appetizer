@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety for Children - Mother's Rally Lobby</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(52, 152, 219, 0.15);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .persona-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .persona-box h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .concern-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .concern-item {
+            background: rgba(231, 76, 60, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .concern-item h4 {
+            color: #e74c3c;
+            margin-bottom: 8px;
+        }
+
+        .worlds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .world-card {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+            border-radius: 18px;
+            padding: 35px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .world-card:hover {
+            transform: translateY(-5px);
+            border-color: #3498db;
+            box-shadow: 0 12px 35px rgba(52, 152, 219, 0.3);
+        }
+
+        .world-title {
+            font-size: 2em;
+            margin-bottom: 12px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .world-subtitle {
+            color: #95a5a6;
+            font-size: 1.05em;
+            margin-bottom: 25px;
+        }
+
+        .safety-rating {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .metric-name {
+            font-size: 0.9em;
+            color: #95a5a6;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .section {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .section-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .child-safety { border-left: 4px solid #2ecc71; }
+        .child-safety .section-header { color: #2ecc71; }
+
+        .support-system { border-left: 4px solid #3498db; }
+        .support-system .section-header { color: #3498db; }
+
+        .life-quality { border-left: 4px solid #9b59b6; }
+        .life-quality .section-header { color: #9b59b6; }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .rally-button {
+            width: 100%;
+            padding: 18px;
+            margin-top: 25px;
+            background: linear-gradient(90deg, #2ecc71, #3498db);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .rally-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+        }
+
+        .highlight-box {
+            background: rgba(46, 204, 113, 0.15);
+            border: 2px solid rgba(46, 204, 113, 0.4);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .highlight-box h4 {
+            color: #2ecc71;
+            margin-bottom: 12px;
+        }
+
+        .warning-box {
+            background: rgba(241, 196, 15, 0.1);
+            border: 2px solid rgba(241, 196, 15, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .warning-box strong {
+            color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👶 Mother's Safety Rally Lobby</h1>
+            <p style="font-size: 1.2em; margin-top: 10px; color: #95a5a6;">
+                Finding worlds where your children can grow up safe, healthy, and free
+            </p>
+        </div>
+
+        <div class="persona-box">
+            <h2>Your Situation</h2>
+            <p style="line-height: 1.8; margin-bottom: 15px;">
+                <strong>Who you are:</strong> 28 years old, single mother of two children (daughter age 5, son age 3)
+            </p>
+            <p style="line-height: 1.8; margin-bottom: 15px;">
+                <strong>Current location:</strong> Urban area with rising crime, deteriorating schools, economic decline
+            </p>
+            <p style="line-height: 1.8; margin-bottom: 20px;">
+                <strong>What you want:</strong> Not luxury for yourself. Not romance (though not opposed if it happens naturally). You want **your children to be safe**. You want them to grow up in a world where they won't be victims of violence, won't fall into drugs, won't be failed by broken systems. You want them to have a real future.
+            </p>
+
+            <div class="concern-list">
+                <div class="concern-item">
+                    <h4>⚠️ Immediate Danger</h4>
+                    <p>Gang recruitment targeting your son's age group in 5-10 years. Gun violence in neighborhood increasing. Daughter already exposed to inappropriate content at school.</p>
+                </div>
+                <div class="concern-item">
+                    <h4>📚 Education Collapse</h4>
+                    <p>Local schools failing (test scores dropping, violence increasing, teachers giving up). Your children deserve better education than what's available.</p>
+                </div>
+                <div class="concern-item">
+                    <h4>💉 Drug Culture</h4>
+                    <p>Opioid crisis hitting your area. Seeing young adults you knew as children now addicted. Don't want this future for your kids.</p>
+                </div>
+                <div class="concern-item">
+                    <h4>💰 Economic Dead-End</h4>
+                    <p>No jobs in area. Those available pay poverty wages. Can't save. Can't give children opportunities. Trapped in cycle.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 25px; line-height: 1.8; font-size: 1.1em; color: #3498db; font-weight: bold;">
+                You have MBC Rule 3: The right to leave. To rally to ANY functional world that will protect your children. These worlds exist. They're real. They're accepting rally applications.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <h2 style="color: #3498db;">Worlds Built Specifically for Child Safety</h2>
+            <p style="color: #95a5a6; margin-top: 10px;">
+                These Triads prioritize children's wellbeing above all else. Low crime, excellent schools, healthy culture.
+            </p>
+        </div>
+
+        <div class="worlds-grid">
+            <!-- World 1: Scandinavian Family Haven -->
+            <div class="world-card">
+                <div class="safety-rating">🛡️ MAXIMUM SAFETY - Children First</div>
+                <div class="world-title">🏔️ Nordic Family Sanctuary</div>
+                <div class="world-subtitle">Triad #2.38447.089 - Scandinavian Child-Centered Culture</div>
+
+                <div class="metric-grid">
+                    <div class="metric">
+                        <div class="metric-name">Violent Crime Rate</div>
+                        <div class="metric-value">0.02%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Child Safety Index</div>
+                        <div class="metric-value">9.9/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Education Quality</div>
+                        <div class="metric-value">9.7/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Single Mother Support</div>
+                        <div class="metric-value">10/10</div>
+                    </div>
+                </div>
+
+                <div class="section child-safety">
+                    <div class="section-header">
+                        <span>🛡️</span> Child Safety (What Matters Most)
+                    </div>
+                    <ul>
+                        <li>Zero child abductions in 40-year history (perfect safety record)</li>
+                        <li>No gang presence (PoP-verified entry, criminals can't infiltrate)</li>
+                        <li>No drug culture (addiction treated medically, dealers expelled immediately)</li>
+                        <li>Safe to play outside unsupervised (common sight: children walking alone at 7 years old)</li>
+                        <li>School violence: ZERO incidents (conflict resolution culture from age 3)</li>
+                        <li>Sexual predators: None (background checks absolute, expulsion immediate)</li>
+                    </ul>
+                </div>
+
+                <div class="section support-system">
+                    <div class="section-header">
+                        <span>🤝</span> Support for Single Mothers
+                    </div>
+                    <ul>
+                        <li>Housing provided (3-bedroom apartment guaranteed for mother + 2 children)</li>
+                        <li>Childcare: Free ages 1-6 (while you work or study)</li>
+                        <li>Education: Free through university (your children's future secured)</li>
+                        <li>Healthcare: Complete coverage (preventive care, dental, mental health)</li>
+                        <li>Job training: Free skills programs (nursing, tech, trades—you choose)</li>
+                        <li>Community support: Other mothers, mentorship, no judgment</li>
+                        <li>Father-figure programs: Male mentors for fatherless children (volunteers, vetted)</li>
+                    </ul>
+                </div>
+
+                <div class="section life-quality">
+                    <div class="section-header">
+                        <span>🌟</span> Daily Life Reality
+                    </div>
+                    <ul>
+                        <li>Your daughter: Walks to excellent school safely, learns Norwegian/English, surrounded by kind children</li>
+                        <li>Your son: Plays in safe parks, male mentors teach him carpentry/sports, no gang influence ever</li>
+                        <li>You: Work 30-hour week (Scandinavian standard), enough income, time with children, respected</li>
+                        <li>Community: Other single mothers, supportive network, no isolation</li>
+                        <li>Romance potential: If you want, available (but no pressure—focus on children first)</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Testimonial from Rally Mother (Similar Situation)</h4>
+                    <p style="line-height: 1.7; font-style: italic;">
+                        "I came from Detroit with my two boys (6 and 4). Scared they'd end up in gangs or dead. Here? They play outside till dark. Walk to school alone at 7 and 8. I work part-time, they're in amazing schools, we have community. I cry sometimes thinking about what their life would have been in Detroit. Here they have a FUTURE. That's everything."
+                        <br><br>
+                        — Maria, 31, rallied 4 years ago
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Adaptation Required:</strong> Cold climate (harsh winters, must adjust), Norwegian language (children learn fast, you'll need classes), reserved culture (less expressive than you may be used to), quieter lifestyle (slower pace, less excitement)
+                </div>
+
+                <button class="rally-button">Rally to Nordic Family Sanctuary</button>
+            </div>
+
+            <!-- World 2: Reformed Islamic Family World -->
+            <div class="world-card">
+                <div class="safety-rating">🛡️ ULTRA-SAFE - Islamic Values, Modern Execution</div>
+                <div class="world-title">☪️ New Medina Family Haven</div>
+                <div class="world-subtitle">Triad #2.55924.188 - Reformed Islamic Child-Focused</div>
+
+                <div class="metric-grid">
+                    <div class="metric">
+                        <div class="metric-name">Violent Crime Rate</div>
+                        <div class="metric-value">0.04%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Child Safety Index</div>
+                        <div class="metric-value">9.8/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Education Quality</div>
+                        <div class="metric-value">9.2/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Single Mother Support</div>
+                        <div class="metric-value">9.5/10</div>
+                    </div>
+                </div>
+
+                <div class="section child-safety">
+                    <div class="section-header">
+                        <span>🛡️</span> Child Safety
+                    </div>
+                    <ul>
+                        <li>Extremely low crime (Islamic values + modern enforcement = ultra-safe)</li>
+                        <li>No drugs/alcohol (prohibited culturally and legally—children never exposed)</li>
+                        <li>Sexual protection absolute (modest culture protects children, predators get harsh punishment)</li>
+                        <li>Community watches children (everyone responsible for all children's safety)</li>
+                        <li>School environment: Disciplined but loving (structure + care = thriving children)</li>
+                        <li>Gender-separated schools (if you prefer—protects from inappropriate dynamics)</li>
+                    </ul>
+                </div>
+
+                <div class="section support-system">
+                    <div class="section-header">
+                        <span>🤝</span> Support for Single Mothers
+                    </div>
+                    <ul>
+                        <li>Single mothers highly respected (not stigmatized—valued for raising children)</li>
+                        <li>Zakat system modernized (charitable giving supports struggling mothers)</li>
+                        <li>Housing: Provided (family apartments, safe neighborhoods)</li>
+                        <li>Childcare: Community-based (other mothers help, extended family culture even for newcomers)</li>
+                        <li>Remarriage support: If desired (many good men willing to be fathers to your children)</li>
+                        <li>No pressure to remarry: Can raise children alone with full community support</li>
+                        <li>Women's work: Encouraged (teaching, nursing, business—halal employment abundant)</li>
+                    </ul>
+                </div>
+
+                <div class="section life-quality">
+                    <div class="section-header">
+                        <span>🌟</span> Daily Life Reality
+                    </div>
+                    <ul>
+                        <li>Your daughter: Learns Quran + modern subjects, protected environment, prepares for educated Muslim life</li>
+                        <li>Your son: Male mentors in mosque, learns trades/skills, Islamic masculine guidance (not toxic, healthy)</li>
+                        <li>You: Work if you choose (or focus on children—both respected), covered financially either way</li>
+                        <li>Community: Other Muslim mothers, sisterhood, shared values, deep support</li>
+                        <li>Faith: Can practice Islam freely, children raised Muslim, or learn if you're converting</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Why This Works for Non-Muslims Too</h4>
+                    <p style="line-height: 1.7;">
+                        Many single mothers from Christian or secular backgrounds rally here because:
+                        <br>• Structure and discipline help children thrive
+                        <br>• No drugs/alcohol/crime creates safe environment
+                        <br>• Strong family values align with wanting best for children
+                        <br>• Community support is REAL (not just talked about)
+                        <br>• You can convert to Islam (many do), or children can, or you can live respectfully without converting (depends on personal journey)
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Adaptation Required:</strong> Must respect Islamic culture (dress modestly, no alcohol), children will be raised with Islamic values, stricter gender roles (though women can work/study), must learn Arabic for prayers/Quran (if converting)
+                </div>
+
+                <button class="rally-button">Rally to New Medina Family Haven</button>
+            </div>
+
+            <!-- World 3: Rural American Homestead -->
+            <div class="world-card">
+                <div class="safety-rating">🛡️ SAFE - Traditional American Values</div>
+                <div class="world-title">🌾 Heartland Family Refuge</div>
+                <div class="world-subtitle">Triad #2.11039.444 - American Rural Traditional</div>
+
+                <div class="metric-grid">
+                    <div class="metric">
+                        <div class="metric-name">Violent Crime Rate</div>
+                        <div class="metric-value">0.08%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Child Safety Index</div>
+                        <div class="metric-value">9.4/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Education Quality</div>
+                        <div class="metric-value">8.8/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Single Mother Support</div>
+                        <div class="metric-value">8.5/10</div>
+                    </div>
+                </div>
+
+                <div class="section child-safety">
+                    <div class="section-header">
+                        <span>🛡️</span> Child Safety
+                    </div>
+                    <ul>
+                        <li>Rural safety (low population density, everyone knows everyone, strangers noticed immediately)</li>
+                        <li>Armed community (but responsible gun culture—teaches children respect for firearms, no accidents in 30 years)</li>
+                        <li>No gang presence (rural location, tight-knit community, wouldn't tolerate it)</li>
+                        <li>Minimal drug exposure (opioid crisis fought aggressively, addicts helped or expelled)</li>
+                        <li>Old-fashioned childhood (playing outside, climbing trees, farm work builds character)</li>
+                        <li>Christian values (church community, moral framework, discipline + love)</li>
+                    </ul>
+                </div>
+
+                <div class="section support-system">
+                    <div class="section-header">
+                        <span>🤝</span> Support for Single Mothers
+                    </div>
+                    <ul>
+                        <li>Church community support (meals when struggling, childcare help, financial aid from congregation)</li>
+                        <li>Work available (farm work, local businesses, remote jobs—internet good)</li>
+                        <li>Housing: Affordable (small house on plot of land for $200/month—Triad subsidized)</li>
+                        <li>Male mentors: Church men volunteer (teach boys to hunt, fix things, be men)</li>
+                        <li>Remarriage likely (many good Christian men willing to marry single mothers, adopt children)</li>
+                        <li>Homeschool option (or small Christian school—you choose what's best)</li>
+                    </ul>
+                </div>
+
+                <div class="section life-quality">
+                    <div class="section-header">
+                        <span>🌟</span> Daily Life Reality
+                    </div>
+                    <ul>
+                        <li>Your daughter: Learns gardening, cooking, animals, also math/reading at good school, raised with values</li>
+                        <li>Your son: Works on farm with men, learns hunting/fishing/building, strong masculine role models</li>
+                        <li>You: Work part-time (or full-time if you want), homestead on small plot, grow some of own food</li>
+                        <li>Community: Tight-knit, everyone helps everyone, Sunday church social center</li>
+                        <li>Romance potential: HIGH (rural men value hard-working women, don't care about "baggage," want families)</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>The Remarriage Reality</h4>
+                    <p style="line-height: 1.7;">
+                        In rural American Triads, single mothers with children are NOT stigmatized. Rural men often seek them because:
+                        <br>• Proves you're fertile and can raise children
+                        <br>• Shows you value family (not career-obsessed)
+                        <br>• Children need father—men want to provide that
+                        <br>• Rural culture values family completion over "fresh start"
+                        <br><br>
+                        Average time to remarriage for rallied single mothers: 18 months. Men adopt your children as their own (legally and emotionally).
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Adaptation Required:</strong> Rural lifestyle (isolation, must like countryside), physical work (farming/homesteading), Christian culture expected (church attendance, values), traditional gender roles (though women can work, expectation is family-first)
+                </div>
+
+                <button class="rally-button">Rally to Heartland Family Refuge</button>
+            </div>
+
+            <!-- World 4: African Reform Community -->
+            <div class="world-card">
+                <div class="safety-rating">🛡️ SAFE - Pan-African Family Focus</div>
+                <div class="world-title">🌍 Ubuntu Family Circle</div>
+                <div class="world-subtitle">Triad #2.24856.227 - Pan-African Child-Centered</div>
+
+                <div class="metric-grid">
+                    <div class="metric">
+                        <div class="metric-name">Violent Crime Rate</div>
+                        <div class="metric-value">0.12%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Child Safety Index</div>
+                        <div class="metric-value">9.2/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Education Quality</div>
+                        <div class="metric-value">8.9/10</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Single Mother Support</div>
+                        <div class="metric-value">9.8/10</div>
+                    </div>
+                </div>
+
+                <div class="section child-safety">
+                    <div class="section-header">
+                        <span>🛡️</span> Child Safety
+                    </div>
+                    <ul>
+                        <li>"It takes a village" actualized (entire community raises all children—authentic African tradition)</li>
+                        <li>Zero tolerance for child abuse (cultural consensus + swift expulsion)</li>
+                        <li>Street safety high (close community, eyes everywhere, children protected collectively)</li>
+                        <li>No gang recruitment (African culture + strong male mentorship = boys guided right)</li>
+                        <li>Education Afro-centric (teaches African history/pride + modern skills)</li>
+                        <li>Cultural pride without harmful traditions (FGM/child marriage prohibited, positive culture celebrated)</li>
+                    </ul>
+                </div>
+
+                <div class="section support-system">
+                    <div class="section-header">
+                        <span>🤝</span> Support for Single Mothers
+                    </div>
+                    <ul>
+                        <li>Single motherhood normalized (no stigma—African diaspora reality acknowledged)</li>
+                        <li>Extended family culture (even for newcomers—adopted into "family" structures)</li>
+                        <li>Childcare: Community-based (mothers watch each other's children, rotating)</li>
+                        <li>Economic cooperatives (women-run businesses, share resources, collective strength)</li>
+                        <li>Housing: Affordable (Triad subsidizes family housing)</li>
+                        <li>Male mentors abundant (African men volunteer to guide fatherless boys)</li>
+                        <li>Sisterhood real (other Black mothers, shared struggle, mutual support)</li>
+                    </ul>
+                </div>
+
+                <div class="section life-quality">
+                    <div class="section-header">
+                        <span>🌟</span> Daily Life Reality
+                    </div>
+                    <ul>
+                        <li>Your daughter: Learns African dance, languages, history + modern education, surrounded by Black excellence</li>
+                        <li>Your son: Black male role models (not absent fathers—present mentors), taught to be strong African man</li>
+                        <li>You: Work in cooperative or regular job, children cared for by community, never alone</li>
+                        <li>Community: All-Black (if you're Black—otherwise diverse African), cultural continuity, pride</li>
+                        <li>Romance potential: Available (Black men who value family, willing to raise your children)</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Why Black Single Mothers Thrive Here</h4>
+                    <p style="line-height: 1.7;">
+                        "In America, being a Black single mother means: Struggle, judgment, isolated, overwhelmed.
+                        <br><br>
+                        In Ubuntu Family Circle: Community raises your children WITH you. Other mothers help. Men mentor your son (teach him to be man, not thug). Daughter sees Black excellence everywhere (not just struggle). You have SUPPORT—real support, not social worker visits.
+                        <br><br>
+                        And your children? They don't grow up thinking 'Black = poor/criminal/broken.' They grow up seeing Black = strong/capable/cultured. That's worth everything."
+                        <br><br>
+                        — Keisha, 29, rallied with 2 daughters, now thriving
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Adaptation Required:</strong> African cultural immersion (may be different from American Black culture), emphasis on Pan-African identity (not just American), community obligations (expected to contribute, not just receive), slightly lower material wealth (but high quality of life through community)
+                </div>
+
+                <button class="rally-button">Rally to Ubuntu Family Circle</button>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; padding: 40px; background: rgba(52, 152, 219, 0.1); border-radius: 20px; border: 2px solid rgba(52, 152, 219, 0.3);">
+            <h2 style="color: #3498db; margin-bottom: 25px; text-align: center;">Understanding Your Power as a Mother</h2>
+            
+            <div style="line-height: 1.9; font-size: 1.05em;">
+                <p style="margin-bottom: 20px;">
+                    <strong style="color: #2ecc71;">You are not powerless.</strong> You have MBC Rule 3: The right to leave dysfunctional worlds and rally to functional ones.
+                </p>
+                
+                <p style="margin-bottom: 20px;">
+                    <strong style="color: #3498db;">Your current city/country is NOT owed your children.</strong> If it can't protect them, educate them, give them future—you may leave.
+                </p>
+                
+                <p style="margin-bottom: 20px;">
+                    <strong style="color: #9b59b6;">Your choice sends a signal:</strong> When mothers flee dysfunctional places, it forces those places to GET BETTER or lose all their children to functional worlds.
+                </p>
+                
+                <p style="margin-bottom: 30px;">
+                    <strong style="color: #e74c3c;">Natural selection operates:</strong> Worlds that protect children attract mothers. Worlds that fail children lose mothers. Your feet vote. Reality responds.
+                </p>
+                
+                <div style="background: rgba(46, 204, 113, 0.15); padding: 25px; border-radius: 12px; border-left: 5px solid #2ecc71; margin-top: 30px;">
+                    <h3 style="color: #2ecc71; margin-bottom: 15px;">The Mother's Choice is the Ultimate Power</h3>
+                    <p style="line-height: 1.8;">
+                        Men build worlds. Women choose worlds. Worlds that serve children thrive. Worlds that harm children die.
+                        <br><br>
+                        Your rally to Nordic Family Sanctuary? Signals that Scandinavian child-protection model WORKS.
+                        <br>Your rally to New Medina? Signals that reformed Islam serves children better than secular dysfunction.
+                        <br>Your rally to Heartland Refuge? Signals that traditional American values protect children.
+                        <br>Your rally to Ubuntu Circle? Signals that Pan-African community raises children well.
+                        <br><br>
+                        <strong style="color: #2ecc71; font-size: 1.1em;">The worlds you choose are the worlds that will inherit the future.</strong>
+                        <br><br>
+                        Choose wisely. For your children. And for all children.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

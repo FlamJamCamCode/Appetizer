@@ -1,0 +1,34 @@
+{
+  "country_code": "ES",
+  "name": "Spain",
+  "approximate": true,
+  "population": 47000000,
+  "gdp_nominal_usd": 1650000000000,
+  "gdp_per_capita_usd": 35100,
+  "social_spending_pct_gdp": 25.0,
+  "health_spending_pct_gdp": 7.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.25,
+  "oda_given_usd": 4000000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 6500000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.9,
+  "child_mortality_under5_per_1000": 3.5,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia and Alzheimer's disease"
+  ],
+  "notes": [
+    "Spain has a strong welfare state, relatively low child mortality, and ODA focused on Latin America and Africa."
+  ],
+  "sources": [
+    "INE and Spanish budget documents",
+    "OECD SOCX and DAC statistics",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

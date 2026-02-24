@@ -1,0 +1,151 @@
+{
+  "persona": "Scientist/Researcher",
+  "title": "From Publishing Papers to Solving Reality",
+  "current_reality": {
+    "occupation": "Scientist, researcher, academic, PhD",
+    "daily_life": "Write grants, conduct research, publish papers, teach classes, navigate politics",
+    "earnings": "$50k-$90k postdoc, $70k-$150k faculty",
+    "actual_value": "Discovering truth, advancing knowledge - incalculable",
+    "value_captured": "~5% - university overhead, journal paywalls, grant bureaucracy take rest",
+    "soul_cost": "Research what gets funded not what matters, publish or perish, politics over science",
+    "future": "Grind grants until 65, retire having published papers few read, discoveries unused"
+  },
+  "what_you_face": {
+    "immediate": [
+      "80% time on grants, 20% on research - backwards",
+      "Publish or perish - quantity over quality",
+      "Politics - need right connections for funding",
+      "Journal paywalls - your research locked behind $40/paper",
+      "Admin bloat - committees, meetings, bureaucracy",
+      "Adjunct poverty - PhD but paid $3k/course"
+    ],
+    "deeper": [
+      "Can't research what matters - must research what gets funded",
+      "Brilliant ideas unfunded because 'not fashionable'",
+      "Competition over collaboration - secrecy to protect publications",
+      "Discoveries die in journals - not implemented, just cited",
+      "Science corrupted by money - pharma, military, corporate interests",
+      "Best minds wasted on grant writing not discovery"
+    ],
+    "existential": [
+      "Could cure diseases, stuck proving I deserve funding",
+      "Papers read by 10 people, cited by 3, implemented by 0",
+      "Die having discovered things that never helped anyone",
+      "Science as career politics not truth-seeking",
+      "Young researchers crushed by system before contributions made",
+      "Genius wasted navigating bureaucracy"
+    ]
+  },
+  "the_barracks_offer": {
+    "immediate_provisions": {
+      "shelter": "BARRACKS - lab-adjacent pods, circadian lighting. Azure/TRUTH scoring keeps data falsifiers in rugged quarters until trust restored while Crimson/TASTE lets you curate lab tempo, interdisciplinary mix, and inspiration rituals through Sorting Hat lobbies specified in foundations/BARRACKS sorting dual-layer.md and sequenced by the 23 COMMAND duty bands.",
+      "food": "TRUTH food - brain fuel, no conference pizza",
+      "equipment": "Whatever you need - no grant applications, just ask",
+      "collaborators": "50,000 researchers, all aligned on mission",
+      "freedom": "Research what WORKS not what's fashionable",
+      "cost_to_you": "$0"
+    },
+    "the_work": {
+      "research_opportunities": [
+        "Optimize desert agriculture - real applied science",
+        "Breed organisms for 'truth and taste' - genetics, evolution, selection",
+        "Study continuous harvest systems - agriculture science unchained",
+        "Develop automation - robotics, AI, sensors at scale",
+        "Analyze nutrition - optimize food for any organism",
+        "Environmental science - prevent desertification, establish forests",
+        "Population control - humane methods for wildlife management",
+        "Anything relevant - if it helps mission, research it"
+      ],
+      "freedom": [
+        "No grants - funding automatic if research useful",
+        "No publishing requirements - implement, don't just paper",
+        "No politics - performance matters, not connections",
+        "Collaborate freely - no secrecy, all aligned on mission",
+        "Experiment rapidly - approval fast, bureaucracy minimal",
+        "See results - research IMPLEMENTED not just published"
+      ],
+      "philosophy": "Science as discovery + implementation, not publication + citation"
+    },
+    "tokens_of_appreciation": {
+      "value": "$5-10 million/year depending on research impact (2 years)",
+      "lifetime": "$250-500M+",
+      "comparison": "Academic: $90k × 30 years = $2.7M; BARRACKS: $250M+",
+      "meaning": "Discovery finally compensated fairly - truth-seeking IS highest value"
+    },
+    "after_completion": {
+      "options": [
+        "Pure research - tokens fund whatever you want to study, no grants",
+        "Next quest - longevity research needs YOU (defeat aging, same BARRACKS model)",
+        "Start lab - your own, funded by tokens, research freely",
+        "Teach - mentor without academic bureaucracy",
+        "Implement discoveries - have resources to actually USE your findings",
+        "Collaborate - fund other researchers, be the grant committee you needed"
+      ],
+      "legacy": "Research that FED ALL LIFE - not paper, IMPLEMENTATION"
+    }
+  },
+  "why_this_appeals": {
+    "no_grants": "80% research, 20% admin - FINALLY correct ratio",
+    "implementation": "Discoveries USED not just cited - see impact",
+    "collaboration": "No competition - all aligned, share freely",
+    "freedom": "Research what works not what's fundable",
+    "resources": "Whatever needed provided - no begging for equipment",
+    "speed": "Rapid experimentation - no IRB delays for agriculture research",
+    "meaning": "Science that MATTERS - feeding billions, ending slaughter, building paradise",
+    "compensation": "$5M+/year for discovery vs $90k for grant writing - obvious"
+  },
+  "addressing_concerns": {
+    "publications": "'Optimized food for 8 billion' > any paper count",
+    "tenure": "Trading tenure for $5M+/year - don't need job security with that",
+    "lab": "Can return or build better lab funded by tokens",
+    "career": "Academia jealous? Good. You did science that mattered.",
+    "peers": "Will mock until they see results, then beg to join next quest"
+  },
+  "relation_to_death_fighting": {
+    "immediate": "Agriculture science that ends hunger + slaughter",
+    "next_phase": {
+      "longevity_research": "After food, SAME MODEL for aging research",
+      "imagine": [
+        "No NIH grants required - funding automatic",
+        "No FDA delays - experiment rapidly on willing participants",
+        "No IRB bureaucracy - ethics respected but not paralyzed",
+        "Collaborate with 50k top scientists, all aligned",
+        "Research senolytics, DNA repair, stem cells, ALL hallmarks of aging",
+        "See RESULTS in your lifetime - not publish and hope",
+        "CURE aging before you age - save YOUR life with YOUR research"
+      ],
+      "timeline": "Food project proves model works, longevity next, you're there from start"
+    }
+  },
+  "the_specific_pitch": {
+    "to_postdocs": "PhD poverty for uncertain tenure vs $5M+/year for research that matters",
+    "to_adjuncts": "$3k/course exploitation vs $5M+/year for teaching + research",
+    "to_grad_students": "Drop out or finish, then come do REAL science",
+    "to_tenured_faculty": "You have security - use it to do something MEANINGFUL",
+    "to_industry_scientists": "Corporate masters vs mission-aligned research - obvious"
+  },
+  "the_vision": {
+    "current_science": [
+      "Discover something brilliant",
+      "Write grant to continue research (80% effort)",
+      "Publish paper behind paywall (10 people read it)",
+      "Hope someone implements it (usually no one)",
+      "Discovery dies in journal"
+    ],
+    "barracks_science": [
+      "Discover something useful",
+      "Implement immediately (resources available)",
+      "See results (food grows, animals saved, hunger ended)",
+      "Refine based on reality (not theory)",
+      "Discovery FEEDS BILLIONS"
+    ]
+  },
+  "the_call": {
+    "question": "How many more brilliant ideas will die in journals while you write grants?",
+    "invitation": "Join 50,000 scientists doing research that IMPLEMENTS",
+    "promise": "No grants, full resources, rapid experimentation, collaboration, implementation, fair compensation",
+    "urgency": "Aging NOW, hunger NOW, slaughter NOW - discoveries needed NOW, not after decade of grants",
+    "choice": "$90k writing grants for maybe-published papers OR $5M+ discovering solutions that FEED ALL LIFE - you decide"
+  }
+}
+

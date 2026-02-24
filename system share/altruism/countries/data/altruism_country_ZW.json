@@ -1,0 +1,36 @@
+{
+  "country_code": "ZW",
+  "name": "Zimbabwe",
+  "approximate": true,
+  "population": 15000000,
+  "gdp_nominal_usd": 22000000000,
+  "gdp_per_capita_usd": 1460,
+  "social_spending_pct_gdp": 12.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 5.0,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 800000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 66000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.2,
+  "child_mortality_under5_per_1000": 60.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "HIV/AIDS",
+    "Malaria",
+    "Lower respiratory infections"
+  ],
+  "notes": [
+    "Zimbabwe has high under-5 and HIV/AIDS burdens and has experienced severe economic crises.",
+    "Diaspora remittances and NGOs are critical for basic services."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

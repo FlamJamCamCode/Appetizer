@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Triadization - Interactive World Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #000;
+            color: #fff;
+        }
+        #map { 
+            height: 100vh; 
+            width: 100%; 
+        }
+        #controls { 
+            position: absolute; 
+            top: 10px; 
+            left: 10px; 
+            background: rgba(0, 0, 0, 0.9); 
+            padding: 15px; 
+            z-index: 1000; 
+            border-radius: 10px; 
+            border: 1px solid #333;
+            color: #fff;
+            max-width: 300px;
+        }
+        #controls h3 {
+            margin: 0 0 15px 0;
+            color: #00ffff;
+        }
+        #controls button, #controls select, #controls input { 
+            margin: 5px; 
+            padding: 8px; 
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+        #controls button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .layer-list { 
+            max-height: 200px; 
+            overflow-y: auto; 
+        }
+        .layer-item { 
+            margin-left: 10px; 
+            margin: 5px 0;
+        }
+        .nested-layer { 
+            margin-left: 20px; 
+        }
+        .zone-info {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 300px;
+            color: #fff;
+        }
+        .zone-info h3 {
+            margin: 0 0 10px 0;
+            color: #ff00ff;
+        }
+        .zone-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .stats-panel {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            color: #fff;
+            min-width: 200px;
+        }
+        .stats-panel h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .stat-value {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h3>The Triadization</h3>
+        <p>Interactive World Map with Mercator Projection</p>
+        <div>
+            <label for="layerName">New Zone Name:</label>
+            <input type="text" id="layerName" placeholder="Enter zone name">
+            <button onclick="addLayer()">Add Zone</button>
+        </div>
+        <div>
+            <label for="parentLayer">Parent Zone:</label>
+            <select id="parentLayer">
+                <option value="">None (Top Level)</option>
+            </select>
+        </div>
+        <div class="layer-list" id="layerList"></div>
+    </div>
+    
+    <div class="stats-panel">
+        <h3>World Statistics</h3>
+        <div class="stat-item">
+            <span>Total Zones:</span>
+            <span class="stat-value" id="totalZones">0</span>
+        </div>
+        <div class="stat-item">
+            <span>Level 1 Zones:</span>
+            <span class="stat-value" id="level1Zones">0</span>
+        </div>
+        <div class="stat-item">
+            <span>Level 2 Zones:</span>
+            <span class="stat-value" id="level2Zones">0</span>
+        </div>
+        <div class="stat-item">
+            <span>Level 3 Zones:</span>
+            <span class="stat-value" id="level3Zones">0</span>
+        </div>
+        <div class="stat-item">
+            <span>Level 4 Zones:</span>
+            <span class="stat-value" id="level4Zones">0</span>
+        </div>
+    </div>
+    
+    <div class="zone-info" id="zoneInfo" style="display: none;">
+        <h3 id="zoneTitle">Select a Zone</h3>
+        <p id="zoneDescription">Click on any zone to see details.</p>
+    </div>
+    
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script>
+        // Custom CRS for Mercator projection with our world map
+        const MercatorCRS = L.extend({}, L.CRS.Simple, {
+            projection: L.Projection.LonLat,
+            transformation: new L.Transformation(1/180, 1, -1/90, 0.5),
+            scale: function(zoom) {
+                return Math.pow(2, zoom);
+            }
+        });
+
+        // Initialize the map with custom CRS
+        const map = L.map('map', {
+            crs: MercatorCRS,
+            center: [0, 0],
+            zoom: 1,
+            minZoom: 0,
+            maxZoom: 4
+        });
+
+        // Add the Mercator world map as a custom tile layer
+        L.tileLayer('mercator-world-map.png', {
+            attribution: 'The Triadization World Map',
+            bounds: [[-90, -180], [90, 180]],
+            noWrap: true
+        }).addTo(map);
+
+        // Initialize Leaflet.draw control
+        const drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+        const drawControl = new L.Control.Draw({
+            edit: { featureGroup: drawnItems },
+            draw: { 
+                circle: false, 
+                marker: false, 
+                polyline: false,
+                rectangle: {
+                    shapeOptions: {
+                        color: '#00ffff',
+                        fillColor: '#00ffff',
+                        fillOpacity: 0.3
+                    }
+                },
+                polygon: {
+                    shapeOptions: {
+                        color: '#00ffff',
+                        fillColor: '#00ffff',
+                        fillOpacity: 0.3
+                    }
+                }
+            }
+        });
+        map.addControl(drawControl);
+
+        // Layer management
+        let layers = [];
+        const layerList = document.getElementById('layerList');
+        const layerNameInput = document.getElementById('layerName');
+        const parentLayerSelect = document.getElementById('parentLayer');
+
+        // Triadization zones data
+        const triadizationZones = [
+            // Level 1 Zones (Pure MWR)
+            {
+                name: 'Mediterranean Floating City',
+                lat: 40,
+                lng: 15,
+                width: 10,
+                height: 5,
+                level: 1,
+                type: 'level1-zone',
+                description: 'A network of floating cities in the Mediterranean Sea, serving as a major trade hub between Old World and New World.',
+                population: '850K',
+                features: ['Underwater districts', 'Wave energy systems', 'Aquatic farming', 'Trade hub status'],
+                aesthetics: 'Venetian meets aquatech'
+            },
+            {
+                name: 'Patagonia Free Zone',
+                lat: -45,
+                lng: -70,
+                width: 8,
+                height: 6,
+                level: 1,
+                type: 'level1-zone',
+                description: 'Anarchist collective with consensus decision-making and natural living.',
+                population: '180K',
+                features: ['Consensus protocols', 'Natural living', 'Renewable energy', 'Community gardens'],
+                aesthetics: 'Eco-anarchist meets permaculture'
+            },
+            {
+                name: 'Mongolia Nomadic Network',
+                lat: 45,
+                lng: 105,
+                width: 8,
+                height: 5,
+                level: 1,
+                type: 'level1-zone',
+                description: 'Traditional nomadic lifestyle enhanced with modern technology and mobile cities.',
+                population: '420K',
+                features: ['Mobile cities', 'Steppe wisdom', 'Nomadic tech', 'Horse culture'],
+                aesthetics: 'Traditional Mongolian meets mobile tech'
+            },
+            {
+                name: 'Enlightenment Aesthetics Zone',
+                lat: 50,
+                lng: 5,
+                width: 10,
+                height: 6,
+                level: 1,
+                type: 'level1-zone',
+                description: 'A zone dedicated to Enlightenment ideals with Christmas Carol personalities.',
+                population: '1.2M',
+                features: ['Rational discourse', 'Scientific method governance', 'Humanist education', 'Christmas Carol personalities'],
+                aesthetics: '18th century Enlightenment meets modern tech'
+            },
+            
+            // Level 2 Zones (Sovereignty)
+            {
+                name: 'Neo-Babylonian Empire',
+                lat: 32,
+                lng: 44,
+                width: 12,
+                height: 7,
+                level: 2,
+                type: 'level2-zone',
+                description: 'Ancient Mesopotamian civilization combined with cutting-edge technology.',
+                population: '2.3M',
+                features: ['Ziggurat computational centers', 'Cuneiform AI interfaces', 'Ancient wisdom integration', 'Solar-powered cities'],
+                aesthetics: 'Ancient Mesopotamian meets cyberpunk'
+            },
+            {
+                name: 'Sahara Solar Empire',
+                lat: 20,
+                lng: 0,
+                width: 10,
+                height: 6,
+                level: 2,
+                type: 'level2-zone',
+                description: 'Desert solar farms with oasis cities and clean energy export.',
+                population: '950K',
+                features: ['Desert solar farms', 'Oasis cities', 'Clean energy export', 'Water management'],
+                aesthetics: 'Desert meets solar tech'
+            },
+            
+            // Level 3 Zones (Hierarchy)
+            {
+                name: 'Neo-Egyptian Dominion',
+                lat: 26,
+                lng: 30,
+                width: 10,
+                height: 6,
+                level: 3,
+                type: 'level3-zone',
+                description: 'Pharaonic system adapted for the modern age with pyramid solar collectors.',
+                population: '1.8M',
+                features: ['Pyramid solar collectors', 'Immortality research', 'Hieroglyphic AI', 'Nile restoration'],
+                aesthetics: 'Ancient Egyptian meets biotech'
+            },
+            
+            // Level 4 Zones (Strict Rule)
+            {
+                name: 'Brugge Medieval Revival',
+                lat: 51,
+                lng: 3,
+                width: 9,
+                height: 5,
+                level: 4,
+                type: 'level4-zone',
+                description: 'Complete revival of medieval European culture with guild system.',
+                population: '320K',
+                features: ['Guild system restoration', 'Cathedral aesthetics', 'Artisan economy', 'Traditional crafts + tech'],
+                aesthetics: 'Medieval European meets steampunk'
+            },
+            
+            // Old World Zones
+            {
+                name: 'United States (Old World)',
+                lat: 40,
+                lng: -100,
+                width: 15,
+                height: 10,
+                level: 0,
+                type: 'old-world',
+                description: 'Federal democracy in decline, struggling with internal conflicts.',
+                population: '280M',
+                features: ['Federal system', 'Democratic processes', 'Economic struggles', 'Social division'],
+                aesthetics: 'Modern American in decline'
+            },
+            {
+                name: 'China (Old World)',
+                lat: 35,
+                lng: 105,
+                width: 12,
+                height: 9,
+                level: 0,
+                type: 'old-world',
+                description: 'One-party state struggling with economic and social challenges.',
+                population: '1.2B',
+                features: ['One-party system', 'Centralized control', 'Economic challenges', 'Social unrest'],
+                aesthetics: 'Modern Chinese in decline'
+            }
+        ];
+
+        // Create zones on the map
+        function createTriadizationZones() {
+            triadizationZones.forEach(zoneData => {
+                const zone = {
+                    id: generateUUID(),
+                    name: zoneData.name,
+                    featureGroup: new L.FeatureGroup(),
+                    parentId: null,
+                    children: [],
+                    level: zoneData.level,
+                    type: zoneData.type,
+                    description: zoneData.description,
+                    population: zoneData.population,
+                    features: zoneData.features,
+                    aesthetics: zoneData.aesthetics
+                };
+
+                // Create rectangle for the zone
+                const bounds = [
+                    [zoneData.lat - zoneData.height/2, zoneData.lng - zoneData.width/2],
+                    [zoneData.lat + zoneData.height/2, zoneData.lng + zoneData.width/2]
+                ];
+                
+                const rectangle = L.rectangle(bounds, {
+                    color: getZoneColor(zoneData.level),
+                    fillColor: getZoneColor(zoneData.level),
+                    fillOpacity: 0.3,
+                    weight: 2
+                });
+
+                // Add popup with zone information
+                rectangle.bindPopup(`
+                    <h3>${zoneData.name}</h3>
+                    <p><strong>Level:</strong> ${zoneData.level}</p>
+                    <p><strong>Population:</strong> ${zoneData.population}</p>
+                    <p><strong>Description:</strong> ${zoneData.description}</p>
+                    <p><strong>Features:</strong> ${zoneData.features.join(', ')}</p>
+                    <p><strong>Aesthetics:</strong> ${zoneData.aesthetics}</p>
+                `);
+
+                // Add click handler
+                rectangle.on('click', function() {
+                    showZoneInfo(zoneData);
+                });
+
+                zone.featureGroup.addLayer(rectangle);
+                zone.featureGroup.addTo(map);
+                layers.push(zone);
+            });
+
+            updateLayerList();
+            updateStatistics();
+        }
+
+        // Get zone color based on level
+        function getZoneColor(level) {
+            const colors = {
+                0: '#666666', // Old World
+                1: '#00ff00', // Level 1 - Pure MWR
+                2: '#ffff00', // Level 2 - Sovereignty
+                3: '#ffa500', // Level 3 - Hierarchy
+                4: '#ff0000'  // Level 4 - Strict Rule
+            };
+            return colors[level] || '#00ffff';
+        }
+
+        // Show zone information
+        function showZoneInfo(zoneData) {
+            const zoneInfo = document.getElementById('zoneInfo');
+            const zoneTitle = document.getElementById('zoneTitle');
+            const zoneDescription = document.getElementById('zoneDescription');
+            
+            zoneTitle.textContent = zoneData.name;
+            zoneDescription.innerHTML = `
+                <p><strong>Level:</strong> ${zoneData.level}</p>
+                <p><strong>Type:</strong> ${zoneData.type}</p>
+                <p><strong>Population:</strong> ${zoneData.population}</p>
+                <p><strong>Description:</strong> ${zoneData.description}</p>
+                <p><strong>Features:</strong> ${zoneData.features.join(', ')}</p>
+                <p><strong>Aesthetics:</strong> ${zoneData.aesthetics}</p>
+            `;
+            
+            zoneInfo.style.display = 'block';
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            const totalZones = layers.length;
+            const level1Zones = layers.filter(l => l.level === 1).length;
+            const level2Zones = layers.filter(l => l.level === 2).length;
+            const level3Zones = layers.filter(l => l.level === 3).length;
+            const level4Zones = layers.filter(l => l.level === 4).length;
+            
+            document.getElementById('totalZones').textContent = totalZones;
+            document.getElementById('level1Zones').textContent = level1Zones;
+            document.getElementById('level2Zones').textContent = level2Zones;
+            document.getElementById('level3Zones').textContent = level3Zones;
+            document.getElementById('level4Zones').textContent = level4Zones;
+        }
+
+        // Handle new zone creation
+        map.on(L.Draw.Event.CREATED, function (event) {
+            const layer = event.layer;
+            const layerName = layerNameInput.value || `Zone ${layers.length + 1}`;
+            const parentId = parentLayerSelect.value;
+            const newLayer = {
+                id: generateUUID(),
+                name: layerName,
+                featureGroup: new L.FeatureGroup().addLayer(layer),
+                parentId: parentId || null,
+                children: [],
+                level: 1,
+                type: 'level1-zone',
+                description: 'Custom zone',
+                population: 'Unknown',
+                features: ['Custom features'],
+                aesthetics: 'Custom aesthetics'
+            };
+
+            // Add to parent layer if specified
+            if (parentId) {
+                const parent = findLayerById(layers, parentId);
+                if (parent) parent.children.push(newLayer);
+            } else {
+                layers.push(newLayer);
+            }
+
+            newLayer.featureGroup.addTo(map);
+            drawnItems.addLayer(layer);
+            updateLayerList();
+            updateStatistics();
+            layerNameInput.value = '';
+        });
+
+        // Add a new empty layer
+        function addLayer() {
+            const layerName = layerNameInput.value || `Layer ${layers.length + 1}`;
+            const parentId = parentLayerSelect.value;
+            const newLayer = {
+                id: generateUUID(),
+                name: layerName,
+                featureGroup: new L.FeatureGroup(),
+                parentId: parentId || null,
+                children: [],
+                level: 1,
+                type: 'level1-zone',
+                description: 'Custom zone',
+                population: 'Unknown',
+                features: ['Custom features'],
+                aesthetics: 'Custom aesthetics'
+            };
+
+            if (parentId) {
+                const parent = findLayerById(layers, parentId);
+                if (parent) parent.children.push(newLayer);
+            } else {
+                layers.push(newLayer);
+            }
+
+            newLayer.featureGroup.addTo(map);
+            updateLayerList();
+            updateStatistics();
+            layerNameInput.value = '';
+        }
+
+        // Find layer by ID
+        function findLayerById(layerArray, id) {
+            for (const layer of layerArray) {
+                if (layer.id === id) return layer;
+                const found = findLayerById(layer.children, id);
+                if (found) return found;
+            }
+            return null;
+        }
+
+        // Update layer list UI
+        function updateLayerList() {
+            layerList.innerHTML = '';
+            parentLayerSelect.innerHTML = '<option value="">None (Top Level)</option>';
+            renderLayerList(layers, 0);
+        }
+
+        // Render nested layer list
+        function renderLayerList(layerArray, depth) {
+            layerArray.forEach(layer => {
+                // Add to layer list
+                const div = document.createElement('div');
+                div.className = depth > 0 ? 'layer-item nested-layer' : 'layer-item';
+                div.innerHTML = `
+                    <input type="checkbox" checked onchange="toggleLayer('${layer.id}', this.checked)">
+                    ${layer.name} (Level ${layer.level})
+                    <button onclick="removeLayer('${layer.id}')">Remove</button>
+                `;
+                layerList.appendChild(div);
+
+                // Add to parent layer dropdown
+                const option = document.createElement('option');
+                option.value = layer.id;
+                option.text = '-'.repeat(depth) + layer.name;
+                parentLayerSelect.appendChild(option);
+
+                // Render children
+                renderLayerList(layer.children, depth + 1);
+            });
+        }
+
+        // Toggle layer visibility
+        function toggleLayer(id, visible) {
+            const layer = findLayerById(layers, id);
+            if (layer) {
+                if (visible) {
+                    map.addLayer(layer.featureGroup);
+                } else {
+                    map.removeLayer(layer.featureGroup);
+                }
+                layer.children.forEach(child => toggleLayer(child.id, visible));
+            }
+        }
+
+        // Remove layer
+        function removeLayer(id) {
+            layers = layers.filter(layer => layer.id !== id);
+            let parent = null;
+            layers.forEach(l => {
+                l.children = l.children.filter(child => {
+                    if (child.id === id) parent = l;
+                    return child.id !== id;
+                });
+            });
+            const layer = findLayerById(layers, id);
+            if (layer) map.removeLayer(layer.featureGroup);
+            updateLayerList();
+            updateStatistics();
+        }
+
+        // Generate UUID for unique layer IDs
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        // Initialize the map
+        createTriadizationZones();
+    </script>
+</body>
+</html>

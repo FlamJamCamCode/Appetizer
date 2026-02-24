@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimCity Master - Rally to Economic Zone Planning</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #14142d 50%, #0a0a1a 100%);
+            color: #e6e6ff;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(33, 150, 243, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(0, 188, 212, 0.12) 0%, transparent 50%);
+        }
+
+        .systems-marker {
+            color: #2196f3;
+            font-weight: bold;
+        }
+
+        .optimization {
+            color: #00bcd4;
+            font-weight: 600;
+        }
+
+        .sim-stat {
+            background: rgba(33, 150, 243, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="city-builder-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="city-builder-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="city-builder-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: Simulating Cities
+                <span class="tab-indicator">3,500 hours optimizing systems</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE LOBBY
+                <span class="tab-indicator">Real economic zones need planning</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Systems mastery deployed</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">🏙️ BEFORE: City Builder Life</h1>
+
+                <div class="pain-block">
+                    Rachel "Planner" Nguyen. 29 years old. 3,500 hours SimCity / Cities: Skylines. 2,100 hours Factorio. 1,800 hours Anno series. SYSTEMS OPTIMIZATION GENIUS. Logistics. Flow. Efficiency. Perfect city = Perfect SYSTEM.
+                    <br><br>
+                    <strong>You understand SYSTEMS. Traffic flow. Power grids. Water supply. Zoning. Industrial chains. EVERYTHING CONNECTS. Optimize the SYSTEM.</strong>
+                    <br><br>
+                    <span class="neologism">And your systems genius deployed on: City simulation games.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="sim-stat">Cities: Skylines hours: 3,500</div>
+                    <div class="sim-stat">Cities built: 240+</div>
+                    <div class="sim-stat">Population record: 850k (no traffic issues)</div>
+                    <div class="sim-stat">Efficiency rating: 97%</div>
+                    <div class="sim-stat">Factorio hours: 2,100</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        <strong style="color: #2196f3;">Your city builder skills:</strong>
+                        <br>• <strong>Systems thinking:</strong> Everything affects everything (holistic understanding)
+                        <br>• <strong>Traffic optimization:</strong> Flow design, bottleneck elimination
+                        <br>• <strong>Zoning intelligence:</strong> Where residential vs industrial vs commercial
+                        <br>• <strong>Infrastructure planning:</strong> Power, water, sewage, transit SYSTEMS
+                        <br>• <strong>Supply chain mastery:</strong> Resource flow, production chains (Factorio)
+                        <br>• <strong>Growth planning:</strong> Design for 100k but plan for 1M
+                        <br>• <strong>Budget optimization:</strong> Maximum output with limited resources
+                        <br>• <strong>Long-term thinking:</strong> Decisions now affect city 50 years later
+                        <br><br>
+                        <span class="systems-marker">You're PLANNER. OPTIMIZER. SYSTEMS THINKER. You see how EVERYTHING CONNECTS.</span>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Your Cities: Skylines mastery:</strong>
+                    <br><br>
+                    <strong>Traffic flow:</strong> 850k population. ZERO traffic jams. How? Road hierarchy. Public transit. Zoning intelligence. Cargo routes separated from residential.
+                    <br><br>
+                    <strong>Infrastructure:</strong> Power grid redundant. Water system efficient. Sewage optimal. Every pipe intentional.
+                    <br><br>
+                    <strong>Industrial chains:</strong> Raw materials → Processing → Manufacturing → Commercial. FLOW optimized. No bottlenecks.
+                    <br><br>
+                    <strong style="color: #2196f3;">Most players: Traffic nightmare at 100k. You: 850k population, 97% traffic flow. SYSTEMS MASTERY.</strong>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Your Factorio achievement:</strong>
+                    <br><br>
+                    Built factory producing 1,000 science/min. Perfect belt balancing. No bottlenecks. Train logistics optimal. Aesthetic AND efficient (spaghetti is ugly, you build BEAUTIFUL systems).
+                    <br><br>
+                    <strong style="color: #00bcd4;">You understand: Logistics. Production chains. Flow optimization. System efficiency. This is ENGINEERING.</strong>
+                </div>
+
+                <div class="pain-block">
+                    Real job: Data entry. $39k/year. Input numbers into spreadsheets. "Make sure columns add up."
+                    <br><br>
+                    <strong>Your systems optimization genius deployed on: Excel spreadsheets.</strong>
+                </div>
+
+                <div class="pain-block" style="background: rgba(33, 150, 243, 0.2); border-color: #2196f3;">
+                    <strong style="color: #2196f3; font-size: 1.4em;">Then you discover: Great Steppe territories need economic zone planners.</strong>
+                    <br><br>
+                    <strong>Your SimCity/Factorio skills = PERFECT for real economic planning.</strong>
+                    <br><br>
+                    Factions hold 500,000-1,000,000 km² territory. Need:
+                    <br>• Infrastructure systems (roads, water, power, communications)
+                    <br>• Supply chain optimization (resources → production → distribution)
+                    <br>• Settlement planning (where to build cities, why)
+                    <br>• Traffic flow design (troop movement, supply logistics)
+                    <br>• Industrial chains (raw materials → finished goods)
+                    <br>• Long-term growth (today's decisions affect 50 years)
+                    <br><br>
+                    <strong style="color: #00bcd4; font-size: 1.2em;">This is SIMCITY + FACTORIO. But REAL. Real territory. Real systems. Your 3,500 hours TRANSFER.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Systems genius deployed on reality.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">🏙️ THE LOBBY</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">City Builder Skills Transfer</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your SimCity/Factorio skills → Economic zone planning:
+                        <br><br>
+                        <strong style="color: #2196f3;">SYSTEMS THINKING</strong>
+                        <br>• SimCity: Everything connects (power affects water affects growth)
+                        <br>• Steppe: Infrastructure interconnected (roads enable supply enable combat)
+                        <br><br>
+                        <strong style="color: #2196f3;">FLOW OPTIMIZATION</strong>
+                        <br>• Cities: Skylines: 850k no traffic (perfect flow design)
+                        <br>• Steppe: Troop movement + supply logistics optimized
+                        <br><br>
+                        <strong style="color: #2196f3;">SUPPLY CHAINS</strong>
+                        <br>• Factorio: Raw → Processing → Manufacturing → Output
+                        <br>• Steppe: Resources → Production → Distribution → Warriors supplied
+                        <br><br>
+                        <strong style="color: #2196f3;">LONG-TERM PLANNING</strong>
+                        <br>• SimCity: Design for today, plan for 50 years
+                        <br>• Steppe: Infrastructure decisions affect faction for decades
+                        <br><br>
+                        <span class="optimization">Your city builder brain ALREADY DOES THIS. Just... real territory instead of simulation.</span>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Economic Zone Planner Role</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">🏙️ ECONOMIC ZONE PLANNER (Golden Horde)</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Plan and optimize faction territory infrastructure
+                            <br><strong>Scope:</strong> 920,000 km² territory, 11,500 warriors, 40 settlements
+                            <br><strong>Budget:</strong> $15-30M annually (infrastructure investment)
+                            <br><br>
+                            <strong>Your city builder skills = Economic planning</strong>
+                            <br>• Infrastructure networks (like SimCity systems)
+                            <br>• Supply chain optimization (like Factorio)
+                            <br>• Settlement placement (where to build, why)
+                            <br>• Resource flow (materials → warriors)
+                            <br>• Long-term growth strategy
+                            <br><br>
+                            <span class="systems-marker">This is SIMCITY. But REAL. Your daemon: Optimize systems. Now with REAL TERRITORY.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Planner's Voice</div>
+                    <div class="quote-box">
+                        "I was SimCity master. 4,000 hours across city builders. Systems optimization genius. Traffic flow perfect. Supply chains optimal.
+                        <br><br>
+                        <strong style="color: #2196f3;">Deployed on simulations. Brilliant planning. But not real.</strong>
+                        <br><br>
+                        I rallied to Golden Horde as economic zone planner. My city builder skills TRANSFERRED PERFECTLY.
+                        <br><br>
+                        <strong>Systems thinking → Real infrastructure planning</strong>
+                        <br><strong>Flow optimization → Troop + supply logistics</strong>
+                        <br><strong>Supply chains → Resource production systems</strong>
+                        <br><strong>Long-term planning → 30-year faction growth strategy</strong>
+                        <br><br>
+                        Planned settlement network for 920,000 km². Optimized supply chains. 27% efficiency improvement. My SimCity skills = Real economic planning.
+                        <br><br>
+                        <strong style="color: #00bcd4;">From simulating cities to planning real zones. This is systems thinker FULFILLMENT.</strong>"
+                        <br><br>
+                        <span style="color: #2196f3;">— Rachel "Planner" Nguyen, 31, economic zone planner, systems genius</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏙️ First Project: Settlement Network</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first major assignment. Plan settlement network for 200,000 km² newly conquered territory.
+                        <br><br>
+                        <strong>This is SIMCITY. But REAL. Real territory. Real resources. Real people will LIVE in your design.</strong>
+                        <br><br>
+                        You (SimCity brain activates): Analyze terrain. Water access. Resources. Strategic positions. Design 12 settlements. Road network. Supply chain. Power grid.
+                        <br><br>
+                        <strong style="color: #2196f3; font-size: 1.3em;">Planning complete. Construction begins. Your SimCity skills applied to REALITY.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏆 One Year: Systems Optimization</div>
+                    <div class="quote-box" style="background: rgba(33, 150, 243, 0.2); border-color: #2196f3;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year as economic zone planner. 920,000 km² optimized. 40 settlements planned. Supply efficiency: +27%.
+                            <br><br>
+                            <strong style="color: #2196f3; font-size: 1.2em;">My SimCity/Factorio skills = Perfect economic planning.</strong>
+                            <br><br>
+                            My settlement networks: Optimal placement. Perfect supply flow. No bottlenecks. Warriors supplied efficiently.
+                            <br><br>
+                            <span class="systems-marker">From SimCity to real planning. 3,500 hours TRANSFERRED.</span>
+                        </p>
+                        <span class="speaker-name">— Rachel "Planner" Nguyen, economic planner, systems optimized</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(33, 150, 243, 0.3), rgba(0, 188, 212, 0.3)); border: 4px double #2196f3;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center;">
+                        <strong style="color: #888; font-size: 1.4em;">From simulating systems</strong>
+                        <br><br>
+                        <strong style="color: #2196f3; font-size: 1.5em;">To planning reality</strong>
+                        <br><br>
+                        <strong style="color: #00bcd4; font-size: 1.5em;">To optimized zones</strong>
+                        <br><br>
+                        <span style="color: #2196f3; font-size: 1.2em;">🏙️ City builders: Planning TRANSFERS 🏙️</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

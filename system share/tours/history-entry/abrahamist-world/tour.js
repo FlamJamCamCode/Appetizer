@@ -1,0 +1,122 @@
+window.TOUR_DATA = {
+	"id": "abrahamist-world-tour",
+	"title": "Tour for Abrahamist World",
+	"audience": "Those who see unity across Judaism, Christianity, and Islam through shared Abrahamic heritage (Sufi mystics, progressive Jews/Christians/Muslims, theological universalists, or specific sects capable of shared world)",
+	"description": "How Triadization enables the Abrahamist World to ACTUALLY exist—not through forced ecumenism, but through coordination of distinct Springs (Orthodox Jews, Jeruist Christians, Sufi Muslims, etc.) united by shared aversion to nihilism/paganism",
+	"color_theme": {
+		"primary": "#8b7355",
+		"secondary": "#daa520",
+		"accent": "#006400",
+		"background": "#0f0f0a"
+	},
+	"sections": [
+		{
+			"id": "intro",
+			"title": "Who You Are",
+			"content": "You identify with the Abrahamist World—seeing Judaism, Christianity, and Islam as branches of ONE tree (Abraham, prophetic tradition, monotheism, moral law, eschatology). You reject: (1) Sectarian exclusivism (\"my religion damned, yours saved\"), and (2) Theological relativism (\"all religions equally true\"). You believe: Abrahamic faiths share ENOUGH to form World-level coordination (shared aversion to nihilism/atheism/paganism, shared reverence for Abraham/Moses/prophets, shared ethical core), while maintaining distinct Springs (Orthodox Judaism ≠ Jeruist Christianity ≠ Sufism, each valid path, each autonomous)."
+		},
+		{
+			"id": "problem",
+			"title": "The Problem: 1,400 Years of War",
+			"content": "Historical Abrahamism = war: Jewish-Christian conflict (Jews rejected Jesus, Christians persecuted Jews 2,000 years, pogroms/expulsions/Holocaust), Christian-Muslim conflict (Crusades 1095-1291, Ottoman-European wars 1300s-1900s, millions killed), Sunni-Shia conflict (1,400 years, ongoing—Iran vs Saudi, Iraq civil war, Yemen war, Syria war). WHY? No Triadization framework (each claimed exclusive truth, tried to force others to convert or die, no concept of World-level coordination despite theological incompatibility)."
+		},
+		{
+			"id": "history",
+			"title": "What Abrahamist World Could Have Been",
+			"subsections": [
+				{
+					"title": "Shared Origin: Abraham (2000 BC)",
+					"content": "Judaism: Abraham = first Hebrew, covenant with God (Genesis 12), monotheism emerges. Christianity: Abraham = father of faith (Romans 4), Jesus fulfills Abrahamic covenant. Islam: Ibrahim = first Muslim (Quran 2:127-129), builds Kaaba with Ishmael. Pattern: THREE interpretations of ONE patriarch (Jewish emphasis: covenant/law/land, Christian emphasis: faith/grace/inclusion of Gentiles, Islamic emphasis: submission/Kaaba/pilgrimage). All valid FROM THEIR PERSPECTIVE (each sees itself as correct continuation, others as diverging). Triadization: All THREE can coexist (each maintains own interpretation, coordinates on shared reverence for Abraham)."
+				},
+				{
+					"title": "Egyptian Connection: Imhotep→Moses→Jesus→Muhammad (3000 BC-632 AD)",
+					"content": "Imhotep (2650 BC Egypt): Healer, sage, 'One Who Comes in Peace,' deified, anointing rituals (mashach). Moses (1500 BC?): Egyptian prince, learns Egyptian priesthood, leads Exodus, receives Law at Sinai (monotheism from Akhenaten's Atenism?). Jesus (0-33 AD): 'Christ' (Messiah, anointed one—from Egyptian anointing rituals), fulfills Mosaic Law (claims), Morning Star/Light Bringer (Lucifer). Muhammad (570-632 AD): Last prophet (claims), completes Abrahamic revelation (claims), final Law (Sharia). Pattern: GENEALOGICAL CONTINUITY (each builds on previous, reinterprets, claims to complete). Triadization: Each interpretation valid FROM ITS PERSPECTIVE (Jews: Moses final, Torah eternal; Christians: Jesus final, New Covenant; Muslims: Muhammad final, Quran perfect). All can coordinate despite disagreement.",
+					"documents": [
+						"06c-daemon-devil-diabolic.md"
+					]
+				},
+				{
+					"title": "Medieval Coexistence: Córdoba (929-1031 AD)",
+					"content": "Umayyad Caliphate Spain: Jews, Christians, Muslims coexisted (dhimmi system—non-Muslims paid jizya tax, autonomous internal governance, protected). Córdoba Library (400,000 books, translations Greek→Arabic→Latin, Jews/Christians/Muslims collaborated on scholarship). Maimonides (Jewish philosopher, 1135-1204, wrote in Arabic, served Muslim rulers). Pattern: WORLD-LEVEL coordination (shared intellectual culture, trade, no forced conversion—though dhimmi inferior status, not equality). Collapsed: Almoravids (fundamentalist Berbers, 1086, ended tolerance, forced conversions). WITH Triadization: Could've lasted (Jewish Springs, Christian Springs, Muslim Springs, coordinate for defense/trade, no jizya (equal status), each autonomous).",
+					"documents": [
+						"09-islamic-expansion-700ad.md"
+					]
+				},
+				{
+					"title": "Crusades Disaster: Failure of Coordination (1095-1291 AD)",
+					"content": "Pope Urban II (1095): Calls Crusade (retake Jerusalem from Muslims). Result: 9 Crusades, 200 years war, 1-3M killed (Christians + Muslims), Jerusalem changed hands 6 times, Crusader States collapsed 1291. WHY? No MoWD framework (disputes over holy sites resolved by war, not negotiation). Fourth Crusade (1204): Christians sack Constantinople (Orthodox), killing Christians! Pattern: Abrahamic faiths CAN'T coordinate without Triadization (theological incompatibility + no framework for coexistence = war). WITH Triadization: Jerusalem becomes neutral zone (Jewish Springs in Jewish Quarter, Christian Springs in Christian Quarter, Muslim Springs in Muslim Quarter, coordinate pilgrimage/trade, shared defense against external threats, NO war over whose prophet was correct).",
+					"documents": [
+						"10c-crusader-states-experiment-1099-1291ad.md"
+					]
+				},
+				{
+					"title": "Ottoman Millet System: Proto-Triadization (1453-1920 AD)",
+					"content": "Ottoman Empire: Millet system (religious communities autonomous—Greek Orthodox Millet, Armenian Millet, Jewish Millet, each self-governing, own laws, own courts, own schools). Pattern: WORLD-LEVEL Ottoman Empire (Sultan supreme, Islamic law for Muslims, millet law for non-Muslims) containing SPRINGS (each religious community autonomous). Worked 400+ years (Jews/Christians survived in Ottoman lands, vs Western Europe expelled/killed Jews). Collapsed: Nationalism (Greeks/Armenians/Arabs wanted nation-states, rejected millet autonomy 1800s-1920). WITH Triadization: Could've evolved (equal status millets, not dhimmi, voluntary coordination, survives to 2025).",
+					"documents": [
+						"11-rus-byzantine-synthesis-900ad.md",
+						"11g-orban-constantinople-fall-1453ad.md"
+					]
+				}
+			]
+		},
+		{
+			"id": "counterfactual",
+			"title": "What Abrahamist World SHOULD Be: Coordination Not Conversion",
+			"content": "True Abrahamist World = WORLD-level entity (NOT Ocean—no shared positive vision beyond aversion to nihilism/paganism). Structure: JEWISH OCEAN (Orthodox/Conservative/Reform Springs, coordinate as Jews), CHRISTIAN OCEAN (Catholic/Orthodox/Protestant Springs, coordinate as Christians), ISLAMIC OCEAN (Sunni/Shia/Sufi Springs, coordinate as Muslims), THREE OCEANS coordinate at WORLD-level (shared: Abraham, monotheism, prophetic tradition, moral law, aversion to atheism/paganism; NOT shared: Jesus divinity, Muhammad finality, Torah/Bible/Quran authority). Coordination: (1) Pilgrimage (Jerusalem shared—Jewish Western Wall, Christian Holy Sepulchre, Muslim Dome of Rock, all accessible, no war), (2) Trade (free trade zone, mutual benefit), (3) Defense (against external threats—atheist totalitarianism, pagan resurgence, coordinate militarily), (4) NO forced conversion (each Ocean maintains own theology, no pressure on others, Jews remain Jews, Christians remain Christians, Muslims remain Muslims). Result: Abrahamist World exists WITHOUT forced ecumenism (each faith maintains distinctives, coordinates on shared basics, NO theological compromise required)."
+		},
+		{
+			"id": "modern-possibility",
+			"title": "Who Can Form Abrahamist World (2025)",
+			"subsections": [
+				{
+					"title": "Jewish Participants",
+					"content": "Orthodox Jews (believe Torah eternal, but can coordinate with Christians/Muslims on shared ethics), Reform Jews (already interfaith-friendly, see all Abrahamic faiths as valid paths). NOT: Ultra-Orthodox (see Christianity/Islam as idolatry, won't coordinate). NOT: Zionist maximalists (want Greater Israel, no Palestinian state, incompatible with Muslim coordination)."
+				},
+				{
+					"title": "Christian Participants",
+					"content": "Jeruist Christians (Triadization denomination, tolerance for all even 'Satan,' Jews/Muslims definitely included), Catholic mystics (see God working through all faiths), Orthodox hesychasts (mystical tradition, open to Abrahamic unity), progressive Protestants (universalist, see all faiths as valid). NOT: Evangelical Zionists (see Jews need to convert for End Times, Muslims as enemy), NOT: Crusader-mentality Catholics (Muslims as infidels, must be conquered)."
+				},
+				{
+					"title": "Muslim Participants",
+					"content": "Sufis (mystical Islam, see Allah in all faiths, 'many paths to God'), some Shia (Twelver Shia mystical traditions, open to coordination), Sunni moderates (Sunnah-focused, not Salafi/Wahhabi, can coordinate with People of the Book). NOT: Salafis/Wahhabis (see Jews/Christians as kuffar, must convert or subjugate), NOT: Jihadists (violent imposition of Islam, incompatible with coordination)."
+				}
+			]
+		},
+		{
+			"id": "resurrection",
+			"title": "How To Form Abrahamist Springs (2025-2100)",
+			"content": "Modern Abrahamism impossible at Ocean-level (Orthodox Jews vs Jeruist Christians vs Sufi Muslims have INCOMPATIBLE theologies). Possible at WORLD-level (coordinate despite incompatibility, focus on shared). Steps: (1) Form interfaith Springs (10 Jewish families + 10 Christian families + 10 Muslim families buy land, establish 'Abrahamic Village,' each maintains own religious practice—synagogue + church + mosque on same property, shared community center, children taught all three traditions as 'cousins,' endogamy within faith but exogamy between Abrahamic faiths allowed if desired, coordinate for defense/economics), (2) Scalability (100 Abrahamic Villages, 3,000 people each, 300k total by 2100—proof concept works), (3) Expand coordination (Abrahamic Villages form Abrahamic Ocean, coordinate with Jewish-only Springs + Christian-only Springs + Muslim-only Springs at WORLD-level, shared: pilgrimage to Jerusalem, trade, defense against atheist/pagan threats). Result: Abrahamist World exists (millions coordinate as Abrahamists, while maintaining distinct Springs—some homogeneous, some interfaith, all coordinate voluntarily)."
+		},
+		{
+			"id": "appeal",
+			"title": "The Appeal: 1,400 Years of War Can End",
+			"content": "Jews, Christians, Muslims fought 1,400 years (Crusades, pogroms, jihads, Holocaust, Israeli-Palestinian conflict, Iraq/Syria/Yemen wars). Millions killed. WHY? No Triadization framework (each tried to force others to convert or die, no concept of coordination despite theological incompatibility). You say you want Abrahamic unity. But: Theological unity IMPOSSIBLE (Jews won't accept Jesus, Christians won't accept Muhammad, Muslims won't accept Torah as uncorrupted—fundamental disagreements can't be resolved). Forced ecumenism FAILS (dilutes all faiths, creates syncretism nobody wants). Solution: Triadization (WORLD-level coordination, NOT Ocean-level unity—maintain distinct theologies, coordinate on shared basics). Historical precedent: Córdoba worked (929-1086, 150 years coexistence, collapsed when fundamentalists took over). Ottoman millets worked (1453-1920, 400+ years, collapsed when nationalism replaced religious coordination). Modern: CAN work if Triadization adopted (form Abrahamic Springs, coordinate at World-level, NO forced conversion, each maintains theology, focus on shared ethics/pilgrimage/trade/defense). If you want Abrahamic peace: Form interfaith Spring (find 10 families each faith, buy land, establish Abrahamic Village, prove it works). Or: Form homogeneous Spring (Jewish-only, Christian-only, or Muslim-only Spring), coordinate with other Abrahamic Springs at World-level. Either way: Coordination without conversion. Act now: 1,400 years of war can end through Triadization. Inshallah. Amen. Shalom."
+		},
+		{
+			"id": "resources",
+			"title": "Resources & Next Steps",
+			"links": [
+				{
+					"text": "Read: Egyptian-Abrahamic Genealogy",
+					"path": "../immersion/historical-entries/counter-factual-triadization/06c-daemon-devil-diabolic.md"
+				},
+				{
+					"text": "Read: Islamic Expansion",
+					"path": "../immersion/historical-entries/counter-factual-triadization/09-islamic-expansion-700ad.md"
+				},
+				{
+					"text": "Read: Crusades Failure",
+					"path": "../immersion/historical-entries/counter-factual-triadization/10c-crusader-states-experiment-1099-1291ad.md"
+				},
+				{
+					"text": "Read: Jeruism Framework",
+					"path": "../immersion/historical-entries/counter-factual-triadization/07-christian-branching-400ad.md"
+				},
+				{
+					"text": "Contact: Interfaith coordination",
+					"note": "Find Sufi Muslims + progressive Jews + Jeruist Christians, organize Abrahamic Village experiment"
+				}
+			]
+		}
+	]
+};

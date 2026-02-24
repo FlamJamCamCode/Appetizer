@@ -1,0 +1,19 @@
+country_code,country_name,region,income_group,year,gdp_per_capita_usd,population_total_m,gdp_current_usd_b,social_spend_pct_gdp,oda_donor_pct_gni,private_giving_pct_gdp,caf_giving_rank
+USA,United States,North America,High,2023,78000,333,25974,22,0.22,1.8,NA
+GBR,United Kingdom,Western Europe,High,2023,48000,67,3216,23,0.6,0.8,NA
+DEU,Germany,Western Europe,High,2023,52000,83,4316,27,0.7,0.3,NA
+FRA,France,Western Europe,High,2023,47000,65,3055,31,0.5,0.3,NA
+SWE,Sweden,Northern Europe,High,2023,58000,10,580,27,0.9,0.7,NA
+NOR,Norway,Northern Europe,High,2023,85000,5,425,27,1,0.7,NA
+CAN,Canada,North America,High,2023,52000,39,2028,20,0.35,0.6,NA
+JPN,Japan,East Asia,High,2023,42000,125,5250,23,0.25,0.15,NA
+KOR,South Korea,East Asia,High,2023,40000,52,2080,15,0.16,0.1,NA
+SGP,Singapore,East Asia,High,2023,78000,6,468,12,0.1,0.5,NA
+MCO,Monaco,Western Europe,High,2023,190000,0.04,7.6,NA,NA,NA,NA
+ARE,United Arab Emirates,Middle East,High,2023,43000,10,430,NA,0.7,NA,NA
+SAU,Saudi Arabia,Middle East,High,2023,27000,36,972,NA,0.7,NA,NA
+CHN,China,East Asia,Upper-middle,2023,13000,1410,18330,12,0.1,0.1,NA
+IND,India,South Asia,Lower-middle,2023,2500,1410,3525,8,0.05,NA,NA
+NGA,Nigeria,Sub-Saharan Africa,Lower-middle,2023,2500,216,540,5,0,NA,NA
+BGD,Bangladesh,South Asia,Lower-middle,2023,2500,170,425,7,0,NA,NA
+MEX,Mexico,Latin America,Upper-middle,2023,10000,130,1300,12,0,0.2,NA

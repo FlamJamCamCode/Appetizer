@@ -1,0 +1,36 @@
+{
+  "country_code": "RW",
+  "name": "Rwanda",
+  "approximate": true,
+  "population": 13000000,
+  "gdp_nominal_usd": 13000000000,
+  "gdp_per_capita_usd": 1000,
+  "social_spending_pct_gdp": 13.0,
+  "health_spending_pct_gdp": 6.0,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1200000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 40000000,
+  "volunteering_rate_pct_adults": 40.0,
+  "volunteer_hours_billion": 0.1,
+  "child_mortality_under5_per_1000": 35.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Lower respiratory infections",
+    "Diarrheal diseases",
+    "Malaria"
+  ],
+  "notes": [
+    "Rwanda has made major progress on health and governance with effective use of aid.",
+    "Community initiatives like Umuganda reflect strong social capital."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

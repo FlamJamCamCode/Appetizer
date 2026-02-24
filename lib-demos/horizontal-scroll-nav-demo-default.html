@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Nav - Default Mode Demo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1510 50%, #0a0a0a 100%);
+            color: #d4c5a9;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(72, 61, 139, 0.2));
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid rgba(212, 175, 55, 0.6);
+        }
+        
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(90deg, #ff4444, #ffd700, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Sections will be auto-detected */
+        section[id] {
+            margin-bottom: 50px;
+            padding: 40px;
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            min-height: 800px;
+        }
+        
+        section[id] h2 {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        
+        section[id] p {
+            font-size: 1.2em;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        
+        /* Body scrollbar styling */
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(212, 175, 55, 0.5) rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        
+        body::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.8);
+        }
+        
+        body::-webkit-scrollbar-thumb:active {
+            background: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Horizontal Scroll Navigation - Default Mode</h1>
+        <p style="margin-top: 20px; font-size: 1.2em; color: #d4c5a9;">
+            Auto-detects sections with IDs. Scroll down to see the navigation bar sync with your position.
+        </p>
+    </header>
+    
+    <div class="container">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>
+                This is the first section. The horizontal navigation bar above will show a button for this section.
+                As you scroll through this section, the button will fill with a gradient showing your progress.
+            </p>
+            <p>
+                The viewport indicator (blue/purple gradient) shows where your current viewport is within the section,
+                normalized to the button width. This allows you to see your position even in very long sections.
+            </p>
+            <p>
+                Scroll down to see how the navigation bar moves horizontally to keep the active section's button visible,
+                and how buttons fill as you progress through each section.
+            </p>
+        </section>
+        
+        <section id="features">
+            <h2>Features</h2>
+            <p>
+                This section demonstrates the key features of the horizontal scroll navigation:
+            </p>
+            <ul style="font-size: 1.2em; line-height: 2; margin-left: 30px;">
+                <li><strong>Progress Fill:</strong> Each button fills with a red/gold gradient based on how far you've scrolled through the section</li>
+                <li><strong>Viewport Indicator:</strong> A blue/purple gradient shows your current viewport position within the section</li>
+                <li><strong>Normalized Scrolling:</strong> The horizontal nav bar scrolls proportionally to your vertical scroll, regardless of section size</li>
+                <li><strong>Margin Handling:</strong> Smooth transitions through margins between sections without flickering</li>
+                <li><strong>Click Navigation:</strong> Click any button to smoothly scroll to that section</li>
+            </ul>
+        </section>
+        
+        <section id="usage">
+            <h2>Usage</h2>
+            <p>
+                To use this plugin, simply include the script and it will auto-detect sections with IDs:
+            </p>
+            <pre style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto;">
+&lt;script src="../lib/horizontal-scroll-nav.js"&gt;&lt;/script&gt;
+            </pre>
+            <p>
+                The plugin will automatically:
+            </p>
+            <ul style="font-size: 1.2em; line-height: 2; margin-left: 30px;">
+                <li>Find all sections with IDs</li>
+                <li>Create a horizontal navigation bar</li>
+                <li>Generate buttons for each section</li>
+                <li>Sync with your scroll position</li>
+            </ul>
+        </section>
+        
+        <section id="customization">
+            <h2>Customization</h2>
+            <p>
+                You can customize the plugin by passing options:
+            </p>
+            <pre style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto;">
+new HorizontalScrollNav({
+    sectionSelector: '.my-sections',
+    marginBottom: 50,
+    getSectionLabel: (section, index) => {
+        return section.dataset.title || `Section ${index + 1}`;
+    }
+});
+            </pre>
+        </section>
+        
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>
+                This is the final section. Notice how the navigation bar has been scrolling horizontally as you moved through each section.
+                The buttons fill based on your progress, and the viewport indicator shows exactly where you are.
+            </p>
+            <p>
+                Try clicking on a button in the navigation bar to jump to that section. The scroll will be smooth,
+                and the navigation will update correctly once you arrive.
+            </p>
+            <p>
+                This plugin makes it easy to add this cool navigation feature to any page with sections!
+            </p>
+        </section>
+    </div>
+    
+    <script src="../lib/horizontal-scroll-nav.js"></script>
+    <script>
+        // Initialize with default auto-detect mode
+        new HorizontalScrollNav({
+            // Uses default settings - auto-detects sections with IDs
+        });
+    </script>
+</body>
+</html>
+

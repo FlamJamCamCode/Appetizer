@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triadization Tours - Universal Reader</title>
+<script src="manifest.js"></script>
+<link rel="stylesheet" href="tour-reader.layout.css">
+<script src="../../lib/branching-nav.js"></script>
+</head>
+<body>
+
+<div class="tour-selector">
+	<select id="tourSelect">
+		<option value="">👆 Loading tours from manifest...</option>
+	</select>
+</div>
+
+<branching-nav-viewport>
+	<div id="content">
+		<div class="container">
+			<div class="welcome">
+				<h2>Welcome to Your Journey</h2>
+				<p>This is a curated guide to Triadization from <strong>your perspective</strong>.</p>
+				<p>Select your tour above to see curated document paths—whether exploring child-rearing, racial heritage, religious tradition, freedom, progress, or civilization itself.</p>
+				<p style="margin-top: 30px; font-size: 1em; color: var(--text-dim);">
+					Each tour provides: Curated reading order through foundation documents, historical context, and practical next steps.
+				</p>
+			</div>
+		</div>
+	</div>
+</branching-nav-viewport>
+
+<script>
+// Load manifest and build tour list
+let TOURS = {};
+let MANIFEST = window.TOUR_MANIFEST; // Loaded from manifest.js
+let branchingNavInstance = null; // Store BranchingNav instance
+
+function loadManifest() {
+	populateTourSelector();
+}
+
+function populateTourSelector() {
+	const select = document.getElementById('tourSelect');
+	select.innerHTML = '<option value="">👆 Select Your Tour...</option>';
+	
+	// Group tours by type
+	const foundationalTours = MANIFEST.filter(t => t.type === 'foundational');
+	const historyTours = MANIFEST.filter(t => t.type === 'history');
+	const otherTours = MANIFEST.filter(t => !t.type);
+	
+	if (foundationalTours.length > 0) {
+		const foundGroup = document.createElement('optgroup');
+		foundGroup.label = '🎯 Foundational Tours (Start Here)';
+		foundationalTours.forEach(tour => {
+			const option = document.createElement('option');
+			option.value = tour.id;
+			option.textContent = tour.title;
+			foundGroup.appendChild(option);
+		});
+		select.appendChild(foundGroup);
+	}
+	
+	if (historyTours.length > 0) {
+		const histGroup = document.createElement('optgroup');
+		histGroup.label = '📚 Historical & Identity Tours';
+		historyTours.forEach(tour => {
+			const option = document.createElement('option');
+			option.value = tour.id;
+			option.textContent = tour.title;
+			histGroup.appendChild(option);
+		});
+		select.appendChild(histGroup);
+	}
+	
+	if (otherTours.length > 0) {
+		const otherGroup = document.createElement('optgroup');
+		otherGroup.label = '🔧 Other Entry Tours';
+		otherTours.forEach(tour => {
+			const option = document.createElement('option');
+			option.value = tour.id;
+			option.textContent = tour.title;
+			otherGroup.appendChild(option);
+		});
+		select.appendChild(otherGroup);
+	}
+}
+
+function loadTour(tourId) {
+	if (!tourId) {
+		showWelcome();
+		return;
+	}
+	
+	const tourInfo = MANIFEST.find(t => t.id === tourId);
+	if (!tourInfo) {
+		showError('Tour not found in manifest');
+		return;
+	}
+	
+	// Handle different tour formats
+	if (tourInfo.path.endsWith('.js')) {
+		// JS tour format - load via script tag
+		loadTourJS(tourInfo.path);
+	} else if (tourInfo.path.endsWith('.html')) {
+		// HTML tour format - redirect
+		window.location.href = tourInfo.path;
+	} else {
+		showError('Unknown tour format');
+	}
+	
+	// Update URL
+	const url = new URL(window.location);
+	url.searchParams.set('tour', tourId);
+	url.searchParams.delete('t');
+	window.history.pushState({}, '', url);
+}
+
+function loadTourJS(path) {
+	// Clear previous tour data first
+	window.TOUR_DATA = null;
+	
+	// Remove any existing tour script
+	const existingScript = document.getElementById('tour-script');
+	if (existingScript) {
+		existingScript.remove();
+	}
+	
+	// Load new tour script
+	const script = document.createElement('script');
+	script.id = 'tour-script';
+	script.src = path;
+	script.onload = function() {
+		if (window.TOUR_DATA) {
+			renderTour(window.TOUR_DATA);
+		} else {
+			showError('Tour data not found in script');
+		}
+	};
+	script.onerror = function(error) {
+		console.error('Script load error:', error);
+		showError(`Error loading tour script: ${path}`);
+	};
+	document.head.appendChild(script);
+}
+
+function showWelcome() {
+	// Clean up previous BranchingNav instance
+	if (branchingNavInstance) {
+		branchingNavInstance.destroy();
+		branchingNavInstance = null;
+	}
+	
+	const content = document.getElementById('content');
+	content.innerHTML = `
+		<div class="container">
+			<div class="welcome">
+				<h2>Welcome to Your Journey</h2>
+				<p>This is a curated guide to Triadization from <strong>your perspective</strong>.</p>
+				<p>Select your tour above to see curated document paths—whether exploring child-rearing, racial heritage, religious tradition, freedom, progress, or civilization itself.</p>
+				<p style="margin-top: 30px; font-size: 1em; color: var(--text-dim);">
+					Each tour provides: Curated reading order through foundation documents, historical context, and practical next steps.
+				</p>
+			</div>
+		</div>
+	`;
+}
+
+function showError(message) {
+	// Clean up previous BranchingNav instance
+	if (branchingNavInstance) {
+		branchingNavInstance.destroy();
+		branchingNavInstance = null;
+	}
+	
+	const content = document.getElementById('content');
+	content.innerHTML = `
+		<div class="container">
+			<div class="error-box">
+				<h3>⚠️ Error</h3>
+				<p>${message}</p>
+			</div>
+		</div>
+	`;
+}
+
+function renderTour(tour) {
+	// Apply color theme if present
+	if (tour.color_theme) {
+		document.documentElement.style.setProperty('--primary', tour.color_theme.primary);
+		document.documentElement.style.setProperty('--secondary', tour.color_theme.secondary);
+		document.documentElement.style.setProperty('--accent', tour.color_theme.accent);
+		if (tour.color_theme.background) {
+			document.documentElement.style.setProperty('--background', tour.color_theme.background);
+		}
+	}
+	
+	// Apply theme to branching nav immediately (before rendering)
+	applyBranchingNavTheme();
+	
+	// Build navigation
+	const navHtml = tour.sections.map(section => 
+		`<a href="#${section.id}" class="nav-pill">${section.title}</a>`
+	).join('');
+	
+	// Build sections
+	const sectionsHtml = tour.sections.map(section => renderSection(section)).join('');
+	
+	// Clean up previous BranchingNav instance
+	if (branchingNavInstance) {
+		branchingNavInstance.destroy();
+		branchingNavInstance = null;
+	}
+	
+	// Render
+	const content = document.getElementById('content');
+	content.innerHTML = `
+		<div class="container">
+			<div class="header">
+				<h1>${tour.title}</h1>
+				<div class="subtitle">${tour.description}</div>
+				<div class="audience"><strong>For:</strong> ${tour.audience}</div>
+			</div>
+			
+			<div class="nav-pills" style="display: none;">${navHtml}</div>
+			
+			${sectionsHtml}
+		</div>
+	`;
+	
+	setupNavigation();
+	
+	// Initialize BranchingNav after content is rendered
+	// Use requestAnimationFrame to ensure DOM is fully updated
+	requestAnimationFrame(() => {
+		setTimeout(() => {
+			if (window.BranchingNav) {
+				// Check if chapters exist before initializing
+				const viewport = document.querySelector('branching-nav-viewport');
+				if (viewport && viewport.querySelectorAll('[data-chapter]').length > 0) {
+
+					branchingNavInstance = new window.BranchingNav();
+					// Reapply theme after nav is created (to override injected styles)
+					setTimeout(() => {
+						applyBranchingNavTheme();
+					}, 50);
+				}
+			}
+		}, 100);
+	});
+	
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function parseMarkdown(text) {
+	if (!text) return '';
+	
+	// Convert markdown to HTML
+	let html = text
+		.replace(/\n(\s?)[•-]([^\n]+)/g, '||-||$1$2|-|')
+		.replace(/\|-\|\|\|-\|\|/g, '</li><li>')
+		.replace(/\|\|-\|\|/g, '<ul><li>')
+		.replace(/\|-\|/g, '</li></ul>')
+		// Bold **text** or __text__
+		.replace(/\n######(.+?)/g, '<h6>$1</h6>')
+		.replace(/\n#####(.+?)/g, '<h5>$1</h5>')
+		.replace(/\n####(.+?)/g, '<h4>$1</h4>')
+		.replace(/\n###(.+?)/g, '<h3>$1</h3>')
+		.replace(/\n##(.+?)/g, '<h2>$1</h2>')
+		.replace(/\n#(.+?)/g, '<h1>$1</h1>')
+		.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+		.replace(/__(.+?)__/g, '<em>$1</em>')
+		// Italic *text* or _text_
+		.replace(/\*(.+?)\*/g, '<b><i>$1</i></b>')
+		.replace(/_(.+?)_/g, '<i>$1</i>')
+		// Emoji/icon shortcuts
+		.replace(/💬/g, '<span style="font-size:1.3em; margin-right:8px;">💬</span>')
+		.replace(/📊/g, '<span style="font-size:1.3em; margin-right:8px;">📊</span>')
+		.replace(/📈/g, '<span style="font-size:1.3em; margin-right:8px;">📈</span>')
+		.replace(/🔬/g, '<span style="font-size:1.3em; margin-right:8px;">🔬</span>')
+		.replace(/⚠️/g, '<span style="font-size:1.3em; margin-right:8px;">⚠️</span>')
+		.replace(/→/g, '<span style="color:var(--accent); font-weight:bold; margin:0 8px;">→</span>')
+		// Links [text](url) or [text → file]
+		.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" style="color:var(--secondary);text-decoration:underline;">$1</a>')
+		// Line breaks
+		.replace(/\n\n/g, '</p><p>')
+		.replace(/\n/g, '<br>');
+	
+	
+	return html;
+}
+
+function renderSection(section) {
+	const isAppeal = section.id === 'appeal';
+	const isResources = section.id === 'resources';
+	const sectionClass = isAppeal ? 'section appeal-section' : isResources ? 'section resources' : 'section';
+	
+	let contentHtml = '';
+	
+	if (section.content) {
+		// Parse markdown
+		const formattedContent = parseMarkdown(section.content);
+		contentHtml += `<p>${formattedContent}</p>`;
+	}
+	
+	if (section.subsections) {
+		contentHtml += section.subsections.map(sub => {
+			const formattedSubContent = sub.content ? parseMarkdown(sub.content) : '';
+			const subId = sub.id || `sub-${section.id}-${sub.title.toLowerCase().replace(/\s+/g, '-')}`;
+			return `
+				<div class="subsection" data-sub-branch id="${subId}">
+					<h3>${sub.title}</h3>
+					<p>${formattedSubContent}</p>
+					${sub.documents ? renderDocumentLinks(sub.documents) : ''}
+				</div>
+			`;
+		}).join('');
+	}
+	
+	if (section.documents) {
+		contentHtml += renderDocumentLinks(section.documents);
+	}
+	
+	if (section.links) {
+		contentHtml += '<ul>';
+		section.links.forEach(link => {
+			if (link.url) {
+				contentHtml += `<li><a href="${link.url}" target="_blank">${link.text}</a></li>`;
+			} else if (link.path) {
+				contentHtml += `<li><a href="${link.path}">${link.text}</a></li>`;
+			} else if (link.note) {
+				contentHtml += `<li><strong>${link.text}:</strong> ${link.note}</li>`;
+			}
+		});
+		contentHtml += '</ul>';
+	}
+	
+	return `<div class="${sectionClass}" data-chapter id="${section.id}"><h2>${section.title}</h2>${contentHtml}</div>`;
+}
+
+function renderDocumentLinks(documents) {
+	if (!documents || documents.length === 0) return '';
+	
+	return `
+		<div class="document-links">
+			<h4>📚 Read these documents for full context:</h4>
+			<ul>
+				${documents.map(doc => {
+					// Determine path based on document format
+					let path = doc;
+					if (!doc.includes('/') && !doc.startsWith('..')) {
+						// Assume it's in foundations if no path prefix
+						path = `../foundations/${doc}`;
+					}
+					return `<li><a href="${path}">${doc}</a></li>`;
+				}).join('')}
+			</ul>
+		</div>
+	`;
+}
+
+function applyBranchingNavTheme() {
+	// Add CSS overrides to use tour theme CSS variables
+	const styleId = 'branching-nav-theme-override';
+	let style = document.getElementById(styleId);
+	if (!style) {
+		style = document.createElement('style');
+		style.id = styleId;
+		document.head.appendChild(style);
+	}
+	
+	// Get computed CSS variable values with fallbacks
+	const root = getComputedStyle(document.documentElement);
+	const primary = (root.getPropertyValue('--primary') || '').trim() || '#4a9eff';
+	const secondary = (root.getPropertyValue('--secondary') || '').trim() || '#7cc7ff';
+	const accent = (root.getPropertyValue('--accent') || '').trim() || '#ff6b35';
+	const text = (root.getPropertyValue('--text') || '').trim() || '#e8eaed';
+	const textDim = (root.getPropertyValue('--text-dim') || '').trim() || '#a0a5aa';
+	const cardBg = (root.getPropertyValue('--card-bg') || '').trim() || '#1a1f2e';
+	const border = (root.getPropertyValue('--border') || '').trim() || '#3a4a5e';
+	
+	// Convert hex to rgba for transparency
+	function hexToRgba(hex, alpha = 1) {
+		// Handle rgb/rgba values
+		if (hex.startsWith('rgb')) {
+			if (hex.startsWith('rgba')) {
+				// Extract existing alpha or use new one
+				const match = hex.match(/rgba?\(([^)]+)\)/);
+				if (match) {
+					const parts = match[1].split(',').map(s => s.trim());
+					if (parts.length === 4) {
+						return `rgba(${parts[0]}, ${parts[1]}, ${parts[2]}, ${alpha})`;
+					}
+					return `rgba(${parts[0]}, ${parts[1]}, ${parts[2]}, ${alpha})`;
+				}
+			} else {
+				// rgb() - convert to rgba
+				const match = hex.match(/rgb\(([^)]+)\)/);
+				if (match) {
+					const parts = match[1].split(',').map(s => s.trim());
+					return `rgba(${parts[0]}, ${parts[1]}, ${parts[2]}, ${alpha})`;
+				}
+			}
+		}
+		// Handle hex colors
+		if (hex.startsWith('#')) {
+			const r = parseInt(hex.slice(1, 3), 16);
+			const g = parseInt(hex.slice(3, 5), 16);
+			const b = parseInt(hex.slice(5, 7), 16);
+			return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+		}
+		// Fallback: return as-is with opacity
+		return hex;
+	}
+	
+	// Parse color string to RGB values
+	function parseColor(color) {
+		// Handle null, undefined, or non-string values
+		if (!color || typeof color !== 'string') {
+			return { r: 128, g: 128, b: 128 }; // fallback gray
+		}
+		
+		const trimmed = color.trim();
+		if (trimmed.startsWith('#')) {
+			return {
+				r: parseInt(trimmed.slice(1, 3), 16),
+				g: parseInt(trimmed.slice(3, 5), 16),
+				b: parseInt(trimmed.slice(5, 7), 16)
+			};
+		}
+		const rgbMatch = trimmed.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+		if (rgbMatch) {
+			return {
+				r: parseInt(rgbMatch[1]),
+				g: parseInt(rgbMatch[2]),
+				b: parseInt(rgbMatch[3])
+			};
+		}
+		return { r: 128, g: 128, b: 128 }; // fallback gray
+	}
+	
+	// Calculate relative luminance (WCAG formula)
+	function getLuminance(rgb) {
+		const [r, g, b] = [rgb.r, rgb.g, rgb.b].map(val => {
+			val = val / 255;
+			return val <= 0.03928 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4);
+		});
+		return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+	}
+	
+	// Calculate contrast ratio between two colors
+	function getContrastRatio(color1, color2) {
+		const lum1 = getLuminance(parseColor(color1));
+		const lum2 = getLuminance(parseColor(color2));
+		const lighter = Math.max(lum1, lum2);
+		const darker = Math.min(lum1, lum2);
+		return (lighter + 0.05) / (darker + 0.05);
+	}
+	
+	// Blend two colors with alpha (for semi-transparent backgrounds)
+	function blendColors(fgColor, bgColor, fgAlpha = 1) {
+		const fg = parseColor(fgColor);
+		const bg = parseColor(bgColor);
+		return {
+			r: Math.round(fg.r * fgAlpha + bg.r * (1 - fgAlpha)),
+			g: Math.round(fg.g * fgAlpha + bg.g * (1 - fgAlpha)),
+			b: Math.round(fg.b * fgAlpha + bg.b * (1 - fgAlpha))
+		};
+	}
+	
+	// Ensure text color has sufficient contrast against background
+	// Returns a color that meets minimum contrast ratio (4.5:1 for normal text)
+	function ensureContrast(textColor, bgColor, bgAlpha = 1, minRatio = 4.5) {
+		// Blend background with actual page background (assuming dark theme)
+		const pageBg = parseColor(cardBg);
+		const blendedBg = blendColors(parseColor(bgColor), pageBg, bgAlpha);
+		const blendedBgStr = `rgb(${blendedBg.r}, ${blendedBg.g}, ${blendedBg.b})`;
+		
+		const currentRatio = getContrastRatio(textColor, blendedBgStr);
+		if (currentRatio >= minRatio) {
+			return textColor; // Already has good contrast
+		}
+		
+		// Try using the brighter text color
+		const brightText = parseColor(text);
+		const brightRatio = getContrastRatio(`rgb(${brightText.r}, ${brightText.g}, ${brightText.b})`, blendedBgStr);
+		if (brightRatio >= minRatio) {
+			return text; // Use bright text
+		}
+		
+		// If still not enough, use accent color (usually high contrast)
+		const accentRgb = parseColor(accent);
+		const accentRatio = getContrastRatio(`rgb(${accentRgb.r}, ${accentRgb.g}, ${accentRgb.b})`, blendedBgStr);
+		if (accentRatio >= minRatio) {
+			return accent; // Use accent color
+		}
+		
+		// Last resort: use white or black depending on background brightness
+		const bgLum = getLuminance(blendedBg);
+		return bgLum > 0.5 ? '#000000' : '#ffffff';
+	}
+	
+	// Calculate effective background colors for buttons (blended with page background)
+	const chapterButtonBg = blendColors(parseColor(primary), parseColor(cardBg), 0.3);
+	const chapterButtonBgStr = `rgb(${chapterButtonBg.r}, ${chapterButtonBg.g}, ${chapterButtonBg.b})`;
+	const subButtonBg = blendColors(parseColor(secondary), parseColor(cardBg), 0.3);
+	const subButtonBgStr = `rgb(${subButtonBg.r}, ${subButtonBg.g}, ${subButtonBg.b})`;
+	
+	// Ensure text colors have good contrast
+	const chapterButtonText = ensureContrast(textDim, chapterButtonBgStr, 1, 4.5);
+	const subButtonText = ensureContrast(textDim, subButtonBgStr, 1, 4.5);
+	
+	// For hover/active states, ensure accent/secondary colors have good contrast
+	const accentOnChapterBg = ensureContrast(accent, chapterButtonBgStr, 1, 4.5);
+	const secondaryOnSubBg = ensureContrast(secondary, subButtonBgStr, 1, 4.5);
+	
+	style.textContent = `
+		.branching-nav-bar {
+			background: linear-gradient(135deg, ${hexToRgba(primary, 0.4)}, ${hexToRgba(secondary, 0.3)}) !important;
+			border-color: ${hexToRgba(accent, 0.6)} !important;
+		}
+		
+		.branching-nav-bar::-webkit-scrollbar-thumb {
+			background: ${hexToRgba(accent, 0.5)} !important;
+		}
+		
+		.branching-nav-bar::-webkit-scrollbar-thumb:hover {
+			background: ${hexToRgba(accent, 0.8)} !important;
+		}
+		
+		.branching-chapter-button {
+			background: linear-gradient(135deg, ${hexToRgba(primary, 0.3)}, ${hexToRgba(accent, 0.2)}) !important;
+			border-color: ${hexToRgba(accent, 0.4)} !important;
+			color: ${chapterButtonText} !important;
+		}
+		
+		.branching-chapter-button::before {
+			background: linear-gradient(135deg, ${hexToRgba(accent, 0.6)}, ${hexToRgba(accent, 0.5)}) !important;
+		}
+		
+		.branching-chapter-button::after {
+			background: linear-gradient(135deg, ${hexToRgba(secondary, 0.6)}, ${hexToRgba(primary, 0.5)}) !important;
+		}
+		
+		.branching-chapter-button:hover {
+			border-color: ${accent} !important;
+			color: ${accentOnChapterBg} !important;
+			box-shadow: 0 5px 15px ${hexToRgba(accent, 0.3)} !important;
+		}
+		
+		.branching-chapter-button.active,
+		.branching-chapter-button.in-viewport {
+			border-color: ${accent} !important;
+			color: ${accentOnChapterBg} !important;
+			box-shadow: 0 0 20px ${hexToRgba(accent, 0.5)} !important;
+		}
+		
+		.branching-sub-column {
+			background: linear-gradient(135deg, ${hexToRgba(secondary, 0.4)}, ${hexToRgba(primary, 0.3)}) !important;
+			border-color: ${hexToRgba(accent, 0.6)} !important;
+		}
+		
+		.branching-sub-button {
+			background: linear-gradient(135deg, ${hexToRgba(secondary, 0.3)}, ${hexToRgba(primary, 0.2)}) !important;
+			border-color: ${hexToRgba(accent, 0.4)} !important;
+			color: ${subButtonText} !important;
+		}
+		
+		.branching-sub-button:hover {
+			border-color: ${secondary} !important;
+			color: ${secondaryOnSubBg} !important;
+		}
+		
+		.branching-sub-button.in-viewport {
+			border-color: ${secondary} !important;
+			color: ${secondaryOnSubBg} !important;
+			box-shadow: 0 0 12px ${hexToRgba(secondary, 0.5)} !important;
+		}
+		
+		.branching-sub-button.completed {
+			opacity: 0.5;
+			border-color: ${hexToRgba(accent, 0.2)} !important;
+		}
+	`;
+}
+
+function setupNavigation() {
+	const sections = document.querySelectorAll('.section');
+	const navPills = document.querySelectorAll('.nav-pill');
+	const navContainer = document.querySelector('.nav-pills');
+	
+	// Calculate header height (selector + nav pills)
+	const selectorHeight = document.querySelector('.tour-selector')?.offsetHeight || 56;
+	const navHeight = navContainer?.offsetHeight || 50;
+	const totalHeaderHeight = selectorHeight + navHeight;
+	
+	// Function to scroll nav pill into center view
+	function scrollPillIntoView(pill) {
+		if (!navContainer || !pill) return;
+		
+		const containerWidth = navContainer.offsetWidth;
+		const pillLeft = pill.offsetLeft;
+		const pillWidth = pill.offsetWidth;
+		
+		// Calculate scroll position to center the pill
+		const scrollPosition = pillLeft - (containerWidth / 2) + (pillWidth / 2);
+		
+		navContainer.scrollTo({
+			left: scrollPosition,
+			behavior: 'smooth'
+		});
+	}
+	
+	// Function to update active pill based on scroll position
+	function updateActivePill() {
+		const scrollPos = window.scrollY + totalHeaderHeight + 30;
+		
+		let currentSection = null;
+		sections.forEach(section => {
+			const sectionTop = section.offsetTop;
+			if (scrollPos >= sectionTop) {
+				currentSection = section;
+			}
+		});
+		
+		if (currentSection) {
+			const currentId = currentSection.id;
+			navPills.forEach(pill => {
+				const pillId = pill.getAttribute('href').substring(1);
+				const isActive = pillId === currentId;
+				pill.classList.toggle('active', isActive);
+				
+				if (isActive) {
+					scrollPillIntoView(pill);
+				}
+			});
+		}
+	}
+	
+	navPills.forEach(pill => {
+		pill.addEventListener('click', (e) => {
+			e.preventDefault();
+			const targetId = pill.getAttribute('href').substring(1);
+			const target = document.getElementById(targetId);
+			if (target) {
+				const targetPos = target.getBoundingClientRect().top + window.pageYOffset - totalHeaderHeight - 20;
+				window.scrollTo({ top: targetPos, behavior: 'smooth' });
+				
+				// Update immediately
+				setTimeout(() => updateActivePill(), 100);
+			}
+		});
+	});
+	
+	// Update on scroll
+	let scrollTimeout;
+	window.addEventListener('scroll', () => {
+		clearTimeout(scrollTimeout);
+		scrollTimeout = setTimeout(updateActivePill, 50);
+	}, { passive: true });
+	
+	// Initial update
+	updateActivePill();
+}
+
+// Initialize
+loadManifest();
+
+// Load from URL parameter on page load
+const urlParams = new URLSearchParams(window.location.search);
+const tourParam = urlParams.get('tour') || urlParams.get('t');
+if (tourParam) {
+	// Set dropdown value and load tour
+	document.getElementById('tourSelect').value = tourParam;
+	loadTour(tourParam);
+	if (!urlParams.get('tour') && urlParams.get('t')) {
+		const url = new URL(window.location);
+		url.searchParams.set('tour', tourParam);
+		url.searchParams.delete('t');
+		window.history.replaceState({}, '', url);
+	}
+}
+
+// Add event listeners AFTER initial load to prevent double-triggering
+document.getElementById('tourSelect').addEventListener('change', (e) => {
+	if (e.target.value) {
+		loadTour(e.target.value);
+	} else {
+		showWelcome();
+	}
+});
+
+// Handle browser back/forward
+window.addEventListener('popstate', function() {
+	const urlParams = new URLSearchParams(window.location.search);
+	const tourParam = urlParams.get('tour') || urlParams.get('t');
+	const selectElement = document.getElementById('tourSelect');
+	
+	if (tourParam) {
+		// Update dropdown value
+		selectElement.value = tourParam;
+		loadTour(tourParam);
+	} else {
+		selectElement.value = '';
+		showWelcome();
+	}
+});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+{
+  "country_code": "UG",
+  "name": "Uganda",
+  "approximate": true,
+  "population": 49000000,
+  "gdp_nominal_usd": 47000000000,
+  "gdp_per_capita_usd": 960,
+  "social_spending_pct_gdp": 10.0,
+  "health_spending_pct_gdp": 3.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 2000000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 140000000,
+  "volunteering_rate_pct_adults": 35.0,
+  "volunteer_hours_billion": 0.5,
+  "child_mortality_under5_per_1000": 45.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "HIV/AIDS",
+    "Lower respiratory infections"
+  ],
+  "notes": [
+    "Uganda has historically high HIV/AIDS burden and under-5 mortality, though improving.",
+    "Faith-based organizations are central in health and education delivery."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

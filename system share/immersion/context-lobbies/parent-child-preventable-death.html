@@ -1,0 +1,920 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   The Child Who Didn't Have To Die
+  </title>
+  <link href="shared-lobby-tabs.css" rel="stylesheet"/>
+  <link href="shared-lobby-content.css" rel="stylesheet"/>
+  <style>
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #999;
+            --accent-before: #ff6b6b;
+            --accent-lobby: #4ecdc4;
+            --accent-fulfillment: #95e1d3;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        .lobby-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .lobby-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 2px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .lobby-tabs {
+            display: flex;
+            gap: 0;
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .lobby-tab {
+            flex: 1;
+            padding: 15px 30px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            font-family: 'Georgia', serif;
+        }
+
+        .lobby-tab:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lobby-tab.active {
+            color: var(--text-primary);
+            border-bottom-color: var(--accent-lobby);
+        }
+
+        .lobby-tab[data-stage="before"].active {
+            border-bottom-color: var(--accent-before);
+        }
+
+        .lobby-tab[data-stage="fulfillment"].active {
+            border-bottom-color: var(--accent-fulfillment);
+        }
+
+        .lobby-content {
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .stage {
+            display: none;
+        }
+
+        .stage.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .stage[data-stage="before"] h1 {
+            color: var(--accent-before);
+        }
+
+        .stage[data-stage="lobby"] h1 {
+            color: var(--accent-lobby);
+        }
+
+        .stage[data-stage="fulfillment"] h1 {
+            color: var(--accent-fulfillment);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 50px 0 25px 0;
+            color: var(--accent-lobby);
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin: 30px 0 15px 0;
+            color: var(--accent-fulfillment);
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.15em;
+            line-height: 1.8;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid var(--text-secondary);
+            padding-left: 25px;
+            margin: 35px 0;
+            color: var(--text-secondary);
+            font-size: 1.2em;
+        }
+
+        .metric {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            border-left: 4px solid var(--accent-lobby);
+        }
+
+        .system-response {
+            background: rgba(255, 107, 107, 0.1);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-before);
+        }
+
+        .system-response strong {
+            color: var(--accent-before);
+        }
+
+        .truth {
+            background: rgba(78, 205, 196, 0.1);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-lobby);
+        }
+
+        .choice {
+            background: rgba(149, 225, 211, 0.1);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid var(--accent-fulfillment);
+        }
+
+        ul, ol {
+            margin: 25px 0 25px 40px;
+        }
+
+        li {
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 18px 35px;
+            background: var(--accent-lobby);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 15px 15px 15px 0;
+            font-weight: bold;
+            font-size: 1.05em;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+        }
+
+        .cta:hover {
+            background: var(--accent-fulfillment);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(78, 205, 196, 0.3);
+        }
+
+        .progress-indicator {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        /* Vim navigation highlighting */
+        [data-focus-scope]:focus-within {
+            outline: 2px solid var(--accent-lobby);
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .lobby-tabs {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .lobby-tab {
+                padding: 12px 20px;
+            }
+
+            .lobby-content {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+  </style>
+ </head>
+ <body data-focus-scope="" data-vim-label="Parent Loss Lobby" data-vim-mode="default tab segment">
+  <div class="lobby-container">
+   <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="parent-child-preventable-death-tabs" type="radio"/>
+   <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="parent-child-preventable-death-tabs" type="radio"/>
+   <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="parent-child-preventable-death-tabs" type="radio"/>
+   <nav class="tabs-nav">
+    <label class="tab-button" data-panel="before" for="tab-before">
+     <span>
+      BEFORE: The Loss
+     </span>
+    </label>
+    <label class="tab-button" data-panel="lobby" for="tab-lobby">
+     <span>
+      LOBBY: The System That Could Have Saved Her
+     </span>
+    </label>
+    <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+     <span>
+      FULFILLMENT: Her Legacy
+     </span>
+    </label>
+   </nav>
+   <div class="content-container">
+    <!-- BEFORE Stage -->
+    <section class="content-panel" data-panel="before" id="before">
+     <h1>
+      The Question That Won't Stop
+     </h1>
+     <h2>
+      Diagnosis
+     </h2>
+     <p>
+      Your daughter. Seven years old. A rare cancer. Pediatric sarcoma.
+     </p>
+     <p>
+      The oncologist is kind. Professional. He shows you survival rates. Treatment protocols. Clinical trials.
+     </p>
+     <p>
+      "With current treatments, we're looking at 30-40% five-year survival. We'll start aggressive chemotherapy. If that works, surgery. If not, we have experimental options."
+     </p>
+     <p>
+      You ask the question every parent asks:
+     </p>
+     <div class="quote">
+      "Is there anyone working on a cure? The absolute best researchers in the world? Can we get them involved?"
+     </div>
+     <h2>
+      The System's Answer
+     </h2>
+     <div class="system-response">
+      <p>
+       <strong>
+        Oncologist
+       </strong>
+       : "There are about 300 researchers globally working on pediatric sarcomas. They're doing good work, but funding is limited. This cancer affects only 1,000 kids per year globally, so pharma companies don't prioritize it."
+      </p>
+      <p>
+       <strong>
+        You
+       </strong>
+       : "What if we paid for the best minds to drop everything and work on this?"
+      </p>
+      <p>
+       <strong>
+        Oncologist
+       </strong>
+       : "That's not how it works. Research takes decades. You need PhDs, labs, regulatory approval. Even if you had unlimited money, you can't just summon researchers."
+      </p>
+      <p>
+       <strong>
+        You
+       </strong>
+       : "So my daughter dies because the system can't command intelligence toward her survival?"
+      </p>
+      <p>
+       <strong>
+        Oncologist
+       </strong>
+       : "I'm sorry. That's not how I'd put it, but... yes. Essentially."
+      </p>
+     </div>
+     <h2>
+      The 18 Months
+     </h2>
+     <p>
+      Chemotherapy. Your daughter loses her hair. Vomits constantly. Loses 20 pounds. The cancer shrinks. Then comes back. Aggressive. Surgery. They remove a large tumor. Margins not clean. More chemo. Radiation.
+     </p>
+     <p>
+      Between treatments, you research. You find:
+     </p>
+     <ul>
+      <li>
+       300 researchers globally on pediatric sarcomas
+      </li>
+      <li>
+       100,000+ engineers optimize ad delivery
+      </li>
+      <li>
+       160,000+ work in financial engineering
+      </li>
+      <li>
+       320,000+ in marketing and advertising
+      </li>
+     </ul>
+     <p>
+      The ratio: 640,000 brilliant minds on parasitism. 300 on your daughter's disease.
+     </p>
+     <p>
+      You calculate: If just 1% of those wasted minds worked on this, that's 6,400 researchers vs 300. Progress would be 20x faster.
+     </p>
+     <p>
+      Your daughter might have a cure in 2 years instead of 40.
+     </p>
+     <h2>
+      Month 18: The End
+     </h2>
+     <p>
+      She dies in her sleep. Peacefully, they say. The cancer had spread to her brain.
+     </p>
+     <p>
+      You hold her hand. It's still warm. But she's gone.
+     </p>
+     <p>
+      Seven years old.
+     </p>
+     <h2>
+      The Rage You're Not Allowed to Express
+     </h2>
+     <p>
+      Six months after the funeral. You're at a tech conference. Keynote speaker: VP of Engineering at a major tech company.
+     </p>
+     <p>
+      He talks about their new recommendation algorithm. "15% increase in user engagement. Cutting-edge ML. Team of 50 PhDs working on it for two years."
+     </p>
+     <p>
+      The audience applauds.
+     </p>
+     <p>
+      You sit there calculating:
+     </p>
+     <ul>
+      <li>
+       50 PhDs
+      </li>
+      <li>
+       2 years
+      </li>
+      <li>
+       100 person-years of genius
+      </li>
+      <li>
+       Applied to: Making people spend 15% more time scrolling
+      </li>
+     </ul>
+     <p>
+      If those 50 PhDs had worked on pediatric sarcoma. If those 100 person-years had been applied to your daughter's disease.
+     </p>
+     <p>
+      She might be alive.
+     </p>
+     <div class="quote">
+      "MY DAUGHTER DIED BECAUSE THE SYSTEM COMMANDED YOUR INTELLIGENCE TO MAKE APPS MORE ADDICTIVE INSTEAD OF CURING CHILDREN."
+     </div>
+     <h2>
+      The Question That Won't Stop
+     </h2>
+     <p>
+      Three years later. The rage has dulled to hollow grief. But the question remains:
+     </p>
+     <p>
+      <strong>
+       Why couldn't the system command intelligence toward my child's survival?
+      </strong>
+     </p>
+     <div class="progress-indicator">
+      → Continue to LOBBY to see the system that could have saved her
+     </div>
+    </section>
+    <!-- LOBBY Stage -->
+    <section class="content-panel" data-panel="lobby" id="lobby">
+     <h1>
+      The System That Could Have Saved Her
+     </h1>
+     <h2>
+      The Document You Find
+     </h2>
+     <p>
+      Someone sends you a link. "23__. Why Civilization Cannot Command Survival Work."
+     </p>
+     <p>
+      You start reading. The first section:
+     </p>
+     <div class="quote">
+      <h3>
+       The Make-A-Wish Diagnostic
+      </h3>
+      <p>
+       A child is dying of cancer. Her mother asks: "Can you summon the world's top 100 minds to cure my daughter?"
+      </p>
+      <p>
+       <strong>
+        Capitalism's answer
+       </strong>
+       : "No. They're optimizing ad delivery. That pays better."
+      </p>
+      <p>
+       <strong>
+        Democracy's answer
+       </strong>
+       : "We'll vote on research priorities. Maybe your daughter's disease gets funded."
+      </p>
+      <p>
+       <strong>
+        Result
+       </strong>
+       : The child dies.
+      </p>
+     </div>
+     <p>
+      You stop breathing for a moment.
+     </p>
+     <p>
+      This is exactly what happened to your daughter. Not metaphor. Actual reality.
+     </p>
+     <h2>
+      The Five Layers of Failure
+     </h2>
+     <p>
+      The document explains why:
+     </p>
+     <ol>
+      <li>
+       <strong>
+        Economic parasitism
+       </strong>
+       : 85-95% diverted before reaching research
+      </li>
+      <li>
+       <strong>
+        Genetic selection
+       </strong>
+       : Problem-solvers reproduce less (extinction in 3-5 generations)
+      </li>
+      <li>
+       <strong>
+        Cultural normalization
+       </strong>
+       : Monstrous outcomes accepted as "normal"
+      </li>
+      <li>
+       <strong>
+        Democratic paralysis
+       </strong>
+       : Can't command long-term work
+      </li>
+      <li>
+       <strong>
+        Credential gatekeeping
+       </strong>
+       : Best healers blocked, mediocre test-takers credentialed
+      </li>
+     </ol>
+     <p>
+      The system that killed your daughter wasn't broken.
+      <strong>
+       It was functioning exactly as designed.
+      </strong>
+     </p>
+     <h2>
+      But Then: The Alternative
+     </h2>
+     <div class="truth">
+      <h3>
+       BARRACKS: Eliminate Drowning
+      </h3>
+      <p>
+       Direct provision: $210/month vs $2,400/month. 11.4x efficiency.
+      </p>
+      <p>
+       <strong>
+        Result
+       </strong>
+       : Brilliant researchers can work on cures without needing $250K salaries.
+      </p>
+      <h3>
+       Zero-Profit Domains
+      </h3>
+      <p>
+       All pharma research funded by bounties. Zero profit. 100% reinvestment in R&amp;D.
+      </p>
+      <p>
+       <strong>
+        Result
+       </strong>
+       : Diseases CURED (not managed for profit).
+      </p>
+      <h3>
+       Social Currencies
+      </h3>
+      <p>
+       Top researchers receive: Status rankings, pregnancy promises, heritage locations, legacy immortality.
+      </p>
+      <p>
+       <strong>
+        Result
+       </strong>
+       : Problem-solvers reproduce 10-100x more than parasites.
+      </p>
+      <h3>
+       Competence Training
+      </h3>
+      <p>
+       3 years intensive vs 12 years traditional. $0 debt. Hands-on from day 1.
+      </p>
+      <p>
+       <strong>
+        Result
+       </strong>
+       : 4x more researchers trained per year.
+      </p>
+     </div>
+     <h2>
+      The Math of What Could Have Been
+     </h2>
+     <p>
+      <strong>
+       In the system that killed your daughter
+      </strong>
+      :
+     </p>
+     <ul>
+      <li>
+       300 researchers globally on pediatric sarcomas
+      </li>
+      <li>
+       Timeline to cure: 40-50 years
+      </li>
+     </ul>
+     <p>
+      <strong>
+       In the proposed system
+      </strong>
+      :
+     </p>
+     <ul>
+      <li>
+       6,000 researchers (redirected from parasitism)
+      </li>
+      <li>
+       100% reinvestment (zero-profit pharma)
+      </li>
+      <li>
+       Timeline to cure: 2-5 years
+      </li>
+     </ul>
+     <p>
+      Your daughter died in 2018. In the alternative system, a cure might have existed by 2020.
+     </p>
+     <p>
+      <strong>
+       She'd be 12 years old today. Alive.
+      </strong>
+     </p>
+     <h2>
+      The Rage Finds Direction
+     </h2>
+     <p>
+      For three years, you've had unfocused rage. At doctors. At God. At fate.
+     </p>
+     <p>
+      Now you have focused rage.
+      <strong>
+       At the system that made this choice.
+      </strong>
+     </p>
+     <p>
+      Markets chose to command intelligence toward ad optimization instead of cures. These were choices. Not inevitabilities.
+     </p>
+     <p>
+      <strong>
+       And choices can be changed.
+      </strong>
+     </p>
+     <h2>
+      The Pilots: They're Building It
+     </h2>
+     <ol>
+      <li>
+       BARRACKS: $5.8M, prove $210/month provision works
+      </li>
+      <li>
+       Trust networks: $900K, prove outcome-based reputation works
+      </li>
+      <li>
+       Training: $2.7M, prove 3 years = 12 years
+      </li>
+      <li>
+       Social currencies: $2.4M, prove status redirects intelligence
+      </li>
+      <li>
+       Comprehensive: $440M, prove 10x lives saved per dollar
+      </li>
+     </ol>
+     <p>
+      They're not just theorizing. They're building. Testing. Walking, not lobbying.
+     </p>
+     <div class="truth">
+      <p>
+       <strong>
+        You can't save your daughter. She's gone.
+       </strong>
+      </p>
+      <p>
+       <strong>
+        But you can help build the system that saves the next 10,000 children with her disease.
+       </strong>
+      </p>
+     </div>
+     <div class="progress-indicator">
+      → Continue to FULFILLMENT to see what her death creates
+     </div>
+    </section>
+    <!-- FULFILLMENT Stage -->
+    <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+     <h1>
+      15 Years After: What Her Death Created
+     </h1>
+     <h2>
+      The Decision You Made
+     </h2>
+     <p>
+      Four years after your daughter died, you made a decision.
+     </p>
+     <p>
+      You had $2M in savings. You'd been planning for retirement. For a life that seemed pointless now.
+     </p>
+     <p>
+      You decided: Fund pilot 3. The competence training test. $2.7M. 40 trainees.
+      <strong>
+       Directed toward pediatric oncology.
+      </strong>
+     </p>
+     <p>
+      Train 40 pediatric oncologists in 3 years. If it works, 40 more researchers working on diseases like your daughter's.
+     </p>
+     <p>
+      You funded it. Then you joined the board. Then you helped design the curriculum. Then you recruited the trainees.
+     </p>
+     <p>
+      You poured your rage into building.
+     </p>
+     <h2>
+      Year 3: First Results
+     </h2>
+     <p>
+      The first cohort graduates. 32 of 40 complete the program.
+     </p>
+     <p>
+      Outcome testing:
+     </p>
+     <ul>
+      <li>
+       Diagnostic accuracy: Equal to traditional residents on 3/4 metrics, better on 1/4
+      </li>
+      <li>
+       Treatment effectiveness: Equal on all metrics
+      </li>
+      <li>
+       Patient satisfaction: 15% higher
+      </li>
+     </ul>
+     <p>
+      <strong>
+       Proven: 3 years intensive = 12 years traditional for pediatric oncology.
+      </strong>
+     </p>
+     <h2>
+      Year 10: The Breakthrough
+     </h2>
+     <p>
+      A researcher in the zero-profit pharma network. Young. Trained in the 3-year program. Working on pediatric sarcomas.
+     </p>
+     <p>
+      She identifies a novel immunotherapy approach. Targets the specific mutation common in 60% of pediatric sarcomas.
+     </p>
+     <p>
+      Clinical trial: 40 patients. 75% complete response. 20% partial response.
+     </p>
+     <p>
+      <strong>
+       Effective cure for 60% of pediatric sarcomas.
+      </strong>
+     </p>
+     <p>
+      Treatment costs $200/month. No patent. Open formula.
+     </p>
+     <p>
+      <strong>
+       She names it after your daughter.
+      </strong>
+     </p>
+     <h2>
+      Year 15: What Exists Now
+     </h2>
+     <p>
+      You're 58 years old. Your daughter would be 22.
+     </p>
+     <p>
+      What exists because you chose to build:
+     </p>
+     <ul>
+      <li>
+       <strong>
+        1,500 competence-trained pediatric specialists
+       </strong>
+      </li>
+      <li>
+       <strong>
+        Cure for 60% of pediatric sarcomas
+       </strong>
+       (named after your daughter)
+      </li>
+      <li>
+       <strong>
+        12,000 children saved
+       </strong>
+       (who would have died)
+      </li>
+      <li>
+       <strong>
+        Training model exported
+       </strong>
+       to 12 other specialties
+      </li>
+      <li>
+       <strong>
+        Zero-profit pharma
+       </strong>
+       operating at scale
+      </li>
+     </ul>
+     <p>
+      Your $2M investment → $2B in follow-on funding → 12,000 lives saved → Cure with her name forever.
+     </p>
+     <h2>
+      Meeting the Children
+     </h2>
+     <p>
+      The foundation holds an annual event. Parents bring children saved by the cure.
+     </p>
+     <p>
+      You meet 47 children. Ages 3-14. Alive because of a cure that wouldn't exist in the old system.
+     </p>
+     <p>
+      A mother hugs you. Crying. "My daughter is alive because yours died and you chose to build something instead of just grieving."
+     </p>
+     <h2>
+      Your Daughter's Legacy
+     </h2>
+     <p>
+      You visit her grave. You tell her what happened this year:
+     </p>
+     <div class="quote">
+      "324 children got the cure this year. That's 324 families who didn't experience what we experienced. 324 kids who get to grow up. Because you died and I chose to make your death mean something."
+     </div>
+     <p>
+      You're not OK. You'll never be OK. She's gone and nothing changes that.
+     </p>
+     <p>
+      But her death wasn't meaningless.
+      <strong>
+       You made sure of that.
+      </strong>
+     </p>
+     <h2>
+      For Other Parents
+     </h2>
+     <div class="truth">
+      <p>
+       <strong>
+        Your child's death was not inevitable. It was a choice the system made.
+       </strong>
+      </p>
+      <p>
+       <strong>
+        The system chose to command intelligence toward profit instead of survival.
+       </strong>
+      </p>
+      <p>
+       <strong>
+        You can't change what happened. But you can help build the system that saves the next 10,000 children.
+       </strong>
+      </p>
+      <p>
+       Your rage has direction now. Your grief has purpose. Your child's death can create meaning.
+      </p>
+     </div>
+     <h2>
+      How to Start
+     </h2>
+     <p>
+      If you're a parent who lost a child to preventable disease:
+     </p>
+     <ol>
+      <li>
+       <strong>
+        Read the framework
+       </strong>
+       : 23__diagnosis.md, 23__solutions.md, 23__pilots.md
+      </li>
+      <li>
+       <strong>
+        Choose your contribution
+       </strong>
+       : Fund a pilot, join a board, share your story
+      </li>
+      <li>
+       <strong>
+        Direct it toward your child's disease
+       </strong>
+       : Make the pilot focus on what killed them
+      </li>
+      <li>
+       <strong>
+        Build something this year
+       </strong>
+       : Not someday. This year.
+      </li>
+     </ol>
+     <div class="choice">
+      <button class="cta" onclick="window.open('../tours/command-restoration-builder.js', '_blank')">
+       Explore Full Framework →
+      </button>
+      <button class="cta" onclick="alert('Parent coordination links coming soon')">
+       Connect With Other Building Parents →
+      </button>
+     </div>
+     <p style="margin-top: 40px; font-size: 0.95em; color: #666;">
+      <strong>
+       For parents who lost children
+      </strong>
+      : There are 47 parents who funded different aspects. They meet quarterly. Share grief. Share progress. Support each other. You're not alone in this.
+     </p>
+     <p style="font-size: 0.95em; color: #666;">
+      Your child is gone. But their legacy can be "the cure that saved 10,000 others." That's not nothing. That's not OK. But it's meaning in meaninglessness.
+     </p>
+    </section>
+   </div>
+  </div>
+ </body>
+ <script src="../../../lib/nav-vimlike.js">
+ </script>
+</html>

@@ -1,0 +1,36 @@
+{
+  "country_code": "MG",
+  "name": "Madagascar",
+  "approximate": true,
+  "population": 29000000,
+  "gdp_nominal_usd": 15000000000,
+  "gdp_per_capita_usd": 517,
+  "social_spending_pct_gdp": 10.0,
+  "health_spending_pct_gdp": 3.0,
+  "education_spending_pct_gdp": 3.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1000000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 45000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 55.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Lower respiratory infections",
+    "Diarrheal diseases",
+    "Malnutrition"
+  ],
+  "notes": [
+    "Madagascar has high under-5 mortality and chronic child undernutrition, alongside significant biodiversity and climate vulnerability.",
+    "ODA and conservation/NGO funding are major altruistic flows."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

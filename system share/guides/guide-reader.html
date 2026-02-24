@@ -1,0 +1,1288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Guide Library - 100+ Questions</title>
+    <link rel="stylesheet" href="guide-reader.css">
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Hamburger menu button for landscape phone -->
+    <button type="button" class="hamburger-menu" id="hamburgerMenu" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Side menu overlay -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    
+    <!-- Side menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-content">
+            <header class="side-menu-header">
+                <div class="header-container">
+                    <!-- Top Left: White Card -->
+                    <a class="featured-card-link white-card-link" onclick="selectGuide('animalLongevityV2'); return false; closeSideMenu();">
+                        ◇ Eternal Life Dream ◇
+                    </a>
+                    
+                    <!-- Center: Title as GOLD CARD (spans both rows) -->
+                    <div class="header-title-section" onclick="selectGuide('fourCardSystem'); return false; closeSideMenu();">
+                        <h1>✦ System Guide Library ✦</h1>
+                        <p class="subtitle">The Inevitable Four Cards</p>
+                        <p class="subtext-quote">TL;DR: Trial and Error. Less Talk and more Facilitated Walk.</p>
+                        <p class="subtext-quote">Imagine a million persons all insisting their point of view is as unique and special as I do mine. Then imagine the effort to understand them even remotely takes reading 15 books. Tiresome. No? Intractible? Why not simply let them walk it.Talk to the universe instead of each other.</p>
+                        <p class="subtext-quote">If you agree with that consideration. Then you agree with the fundamental motivation of The Crucible. TEST THINGS. Let them BE and BECOME, so you can evaluate them HOLISTICALLY - implicits of it all - instead of having to settle on preference only by explicits and the advertizing proselytizing of it.</p>
+                    </div>
+                    
+                    <!-- Top Right: Black Card (Lord of Destruction) -->
+                    <a class="featured-card-link black-card-link" onclick="selectGuide('lordOfDestruction'); return false; closeSideMenu();">
+                        ◆ Lord of Destruction ◆
+                    </a>
+                    
+                    <!-- Bottom Left: Green Card -->
+                    <a class="featured-card-link green-card-link" onclick="selectGuide('animalLongevityNss'); return false; closeSideMenu();">
+                        🌿 Natural Selection
+                    </a>
+                    
+                    <!-- Bottom Right: Red Card -->
+                    <a class="featured-card-link red-card-link" onclick="selectGuide('endSlaughterNowMwr4'); return false; closeSideMenu();">
+                        ⚠ MWR 4 ⚠
+                    </a>
+                </div>
+                
+                <div class="header-quote-wrapper">
+                    <p class="header-quote">"You are wrong. I am right." Make Space To Walk The Talk.</p>
+                </div>
+            </header>
+
+            <div class="controls side-menu-controls">
+                <input type="text" class="search-box" id="searchBoxSide" placeholder="Search questions, concepts, or keywords...">
+                <select class="category-filter" id="categoryFilterSide">
+                    <option value="">All Categories</option>
+                </select>
+                <select class="card-type-filter" id="cardTypeFilterSide">
+                    <option value="">All Card Types</option>
+                </select>
+                <div class="stats" id="statsSide">Loading guides...</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <!-- Top Left: White Card -->
+                <a class="featured-card-link white-card-link" onclick="selectGuide('animalLongevityV2'); return false;">
+                    ◇ Eternal Life Dream ◇
+                </a>
+                
+                <!-- Center: Title as GOLD CARD (spans both rows) -->
+                <div class="header-title-section" onclick="selectGuide('fourCardSystem'); return false;">
+                    <h1>✦ System Guide Library ✦</h1>
+                    <p class="subtitle">The Inevitable Four Cards</p>
+                    <p class="subtext-quote">TL;DR: Trial and Error. Less Talk and more Facilitated Walk.</p>
+                    <p class="subtext-quote">Imagine a million persons all insisting their point of view is as unique and special as I do mine. Then imagine the effort to understand them even remotely takes reading 15 books. Tiresome. No? Intractible? Why not simply let them walk it.Talk to the universe instead of each other.</p>
+                    <p class="subtext-quote">If you agree with that consideration. Then you agree with the fundamental motivation of The Crucible. TEST THINGS. Let them BE and BECOME, so you can evaluate them HOLISTICALLY - implicits of it all - instead of having to settle on preference only by explicits and the advertizing proselytizing of it.</p>
+                </div>
+                
+                <!-- Top Right: Black Card (Lord of Destruction) -->
+                <a class="featured-card-link black-card-link" onclick="selectGuide('lordOfDestruction'); return false;">
+                    ◆ Lord of Destruction ◆
+                </a>
+                
+                <!-- Bottom Left: Green Card -->
+                <a class="featured-card-link green-card-link" onclick="selectGuide('animalLongevityNss'); return false;">
+                    🌿 Natural Selection
+                </a>
+                
+                <!-- Bottom Right: Red Card -->
+                <a class="featured-card-link red-card-link" onclick="selectGuide('endSlaughterNowMwr4'); return false;">
+                    ⚠ MWR 4 ⚠
+                </a>
+            </div>
+            
+            <div class="header-quote-wrapper">
+                <p class="header-quote">"You are wrong. I am right." Make Space To Walk The Talk.</p>
+            </div>
+        </header>
+
+        <div class="controls">
+            <input type="text" class="search-box" id="searchBox" placeholder="Search questions, concepts, or keywords...">
+            <select class="category-filter" id="categoryFilter">
+                <option value="">All Categories</option>
+            </select>
+            <select class="card-type-filter" id="cardTypeFilter">
+                <option value="">All Card Types</option>
+            </select>
+            <div class="stats" id="stats">Loading guides...</div>
+        </div>
+
+        <div class="guide-grid" id="guideGrid">
+            <!-- Guide cards will be dynamically generated -->
+        </div>
+
+        <branching-nav-viewport>
+
+            <div class="guide-display" id="guideDisplay">
+                    <!-- Guide content will be dynamically loaded -->
+            </div>
+        </branching-nav-viewport>
+    </div>
+
+    <!-- Guide data is loaded lazily by the script below -->
+    <script src="guide-manifest.js"></script>
+    <script src="guide-loader.js"></script>
+
+    <!-- Main application script -->
+    <script>
+        document.readyState = 'loading';
+        const CARD_TYPE_LABELS = {
+            standard: 'Standard',
+            gold: 'Gold',
+            white: 'White',
+            green: 'Green',
+            black: 'Black',
+            red: 'Red',
+            pink: 'Pink',
+            blue: 'Blue'
+        };
+
+        // State management
+        let currentGuide = null;
+        let filteredGuides = GUIDE_KEYS.slice();
+        let currentCategory = '';
+
+        // Initialize
+        function init() {
+            renderGuideCards();
+            populateCategoryFilter();
+            populateCardTypeFilter();
+            updateStats();
+            updateProgressBar();
+            
+            // Load filters from URL first
+            loadFiltersFromURL();
+            
+            // Sync side menu filters with main filters
+            syncSideMenuFilters();
+            
+            // Debounce search input for URL updates
+            let searchTimeout;
+            const searchBox = document.getElementById('searchBox');
+            const searchBoxSide = document.getElementById('searchBoxSide');
+            
+            // Main search box event listener
+            if (searchBox) {
+                searchBox.addEventListener('input', function() {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        handleSearch();
+                    }, 300); // Debounce for 300ms
+                });
+            }
+            
+            document.getElementById('categoryFilter').addEventListener('change', handleCategoryFilter);
+            document.getElementById('cardTypeFilter').addEventListener('change', handleCardTypeFilter);
+            
+            // Side menu event listeners (sync with main)
+            const categoryFilterSide = document.getElementById('categoryFilterSide');
+            const cardTypeFilterSide = document.getElementById('cardTypeFilterSide');
+            
+            if (searchBoxSide) {
+                let searchTimeoutSide;
+                searchBoxSide.addEventListener('input', function() {
+                    const mainSearchBox = document.getElementById('searchBox');
+                    if (mainSearchBox) {
+                        mainSearchBox.value = this.value;
+                        clearTimeout(searchTimeoutSide);
+                        searchTimeoutSide = setTimeout(() => {
+                            handleSearch();
+                        }, 300);
+                    }
+                });
+            }
+            if (categoryFilterSide) {
+                categoryFilterSide.addEventListener('change', function() {
+                    document.getElementById('categoryFilter').value = this.value;
+                    handleCategoryFilter();
+                });
+            }
+            if (cardTypeFilterSide) {
+                cardTypeFilterSide.addEventListener('change', function() {
+                    document.getElementById('cardTypeFilter').value = this.value;
+                    handleCardTypeFilter();
+                });
+            }
+            
+            
+            // Hamburger menu
+            initHamburgerMenu();
+            
+            window.addEventListener('scroll', updateProgressBar);
+            scheduleInitialLoads();
+        }
+        
+        // Sync side menu filters with main filters
+        function syncSideMenuFilters() {
+            const searchBox = document.getElementById('searchBox');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const cardTypeFilter = document.getElementById('cardTypeFilter');
+            const stats = document.getElementById('stats');
+            
+            const searchBoxSide = document.getElementById('searchBoxSide');
+            const categoryFilterSide = document.getElementById('categoryFilterSide');
+            const cardTypeFilterSide = document.getElementById('cardTypeFilterSide');
+            const statsSide = document.getElementById('statsSide');
+            
+            if (searchBox && searchBoxSide) {
+                searchBox.addEventListener('input', () => {
+                    searchBoxSide.value = searchBox.value;
+                });
+            }
+            if (categoryFilter && categoryFilterSide) {
+                categoryFilter.addEventListener('change', () => {
+                    categoryFilterSide.value = categoryFilter.value;
+                });
+            }
+            if (cardTypeFilter && cardTypeFilterSide) {
+                cardTypeFilter.addEventListener('change', () => {
+                    cardTypeFilterSide.value = cardTypeFilter.value;
+                });
+            }
+            
+            // Sync stats
+            const observer = new MutationObserver(() => {
+                if (stats && statsSide) {
+                    statsSide.textContent = stats.textContent;
+                }
+            });
+            if (stats) {
+                observer.observe(stats, { childList: true, characterData: true, subtree: true });
+            }
+        }
+        
+        // Hamburger menu functions
+        function initHamburgerMenu() {
+            const hamburger = document.getElementById('hamburgerMenu');
+            const sideMenu = document.getElementById('sideMenu');
+            const overlay = document.getElementById('sideMenuOverlay');
+            
+            if (!hamburger || !sideMenu || !overlay) {
+                console.warn('Hamburger menu elements not found', { hamburger, sideMenu, overlay });
+                return;
+            }
+            
+            // Remove any existing listeners by cloning (but keep the ID)
+            const clickHandler = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Hamburger clicked');
+                toggleSideMenu();
+            };
+            
+            const touchHandler = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Hamburger touched');
+                toggleSideMenu();
+            };
+            
+            // Remove old listeners and add new ones
+            hamburger.removeEventListener('click', clickHandler);
+            hamburger.removeEventListener('touchstart', touchHandler);
+            
+            hamburger.addEventListener('click', clickHandler, { passive: false });
+            hamburger.addEventListener('touchstart', touchHandler, { passive: false });
+            
+            overlay.addEventListener('click', closeSideMenu);
+            
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                    closeSideMenu();
+                }
+            });
+            
+            console.log('Hamburger menu initialized', hamburger);
+        }
+        
+        function toggleSideMenu() {
+            console.log('toggleSideMenu called');
+            const hamburger = document.getElementById('hamburgerMenu');
+            const sideMenu = document.getElementById('sideMenu');
+            const overlay = document.getElementById('sideMenuOverlay');
+            
+            if (!hamburger || !sideMenu || !overlay) {
+                console.error('Menu elements not found');
+                return;
+            }
+            
+            const isActive = sideMenu.classList.contains('active');
+            
+            if (isActive) {
+                closeSideMenu();
+            } else {
+                openSideMenu();
+            }
+        }
+        
+        function openSideMenu() {
+            console.log('openSideMenu called');
+            const hamburger = document.getElementById('hamburgerMenu');
+            const sideMenu = document.getElementById('sideMenu');
+            const overlay = document.getElementById('sideMenuOverlay');
+            
+            if (!hamburger || !sideMenu || !overlay) return;
+            
+            hamburger.classList.add('active');
+            sideMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSideMenu() {
+            console.log('closeSideMenu called');
+            const hamburger = document.getElementById('hamburgerMenu');
+            const sideMenu = document.getElementById('sideMenu');
+            const overlay = document.getElementById('sideMenuOverlay');
+            
+            if (!hamburger || !sideMenu || !overlay) return;
+            
+            hamburger.classList.remove('active');
+            sideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Make functions globally accessible
+        window.toggleSideMenu = toggleSideMenu;
+        window.openSideMenu = openSideMenu;
+        window.closeSideMenu = closeSideMenu;
+
+        // Populate category filter with intersection sorting
+        function populateCategoryFilter() {
+            const cardTypeFilter = document.getElementById('cardTypeFilter');
+            const selectedCardType = cardTypeFilter ? cardTypeFilter.value : '';
+            const categoryFilter = document.getElementById('categoryFilter');
+            const selectedCategory = categoryFilter ? categoryFilter.value : '';
+            
+            const filter = document.getElementById('categoryFilter');
+            const filterSide = document.getElementById('categoryFilterSide');
+            
+            // Clear existing options (except "All Categories")
+            if (filter) {
+                filter.innerHTML = '<option value="">All Categories</option>';
+            }
+            if (filterSide) {
+                filterSide.innerHTML = '<option value="">All Categories</option>';
+            }
+            
+            // Get all categories
+            const categories = new Set();
+            Object.values(GUIDES).forEach(guide => {
+                if (guide.category) categories.add(guide.category);
+            });
+            
+            // If a card type is selected, calculate intersection
+            const categoriesWithCardType = new Map(); // category -> count
+            const categoriesWithoutCardType = [];
+            
+            categories.forEach(category => {
+                let count = 0;
+                Object.keys(GUIDES).forEach(key => {
+                    const guide = GUIDES[key];
+                    const guideCardType = getGuideCardType(key);
+                    if (guide.category === category && 
+                        (!selectedCardType || guideCardType === selectedCardType)) {
+                        count++;
+                    }
+                });
+                
+                if (selectedCardType && count > 0) {
+                    categoriesWithCardType.set(category, count);
+                } else if (!selectedCardType) {
+                    categoriesWithCardType.set(category, count);
+                } else {
+                    categoriesWithoutCardType.push(category);
+                }
+            });
+            
+            // Sort categories alphabetically
+            const sortedWithCardType = Array.from(categoriesWithCardType.entries())
+                .sort((a, b) => a[0].localeCompare(b[0]));
+            const sortedWithoutCardType = categoriesWithoutCardType.sort((a, b) => a.localeCompare(b));
+            
+            // Add categories with card type (with counts)
+            sortedWithCardType.forEach(([category, count]) => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = selectedCardType ? `${category} (${count})` : category;
+                if (category === selectedCategory) option.selected = true;
+                if (filter) filter.appendChild(option);
+                
+                if (filterSide) {
+                    const optionSide = option.cloneNode(true);
+                    if (category === selectedCategory) optionSide.selected = true;
+                    filterSide.appendChild(optionSide);
+                }
+            });
+            
+            // Add separator if there are categories without card type
+            if (selectedCardType && sortedWithoutCardType.length > 0) {
+                const separator = document.createElement('option');
+                separator.disabled = true;
+                separator.textContent = '──────────';
+                if (filter) filter.appendChild(separator);
+                if (filterSide) {
+                    const separatorSide = separator.cloneNode(true);
+                    filterSide.appendChild(separatorSide);
+                }
+            }
+            
+            // Add categories without card type (greyed out)
+            sortedWithoutCardType.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                option.disabled = true;
+                if (category === selectedCategory) option.selected = true;
+                if (filter) filter.appendChild(option);
+                
+                if (filterSide) {
+                    const optionSide = option.cloneNode(true);
+                    if (category === selectedCategory) optionSide.selected = true;
+                    filterSide.appendChild(optionSide);
+                }
+            });
+        }
+
+        function populateCardTypeFilter() {
+            const categoryFilter = document.getElementById('categoryFilter');
+            const selectedCategory = categoryFilter ? categoryFilter.value : '';
+            const cardTypeFilter = document.getElementById('cardTypeFilter');
+            const selectedCardType = cardTypeFilter ? cardTypeFilter.value : '';
+            
+            const filter = document.getElementById('cardTypeFilter');
+            const filterSide = document.getElementById('cardTypeFilterSide');
+            
+            // Clear existing options (except "All Card Types")
+            if (filter) {
+                filter.innerHTML = '<option value="">All Card Types</option>';
+            }
+            if (filterSide) {
+                filterSide.innerHTML = '<option value="">All Card Types</option>';
+            }
+            
+            // Get all card types
+            const cardTypes = new Set();
+            Object.keys(GUIDES).forEach(key => {
+                const type = getGuideCardType(key);
+                cardTypes.add(type);
+            });
+            
+            // If a category is selected, calculate intersection
+            const cardTypesWithCategory = new Map(); // cardType -> count
+            const cardTypesWithoutCategory = [];
+            
+            const orderedTypes = Object.keys(CARD_TYPE_LABELS).filter(type => cardTypes.has(type));
+            
+            orderedTypes.forEach(type => {
+                let count = 0;
+                Object.keys(GUIDES).forEach(key => {
+                    const guide = GUIDES[key];
+                    const guideCardType = getGuideCardType(key);
+                    if (guideCardType === type && 
+                        (!selectedCategory || guide.category === selectedCategory)) {
+                        count++;
+                    }
+                });
+                
+                if (selectedCategory && count > 0) {
+                    cardTypesWithCategory.set(type, count);
+                } else if (!selectedCategory) {
+                    cardTypesWithCategory.set(type, count);
+                } else {
+                    cardTypesWithoutCategory.push(type);
+                }
+            });
+            
+            // Sort card types alphabetically by label
+            const sortedWithCategory = Array.from(cardTypesWithCategory.entries())
+                .sort((a, b) => getCardTypeLabel(a[0]).localeCompare(getCardTypeLabel(b[0])));
+            const sortedWithoutCategory = cardTypesWithoutCategory.sort((a, b) => 
+                getCardTypeLabel(a).localeCompare(getCardTypeLabel(b)));
+            
+            // Add card types with category (with counts)
+            sortedWithCategory.forEach(([type, count]) => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = selectedCategory ? `${getCardTypeLabel(type)} (${count})` : getCardTypeLabel(type);
+                if (type === selectedCardType) option.selected = true;
+                if (filter) filter.appendChild(option);
+                
+                if (filterSide) {
+                    const optionSide = option.cloneNode(true);
+                    if (type === selectedCardType) optionSide.selected = true;
+                    filterSide.appendChild(optionSide);
+                }
+            });
+            
+            // Add separator if there are card types without category
+            if (selectedCategory && sortedWithoutCategory.length > 0) {
+                const separator = document.createElement('option');
+                separator.disabled = true;
+                separator.textContent = '──────────';
+                if (filter) filter.appendChild(separator);
+                if (filterSide) {
+                    const separatorSide = separator.cloneNode(true);
+                    filterSide.appendChild(separatorSide);
+                }
+            }
+            
+            // Add card types without category (greyed out)
+            sortedWithoutCategory.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = getCardTypeLabel(type);
+                option.disabled = true;
+                if (type === selectedCardType) option.selected = true;
+                if (filter) filter.appendChild(option);
+                
+                if (filterSide) {
+                    const optionSide = option.cloneNode(true);
+                    if (type === selectedCardType) optionSide.selected = true;
+                    filterSide.appendChild(optionSide);
+                }
+            });
+        }
+
+        // Update URL with current filter state
+        function updateFilterURL() {
+            const searchBox = document.getElementById('searchBox');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const cardTypeFilter = document.getElementById('cardTypeFilter');
+            
+            const search = searchBox ? searchBox.value : '';
+            const category = categoryFilter ? categoryFilter.value : '';
+            const cardType = cardTypeFilter ? cardTypeFilter.value : '';
+            
+            const url = new URL(window.location);
+            
+            // Update or remove search parameter
+            if (search) {
+                url.searchParams.set('search', search);
+            } else {
+                url.searchParams.delete('search');
+            }
+            
+            // Update or remove category parameter
+            if (category) {
+                url.searchParams.set('category', category);
+            } else {
+                url.searchParams.delete('category');
+            }
+            
+            // Update or remove cardType parameter
+            if (cardType) {
+                url.searchParams.set('cardType', cardType);
+            } else {
+                url.searchParams.delete('cardType');
+            }
+            
+            // Update URL without reloading (push to history)
+            window.history.pushState({ filters: { search, category, cardType } }, '', url);
+        }
+        
+        // Load filters from URL
+        function loadFiltersFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const search = urlParams.get('search') || '';
+            const category = urlParams.get('category') || '';
+            const cardType = urlParams.get('cardType') || '';
+            const guideFromUrl = urlParams.get('guide') || urlParams.get('g');
+            if (typeof setPendingInitialGuide === 'function') {
+                if (guideFromUrl && GUIDE_MANIFEST[guideFromUrl]) {
+                    setPendingInitialGuide(guideFromUrl);
+                } else {
+                    setPendingInitialGuide(null);
+                }
+            }
+            
+            const searchBox = document.getElementById('searchBox');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const cardTypeFilter = document.getElementById('cardTypeFilter');
+            const searchBoxSide = document.getElementById('searchBoxSide');
+            const categoryFilterSide = document.getElementById('categoryFilterSide');
+            const cardTypeFilterSide = document.getElementById('cardTypeFilterSide');
+            
+            if (searchBox) {
+                searchBox.value = search;
+                if (searchBoxSide) searchBoxSide.value = search;
+            }
+            if (categoryFilter) {
+                categoryFilter.value = category;
+                if (categoryFilterSide) categoryFilterSide.value = category;
+            }
+            if (cardTypeFilter) {
+                cardTypeFilter.value = cardType;
+                if (cardTypeFilterSide) cardTypeFilterSide.value = cardType;
+            }
+            
+            // Repopulate filters to show intersections
+            populateCategoryFilter();
+            populateCardTypeFilter();
+            
+            // Apply filters if any are set
+            if (search || category || cardType) {
+                handleSearch(false); // false = don't update URL (we just loaded from it)
+            }
+        }
+        
+        // Handle search
+        function handleSearch(updateURL = true, fromData = false) {
+            const searchBox = document.getElementById('searchBox');
+            const query = fromData
+                ? currentSearchQuery
+                : (searchBox ? searchBox.value.toLowerCase() : '');
+            if (!fromData) {
+                currentSearchQuery = query;
+            } else if (searchBox && searchBox.value.toLowerCase() !== currentSearchQuery) {
+                searchBox.value = currentSearchQuery;
+            }
+            const category = document.getElementById('categoryFilter').value;
+            const cardType = document.getElementById('cardTypeFilter').value;
+
+            const pendingGuideKey = window.__pendingInitialGuideKey;
+            if (query) {
+                if (pendingGuideKey && typeof requestDeferredSearch === 'function') {
+                    requestDeferredSearch();
+                } else {
+                    if (typeof clearDeferredSearchRequest === 'function') {
+                        clearDeferredSearchRequest();
+                    }
+                    ensureSearchData();
+                }
+            } else if (typeof clearDeferredSearchRequest === 'function') {
+                clearDeferredSearchRequest();
+            }
+            
+            filteredGuides = GUIDE_KEYS.filter(key => {
+                const guide = GUIDES[key];
+                const guideCardType = getGuideCardType(key);
+                const matchesSearch = !query || 
+                    (guide.title && guide.title.toLowerCase().includes(query)) ||
+                    (guide.description && guide.description.toLowerCase().includes(query)) ||
+                    (guide.tags && guide.tags.some(tag => tag.toLowerCase().includes(query))) ||
+                    searchInSteps(guide.steps, query);
+                
+                const matchesCategory = !category || guide.category === category;
+                const matchesCardType = !cardType || guideCardType === cardType;
+                
+                return matchesSearch && matchesCategory && matchesCardType;
+            });
+            
+            renderGuideCards();
+            updateStats();
+            
+            // Update URL if requested (default true, false when loading from URL)
+            if (updateURL) {
+                updateFilterURL();
+            }
+        }
+
+        // Handle category filter
+        function handleCategoryFilter() {
+            // Repopulate card type filter based on selected category
+            populateCardTypeFilter();
+            handleSearch(); // This will call updateStats
+        }
+
+        function handleCardTypeFilter() {
+            // Repopulate category filter based on selected card type
+            populateCategoryFilter();
+            handleSearch(); // This will call updateStats
+        }
+
+        // Search in guide steps
+        function searchInSteps(steps, query) {
+            if (!steps || !steps.length || !query) return false;
+            return steps.some(step => 
+                step.title.toLowerCase().includes(query) ||
+                step.content.some(content => 
+                    content.text && content.text.toLowerCase().includes(query)
+                )
+            );
+        }
+
+        // Calculate result counts for different filter combinations
+        function calculateFilterCounts(query, category, cardType) {
+            const allGuides = GUIDE_KEYS;
+            
+            // Helper function to check if a guide matches filters
+            function matchesFilters(key, searchQuery, catFilter, cardTypeFilter) {
+                const guide = GUIDES[key];
+                const guideCardType = getGuideCardType(key);
+                
+                const matchesSearch = !searchQuery || 
+                    guide.title.toLowerCase().includes(searchQuery) ||
+                    guide.description.toLowerCase().includes(searchQuery) ||
+                    (guide.tags && guide.tags.some(tag => tag.toLowerCase().includes(searchQuery))) ||
+                    searchInSteps(guide.steps, searchQuery);
+                
+                const matchesCategory = !catFilter || guide.category === catFilter;
+                const matchesCardType = !cardTypeFilter || guideCardType === cardTypeFilter;
+                
+                return matchesSearch && matchesCategory && matchesCardType;
+            }
+            
+            return {
+                all: allGuides.length,
+                current: allGuides.filter(key => matchesFilters(key, query, category, cardType)).length,
+                noCategory: category ? allGuides.filter(key => matchesFilters(key, query, '', cardType)).length : null,
+                noCardType: cardType ? allGuides.filter(key => matchesFilters(key, query, category, '')).length : null,
+                noFilters: (category || cardType) ? allGuides.filter(key => matchesFilters(key, query, '', '')).length : null
+            };
+        }
+
+        // Update stats with detailed filter information
+        function updateStats() {
+            const searchBox = document.getElementById('searchBox');
+            const query = currentSearchQuery || (searchBox ? searchBox.value.toLowerCase() : '');
+            const category = document.getElementById('categoryFilter').value;
+            const cardType = document.getElementById('cardTypeFilter').value;
+            
+            const counts = calculateFilterCounts(query, category, cardType);
+            const total = counts.all;
+            const visible = counts.current;
+            
+            const stats = document.getElementById('stats');
+            const statsSide = document.getElementById('statsSide');
+            
+            // Build stats text with filter indicators
+            let statsText = `${visible} of ${total} guides`;
+            const indicators = [];
+            
+            // Show what results would be if filters were removed
+            if (category && counts.noCategory !== null && counts.noCategory !== visible) {
+                indicators.push(`without category: ${counts.noCategory}`);
+            }
+            if (cardType && counts.noCardType !== null && counts.noCardType !== visible) {
+                indicators.push(`without card type: ${counts.noCardType}`);
+            }
+            if ((category || cardType) && counts.noFilters !== null && counts.noFilters !== visible) {
+                indicators.push(`without filters: ${counts.noFilters}`);
+            }
+            
+            if (indicators.length > 0) {
+                statsText += ` (${indicators.join(', ')})`;
+            }
+            
+            if (stats) stats.textContent = statsText;
+            if (statsSide) statsSide.textContent = statsText;
+        }
+
+        function updateGuideOverflowStates() {
+            const cards = document.querySelectorAll('.guide-card');
+            cards.forEach(card => {
+                const wrapper = card.querySelector('.scroll-wrapper');
+                if (!wrapper) return;
+                const hasOverflow = wrapper.scrollHeight > wrapper.clientHeight + 1;
+                card.classList.toggle('has-overflow', hasOverflow);
+            });
+        }
+
+        // Render guide selection cards
+        function renderGuideCards() {
+            const grid = document.getElementById('guideGrid');
+            
+            if (filteredGuides.length === 0) {
+                grid.innerHTML = '<div class="no-results">No guides match your search criteria.</div>';
+                return;
+            }
+            
+            grid.innerHTML = '';
+
+            filteredGuides.forEach(key => {
+                const guide = GUIDES[key];
+                const card = document.createElement('div');
+                
+                // Determine card type from guide.cardType or legacy key-based system
+                const cardType = getGuideCardType(key);
+                
+                // Apply card styling based on type
+                card.className = 'guide-card';
+                if (cardType === 'gold') {
+                    card.className = 'guide-card featured';
+                } else if (cardType === 'white') {
+                    card.className = 'guide-card white-card';
+                } else if (cardType === 'green') {
+                    card.className = 'guide-card green-card';
+                } else if (cardType === 'black') {
+                    card.className = 'guide-card black-card';
+                } else if (cardType === 'red') {
+                    card.className = 'guide-card red-card';
+                } else if (cardType === 'pink') {
+                    card.className = 'guide-card pink-card';
+                } else if (cardType === 'blue') {
+                    card.className = 'guide-card blue-card';
+                }
+                
+                // Determine badge based on card type
+                let badge = '';
+                if (cardType === 'gold') badge = '<div class="sacred-badge">✦ Sacred ✦</div>';
+                else if (cardType === 'white') badge = '<div class="dream-badge">◇ Dream ◇</div>';
+                else if (cardType === 'green') badge = '<div class="tech-badge">🌿 NSS</div>';
+                else if (cardType === 'black') badge = '<div class="destruction-badge">◆ (0) ◆</div>';
+                else if (cardType === 'red') badge = '<div class="war-badge">⚠ MWR 4 ⚠</div>';
+                else if (cardType === 'pink') badge = '<div class="liberation-badge">♡ Liberation ♡</div>';
+                else if (cardType === 'blue') badge = '<div class="home-badge">🏠 Home</div>';
+                
+                const redDisclaimer = cardType === 'red'
+                    ? `<div class="card-disclaimer red-disclaimer">
+⚠ <strong><abbr title="Might With Right">MWR</abbr>-4:</strong> deploy only when lifesaving progress (see <abbr title="foundations/36d Death-Fighting Synthesis">36d</abbr>/<abbr title="foundations/36 Coalescents Against Death">36</abbr>) is blocked, after counterparts refuse <abbr title="Moral Warfare Doctrine — War De-escalation to MoWD level 3">MWD</abbr> de-escalation, or when a non-<abbr title="Might is Right Alliance">MIRA</abbr> <abbr title="Tower Of Power">TOP</abbr> presents catastrophic intolerable risk.
+
+                       </div>`
+                    : '';
+
+                card.innerHTML = `
+                    <div class="scroll-wrapper">
+                        <div class="card-content">
+                            ${badge}
+                            ${guide.category ? `<div class="category">${guide.category}</div>` : ''}
+                            <h3>${guide.title}</h3>
+                            <p class="card-description">${guide.description}</p>
+                            ${guide.tags ? `<div class="tags">${guide.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>` : ''}
+                            ${redDisclaimer}
+                            <div class="overflow-indicator">Scroll for more</div>
+                        </div>
+                    </div>
+                `;
+                card.dataset.guideKey = key;
+                const isLoaded = guideLoadState[key]?.status === 'loaded';
+                card.classList.toggle('guide-loading', !isLoaded);
+                if (!isLoaded) {
+                    card.setAttribute('aria-busy', 'true');
+                } else {
+                    card.removeAttribute('aria-busy');
+                }
+                card.onclick = () => selectGuide(key);
+                grid.appendChild(card);
+            });
+
+            requestAnimationFrame(updateGuideOverflowStates);
+            observeGuideCards();
+        }
+        
+        function getGuideCardType(key) {
+            const guide = GUIDES[key];
+            return guide.cardType || 'standard';
+        }
+
+        function getCardTypeLabel(type) {
+            if (CARD_TYPE_LABELS[type]) return CARD_TYPE_LABELS[type];
+            if (!type) return CARD_TYPE_LABELS.standard;
+            return type.charAt(0).toUpperCase() + type.slice(1);
+        }
+
+        // Select and display a guide
+        function selectGuide(key, pushState = true) {
+            currentGuide = key;
+            
+            // Update URL history
+            if (pushState && window.history && window.history.pushState) {
+                const url = new URL(window.location);
+                url.searchParams.set('guide', key);
+                url.searchParams.delete('g');
+                window.history.pushState({ guide: key }, '', url);
+            }
+            
+            // Hide cards and scroll to top immediately for responsive feel
+            document.getElementById('guideGrid').style.display = 'none';
+            document.querySelector('.controls').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            document.querySelectorAll('.guide-card').forEach(card => {
+                card.classList.toggle('active', card.dataset.guideKey === key);
+            });
+
+            const display = document.getElementById('guideDisplay');
+            display.innerHTML = `
+                <div class="guide-loading-state">Loading ${humanizeGuideKey(key)}...</div>
+            `;
+            display.classList.add('active');
+
+            pauseBackgroundLoads('guide-selection');
+            loadGuide(key, PRIORITY.SELECTED)
+                .then(() => {
+                    renderGuideContent(key);
+                    updateProgressBar();
+                })
+                .catch(error => {
+                    display.innerHTML = `
+                        <div class="guide-error">
+                            Unable to load guide.<br>
+                            <small>${error.message}</small>
+                        </div>
+                    `;
+                })
+                .finally(() => {
+                    resumeBackgroundLoads('guide-selection');
+                });
+        }
+
+        function renderGuideContent(key) {
+            const guide = GUIDES[key];
+            if (!guide) return;
+            const cardType = getGuideCardType(key);
+            
+            const display = document.getElementById('guideDisplay');
+            
+            // Support both 'steps' and 'sections' formats
+            const content = guide.steps || guide.sections || [];
+            
+            const cardTypeDisclaimer = cardType === 'red'
+                ? `<div style="margin: 20px 0; padding: 15px 20px; background: rgba(179,38,30,0.12); border-left: 4px solid #b3261e; color: #b3261e; font-size: 0.9em; line-height: 1.6;">
+                            ⚠ <abbr title="Might With Right">MWR</abbr>-4 is testimony to long-term failure. Though it is necessary sometimes: lifesaving work (e.g. <abbr title="foundations/36d Death-Fighting Synthesis">36d</abbr>/<abbr title="foundations/36 Coalescents Against Death">36</abbr>) is blocked. Or when no solution can be had at MWR 1 or 2, and one receives no options in MWR 3 under intolerable conditions to solve the matter with victory or defeat to be settled. Or when in MWR conditions an there is a refusal to drop it to <abbr title="Moral Warfare Doctrine — MoWD Level 3 conflict resolution">MWD</abbr> then the many may step in with MWR 4 to make it clear: Your drop or you're doomed. Or when an out-of-<abbr title="Might is Right Alliance">MIRA</abbr> <abbr title="Tower of Power">TOP</abbr> threatens catastrophic potential conditions.
+                                           </div>`
+                : '';
+
+            display.innerHTML = `
+                <button class="back-to-selection" onclick="backToSelection()">← Back to Guide Library</button>
+                <h1 style="color: #667eea; margin-bottom: 10px;">${guide.title || humanizeGuideKey(key)}</h1>
+                <p style="color: #a0a0a0; font-style: italic; margin-bottom: 40px; white-space: pre-line;">${guide.description || ''}</p>
+                ${cardTypeDisclaimer}
+                ${guide.overview ? `<div class="overview" style="background: #1a1a2e; padding: 20px; margin: 20px 0; border-left: 4px solid #667eea; white-space: pre-line;">${formatMarkdownContent(guide.overview)}</div>` : ''}
+                ${renderSteps(content)}
+                ${renderNextGuides(guide.nextGuides)}
+            `;
+            display.classList.add('active');
+        }
+
+        // Render next guides recommendations
+        function renderNextGuides(nextGuides) {
+            if (!nextGuides || nextGuides.length === 0) return '';
+            
+            return `
+                <div style="margin-top: 60px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; border-left: 4px solid #fff;">
+                    <h2 style="color: #fff; margin-top: 0; margin-bottom: 20px;">📚 Continue Your Journey</h2>
+                    <p style="color: #f0f0f0; margin-bottom: 25px; font-style: italic;">Based on what you just read, these guides will deepen your understanding:</p>
+                    <div style="display: grid; gap: 15px;">
+                        ${nextGuides.map(next => {
+                            if(!next.id) {  
+                                next = {id: next, reason: ""};
+                            }
+                            const nextGuide = GUIDES[next.id];
+
+                            if (!nextGuide) return '';
+                            return `
+                                <div style="background: rgba(255,255,255,0.95); padding: 20px; border-radius: 8px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" 
+                                     onclick="selectGuide('${next.id}')"
+                                     onmouseover="this.style.transform='translateX(5px)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)';"
+                                     onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none';">
+                                    <h3 style="color: #667eea; margin: 0 0 10px 0; font-size: 1.1em;">→ ${nextGuide.title}</h3>
+                                    <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em; font-style: italic;">${next.reason}</p>
+                                    <p style="color: #999; margin: 0; font-size: 0.85em;">${nextGuide.description}</p>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Format markdown content for sections format
+        function formatMarkdownContent(content) {
+            if (!content) return '';
+            
+            // Preserve code blocks before other processing
+            const codeBlocks = [];
+            content = content.replace(/```([\s\S]+?)```/g, (match, code) => {
+                codeBlocks.push(code);
+                return `__CODE_BLOCK_${codeBlocks.length - 1}__`;
+            });
+            
+            // Handle headers (already converted to <h3> in files)
+            // Additional header styling is already in the tags
+            
+            // Handle tables (markdown tables with | separators)
+            content = content.replace(/\n\|(.+)\|\n\|[-:\s|]+\|\n((?:\|.+\|\n?)+)/g, (match, header, rows) => {
+                const headers = header.split('|').filter(h => h.trim()).map(h => h.trim());
+                const rowsArray = rows.trim().split('\n').map(row => 
+                    row.split('|').filter(cell => cell.trim()).map(cell => cell.trim())
+                );
+                
+                let table = '<table style="width: 100%; border-collapse: collapse; margin: 20px 0;"><thead><tr>';
+                headers.forEach(h => table += `<th style="border: 1px solid #444; padding: 10px; background: #2a2a3e; text-align: left;">${h}</th>`);
+                table += '</tr></thead><tbody>';
+                
+                rowsArray.forEach(row => {
+                    table += '<tr>';
+                    row.forEach(cell => table += `<td style="border: 1px solid #444; padding: 10px;">${cell}</td>`);
+                    table += '</tr>';
+                });
+                table += '</tbody></table>';
+                return table;
+            });
+            
+            // Handle bullet point lists
+            content = content.replace(/^- (.+)$/gm, '<li style="margin: 5px 0;">$1</li>');
+            
+            // Wrap consecutive list items in styled <ul>
+            content = content.replace(/(<li[^>]*>.*?<\/li>\s*)+/g, (match) => {
+                return `<ul style="margin: 15px 0; padding-left: 20px; list-style-type: disc;">${match}</ul>`;
+            });
+            
+            // Handle inline code (single backticks) - but not template literals
+            content = content.replace(/(?<!`)`([^`\n]+)`(?!`)/g, '<code style="background: #2a2a3e; padding: 2px 6px; border-radius: 3px; font-family: monospace; color: #a0d9ff;">$1</code>');
+            
+            // Handle paragraphs (double line breaks)
+            content = content.replace(/\n\n+/g, '</p><p style="margin: 15px 0; line-height: 1.6;">');
+            content = '<p style="margin: 15px 0; line-height: 1.6;">' + content + '</p>';
+            
+            // Restore code blocks with professional styling
+            codeBlocks.forEach((code, i) => {
+                content = content.replace(
+                    `__CODE_BLOCK_${i}__`,
+                    `<pre style="background: #1a1a2e; padding: 15px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #667eea; margin: 20px 0;"><code style="font-family: 'Courier New', monospace; color: #a0d9ff;">${code.trim()}</code></pre>`
+                );
+            });
+            
+            // Clean up artifacts
+            content = content.replace(/<p[^>]*>\s*<\/p>/g, '');
+            content = content.replace(/<p[^>]*>(\s*<h3)/g, '$1');
+            content = content.replace(/(<\/h3>)\s*<\/p>/g, '$1');
+            content = content.replace(/<p[^>]*>(\s*<ul)/g, '$1');
+            content = content.replace(/(<\/ul>)\s*<\/p>/g, '$1');
+            content = content.replace(/<p[^>]*>(\s*<table)/g, '$1');
+            content = content.replace(/(<\/table>)\s*<\/p>/g, '$1');
+            content = content.replace(/<p[^>]*>(\s*<pre)/g, '$1');
+            content = content.replace(/(<\/pre>)\s*<\/p>/g, '$1');
+            
+            return content;
+        }
+        
+        // Render guide steps or sections (support both formats)
+        function renderSteps(stepsOrSections) {
+            if (!stepsOrSections || stepsOrSections.length === 0) return '';
+            
+            // Check if using new 'steps' format (array of objects with structured content)
+            // or old 'sections' format (array of objects with markdown string content)
+            const isStepsFormat = stepsOrSections[0].content && Array.isArray(stepsOrSections[0].content);
+            
+            if (isStepsFormat) {
+                // New structured format
+                return stepsOrSections.map((step, index) => `
+                    <div data-chapter class="step">
+                        <div class="step-number">${index + 1}</div>
+                        <h2>${step.title || ''}</h2>
+                        ${renderContent(step.content)}
+                    </div>
+                `).join('');
+            } else {
+                // Old sections format (markdown strings)
+                return stepsOrSections.map((section, index) => `
+                    <div data-chapter class="step">
+                        <div class="step-number">${index + 1}</div>
+                        <h2>${section.title || ''}</h2>
+                        <div class="section-markdown-content">${formatMarkdownContent(section.content || '')}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Render content blocks
+        function renderContent(content) {
+            return content.map(block => {
+                switch(block.type) {
+                    case 'paragraph':
+                        return `<p style="white-space: pre-line;">${block.text}</p>`;
+                    
+                    case 'concept':
+                        return `
+                            <div data-sub-branch class="concept" id="${block.title}">
+                                <div class="concept-title">${block.title || ''}</div>
+                                <p style="white-space: pre-line;">${block.text}</p>
+                            </div>
+                        `;
+                    
+                    case 'example':
+                        return `
+                            <div data-sub-branch class="example" id="${block.title}">
+                                <div class="example-title">${block.title || ''}</div>
+                                <p style="white-space: pre-line;">${block.text}</p>
+                            </div>
+                        `;
+
+                    case 'key-question':
+                        return `
+                            <div data-sub-branch class="key-question" id="${block.title}">
+                                <div class="key-question-title">${block.title || ''}</div>
+                                <p style="white-space: pre-line;">${block.text}</p>
+                            </div>
+                        `;
+                    
+                    case 'key-insight':
+                        return `
+                            <div data-sub-branch class="key-insight" id="${block.title}">
+                                <div class="key-insight-title">${block.title || ''}</div>
+                                <p style="white-space: pre-line;">${block.text}</p>
+                            </div>
+                        `;
+                    
+                    case 'list':
+                        return `
+                            <ul>
+                                ${block.items.map(item => `<li style="white-space: pre-line;">${item}</li>`).join('')}
+                            </ul>
+                        `;
+                    
+                    case 'connection':
+                        return `<div class="connection" style="white-space: pre-line;">${block.text}</div>`;
+                    
+                    default:
+                        return '';
+                }
+            }).join('');
+        }
+
+        // Back to selection
+        function backToSelection() {
+            const display = document.getElementById('guideDisplay');
+            display.classList.remove('active');
+            document.querySelectorAll('.guide-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            currentGuide = null;
+            
+            // Show guide grid and controls
+            document.getElementById('guideGrid').style.display = 'grid';
+            document.querySelector('.controls').style.display = 'flex';
+            
+            // Update URL to remove guide parameter
+            if (window.history && window.history.pushState) {
+                const url = new URL(window.location);
+                url.searchParams.delete('guide');
+                url.searchParams.delete('g');
+                window.history.pushState({}, '', url);
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            if (!currentGuide) return;
+            
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            const url = new URL(window.location);
+            const guideKey = url.searchParams.get('guide') || url.searchParams.get('g');
+            
+            // Load filters from URL first
+            loadFiltersFromURL();
+            
+            // Then handle guide navigation
+            if (guideKey && GUIDE_MANIFEST[guideKey]) {
+                selectGuide(guideKey, false); // Don't push state again
+            } else {
+                backToSelection();
+            }
+        });
+
+        // Check URL on page load and open guide if specified
+        function checkUrlAndLoadGuide() {
+            const url = new URL(window.location);
+            const guideKey = url.searchParams.get('guide') || url.searchParams.get('g');
+            
+            if (guideKey && GUIDE_MANIFEST[guideKey]) {
+                // Wait a moment for DOM to be ready
+                setTimeout(() => {
+                    selectGuide(guideKey, false); // Don't push state on initial load
+                    if (!url.searchParams.get('guide') && url.searchParams.get('g')) {
+                        url.searchParams.set('guide', guideKey);
+                        url.searchParams.delete('g');
+                        window.history.replaceState({ guide: guideKey }, '', url);
+                    }
+                }, 100);
+            }
+        }
+
+        // Function to scale header title to fit width smoothly
+        function scaleHeaderTitle() {
+            const headerTitle = document.querySelector('.header-title-section h1');
+            const container = document.querySelector('.header-title-section');
+            if (!headerTitle || !container) return;
+            
+            // Check if we're in stacked layout (mobile)
+            const isStacked = window.matchMedia('(max-width: 850px)').matches;
+            
+            // Use a more efficient approach - measure and scale
+            const containerWidth = container.offsetWidth;
+            const padding = isStacked ? 32 : 40; // Less padding in stacked mode
+            const availableWidth = containerWidth - padding;
+            
+            // Temporarily set a large font to measure
+            headerTitle.style.fontSize = isStacked ? '2.2em' : '3em';
+            const textWidth = headerTitle.scrollWidth;
+            
+            if (textWidth > availableWidth) {
+                // Calculate scale factor
+                const scale = availableWidth / textWidth;
+                const baseSize = isStacked ? 2.2 : 2.8; // Max size in em
+                const scaledSize = baseSize * scale * 0.95; // 95% to add small buffer
+                
+                // Apply with clamp for smooth scaling
+                const minSize = isStacked ? 1.2 : 0.85;
+                const maxSize = isStacked ? 2.2 : 2.8;
+                headerTitle.style.fontSize = `clamp(${minSize}em, ${scaledSize}em, ${maxSize}em)`;
+            } else {
+                // Text fits, use responsive clamp
+                headerTitle.style.fontSize = '';
+            }
+        }
+        
+        // Debounced resize handler
+        let resizeTimeout;
+        function handleHeaderResize() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                requestAnimationFrame(() => {
+                    scaleHeaderTitle();
+                    updateGuideOverflowStates();
+                });
+            }, 100);
+        }
+
+        // Start
+        init();
+        checkUrlAndLoadGuide();
+
+        // Scale header after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(scaleHeaderTitle, 100);
+            });
+        } else {
+            setTimeout(scaleHeaderTitle, 100);
+        }
+        
+        window.addEventListener('resize', handleHeaderResize);
+    </script>
+    <script src="/lib/branching-nav.js"></script>
+    <script src="/lib/glossary/glossary.js"></script>
+</body>
+</html>
+
+

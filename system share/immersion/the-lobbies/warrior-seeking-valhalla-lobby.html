@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Warrior's Path - Great Steppe Games Rally Lobby</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cinzel', 'Georgia', serif;
+            background: linear-gradient(135deg, #1a0000 0%, #330000 50%, #1a0000 100%);
+            color: #d4af37;
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 3px solid #8b0000;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff4444;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000,
+                0 0 20px rgba(255, 68, 68, 0.8);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #d4af37;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .your-hunger {
+            background: rgba(139, 0, 0, 0.3);
+            border: 2px solid #8b0000;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .your-hunger h2 {
+            color: #ff4444;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .hunger-item {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #8b0000;
+            border-radius: 5px;
+        }
+
+        .hunger-item strong {
+            color: #ff6666;
+            font-size: 1.2em;
+        }
+
+        .faction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .faction-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid #8b0000;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .faction-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff4444;
+            box-shadow: 0 10px 40px rgba(255, 68, 68, 0.3);
+        }
+
+        .faction-header {
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .faction-name {
+            font-size: 2em;
+            color: #ff4444;
+            margin-bottom: 10px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .faction-tagline {
+            font-size: 1.2em;
+            color: #d4af37;
+            font-style: italic;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .section-title {
+            color: #ff6666;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .neologism {
+            color: #ffd700;
+            font-style: italic;
+            border-bottom: 2px dotted #ffd700;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 8px rgba(255, 215, 0, 0.8);
+        }
+
+        .emphasis {
+            color: #ff8888;
+            font-weight: bold;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .metric {
+            background: rgba(139, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #8b0000;
+        }
+
+        .metric-label {
+            color: #d4af37;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            color: #ff4444;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .trust-network-note {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        .trust-network-note strong {
+            color: #ffd700;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li:before {
+            content: "⚔";
+            position: absolute;
+            left: 0;
+            color: #8b0000;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .faction-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚔ THE WARRIOR'S PATH ⚔</h1>
+            <p class="subtitle">Rally Lobby for the Great Steppe Games</p>
+            <p class="subtitle" style="font-size: 1.1em; margin-top: 15px;">
+                "Where Warriors Find Valhalla Made Real"
+            </p>
+        </div>
+
+        <div class="your-hunger">
+            <h2>Your Soul Hungers For...</h2>
+            
+            <div class="hunger-item">
+                <strong>Combat That Matters</strong><br>
+                Not training exercises. Not simulations. Not "peacekeeping." But <span class="emphasis">real combat</span> with <span class="emphasis">real stakes</span> and <span class="emphasis">real consequences</span>—where victory means glory and defeat means humiliation, but death means <span class="neologism">respawn</span>.
+            </div>
+
+            <div class="hunger-item">
+                <strong>The Warrior's Spirit</strong><br>
+                You were born too late for real war, but too early to accept peace. Your grandfather fought. Your great-grandfather died in battle. Their blood runs in your veins. You feel the <span class="neologism">daemon</span>—the fundamental nature of the warrior—and modern life is <span class="emphasis">soul-death</span>.
+            </div>
+
+            <div class="hunger-item">
+                <strong>Conquest Without Apology</strong><br>
+                You want to <span class="emphasis">conquer</span>. To <span class="emphasis">dominate</span>. To <span class="emphasis">take</span> what can only be taken once. To prove yourself in the oldest game—territory, women, glory, wealth. Not through money or status, but through <span class="neologism">raw masculine prowess</span>.
+            </div>
+
+            <div class="hunger-item">
+                <strong>Honor Through Trial</strong><br>
+                You're willing to <span class="emphasis">fall</span>. To be <span class="emphasis">conquered</span>. To be <span class="emphasis">enslaved</span>. To taste <span class="emphasis">humiliation</span>. Because you know that <span class="neologism">honor earned through defeat</span> is worth more than comfort earned through cowardice.
+            </div>
+
+            <div class="hunger-item">
+                <strong>Valhalla Made Real</strong><br>
+                You don't want to wait for death to find the warrior's paradise. You want <span class="emphasis">eternal combat</span> and <span class="emphasis">eternal glory</span> <span class="neologism">NOW</span>. During life. Visible to all. With respawn instead of death. With <span class="neologism">MBC+ protection</span> instead of oblivion.
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color: #ff4444; font-size: 2.5em; margin-bottom: 30px; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;">
+            Choose Your Faction
+        </h2>
+
+        <div class="faction-grid">
+            <!-- Red Banner -->
+            <div class="faction-card">
+                <div class="faction-header">
+                    <div class="faction-name">🔴 RED BANNER</div>
+                    <div class="faction-tagline">"The Wolf Never Dies"</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚔ Azure (Combat Philosophy)</div>
+                    <p>
+                        <span class="neologism">Relentless aggression</span>. The Red Banner fights like wolves—pack tactics, overwhelming force, never retreat. Founded by <span class="emphasis">Dmitri Volkov</span>, the Wolf of the Steppe, who taught that <span class="neologism">"the warrior who fears neither victory nor defeat cannot be broken."</span>
+                    </p>
+                    <ul>
+                        <li>Specialize in <span class="emphasis">frontal assault</span></li>
+                        <li>Value <span class="neologism">courage over cunning</span></li>
+                        <li>Respawn and attack again—endlessly</li>
+                        <li>Honor through <span class="emphasis">persistence</span></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚖ Gray (Rules & Culture)</div>
+                    <p>
+                        <span class="neologism">Respect earned through combat</span>. Red Banner warriors show mercy to worthy opponents and brutality to cowards. The <span class="emphasis">Respawn Ritual</span> is sacred. The <span class="emphasis">Slave's Prayer</span> is honored.
+                    </p>
+                    <ul>
+                        <li>MBC+ (1234) absolutely enforced</li>
+                        <li>Contraception required OR accept pregnancy</li>
+                        <li>Slavery temporary (max 6 months)</li>
+                        <li>Exit via "I leave the game" always honored</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❤ Crimson (Mate Selection)</div>
+                    <p>
+                        Women of Red Banner choose warriors who <span class="neologism">never stop fighting</span>. They want men who respawn and return to battle. Who conquer and are conquered. Who show <span class="emphasis">relentless spirit</span>.
+                    </p>
+                    <ul>
+                        <li>Women bid at slave markets</li>
+                        <li>Breeding farms for top warriors</li>
+                        <li>Children raised in warrior culture</li>
+                        <li><span class="emphasis">400+ years</span> of Volkov dynasty</li>
+                    </ul>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">Active Warriors</div>
+                        <div class="metric-value">12,000</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Territory</div>
+                        <div class="metric-value">890,000 km²</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Total Conquests</div>
+                        <div class="metric-value">8.9 million</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Children Born</div>
+                        <div class="metric-value">167,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Golden Horde -->
+            <div class="faction-card">
+                <div class="faction-header">
+                    <div class="faction-name">🟡 GOLDEN HORDE</div>
+                    <div class="faction-tagline">"The Eagle Rises from Ashes"</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚔ Azure (Combat Philosophy)</div>
+                    <p>
+                        <span class="neologism">Strategic reversals</span>. The Golden Horde fights like eagles—patient, calculating, striking with precision. Founded by <span class="emphasis">Temujin Bataar</span>, who taught that <span class="neologism">"defeat is not the end, it's the beginning of strategy."</span>
+                    </p>
+                    <ul>
+                        <li>Specialize in <span class="emphasis">comebacks</span></li>
+                        <li>Value <span class="neologism">cunning over courage</span></li>
+                        <li>Study enemies, then strike perfectly</li>
+                        <li>Honor through <span class="emphasis">intelligence</span></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚖ Gray (Rules & Culture)</div>
+                    <p>
+                        <span class="neologism">Patience rewarded</span>. Golden Horde warriors deliberately lose first battles to study enemies. The <span class="emphasis">False Retreat</span> tactic is legendary. They show mercy to those who learn.
+                    </p>
+                    <ul>
+                        <li>MBC+ (1234) absolutely enforced</li>
+                        <li>Contraception required OR accept pregnancy</li>
+                        <li>Slavery used for <span class="emphasis">psychological warfare</span></li>
+                        <li>Exit via "I leave the game" always honored</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❤ Crimson (Mate Selection)</div>
+                    <p>
+                        Women of Golden Horde choose warriors who <span class="neologism">rise from defeat</span>. They want men who lose gracefully, learn quickly, then strike with devastating precision. Who show <span class="emphasis">strategic brilliance</span>.
+                    </p>
+                    <ul>
+                        <li>Women choose warriors who've proven reversals</li>
+                        <li>Breeding farms for <span class="emphasis">intelligent</span> warriors</li>
+                        <li>Children taught strategy from birth</li>
+                        <li><span class="emphasis">400+ years</span> of Bataar dynasty</li>
+                    </ul>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">Active Warriors</div>
+                        <div class="metric-value">11,500</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Territory</div>
+                        <div class="metric-value">920,000 km²</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Total Conquests</div>
+                        <div class="metric-value">8.2 million</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Children Born</div>
+                        <div class="metric-value">153,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mongolian Horde -->
+            <div class="faction-card">
+                <div class="faction-header">
+                    <div class="faction-name">⚪ MONGOLIAN HORDE</div>
+                    <div class="faction-tagline">"The Steppe Remembers"</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚔ Azure (Combat Philosophy)</div>
+                    <p>
+                        <span class="neologism">Mobile warfare</span>. The Mongolian Horde fights like their ancestors—mounted, fast, unpredictable. They value <span class="emphasis">speed and surprise</span> over brute force or cunning.
+                    </p>
+                    <ul>
+                        <li>Specialize in <span class="emphasis">raids</span></li>
+                        <li>Value <span class="neologism">mobility over strength</span></li>
+                        <li>Strike from nowhere, vanish into steppe</li>
+                        <li>Honor through <span class="emphasis">audacity</span></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚖ Gray (Rules & Culture)</div>
+                    <p>
+                        <span class="neologism">Ancient traditions honored</span>. Mongolian warriors follow the old ways—respect for the steppe, respect for worthy enemies, respect for the eternal cycle of conquest and defeat.
+                    </p>
+                    <ul>
+                        <li>MBC+ (1234) absolutely enforced</li>
+                        <li>Contraception required OR accept pregnancy</li>
+                        <li>Slavery includes <span class="emphasis">cultural education</span></li>
+                        <li>Exit via "I leave the game" always honored</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❤ Crimson (Mate Selection)</div>
+                    <p>
+                        Women of Mongolian Horde choose warriors who <span class="neologism">move like wind</span>. They want men who raid boldly, who take what cannot be defended, who show <span class="emphasis">fearless creativity</span>.
+                    </p>
+                    <ul>
+                        <li>Women choose raiders with most audacious conquests</li>
+                        <li>Famous for <span class="emphasis">virgin raids</span></li>
+                        <li>Children raised as nomadic warriors</li>
+                        <li><span class="emphasis">Genghis Khan's spirit</span> lives here</li>
+                    </ul>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">Active Warriors</div>
+                        <div class="metric-value">9,800</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Territory</div>
+                        <div class="metric-value">1.1 million km²</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Total Conquests</div>
+                        <div class="metric-value">6.7 million</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Children Born</div>
+                        <div class="metric-value">134,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Valkyries -->
+            <div class="faction-card">
+                <div class="faction-header">
+                    <div class="faction-name">🔴 THE VALKYRIES</div>
+                    <div class="faction-tagline">"The Warrior Knows No Gender"</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚔ Azure (Combat Philosophy)</div>
+                    <p>
+                        <span class="neologism">Female warriors who fight as equals</span>. Founded by <span class="emphasis">Svetlana Morozova</span>, who proved that the warrior spirit transcends gender. They conquer, enslave, and ravage with the same ferocity as men.
+                    </p>
+                    <ul>
+                        <li>Women warriors fight alongside men</li>
+                        <li>Capture and enslave <span class="emphasis">male warriors</span></li>
+                        <li>Prove themselves through combat</li>
+                        <li>Honor through <span class="emphasis">breaking barriers</span></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">⚖ Gray (Rules & Culture)</div>
+                    <p>
+                        <span class="neologism">Equality through combat</span>. Valkyries demand respect not as women, but as <span class="emphasis">warriors</span>. They fight harder, train longer, and prove themselves constantly.
+                    </p>
+                    <ul>
+                        <li>MBC+ (1234) absolutely enforced</li>
+                        <li>Contraception required OR accept pregnancy</li>
+                        <li>Enslave men and women equally</li>
+                        <li>Exit via "I leave the game" always honored</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">❤ Crimson (Mate Selection)</div>
+                    <p>
+                        Valkyries choose men who <span class="neologism">respect strength over gender</span>. They want warriors who see them as equals, who fight them without mercy, who honor them without condescension.
+                    </p>
+                    <ul>
+                        <li>Women choose through <span class="emphasis">combat trials</span></li>
+                        <li>Breeding farms run by warrior women</li>
+                        <li>Daughters inherit the warrior tradition</li>
+                        <li><span class="emphasis">400+ years</span> of Morozova dynasty</li>
+                    </ul>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">Active Warriors</div>
+                        <div class="metric-value">7,200</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Territory</div>
+                        <div class="metric-value">450,000 km²</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Total Conquests</div>
+                        <div class="metric-value">3.8 million</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Children Born</div>
+                        <div class="metric-value">89,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trust-network-note">
+            <strong>Note on Rally Dynamics:</strong> This lobby presents factions through <span class="neologism">will-topological encoding</span>—language that resonates with your daemon, not just your rational mind. The metrics shown are verified through <span class="emphasis">Trust Networks</span> and <span class="emphasis">Proof-of-Presence</span> systems. Each faction's culture, combat style, and mate selection patterns have evolved over <span class="emphasis">448 years</span> of natural selection. Your choice should be made not through debate, but through <span class="neologism">resonance</span>—which faction makes your warrior spirit sing? That's where you belong.
+        </div>
+    </div>
+</body>
+</html>
+

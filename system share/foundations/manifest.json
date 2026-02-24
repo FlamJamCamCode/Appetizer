@@ -1,0 +1,5204 @@
+[
+  {
+    "title": "23 Democracy’s Command Failure — Deep Demand, Meaningful Work, Long Horizons",
+    "fileName": "23 Democracy’s Command Failure — Deep Demand, Meaningful Work, Long Horizons.md",
+    "shortcut": "23_DCF—DDMWLHons",
+    "legacy_shortcut": "23_23",
+    "path": "23/23 Democracy’s Command Failure — Deep Demand, Meaningful Work, Long Horizons.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23 discussion   intelligence command analysis",
+    "fileName": "23 discussion - intelligence_command_analysis.md",
+    "shortcut": "23_dicasis",
+    "legacy_shortcut": "23_23",
+    "path": "23/23 discussion - intelligence_command_analysis.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23 The Capital Command Failure   Why Markets Can't Summon Care",
+    "fileName": "23 The Capital Command Failure - Why Markets Can't Summon Care.md",
+    "shortcut": "23_TCCFWMCSCare",
+    "legacy_shortcut": "23_23",
+    "path": "23/23 The Capital Command Failure - Why Markets Can't Summon Care.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23 Without Deliberate Attempt at Intelligent Command   The Systemic Inability to Command Meaningful Work, Deeply Demanded Work, or Long Term Intelligent and Strategic Work",
+    "fileName": "23 Without Deliberate Attempt at Intelligent Command - The Systemic Inability to Command Meaningful Work, Deeply Demanded Work, or Long-Term Intelligent and Strategic Work.md",
+    "shortcut": "23_WDAaICTSItCMWDDWoLTIaSWork",
+    "legacy_shortcut": "23_23",
+    "path": "23/23 Without Deliberate Attempt at Intelligent Command - The Systemic Inability to Command Meaningful Work, Deeply Demanded Work, or Long-Term Intelligent and Strategic Work.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23   INDEX   Commanding Deep Demand",
+    "fileName": "23-- INDEX - Commanding Deep Demand.md",
+    "shortcut": "23_ICDDand",
+    "legacy_shortcut": "23_23",
+    "path": "23/23-- INDEX - Commanding Deep Demand.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  00 Executive Summary — Commanding Deep Demand",
+    "fileName": "23--00 Executive Summary — Commanding Deep Demand.md",
+    "shortcut": "23_00",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--00 Executive Summary — Commanding Deep Demand.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  01 Diagnostic — Why Markets and Democracy Fail at Deep Demand",
+    "fileName": "23--01 Diagnostic — Why Markets and Democracy Fail at Deep Demand.md",
+    "shortcut": "23_01",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--01 Diagnostic — Why Markets and Democracy Fail at Deep Demand.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  02 The Dying Child Ultimatum — Short Operative Version",
+    "fileName": "23--02 The Dying Child Ultimatum — Short Operative Version.md",
+    "shortcut": "23_02",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--02 The Dying Child Ultimatum — Short Operative Version.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  03 Intelligence Allocation — Clean Model and Ranges",
+    "fileName": "23--03 Intelligence Allocation — Clean Model and Ranges.md",
+    "shortcut": "23_03",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--03 Intelligence Allocation — Clean Model and Ranges.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  04 Rails — Duty Bands, Bounties, Corridors, Charters",
+    "fileName": "23--04 Rails — Duty Bands, Bounties, Corridors, Charters.md",
+    "shortcut": "23_04",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--04 Rails — Duty Bands, Bounties, Corridors, Charters.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  05 Governance — Civic OS, Participation, Oversight",
+    "fileName": "23--05 Governance — Civic OS, Participation, Oversight.md",
+    "shortcut": "23_05",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--05 Governance — Civic OS, Participation, Oversight.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  06 Metrics — Patient Years, Equity, Productive Overhead",
+    "fileName": "23--06 Metrics — Patient-Years, Equity, Productive Overhead.md",
+    "shortcut": "23_06",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--06 Metrics — Patient-Years, Equity, Productive Overhead.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  07 Pilots — 180 Day and 12 Month Plans",
+    "fileName": "23--07 Pilots — 180-Day and 12-Month Plans.md",
+    "shortcut": "23_07",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--07 Pilots — 180-Day and 12-Month Plans.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  08 Objections, Risks, and Safeguards",
+    "fileName": "23--08 Objections, Risks, and Safeguards.md",
+    "shortcut": "23_08",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--08 Objections, Risks, and Safeguards.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  09 Appendices — Templates, Scripts, Definitions",
+    "fileName": "23--09 Appendices — Templates, Scripts, Definitions.md",
+    "shortcut": "23_09",
+    "legacy_shortcut": "23_23",
+    "path": "23/23--09 Appendices — Templates, Scripts, Definitions.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  diagnosis",
+    "fileName": "23__diagnosis.md",
+    "shortcut": "23_diagnsis",
+    "legacy_shortcut": "23_23",
+    "path": "23/23__diagnosis.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  pilots",
+    "fileName": "23__pilots.md",
+    "shortcut": "23_pilotots",
+    "legacy_shortcut": "23_23",
+    "path": "23/23__pilots.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  series architecture",
+    "fileName": "23__series_architecture.md",
+    "shortcut": "23_saure",
+    "legacy_shortcut": "23_23",
+    "path": "23/23__series_architecture.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23  solutions",
+    "fileName": "23__solutions.md",
+    "shortcut": "23_solutons",
+    "legacy_shortcut": "23_23",
+    "path": "23/23__solutions.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23 meta discussion",
+    "fileName": "23_meta_discussion.md",
+    "shortcut": "23_mdion",
+    "legacy_shortcut": "23_23",
+    "path": "23/23_meta_discussion.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23b intelligence command failure",
+    "fileName": "23b intelligence_command_failure.md",
+    "shortcut": "23_bicfure",
+    "legacy_shortcut": "23_23b",
+    "path": "23/23b intelligence_command_failure.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23c heidegger thrownness terraforming",
+    "fileName": "23c heidegger_thrownness_terraforming.md",
+    "shortcut": "23_chtting",
+    "legacy_shortcut": "23_23c",
+    "path": "23/23c heidegger_thrownness_terraforming.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23d Commanding Care — A Critique of the West",
+    "fileName": "23d Commanding Care — A Critique of the West.md",
+    "shortcut": "23_dCC—ACotWest",
+    "legacy_shortcut": "23_23d",
+    "path": "23/23d Commanding Care — A Critique of the West.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23d Commanding Care — Companion Plans, Scripts, Governance, and Tests",
+    "fileName": "23d Commanding Care — Companion Plans, Scripts, Governance, and Tests.md",
+    "shortcut": "23_dCC—CPSGaTsts",
+    "legacy_shortcut": "23_23d",
+    "path": "23/23d Commanding Care — Companion Plans, Scripts, Governance, and Tests.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23e Discussion — Convergences, Departures, and Revisions",
+    "fileName": "23e Discussion — Convergences, Departures, and Revisions.md",
+    "shortcut": "23_eD—CDaRons",
+    "legacy_shortcut": "23_23e",
+    "path": "23/23e Discussion — Convergences, Departures, and Revisions.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23f Dialogue — Intelligence Command Debate",
+    "fileName": "23f Dialogue — Intelligence Command Debate.md",
+    "shortcut": "23_fD—ICDate",
+    "legacy_shortcut": "23_23f",
+    "path": "23/23f Dialogue — Intelligence Command Debate.md",
+    "category": "23",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "AEJECTIVITY complete definition",
+    "fileName": "AEJECTIVITY_complete_definition.md",
+    "shortcut": "appen_Acdion",
+    "legacy_shortcut": "AEJEition",
+    "path": "appendices/AEJECTIVITY_complete_definition.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "american constitutional corruption",
+    "fileName": "american_constitutional_corruption.md",
+    "shortcut": "appen_accion",
+    "legacy_shortcut": "amerption",
+    "path": "appendices/american_constitutional_corruption.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "BARRACKS sorting dual layer",
+    "fileName": "BARRACKS sorting dual-layer.md",
+    "shortcut": "appen_Bsdlyer",
+    "legacy_shortcut": "BARRlayer",
+    "path": "appendices/BARRACKS sorting dual-layer.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "blood and soil properly understood",
+    "fileName": "blood_and_soil_properly_understood.md",
+    "shortcut": "appen_baspuood",
+    "legacy_shortcut": "bloostood",
+    "path": "appendices/blood_and_soil_properly_understood.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "GLOSSARY CHECK new documents terminology",
+    "fileName": "GLOSSARY_CHECK_new_documents_terminology.md",
+    "shortcut": "appen_GCndtogy",
+    "legacy_shortcut": "GLOSology",
+    "path": "appendices/GLOSSARY_CHECK_new_documents_terminology.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "EUPHORIA EUDAIMONIA RADIANT COLOURS",
+    "fileName": "EUPHORIA-EUDAIMONIA-RADIANT-COLOURS.md",
+    "shortcut": "ap_hooneu_EERCURS",
+    "legacy_shortcut": "EUPHLOURS",
+    "path": "appendices/hooked-on-eudaimonia/EUPHORIA-EUDAIMONIA-RADIANT-COLOURS.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "anxiety overwhelm",
+    "fileName": "anxiety-overwhelm.md",
+    "shortcut": "ap_hooneu_le_aoelm",
+    "legacy_shortcut": "anxiwhelm",
+    "path": "appendices/hooked-on-eudaimonia/level0/anxiety-overwhelm.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "artist creative barriers",
+    "fileName": "artist-creative-barriers.md",
+    "shortcut": "ap_hooneu_le_acbers",
+    "legacy_shortcut": "artiriers",
+    "path": "appendices/hooked-on-eudaimonia/level0/artist-creative-barriers.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "artistic dreams abandoned",
+    "fileName": "artistic-dreams-abandoned.md",
+    "shortcut": "ap_hooneu_le_adaned",
+    "legacy_shortcut": "artidoned",
+    "path": "appendices/hooked-on-eudaimonia/level0/artistic-dreams-abandoned.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "bills avalanche daily grind",
+    "fileName": "bills-avalanche-daily-grind.md",
+    "shortcut": "ap_hooneu_le_badgind",
+    "legacy_shortcut": "billgrind",
+    "path": "appendices/hooked-on-eudaimonia/level0/bills-avalanche-daily-grind.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "boring life numbness",
+    "fileName": "boring-life-numbness.md",
+    "shortcut": "ap_hooneu_le_blness",
+    "legacy_shortcut": "boribness",
+    "path": "appendices/hooked-on-eudaimonia/level0/boring-life-numbness.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "burnout exhaustion",
+    "fileName": "burnout-exhaustion.md",
+    "shortcut": "ap_hooneu_le_beion",
+    "legacy_shortcut": "burnstion",
+    "path": "appendices/hooked-on-eudaimonia/level0/burnout-exhaustion.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "career purpose dissatisfaction",
+    "fileName": "career-purpose-dissatisfaction.md",
+    "shortcut": "ap_hooneu_le_cpdion",
+    "legacy_shortcut": "carection",
+    "path": "appendices/hooked-on-eudaimonia/level0/career-purpose-dissatisfaction.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "childcare overwhelm",
+    "fileName": "childcare-overwhelm.md",
+    "shortcut": "ap_hooneu_le_coelm",
+    "legacy_shortcut": "chilwhelm",
+    "path": "appendices/hooked-on-eudaimonia/level0/childcare-overwhelm.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "creative block artist",
+    "fileName": "creative-block-artist.md",
+    "shortcut": "ap_hooneu_le_cbaist",
+    "legacy_shortcut": "creartist",
+    "path": "appendices/hooked-on-eudaimonia/level0/creative-block-artist.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "creative community flourishing",
+    "fileName": "creative-community-flourishing.md",
+    "shortcut": "ap_hooneu_le_ccfing",
+    "legacy_shortcut": "creashing",
+    "path": "appendices/hooked-on-eudaimonia/level0/creative-community-flourishing.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "creative writer blocks",
+    "fileName": "creative-writer-blocks.md",
+    "shortcut": "ap_hooneu_le_cwbcks",
+    "legacy_shortcut": "crealocks",
+    "path": "appendices/hooked-on-eudaimonia/level0/creative-writer-blocks.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "cubicle grind wasted decades",
+    "fileName": "cubicle-grind-wasted-decades.md",
+    "shortcut": "ap_hooneu_le_cgwddes",
+    "legacy_shortcut": "cubicades",
+    "path": "appendices/hooked-on-eudaimonia/level0/cubicle-grind-wasted-decades.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "deliverance from individual traps",
+    "fileName": "deliverance-from-individual-traps.md",
+    "shortcut": "ap_hooneu_le_dfitaps",
+    "legacy_shortcut": "delitraps",
+    "path": "appendices/hooked-on-eudaimonia/level0/deliverance-from-individual-traps.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "drowning in individual striving",
+    "fileName": "drowning-in-individual-striving.md",
+    "shortcut": "ap_hooneu_le_diising",
+    "legacy_shortcut": "drowiving",
+    "path": "appendices/hooked-on-eudaimonia/level0/drowning-in-individual-striving.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego enlarged external identities",
+    "fileName": "ego-enlarged-external-identities.md",
+    "shortcut": "ap_hooneu_le_eeeiies",
+    "legacy_shortcut": "ego-ities",
+    "path": "appendices/hooked-on-eudaimonia/level0/ego-enlarged-external-identities.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego entangled multiple we",
+    "fileName": "ego-entangled-multiple-we.md",
+    "shortcut": "ap_hooneu_le_eemw we",
+    "legacy_shortcut": "ego-le-we",
+    "path": "appendices/hooked-on-eudaimonia/level0/ego-entangled-multiple-we.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego reduction vulnerability",
+    "fileName": "ego-reduction-vulnerability.md",
+    "shortcut": "ap_hooneu_le_ervity",
+    "legacy_shortcut": "ego-ility",
+    "path": "appendices/hooked-on-eudaimonia/level0/ego-reduction-vulnerability.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "elderly tech overwhelm",
+    "fileName": "elderly-tech-overwhelm.md",
+    "shortcut": "ap_hooneu_le_etoelm",
+    "legacy_shortcut": "eldewhelm",
+    "path": "appendices/hooked-on-eudaimonia/level0/elderly-tech-overwhelm.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "entrepreneur startup dreams",
+    "fileName": "entrepreneur-startup-dreams.md",
+    "shortcut": "ap_hooneu_le_esdams",
+    "legacy_shortcut": "entrreams",
+    "path": "appendices/hooked-on-eudaimonia/level0/entrepreneur-startup-dreams.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "environmental climate despair",
+    "fileName": "environmental-climate-despair.md",
+    "shortcut": "ap_hooneu_le_ecdair",
+    "legacy_shortcut": "envispair",
+    "path": "appendices/hooked-on-eudaimonia/level0/environmental-climate-despair.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "existing not living",
+    "fileName": "existing-not-living.md",
+    "shortcut": "ap_hooneu_le_enling",
+    "legacy_shortcut": "exisiving",
+    "path": "appendices/hooked-on-eudaimonia/level0/existing-not-living.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "family ego transformation",
+    "fileName": "family-ego-transformation.md",
+    "shortcut": "ap_hooneu_le_fetion",
+    "legacy_shortcut": "famiation",
+    "path": "appendices/hooked-on-eudaimonia/level0/family-ego-transformation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "financial anxiety missed opportunities",
+    "fileName": "financial-anxiety-missed-opportunities.md",
+    "shortcut": "ap_hooneu_le_famoies",
+    "legacy_shortcut": "finaities",
+    "path": "appendices/hooked-on-eudaimonia/level0/financial-anxiety-missed-opportunities.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "friend group collective joy",
+    "fileName": "friend-group-collective-joy.md",
+    "shortcut": "ap_hooneu_le_fgcjjoy",
+    "legacy_shortcut": "friee-joy",
+    "path": "appendices/hooked-on-eudaimonia/level0/friend-group-collective-joy.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "health body image struggles",
+    "fileName": "health-body-image-struggles.md",
+    "shortcut": "ap_hooneu_le_hbisles",
+    "legacy_shortcut": "healggles",
+    "path": "appendices/hooked-on-eudaimonia/level0/health-body-image-struggles.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "healthcare nightmare",
+    "fileName": "healthcare-nightmare.md",
+    "shortcut": "ap_hooneu_le_hnare",
+    "legacy_shortcut": "healtmare",
+    "path": "appendices/hooked-on-eudaimonia/level0/healthcare-nightmare.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "hobby community collective success",
+    "fileName": "hobby-community-collective-success.md",
+    "shortcut": "ap_hooneu_le_hccsess",
+    "legacy_shortcut": "hobbccess",
+    "path": "appendices/hooked-on-eudaimonia/level0/hobby-community-collective-success.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "household management sisyphus",
+    "fileName": "household-management-sisyphus.md",
+    "shortcut": "ap_hooneu_le_hmshus",
+    "legacy_shortcut": "housyphus",
+    "path": "appendices/hooked-on-eudaimonia/level0/household-management-sisyphus.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "loneliness isolation",
+    "fileName": "loneliness-isolation.md",
+    "shortcut": "ap_hooneu_le_liion",
+    "legacy_shortcut": "loneation",
+    "path": "appendices/hooked-on-eudaimonia/level0/loneliness-isolation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "lost loved ones regret",
+    "fileName": "lost-loved-ones-regret.md",
+    "shortcut": "ap_hooneu_le_llorret",
+    "legacy_shortcut": "lostegret",
+    "path": "appendices/hooked-on-eudaimonia/level0/lost-loved-ones-regret.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "meaningless work",
+    "fileName": "meaningless-work.md",
+    "shortcut": "ap_hooneu_le_mwork",
+    "legacy_shortcut": "mean-work",
+    "path": "appendices/hooked-on-eudaimonia/level0/meaningless-work.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mental health neglect",
+    "fileName": "mental-health-neglect.md",
+    "shortcut": "ap_hooneu_le_mhnect",
+    "legacy_shortcut": "mentglect",
+    "path": "appendices/hooked-on-eudaimonia/level0/mental-health-neglect.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "midlife crisis purpose",
+    "fileName": "midlife-crisis-purpose.md",
+    "shortcut": "ap_hooneu_le_mcpose",
+    "legacy_shortcut": "midlrpose",
+    "path": "appendices/hooked-on-eudaimonia/level0/midlife-crisis-purpose.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "money debt stress",
+    "fileName": "money-debt-stress.md",
+    "shortcut": "ap_hooneu_le_mdsess",
+    "legacy_shortcut": "monetress",
+    "path": "appendices/hooked-on-eudaimonia/level0/money-debt-stress.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "neighborhood community pride",
+    "fileName": "neighborhood-community-pride.md",
+    "shortcut": "ap_hooneu_le_ncpide",
+    "legacy_shortcut": "neigpride",
+    "path": "appendices/hooked-on-eudaimonia/level0/neighborhood-community-pride.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "never self explored",
+    "fileName": "never-self-explored.md",
+    "shortcut": "ap_hooneu_le_nsered",
+    "legacy_shortcut": "nevelored",
+    "path": "appendices/hooked-on-eudaimonia/level0/never-self-explored.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "never traveled relocated",
+    "fileName": "never-traveled-relocated.md",
+    "shortcut": "ap_hooneu_le_ntrted",
+    "legacy_shortcut": "nevecated",
+    "path": "appendices/hooked-on-eudaimonia/level0/never-traveled-relocated.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "parent child safety",
+    "fileName": "parent-child-safety.md",
+    "shortcut": "ap_hooneu_le_pcsety",
+    "legacy_shortcut": "pareafety",
+    "path": "appendices/hooked-on-eudaimonia/level0/parent-child-safety.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "political powerlessness",
+    "fileName": "political-powerlessness.md",
+    "shortcut": "ap_hooneu_le_ppess",
+    "legacy_shortcut": "polisness",
+    "path": "appendices/hooked-on-eudaimonia/level0/political-powerlessness.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "relationship dating hell",
+    "fileName": "relationship-dating-hell.md",
+    "shortcut": "ap_hooneu_le_rdhell",
+    "legacy_shortcut": "rela-hell",
+    "path": "appendices/hooked-on-eudaimonia/level0/relationship-dating-hell.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "relationship social regrets",
+    "fileName": "relationship-social-regrets.md",
+    "shortcut": "ap_hooneu_le_rsrets",
+    "legacy_shortcut": "relagrets",
+    "path": "appendices/hooked-on-eudaimonia/level0/relationship-social-regrets.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "same people boring trapped",
+    "fileName": "same-people-boring-trapped.md",
+    "shortcut": "ap_hooneu_le_spbtped",
+    "legacy_shortcut": "sameapped",
+    "path": "appendices/hooked-on-eudaimonia/level0/same-people-boring-trapped.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "shopping cooking daily grind",
+    "fileName": "shopping-cooking-daily-grind.md",
+    "shortcut": "ap_hooneu_le_scdgind",
+    "legacy_shortcut": "shopgrind",
+    "path": "appendices/hooked-on-eudaimonia/level0/shopping-cooking-daily-grind.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "social media addiction",
+    "fileName": "social-media-addiction.md",
+    "shortcut": "ap_hooneu_le_smaion",
+    "legacy_shortcut": "sociction",
+    "path": "appendices/hooked-on-eudaimonia/level0/social-media-addiction.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "social media fomo isolation",
+    "fileName": "social-media-fomo-isolation.md",
+    "shortcut": "ap_hooneu_le_smfiion",
+    "legacy_shortcut": "sociation",
+    "path": "appendices/hooked-on-eudaimonia/level0/social-media-fomo-isolation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "spiritual seeker quest",
+    "fileName": "spiritual-seeker-quest.md",
+    "shortcut": "ap_hooneu_le_ssqest",
+    "legacy_shortcut": "spirquest",
+    "path": "appendices/hooked-on-eudaimonia/level0/spiritual-seeker-quest.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "student debt overwhelm",
+    "fileName": "student-debt-overwhelm.md",
+    "shortcut": "ap_hooneu_le_sdoelm",
+    "legacy_shortcut": "studwhelm",
+    "path": "appendices/hooked-on-eudaimonia/level0/student-debt-overwhelm.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "team sports collective joy",
+    "fileName": "team-sports-collective-joy.md",
+    "shortcut": "ap_hooneu_le_tscjjoy",
+    "legacy_shortcut": "teame-joy",
+    "path": "appendices/hooked-on-eudaimonia/level0/team-sports-collective-joy.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "trapped life no options",
+    "fileName": "trapped-life-no-options.md",
+    "shortcut": "ap_hooneu_le_tlnoons",
+    "legacy_shortcut": "traptions",
+    "path": "appendices/hooked-on-eudaimonia/level0/trapped-life-no-options.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "work stress stuck",
+    "fileName": "work-stress-stuck.md",
+    "shortcut": "ap_hooneu_le_wssuck",
+    "legacy_shortcut": "workstuck",
+    "path": "appendices/hooked-on-eudaimonia/level0/work-stress-stuck.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "workplace collective success",
+    "fileName": "workplace-collective-success.md",
+    "shortcut": "ap_hooneu_le_wcsess",
+    "legacy_shortcut": "workccess",
+    "path": "appendices/hooked-on-eudaimonia/level0/workplace-collective-success.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective betrayal trauma",
+    "fileName": "collective-betrayal-trauma.md",
+    "shortcut": "ap_hooneu_le_cbtuma",
+    "legacy_shortcut": "collrauma",
+    "path": "appendices/hooked-on-eudaimonia/level1/collective-betrayal-trauma.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "computer advantage empowerment",
+    "fileName": "computer-advantage-empowerment.md",
+    "shortcut": "ap_hooneu_le_caeent",
+    "legacy_shortcut": "comprment",
+    "path": "appendices/hooked-on-eudaimonia/level1/computer-advantage-empowerment.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "constellations of collectives",
+    "fileName": "constellations-of-collectives.md",
+    "shortcut": "ap_hooneu_le_cocves",
+    "legacy_shortcut": "constives",
+    "path": "appendices/hooked-on-eudaimonia/level1/constellations-of-collectives.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible triad discovery",
+    "fileName": "crucible-triad-discovery.md",
+    "shortcut": "ap_hooneu_le_ctdery",
+    "legacy_shortcut": "crucovery",
+    "path": "appendices/hooked-on-eudaimonia/level1/crucible-triad-discovery.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "cultural hate civilization love",
+    "fileName": "cultural-hate-civilization-love.md",
+    "shortcut": "ap_hooneu_le_chclove",
+    "legacy_shortcut": "cult-love",
+    "path": "appendices/hooked-on-eudaimonia/level1/cultural-hate-civilization-love.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "cultural love civilization hate",
+    "fileName": "cultural-love-civilization-hate.md",
+    "shortcut": "ap_hooneu_le_clchate",
+    "legacy_shortcut": "cult-hate",
+    "path": "appendices/hooked-on-eudaimonia/level1/cultural-love-civilization-hate.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "daemonia recognition",
+    "fileName": "daemonia-recognition.md",
+    "shortcut": "ap_hooneu_le_drion",
+    "legacy_shortcut": "daemition",
+    "path": "appendices/hooked-on-eudaimonia/level1/daemonia-recognition.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego enlargement others flourishing",
+    "fileName": "ego-enlargement-others-flourishing.md",
+    "shortcut": "ap_hooneu_le_eeofing",
+    "legacy_shortcut": "ego-shing",
+    "path": "appendices/hooked-on-eudaimonia/level1/ego-enlargement-others-flourishing.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego reduced daemon perspective",
+    "fileName": "ego-reduced-daemon-perspective.md",
+    "shortcut": "ap_hooneu_le_erdpive",
+    "legacy_shortcut": "ego-ctive",
+    "path": "appendices/hooked-on-eudaimonia/level1/ego-reduced-daemon-perspective.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "exodus from self absorption",
+    "fileName": "exodus-from-self-absorption.md",
+    "shortcut": "ap_hooneu_le_efsaion",
+    "legacy_shortcut": "exodption",
+    "path": "appendices/hooked-on-eudaimonia/level1/exodus-from-self-absorption.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "forbidden knowledge corruption",
+    "fileName": "forbidden-knowledge-corruption.md",
+    "shortcut": "ap_hooneu_le_fkcion",
+    "legacy_shortcut": "forbption",
+    "path": "appendices/hooked-on-eudaimonia/level1/forbidden-knowledge-corruption.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "forbidden knowledge redemption",
+    "fileName": "forbidden-knowledge-redemption.md",
+    "shortcut": "ap_hooneu_le_fkrion",
+    "legacy_shortcut": "forbption",
+    "path": "appendices/hooked-on-eudaimonia/level1/forbidden-knowledge-redemption.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "forbidden knowledge trauma",
+    "fileName": "forbidden-knowledge-trauma.md",
+    "shortcut": "ap_hooneu_le_fktuma",
+    "legacy_shortcut": "forbrauma",
+    "path": "appendices/hooked-on-eudaimonia/level1/forbidden-knowledge-trauma.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "individual rage societal decay",
+    "fileName": "individual-rage-societal-decay.md",
+    "shortcut": "ap_hooneu_le_irsdcay",
+    "legacy_shortcut": "indidecay",
+    "path": "appendices/hooked-on-eudaimonia/level1/individual-rage-societal-decay.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "individualist success addiction",
+    "fileName": "individualist-success-addiction.md",
+    "shortcut": "ap_hooneu_le_isaion",
+    "legacy_shortcut": "indiction",
+    "path": "appendices/hooked-on-eudaimonia/level1/individualist-success-addiction.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "musical choir experience",
+    "fileName": "musical-choir-experience.md",
+    "shortcut": "ap_hooneu_le_mcence",
+    "legacy_shortcut": "musiience",
+    "path": "appendices/hooked-on-eudaimonia/level1/musical-choir-experience.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "naive virtue predation",
+    "fileName": "naive-virtue-predation.md",
+    "shortcut": "ap_hooneu_le_nvpion",
+    "legacy_shortcut": "naivation",
+    "path": "appendices/hooked-on-eudaimonia/level1/naive-virtue-predation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "prophetic prelude awakening",
+    "fileName": "prophetic-prelude-awakening.md",
+    "shortcut": "ap_hooneu_le_ppaing",
+    "legacy_shortcut": "propening",
+    "path": "appendices/hooked-on-eudaimonia/level1/prophetic-prelude-awakening.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "triad formation",
+    "fileName": "triad-formation.md",
+    "shortcut": "ap_hooneu_le_tfion",
+    "legacy_shortcut": "triaation",
+    "path": "appendices/hooked-on-eudaimonia/level1/triad-formation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "triad resistance skeptic",
+    "fileName": "triad-resistance-skeptic.md",
+    "shortcut": "ap_hooneu_le_trstic",
+    "legacy_shortcut": "triaeptic",
+    "path": "appendices/hooked-on-eudaimonia/level1/triad-resistance-skeptic.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ultimate we experience",
+    "fileName": "ultimate-we-experience.md",
+    "shortcut": "ap_hooneu_le_uwence",
+    "legacy_shortcut": "ultiience",
+    "path": "appendices/hooked-on-eudaimonia/level1/ultimate-we-experience.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "will topology revelation",
+    "fileName": "will-topology-revelation.md",
+    "shortcut": "ap_hooneu_le_wtrion",
+    "legacy_shortcut": "willation",
+    "path": "appendices/hooked-on-eudaimonia/level1/will-topology-revelation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "aesthetic cultural sensibilities",
+    "fileName": "aesthetic-cultural-sensibilities.md",
+    "shortcut": "ap_hooneu_le_acsies",
+    "legacy_shortcut": "aestities",
+    "path": "appendices/hooked-on-eudaimonia/level2/aesthetic-cultural-sensibilities.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "catastrophic convergence",
+    "fileName": "catastrophic-convergence.md",
+    "shortcut": "ap_hooneu_le_ccnce",
+    "legacy_shortcut": "catagence",
+    "path": "appendices/hooked-on-eudaimonia/level2/catastrophic-convergence.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "cathartic violence control",
+    "fileName": "cathartic-violence-control.md",
+    "shortcut": "ap_hooneu_le_cvcrol",
+    "legacy_shortcut": "cathntrol",
+    "path": "appendices/hooked-on-eudaimonia/level2/cathartic-violence-control.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective manifestation quests",
+    "fileName": "collective-manifestation-quests.md",
+    "shortcut": "ap_hooneu_le_cmqsts",
+    "legacy_shortcut": "colluests",
+    "path": "appendices/hooked-on-eudaimonia/level2/collective-manifestation-quests.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective manipulation recognition",
+    "fileName": "collective-manipulation-recognition.md",
+    "shortcut": "ap_hooneu_le_cmrion",
+    "legacy_shortcut": "collition",
+    "path": "appendices/hooked-on-eudaimonia/level2/collective-manipulation-recognition.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective overwhelm burnout",
+    "fileName": "collective-overwhelm-burnout.md",
+    "shortcut": "ap_hooneu_le_cobout",
+    "legacy_shortcut": "collrnout",
+    "path": "appendices/hooked-on-eudaimonia/level2/collective-overwhelm-burnout.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego approximate entangled",
+    "fileName": "ego-approximate-entangled.md",
+    "shortcut": "ap_hooneu_le_eaeled",
+    "legacy_shortcut": "ego-ngled",
+    "path": "appendices/hooked-on-eudaimonia/level2/ego-approximate-entangled.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego free within trapped",
+    "fileName": "ego-free-within-trapped.md",
+    "shortcut": "ap_hooneu_le_efwtped",
+    "legacy_shortcut": "ego-apped",
+    "path": "appendices/hooked-on-eudaimonia/level2/ego-free-within-trapped.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego includes vs excludes",
+    "fileName": "ego-includes-vs-excludes.md",
+    "shortcut": "ap_hooneu_le_eivedes",
+    "legacy_shortcut": "ego-ludes",
+    "path": "appendices/hooked-on-eudaimonia/level2/ego-includes-vs-excludes.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego transformation love appreciation",
+    "fileName": "ego-transformation-love-appreciation.md",
+    "shortcut": "ap_hooneu_le_etlaion",
+    "legacy_shortcut": "ego-ation",
+    "path": "appendices/hooked-on-eudaimonia/level2/ego-transformation-love-appreciation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego trapped within free",
+    "fileName": "ego-trapped-within-free.md",
+    "shortcut": "ap_hooneu_le_etwfree",
+    "legacy_shortcut": "ego--free",
+    "path": "appendices/hooked-on-eudaimonia/level2/ego-trapped-within-free.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "find your tribe",
+    "fileName": "find-your-tribe.md",
+    "shortcut": "ap_hooneu_le_fytibe",
+    "legacy_shortcut": "findtribe",
+    "path": "appendices/hooked-on-eudaimonia/level2/find-your-tribe.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "institution hypocrisy betrayal",
+    "fileName": "institution-hypocrisy-betrayal.md",
+    "shortcut": "ap_hooneu_le_ihbyal",
+    "legacy_shortcut": "instrayal",
+    "path": "appendices/hooked-on-eudaimonia/level2/institution-hypocrisy-betrayal.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "journey from i to we will",
+    "fileName": "journey-from-i-to-we-will.md",
+    "shortcut": "ap_hooneu_le_jfitwwill",
+    "legacy_shortcut": "jour-will",
+    "path": "appendices/hooked-on-eudaimonia/level2/journey-from-i-to-we-will.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "power through authenticity dynamics",
+    "fileName": "power-through-authenticity-dynamics.md",
+    "shortcut": "ap_hooneu_le_ptadics",
+    "legacy_shortcut": "poweamics",
+    "path": "appendices/hooked-on-eudaimonia/level2/power-through-authenticity-dynamics.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "power through submission dynamics",
+    "fileName": "power-through-submission-dynamics.md",
+    "shortcut": "ap_hooneu_le_ptsdics",
+    "legacy_shortcut": "poweamics",
+    "path": "appendices/hooked-on-eudaimonia/level2/power-through-submission-dynamics.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "power through vulnerability dynamics",
+    "fileName": "power-through-vulnerability-dynamics.md",
+    "shortcut": "ap_hooneu_le_ptvdics",
+    "legacy_shortcut": "poweamics",
+    "path": "appendices/hooked-on-eudaimonia/level2/power-through-vulnerability-dynamics.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "will dynamics games",
+    "fileName": "will-dynamics-games.md",
+    "shortcut": "ap_hooneu_le_wdgmes",
+    "legacy_shortcut": "willgames",
+    "path": "appendices/hooked-on-eudaimonia/level2/will-dynamics-games.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "archeofuturist renewal",
+    "fileName": "archeofuturist-renewal.md",
+    "shortcut": "ap_hooneu_le_arwal",
+    "legacy_shortcut": "archnewal",
+    "path": "appendices/hooked-on-eudaimonia/level3/archeofuturist-renewal.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "causally connected collectives",
+    "fileName": "causally-connected-collectives.md",
+    "shortcut": "ap_hooneu_le_cccves",
+    "legacy_shortcut": "caustives",
+    "path": "appendices/hooked-on-eudaimonia/level3/causally-connected-collectives.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective ego satisfaction",
+    "fileName": "collective-ego-satisfaction.md",
+    "shortcut": "ap_hooneu_le_cesion",
+    "legacy_shortcut": "collction",
+    "path": "appendices/hooked-on-eudaimonia/level3/collective-ego-satisfaction.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective power corruption",
+    "fileName": "collective-power-corruption.md",
+    "shortcut": "ap_hooneu_le_cpcion",
+    "legacy_shortcut": "collption",
+    "path": "appendices/hooked-on-eudaimonia/level3/collective-power-corruption.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "constellations of greater collectives",
+    "fileName": "constellations-of-greater-collectives.md",
+    "shortcut": "ap_hooneu_le_cogcves",
+    "legacy_shortcut": "constives",
+    "path": "appendices/hooked-on-eudaimonia/level3/constellations-of-greater-collectives.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "false savior pattern recognition",
+    "fileName": "false-savior-pattern-recognition.md",
+    "shortcut": "ap_hooneu_le_fsprion",
+    "legacy_shortcut": "falsition",
+    "path": "appendices/hooked-on-eudaimonia/level3/false-savior-pattern-recognition.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ideological target expansion",
+    "fileName": "ideological-target-expansion.md",
+    "shortcut": "ap_hooneu_le_iteion",
+    "legacy_shortcut": "ideonsion",
+    "path": "appendices/hooked-on-eudaimonia/level3/ideological-target-expansion.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "individual identity crisis",
+    "fileName": "individual-identity-crisis.md",
+    "shortcut": "ap_hooneu_le_iicsis",
+    "legacy_shortcut": "indirisis",
+    "path": "appendices/hooked-on-eudaimonia/level3/individual-identity-crisis.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "institution infiltration corruption",
+    "fileName": "institution-infiltration-corruption.md",
+    "shortcut": "ap_hooneu_le_iicion",
+    "legacy_shortcut": "instption",
+    "path": "appendices/hooked-on-eudaimonia/level3/institution-infiltration-corruption.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "institution reform from within",
+    "fileName": "institution-reform-from-within.md",
+    "shortcut": "ap_hooneu_le_irfwhin",
+    "legacy_shortcut": "instithin",
+    "path": "appendices/hooked-on-eudaimonia/level3/institution-reform-from-within.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "institution resistance from outside",
+    "fileName": "institution-resistance-from-outside.md",
+    "shortcut": "ap_hooneu_le_irfoide",
+    "legacy_shortcut": "insttside",
+    "path": "appendices/hooked-on-eudaimonia/level3/institution-resistance-from-outside.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "manifold of humanity becoming",
+    "fileName": "manifold-of-humanity-becoming.md",
+    "shortcut": "ap_hooneu_le_mohbing",
+    "legacy_shortcut": "manioming",
+    "path": "appendices/hooked-on-eudaimonia/level3/manifold-of-humanity-becoming.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "multi scale triad networks",
+    "fileName": "multi-scale-triad-networks.md",
+    "shortcut": "ap_hooneu_le_mstnrks",
+    "legacy_shortcut": "multworks",
+    "path": "appendices/hooked-on-eudaimonia/level3/multi-scale-triad-networks.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "religious belief civilizational rejection",
+    "fileName": "religious-belief-civilizational-rejection.md",
+    "shortcut": "ap_hooneu_le_rbcrion",
+    "legacy_shortcut": "reliction",
+    "path": "appendices/hooked-on-eudaimonia/level3/religious-belief-civilizational-rejection.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "religious rejection civilizational belief",
+    "fileName": "religious-rejection-civilizational-belief.md",
+    "shortcut": "ap_hooneu_le_rrcbief",
+    "legacy_shortcut": "relielief",
+    "path": "appendices/hooked-on-eudaimonia/level3/religious-rejection-civilizational-belief.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "stable ego collective participation",
+    "fileName": "stable-ego-collective-participation.md",
+    "shortcut": "ap_hooneu_le_secpion",
+    "legacy_shortcut": "stabation",
+    "path": "appendices/hooked-on-eudaimonia/level3/stable-ego-collective-participation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "triad power struggles",
+    "fileName": "triad-power-struggles.md",
+    "shortcut": "ap_hooneu_le_tpsles",
+    "legacy_shortcut": "triaggles",
+    "path": "appendices/hooked-on-eudaimonia/level3/triad-power-struggles.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "values civilization pragma",
+    "fileName": "values-civilization-pragma.md",
+    "shortcut": "ap_hooneu_le_vcpgma",
+    "legacy_shortcut": "valuragma",
+    "path": "appendices/hooked-on-eudaimonia/level3/values-civilization-pragma.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "world building possibilities",
+    "fileName": "world-building-possibilities.md",
+    "shortcut": "ap_hooneu_le_wbpies",
+    "legacy_shortcut": "worlities",
+    "path": "appendices/hooked-on-eudaimonia/level3/world-building-possibilities.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "actuality modulation dynamics",
+    "fileName": "actuality-modulation-dynamics.md",
+    "shortcut": "ap_hooneu_le_amdics",
+    "legacy_shortcut": "actuamics",
+    "path": "appendices/hooked-on-eudaimonia/level4/actuality-modulation-dynamics.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective dependency addiction",
+    "fileName": "collective-dependency-addiction.md",
+    "shortcut": "ap_hooneu_le_cdaion",
+    "legacy_shortcut": "collction",
+    "path": "appendices/hooked-on-eudaimonia/level4/collective-dependency-addiction.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective harmony creation",
+    "fileName": "collective-harmony-creation.md",
+    "shortcut": "ap_hooneu_le_chcion",
+    "legacy_shortcut": "collation",
+    "path": "appendices/hooked-on-eudaimonia/level4/collective-harmony-creation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective narratives great quests",
+    "fileName": "collective-narratives-great-quests.md",
+    "shortcut": "ap_hooneu_le_cngqsts",
+    "legacy_shortcut": "colluests",
+    "path": "appendices/hooked-on-eudaimonia/level4/collective-narratives-great-quests.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective rejection isolation",
+    "fileName": "collective-rejection-isolation.md",
+    "shortcut": "ap_hooneu_le_criion",
+    "legacy_shortcut": "collation",
+    "path": "appendices/hooked-on-eudaimonia/level4/collective-rejection-isolation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "corrupt alliance manipulation",
+    "fileName": "corrupt-alliance-manipulation.md",
+    "shortcut": "ap_hooneu_le_camion",
+    "legacy_shortcut": "corration",
+    "path": "appendices/hooked-on-eudaimonia/level4/corrupt-alliance-manipulation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "creative hate hierarchical love",
+    "fileName": "creative-hate-hierarchical-love.md",
+    "shortcut": "ap_hooneu_le_chhlove",
+    "legacy_shortcut": "crea-love",
+    "path": "appendices/hooked-on-eudaimonia/level4/creative-hate-hierarchical-love.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "creative love hierarchical hate",
+    "fileName": "creative-love-hierarchical-hate.md",
+    "shortcut": "ap_hooneu_le_clhhate",
+    "legacy_shortcut": "crea-hate",
+    "path": "appendices/hooked-on-eudaimonia/level4/creative-love-hierarchical-hate.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "daemonians flourishing joy",
+    "fileName": "daemonians-flourishing-joy.md",
+    "shortcut": "ap_hooneu_le_dfjjoy",
+    "legacy_shortcut": "daemg-joy",
+    "path": "appendices/hooked-on-eudaimonia/level4/daemonians-flourishing-joy.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego transcendence collective being",
+    "fileName": "ego-transcendence-collective-being.md",
+    "shortcut": "ap_hooneu_le_etcbing",
+    "legacy_shortcut": "ego-being",
+    "path": "appendices/hooked-on-eudaimonia/level4/ego-transcendence-collective-being.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "escape entrapment cycle",
+    "fileName": "escape-entrapment-cycle.md",
+    "shortcut": "ap_hooneu_le_eeccle",
+    "legacy_shortcut": "escacycle",
+    "path": "appendices/hooked-on-eudaimonia/level4/escape-entrapment-cycle.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "historical pattern acceptance",
+    "fileName": "historical-pattern-acceptance.md",
+    "shortcut": "ap_hooneu_le_hpance",
+    "legacy_shortcut": "histtance",
+    "path": "appendices/hooked-on-eudaimonia/level4/historical-pattern-acceptance.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "historical pattern healing",
+    "fileName": "historical-pattern-healing.md",
+    "shortcut": "ap_hooneu_le_hphing",
+    "legacy_shortcut": "histaling",
+    "path": "appendices/hooked-on-eudaimonia/level4/historical-pattern-healing.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "historical pattern manipulation",
+    "fileName": "historical-pattern-manipulation.md",
+    "shortcut": "ap_hooneu_le_hpmion",
+    "legacy_shortcut": "histation",
+    "path": "appendices/hooked-on-eudaimonia/level4/historical-pattern-manipulation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "magnetically drawn collectives",
+    "fileName": "magnetically-drawn-collectives.md",
+    "shortcut": "ap_hooneu_le_mdcves",
+    "legacy_shortcut": "magntives",
+    "path": "appendices/hooked-on-eudaimonia/level4/magnetically-drawn-collectives.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "stratified vitality hierarchy",
+    "fileName": "stratified-vitality-hierarchy.md",
+    "shortcut": "ap_hooneu_le_svhchy",
+    "legacy_shortcut": "straarchy",
+    "path": "appendices/hooked-on-eudaimonia/level4/stratified-vitality-hierarchy.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "world opening experience",
+    "fileName": "world-opening-experience.md",
+    "shortcut": "ap_hooneu_le_woence",
+    "legacy_shortcut": "worlience",
+    "path": "appendices/hooked-on-eudaimonia/level4/world-opening-experience.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective becoming transformation",
+    "fileName": "collective-becoming-transformation.md",
+    "shortcut": "ap_hooneu_le_cbtion",
+    "legacy_shortcut": "collation",
+    "path": "appendices/hooked-on-eudaimonia/level5/collective-becoming-transformation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective burnout exhaustion",
+    "fileName": "collective-burnout-exhaustion.md",
+    "shortcut": "ap_hooneu_le_cbeion",
+    "legacy_shortcut": "collstion",
+    "path": "appendices/hooked-on-eudaimonia/level5/collective-burnout-exhaustion.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective power cost",
+    "fileName": "collective-power-cost.md",
+    "shortcut": "ap_hooneu_le_cpcost",
+    "legacy_shortcut": "coll-cost",
+    "path": "appendices/hooked-on-eudaimonia/level5/collective-power-cost.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective success emptiness",
+    "fileName": "collective-success-emptiness.md",
+    "shortcut": "ap_hooneu_le_cseess",
+    "legacy_shortcut": "colliness",
+    "path": "appendices/hooked-on-eudaimonia/level5/collective-success-emptiness.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego serves collective will",
+    "fileName": "ego-serves-collective-will.md",
+    "shortcut": "ap_hooneu_le_escwill",
+    "legacy_shortcut": "ego--will",
+    "path": "appendices/hooked-on-eudaimonia/level5/ego-serves-collective-will.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "eternal cycle acceptance",
+    "fileName": "eternal-cycle-acceptance.md",
+    "shortcut": "ap_hooneu_le_ecance",
+    "legacy_shortcut": "etertance",
+    "path": "appendices/hooked-on-eudaimonia/level5/eternal-cycle-acceptance.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "eternal cycle domination",
+    "fileName": "eternal-cycle-domination.md",
+    "shortcut": "ap_hooneu_le_ecdion",
+    "legacy_shortcut": "eteration",
+    "path": "appendices/hooked-on-eudaimonia/level5/eternal-cycle-domination.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "eternal cycle healing",
+    "fileName": "eternal-cycle-healing.md",
+    "shortcut": "ap_hooneu_le_eching",
+    "legacy_shortcut": "eteraling",
+    "path": "appendices/hooked-on-eudaimonia/level5/eternal-cycle-healing.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "life to life psychological shift",
+    "fileName": "life-to-life-psychological-shift.md",
+    "shortcut": "ap_hooneu_le_ltlpsift",
+    "legacy_shortcut": "lifeshift",
+    "path": "appendices/hooked-on-eudaimonia/level5/life-to-life-psychological-shift.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "multiversal connection transcendence",
+    "fileName": "multiversal-connection-transcendence.md",
+    "shortcut": "ap_hooneu_le_mctnce",
+    "legacy_shortcut": "multdence",
+    "path": "appendices/hooked-on-eudaimonia/level5/multiversal-connection-transcendence.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "philosophical belief cultural rejection",
+    "fileName": "philosophical-belief-cultural-rejection.md",
+    "shortcut": "ap_hooneu_le_pbcrion",
+    "legacy_shortcut": "philction",
+    "path": "appendices/hooked-on-eudaimonia/level5/philosophical-belief-cultural-rejection.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "philosophical rejection cultural belief",
+    "fileName": "philosophical-rejection-cultural-belief.md",
+    "shortcut": "ap_hooneu_le_prcbief",
+    "legacy_shortcut": "philelief",
+    "path": "appendices/hooked-on-eudaimonia/level5/philosophical-rejection-cultural-belief.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "planetary issues resolution",
+    "fileName": "planetary-issues-resolution.md",
+    "shortcut": "ap_hooneu_le_pirion",
+    "legacy_shortcut": "planution",
+    "path": "appendices/hooked-on-eudaimonia/level5/planetary-issues-resolution.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "radical group camaraderie",
+    "fileName": "radical-group-camaraderie.md",
+    "shortcut": "ap_hooneu_le_rgcrie",
+    "legacy_shortcut": "radiderie",
+    "path": "appendices/hooked-on-eudaimonia/level5/radical-group-camaraderie.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "tied together collectives",
+    "fileName": "tied-together-collectives.md",
+    "shortcut": "ap_hooneu_le_ttcves",
+    "legacy_shortcut": "tiedtives",
+    "path": "appendices/hooked-on-eudaimonia/level5/tied-together-collectives.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "virtue punishment cosmic irony",
+    "fileName": "virtue-punishment-cosmic-irony.md",
+    "shortcut": "ap_hooneu_le_vpciony",
+    "legacy_shortcut": "virtirony",
+    "path": "appendices/hooked-on-eudaimonia/level5/virtue-punishment-cosmic-irony.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "we will collective intention",
+    "fileName": "we-will-collective-intention.md",
+    "shortcut": "ap_hooneu_le_wwciion",
+    "legacy_shortcut": "we-wntion",
+    "path": "appendices/hooked-on-eudaimonia/level5/we-will-collective-intention.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "will equilibrium settling",
+    "fileName": "will-equilibrium-settling.md",
+    "shortcut": "ap_hooneu_le_wesing",
+    "legacy_shortcut": "willtling",
+    "path": "appendices/hooked-on-eudaimonia/level5/will-equilibrium-settling.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective becoming manifold",
+    "fileName": "collective-becoming-manifold.md",
+    "shortcut": "ap_hooneu_le_cbmold",
+    "legacy_shortcut": "collifold",
+    "path": "appendices/hooked-on-eudaimonia/level6/collective-becoming-manifold.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective destruction chaos",
+    "fileName": "collective-destruction-chaos.md",
+    "shortcut": "ap_hooneu_le_cdcaos",
+    "legacy_shortcut": "collchaos",
+    "path": "appendices/hooked-on-eudaimonia/level6/collective-destruction-chaos.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective ego manifold",
+    "fileName": "collective-ego-manifold.md",
+    "shortcut": "ap_hooneu_le_cemold",
+    "legacy_shortcut": "collifold",
+    "path": "appendices/hooked-on-eudaimonia/level6/collective-ego-manifold.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective illusion disillusionment",
+    "fileName": "collective-illusion-disillusionment.md",
+    "shortcut": "ap_hooneu_le_cident",
+    "legacy_shortcut": "collnment",
+    "path": "appendices/hooked-on-eudaimonia/level6/collective-illusion-disillusionment.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective manifestation reality",
+    "fileName": "collective-manifestation-reality.md",
+    "shortcut": "ap_hooneu_le_cmrity",
+    "legacy_shortcut": "collality",
+    "path": "appendices/hooked-on-eudaimonia/level6/collective-manifestation-reality.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "cyclical eternal return",
+    "fileName": "cyclical-eternal-return.md",
+    "shortcut": "ap_hooneu_le_cerurn",
+    "legacy_shortcut": "cycleturn",
+    "path": "appendices/hooked-on-eudaimonia/level6/cyclical-eternal-return.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego dissolves collective manifold",
+    "fileName": "ego-dissolves-collective-manifold.md",
+    "shortcut": "ap_hooneu_le_edcmold",
+    "legacy_shortcut": "ego-ifold",
+    "path": "appendices/hooked-on-eudaimonia/level6/ego-dissolves-collective-manifold.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego focus greater things relation",
+    "fileName": "ego-focus-greater-things-relation.md",
+    "shortcut": "ap_hooneu_le_efgtrion",
+    "legacy_shortcut": "ego-ation",
+    "path": "appendices/hooked-on-eudaimonia/level6/ego-focus-greater-things-relation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "greater constellations collectives",
+    "fileName": "greater-constellations-collectives.md",
+    "shortcut": "ap_hooneu_le_gccves",
+    "legacy_shortcut": "greatives",
+    "path": "appendices/hooked-on-eudaimonia/level6/greater-constellations-collectives.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "hyper rich world dynamism",
+    "fileName": "hyper-rich-world-dynamism.md",
+    "shortcut": "ap_hooneu_le_hrwdism",
+    "legacy_shortcut": "hypeamism",
+    "path": "appendices/hooked-on-eudaimonia/level6/hyper-rich-world-dynamism.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "predatory system navigation",
+    "fileName": "predatory-system-navigation.md",
+    "shortcut": "ap_hooneu_le_psnion",
+    "legacy_shortcut": "predation",
+    "path": "appendices/hooked-on-eudaimonia/level6/predatory-system-navigation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "shadow power transcendence",
+    "fileName": "shadow-power-transcendence.md",
+    "shortcut": "ap_hooneu_le_sptnce",
+    "legacy_shortcut": "shaddence",
+    "path": "appendices/hooked-on-eudaimonia/level6/shadow-power-transcendence.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "societal chaos escalation",
+    "fileName": "societal-chaos-escalation.md",
+    "shortcut": "ap_hooneu_le_sceion",
+    "legacy_shortcut": "sociation",
+    "path": "appendices/hooked-on-eudaimonia/level6/societal-chaos-escalation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "trapped within free within trapped",
+    "fileName": "trapped-within-free-within-trapped.md",
+    "shortcut": "ap_hooneu_le_twfwtped",
+    "legacy_shortcut": "trapapped",
+    "path": "appendices/hooked-on-eudaimonia/level6/trapped-within-free-within-trapped.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "virtual domains liberation",
+    "fileName": "virtual-domains-liberation.md",
+    "shortcut": "ap_hooneu_le_vdlion",
+    "legacy_shortcut": "virtation",
+    "path": "appendices/hooked-on-eudaimonia/level6/virtual-domains-liberation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "apotheosis godlike transcendence",
+    "fileName": "apotheosis-godlike-transcendence.md",
+    "shortcut": "ap_hooneu_le_agtnce",
+    "legacy_shortcut": "apotdence",
+    "path": "appendices/hooked-on-eudaimonia/level7/apotheosis-godlike-transcendence.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "collective ultimate disillusionment",
+    "fileName": "collective-ultimate-disillusionment.md",
+    "shortcut": "ap_hooneu_le_cudent",
+    "legacy_shortcut": "collnment",
+    "path": "appendices/hooked-on-eudaimonia/level7/collective-ultimate-disillusionment.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "cosmic collective becoming",
+    "fileName": "cosmic-collective-becoming.md",
+    "shortcut": "ap_hooneu_le_ccbing",
+    "legacy_shortcut": "cosmoming",
+    "path": "appendices/hooked-on-eudaimonia/level7/cosmic-collective-becoming.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "cosmic will revelation",
+    "fileName": "cosmic-will-revelation.md",
+    "shortcut": "ap_hooneu_le_cwrion",
+    "legacy_shortcut": "cosmation",
+    "path": "appendices/hooked-on-eudaimonia/level7/cosmic-will-revelation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible triadization world",
+    "fileName": "crucible-triadization-world.md",
+    "shortcut": "ap_hooneu_le_ctwrld",
+    "legacy_shortcut": "crucworld",
+    "path": "appendices/hooked-on-eudaimonia/level7/crucible-triadization-world.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "deep animism cosmic will",
+    "fileName": "deep-animism-cosmic-will.md",
+    "shortcut": "ap_hooneu_le_dacwill",
+    "legacy_shortcut": "deep-will",
+    "path": "appendices/hooked-on-eudaimonia/level7/deep-animism-cosmic-will.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ego transcendence ultimate we",
+    "fileName": "ego-transcendence-ultimate-we.md",
+    "shortcut": "ap_hooneu_le_etuw we",
+    "legacy_shortcut": "ego-te-we",
+    "path": "appendices/hooked-on-eudaimonia/level7/ego-transcendence-ultimate-we.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "finally we collective being",
+    "fileName": "finally-we-collective-being.md",
+    "shortcut": "ap_hooneu_le_fwcbing",
+    "legacy_shortcut": "finabeing",
+    "path": "appendices/hooked-on-eudaimonia/level7/finally-we-collective-being.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "philosophical perspectives",
+    "fileName": "philosophical-perspectives.md",
+    "shortcut": "ap_hooneu_le_ppves",
+    "legacy_shortcut": "philtives",
+    "path": "appendices/hooked-on-eudaimonia/level7/philosophical-perspectives.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ultimate constellations manifold",
+    "fileName": "ultimate-constellations-manifold.md",
+    "shortcut": "ap_hooneu_le_ucmold",
+    "legacy_shortcut": "ultiifold",
+    "path": "appendices/hooked-on-eudaimonia/level7/ultimate-constellations-manifold.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ultimate ego transformation we",
+    "fileName": "ultimate-ego-transformation-we.md",
+    "shortcut": "ap_hooneu_le_uetw we",
+    "legacy_shortcut": "ultion-we",
+    "path": "appendices/hooked-on-eudaimonia/level7/ultimate-ego-transformation-we.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ultimate power corruption transcendence",
+    "fileName": "ultimate-power-corruption-transcendence.md",
+    "shortcut": "ap_hooneu_le_upctnce",
+    "legacy_shortcut": "ultidence",
+    "path": "appendices/hooked-on-eudaimonia/level7/ultimate-power-corruption-transcendence.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ultimate predicament navigation",
+    "fileName": "ultimate-predicament-navigation.md",
+    "shortcut": "ap_hooneu_le_upnion",
+    "legacy_shortcut": "ultiation",
+    "path": "appendices/hooked-on-eudaimonia/level7/ultimate-predicament-navigation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "underground revolutionary transformation",
+    "fileName": "underground-revolutionary-transformation.md",
+    "shortcut": "ap_hooneu_le_urtion",
+    "legacy_shortcut": "undeation",
+    "path": "appendices/hooked-on-eudaimonia/level7/underground-revolutionary-transformation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "virtue vice inversion transcendence",
+    "fileName": "virtue-vice-inversion-transcendence.md",
+    "shortcut": "ap_hooneu_le_vvitnce",
+    "legacy_shortcut": "virtdence",
+    "path": "appendices/hooked-on-eudaimonia/level7/virtue-vice-inversion-transcendence.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "creative community collective journey",
+    "fileName": "creative-community-collective-journey.md",
+    "shortcut": "ap_hooneu_no_cccjney",
+    "legacy_shortcut": "creaurney",
+    "path": "appendices/hooked-on-eudaimonia/novels/creative-community-collective-journey.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "democracy escape archeofuturist revolution",
+    "fileName": "democracy-escape-archeofuturist-revolution.md",
+    "shortcut": "ap_hooneu_no_dearion",
+    "legacy_shortcut": "demoution",
+    "path": "appendices/hooked-on-eudaimonia/novels/democracy-escape-archeofuturist-revolution.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "democracy escape shadow power",
+    "fileName": "democracy-escape-shadow-power.md",
+    "shortcut": "ap_hooneu_no_despwer",
+    "legacy_shortcut": "demopower",
+    "path": "appendices/hooked-on-eudaimonia/novels/democracy-escape-shadow-power.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "democracy escape virtue transcendence",
+    "fileName": "democracy-escape-virtue-transcendence.md",
+    "shortcut": "ap_hooneu_no_devtnce",
+    "legacy_shortcut": "demodence",
+    "path": "appendices/hooked-on-eudaimonia/novels/democracy-escape-virtue-transcendence.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "elena tender heart journey",
+    "fileName": "elena-tender-heart-journey.md",
+    "shortcut": "ap_hooneu_no_ethjney",
+    "legacy_shortcut": "elenurney",
+    "path": "appendices/hooked-on-eudaimonia/novels/elena-tender-heart-journey.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "family collective becoming journey",
+    "fileName": "family-collective-becoming-journey.md",
+    "shortcut": "ap_hooneu_no_fcbjney",
+    "legacy_shortcut": "famiurney",
+    "path": "appendices/hooked-on-eudaimonia/novels/family-collective-becoming-journey.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "kai nature healer journey",
+    "fileName": "kai-nature-healer-journey.md",
+    "shortcut": "ap_hooneu_no_knhjney",
+    "legacy_shortcut": "kai-urney",
+    "path": "appendices/hooked-on-eudaimonia/novels/kai-nature-healer-journey.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "luna virtue transcendence journey",
+    "fileName": "luna-virtue-transcendence-journey.md",
+    "shortcut": "ap_hooneu_no_lvtjney",
+    "legacy_shortcut": "lunaurney",
+    "path": "appendices/hooked-on-eudaimonia/novels/luna-virtue-transcendence-journey.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "marcus archeofuturist revolution",
+    "fileName": "marcus-archeofuturist-revolution.md",
+    "shortcut": "ap_hooneu_no_marion",
+    "legacy_shortcut": "marcution",
+    "path": "appendices/hooked-on-eudaimonia/novels/marcus-archeofuturist-revolution.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mayas creative awakening",
+    "fileName": "mayas-creative-awakening.md",
+    "shortcut": "ap_hooneu_no_mcaing",
+    "legacy_shortcut": "mayaening",
+    "path": "appendices/hooked-on-eudaimonia/novels/mayas-creative-awakening.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "sarah shadow healer journey",
+    "fileName": "sarah-shadow-healer-journey.md",
+    "shortcut": "ap_hooneu_no_sshjney",
+    "legacy_shortcut": "saraurney",
+    "path": "appendices/hooked-on-eudaimonia/novels/sarah-shadow-healer-journey.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "sarahs family transformation",
+    "fileName": "sarahs-family-transformation.md",
+    "shortcut": "ap_hooneu_no_sftion",
+    "legacy_shortcut": "saraation",
+    "path": "appendices/hooked-on-eudaimonia/novels/sarahs-family-transformation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the brothers escape from welfare enslavement",
+    "fileName": "the-brothers-escape-from-welfare-enslavement.md",
+    "shortcut": "ap_hooneu_no_tbefweent",
+    "legacy_shortcut": "the-ement",
+    "path": "appendices/hooked-on-eudaimonia/novels/the-brothers-escape-from-welfare-enslavement.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the brothers natural selection revolution",
+    "fileName": "the-brothers-natural-selection-revolution.md",
+    "shortcut": "ap_hooneu_no_tbnsrion",
+    "legacy_shortcut": "the-ution",
+    "path": "appendices/hooked-on-eudaimonia/novels/the-brothers-natural-selection-revolution.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "workplace collective transformation journey",
+    "fileName": "workplace-collective-transformation-journey.md",
+    "shortcut": "ap_hooneu_no_wctjney",
+    "legacy_shortcut": "workurney",
+    "path": "appendices/hooked-on-eudaimonia/novels/workplace-collective-transformation-journey.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "README",
+    "fileName": "README.md",
+    "shortcut": "ap_hooneu_READMDME",
+    "legacy_shortcut": "README",
+    "path": "appendices/hooked-on-eudaimonia/README.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "industry influence investigation",
+    "fileName": "industry_influence_investigation.md",
+    "shortcut": "appen_iiiion",
+    "legacy_shortcut": "induation",
+    "path": "appendices/industry_influence_investigation.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "inviolable sacred values by civilization",
+    "fileName": "inviolable_sacred_values_by_civilization.md",
+    "shortcut": "appen_isvbcion",
+    "legacy_shortcut": "inviation",
+    "path": "appendices/inviolable_sacred_values_by_civilization.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "IQ testing aggregation fraud qualitative intelligence types",
+    "fileName": "IQ_testing_aggregation_fraud_qualitative_intelligence_types.md",
+    "shortcut": "appen_Itafqitpes",
+    "legacy_shortcut": "IQ_ttypes",
+    "path": "appendices/IQ_testing_aggregation_fraud_qualitative_intelligence_types.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "kraft durch freude technical analysis",
+    "fileName": "kraft_durch_freude_technical_analysis.md",
+    "shortcut": "appen_kdftasis",
+    "legacy_shortcut": "kraflysis",
+    "path": "appendices/kraft_durch_freude_technical_analysis.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "legal injustices examples",
+    "fileName": "legal_injustices_examples.md",
+    "shortcut": "appen_lieles",
+    "legacy_shortcut": "legamples",
+    "path": "appendices/legal_injustices_examples.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "raj jewish removal parallel triadization solution",
+    "fileName": "raj_jewish_removal_parallel_triadization_solution.md",
+    "shortcut": "appen_rjrptsion",
+    "legacy_shortcut": "raj_ution",
+    "path": "appendices/raj_jewish_removal_parallel_triadization_solution.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "sudan neocolonial opportunity",
+    "fileName": "sudan_neocolonial_opportunity.md",
+    "shortcut": "appen_snoity",
+    "legacy_shortcut": "sudaunity",
+    "path": "appendices/sudan_neocolonial_opportunity.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "the raj historiography range",
+    "fileName": "the_raj_historiography_range.md",
+    "shortcut": "appen_trhrnge",
+    "legacy_shortcut": "the_range",
+    "path": "appendices/the_raj_historiography_range.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "triadized world map snapshot",
+    "fileName": "triadized-world-map-snapshot.md",
+    "shortcut": "appen_twmshot",
+    "legacy_shortcut": "triapshot",
+    "path": "appendices/triadized-world-map-snapshot.md",
+    "category": "appendices",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "00 INDEX food sovereignty documents",
+    "fileName": "00_INDEX_food_sovereignty_documents.md",
+    "shortcut": "food_00",
+    "legacy_shortcut": "food_00",
+    "path": "food/00_INDEX_food_sovereignty_documents.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "01 religious traditions slaughter scriptural analysis",
+    "fileName": "01_religious_traditions_slaughter_scriptural_analysis.md",
+    "shortcut": "food_01",
+    "legacy_shortcut": "food_01",
+    "path": "food/01_religious_traditions_slaughter_scriptural_analysis.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "02 will to take desert transformation investment framework",
+    "fileName": "02_will_to_take_desert_transformation_investment_framework.md",
+    "shortcut": "food_02",
+    "legacy_shortcut": "food_02",
+    "path": "food/02_will_to_take_desert_transformation_investment_framework.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "03 technical architecture desert hydroponics",
+    "fileName": "03_technical_architecture_desert_hydroponics.md",
+    "shortcut": "food_03",
+    "legacy_shortcut": "food_03",
+    "path": "food/03_technical_architecture_desert_hydroponics.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "04 biological engineering insect mushroom pathways",
+    "fileName": "04_biological_engineering_insect_mushroom_pathways.md",
+    "shortcut": "food_04",
+    "legacy_shortcut": "food_04",
+    "path": "food/04_biological_engineering_insect_mushroom_pathways.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05 forests desertification triadization synthesis",
+    "fileName": "05_forests_desertification_triadization_synthesis.md",
+    "shortcut": "food_05",
+    "legacy_shortcut": "food_05",
+    "path": "food/05_forests_desertification_triadization_synthesis.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06 quantified feasibility planetary food layers",
+    "fileName": "06_quantified_feasibility_planetary_food_layers.md",
+    "shortcut": "food_06",
+    "legacy_shortcut": "food_06",
+    "path": "food/06_quantified_feasibility_planetary_food_layers.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "07 construction coordination NSS acceleration",
+    "fileName": "07_construction_coordination_NSS_acceleration.md",
+    "shortcut": "food_07",
+    "legacy_shortcut": "food_07",
+    "path": "food/07_construction_coordination_NSS_acceleration.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "08 fractal command token appreciation model",
+    "fileName": "08_fractal_command_token_appreciation_model.md",
+    "shortcut": "food_08",
+    "legacy_shortcut": "food_08",
+    "path": "food/08_fractal_command_token_appreciation_model.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "09 government spending analysis barracks transition",
+    "fileName": "09_government_spending_analysis_barracks_transition.md",
+    "shortcut": "food_09",
+    "legacy_shortcut": "food_09",
+    "path": "food/09_government_spending_analysis_barracks_transition.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10 SYNTHESIS civilization surplus parasitism breaking",
+    "fileName": "10_SYNTHESIS_civilization_surplus_parasitism_breaking.md",
+    "shortcut": "food_10",
+    "legacy_shortcut": "food_10",
+    "path": "food/10_SYNTHESIS_civilization_surplus_parasitism_breaking.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11 economic feasibility any bloc marketing parasitism",
+    "fileName": "11_economic_feasibility_any_bloc_marketing_parasitism.md",
+    "shortcut": "food_11",
+    "legacy_shortcut": "food_11",
+    "path": "food/11_economic_feasibility_any_bloc_marketing_parasitism.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12 the great dilution real work versus conjured wealth",
+    "fileName": "12_the_great_dilution_real_work_versus_conjured_wealth.md",
+    "shortcut": "food_12",
+    "legacy_shortcut": "food_12",
+    "path": "food/12_the_great_dilution_real_work_versus_conjured_wealth.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "13 welfare as indirect parasite subsidy",
+    "fileName": "13_welfare_as_indirect_parasite_subsidy.md",
+    "shortcut": "food_13",
+    "legacy_shortcut": "food_13",
+    "path": "food/13_welfare_as_indirect_parasite_subsidy.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": " 00 PROLOGUE the questions we must ask",
+    "fileName": "_00_PROLOGUE_the_questions_we_must_ask.md",
+    "shortcut": "food_00",
+    "legacy_shortcut": "food_00",
+    "path": "food/_00_PROLOGUE_the_questions_we_must_ask.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "appendix historical spice",
+    "fileName": "appendix_historical_spice.md",
+    "shortcut": "food_ahsice",
+    "legacy_shortcut": "appespice",
+    "path": "food/appendix_historical_spice.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CALL TO PRODUCERS abandon parasitism join sacred work",
+    "fileName": "CALL_TO_PRODUCERS_abandon_parasitism_join_sacred_work.md",
+    "shortcut": "food_CTPapjswork",
+    "legacy_shortcut": "CALL_work",
+    "path": "food/CALL_TO_PRODUCERS_abandon_parasitism_join_sacred_work.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "65b INTEGRATION SUGGESTIONS",
+    "fileName": "65b-INTEGRATION-SUGGESTIONS.md",
+    "shortcut": "fo_me_65b",
+    "legacy_shortcut": "food/meat_65b",
+    "path": "food/meat/65b-INTEGRATION-SUGGESTIONS.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ABORTION BRAIN ACTIVITY STANDARD",
+    "fileName": "ABORTION-BRAIN-ACTIVITY-STANDARD.md",
+    "shortcut": "fo_me_ABASARD",
+    "legacy_shortcut": "ABORNDARD",
+    "path": "food/meat/ABORTION-BRAIN-ACTIVITY-STANDARD.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ABORTION WEEKLY TESTS PREGNANT MOM GUIDE",
+    "fileName": "ABORTION-WEEKLY-TESTS-PREGNANT-MOM-GUIDE.md",
+    "shortcut": "fo_me_AWTPMGIDE",
+    "legacy_shortcut": "ABORGUIDE",
+    "path": "food/meat/ABORTION-WEEKLY-TESTS-PREGNANT-MOM-GUIDE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ANIMAL RIGHTS TOUR DOC56 INTEGRATION",
+    "fileName": "ANIMAL-RIGHTS-TOUR-DOC56-INTEGRATION.md",
+    "shortcut": "fo_me_ARTDIION",
+    "legacy_shortcut": "food/meat_56",
+    "path": "food/meat/ANIMAL-RIGHTS-TOUR-DOC56-INTEGRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CAPITALIST TOUR ECONOMIC ANALYSIS",
+    "fileName": "CAPITALIST-TOUR-ECONOMIC-ANALYSIS.md",
+    "shortcut": "fo_me_CTEASIS",
+    "legacy_shortcut": "CAPILYSIS",
+    "path": "food/meat/CAPITALIST-TOUR-ECONOMIC-ANALYSIS.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CAPITALIST TOUR EUGENIC ESCALATION UPDATE",
+    "fileName": "CAPITALIST-TOUR-EUGENIC-ESCALATION-UPDATE.md",
+    "shortcut": "fo_me_CTEEUATE",
+    "legacy_shortcut": "CAPIPDATE",
+    "path": "food/meat/CAPITALIST-TOUR-EUGENIC-ESCALATION-UPDATE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CAPITALIST TOUR FINANCIAL RIGOR UPGRADE",
+    "fileName": "CAPITALIST-TOUR-FINANCIAL-RIGOR-UPGRADE.md",
+    "shortcut": "fo_me_CTFRUADE",
+    "legacy_shortcut": "CAPIGRADE",
+    "path": "food/meat/CAPITALIST-TOUR-FINANCIAL-RIGOR-UPGRADE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CAPITALIST TOUR TRADE EMBARGO ADDITION",
+    "fileName": "CAPITALIST-TOUR-TRADE-EMBARGO-ADDITION.md",
+    "shortcut": "fo_me_CTTEAION",
+    "legacy_shortcut": "CAPIITION",
+    "path": "food/meat/CAPITALIST-TOUR-TRADE-EMBARGO-ADDITION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "CULTURAL POSITIONING LUXURY INTEGRATION",
+    "fileName": "CULTURAL-POSITIONING-LUXURY-INTEGRATION.md",
+    "shortcut": "fo_me_CPLIION",
+    "legacy_shortcut": "CULTATION",
+    "path": "food/meat/CULTURAL-POSITIONING-LUXURY-INTEGRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "DAEMON ALIGNMENT VEGAN DILEMMA INTEGRATION",
+    "fileName": "DAEMON-ALIGNMENT-VEGAN-DILEMMA-INTEGRATION.md",
+    "shortcut": "fo_me_DAVDIION",
+    "legacy_shortcut": "DAEMATION",
+    "path": "food/meat/DAEMON-ALIGNMENT-VEGAN-DILEMMA-INTEGRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "FARMER EXAMPLE 250 PIGS",
+    "fileName": "FARMER-EXAMPLE-250-PIGS.md",
+    "shortcut": "fo_me_FE2PIGS",
+    "legacy_shortcut": "food/meat_250",
+    "path": "food/meat/FARMER-EXAMPLE-250-PIGS.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "FARMER TOUR INTEGRATION",
+    "fileName": "FARMER-TOUR-INTEGRATION.md",
+    "shortcut": "fo_me_FTIION",
+    "legacy_shortcut": "FARMATION",
+    "path": "food/meat/FARMER-TOUR-INTEGRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "FINAL INTEGRATION SUMMARY",
+    "fileName": "FINAL-INTEGRATION-SUMMARY.md",
+    "shortcut": "fo_me_FISARY",
+    "legacy_shortcut": "FINAMMARY",
+    "path": "food/meat/FINAL-INTEGRATION-SUMMARY.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "GUIDE DOC56 INTEGRATION SUMMARY",
+    "fileName": "GUIDE-DOC56-INTEGRATION-SUMMARY.md",
+    "shortcut": "fo_me_GDISARY",
+    "legacy_shortcut": "food/meat_56",
+    "path": "food/meat/GUIDE-DOC56-INTEGRATION-SUMMARY.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "LIFE AGED MEAT GUIDE SUMMARY",
+    "fileName": "LIFE-AGED-MEAT-GUIDE-SUMMARY.md",
+    "shortcut": "fo_me_LAMGSARY",
+    "legacy_shortcut": "LIFEMMARY",
+    "path": "food/meat/LIFE-AGED-MEAT-GUIDE-SUMMARY.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "NATURAL DEATH MEAT SUPPLY ANALYSIS",
+    "fileName": "NATURAL-DEATH-MEAT-SUPPLY-ANALYSIS.md",
+    "shortcut": "fo_me_NDMSASIS",
+    "legacy_shortcut": "NATULYSIS",
+    "path": "food/meat/NATURAL-DEATH-MEAT-SUPPLY-ANALYSIS.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "NEOTENIC DOWNSIZING INTEGRATION",
+    "fileName": "NEOTENIC-DOWNSIZING-INTEGRATION.md",
+    "shortcut": "fo_me_NDIION",
+    "legacy_shortcut": "NEOTATION",
+    "path": "food/meat/NEOTENIC-DOWNSIZING-INTEGRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "OMNI DIRECTIONAL ANTI DEATH PRINCIPLE",
+    "fileName": "OMNI-DIRECTIONAL-ANTI-DEATH-PRINCIPLE.md",
+    "shortcut": "fo_me_ODADPPLE",
+    "legacy_shortcut": "OMNICIPLE",
+    "path": "food/meat/OMNI-DIRECTIONAL-ANTI-DEATH-PRINCIPLE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "OUR WORLD IN DATA NAKEDNESS DEMONSTRATION",
+    "fileName": "OUR-WORLD-IN-DATA-NAKEDNESS-DEMONSTRATION.md",
+    "shortcut": "fo_me_OWIDNDION",
+    "legacy_shortcut": "OUR-ATION",
+    "path": "food/meat/OUR-WORLD-IN-DATA-NAKEDNESS-DEMONSTRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "PRODUCTIVE CAPACITY WILL COALESCENCE INTEGRATION",
+    "fileName": "PRODUCTIVE-CAPACITY-WILL-COALESCENCE-INTEGRATION.md",
+    "shortcut": "fo_me_PCWCIION",
+    "legacy_shortcut": "PRODATION",
+    "path": "food/meat/PRODUCTIVE-CAPACITY-WILL-COALESCENCE-INTEGRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "SOLVING NATURE COMPLETE SCOPE",
+    "fileName": "SOLVING-NATURE-COMPLETE-SCOPE.md",
+    "shortcut": "fo_me_SNCSOPE",
+    "legacy_shortcut": "SOLVSCOPE",
+    "path": "food/meat/SOLVING-NATURE-COMPLETE-SCOPE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "SPIRAL CONVERGENCE INTEGRATION",
+    "fileName": "SPIRAL-CONVERGENCE-INTEGRATION.md",
+    "shortcut": "fo_me_SCIION",
+    "legacy_shortcut": "SPIRATION",
+    "path": "food/meat/SPIRAL-CONVERGENCE-INTEGRATION.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "SPIRALS PLURAL SUBJECTIVE DEATH FIGHTING",
+    "fileName": "SPIRALS-PLURAL-SUBJECTIVE-DEATH-FIGHTING.md",
+    "shortcut": "fo_me_SPSDFING",
+    "legacy_shortcut": "SPIRHTING",
+    "path": "food/meat/SPIRALS-PLURAL-SUBJECTIVE-DEATH-FIGHTING.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "TOUR SUBSECTIONS UPDATE COMPLETE",
+    "fileName": "TOUR-SUBSECTIONS-UPDATE-COMPLETE.md",
+    "shortcut": "fo_me_TSUCETE",
+    "legacy_shortcut": "TOURPLETE",
+    "path": "food/meat/TOUR-SUBSECTIONS-UPDATE-COMPLETE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "PROJECT CHARTER DESERT AGRICULTURE TRANSFORMATION",
+    "fileName": "PROJECT_CHARTER_DESERT_AGRICULTURE_TRANSFORMATION.txt",
+    "shortcut": "food_PCDATION",
+    "legacy_shortcut": "PROJATION",
+    "path": "food/PROJECT_CHARTER_DESERT_AGRICULTURE_TRANSFORMATION.txt",
+    "category": "food",
+    "mediaType": "text"
+  },
+  {
+    "title": "README food sovereignty project",
+    "fileName": "README_food_sovereignty_project.md",
+    "shortcut": "food_Rspect",
+    "legacy_shortcut": "READoject",
+    "path": "food/README_food_sovereignty_project.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": " START HERE",
+    "fileName": "_START_HERE.md",
+    "shortcut": "fo_thanyo_SHERE",
+    "legacy_shortcut": "_STA_HERE",
+    "path": "food/the-any-you/_START_HERE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "activist organizer",
+    "fileName": "activist_organizer.json",
+    "shortcut": "fo_thanyo_aozer",
+    "legacy_shortcut": "actinizer",
+    "path": "food/the-any-you/activist_organizer.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "addict",
+    "fileName": "addict.json",
+    "shortcut": "fo_thanyo_addicict",
+    "legacy_shortcut": "addict",
+    "path": "food/the-any-you/addict.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "artist creative",
+    "fileName": "artist_creative.json",
+    "shortcut": "fo_thanyo_acive",
+    "legacy_shortcut": "artiative",
+    "path": "food/the-any-you/artist_creative.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "banker financial worker",
+    "fileName": "banker_financial_worker.json",
+    "shortcut": "fo_thanyo_bfwker",
+    "legacy_shortcut": "bankorker",
+    "path": "food/the-any-you/banker_financial_worker.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "chef cook",
+    "fileName": "chef_cook.json",
+    "shortcut": "fo_thanyo_ccook",
+    "legacy_shortcut": "chef_cook",
+    "path": "food/the-any-you/chef_cook.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "construction worker",
+    "fileName": "construction_worker.json",
+    "shortcut": "fo_thanyo_cwker",
+    "legacy_shortcut": "consorker",
+    "path": "food/the-any-you/construction_worker.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "corporate middle manager",
+    "fileName": "corporate_middle_manager.json",
+    "shortcut": "fo_thanyo_cmmger",
+    "legacy_shortcut": "corpnager",
+    "path": "food/the-any-you/corporate_middle_manager.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "engineer",
+    "fileName": "engineer.json",
+    "shortcut": "fo_thanyo_engineer",
+    "legacy_shortcut": "engineer",
+    "path": "food/the-any-you/engineer.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "factory worker",
+    "fileName": "factory_worker.json",
+    "shortcut": "fo_thanyo_fwker",
+    "legacy_shortcut": "factorker",
+    "path": "food/the-any-you/factory_worker.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "farmer",
+    "fileName": "farmer.json",
+    "shortcut": "fo_thanyo_farmemer",
+    "legacy_shortcut": "farmer",
+    "path": "food/the-any-you/farmer.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "homeless",
+    "fileName": "homeless.json",
+    "shortcut": "fo_thanyo_homeless",
+    "legacy_shortcut": "homeless",
+    "path": "food/the-any-you/homeless.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "immigrant",
+    "fileName": "immigrant.json",
+    "shortcut": "fo_thanyo_immigant",
+    "legacy_shortcut": "immigrant",
+    "path": "food/the-any-you/immigrant.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "index",
+    "fileName": "index.json",
+    "shortcut": "fo_thanyo_indexdex",
+    "legacy_shortcut": "index",
+    "path": "food/the-any-you/index.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "landlord property owner",
+    "fileName": "landlord_property_owner.json",
+    "shortcut": "fo_thanyo_lponer",
+    "legacy_shortcut": "landowner",
+    "path": "food/the-any-you/landlord_property_owner.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "low wage worker",
+    "fileName": "low_wage_worker.json",
+    "shortcut": "fo_thanyo_lwwker",
+    "legacy_shortcut": "low_orker",
+    "path": "food/the-any-you/low_wage_worker.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "marketing professional",
+    "fileName": "marketing_professional.json",
+    "shortcut": "fo_thanyo_mpnal",
+    "legacy_shortcut": "markional",
+    "path": "food/the-any-you/marketing_professional.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "military veteran",
+    "fileName": "military_veteran.json",
+    "shortcut": "fo_thanyo_mvran",
+    "legacy_shortcut": "militeran",
+    "path": "food/the-any-you/military_veteran.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "nurse doctor",
+    "fileName": "nurse_doctor.json",
+    "shortcut": "fo_thanyo_ndtor",
+    "legacy_shortcut": "nursoctor",
+    "path": "food/the-any-you/nurse_doctor.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "office worker",
+    "fileName": "office_worker.json",
+    "shortcut": "fo_thanyo_owker",
+    "legacy_shortcut": "offiorker",
+    "path": "food/the-any-you/office_worker.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "PERSONAS SUMMARY TABLE",
+    "fileName": "PERSONAS_SUMMARY_TABLE.md",
+    "shortcut": "fo_thanyo_PSTBLE",
+    "legacy_shortcut": "PERSTABLE",
+    "path": "food/the-any-you/PERSONAS_SUMMARY_TABLE.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "prisoner",
+    "fileName": "prisoner.json",
+    "shortcut": "fo_thanyo_prisoner",
+    "legacy_shortcut": "prisoner",
+    "path": "food/the-any-you/prisoner.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "README",
+    "fileName": "README.md",
+    "shortcut": "fo_thanyo_READMDME",
+    "legacy_shortcut": "README",
+    "path": "food/the-any-you/README.md",
+    "category": "food",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "religious person",
+    "fileName": "religious_person.json",
+    "shortcut": "fo_thanyo_rpson",
+    "legacy_shortcut": "relierson",
+    "path": "food/the-any-you/religious_person.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "retiree",
+    "fileName": "retiree.json",
+    "shortcut": "fo_thanyo_retirree",
+    "legacy_shortcut": "retiree",
+    "path": "food/the-any-you/retiree.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "scientist researcher",
+    "fileName": "scientist_researcher.json",
+    "shortcut": "fo_thanyo_srher",
+    "legacy_shortcut": "sciercher",
+    "path": "food/the-any-you/scientist_researcher.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "sex worker",
+    "fileName": "sex_worker.json",
+    "shortcut": "fo_thanyo_swker",
+    "legacy_shortcut": "sex_orker",
+    "path": "food/the-any-you/sex_worker.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "single mother",
+    "fileName": "single_mother.json",
+    "shortcut": "fo_thanyo_smher",
+    "legacy_shortcut": "singother",
+    "path": "food/the-any-you/single_mother.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "small business owner",
+    "fileName": "small_business_owner.json",
+    "shortcut": "fo_thanyo_sboner",
+    "legacy_shortcut": "smalowner",
+    "path": "food/the-any-you/small_business_owner.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "stay at home parent",
+    "fileName": "stay_at_home_parent.json",
+    "shortcut": "fo_thanyo_sahpent",
+    "legacy_shortcut": "stayarent",
+    "path": "food/the-any-you/stay_at_home_parent.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "teacher",
+    "fileName": "teacher.json",
+    "shortcut": "fo_thanyo_teachher",
+    "legacy_shortcut": "teacher",
+    "path": "food/the-any-you/teacher.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "tradesperson",
+    "fileName": "tradesperson.json",
+    "shortcut": "fo_thanyo_tradeson",
+    "legacy_shortcut": "traderson",
+    "path": "food/the-any-you/tradesperson.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "truck driver",
+    "fileName": "truck_driver.json",
+    "shortcut": "fo_thanyo_tdver",
+    "legacy_shortcut": "trucriver",
+    "path": "food/the-any-you/truck_driver.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "unemployed disabled",
+    "fileName": "unemployed_disabled.json",
+    "shortcut": "fo_thanyo_udled",
+    "legacy_shortcut": "unemabled",
+    "path": "food/the-any-you/unemployed_disabled.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "vegan activist",
+    "fileName": "vegan_activist.json",
+    "shortcut": "fo_thanyo_vaist",
+    "legacy_shortcut": "vegaivist",
+    "path": "food/the-any-you/vegan_activist.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "wealthy person looking for meaning",
+    "fileName": "wealthy_person_looking_for_meaning.json",
+    "shortcut": "fo_thanyo_wplfming",
+    "legacy_shortcut": "wealaning",
+    "path": "food/the-any-you/wealthy_person_looking_for_meaning.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "welfare recipient",
+    "fileName": "welfare_recipient.json",
+    "shortcut": "fo_thanyo_wrent",
+    "legacy_shortcut": "welfpient",
+    "path": "food/the-any-you/welfare_recipient.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "working poor parent",
+    "fileName": "working_poor_parent.json",
+    "shortcut": "fo_thanyo_wppent",
+    "legacy_shortcut": "workarent",
+    "path": "food/the-any-you/working_poor_parent.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "young adult no direction",
+    "fileName": "young_adult_no_direction.json",
+    "shortcut": "fo_thanyo_yandion",
+    "legacy_shortcut": "younction",
+    "path": "food/the-any-you/young_adult_no_direction.json",
+    "category": "food",
+    "mediaType": "code"
+  },
+  {
+    "title": "0 Reading Guide   How to Read Language",
+    "fileName": "0 Reading Guide - How to Read Language.md",
+    "shortcut": "0",
+    "legacy_shortcut": "0",
+    "path": "0 Reading Guide - How to Read Language.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "00 Reading Guide   How to Read Categorical Language",
+    "fileName": "00 Reading Guide - How to Read Categorical Language.md",
+    "shortcut": "00",
+    "legacy_shortcut": "00",
+    "path": "00 Reading Guide - How to Read Categorical Language.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "000 INDEX   Numbered Foundation Documents",
+    "fileName": "000 INDEX - Numbered Foundation Documents.md",
+    "shortcut": "000",
+    "legacy_shortcut": "000",
+    "path": "000 INDEX - Numbered Foundation Documents.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "01 exec summary vision",
+    "fileName": "01 exec_summary_vision.md",
+    "shortcut": "01",
+    "legacy_shortcut": "01",
+    "path": "01 exec_summary_vision.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "02 foundational mechanisms",
+    "fileName": "02 foundational_mechanisms.md",
+    "shortcut": "02",
+    "legacy_shortcut": "02",
+    "path": "02 foundational_mechanisms.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "03 technical architecture",
+    "fileName": "03 technical_architecture.md",
+    "shortcut": "03",
+    "legacy_shortcut": "03",
+    "path": "03 technical_architecture.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "04 blob classes discovery",
+    "fileName": "04 blob_classes_discovery.md",
+    "shortcut": "04",
+    "legacy_shortcut": "04",
+    "path": "04 blob_classes_discovery.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "05 language evolution system",
+    "fileName": "05 language_evolution_system.md",
+    "shortcut": "05",
+    "legacy_shortcut": "05",
+    "path": "05 language_evolution_system.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "06 cohesionnet use case",
+    "fileName": "06 cohesionnet_use_case.md",
+    "shortcut": "06",
+    "legacy_shortcut": "06",
+    "path": "06 cohesionnet_use_case.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "07 health system transformation",
+    "fileName": "07 health_system_transformation.md",
+    "shortcut": "07",
+    "legacy_shortcut": "07",
+    "path": "07 health_system_transformation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "08 computational utility networks",
+    "fileName": "08 computational_utility_networks.md",
+    "shortcut": "08",
+    "legacy_shortcut": "08",
+    "path": "08 computational_utility_networks.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "09 electricity routing markets",
+    "fileName": "09 electricity_routing_markets.md",
+    "shortcut": "09",
+    "legacy_shortcut": "09",
+    "path": "09 electricity_routing_markets.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "10 water supply trust",
+    "fileName": "10 water_supply_trust.md",
+    "shortcut": "10",
+    "legacy_shortcut": "10",
+    "path": "10 water_supply_trust.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "100",
+    "fileName": "100.md",
+    "shortcut": "100",
+    "legacy_shortcut": "100",
+    "path": "100.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "11 food systems revolution",
+    "fileName": "11 food_systems_revolution.md",
+    "shortcut": "11",
+    "legacy_shortcut": "11",
+    "path": "11 food_systems_revolution.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "12 will coalescence meta utility",
+    "fileName": "12 will_coalescence_meta_utility.md",
+    "shortcut": "12",
+    "legacy_shortcut": "12",
+    "path": "12 will_coalescence_meta_utility.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "13 markets value discovery",
+    "fileName": "13 markets_value_discovery.md",
+    "shortcut": "13",
+    "legacy_shortcut": "13",
+    "path": "13 markets_value_discovery.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "14 civilizational emergence",
+    "fileName": "14 civilizational_emergence.md",
+    "shortcut": "14",
+    "legacy_shortcut": "14",
+    "path": "14 civilizational_emergence.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "15 will manifestation philosophy",
+    "fileName": "15 will_manifestation_philosophy.md",
+    "shortcut": "15",
+    "legacy_shortcut": "15",
+    "path": "15 will_manifestation_philosophy.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "15b kant insights manifesto",
+    "fileName": "15b_kant_insights_manifesto.md",
+    "shortcut": "15b",
+    "legacy_shortcut": "15b",
+    "path": "15b_kant_insights_manifesto.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "15c Ficialities    The Bull Sees Red",
+    "fileName": "15c Ficialities -- The Bull Sees Red.md",
+    "shortcut": "15c",
+    "legacy_shortcut": "15c",
+    "path": "15c Ficialities -- The Bull Sees Red.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "15d Tastes Towards the Supraficial",
+    "fileName": "15d Tastes Towards the Supraficial.md",
+    "shortcut": "15d",
+    "legacy_shortcut": "15d",
+    "path": "15d Tastes Towards the Supraficial.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "16 daemonic architecture",
+    "fileName": "16 daemonic_architecture.md",
+    "shortcut": "16",
+    "legacy_shortcut": "16",
+    "path": "16 daemonic_architecture.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "16a. Hymn to Progress towards a Sky    Civilization of Mine",
+    "fileName": "16a. Hymn to Progress towards a Sky -- Civilization of Mine.md",
+    "shortcut": "16a",
+    "legacy_shortcut": "16a",
+    "path": "16a. Hymn to Progress towards a Sky -- Civilization of Mine.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "16b. Civilization Hymn   The Will of The Universe to be Dominated",
+    "fileName": "16b. Civilization Hymn - The Will of The Universe to be Dominated.md",
+    "shortcut": "16b",
+    "legacy_shortcut": "16b",
+    "path": "16b. Civilization Hymn - The Will of The Universe to be Dominated.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "17 crucible sovereignty system",
+    "fileName": "17 crucible_sovereignty_system.md",
+    "shortcut": "17",
+    "legacy_shortcut": "17",
+    "path": "17 crucible_sovereignty_system.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "17a Sovereignty Protocols",
+    "fileName": "17a Sovereignty Protocols.md",
+    "shortcut": "17a",
+    "legacy_shortcut": "17a",
+    "path": "17a Sovereignty Protocols.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "17a Sovereignty Protocols",
+    "fileName": "17a Sovereignty Protocols.pdf",
+    "shortcut": "17a",
+    "legacy_shortcut": "17a",
+    "path": "17a Sovereignty Protocols.pdf",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "18 The OmniTriad Pattern   Azure Truth Crimson Taste Gray Codification",
+    "fileName": "18 The OmniTriad Pattern - Azure Truth Crimson Taste Gray Codification.md",
+    "shortcut": "18",
+    "legacy_shortcut": "18",
+    "path": "18 The OmniTriad Pattern - Azure Truth Crimson Taste Gray Codification.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "19 implementation roadmap",
+    "fileName": "19 implementation_roadmap.md",
+    "shortcut": "19",
+    "legacy_shortcut": "19",
+    "path": "19 implementation_roadmap.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "20 trust network dynamics",
+    "fileName": "20 trust_network_dynamics.md",
+    "shortcut": "20",
+    "legacy_shortcut": "20",
+    "path": "20 trust_network_dynamics.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "21 ar phase engine specs",
+    "fileName": "21 ar_phase_engine_specs.md",
+    "shortcut": "21",
+    "legacy_shortcut": "21",
+    "path": "21 ar_phase_engine_specs.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "22 system integration synthesis",
+    "fileName": "22 system_integration_synthesis.md",
+    "shortcut": "22",
+    "legacy_shortcut": "22",
+    "path": "22 system_integration_synthesis.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23 Command, Capital and Commons",
+    "fileName": "23 Command, Capital and Commons.md",
+    "shortcut": "23",
+    "legacy_shortcut": "23",
+    "path": "23 Command, Capital and Commons.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "23a the dying child ultimatum",
+    "fileName": "23a the_dying_child_ultimatum.md",
+    "shortcut": "23a",
+    "legacy_shortcut": "23a",
+    "path": "23a the_dying_child_ultimatum.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24 nss",
+    "fileName": "24 nss.md",
+    "shortcut": "24",
+    "legacy_shortcut": "24",
+    "path": "24 nss.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24a capital illusion dissolution",
+    "fileName": "24a capital-illusion-dissolution.md",
+    "shortcut": "24a",
+    "legacy_shortcut": "24a",
+    "path": "24a capital-illusion-dissolution.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24b employment",
+    "fileName": "24b employment.md",
+    "shortcut": "24b",
+    "legacy_shortcut": "24b",
+    "path": "24b employment.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24c tentative bastards subjective economics",
+    "fileName": "24c tentative-bastards-subjective-economics.md",
+    "shortcut": "24c",
+    "legacy_shortcut": "24c",
+    "path": "24c tentative-bastards-subjective-economics.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24d natural selection vs capital",
+    "fileName": "24d natural-selection-vs-capital.md",
+    "shortcut": "24d",
+    "legacy_shortcut": "24d",
+    "path": "24d natural-selection-vs-capital.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24e nss money exposition",
+    "fileName": "24e nss-money-exposition.md",
+    "shortcut": "24e",
+    "legacy_shortcut": "24e",
+    "path": "24e nss-money-exposition.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24f will economic task system",
+    "fileName": "24f will-economic-task-system.md",
+    "shortcut": "24f",
+    "legacy_shortcut": "24f",
+    "path": "24f will-economic-task-system.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24g human interrelating currencies",
+    "fileName": "24g human-interrelating-currencies.md",
+    "shortcut": "24g",
+    "legacy_shortcut": "24g",
+    "path": "24g human-interrelating-currencies.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "24h human liberation through world choice",
+    "fileName": "24h human-liberation-through-world-choice.md",
+    "shortcut": "24h",
+    "legacy_shortcut": "24h",
+    "path": "24h human-liberation-through-world-choice.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "25 discovery os expanded into broader picture",
+    "fileName": "25 discovery-os-expanded-into-broader-picture.md",
+    "shortcut": "25",
+    "legacy_shortcut": "25",
+    "path": "25 discovery-os-expanded-into-broader-picture.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "26. crucible discovery synthesis",
+    "fileName": "26. crucible-discovery-synthesis.md",
+    "shortcut": "26",
+    "legacy_shortcut": "26",
+    "path": "26. crucible-discovery-synthesis.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "27. The Sovereign Crucible and the Might Is Right Alliance    A Framework for Will Based Civilizations",
+    "fileName": "27. The Sovereign Crucible and the Might Is Right Alliance -- A Framework for Will-Based Civilizations.md",
+    "shortcut": "27",
+    "legacy_shortcut": "27",
+    "path": "27. The Sovereign Crucible and the Might Is Right Alliance -- A Framework for Will-Based Civilizations.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "27a radical subjectivity crucible principle",
+    "fileName": "27a radical_subjectivity_crucible_principle.md",
+    "shortcut": "27a",
+    "legacy_shortcut": "27a",
+    "path": "27a radical_subjectivity_crucible_principle.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "28 Metagame of World Dynamics",
+    "fileName": "28 Metagame of World Dynamics.md",
+    "shortcut": "28",
+    "legacy_shortcut": "28",
+    "path": "28 Metagame of World Dynamics.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "28a moral warfare doctrine MWD",
+    "fileName": "28a moral_warfare_doctrine_MWD.md",
+    "shortcut": "28a",
+    "legacy_shortcut": "28a",
+    "path": "28a moral_warfare_doctrine_MWD.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "28b punishment across traditions comprehensive analysis",
+    "fileName": "28b punishment_across_traditions_comprehensive_analysis.md",
+    "shortcut": "28b",
+    "legacy_shortcut": "28b",
+    "path": "28b punishment_across_traditions_comprehensive_analysis.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "29. cause and effect might with right",
+    "fileName": "29. cause-and-effect-might-with-right.md",
+    "shortcut": "29",
+    "legacy_shortcut": "29",
+    "path": "29. cause-and-effect-might-with-right.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "29a. gradient of will solving systems",
+    "fileName": "29a. gradient-of-will-solving-systems.md",
+    "shortcut": "29a",
+    "legacy_shortcut": "29a",
+    "path": "29a. gradient-of-will-solving-systems.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "29b radical subjectivity identity claims mwr facilitation",
+    "fileName": "29b radical_subjectivity_identity_claims_mwr_facilitation.md",
+    "shortcut": "29b",
+    "legacy_shortcut": "29b",
+    "path": "29b radical_subjectivity_identity_claims_mwr_facilitation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "30. neologistic reality cutting",
+    "fileName": "30. neologistic-reality-cutting.md",
+    "shortcut": "30",
+    "legacy_shortcut": "30",
+    "path": "30. neologistic-reality-cutting.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "31. aiddaemonic semantic bridging",
+    "fileName": "31. aiddaemonic-semantic-bridging.md",
+    "shortcut": "31",
+    "legacy_shortcut": "31",
+    "path": "31. aiddaemonic-semantic-bridging.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "32. neo colonialism",
+    "fileName": "32. neo-colonialism.md",
+    "shortcut": "32",
+    "legacy_shortcut": "32",
+    "path": "32. neo-colonialism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "32.a neo colonialism",
+    "fileName": "32.a neo-colonialism.md",
+    "shortcut": "32",
+    "legacy_shortcut": "32",
+    "path": "32.a neo-colonialism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "32.ai neo colonialism",
+    "fileName": "32.ai neo-colonialism.md",
+    "shortcut": "32",
+    "legacy_shortcut": "32",
+    "path": "32.ai neo-colonialism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "32.b neo colonialism",
+    "fileName": "32.b neo-colonialism.md",
+    "shortcut": "32",
+    "legacy_shortcut": "32",
+    "path": "32.b neo-colonialism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "32.c neo colonialism",
+    "fileName": "32.c neo-colonialism.md",
+    "shortcut": "32",
+    "legacy_shortcut": "32",
+    "path": "32.c neo-colonialism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "32.d neo colonialism",
+    "fileName": "32.d neo-colonialism.md",
+    "shortcut": "32",
+    "legacy_shortcut": "32",
+    "path": "32.d neo-colonialism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "32.e neo colonialism",
+    "fileName": "32.e neo-colonialism.md",
+    "shortcut": "32",
+    "legacy_shortcut": "32",
+    "path": "32.e neo-colonialism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "33 Coalescence by Environment",
+    "fileName": "33 Coalescence by Environment.md",
+    "shortcut": "33",
+    "legacy_shortcut": "33",
+    "path": "33 Coalescence by Environment.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "33a New Worlds Environment THEIR coalescence without hints or advice",
+    "fileName": "33a New Worlds Environment THEIR coalescence without hints or advice.md",
+    "shortcut": "33a",
+    "legacy_shortcut": "33a",
+    "path": "33a New Worlds Environment THEIR coalescence without hints or advice.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "34 Love, Fear and Safety",
+    "fileName": "34 Love, Fear and Safety.md",
+    "shortcut": "34",
+    "legacy_shortcut": "34",
+    "path": "34 Love, Fear and Safety.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "35. living in new world",
+    "fileName": "35. living-in-new-world.md",
+    "shortcut": "35",
+    "legacy_shortcut": "35",
+    "path": "35. living-in-new-world.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "36 Coalescents Against Death",
+    "fileName": "36 Coalescents Against Death.md",
+    "shortcut": "36",
+    "legacy_shortcut": "36",
+    "path": "36 Coalescents Against Death.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "36a Incremental Spiral Against Death",
+    "fileName": "36a Incremental Spiral Against Death.md",
+    "shortcut": "36a",
+    "legacy_shortcut": "36a",
+    "path": "36a Incremental Spiral Against Death.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "36b Fragments Against Death World",
+    "fileName": "36b Fragments Against Death-World.md",
+    "shortcut": "36b",
+    "legacy_shortcut": "36b",
+    "path": "36b Fragments Against Death-World.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "36d Death Fighting Synthesis   All Strategies Unified",
+    "fileName": "36d Death-Fighting Synthesis - All Strategies Unified.md",
+    "shortcut": "36d",
+    "legacy_shortcut": "36d",
+    "path": "36d Death-Fighting Synthesis - All Strategies Unified.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "37 Meta Patterns Across All Sources",
+    "fileName": "37 Meta-Patterns Across All Sources.md",
+    "shortcut": "37",
+    "legacy_shortcut": "37",
+    "path": "37 Meta-Patterns Across All Sources.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "38 Will Field Theory and Reality Manifestation",
+    "fileName": "38 Will-Field Theory and Reality Manifestation.md",
+    "shortcut": "38",
+    "legacy_shortcut": "38",
+    "path": "38 Will-Field Theory and Reality Manifestation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "39 The Semantic Membrane and Nameless Computation",
+    "fileName": "39 The Semantic Membrane and Nameless Computation.md",
+    "shortcut": "39",
+    "legacy_shortcut": "39",
+    "path": "39 The Semantic Membrane and Nameless Computation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "40 Jord Sol",
+    "fileName": "40 Jord Sol.md",
+    "shortcut": "40",
+    "legacy_shortcut": "40",
+    "path": "40 Jord Sol.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "40a jord complete integration past present future",
+    "fileName": "40a jord_complete_integration_past_present_future.md",
+    "shortcut": "40a",
+    "legacy_shortcut": "40a",
+    "path": "40a jord_complete_integration_past_present_future.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "40b Sol and Jord   The Complete System",
+    "fileName": "40b Sol and Jord - The Complete System.md",
+    "shortcut": "40b",
+    "legacy_shortcut": "40b",
+    "path": "40b Sol and Jord - The Complete System.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41. discoveryos unified architecture synthesis",
+    "fileName": "41. discoveryos-unified-architecture-synthesis.md",
+    "shortcut": "41",
+    "legacy_shortcut": "41",
+    "path": "41. discoveryos-unified-architecture-synthesis.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41a self organizing recovery",
+    "fileName": "41a self-organizing-recovery.md",
+    "shortcut": "41a",
+    "legacy_shortcut": "41a",
+    "path": "41a self-organizing-recovery.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41b neologistic reality cutting",
+    "fileName": "41b neologistic-reality-cutting.md",
+    "shortcut": "41b",
+    "legacy_shortcut": "41b",
+    "path": "41b neologistic-reality-cutting.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41c resilience through discovery",
+    "fileName": "41c resilience-through-discovery.md",
+    "shortcut": "41c",
+    "legacy_shortcut": "41c",
+    "path": "41c resilience-through-discovery.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41d fractal discovery architecture",
+    "fileName": "41d fractal-discovery-architecture.md",
+    "shortcut": "41d",
+    "legacy_shortcut": "41d",
+    "path": "41d fractal-discovery-architecture.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41e will economic task system",
+    "fileName": "41e will-economic-task-system.md",
+    "shortcut": "41e",
+    "legacy_shortcut": "41e",
+    "path": "41e will-economic-task-system.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41f zero to safe space",
+    "fileName": "41f zero-to-safe-space.md",
+    "shortcut": "41f",
+    "legacy_shortcut": "41f",
+    "path": "41f zero-to-safe-space.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "41g safe space not enough hardware recovery mechanisms",
+    "fileName": "41g safe-space-not-enough-hardware-recovery-mechanisms.md",
+    "shortcut": "41g",
+    "legacy_shortcut": "41g",
+    "path": "41g safe-space-not-enough-hardware-recovery-mechanisms.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "42a architecture first civilization pdf",
+    "fileName": "42a architecture-first-civilization-pdf.md",
+    "shortcut": "42a",
+    "legacy_shortcut": "42a",
+    "path": "42a architecture-first-civilization-pdf.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "42b Architecture First IDE Development Experience",
+    "fileName": "42b Architecture First IDE Development Experience.md",
+    "shortcut": "42b",
+    "legacy_shortcut": "42b",
+    "path": "42b Architecture First IDE Development Experience.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "42c Architecture First IDE and Orth Worth Systems",
+    "fileName": "42c Architecture First IDE and Orth Worth Systems.md",
+    "shortcut": "42c",
+    "legacy_shortcut": "42c",
+    "path": "42c Architecture First IDE and Orth Worth Systems.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "42d The Self Recursive System   Quine and SOLVE",
+    "fileName": "42d The Self-Recursive System - Quine and SOLVE.md",
+    "shortcut": "42d",
+    "legacy_shortcut": "42d",
+    "path": "42d The Self-Recursive System - Quine and SOLVE.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "43 Nebulae of Sentience   Every Concept as Infinite Dimensional Semantic Space",
+    "fileName": "43 Nebulae of Sentience - Every Concept as Infinite-Dimensional Semantic Space.md",
+    "shortcut": "43",
+    "legacy_shortcut": "43",
+    "path": "43 Nebulae of Sentience - Every Concept as Infinite-Dimensional Semantic Space.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "44 The Fractal Water Hierarchy   Islands Within Islands Visualization",
+    "fileName": "44 The Fractal Water Hierarchy - Islands Within Islands Visualization.md",
+    "shortcut": "44",
+    "legacy_shortcut": "44",
+    "path": "44 The Fractal Water Hierarchy - Islands Within Islands Visualization.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "45 Lewontins Fallacy and Antifallacy   The Infinite Dimensional Reality of Human Difference",
+    "fileName": "45 Lewontins Fallacy and Antifallacy - The Infinite-Dimensional Reality of Human Difference.md",
+    "shortcut": "45",
+    "legacy_shortcut": "45",
+    "path": "45 Lewontins Fallacy and Antifallacy - The Infinite-Dimensional Reality of Human Difference.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "46 Recursive Transitivity   Daemon Propagation Through Fractal Leadership",
+    "fileName": "46 Recursive Transitivity - Daemon Propagation Through Fractal Leadership.md",
+    "shortcut": "46",
+    "legacy_shortcut": "46",
+    "path": "46 Recursive Transitivity - Daemon Propagation Through Fractal Leadership.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "47 The Specification Tragedy   Why Systems Optimize Away Everything That Matters",
+    "fileName": "47 The Specification Tragedy - Why Systems Optimize Away Everything That Matters.md",
+    "shortcut": "47",
+    "legacy_shortcut": "47",
+    "path": "47 The Specification Tragedy - Why Systems Optimize Away Everything That Matters.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "47a The Price of Specified Desires",
+    "fileName": "47a The Price of Specified Desires.md",
+    "shortcut": "47a",
+    "legacy_shortcut": "47a",
+    "path": "47a The Price of Specified Desires.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "47b Getting What You Specified   The Complete Catastrophe of Perfect Fulfillment",
+    "fileName": "47b Getting What You Specified - The Complete Catastrophe of Perfect Fulfillment.md",
+    "shortcut": "47b",
+    "legacy_shortcut": "47b",
+    "path": "47b Getting What You Specified - The Complete Catastrophe of Perfect Fulfillment.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "47c The Collective Specification Tragedy   How Markets Optimize Away What Everyone Actually Needs",
+    "fileName": "47c The Collective Specification Tragedy - How Markets Optimize Away What Everyone Actually Needs.md",
+    "shortcut": "47c",
+    "legacy_shortcut": "47c",
+    "path": "47c The Collective Specification Tragedy - How Markets Optimize Away What Everyone Actually Needs.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "47d The Will Disruption Tragedy   How Democracy Compromises Everyone Into Gray",
+    "fileName": "47d The Will-Disruption Tragedy - How Democracy Compromises Everyone Into Gray.md",
+    "shortcut": "47d",
+    "legacy_shortcut": "47d",
+    "path": "47d The Will-Disruption Tragedy - How Democracy Compromises Everyone Into Gray.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48 Triadization",
+    "fileName": "48 Triadization.md",
+    "shortcut": "48",
+    "legacy_shortcut": "48",
+    "path": "48 Triadization.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48a triadization failed attempt",
+    "fileName": "48a triadization-failed-attempt.md",
+    "shortcut": "48a",
+    "legacy_shortcut": "48a",
+    "path": "48a triadization-failed-attempt.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48a When Anarchy Works   When It Fails",
+    "fileName": "48a When Anarchy Works - When It Fails.md",
+    "shortcut": "48a",
+    "legacy_shortcut": "48a",
+    "path": "48a When Anarchy Works - When It Fails.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48b The Tyranny of Explanation   Why I Just Want to Build",
+    "fileName": "48b The Tyranny of Explanation - Why I Just Want to Build.md",
+    "shortcut": "48b",
+    "legacy_shortcut": "48b",
+    "path": "48b The Tyranny of Explanation - Why I Just Want to Build.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48c carving heavenly home from wilderness",
+    "fileName": "48c carving_heavenly_home_from_wilderness.md",
+    "shortcut": "48c",
+    "legacy_shortcut": "48c",
+    "path": "48c carving_heavenly_home_from_wilderness.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48e beyond genocide prevention toward speciation flourishing",
+    "fileName": "48e beyond_genocide_prevention_toward_speciation_flourishing.md",
+    "shortcut": "48e",
+    "legacy_shortcut": "48e",
+    "path": "48e beyond_genocide_prevention_toward_speciation_flourishing.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48f state direction market execution synthesis",
+    "fileName": "48f state_direction_market_execution_synthesis.md",
+    "shortcut": "48f",
+    "legacy_shortcut": "48f",
+    "path": "48f state_direction_market_execution_synthesis.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "48g The Shadow Price of Video Games   Market Failure and Triad Sovereignty",
+    "fileName": "48g The Shadow Price of Video Games - Market Failure and Triad Sovereignty.md",
+    "shortcut": "48g",
+    "legacy_shortcut": "48g",
+    "path": "48g The Shadow Price of Video Games - Market Failure and Triad Sovereignty.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "49 Position O   The Coming Age of Multiple Absolute Dominators",
+    "fileName": "49 Position O - The Coming Age of Multiple Absolute Dominators.md",
+    "shortcut": "49",
+    "legacy_shortcut": "49",
+    "path": "49 Position O - The Coming Age of Multiple Absolute Dominators.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "49a Life When Facing the Many Os   The Doomsday Bunker Civilization",
+    "fileName": "49a Life When Facing the Many Os - The Doomsday Bunker Civilization.md",
+    "shortcut": "49a",
+    "legacy_shortcut": "49a",
+    "path": "49a Life When Facing the Many Os - The Doomsday Bunker Civilization.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "49b At Mercy of Gods",
+    "fileName": "49b At Mercy of Gods.md",
+    "shortcut": "49b",
+    "legacy_shortcut": "49b",
+    "path": "49b At Mercy of Gods.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "49c Comrades Occupying Your Chance To Fight   Why Brothers Prevent Only You",
+    "fileName": "49c Comrades Occupying Your Chance To Fight - Why Brothers Prevent Only You.md",
+    "shortcut": "49c",
+    "legacy_shortcut": "49c",
+    "path": "49c Comrades Occupying Your Chance To Fight - Why Brothers Prevent Only You.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "49d The Bodily and Mind Owned Organism",
+    "fileName": "49d The Bodily and Mind Owned Organism.md",
+    "shortcut": "49d",
+    "legacy_shortcut": "49d",
+    "path": "49d The Bodily and Mind Owned Organism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "50 The Tower Castle Village Trust Architecture   Why Many Would Willingly Enable What Might Dominate Them",
+    "fileName": "50 The Tower-Castle-Village Trust Architecture - Why Many Would Willingly Enable What Might Dominate Them.md",
+    "shortcut": "50",
+    "legacy_shortcut": "50",
+    "path": "50 The Tower-Castle-Village Trust Architecture - Why Many Would Willingly Enable What Might Dominate Them.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51 The Enemy Friend Distinction",
+    "fileName": "51 The Enemy-Friend Distinction.md",
+    "shortcut": "51",
+    "legacy_shortcut": "51",
+    "path": "51 The Enemy-Friend Distinction.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51a History of Friend, Enemy and Power",
+    "fileName": "51a History of Friend, Enemy and Power.md",
+    "shortcut": "51a",
+    "legacy_shortcut": "51a",
+    "path": "51a History of Friend, Enemy and Power.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51aa Contemporary Critical Perspectives   Friend Enemy Power",
+    "fileName": "51aa Contemporary Critical Perspectives - Friend Enemy Power.md",
+    "shortcut": "51aa",
+    "legacy_shortcut": "51aa",
+    "path": "51aa Contemporary Critical Perspectives - Friend Enemy Power.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51ab Additional Theorists   Friend Enemy Power",
+    "fileName": "51ab Additional Theorists - Friend Enemy Power.md",
+    "shortcut": "51ab",
+    "legacy_shortcut": "51ab",
+    "path": "51ab Additional Theorists - Friend Enemy Power.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51ac Further Theorists   Friend Enemy Power",
+    "fileName": "51ac Further Theorists - Friend Enemy Power.md",
+    "shortcut": "51ac",
+    "legacy_shortcut": "51ac",
+    "path": "51ac Further Theorists - Friend Enemy Power.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51ad Sadism, Torture and Friend Enemy   The Tortureable Body",
+    "fileName": "51ad Sadism, Torture and Friend-Enemy - The Tortureable Body.md",
+    "shortcut": "51ad",
+    "legacy_shortcut": "51ad",
+    "path": "51ad Sadism, Torture and Friend-Enemy - The Tortureable Body.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51ae Love, Power and Friend Enemy   Greek Concepts of Affection",
+    "fileName": "51ae Love, Power and Friend-Enemy - Greek Concepts of Affection.md",
+    "shortcut": "51ae",
+    "legacy_shortcut": "51ae",
+    "path": "51ae Love, Power and Friend-Enemy - Greek Concepts of Affection.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51af Love Corrected   Power and Friend Enemy",
+    "fileName": "51af Love Corrected - Power and Friend-Enemy.md",
+    "shortcut": "51af",
+    "legacy_shortcut": "51af",
+    "path": "51af Love Corrected - Power and Friend-Enemy.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51ag Love as Friend Enemy Structure   The Comprehensive Integration",
+    "fileName": "51ag Love as Friend-Enemy Structure - The Comprehensive Integration.md",
+    "shortcut": "51ag",
+    "legacy_shortcut": "51ag",
+    "path": "51ag Love as Friend-Enemy Structure - The Comprehensive Integration.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "51b What is New   The MIRA Friend Enemy Framework",
+    "fileName": "51b What is New - The MIRA Friend-Enemy Framework.md",
+    "shortcut": "51b",
+    "legacy_shortcut": "51b",
+    "path": "51b What is New - The MIRA Friend-Enemy Framework.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "52 Gaia",
+    "fileName": "52 Gaia.md",
+    "shortcut": "52",
+    "legacy_shortcut": "52",
+    "path": "52 Gaia.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "53 Enemies of an Organism",
+    "fileName": "53 Enemies of an Organism.md",
+    "shortcut": "53",
+    "legacy_shortcut": "53",
+    "path": "53 Enemies of an Organism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "54",
+    "fileName": "54.md",
+    "shortcut": "54",
+    "legacy_shortcut": "54",
+    "path": "54.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "55 Identity",
+    "fileName": "55 Identity.md",
+    "shortcut": "55",
+    "legacy_shortcut": "55",
+    "path": "55 Identity.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "56. The Human Animal    Arity & Animus of Animals",
+    "fileName": "56. The Human Animal -- Arity & Animus of Animals.md",
+    "shortcut": "56",
+    "legacy_shortcut": "56",
+    "path": "56. The Human Animal -- Arity & Animus of Animals.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "57. Apotheosis    The Divinity of Man",
+    "fileName": "57. Apotheosis -- The Divinity of Man.md",
+    "shortcut": "57",
+    "legacy_shortcut": "57",
+    "path": "57. Apotheosis -- The Divinity of Man.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "57a. The Monad Names   The Source Beyond All Sources",
+    "fileName": "57a. The Monad Names - The Source Beyond All Sources.md",
+    "shortcut": "57a",
+    "legacy_shortcut": "57a",
+    "path": "57a. The Monad Names - The Source Beyond All Sources.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "57b. Existence and Becoming   From Void to Creation",
+    "fileName": "57b. Existence and Becoming - From Void to Creation.md",
+    "shortcut": "57b",
+    "legacy_shortcut": "57b",
+    "path": "57b. Existence and Becoming - From Void to Creation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "57c The Holy Ghost Dissertation",
+    "fileName": "57c The_Holy_Ghost_Dissertation.markdown",
+    "shortcut": "57c",
+    "legacy_shortcut": "57c",
+    "path": "57c The_Holy_Ghost_Dissertation.markdown",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "57d. The Many Christs and the One Antichrist   Aspirational Open Sky Through Discrimination",
+    "fileName": "57d. The Many Christs and the One Antichrist - Aspirational Open Sky Through Discrimination.md",
+    "shortcut": "57d",
+    "legacy_shortcut": "57d",
+    "path": "57d. The Many Christs and the One Antichrist - Aspirational Open Sky Through Discrimination.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "57e. The Routing Architecture of Many Heavens   Sovereignty Navigation Through Will Field Topology",
+    "fileName": "57e. The Routing Architecture of Many Heavens - Sovereignty Navigation Through Will-Field Topology.md",
+    "shortcut": "57e",
+    "legacy_shortcut": "57e",
+    "path": "57e. The Routing Architecture of Many Heavens - Sovereignty Navigation Through Will-Field Topology.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "58. Divinity Demonism",
+    "fileName": "58. Divinity Demonism.md",
+    "shortcut": "58",
+    "legacy_shortcut": "58",
+    "path": "58. Divinity Demonism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "59 Becoming of our Divinity",
+    "fileName": "59 Becoming of our Divinity.md",
+    "shortcut": "59",
+    "legacy_shortcut": "59",
+    "path": "59 Becoming of our Divinity.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "60. Polymorphism and Layers of Meaning",
+    "fileName": "60. Polymorphism and Layers of Meaning.md",
+    "shortcut": "60",
+    "legacy_shortcut": "60",
+    "path": "60. Polymorphism and Layers of Meaning.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "61. Magic Seed",
+    "fileName": "61. Magic Seed.md",
+    "shortcut": "61",
+    "legacy_shortcut": "61",
+    "path": "61. Magic Seed.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "62. Spell Casting",
+    "fileName": "62. Spell Casting.md",
+    "shortcut": "62",
+    "legacy_shortcut": "62",
+    "path": "62. Spell Casting.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "63",
+    "fileName": "63.md",
+    "shortcut": "63",
+    "legacy_shortcut": "63",
+    "path": "63.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "64 Child Aiddaemon Cognitive Bridge AR",
+    "fileName": "64 Child-Aiddaemon-Cognitive-Bridge-AR.md",
+    "shortcut": "64",
+    "legacy_shortcut": "64",
+    "path": "64 Child-Aiddaemon-Cognitive-Bridge-AR.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "65 Animal Aiddaemon Human Language Bridge AR",
+    "fileName": "65 Animal-Aiddaemon-Human-Language-Bridge-AR.md",
+    "shortcut": "65",
+    "legacy_shortcut": "65",
+    "path": "65 Animal-Aiddaemon-Human-Language-Bridge-AR.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "65a The Multi Species Quest Web   Post Speciesist Civilization Through Full Communication",
+    "fileName": "65a The Multi-Species Quest Web - Post-Speciesist Civilization Through Full Communication.md",
+    "shortcut": "65a",
+    "legacy_shortcut": "65a",
+    "path": "65a The Multi-Species Quest Web - Post-Speciesist Civilization Through Full Communication.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "65b MWD For Animals Non Lethal Predation",
+    "fileName": "65b MWD-For-Animals-Non-Lethal-Predation.md",
+    "shortcut": "65b",
+    "legacy_shortcut": "65b",
+    "path": "65b MWD-For-Animals-Non-Lethal-Predation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "66. magic is right",
+    "fileName": "66. magic-is-right.md",
+    "shortcut": "66",
+    "legacy_shortcut": "66",
+    "path": "66. magic-is-right.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "67. Magical Archeofuturism",
+    "fileName": "67. Magical Archeofuturism.md",
+    "shortcut": "67",
+    "legacy_shortcut": "67",
+    "path": "67. Magical Archeofuturism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "68 War",
+    "fileName": "68 War.md",
+    "shortcut": "68",
+    "legacy_shortcut": "68",
+    "path": "68 War.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "69",
+    "fileName": "69.md",
+    "shortcut": "69",
+    "legacy_shortcut": "69",
+    "path": "69.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "70",
+    "fileName": "70.md",
+    "shortcut": "70",
+    "legacy_shortcut": "70",
+    "path": "70.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "71",
+    "fileName": "71.md",
+    "shortcut": "71",
+    "legacy_shortcut": "71",
+    "path": "71.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "72",
+    "fileName": "72.md",
+    "shortcut": "72",
+    "legacy_shortcut": "72",
+    "path": "72.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "73",
+    "fileName": "73.md",
+    "shortcut": "73",
+    "legacy_shortcut": "73",
+    "path": "73.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "74",
+    "fileName": "74.md",
+    "shortcut": "74",
+    "legacy_shortcut": "74",
+    "path": "74.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "75 A Better Science   Why Disconnection Breaks Learning",
+    "fileName": "75 A Better Science - Why Disconnection Breaks Learning.md",
+    "shortcut": "75",
+    "legacy_shortcut": "75",
+    "path": "75 A Better Science - Why Disconnection Breaks Learning.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "75a Current Scientific Methodology   A Critical Analysis",
+    "fileName": "75a Current Scientific Methodology - A Critical Analysis.md",
+    "shortcut": "75a",
+    "legacy_shortcut": "75a",
+    "path": "75a Current Scientific Methodology - A Critical Analysis.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "75b Meta Comparison   Traditional vs Daiddaemonic Scientific Writing",
+    "fileName": "75b Meta-Comparison - Traditional vs Daiddaemonic Scientific Writing.md",
+    "shortcut": "75b",
+    "legacy_shortcut": "75b",
+    "path": "75b Meta-Comparison - Traditional vs Daiddaemonic Scientific Writing.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "75c Universal Field Accessibility via Daiddaemonic Expansion",
+    "fileName": "75c Universal Field Accessibility via Daiddaemonic Expansion.md",
+    "shortcut": "75c",
+    "legacy_shortcut": "75c",
+    "path": "75c Universal Field Accessibility via Daiddaemonic Expansion.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "75d A Qualitative Science without Quantities",
+    "fileName": "75d A Qualitative Science without Quantities.md",
+    "shortcut": "75d",
+    "legacy_shortcut": "75d",
+    "path": "75d A Qualitative Science without Quantities.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "75e The Blinding Effect of Dismal Science",
+    "fileName": "75e The Blinding Effect of Dismal Science.md",
+    "shortcut": "75e",
+    "legacy_shortcut": "75e",
+    "path": "75e The Blinding Effect of Dismal Science.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "76. The Worst Illuminated",
+    "fileName": "76. The Worst Illuminated.md",
+    "shortcut": "76",
+    "legacy_shortcut": "76",
+    "path": "76. The Worst Illuminated.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "77a Abrahamic Moral Codifications",
+    "fileName": "77a Abrahamic Moral Codifications",
+    "shortcut": "77a",
+    "legacy_shortcut": "77a",
+    "path": "77a Abrahamic Moral Codifications",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "77b Eastern Religious Moral Codifications",
+    "fileName": "77b Eastern Religious Moral Codifications",
+    "shortcut": "77b",
+    "legacy_shortcut": "77b",
+    "path": "77b Eastern Religious Moral Codifications",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "77c Classical Western Philosophy",
+    "fileName": "77c Classical Western Philosophy",
+    "shortcut": "77c",
+    "legacy_shortcut": "77c",
+    "path": "77c Classical Western Philosophy",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "77d Medieval and Renaissance Ethics",
+    "fileName": "77d Medieval and Renaissance Ethics",
+    "shortcut": "77d",
+    "legacy_shortcut": "77d",
+    "path": "77d Medieval and Renaissance Ethics",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "77e Early Modern Philosophy (17th 19th Centuries)",
+    "fileName": "77e Early Modern Philosophy (17th-19th Centuries)",
+    "shortcut": "77e",
+    "legacy_shortcut": "77e",
+    "path": "77e Early Modern Philosophy (17th-19th Centuries)",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "77g Moral Frameworks of Universal Permissiveness",
+    "fileName": "77g Moral Frameworks of Universal Permissiveness",
+    "shortcut": "77g",
+    "legacy_shortcut": "77g",
+    "path": "77g Moral Frameworks of Universal Permissiveness",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "77h Synthesis   From Moral Codification to Moral Amorality",
+    "fileName": "77h Synthesis - From Moral Codification to Moral Amorality",
+    "shortcut": "77h",
+    "legacy_shortcut": "77h",
+    "path": "77h Synthesis - From Moral Codification to Moral Amorality",
+    "category": "Foundations",
+    "mediaType": "other"
+  },
+  {
+    "title": "78 The Codification of Necessaries for Good",
+    "fileName": "78 The Codification of Necessaries for Good.md",
+    "shortcut": "78",
+    "legacy_shortcut": "78",
+    "path": "78 The Codification of Necessaries for Good.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "79",
+    "fileName": "79.md",
+    "shortcut": "79",
+    "legacy_shortcut": "79",
+    "path": "79.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "80",
+    "fileName": "80.md",
+    "shortcut": "80",
+    "legacy_shortcut": "80",
+    "path": "80.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "81",
+    "fileName": "81.md",
+    "shortcut": "81",
+    "legacy_shortcut": "81",
+    "path": "81.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "82 A Reasonable Model for Long Term Progress Futurism",
+    "fileName": "82 A Reasonable Model for Long Term Progress Futurism.md",
+    "shortcut": "82",
+    "legacy_shortcut": "82",
+    "path": "82 A Reasonable Model for Long Term Progress Futurism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "83 MMORPG Triads Made Real   Living Your Character",
+    "fileName": "83 MMORPG Triads Made Real - Living Your Character.md",
+    "shortcut": "83",
+    "legacy_shortcut": "83",
+    "path": "83 MMORPG Triads Made Real - Living Your Character.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "83a The Neverland School   Where I Rule the MMORPG World",
+    "fileName": "83a The Neverland School - Where I Rule the MMORPG World.md",
+    "shortcut": "83a",
+    "legacy_shortcut": "83a",
+    "path": "83a The Neverland School - Where I Rule the MMORPG World.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "84. Subficial Visioning",
+    "fileName": "84. Subficial Visioning.md",
+    "shortcut": "84",
+    "legacy_shortcut": "84",
+    "path": "84. Subficial Visioning.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "84a Skinning Reality   The Four Layers of Will Alignment",
+    "fileName": "84a Skinning Reality - The Four Layers of Will Alignment.md",
+    "shortcut": "84a",
+    "legacy_shortcut": "84a",
+    "path": "84a Skinning Reality - The Four Layers of Will Alignment.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "84b The Celestial Will Field   Gods as Constellations in AR Phase Space",
+    "fileName": "84b The Celestial Will-Field - Gods as Constellations in AR Phase Space.md",
+    "shortcut": "84b",
+    "legacy_shortcut": "84b",
+    "path": "84b The Celestial Will-Field - Gods as Constellations in AR Phase Space.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "84c The AR Skinning Engine   Visual Transformation as Will Alignment",
+    "fileName": "84c The AR Skinning Engine - Visual Transformation as Will Alignment.md",
+    "shortcut": "84c",
+    "legacy_shortcut": "84c",
+    "path": "84c The AR Skinning Engine - Visual Transformation as Will Alignment.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "84d The Memory Manipulation Matrix   Reality, Information, and Will",
+    "fileName": "84d The Memory Manipulation Matrix - Reality, Information, and Will.md",
+    "shortcut": "84d",
+    "legacy_shortcut": "84d",
+    "path": "84d The Memory Manipulation Matrix - Reality, Information, and Will.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "84e Appendix   Terrence Tao's Transitivity of Correlation   A Critical Analysis",
+    "fileName": "84e Appendix - Terrence Tao's Transitivity of Correlation - A Critical Analysis.md",
+    "shortcut": "84e",
+    "legacy_shortcut": "84e",
+    "path": "84e Appendix - Terrence Tao's Transitivity of Correlation - A Critical Analysis.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "85 Your 'I'   MBC Rule 4 and the Autonomy of Self Identification",
+    "fileName": "85 Your 'I' - MBC Rule 4 and the Autonomy of Self-Identification.md",
+    "shortcut": "85",
+    "legacy_shortcut": "85",
+    "path": "85 Your 'I' - MBC Rule 4 and the Autonomy of Self-Identification.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86 Eugenics",
+    "fileName": "86 Eugenics.md",
+    "shortcut": "86",
+    "legacy_shortcut": "86",
+    "path": "86 Eugenics.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86a eugenic becoming of human kinds",
+    "fileName": "86a eugenic-becoming-of-human-kinds.md",
+    "shortcut": "86a",
+    "legacy_shortcut": "86a",
+    "path": "86a eugenic-becoming-of-human-kinds.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86b eugenic amplification of existing human kinds",
+    "fileName": "86b eugenic-amplification-of-existing-human-kinds.md",
+    "shortcut": "86b",
+    "legacy_shortcut": "86b",
+    "path": "86b eugenic-amplification-of-existing-human-kinds.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86c eugenic livestock human synergy",
+    "fileName": "86c eugenic-livestock-human-synergy.md",
+    "shortcut": "86c",
+    "legacy_shortcut": "86c",
+    "path": "86c eugenic-livestock-human-synergy.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86d eugenic leverage and will proliferation",
+    "fileName": "86d eugenic-leverage-and-will-proliferation.md",
+    "shortcut": "86d",
+    "legacy_shortcut": "86d",
+    "path": "86d eugenic-leverage-and-will-proliferation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86e planetary capacity and trajectories",
+    "fileName": "86e planetary-capacity-and-trajectories.md",
+    "shortcut": "86e",
+    "legacy_shortcut": "86e",
+    "path": "86e planetary-capacity-and-trajectories.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86f eugenic genetics and breeding dynamics",
+    "fileName": "86f eugenic-genetics-and-breeding-dynamics.md",
+    "shortcut": "86f",
+    "legacy_shortcut": "86f",
+    "path": "86f eugenic-genetics-and-breeding-dynamics.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86g eugenic social dynamics",
+    "fileName": "86g eugenic-social-dynamics.md",
+    "shortcut": "86g",
+    "legacy_shortcut": "86g",
+    "path": "86g eugenic-social-dynamics.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86h eugenic water triad hierarchy",
+    "fileName": "86h eugenic-water-triad-hierarchy.md",
+    "shortcut": "86h",
+    "legacy_shortcut": "86h",
+    "path": "86h eugenic-water-triad-hierarchy.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86i eugenic cacogenic complementary world",
+    "fileName": "86i eugenic-cacogenic-complementary-world.md",
+    "shortcut": "86i",
+    "legacy_shortcut": "86i",
+    "path": "86i eugenic-cacogenic-complementary-world.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "86j eugenic inequality as complementarity",
+    "fileName": "86j eugenic-inequality-as-complementarity.md",
+    "shortcut": "86j",
+    "legacy_shortcut": "86j",
+    "path": "86j eugenic-inequality-as-complementarity.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "87 The Truth Creators   Game Masters as Aejectivity Architects and Reality Guides",
+    "fileName": "87 The Truth Creators - Game Masters as Aejectivity Architects and Reality Guides.md",
+    "shortcut": "87",
+    "legacy_shortcut": "87",
+    "path": "87 The Truth Creators - Game Masters as Aejectivity Architects and Reality Guides.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "87a The Pope Dropping In   Game Master Mode and Ultimate Creator Power",
+    "fileName": "87a The Pope Dropping In - Game Master Mode and Ultimate Creator Power.md",
+    "shortcut": "87a",
+    "legacy_shortcut": "87a",
+    "path": "87a The Pope Dropping In - Game Master Mode and Ultimate Creator Power.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "87b Saving the Suicidals   Game Masters as Life Saving Reality Creators",
+    "fileName": "87b Saving the Suicidals - Game Masters as Life-Saving Reality Creators.md",
+    "shortcut": "87b",
+    "legacy_shortcut": "87b",
+    "path": "87b Saving the Suicidals - Game Masters as Life-Saving Reality Creators.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "87c Harmony Upon Earth   Game Masters as Planetary Peace Creators",
+    "fileName": "87c Harmony Upon Earth - Game Masters as Planetary Peace Creators.md",
+    "shortcut": "87c",
+    "legacy_shortcut": "87c",
+    "path": "87c Harmony Upon Earth - Game Masters as Planetary Peace Creators.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "87d Feverish Dreaming   Game Masters as Truth Architects",
+    "fileName": "87d Feverish Dreaming - Game Masters as Truth Architects.md",
+    "shortcut": "87d",
+    "legacy_shortcut": "87d",
+    "path": "87d Feverish Dreaming - Game Masters as Truth Architects.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "87e The Virtual Apotheosis   Game Masters as Digital Deities",
+    "fileName": "87e The Virtual Apotheosis - Game Masters as Digital Deities.md",
+    "shortcut": "87e",
+    "legacy_shortcut": "87e",
+    "path": "87e The Virtual Apotheosis - Game Masters as Digital Deities.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "87f Hogwartz, Hellenism and Heavens",
+    "fileName": "87f Hogwartz, Hellenism and Heavens.md",
+    "shortcut": "87f",
+    "legacy_shortcut": "87f",
+    "path": "87f Hogwartz, Hellenism and Heavens.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "88. The World To Come VIsion",
+    "fileName": "88. The World To Come VIsion.md",
+    "shortcut": "88",
+    "legacy_shortcut": "88",
+    "path": "88. The World To Come VIsion.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "88a Gamer Governance",
+    "fileName": "88a Gamer Governance.md",
+    "shortcut": "88a",
+    "legacy_shortcut": "88a",
+    "path": "88a Gamer Governance.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "88b World Parliament    Back to The Niles",
+    "fileName": "88b World Parliament -- Back to The Niles.md",
+    "shortcut": "88b",
+    "legacy_shortcut": "88b",
+    "path": "88b World Parliament -- Back to The Niles.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "89",
+    "fileName": "89.md",
+    "shortcut": "89",
+    "legacy_shortcut": "89",
+    "path": "89.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "90",
+    "fileName": "90.md",
+    "shortcut": "90",
+    "legacy_shortcut": "90",
+    "path": "90.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "91",
+    "fileName": "91.md",
+    "shortcut": "91",
+    "legacy_shortcut": "91",
+    "path": "91.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "92 Capital Letters",
+    "fileName": "92 Capital Letters.md",
+    "shortcut": "92",
+    "legacy_shortcut": "92",
+    "path": "92 Capital Letters.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "92a Rains of Africa Blessing By Forestation",
+    "fileName": "92a Rains of Africa Blessing By Forestation.md",
+    "shortcut": "92a",
+    "legacy_shortcut": "92a",
+    "path": "92a Rains of Africa Blessing By Forestation.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "93 The Sublime Dance",
+    "fileName": "93 The Sublime Dance.md",
+    "shortcut": "93",
+    "legacy_shortcut": "93",
+    "path": "93 The Sublime Dance.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "93a Love",
+    "fileName": "93a Love.md",
+    "shortcut": "93a",
+    "legacy_shortcut": "93a",
+    "path": "93a Love.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "93b Sublime Dance Appendix",
+    "fileName": "93b Sublime Dance Appendix.md",
+    "shortcut": "93b",
+    "legacy_shortcut": "93b",
+    "path": "93b Sublime Dance Appendix.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "94",
+    "fileName": "94.md",
+    "shortcut": "94",
+    "legacy_shortcut": "94",
+    "path": "94.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "95",
+    "fileName": "95.md",
+    "shortcut": "95",
+    "legacy_shortcut": "95",
+    "path": "95.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "96 Lumen",
+    "fileName": "96 Lumen.md",
+    "shortcut": "96",
+    "legacy_shortcut": "96",
+    "path": "96 Lumen.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "97",
+    "fileName": "97.md",
+    "shortcut": "97",
+    "legacy_shortcut": "97",
+    "path": "97.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "98 How Equality Systems Entail Error",
+    "fileName": "98 How Equality Systems Entail Error.md",
+    "shortcut": "98",
+    "legacy_shortcut": "98",
+    "path": "98 How Equality Systems Entail Error.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "99",
+    "fileName": "99.md",
+    "shortcut": "99",
+    "legacy_shortcut": "99",
+    "path": "99.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": " THE CRUCIBLE beyond left and right",
+    "fileName": "_THE_CRUCIBLE_beyond_left_and_right.md",
+    "shortcut": "THCRbeleanright",
+    "legacy_shortcut": "_THEright",
+    "path": "_THE_CRUCIBLE_beyond_left_and_right.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "a critique of the west",
+    "fileName": "a_critique_of_the_west.md",
+    "shortcut": "acrofthweest",
+    "legacy_shortcut": "a_cr_west",
+    "path": "a_critique_of_the_west.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "a critique of the west companion tit for tat",
+    "fileName": "a_critique_of_the_west_companion_tit_for_tat.md",
+    "shortcut": "acrofthwecotifotatat",
+    "legacy_shortcut": "a_crr_tat",
+    "path": "a_critique_of_the_west_companion_tit_for_tat.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "accountability paradox case study sexual preference visibility",
+    "fileName": "accountability_paradox_case_study_sexual_preference_visibility.md",
+    "shortcut": "acpacastseprviity",
+    "legacy_shortcut": "accoility",
+    "path": "accountability_paradox_case_study_sexual_preference_visibility.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "accountability paradox mob witch hunts",
+    "fileName": "accountability_paradox_mob_witch_hunts.md",
+    "shortcut": "acpamowihunts",
+    "legacy_shortcut": "accohunts",
+    "path": "accountability_paradox_mob_witch_hunts.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix A Routing Symbols Comprehensive",
+    "fileName": "Appendix_A_Routing_Symbols_Comprehensive.md",
+    "shortcut": "ApARoSyCoive",
+    "legacy_shortcut": "Appensive",
+    "path": "Appendix_A_Routing_Symbols_Comprehensive.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix B Daemonic Coalescence Framework",
+    "fileName": "Appendix_B_Daemonic_Coalescence_Framework.md",
+    "shortcut": "ApBDaCoFrork",
+    "legacy_shortcut": "Appeework",
+    "path": "Appendix_B_Daemonic_Coalescence_Framework.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix C Discovery OS Specifications",
+    "fileName": "Appendix_C_Discovery_OS_Specifications.md",
+    "shortcut": "ApCDiOSSpons",
+    "legacy_shortcut": "Appetions",
+    "path": "Appendix_C_Discovery_OS_Specifications.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix D Architecture First Development System",
+    "fileName": "Appendix_D_Architecture_First_Development_System.md",
+    "shortcut": "ApDArFiDeSytem",
+    "legacy_shortcut": "Appeystem",
+    "path": "Appendix_D_Architecture_First_Development_System.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix E AR Phase Engine Will Fulfillment",
+    "fileName": "Appendix_E_AR_Phase_Engine_Will_Fulfillment.md",
+    "shortcut": "ApEARPhEnWiFuent",
+    "legacy_shortcut": "Appelment",
+    "path": "Appendix_E_AR_Phase_Engine_Will_Fulfillment.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix F Natural Selection Protocol",
+    "fileName": "Appendix_F_Natural_Selection_Protocol.md",
+    "shortcut": "ApFNaSePrcol",
+    "legacy_shortcut": "Appetocol",
+    "path": "Appendix_F_Natural_Selection_Protocol.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix G Beyond Kant Aesthetic Pluralism",
+    "fileName": "Appendix_G_Beyond_Kant_Aesthetic_Pluralism.md",
+    "shortcut": "ApGBeKaAePlism",
+    "legacy_shortcut": "Appealism",
+    "path": "Appendix_G_Beyond_Kant_Aesthetic_Pluralism.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix H Neologistic Reality Cutting",
+    "fileName": "Appendix_H_Neologistic_Reality_Cutting.md",
+    "shortcut": "ApHNeReCuing",
+    "legacy_shortcut": "Appetting",
+    "path": "Appendix_H_Neologistic_Reality_Cutting.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "Appendix I Aiddaemonic Semantic Bridging",
+    "fileName": "Appendix_I_Aiddaemonic_Semantic_Bridging.md",
+    "shortcut": "ApIAiSeBring",
+    "legacy_shortcut": "Appedging",
+    "path": "Appendix_I_Aiddaemonic_Semantic_Bridging.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "history vs historiography",
+    "fileName": "history_vs_historiography.md",
+    "shortcut": "hivshiphy",
+    "legacy_shortcut": "histraphy",
+    "path": "history_vs_historiography.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "recipe self recursive system quine",
+    "fileName": "recipe-self-recursive-system-quine.md",
+    "shortcut": "reseresyquine",
+    "legacy_shortcut": "reciquine",
+    "path": "recipe-self-recursive-system-quine.md",
+    "category": "Foundations",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 01 framework",
+    "fileName": "mira-01-framework.md",
+    "shortcut": "mira_01",
+    "legacy_shortcut": "mira_01",
+    "path": "mira/mira-01-framework.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 02 alliance",
+    "fileName": "mira-02-alliance.md",
+    "shortcut": "mira_02",
+    "legacy_shortcut": "mira_02",
+    "path": "mira/mira-02-alliance.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 03 position0",
+    "fileName": "mira-03-position0.md",
+    "shortcut": "mira_03",
+    "legacy_shortcut": "mira_03",
+    "path": "mira/mira-03-position0.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 04 trust",
+    "fileName": "mira-04-trust.md",
+    "shortcut": "mira_04",
+    "legacy_shortcut": "mira_04",
+    "path": "mira/mira-04-trust.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 05 crucible",
+    "fileName": "mira-05-crucible.md",
+    "shortcut": "mira_05",
+    "legacy_shortcut": "mira_05",
+    "path": "mira/mira-05-crucible.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 06 implementation",
+    "fileName": "mira-06-implementation.md",
+    "shortcut": "mira_06",
+    "legacy_shortcut": "mira_06",
+    "path": "mira/mira-06-implementation.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 07 gravity of trust",
+    "fileName": "mira-07-gravity-of-trust.md",
+    "shortcut": "mira_07",
+    "legacy_shortcut": "mira_07",
+    "path": "mira/mira-07-gravity-of-trust.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 08 prying open and purgatories",
+    "fileName": "mira-08-prying_open_and_purgatories.md",
+    "shortcut": "mira_08",
+    "legacy_shortcut": "mira_08",
+    "path": "mira/mira-08-prying_open_and_purgatories.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 09 perpetual purpose pantheon",
+    "fileName": "mira-09-perpetual_purpose_pantheon.md",
+    "shortcut": "mira_09",
+    "legacy_shortcut": "mira_09",
+    "path": "mira/mira-09-perpetual_purpose_pantheon.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 10 hearths",
+    "fileName": "mira-10-hearths.md",
+    "shortcut": "mira_10",
+    "legacy_shortcut": "mira_10",
+    "path": "mira/mira-10-hearths.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 11 hilltop",
+    "fileName": "mira-11-hilltop.md",
+    "shortcut": "mira_11",
+    "legacy_shortcut": "mira_11",
+    "path": "mira/mira-11-hilltop.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira 12 interregnum",
+    "fileName": "mira-12-interregnum.md",
+    "shortcut": "mira_12",
+    "legacy_shortcut": "mira_12",
+    "path": "mira/mira-12-interregnum.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira hearths crucible",
+    "fileName": "mira-hearths-crucible.md",
+    "shortcut": "mira_hcble",
+    "legacy_shortcut": "miracible",
+    "path": "mira/mira-hearths-crucible.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "mira hearths document",
+    "fileName": "mira-hearths-document.md",
+    "shortcut": "mira_hdent",
+    "legacy_shortcut": "miraument",
+    "path": "mira/mira-hearths-document.md",
+    "category": "mira",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "ARK    The Bunker for All",
+    "fileName": "ARK -- The Bunker for All.md",
+    "shortcut": "propo_ATBfAAll",
+    "legacy_shortcut": "ARK r All",
+    "path": "proposals/ARK -- The Bunker for All.md",
+    "category": "proposals",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "baltic empire of the willing",
+    "fileName": "baltic-empire-of-the-willing.md",
+    "shortcut": "propo_beotwing",
+    "legacy_shortcut": "baltlling",
+    "path": "proposals/baltic-empire-of-the-willing.md",
+    "category": "proposals",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "copenhagen reimagined against death village",
+    "fileName": "copenhagen-reimagined-against-death-village.md",
+    "shortcut": "propo_cradvage",
+    "legacy_shortcut": "copellage",
+    "path": "proposals/copenhagen-reimagined-against-death-village.md",
+    "category": "proposals",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "greenland",
+    "fileName": "greenland.md",
+    "shortcut": "propo_greenand",
+    "legacy_shortcut": "greenland",
+    "path": "proposals/greenland.md",
+    "category": "proposals",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "sudan nile regeneration neo colonial bootstrap",
+    "fileName": "sudan-nile-regeneration-neo-colonial-bootstrap.md",
+    "shortcut": "propo_snrncbrap",
+    "legacy_shortcut": "sudastrap",
+    "path": "proposals/sudan-nile-regeneration-neo-colonial-bootstrap.md",
+    "category": "proposals",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "angels law of love",
+    "fileName": "angels-law-of-love.md",
+    "shortcut": "Routi_alolove",
+    "legacy_shortcut": "ange-love",
+    "path": "Routing/angels-law-of-love.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "archetypal monologues",
+    "fileName": "archetypal-monologues.md",
+    "shortcut": "Routi_amues",
+    "legacy_shortcut": "archogues",
+    "path": "Routing/archetypal-monologues.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "beast law of love",
+    "fileName": "beast-law-of-love.md",
+    "shortcut": "Routi_blolove",
+    "legacy_shortcut": "beas-love",
+    "path": "Routing/beast-law-of-love.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible appendix",
+    "fileName": "crucible-appendix.md",
+    "shortcut": "Routi_cadix",
+    "legacy_shortcut": "crucendix",
+    "path": "Routing/crucible-appendix.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible discovery synthesis",
+    "fileName": "crucible-discovery-synthesis.md",
+    "shortcut": "Routi_cdssis",
+    "legacy_shortcut": "cruchesis",
+    "path": "Routing/crucible-discovery-synthesis.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible future nesting",
+    "fileName": "crucible-future-nesting.md",
+    "shortcut": "Routi_cfning",
+    "legacy_shortcut": "crucsting",
+    "path": "Routing/crucible-future-nesting.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible preamble",
+    "fileName": "crucible-preamble.md",
+    "shortcut": "Routi_cpble",
+    "legacy_shortcut": "crucamble",
+    "path": "Routing/crucible-preamble.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible routing symbols revised (1)",
+    "fileName": "crucible-routing-symbols-revised (1).md",
+    "shortcut": "Routi_crsr((1)",
+    "legacy_shortcut": "Routing_1",
+    "path": "Routing/crucible-routing-symbols-revised (1).md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "crucible routing symbols revised",
+    "fileName": "crucible-routing-symbols-revised.md",
+    "shortcut": "Routi_crsrsed",
+    "legacy_shortcut": "crucvised",
+    "path": "Routing/crucible-routing-symbols-revised.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "daemonic terminology framework",
+    "fileName": "daemonic-terminology-framework.md",
+    "shortcut": "Routi_dtfork",
+    "legacy_shortcut": "daemework",
+    "path": "Routing/daemonic-terminology-framework.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "devils law of love",
+    "fileName": "devils-law-of-love.md",
+    "shortcut": "Routi_dlolove",
+    "legacy_shortcut": "devi-love",
+    "path": "Routing/devils-law-of-love.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "holy law love system",
+    "fileName": "holy-law-love-system.md",
+    "shortcut": "Routi_hllstem",
+    "legacy_shortcut": "holyystem",
+    "path": "Routing/holy-law-love-system.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "sovereignty crucible dissertation",
+    "fileName": "sovereignty-crucible-dissertation.md",
+    "shortcut": "Routi_scdion",
+    "legacy_shortcut": "soveation",
+    "path": "Routing/sovereignty-crucible-dissertation.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  },
+  {
+    "title": "sovereignty hierarchy clarified",
+    "fileName": "sovereignty-hierarchy-clarified.md",
+    "shortcut": "Routi_shcied",
+    "legacy_shortcut": "soveified",
+    "path": "Routing/sovereignty-hierarchy-clarified.md",
+    "category": "Routing",
+    "mediaType": "markdown"
+  }
+]

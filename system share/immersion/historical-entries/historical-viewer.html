@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Entries Viewer - Proof of Concept</title>
+    <link rel="stylesheet" href="historical-viewer.css">
+</head>
+<body>
+    <div id="viewer">
+        <h1>Historical Entries Viewer</h1>
+        <div id="entry-list"></div>
+        <div id="entry-display"></div>
+    </div>
+
+    <!-- Markdown content embedded as non-executing script tags -->
+    <script type="text/markdown" id="mountain-man-ultimatum" data-title="The Mountain Man's Ultimatum" data-category="Future Scenarios">
+# The Mountain Man's Ultimatum: When All Games Are Denied
+
+## The Context (2030)
+
+**The Mountain of a Man speaks**:
+- A Norseman, blonde-haired, blue-eyed, 6'8" tall, descendant of Vikings
+- 0.01% of Scandinavian population
+- Denied territorial games in Norway
+- Denied empty Greenland settlement
+- Denied all peaceful options
+- Left with only two choices: Extinction or war
+
+**The setting**: UN General Assembly, after the 92-89 vote denying pioneer petitions
+
+---
+
+## The Speech: "As I Look Ahead, I Am Filled With Foreboding"
+
+### Part I: The Peaceful Petition
+
+**The Mountain Man addresses the assembly** (2030):
+
+> "I stand before you as a remnant. My people once built longships that crossed oceans..."
+
+[Proof of concept - full content loads from actual .md file]
+    </script>
+
+    <script type="text/markdown" id="rogan-awakening" data-title="The Rogan Awakening" data-category="Cultural Transformation">
+# The Rogan Awakening: When Combat Sports Found Its Ultimate Expression
+
+*A Historical Entry on the Rally of the Combat Sports World to the Great Steppe Games*
+
+---
+
+## Book I: The Pre-Games Era (2020-2087)
+
+### Chapter 1: The Combat Sports Hunger
+
+**The UFC Era**: For decades, combat sports fans watched men fight in cages...
+
+[Proof of concept - full content loads from actual .md file]
+    </script>
+
+    <script type="text/markdown" id="terraformer-bootstrap" data-title="The Terraformer Bootstrap" data-category="Bootstrap Scenarios">
+# The Terraformer Bootstrap
+
+**Entry Type:** Historical Event  
+**Period:** The Great Transition Era  
+**Classification:** Private Sovereignty Initiative
+
+## Overview
+
+The **Terraformer Bootstrap** represents the first scenario...
+
+[Proof of concept - demonstrates loading mechanism]
+    </script>
+
+    <!-- Main application script -->
+    <script>
+        // Extract all embedded markdown entries
+        const entries = [];
+        document.querySelectorAll('script[type="text/markdown"]').forEach(script => {
+            entries.push({
+                id: script.id,
+                title: script.dataset.title,
+                category: script.dataset.category,
+                markdown: script.textContent.trim()
+            });
+        });
+
+        console.log('Loaded entries:', entries.length);
+        entries.forEach(entry => {
+            console.log(`- ${entry.title} (${entry.markdown.length} chars)`);
+        });
+
+        // Simple markdown-to-HTML converter (basic, proof of concept)
+        function convertMarkdown(md) {
+            let html = md;
+            
+            // Headers
+            html = html.replace(/^### (.+)$/gm, '<h4>$1</h4>');
+            html = html.replace(/^## (.+)$/gm, '<h3>$1</h3>');
+            html = html.replace(/^# (.+)$/gm, '<h2>$1</h2>');
+            
+            // Bold and italic
+            html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+            
+            // Lists
+            html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+            
+            // Blockquotes
+            html = html.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+            
+            // Paragraphs
+            html = html.replace(/\n\n/g, '</p><p>');
+            html = '<p>' + html + '</p>';
+            
+            // Cleanup
+            html = html.replace(/<p>\s*<\/p>/g, '');
+            html = html.replace(/<p>(\s*<h[234])/g, '$1');
+            html = html.replace(/(<\/h[234]>)\s*<\/p>/g, '$1');
+            html = html.replace(/<p>(\s*<ul)/g, '$1');
+            html = html.replace(/(<\/ul>)\s*<\/p>/g, '$1');
+            
+            return html;
+        }
+
+        // Render entry list
+        const listDiv = document.getElementById('entry-list');
+        listDiv.innerHTML = '<h2>Available Entries:</h2>' +
+            entries.map(entry => 
+                `<div onclick="showEntry('${entry.id}')" style="cursor: pointer; padding: 10px; margin: 5px 0; border: 1px solid #ccc;">
+                    <strong>${entry.title}</strong> <em>(${entry.category})</em>
+                </div>`
+            ).join('');
+
+        // Show entry
+        function showEntry(id) {
+            const entry = entries.find(e => e.id === id);
+            if (!entry) return;
+            
+            const displayDiv = document.getElementById('entry-display');
+            displayDiv.innerHTML = `
+                <h2>${entry.title}</h2>
+                <div>${convertMarkdown(entry.markdown)}</div>
+            `;
+            
+            console.log('Displaying:', entry.title);
+        }
+
+        console.log('Proof of concept ready. Click an entry to display.');
+    </script>
+</body>
+</html>
+

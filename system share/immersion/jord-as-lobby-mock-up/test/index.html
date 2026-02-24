@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Oblique Mercator Map App</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css">
+    <script src="https://openlayers.org/en/latest/build/ol.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        #map { height: calc(100vh - 50px); width: 100%; }
+        #controls { height: 50px; padding: 10px; background: #f0f0f0; }
+        #search-input { width: 200px; }
+        button { margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <input id="search-input" type="text" placeholder="Search location (e.g., Paris)">
+        <button onclick="searchLocation(document.getElementById('search-input').value)">Search</button>
+        <button onclick="addNewTriad()">Add Triad</button>
+        <button onclick="saveTriads()">Save Triads</button>
+        <button onclick="loadTriads()">Load Triads</button>
+    </div>
+    <div id="map"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

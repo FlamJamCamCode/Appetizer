@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS Strategist - Rally to Real-Time Command</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0f1419 100%);
+            color: #e1e8ed;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(79, 195, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(255, 215, 0, 0.12) 0%, transparent 50%);
+        }
+
+        .strategy-marker {
+            color: #4fc3f7;
+            font-weight: 600;
+        }
+
+        .game-stat {
+            background: rgba(79, 195, 247, 0.15);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="rts-strategist-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="rts-strategist-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="rts-strategist-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: The Simulation
+                <span class="tab-indicator">Playing fake wars</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE LOBBY
+                <span class="tab-indicator">Real strategy awaits</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Commanding reality</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">🎮 BEFORE: The Simulation Prison</h1>
+
+                <div class="pain-block">
+                    Chen Wei. 29 years old. Military Strategy PhD from West Point. 12,000 hours in Starcraft 2. 8,000 hours in Civilization 6. Grandmaster rank both games.
+                    <br><br>
+                    <strong>You're one of the best strategic minds on the planet.</strong>
+                    <br><br>
+                    <span class="neologism">And you're commanding pixels.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="game-stat">SC2 Rank: Grandmaster (Top 200 globally)</div>
+                    <div class="game-stat">Civ6 ELO: 2847 (Top 0.1%)</div>
+                    <div class="game-stat">Tournament Wins: 47</div>
+                    <div class="game-stat">Prize Money: $340,000 total</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        Impressive stats. <strong>Commanding simulated armies.</strong>
+                        <br><br>
+                        Your strategic brilliance deployed on: Games. Pixels. AI opponents. Tournaments where stakes are prize money and bragging rights.
+                        <br><br>
+                        <strong style="color: #4fc3f7;">Your mind capable of commanding armies. Actually commanding StarCraft marines.</strong>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    You watch military documentaries obsessively. Study real battles. Analyze historical campaigns. Understand Clausewitz, Sun Tzu, Boyd's OODA loop.
+                    <br><br>
+                    <strong>You KNOW warfare.</strong> Strategically. Theoretically. Perfectly.
+                    <br><br>
+                    <span class="neologism">And you'll never command real troops. Never test your strategies against actual enemies. Never see if your brilliant tactics work when humans die based on your decisions.</span>
+                </div>
+
+                <div class="pain-block">
+                    Modern military won't give you command: "Too young. No combat experience. Need to work your way up through bureaucracy for 20 years."
+                    <br><br>
+                    By the time you'd get battalion command, you'll be 50. Your strategic peak will have passed.
+                    <br><br>
+                    <strong style="color: #888;">And there's no war anyway. Just peacekeeping. Garrison duty. No real combat to command.</strong>
+                </div>
+
+                <div class="pain-block">
+                    You're playing Starcraft tournament. Managing 200 APM (actions per minute). Microing marines, macroing economy, executing perfect timing push.
+                    <br><br>
+                    You win. $5,000 prize. Crowd cheers.
+                    <br><br>
+                    <strong>And you feel... empty.</strong>
+                    <br><br>
+                    Because it's pixels. Because nobody ACTUALLY died from your strategies. Because commanding simulated armies isn't commanding REAL armies.
+                    <br><br>
+                    <span class="strategy-marker">Your mind is Ferrari being used to play mobile games.</span>
+                </div>
+
+                <div class="pain-block" style="background: rgba(79, 195, 247, 0.2); border-color: #4fc3f7;">
+                    <strong style="color: #4fc3f7; font-size: 1.4em;">Then you discover The Great Steppe Games.</strong>
+                    <br><br>
+                    Real armies. Real battles. Real territorial conquest. But: Respawn islands (no permanent death). Non-lethal weapons (MBC+ compliant). Real-time strategy played with HUMAN pieces.
+                    <br><br>
+                    <strong>Starcraft 2... but with 10,000 actual warriors instead of pixels.</strong>
+                    <br>
+                    <strong>Civilization 6... but with real territory, real resources, real conquest.</strong>
+                    <br><br>
+                    Factions seeking strategic commanders. Offering: Command real armies. Test your strategies. Win glory. Conquer territory.
+                    <br><br>
+                    <strong style="color: #ffd700; font-size: 1.2em;">Your strategic genius deployed on REALITY instead of simulation.</strong>
+                    <br><br>
+                    You press rally immediately. Your daemon knows. <em>This is what you were born for.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">🎯 THE LOBBY</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Real-Time Strategy Made Real</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        The Games offer multiple command scales:
+                    </p>
+                    <ul style="margin-top: 15px; font-size: 1.05em;">
+                        <li><strong>Tactical (10-100 warriors):</strong> Like SC2 micro—positioning, timing, execution</li>
+                        <li><strong>Operational (100-1000 warriors):</strong> Like SC2 macro—economy, production, multi-front coordination</li>
+                        <li><strong>Strategic (1000+ warriors):</strong> Like Civ6—territorial control, diplomacy, long-term planning</li>
+                    </ul>
+                    <p style="margin-top: 20px; line-height: 1.9;">
+                        <strong style="color: #4fc3f7;">Your Starcraft skills TRANSFER. Micro = tactical command. Macro = operational logistics. Strategic vision = territorial conquest planning.</strong>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Factions Seeking Strategic Minds</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">🟡 GOLDEN HORDE - Strategic Warfare Academy</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Philosophy:</strong> Intelligence over courage. Patient analysis. Perfect timing strikes.
+                            <br><strong>Your role:</strong> Strategic command. Plan campaigns. Study enemy patterns. Execute reversals.
+                            <br><strong>Resources:</strong> 11,500 warriors to command. 920,000 km² territory. Real-time intelligence feeds.
+                            <br><strong>Tools:</strong> Satellite imagery, AI analysis, communication networks—RTS player's dream
+                            <br><strong>Stakes:</strong> Your strategies determine territory won/lost. Your tactics determine warrior fates (temporary).
+                            <br><br>
+                            <span class="strategy-marker">Like Starcraft but REAL. 11,500 human pieces. Actual conquest. Your strategies tested against reality.</span>
+                        </p>
+                    </div>
+
+                    <div class="world-card">
+                        <div class="world-name">🎓 War College Integration Program</div>
+                        <p style="line-height: 1.8;">
+                            <strong>The offer:</strong> Train for 6 months in strategy, then command operations
+                            <br><strong>Curriculum:</strong> Military history, Steppe warfare, resource management, human psychology, moral varieties of war
+                            <br><strong>Faculty:</strong> Actual generals with decades of Games experience
+                            <br><strong>Outcome:</strong> Assigned to faction as strategic commander based on performance + philosophical alignment
+                            <br><br>
+                            <span style="color: #888;">If you want formal training before commanding armies.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">What Command Means</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        <strong>Real-time decisions:</strong> 10,000 warriors await your orders. Enemy maneuvering. You have 30 seconds to decide: Attack? Defend? Feint? Retreat?
+                        <br><br>
+                        <strong>Real consequences:</strong> Wrong decision = your warriors "killed" (respawn in weeks). Territory lost. Faction weakened.
+                        <br><br>
+                        <strong>Real stakes:</strong> Win = Glory, territory, wealth. Lose = Humiliation, study what failed, improve.
+                        <br><br>
+                        <strong style="color: #4fc3f7; font-size: 1.2em;">Your APM matters. Your strategic vision matters. Your decisions shape REALITY.</strong>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Commander's Voice</div>
+                    <div class="quote-box">
+                        "I was Starcraft Grandmaster. 10,000+ hours. Mechanical perfection. Strategic excellence. Commanding pixels to victory.
+                        <br><br>
+                        It felt hollow. I was GOOD at fake war. But it was FAKE.
+                        <br><br>
+                        <strong style="color: #4fc3f7;">I rallied to Golden Horde. They gave me command of 500-warrior battalion.</strong>
+                        <br><br>
+                        First real battle: My hands shook. These weren't pixels. These were PEOPLE. My decisions determined their fates.
+                        <br><br>
+                        I won. My timing was perfect (Starcraft trained that). My positioning was optimal (Civ6 taught that). My execution was flawless (10,000 hours transferred).
+                        <br><br>
+                        <strong style="color: #ffd700;">My Starcraft skills WORKED. On reality. My strategies TRANSFERRED. To actual warfare.</strong>
+                        <br><br>
+                        Three years now. I command 2,000 warriors. We've conquered 180,000 km². My strategies studied by other factions. My name known across Steppe.
+                        <br><br>
+                        <span class="strategy-marker">From Grandmaster gamer to legendary commander. From simulation to reality. From pixels to power.</span>"
+                        <br><br>
+                        <span style="color: #4fc3f7;">— Li Chen, 32, Golden Horde Strategic Commander, 2,000 warriors under command</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🎯 First Real Command</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your first battle as commander. 500 warriors under your command. Enemy: 600 Red Banner wolves approaching your position.
+                        <br><br>
+                        You're in command tent. Satellite feed showing troop movements. Real-time intelligence. Communications network.
+                        <br><br>
+                        <strong>This is Starcraft UI. But the units are REAL.</strong>
+                        <br><br>
+                        You give orders: "Battalion 1 to high ground. Battalion 2 flank left. Artillery hold fire until they commit."
+                        <br><br>
+                        <strong style="color: #4fc3f7;">They obey. Real humans moving on YOUR orders. Your strategy about to be REALITY TESTED.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">⚡ First Victory</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Enemy commits. You spring trap. Flanking maneuver perfectly timed (Starcraft timing trained this). High ground advantage exploited (Civ6 taught this).
+                        <br><br>
+                        <strong>YOU WIN. Your 500 defeat their 600.</strong>
+                        <br><br>
+                        Territory conquered: 45 km². Prize money: $180,000 (split with faction). Glory: Your name broadcast to billions.
+                        <br><br>
+                        <strong style="color: #ffd700;">Your strategy WORKED. On REALITY. Against REAL opponents.</strong>
+                        <br><br>
+                        The validation is INTENSE. Years of gaming weren't wasted. Your strategic mind actually WORKS on warfare.
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">📊 Six Months: Studying the Game</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        You're not just commanding. You're STUDYING. The Games are <span class="neologism">moral varieties of war</span>—different honor codes, different rules, different philosophies all competing.
+                        <br><br>
+                        <strong>Red Banner:</strong> Courage-maximizing (frontal assault rewarded, retreat punished)
+                        <br><strong>Golden Horde:</strong> Intelligence-maximizing (cunning rewarded, patience valued)
+                        <br><strong>Mongolian Horde:</strong> Speed-maximizing (audacity rewarded, mobility king)
+                        <br><br>
+                        <strong style="color: #4fc3f7;">Each faction breeds for different virtues. Each creates different warrior culture. You're watching EVOLUTIONARY STRATEGIES compete in real-time.</strong>
+                        <br><br>
+                        This is what military academics DREAM of—laboratory for testing strategic philosophies with real consequences but non-permanent casualties.
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🎖️ One Year: Commander of Thousands</div>
+                    <div class="quote-box" style="background: rgba(79, 195, 247, 0.2); border-color: #4fc3f7;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year ago: Starcraft Grandmaster commanding pixels. Brilliant strategies tested against AI and other gamers. Winning tournaments for prize money.
+                            <br><br>
+                            <strong style="color: #4fc3f7; font-size: 1.2em;">Now: Golden Horde Strategic Commander. 2,000 warriors under my command.</strong>
+                            <br><br>
+                            My record: 47 battles commanded. 39 victories. 8 defeats. Territory conquered: 180,000 km². Prize money: $2.4M earned this year.
+                            <br><br>
+                            <strong>My Starcraft skills TRANSFERRED PERFECTLY:</strong>
+                            <br>• APM → Decision speed under pressure
+                            <br>• Micro → Tactical positioning/timing
+                            <br>• Macro → Logistics/economy/multi-front coordination
+                            <br>• Strategic vision → Long-term territorial planning
+                            <br><br>
+                            <strong style="color: #ffd700; font-size: 1.2em;">But this is REAL. 2,000 humans trust my command. My decisions determine their fates (temporarily). My strategies are reality-tested.</strong>
+                            <br><br>
+                            I'm writing papers: "Moral Varieties of War: How Different Honor Codes Create Different Evolutionary Strategies." Military academics globally studying Games as laboratory for strategic philosophy.
+                            <br><br>
+                            <span class="strategy-marker">From simulation to reality. From gaming to commanding. From pixels to power. This is what strategic minds were MEANT to do.</span>
+                        </p>
+                        <span class="speaker-name">— Chen Wei, 30, Golden Horde Commander, reality-tested strategist</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(79, 195, 247, 0.3), rgba(255, 215, 0, 0.3)); border: 4px double #4fc3f7;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center;">
+                        <strong style="color: #888; font-size: 1.4em;">From Starcraft pixels</strong>
+                        <br><br>
+                        <strong style="color: #4fc3f7; font-size: 1.5em;">To commanding thousands</strong>
+                        <br><br>
+                        <strong style="color: #ffd700; font-size: 1.5em;">To strategies tested by reality</strong>
+                        <br><br>
+                        <span style="color: #4fc3f7; font-size: 1.2em;">🎯 Your mind was MEANT for this 🎯</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

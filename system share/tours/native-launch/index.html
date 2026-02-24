@@ -1,0 +1,188 @@
+﻿<!doctype html>
+<meta charset="utf-8">
+<title>Native Launcher Tour (PoC)</title>
+<style>
+	body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #0b0e12; color: #e6e8eb; }
+	.container { padding: 24px; max-width: 780px; margin: 0 auto; }
+	.card { border: 1px solid #1d232b; border-radius: 8px; padding: 16px; background: #0f141a; }
+	.button { padding: 10px 14px; border: 1px solid #2a3542; border-radius: 6px; background: #16212d; color: #e6e8eb; cursor: pointer; }
+	.small { color: #9aa4af; font-size: 12px; margin-top: 8px; }
+	.input { padding: 8px 10px; border: 1px solid #2a3542; border-radius: 6px; background: #0f141a; color: #e6e8eb; width: 100%; }
+</style>
+<div class="container">
+	<h2>Launch a Native App</h2>
+	<div class="card">
+		<p>This tour demonstrates opening a native application via a custom protocol.</p>
+		<p>Enter a custom URI (e.g., <code>steam://rungameid/570</code> or <code>mygame://launch?level=1</code>):</p>
+		<input id="uri" class="input" placeholder="myapp://action?param=value">
+		<div style="margin-top:12px">
+			<button class="button" id="launch">Request Launch</button>
+		</div>
+		<div class="small">For security, the host will ask permission before opening the external application.</div>
+	</div>
+</div>
+<script>
+	function post(msg) { parent && parent.postMessage({ source: 'tour-app', ...msg }, '*'); }
+	let step = 0; const total = 1; const title = 'Native Launcher Tour (PoC)';
+	function announce() { post({ type: 'state', step, total, title }); }
+	announce();
+	document.getElementById('launch').addEventListener('click', () => {
+		const uri = document.getElementById('uri').value.trim();
+		if (!uri) { alert('Enter a custom URI'); return; }
+		post({ type: 'open', view: 'protocol', uri });
+	});
+</script>
+
+    <script>
+        (function() {
+            if (window.__navVimlikeLoaderAttached) {
+                return;
+            }
+            window.__navVimlikeLoaderAttached = true;
+            var candidates = ['/lib/nav-vimlike.js'];
+            var rel = '';
+            for (var i = 0; i < 8; i++) {
+                rel = rel ? ('../' + rel) : '../';
+                candidates.push(rel + 'lib/nav-vimlike.js');
+            }
+            candidates.push('lib/nav-vimlike.js');
+            var seen = {};
+            candidates = candidates.filter(function(src) {
+                if (seen[src]) { return false; }
+                seen[src] = true;
+                return true;
+            });
+            var index = 0;
+            function loadNext() {
+                if (index >= candidates.length) {
+                    console.error('nav-vimlike.js: unable to load from candidates', candidates);
+                    return;
+                }
+                var src = candidates[index++];
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false;
+                script.onload = function() {
+                    console.info('nav-vimlike.js loaded from', src);
+                };
+                script.onerror = function() {
+                    script.remove();
+                    loadNext();
+                };
+                document.head.appendChild(script);
+            }
+            loadNext();
+        })();
+    </script>
+
+
+    <script>
+        (function() {
+            if (window.__NAV_VIMLIKE_BOOTSTRAP__) {
+                return;
+            }
+            window.__NAV_VIMLIKE_BOOTSTRAP__ = true;
+
+            function ensureTrailingSlash(path) {
+                if (!path) { return ''; }
+                return path.endsWith('/') ? path : path + '/';
+            }
+
+            function tryLoadScript(list, index) {
+                if (!list || index >= list.length) {
+                    console.error('nav-vimlike.js: unable to load from candidates', list);
+                    return;
+                }
+                var src = list[index];
+                if (!src) {
+                    tryLoadScript(list, index + 1);
+                    return;
+                }
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false;
+                script.onload = function() {
+                    console.info('nav-vimlike.js loaded from', src);
+                };
+                script.onerror = function() {
+                    script.remove();
+                    tryLoadScript(list, index + 1);
+                };
+                document.head.appendChild(script);
+            }
+
+            function finalizeLoad() {
+                var base = '';
+                if (typeof window.__NAV_VIMLIKE_BASE === 'string' && window.__NAV_VIMLIKE_BASE.trim().length > 0) {
+                    base = ensureTrailingSlash(window.__NAV_VIMLIKE_BASE.trim());
+                }
+
+                var candidates = [];
+                if (base) {
+                    candidates.push(base + 'nav-vimlike.js');
+                    candidates.push(base + 'lib/nav-vimlike.js');
+                }
+
+                candidates.push('/lib/nav-vimlike.js');
+
+                var rel = '';
+                for (var i = 0; i < 12; i++) {
+                    rel = rel ? ('../' + rel) : '../';
+                    candidates.push(rel + 'lib/nav-vimlike.js');
+                    candidates.push(rel.replace(/\/$/, '') + '/nav-vimlike.js');
+                }
+
+                candidates.push('lib/nav-vimlike.js');
+                candidates.push('nav-vimlike.js');
+
+                var seen = {};
+                candidates = candidates.filter(function(src) {
+                    if (!src || seen[src]) { return false; }
+                    seen[src] = true;
+                    return true;
+                });
+
+                tryLoadScript(candidates, 0);
+            }
+
+            var configCandidates = [];
+            var relConfig = '';
+            configCandidates.push('/lib/config/nav-vimlike-base.js');
+            for (var j = 0; j < 12; j++) {
+                relConfig = relConfig ? ('../' + relConfig) : '../';
+                configCandidates.push(relConfig + 'lib/config/nav-vimlike-base.js');
+            }
+            configCandidates.push('lib/config/nav-vimlike-base.js');
+            configCandidates.push('config/nav-vimlike-base.js');
+
+            function tryConfig(index) {
+                if (index >= configCandidates.length) {
+                    finalizeLoad();
+                    return;
+                }
+                var candidate = configCandidates[index];
+                if (!candidate) {
+                    tryConfig(index + 1);
+                    return;
+                }
+                var script = document.createElement('script');
+                script.src = candidate;
+                script.async = false;
+                script.onload = function() {
+                    finalizeLoad();
+                };
+                script.onerror = function() {
+                    script.remove();
+                    tryConfig(index + 1);
+                };
+                document.head.appendChild(script);
+            }
+
+            if (typeof window.__NAV_VIMLIKE_BASE !== 'undefined') {
+                finalizeLoad();
+            } else {
+                tryConfig(0);
+            }
+        })();
+    </script>
+

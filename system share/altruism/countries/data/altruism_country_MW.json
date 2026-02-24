@@ -1,0 +1,36 @@
+{
+  "country_code": "MW",
+  "name": "Malawi",
+  "approximate": true,
+  "population": 20000000,
+  "gdp_nominal_usd": 14000000000,
+  "gdp_per_capita_usd": 700,
+  "social_spending_pct_gdp": 14.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 5.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1200000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 42000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 60.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Lower respiratory infections",
+    "Diarrheal diseases"
+  ],
+  "notes": [
+    "Malawi is a low-income country with high under-5 mortality and heavy dependence on ODA for health and education.",
+    "Recurrent climate shocks affect food security."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

@@ -1,0 +1,37 @@
+{
+  "country_code": "AF",
+  "name": "Afghanistan",
+  "approximate": true,
+  "population": 40000000,
+  "gdp_nominal_usd": 18000000000,
+  "gdp_per_capita_usd": 450,
+  "social_spending_pct_gdp": 8.0,
+  "health_spending_pct_gdp": 3.0,
+  "education_spending_pct_gdp": 3.0,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 4000000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 50000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 60.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Lower respiratory infections",
+    "Diarrheal diseases",
+    "Maternal causes",
+    "Conflict-related causes"
+  ],
+  "notes": [
+    "Afghanistan has experienced decades of conflict and remains heavily aid-dependent.",
+    "Recent regime change makes fiscal and health data highly uncertain."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "UN and other humanitarian aid statistics"
+  ]
+}
+
+

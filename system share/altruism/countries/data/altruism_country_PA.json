@@ -1,0 +1,34 @@
+{
+  "country_code": "PA",
+  "name": "Panama",
+  "approximate": true,
+  "population": 4500000,
+  "gdp_nominal_usd": 75000000000,
+  "gdp_per_capita_usd": 16600,
+  "social_spending_pct_gdp": 14.0,
+  "health_spending_pct_gdp": 6.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.05,
+  "oda_given_usd": 300000000,
+  "oda_received_usd": 300000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 300000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.05,
+  "child_mortality_under5_per_1000": 16.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Diabetes",
+    "Cancers"
+  ],
+  "notes": [
+    "Panama is a logistics and financial hub around the Canal, with significant offshore finance.",
+    "Domestic social indicators are better than regional average but inequalities remain."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

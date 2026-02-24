@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to The Lobby</title>
+    
+    <!-- Shared Lobby System Styles -->
+    <link rel="stylesheet" href="shared-lobby-tabs.css">
+    <link rel="stylesheet" href="shared-lobby-content.css">
+    
+    <!-- Lobby-Specific Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap');
+
+        body {
+            font-family: 'Spectral', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            color: #d4c5b9;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 15% 25%, rgba(123, 47, 247, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 75%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(72, 61, 139, 0.08) 0%, transparent 70%);
+        }
+
+        .section-title {
+            font-family: 'Crimson Text', serif;
+        }
+
+        .breathe-moment {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.25), rgba(72, 61, 139, 0.2));
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 3px solid rgba(46, 125, 50, 0.5);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+        }
+
+        .breathe-text {
+            font-size: 2.5em;
+            color: #5dff8f;
+            font-weight: 600;
+            letter-spacing: 8px;
+            text-shadow: 0 0 20px rgba(93, 255, 143, 0.6);
+        }
+
+        .provision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .provision-item {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .provision-item:hover {
+            border-color: #ffd700;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .provision-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .worlds-scroll {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 35px 0;
+        }
+
+        .mini-world {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid rgba(123, 47, 247, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .mini-world:hover {
+            border-color: #ffd700;
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .mini-world-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .mini-world-pop {
+            font-size: 0.9em;
+            color: #4fc3f7;
+            margin-top: 10px;
+        }
+
+        .voice-testimony {
+            background: linear-gradient(135deg, rgba(72, 61, 139, 0.3), rgba(139, 69, 19, 0.2));
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #9370db;
+            font-style: italic;
+            line-height: 2;
+            position: relative;
+        }
+
+        .voice-testimony::before {
+            content: '❝';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 5em;
+            color: rgba(147, 112, 219, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        .speaker-name {
+            color: #81c784;
+            font-weight: 600;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .choice-moment {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(123, 47, 247, 0.3));
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 4px double rgba(212, 175, 55, 0.7);
+            text-align: center;
+        }
+
+        .liberation-text {
+            font-size: 1.8em;
+            line-height: 2;
+            color: #ffd700;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <!-- Fluid Tabs Navigation -->
+        <nav class="tabs-nav">
+            <button class="tab-button active" data-tab="before">
+                BEFORE: The Crushing
+                <span class="tab-indicator">What you're escaping</span>
+            </button>
+            <button class="tab-button" data-tab="lobby">
+                THE LOBBY
+                <span class="tab-indicator">The threshold space</span>
+            </button>
+            <button class="tab-button" data-tab="fulfillment">
+                AFTER: The Arrival
+                <span class="tab-indicator">Your new world</span>
+            </button>
+        </nav>
+
+        <!-- Content Container -->
+        <div class="content-container">
+            <!-- BEFORE Panel -->
+            <div class="content-panel active" id="before">
+                <h1 class="section-title">⚔️ BEFORE: The Crushing</h1>
+
+                <div class="pain-block">
+                    Whatever was crushing you — the hunger, the fear, the hands that shouldn't touch, the walls closing in, the voice that diminishes, the poverty that eats your children, the authority that won't listen, the culture that suffocates, the loneliness that screams in silence.
+                </div>
+
+                <div class="pain-block">
+                    You wake up and the weight is already there. Before you even open your eyes. Before you remember what day it is. The weight of being <span class="neologism">wrong-placed</span> in a world that wasn't designed for your shape.
+                </div>
+
+                <div class="pain-block">
+                    Maybe it's hunger. Real hunger. Your children's bellies distended, their eyes too large, their bodies too small. And you can't fix it. You've tried. God, you've tried. But the systems that are supposed to help don't help. And the systems that hurt keep hurting.
+                </div>
+
+                <div class="pain-block">
+                    Maybe it's fear. The door opening. The footsteps. The voice that means pain is coming. You've learned to predict it. To make yourself small. To disappear into the walls. But it finds you anyway. It always finds you.
+                </div>
+
+                <div class="pain-block">
+                    Maybe it's suffocation. Cultural expectations that crush who you actually are into shapes that fit their mold. Do this. Don't do that. Be this. Don't be that. And if you resist? Shame. Exile. Violence. You're trapped in a story someone else wrote, playing a character that isn't you.
+                </div>
+
+                <div class="pain-block">
+                    Maybe it's meaninglessness. You wake up, go to work, do tasks that don't matter, come home, sleep, wake up, repeat. For years. For decades. Your mind capable of so much, wasted on so little. Your life passing while you perform productivity for someone else's profit.
+                </div>
+
+                <div class="pain-block">
+                    Maybe it's loneliness. Surrounded by people who don't see you. Who see a role, a category, a function. But not YOU. The person you actually are underneath all the performance. You could disappear and they wouldn't notice you were gone. They'd just notice the function wasn't being performed.
+                </div>
+
+                <div class="pain-block">
+                    You've thought about escape. Of course you have. Who wouldn't? But escape seemed impossible. You don't have money. Don't have connections. Don't have power. Don't have options.
+                    <br><br>
+                    The systems designed to help are gatekept by people who don't care. The doors out are locked by those who benefit from your staying. The leaving costs are so high you can't afford them.
+                    <br><br>
+                    <span class="sacred-emphasis">You're trapped. Or so you thought.</span>
+                </div>
+
+                <div class="pain-block" style="background: rgba(46, 125, 50, 0.2); border-color: #2e7d32;">
+                    <strong style="color: #5dff8f; font-size: 1.4em;">Then you find it.</strong>
+                    <br><br>
+                    A button. A choice. An exit that doesn't require permission.
+                    <br><br>
+                    <strong style="color: #ffd700;">MBC Rule 3: You have the absolute right to leave.</strong>
+                    <br><br>
+                    No imprisonment without land. You can rally to ANY functional world that accepts you.
+                    <br><br>
+                    Not when someone says you're ready. Not when you've "earned it." Not when you've suffered enough.
+                    <br><br>
+                    <em>Now.</em> This moment. Today.
+                    <br><br>
+                    Your finger hovers over the button. Your heart pounds. Your mind races with doubt: What if it doesn't work? What if they bring me back? What if I fail?
+                    <br><br>
+                    <strong style="color: #5dff8f; font-size: 1.3em;">You press it anyway.</strong>
+                </div>
+            </div>
+
+            <!-- LOBBY Panel -->
+            <div class="content-panel" id="lobby">
+                <h1 class="section-title">🌟 THE LOBBY</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">The Extraction is Instant</div>
+                    <p style="line-height: 2; font-size: 1.15em;">
+                        One moment you're there. The next: neutral space.
+                        <br><br>
+                        You're somewhere else. Not a physical place you can point to on a map. But somewhere SAFE. Somewhere <span class="neologism">obligation-dissolved</span>. Somewhere nobody can reach you.
+                        <br><br>
+                        The person who hurt you? Can't find you here.
+                        <br>The authority that trapped you? Has no power here.
+                        <br>The culture that crushed you? Doesn't exist here.
+                        <br>The poverty that ate you? Ended the moment you arrived.
+                        <br><br>
+                        <strong style="color: #5dff8f; font-size: 1.3em;">The pain stops first.</strong>
+                    </p>
+                </div>
+
+                <div class="breathe-moment">
+                    <p class="breathe-text">B R E A T H E</p>
+                    <p style="margin-top: 25px; font-size: 1.2em; color: #81c784; line-height: 2;">
+                        You are safe. You are untouchable. You are free.
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">The Provisions Appear Without Asking</div>
+                    
+                    <div class="provision-grid">
+                        <div class="provision-item">
+                            <div class="provision-icon">🍲</div>
+                            <strong style="color: #ffd700;">Food That Fills</strong>
+                            <p style="margin-top: 10px; line-height: 1.7;">
+                                Not rations. Not charity you have to beg for. Just food. Good food. As much as you need. You don't have to earn it.
+                            </p>
+                        </div>
+                        <div class="provision-item">
+                            <div class="provision-icon">🛏️</div>
+                            <strong style="color: #ffd700;">Shelter That Warms</strong>
+                            <p style="margin-top: 10px; line-height: 1.7;">
+                                A bed. Your bed. A space. Your space. No one can take it. No one can enter without permission. It's yours.
+                            </p>
+                        </div>
+                        <div class="provision-item">
+                            <div class="provision-icon">🩺</div>
+                            <strong style="color: #ffd700;">Care That Heals</strong>
+                            <p style="margin-top: 10px; line-height: 1.7;">
+                                Medical attention if you need it. Therapy if you want it. Rest if that's what you need. Time. Space. Gentleness.
+                            </p>
+                        </div>
+                        <div class="provision-item">
+                            <div class="provision-icon">⏳</div>
+                            <strong style="color: #ffd700;">Time Without Pressure</strong>
+                            <p style="margin-top: 10px; line-height: 1.7;">
+                                Days. Weeks. However long you need. Nobody rushes you. Nobody demands. The Lobby doesn't care. It just waits.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p style="line-height: 2; font-size: 1.15em; margin-top: 30px; text-align: center;">
+                        You don't have to earn these things. You don't have to explain yourself. You don't have to prove you're worthy.
+                        <br><br>
+                        <strong style="color: #ffd700; font-size: 1.2em;">You just are, and that is enough.</strong>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Then the Worlds Appear</div>
+                    <p style="line-height: 2; font-size: 1.15em; margin-bottom: 35px;">
+                        Not as ideas. Not as distant dreams. As <strong>real places you can actually go.</strong>
+                        <br><br>
+                        The AR interface blooms around you like flowers opening at dawn. Hundreds of them. Each one a complete world. Each one waiting. Each one saying: <span class="neologism">"Come. Try. See if this fits."</span>
+                    </p>
+
+                    <div class="worlds-scroll">
+                        <div class="mini-world">
+                            <div class="mini-world-icon">🌸</div>
+                            <strong style="color: #ffd700;">Women's Sanctuary</strong>
+                            <p style="margin-top: 12px; line-height: 1.7; font-size: 0.95em;">
+                                Collective work, gardens and workshops, laughter echoing through courtyards. No men. No pressure. Just building something different.
+                            </p>
+                            <div class="mini-world-pop">5,347 women</div>
+                        </div>
+
+                        <div class="mini-world">
+                            <div class="mini-world-icon">🏙️</div>
+                            <strong style="color: #ffd700;">Tech-Urban Collective</strong>
+                            <p style="margin-top: 12px; line-height: 1.7; font-size: 0.95em;">
+                                Democratic governance, gift economy, polyamorous warmth, innovation and minds on fire with possibility.
+                            </p>
+                            <div class="mini-world-pop">12,089 beings</div>
+                        </div>
+
+                        <div class="mini-world">
+                            <div class="mini-world-icon">🌲</div>
+                            <strong style="color: #ffd700;">Wilderness Learning</strong>
+                            <p style="margin-top: 12px; line-height: 1.7; font-size: 0.95em;">
+                                Young and old together, learning from earth and sky, minimal technology, maximum presence. Feel instead of produce.
+                            </p>
+                            <div class="mini-world-pop">847 souls</div>
+                        </div>
+
+                        <div class="mini-world">
+                            <div class="mini-world-icon">👵</div>
+                            <strong style="color: #ffd700;">Elder Wisdom Haven</strong>
+                            <p style="margin-top: 12px; line-height: 1.7; font-size: 0.95em;">
+                                Elders respected, wisdom honored, care given freely, time slowing to human rhythm. Finally valued for what you know.
+                            </p>
+                            <div class="mini-world-pop">2,156 elders</div>
+                        </div>
+
+                        <div class="mini-world">
+                            <div class="mini-world-icon">🎮</div>
+                            <strong style="color: #ffd700;">Youth Collective</strong>
+                            <p style="margin-top: 12px; line-height: 1.7; font-size: 0.95em;">
+                                Peer-governed, learning through play, building through joy, discovering who they are without adults crushing them.
+                            </p>
+                            <div class="mini-world-pop">3,672 youth</div>
+                        </div>
+
+                        <div class="mini-world">
+                            <div class="mini-world-icon">🗺️</div>
+                            <strong style="color: #ffd700;">Nomadic Builders</strong>
+                            <p style="margin-top: 12px; line-height: 1.7; font-size: 0.95em;">
+                                Moving from place to place, creating infrastructure for those who need it, adventure and meaning woven together.
+                            </p>
+                            <div class="mini-world-pop">1,923 wanderers</div>
+                        </div>
+                    </div>
+
+                    <p style="line-height: 2; font-size: 1.2em; margin-top: 40px; text-align: center; color: #da70d6; font-style: italic;">
+                        There — there — there —
+                        <br><br>
+                        347 distinct worlds unfold before you. Each one different. Each one real.
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">The Voices Reach You</div>
+                    <p style="line-height: 2; font-size: 1.1em; margin-bottom: 30px;">
+                        Not pressure. Not sales pitches. Stories.
+                        <br><br>
+                        Hundreds of people who walked this path before you, who tried different worlds, who found what fit. They're not selling anything. They're just showing you it's possible.
+                    </p>
+
+                    <div class="voice-testimony">
+                        <p style="padding-top: 30px;">
+                            I was where you are. Beaten daily. Children starving. No way out — I thought.
+                            <br><br>
+                            Then I found the button. I came here. I tried three Triads before I found the right one.
+                            <br><br>
+                            Now my children are in university. Now I sleep without fear. Now I laugh again.
+                            <br><br>
+                            I didn't know I could still laugh.
+                        </p>
+                        <span class="speaker-name">— Maria, 41, escaped domestic violence, now safe in Mediterranean Life Haven</span>
+                    </div>
+
+                    <div class="voice-testimony">
+                        <p style="padding-top: 30px;">
+                            I was bullied every day. Parents didn't see. Teachers didn't care. I wanted to die.
+                            <br><br>
+                            Then I found this place. The youth collective — we govern ourselves. No adults telling us we're wrong.
+                            <br><br>
+                            I've been here two years. I'm learning to code. I have friends. Real ones.
+                            <br><br>
+                            I didn't think that was possible for someone like me.
+                        </p>
+                        <span class="speaker-name">— River, 19, rallied at 15, now thriving in Kingdom of Beautiful Misfits</span>
+                    </div>
+
+                    <div class="voice-testimony">
+                        <p style="padding-top: 30px;">
+                            Corporate job. Soul death. 40 years of meaningless tasks for someone else's profit.
+                            <br><br>
+                            Then I pressed exit. Found an elder community. We teach the young. We garden. We talk about philosophy at sunset.
+                            <br><br>
+                            I'm 73. I'm finally alive.
+                        </p>
+                        <span class="speaker-name">— Harold, 73, rallied after retirement, found meaning in Elder Wisdom Haven</span>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">You Explore</div>
+                    <p style="line-height: 2; font-size: 1.1em;">
+                        Virtual tours bloom around you — not perfect marketing, but real footage.
+                        <br><br>
+                        You see the <strong>morning in Triad #89:</strong> people gathering for breakfast, children running through gardens, someone fixing a solar panel, someone else painting a mural on a wall, laughter over coffee, an elder teaching a child to weave.
+                        <br><br>
+                        You see the <strong>evening in Triad #156:</strong> women returning from fields, sharing the day's stories, preparing communal dinner, small hands helping big hands chop vegetables, singing in languages you've never heard but somehow understand mean "we are together, and that is enough."
+                        <br><br>
+                        You see the <strong>night in Triad #312:</strong> nomads around a fire in a new location, sharing what they built this month, planning next month's journey, someone playing guitar, someone else gazing at stars, the contentment of purpose fulfilled and more purpose waiting.
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">The Lobby Listens</div>
+                    <p style="line-height: 2; font-size: 1.1em;">
+                        You can filter by what you need:
+                    </p>
+                    <ul style="margin: 25px 0; font-size: 1.05em;">
+                        <li>"Must have: children safe, education available, medical care"</li>
+                        <li>"Must have: women-only space, no romantic pressure"</li>
+                        <li>"Must have: creative work, innovation encouraged, experimentation allowed"</li>
+                        <li>"Must have: elder respect, wisdom valued, care given"</li>
+                        <li>"Must have: adventure, movement, building something meaningful"</li>
+                    </ul>
+                    <p style="line-height: 2; font-size: 1.1em; margin-top: 25px;">
+                        The options refine. Of the 347 Triads, 23 match what you need most.
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">You Talk to Residents</div>
+                    <p style="line-height: 2; font-size: 1.1em; margin-bottom: 25px;">
+                        Not required. Not pressure. But they're available if you want.
+                    </p>
+
+                    <div class="quote-box">
+                        <strong style="color: #4fc3f7;">You to Triad #89:</strong> "Tell me what it's really like. The reviews say it's good for children. Is that true? Will mine be safe?"
+                        <br><br>
+                        <strong style="color: #ffd700;">Mother responds:</strong> "My daughter was dying when we arrived. Malnutrition. Now she's 9, healthy, in school, learning three languages. She laughs every day. I don't know what else to tell you except: she's alive. She's thriving. They're safe here."
+                    </div>
+
+                    <div class="quote-box">
+                        <strong style="color: #4fc3f7;">You to Triad #156:</strong> "I've never been without a man telling me what to do. How do I know I won't fall apart?"
+                        <br><br>
+                        <strong style="color: #ffd700;">Woman responds:</strong> "You won't fall apart. You'll discover who you actually are. It takes time. It's scary. But there are 200 of us here who made that journey. You wouldn't be alone."
+                    </div>
+
+                    <div class="quote-box">
+                        <strong style="color: #4fc3f7;">You to Triad #312:</strong> "I'm old. Used up. What could I possibly contribute?"
+                        <br><br>
+                        <strong style="color: #ffd700;">Elder responds:</strong> "Old? You know things. You've lived. We need that. We're building hospitals in places that have none. We need wisdom, not just strength. You're not used up. You're ready."
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Time Passes</div>
+                    <p style="line-height: 2; font-size: 1.15em;">
+                        You're not rushed. Days, maybe. Weeks. The Lobby doesn't care. The provisions keep coming. The interface stays open. The worlds keep turning, waiting.
+                        <br><br>
+                        You narrow your choices. Three Triads feel right. You apply to all three.
+                        <br><br>
+                        Triad #89 accepts you. Triad #156 accepts you. Triad #312 says "not quite the right match, but try Triad #187 — they need someone with your particular skills."
+                        <br><br>
+                        You explore Triad #187. It's perfect. You apply. They accept.
+                        <br><br>
+                        <strong style="color: #ffd700; font-size: 1.3em;">The moment arrives.</strong>
+                    </p>
+                </div>
+
+                <div class="choice-moment">
+                    <p class="liberation-text">
+                        You choose Triad #187.
+                        <br><br>
+                        Transport is arranged.
+                        <br><br>
+                        You leave The Lobby.
+                        <br><br>
+                        <span style="color: #5dff8f;">You enter your new world.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- FULFILLMENT Panel -->
+            <div class="content-panel" id="fulfillment">
+                <h1 class="section-title">✨ AFTER: The Arrival</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🌅 The First Greeting</div>
+                    <p style="line-height: 2; font-size: 1.15em;">
+                        You arrive at your new world.
+                        <br><br>
+                        The people greet you — not performing, just welcoming. Their faces are open. Their smiles are real. They're not evaluating you. They're not judging. They're just... glad you're here.
+                        <br><br>
+                        Someone shows you your space. Someone else explains the daily rhythm. A child brings you food ("We made extra. Welcome!"). An elder asks what skills you have ("We can always use another pair of hands"). A peer your age says, "I was in the Lobby two months ago. I understand. It gets easier."
+                        <br><br>
+                        <strong style="color: #5dff8f;">They understand. They've been where you are. They know.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🌙 The First Night</div>
+                    <p style="line-height: 2; font-size: 1.15em;">
+                        That first night in your new world, you sleep in a bed that's yours, in a space that's safe, in a community that chose you as much as you chose them.
+                        <br><br>
+                        The sounds outside aren't threatening. They're just... life. People talking quietly. Someone laughing. Crickets singing. Wind in trees.
+                        <br><br>
+                        You realize: <span class="neologism">Your stomach doesn't hurt.</span>
+                        <br><br>
+                        That baseline tension you've carried for so long — the constant <span class="neologism">danger-sense</span>, the <span class="neologism">wrong-place-feeling</span>, the <span class="neologism">waiting-for-pain</span> — it's gone.
+                        <br><br>
+                        <strong style="color: #5dff8f; font-size: 1.3em;">You're safe. Actually safe. For the first time in... how long?</strong>
+                        <br><br>
+                        You might cry. That's okay. They expect that. They understand that too.
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">☀️ The First Week</div>
+                    <p style="line-height: 2; font-size: 1.15em;">
+                        You wake up each morning and forget, for a moment, where you are. Panic rises — then you remember. You're not there anymore. You're here. You're safe.
+                        <br><br>
+                        The rhythm of this new world becomes familiar:
+                        <br><br>
+                        Morning: Breakfast with others. Not forced. Just there if you want it. Conversation flows easy. Nobody interrogating. Nobody demanding. Just... talking. Sharing. Being.
+                        <br><br>
+                        Day: You contribute what you can. Maybe you help in the garden. Maybe you watch children while parents work. Maybe you just rest (that's valid too — they understand you're still recovering). Your contribution is appreciated, not extracted.
+                        <br><br>
+                        Evening: Community gathering. Music, sometimes. Stories. Laughter. You can participate or just watch. Both are fine. Nobody performing. Nobody proving anything. Just existing together.
+                        <br><br>
+                        <strong style="color: #ffd700;">You start to relax. Your shoulders drop. Your jaw unclenches. Your body remembers what safety feels like.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🌱 The First Month</div>
+                    <p style="line-height: 2; font-size: 1.15em;">
+                        One month in, you realize: You've stopped counting days until you can leave.
+                        <br><br>
+                        You're not waiting anymore. Not enduring. Not surviving.
+                        <br><br>
+                        You're... living. Actually living.
+                        <br><br>
+                        You have friends now. Real ones. People who know your name, ask how you're doing, notice if you're gone. People who've heard your story (as much as you wanted to share) and didn't pity you or judge you or try to fix you. Just... held space for you.
+                        <br><br>
+                        You're contributing more. Not because you have to, but because you want to. Because you're part of something being built. Because your hands can help. Because purpose feels better than emptiness.
+                        <br><br>
+                        You sleep through the night now. Most nights. When you don't, someone's there. They've been through it. They understand nightmares. They sit with you. They don't minimize. They just... witness.
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🌳 Six Months Later</div>
+                    <p style="line-height: 2; font-size: 1.15em;">
+                        Six months in, you barely recognize yourself.
+                        <br><br>
+                        Not because you've changed who you are. But because you've become MORE of who you actually are. The performance dropped. The survival mechanisms relaxed. The real you — the one that was buried under all the coping and hiding and pretending — is emerging.
+                        <br><br>
+                        You laugh more. Genuine laughter, not performed. You have opinions you express out loud. You have preferences you state clearly. You have boundaries you enforce calmly.
+                        <br><br>
+                        People here respect that. Actually respect it. They don't push. They don't punish. They don't demand you shrink to make them comfortable.
+                        <br><br>
+                        <strong style="color: #5dff8f;">This is what it feels like to be in a <span class="neologism">right-shaped world</span>.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">💫 One Year Later</div>
+                    <div class="quote-box" style="background: rgba(46, 125, 50, 0.3); border-color: #2e7d32; font-size: 1.1em;">
+                        <p style="padding-top: 30px;">
+                            Someone asked me yesterday if I missed my old life.
+                            <br><br>
+                            I laughed. Actually laughed.
+                            <br><br>
+                            Miss what? The fear? The hunger? The crushing? The feeling of being fundamentally powerless?
+                            <br><br>
+                            I don't miss it. I don't even think about it anymore except when I'm in the Lobby as a volunteer, talking to new arrivals, telling them what I'm telling you:
+                            <br><br>
+                            <strong style="color: #5dff8f; font-size: 1.2em;">It gets better. Actually better. Not fake-better where you just cope harder. Real better.</strong>
+                            <br><br>
+                            Where you wake up and your first thought isn't dread.
+                            <br>Where you have people who actually see you.
+                            <br>Where your children are safe.
+                            <br>Where your work has meaning.
+                            <br>Where your existence is enough.
+                            <br><br>
+                            Pressing that button — leaving that world that was killing me — was the bravest thing I ever did. And the smartest.
+                            <br><br>
+                            I'm not who I was a year ago. That person was breaking. Barely holding on. Waiting for the final collapse.
+                            <br><br>
+                            <strong style="color: #ffd700; font-size: 1.2em;">This person? This person is THRIVING.</strong>
+                            <br><br>
+                            And it started with pressing a button.
+                        </p>
+                        <span class="speaker-name" style="font-size: 1.05em;">— You, one year from now, if you press the button</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(123, 47, 247, 0.3)); border-color: #d4af37;">
+                    <div class="moment-title" style="color: #d4af37;">⟨ And If It's Not Perfect? ⟩</div>
+                    <p style="line-height: 2.2; font-size: 1.15em; text-align: center;">
+                        You still have the button.
+                        <br><br>
+                        You can press it anytime. Return to the Lobby. Try a different Triad. Iterate until you find the one that fits like home.
+                        <br><br>
+                        <strong style="color: #ffd700;">This isn't a prison. This is a garden with 347 paths.</strong>
+                        <br><br>
+                        Walk one. If it doesn't feel right, walk another. Keep walking until you find the path that feels like <span class="neologism">coming-home</span>.
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(46, 125, 50, 0.35), rgba(212, 175, 55, 0.35)); border: 4px double rgba(212, 175, 55, 0.7);">
+                    <div class="moment-title" style="color: #d4af37; font-size: 2em;">⟨ This Is The Lobby ⟩</div>
+                    <p style="line-height: 2.3; font-size: 1.2em; margin-top: 30px;">
+                        Not a room. Not a waiting area.
+                        <br><br>
+                        <span style="color: #9370db; font-style: italic;">A threshold between worlds.</span>
+                        <br><br>
+                        The place where hurt ends and choice begins.
+                        <br><br>
+                        The space where you catch your breath, see what's possible, talk to those who've walked this path, and choose <em>your</em> world.
+                        <br><br>
+                        Not <em>the</em> world. Not society's world. Not the authority's world. Not the one you were born into and told to accept.
+                        <br><br>
+                        <strong style="color: #ffd700; font-size: 1.4em;">Your world.</strong>
+                        <br><br>
+                        The one that fits your shape, honors your values, holds your children gently, sees your worth, gives you purpose, lets you breathe.
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(123, 47, 247, 0.3), rgba(46, 125, 50, 0.3)); border: 4px solid rgba(93, 255, 143, 0.6);">
+                    <p style="line-height: 2.5; font-size: 1.3em; text-align: center;">
+                        <strong style="color: #5dff8f; font-size: 1.3em; letter-spacing: 2px;">You are not trapped.</strong>
+                        <br><br>
+                        <strong style="color: #5dff8f; font-size: 1.3em; letter-spacing: 2px;">You are not powerless.</strong>
+                        <br><br>
+                        <strong style="color: #5dff8f; font-size: 1.3em; letter-spacing: 2px;">You are not alone.</strong>
+                        <br><br><br>
+                        <span style="color: #ffd700; font-size: 1.1em;">Press the button when you're ready.</span>
+                        <br><br>
+                        <span style="color: #da70d6; font-style: italic;">
+                        The Lobby is waiting.
+                        <br>347 worlds are waiting.
+                        <br>The people who understand are waiting.
+                        </span>
+                        <br><br><br>
+                        <span style="color: #d4af37; font-size: 1.15em;">
+                        Exit the hurt.
+                        <br>Enter the worlds.
+                        </span>
+                        <br><br><br>
+                        <strong style="color: #5dff8f; font-size: 1.5em; letter-spacing: 3px; text-shadow: 0 0 20px rgba(93, 255, 143, 0.8);">
+                        Welcome to The Lobby.
+                        <br>Welcome to liberation.
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="nav-arrow left" id="prevArrow" title="Previous Tab (← Arrow Key)">‹</div>
+        <div class="nav-arrow right" id="nextArrow" title="Next Tab (→ Arrow Key)">›</div>
+
+        <!-- Keyboard Shortcuts Hint -->
+        <div class="shortcuts-hint">
+            <strong style="color: #ffd700;">Tabs:</strong> 
+            <span class="shortcut-key">←</span> <span class="shortcut-key">→</span> Switch
+            <span class="shortcut-key">1</span><span class="shortcut-key">2</span><span class="shortcut-key">3</span> Jump
+            <br>
+            <strong style="color: #81c784;">Sections:</strong>
+            <span class="shortcut-key">↑</span> <span class="shortcut-key">↓</span> Navigate
+            or click dots →
+        </div>
+    </div>
+
+    <!-- Shared Lobby System JavaScript -->
+</body>
+</html>
+

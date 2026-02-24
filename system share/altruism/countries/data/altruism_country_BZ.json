@@ -1,0 +1,34 @@
+{
+  "country_code": "BZ",
+  "name": "Belize",
+  "approximate": true,
+  "population": 400000,
+  "gdp_nominal_usd": 2500000000,
+  "gdp_per_capita_usd": 6250,
+  "social_spending_pct_gdp": 14.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 7.0,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 100000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 7000000,
+  "volunteering_rate_pct_adults": 25.0,
+  "volunteer_hours_billion": 0.02,
+  "child_mortality_under5_per_1000": 15.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Diabetes",
+    "Injuries"
+  ],
+  "notes": [
+    "Belize is a small lower-middle-income country with tourism, agriculture, and offshore services.",
+    "Environmental vulnerability to hurricanes and reef degradation is high."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

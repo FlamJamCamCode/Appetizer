@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roguelike Master - Rally to Adaptive Warfare</title>
+    
+    <link rel="stylesheet" href="../shared-lobby-tabs.css">
+    <link rel="stylesheet" href="../shared-lobby-content.css">
+    
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #140a00 0%, #281400 50%, #140a00 100%);
+            color: #ffe6cc;
+        }
+
+        .content-panel {
+            background-image: 
+                radial-gradient(ellipse at 25% 35%, rgba(255, 87, 34, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 65%, rgba(121, 85, 72, 0.1) 0%, transparent 50%);
+        }
+
+        .roguelike-marker {
+            color: #ff5722;
+            font-weight: bold;
+        }
+
+        .adapt-skill {
+            color: #795548;
+            font-weight: 600;
+        }
+
+        .rl-stat {
+            background: rgba(255, 87, 34, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <input checked="" class="tab-toggle" data-panel="before" id="tab-before" name="roguelike-tabs" type="radio">
+        <input class="tab-toggle" data-panel="lobby" id="tab-lobby" name="roguelike-tabs" type="radio">
+        <input class="tab-toggle" data-panel="fulfillment" id="tab-fulfillment" name="roguelike-tabs" type="radio">
+        <nav class="tabs-nav">
+            <label class="tab-button" data-panel="before" for="tab-before">
+                BEFORE: Adapting to RNG
+                <span class="tab-indicator">1,900 hours mastering uncertainty</span>
+            </label>
+            <label class="tab-button" data-panel="lobby" for="tab-lobby">
+                THE CALL
+                <span class="tab-indicator">Real uncertainty warfare</span>
+            </label>
+            <label class="tab-button" data-panel="fulfillment" for="tab-fulfillment">
+                FULFILLMENT
+                <span class="tab-indicator">Adaptation mastery</span>
+            </label>
+        </nav>
+
+        <div class="content-container">
+            <!-- BEFORE -->
+            <section class="content-panel" data-panel="before" id="before">
+                <h1 class="section-title">🎲 BEFORE: Roguelike Life</h1>
+
+                <div class="pain-block">
+                    Sam "Adaptive" Chen. 25 years old. 1,900 hours roguelikes (Hades, Slay the Spire, Binding of Isaac, Dead Cells). ADAPTATION GENIUS. No two runs same. RNG forces creativity. Make do with what you GET. Decision-making under UNCERTAINTY mastery.
+                    <br><br>
+                    <strong>You DON'T get perfect loadout. You get RANDOM items. Must make it WORK. Adapt strategy to resources given. WIN with WHATEVER you have. ADAPTATION DAEMON.</strong>
+                    <br><br>
+                    <span class="neologism">And your adaptation genius deployed on: Working with random pixel items.</span>
+                </div>
+
+                <div class="pain-block">
+                    <div class="rl-stat">Roguelike hours: 1,900</div>
+                    <div class="rl-stat">Runs completed: 2,400+</div>
+                    <div class="rl-stat">Win rate: 34% (high for roguelikes)</div>
+                    <div class="rl-stat">Ascension 20 clears: 89</div>
+                    <div class="rl-stat">Builds improvised: Thousands</div>
+                    <br><br>
+                    <p style="margin-top: 15px; line-height: 1.9;">
+                        <strong style="color: #ff5722;">Your roguelike skills:</strong>
+                        <br>• <strong>Adaptation to RNG:</strong> Get random items, make WORK (can't plan perfect build)
+                        <br>• <strong>Decision under uncertainty:</strong> Choose this path or that? Don't know what's ahead. Decide anyway.
+                        <br>• <strong>Resource scarcity:</strong> Never have everything you want, optimize what you HAVE
+                        <br>• <strong>Risk evaluation:</strong> Take this risky room for reward? Or safe path?
+                        <br>• <strong>Build creativity:</strong> "This item trash alone, but SYNERGIZES with that item = OP combo"
+                        <br>• <strong>Fail forward:</strong> Run fails? Learn. Next run incorporate lesson. Permanent progress through knowledge.
+                        <br>• <strong>Meta-knowledge:</strong> Know ALL possible items, ALL synergies, ALL enemies (mastery through repetition)
+                        <br>• <strong>Opportunistic thinking:</strong> Got bad items? Find creative use. Got good items? Exploit fully.
+                        <br><br>
+                        <span class="roguelike-marker">You're ADAPTER. IMPROVISER. UNCERTAINTY MASTER. You win with WHATEVER you're given. Not perfect tools. ANY tools.</span>
+                    </p>
+                </div>
+
+                <div class="pain-block">
+                    <strong>Your roguelike philosophy:</strong>
+                    <br><br>
+                    Bad players: "Bad RNG. Can't win without perfect items." Quit.
+                    <br><br>
+                    You: "Got weak starting deck. Okay. What CAN I do? This card synergizes with that. This path avoids my weakness. This elite fight gives item I need. Adapt. Improvise. WIN anyway."
+                    <br><br>
+                    <strong style="color: #ff5722;">Ascension 20 Slay the Spire: RNG is BRUTAL. Getting bad cards is COMMON. You win ANYWAY. Through adaptation. Through creative builds. Through making SUBOPTIMAL work.</strong>
+                    <br><br>
+                    <span class="adapt-skill">Roguelikes teach: Work with what you HAVE. Not what you WANT. Adapt. Improvise. Find synergies nobody else sees. WIN under uncertainty.</span>
+                </div>
+
+                <div class="pain-block">
+                    <strong>What roguelikes teach (that other games don't):</strong>
+                    <br><br>
+                    <strong>Most games:</strong> You choose your loadout. Plan perfectly. Execute plan.
+                    <br><br>
+                    <strong>Roguelikes:</strong> RNG gives you RANDOM stuff. Can't plan perfect build. MUST adapt. Make suboptimal work. Find creative synergies.
+                    <br><br>
+                    <strong style="color: #795548;">This is REAL WARFARE. You DON'T get perfect resources. DON'T get perfect conditions. Must make do. ADAPT. WIN anyway. Roguelikes train ADAPTATION UNDER UNCERTAINTY.</strong>
+                </div>
+
+                <div class="pain-block">
+                    Real job: Tech support. $40k/year. "Try restarting your computer." Every problem different. Must adapt to each.
+                    <br><br>
+                    <strong>Your adaptation genius ACTUALLY useful here. But: Problems are mundane. "Forgot password" isn't interesting uncertainty.</strong>
+                </div>
+
+                <div class="pain-block" style="background: rgba(255, 87, 34, 0.2); border-color: #ff5722;">
+                    <strong style="color: #ff5722; font-size: 1.4em;">Then you discover: Great Steppe missions are FULL of uncertainty.</strong>
+                    <br><br>
+                    <strong>Your roguelike adaptation skills = PERFECT for dynamic operations.</strong>
+                    <br><br>
+                    Real warfare = Uncertainty. Plans fail. Resources scarce. Conditions change. Enemy unpredictable. Must ADAPT.
+                    <br><br>
+                    Need operatives who:
+                    <br>• Adapt to uncertainty (situations change, must improvise)
+                    <br>• Make do with available resources (never have perfect setup)
+                    <br>• Creative problem-solving (find unconventional solutions)
+                    <br>• Risk evaluation under uncertainty (imperfect information, decide anyway)
+                    <br>• Learn from failure (mission fails? Incorporate lesson. Try different approach.)
+                    <br><br>
+                    <strong style="color: #795548; font-size: 1.2em;">This is ROGUELIKE THINKING. But warfare. Uncertainty. Adaptation. Improvisation. Your 1,900 hours TRANSFER.</strong>
+                    <br><br>
+                    You rally immediately. <em>Finally. Adaptation daemon deployed on reality.</em>
+                </div>
+            </section>
+
+            <!-- LOBBY -->
+            <section class="content-panel" data-panel="lobby" id="lobby">
+                <h1 class="section-title">🎲 THE CALL</h1>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Roguelike Skills Transfer</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Your roguelike skills → Dynamic operations:
+                        <br><br>
+                        <strong style="color: #ff5722;">ADAPTATION TO UNCERTAINTY</strong>
+                        <br>• Roguelike: Random items, make them work
+                        <br>• Steppe: Unpredictable conditions, adapt strategy
+                        <br><br>
+                        <strong style="color: #ff5722;">RESOURCE OPTIMIZATION</strong>
+                        <br>• Roguelike: Never perfect loadout, optimize what you HAVE
+                        <br>• Steppe: Limited resources, make do, win anyway
+                        <br><br>
+                        <strong style="color: #ff5722;">CREATIVE PROBLEM-SOLVING</strong>
+                        <br>• Roguelike: "These bad items SYNERGIZE weirdly, becomes OP"
+                        <br>• Steppe: Find unconventional solutions with available assets
+                        <br><br>
+                        <strong style="color: #ff5722;">RISK EVALUATION</strong>
+                        <br>• Roguelike: Elite fight risky but gives needed item (calculate risk/reward)
+                        <br>• Steppe: High-risk missions with high rewards (evaluate under uncertainty)
+                        <br><br>
+                        <strong style="color: #ff5722;">FAIL FORWARD</strong>
+                        <br>• Roguelike: Run fails, learn, next run better
+                        <br>• Steppe: Mission fails, incorporate lesson, retry different approach
+                        <br><br>
+                        <span class="adapt-skill">Your roguelike brain ALREADY DOES THIS. Just... real operations instead of procedural runs.</span>
+                    </p>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">Dynamic Operations Specialist</div>
+                    
+                    <div class="world-card">
+                        <div class="world-name">🎲 DYNAMIC OPERATIONS SPECIALIST (Golden Horde)</div>
+                        <p style="line-height: 1.8;">
+                            <strong>Your role:</strong> Handle missions with HIGH UNCERTAINTY (unpredictable conditions)
+                            <br><strong>Specialty:</strong> Adaptation, improvisation, creative solutions
+                            <br><strong>Mission types:</strong> Fluid situations, changing conditions, imperfect information
+                            <br><br>
+                            <strong>ADAPTATION MASTERY</strong>
+                            <br>• Conditions change mid-mission? Adapt
+                            <br>• Resources insufficient? Improvise
+                            <br>• Enemy unpredictable? Creative solutions
+                            <br>• Plan fails? Pivot instantly
+                            <br><br>
+                            <strong>Like roguelike:</strong> Can't plan perfectly (uncertainty too high). Must ADAPT in real-time. Make do with what you HAVE. Find creative synergies. WIN under unpredictable conditions.
+                            <br><br>
+                            <span class="roguelike-marker">This is ROGUELIKE THINKING. But real ops. Your daemon: Adapt to uncertainty. Now in warfare.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lobby-feature">
+                    <div class="feature-title">A Specialist's Voice</div>
+                    <div class="quote-box">
+                        "I was roguelike player. 2,000 hours. Adaptation genius. Make ANY build work. 34% win rate through improvisation.
+                        <br><br>
+                        <strong style="color: #ff5722;">Deployed on procedural games. But pixels.</strong>
+                        <br><br>
+                        I rallied as dynamic operations specialist. My roguelike skills TRANSFERRED PERFECTLY.
+                        <br><br>
+                        <strong>Adaptation → 47 missions with high uncertainty, adapted to ALL</strong>
+                        <br><strong>Resource scarcity → Made do with suboptimal equipment, won anyway</strong>
+                        <br><strong>Creative solutions → Found unconventional approaches nobody else saw</strong>
+                        <br><strong>Risk evaluation → 12 high-risk ops, 9 successful (calculated risks)</strong>
+                        <br><br>
+                        78% mission success rate despite HIGH uncertainty. My roguelike training = Perfect for unpredictable ops.
+                        <br><br>
+                        <strong style="color: #795548;">From roguelikes to dynamic ops. From RNG to uncertainty. This is adaptation FULFILLMENT.</strong>"
+                        <br><br>
+                        <span style="color: #ff5722;">— Sam "Adaptive" Chen, 27, dynamic ops specialist, uncertainty master</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FULFILLMENT -->
+            <section class="content-panel" data-panel="fulfillment" id="fulfillment">
+                <h1 class="section-title">✨ FULFILLMENT</h1>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🎲 First Op: Improvisation Under Uncertainty</div>
+                    <p style="line-height: 1.9; font-size: 1.1em;">
+                        Mission: Sabotage enemy supply depot. Intel: Limited. Equipment: Suboptimal. Conditions: Unknown.
+                        <br><br>
+                        <strong>This is ROGUELIKE RUN. Imperfect info. Suboptimal resources. Must adapt.</strong>
+                        <br><br>
+                        You arrive: Security DIFFERENT than intel suggested. Guards doubled. Your equipment insufficient for planned approach.
+                        <br><br>
+                        <strong>You (roguelike brain): Adapt. New plan. Use terrain (wasn't in original plan). Create distraction with available materials. Improvise route. Execute. SUCCESS.</strong>
+                        <br><br>
+                        <strong style="color: #ff5722; font-size: 1.3em;">Won through ADAPTATION. Like roguelike: Bad RNG, adapted, won anyway. Your improvisation skills WORKED.</strong>
+                    </p>
+                </div>
+
+                <div class="fulfillment-moment">
+                    <div class="moment-title">🏆 One Year: Uncertainty Master</div>
+                    <div class="quote-box" style="background: rgba(255, 87, 34, 0.2); border-color: #ff5722;">
+                        <p style="padding-top: 20px; line-height: 2;">
+                            One year dynamic operations. 47 high-uncertainty missions. 37 successful (78% despite uncertainty).
+                            <br><br>
+                            <strong style="color: #ff5722; font-size: 1.2em;">My roguelike skills = Perfect adaptation under uncertainty.</strong>
+                            <br><br>
+                            Most operatives need PERFECT intel, OPTIMAL equipment. I work with WHATEVER. Adapt. Improvise. WIN anyway.
+                            <br><br>
+                            <span class="roguelike-marker">From roguelikes to dynamic ops. From RNG to real uncertainty. 1,900 hours TRANSFERRED.</span>
+                        </p>
+                        <span class="speaker-name">— Sam "Adaptive" Chen, uncertainty master, 78% success under chaos</span>
+                    </div>
+                </div>
+
+                <div class="fulfillment-moment" style="background: linear-gradient(135deg, rgba(255, 87, 34, 0.3), rgba(121, 85, 72, 0.3)); border: 4px double #ff5722;">
+                    <p style="line-height: 2.2; font-size: 1.3em; text-align: center; font-family: 'Courier New', monospace;">
+                        <strong style="color: #888; font-size: 1.4em;">From adapting to RNG</strong>
+                        <br><br>
+                        <strong style="color: #ff5722; font-size: 1.5em;">To mastering uncertainty</strong>
+                        <br><br>
+                        <strong style="color: #795548; font-size: 1.5em;">To improvisation genius</strong>
+                        <br><br>
+                        <span style="color: #ff5722; font-size: 1.2em;">🎲 Roguelike players: Adaptation TRANSFERS 🎲</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+
+</body><script src="../../../../lib/nav-vimlike.js"></script>
+</html>

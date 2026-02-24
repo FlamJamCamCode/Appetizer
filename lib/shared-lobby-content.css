@@ -1,0 +1,275 @@
+/* ============================================
+   SHARED LOBBY CONTENT STYLES
+   Common content styling for Rally Lobbies
+   ============================================ */
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+
+.section-title {
+    font-size: 3em;
+    color: #ffd700;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    animation: slideInDown 0.6s ease-out;
+}
+
+/* ============================================
+   CONTENT BLOCKS
+   ============================================ */
+
+.pain-block,
+.lobby-feature,
+.fulfillment-moment {
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    line-height: 1.9;
+    font-size: 1.1em;
+    animation: fadeInUp 0.6s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.pain-block {
+    background: rgba(72, 61, 139, 0.35);
+    border: 3px solid #b19cd9;
+    border-left: 5px solid #da70d6;
+}
+
+.lobby-feature {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.4), rgba(72, 61, 139, 0.3));
+    border: 3px solid rgba(212, 175, 55, 0.6);
+    border-radius: 15px;
+    padding: 35px;
+    margin: 30px 0;
+}
+
+.fulfillment-moment {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(212, 175, 55, 0.3));
+    padding: 40px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border: 3px solid rgba(46, 125, 50, 0.6);
+}
+
+/* Staggered animation delays */
+.pain-block:nth-child(2) { animation-delay: 0.2s; }
+.pain-block:nth-child(3) { animation-delay: 0.3s; }
+.pain-block:nth-child(4) { animation-delay: 0.4s; }
+.pain-block:nth-child(5) { animation-delay: 0.5s; }
+.pain-block:nth-child(6) { animation-delay: 0.6s; }
+
+.lobby-feature:nth-child(2) { animation-delay: 0.3s; }
+.lobby-feature:nth-child(3) { animation-delay: 0.5s; }
+.lobby-feature:nth-child(4) { animation-delay: 0.7s; }
+
+.fulfillment-moment:nth-child(2) { animation-delay: 0.2s; }
+.fulfillment-moment:nth-child(3) { animation-delay: 0.4s; }
+.fulfillment-moment:nth-child(4) { animation-delay: 0.6s; }
+.fulfillment-moment:nth-child(5) { animation-delay: 0.8s; }
+
+/* ============================================
+   FEATURE TITLES
+   ============================================ */
+
+.feature-title,
+.moment-title {
+    font-size: 1.8em;
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.moment-title {
+    font-size: 1.6em;
+    color: #5dff8f;
+}
+
+/* ============================================
+   WORLD CARDS
+   ============================================ */
+
+.world-card {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 3px solid rgba(123, 47, 247, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.world-card:hover {
+    transform: translateX(10px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+}
+
+.world-name {
+    font-size: 2em;
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* ============================================
+   SPECIAL TEXT STYLING
+   ============================================ */
+
+.neologism {
+    color: #ffd700;
+    font-style: italic;
+    border-bottom: 2px dotted #ffd700;
+    font-weight: 600;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+.sacred-emphasis {
+    color: #d4af37;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.private-language {
+    color: #9370db;
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(147, 112, 219, 0.6);
+    border-bottom: 2px dotted rgba(147, 112, 219, 0.5);
+    padding-bottom: 2px;
+}
+
+/* ============================================
+   QUOTE BOXES
+   ============================================ */
+
+.quote-box {
+    background: rgba(72, 61, 139, 0.3);
+    border-left: 5px solid #9370db;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 10px;
+    font-style: italic;
+    line-height: 1.9;
+    font-size: 1.05em;
+    position: relative;
+}
+
+.quote-box::before {
+    content: '❝';
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    font-size: 5em;
+    color: rgba(106, 90, 205, 0.3);
+    font-family: Georgia, serif;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.8;
+}
+
+li:before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 1.3em;
+}
+
+/* ============================================
+   SPECIAL CONTENT BLOCKS
+   ============================================ */
+
+.warning-block {
+    background: rgba(255, 193, 7, 0.1);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.success-block {
+    background: rgba(46, 125, 50, 0.2);
+    border: 2px solid rgba(46, 125, 50, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.info-block {
+    background: rgba(33, 150, 243, 0.1);
+    border: 2px solid rgba(33, 150, 243, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* ============================================
+   RESPONSIVE CONTENT
+   ============================================ */
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2em;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.4em;
+    }
+
+    .world-card {
+        padding: 20px;
+    }
+
+    .world-name {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6em;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 15px;
+        font-size: 0.95em;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.2em;
+    }
+}
+

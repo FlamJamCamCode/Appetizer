@@ -1,0 +1,491 @@
+/* ============================================
+   SHARED LOBBY CONTENT STYLES
+   Common content styling for Rally Lobbies
+   ============================================ */
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+
+.section-title {
+    font-size: 3em;
+    color: #ffd700;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    animation: slideInDown 0.6s ease-out;
+}
+
+/* ============================================
+   CONTENT BLOCKS
+   ============================================ */
+
+.pain-block,
+.lobby-feature,
+.fulfillment-moment {
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    line-height: 1.9;
+    font-size: 1.1em;
+    animation: fadeInUp 0.6s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.pain-block {
+    background: rgba(72, 61, 139, 0.35);
+    border: 3px solid #b19cd9;
+    border-left: 5px solid #da70d6;
+}
+
+.lobby-feature {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.4), rgba(72, 61, 139, 0.3));
+    border: 3px solid rgba(212, 175, 55, 0.6);
+    border-radius: 15px;
+    padding: 35px;
+    margin: 30px 0;
+}
+
+.fulfillment-moment {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(212, 175, 55, 0.3));
+    padding: 40px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border: 3px solid rgba(46, 125, 50, 0.6);
+}
+
+/* Staggered animation delays */
+.pain-block:nth-child(2) { animation-delay: 0.2s; }
+.pain-block:nth-child(3) { animation-delay: 0.3s; }
+.pain-block:nth-child(4) { animation-delay: 0.4s; }
+.pain-block:nth-child(5) { animation-delay: 0.5s; }
+.pain-block:nth-child(6) { animation-delay: 0.6s; }
+
+.lobby-feature:nth-child(2) { animation-delay: 0.3s; }
+.lobby-feature:nth-child(3) { animation-delay: 0.5s; }
+.lobby-feature:nth-child(4) { animation-delay: 0.7s; }
+
+.fulfillment-moment:nth-child(2) { animation-delay: 0.2s; }
+.fulfillment-moment:nth-child(3) { animation-delay: 0.4s; }
+.fulfillment-moment:nth-child(4) { animation-delay: 0.6s; }
+.fulfillment-moment:nth-child(5) { animation-delay: 0.8s; }
+
+/* ============================================
+   FEATURE TITLES
+   ============================================ */
+
+.feature-title,
+.moment-title {
+    font-size: 1.8em;
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.moment-title {
+    font-size: 1.6em;
+    color: #5dff8f;
+}
+
+/* ============================================
+   WORLD CARDS
+   ============================================ */
+
+.world-card {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 3px solid rgba(123, 47, 247, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.world-card:hover {
+    transform: translateX(10px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+}
+
+.world-name {
+    font-size: 2em;
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* ============================================
+   SPECIAL TEXT STYLING
+   ============================================ */
+
+.neologism {
+    color: #ffd700;
+    font-style: italic;
+    border-bottom: 2px dotted #ffd700;
+    font-weight: 600;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+.sacred-emphasis {
+    color: #d4af37;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.private-language {
+    color: #9370db;
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(147, 112, 219, 0.6);
+    border-bottom: 2px dotted rgba(147, 112, 219, 0.5);
+    padding-bottom: 2px;
+}
+
+/* ============================================
+   QUOTE BOXES
+   ============================================ */
+
+.quote-box {
+    background: rgba(72, 61, 139, 0.3);
+    border-left: 5px solid #9370db;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 10px;
+    font-style: italic;
+    line-height: 1.9;
+    font-size: 1.05em;
+    position: relative;
+}
+
+.quote-box::before {
+    content: '❝';
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    font-size: 5em;
+    color: rgba(106, 90, 205, 0.3);
+    font-family: Georgia, serif;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.8;
+}
+
+li:before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 1.3em;
+}
+
+/* ============================================
+   SPECIAL CONTENT BLOCKS
+   ============================================ */
+
+.warning-block {
+    background: rgba(255, 193, 7, 0.1);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.success-block {
+    background: rgba(46, 125, 50, 0.2);
+    border: 2px solid rgba(46, 125, 50, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.info-block {
+    background: rgba(33, 150, 243, 0.1);
+    border: 2px solid rgba(33, 150, 243, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* ============================================
+   RESPONSIVE CONTENT
+   ============================================ */
+
+/* Large Desktops (1920px+) */
+@media (min-width: 1920px) {
+    .section-title {
+        font-size: 3.5em;
+        margin-bottom: 40px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 40px;
+        font-size: 1.2em;
+        margin-bottom: 35px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 2em;
+    }
+
+    .world-card {
+        padding: 40px;
+    }
+
+    .world-name {
+        font-size: 2.5em;
+    }
+}
+
+/* Standard Desktops (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .section-title {
+        font-size: 3.2em;
+        margin-bottom: 35px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 35px;
+        font-size: 1.15em;
+        margin-bottom: 30px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.9em;
+    }
+
+    .world-card {
+        padding: 35px;
+    }
+
+    .world-name {
+        font-size: 2.2em;
+    }
+}
+
+/* Small Desktops / Large Tablets Landscape (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .section-title {
+        font-size: 3em;
+        margin-bottom: 30px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 30px;
+        font-size: 1.1em;
+        margin-bottom: 25px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.8em;
+    }
+
+    .world-card {
+        padding: 30px;
+    }
+
+    .world-name {
+        font-size: 2em;
+    }
+}
+
+/* Tablets Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .section-title {
+        font-size: 2.5em;
+        margin-bottom: 25px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 25px;
+        font-size: 1.05em;
+        margin-bottom: 20px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.6em;
+    }
+
+    .world-card {
+        padding: 25px;
+    }
+
+    .world-name {
+        font-size: 1.8em;
+    }
+}
+
+/* Large Phones Landscape / Small Tablets (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+    .section-title {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 22px;
+        font-size: 1em;
+        margin-bottom: 18px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.5em;
+    }
+
+    .world-card {
+        padding: 22px;
+    }
+
+    .world-name {
+        font-size: 1.6em;
+    }
+}
+
+/* Phones Portrait (480px - 639px) */
+@media (min-width: 480px) and (max-width: 639px) {
+    .section-title {
+        font-size: 1.8em;
+        margin-bottom: 16px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 16px;
+        font-size: 0.98em;
+        margin-bottom: 12px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.25em;
+    }
+
+    .world-card {
+        padding: 16px;
+    }
+
+    .world-name {
+        font-size: 1.35em;
+    }
+}
+
+/* Small Phones (< 480px) */
+@media (max-width: 479px) {
+    .section-title {
+        font-size: 1.55em;
+        margin-bottom: 12px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 12px;
+        font-size: 0.94em;
+        margin-bottom: 10px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.15em;
+    }
+
+    .world-card {
+        padding: 12px;
+    }
+
+    .world-name {
+        font-size: 1.25em;
+    }
+
+    .quote-box {
+        padding: 14px;
+        font-size: 0.92em;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 20px;
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    .feature-title,
+    .moment-title {
+        font-size: 1.4em;
+    }
+}
+
+/* Portrait Orientation Adjustments */
+@media (orientation: portrait) and (max-width: 1024px) {
+    .section-title {
+        margin-bottom: 25px;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        margin-bottom: 20px;
+    }
+}
+
+/* iPad Specific (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .section-title {
+        font-size: 2.6em;
+    }
+
+    .pain-block,
+    .lobby-feature,
+    .fulfillment-moment {
+        padding: 28px;
+        font-size: 1.08em;
+    }
+
+    .world-card {
+        padding: 28px;
+    }
+}
+

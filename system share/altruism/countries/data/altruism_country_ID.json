@@ -1,0 +1,37 @@
+{
+  "country_code": "ID",
+  "name": "Indonesia",
+  "approximate": true,
+  "population": 280000000,
+  "gdp_nominal_usd": 1500000000000,
+  "gdp_per_capita_usd": 5400,
+  "social_spending_pct_gdp": 11.0,
+  "health_spending_pct_gdp": 3.5,
+  "education_spending_pct_gdp": 4.0,
+  "oda_given_pct_gni": 0.03,
+  "oda_given_usd": 500000000,
+  "oda_received_usd": 5000000000,
+  "private_giving_pct_gdp": 0.6,
+  "private_giving_total_usd": 9000000000,
+  "volunteering_rate_pct_adults": 40.0,
+  "volunteer_hours_billion": 3.0,
+  "child_mortality_under5_per_1000": 21.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Neonatal disorders",
+    "Chronic respiratory diseases"
+  ],
+  "notes": [
+    "Indonesia is the largest Muslim-majority country, with large zakat and other religious giving flows.",
+    "Numbers approximate, based on World Bank, WHO, and CAF."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "CAF World Giving Index",
+    "Indonesian government budget data"
+  ]
+}
+
+

@@ -1,0 +1,36 @@
+{
+  "country_code": "UK",
+  "name": "United Kingdom",
+  "approximate": true,
+  "population": 67000000,
+  "gdp_nominal_usd": 3200000000000,
+  "gdp_per_capita_usd": 47000,
+  "social_spending_pct_gdp": 23.0,
+  "health_spending_pct_gdp": 9.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.5,
+  "oda_given_usd": 18000000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.9,
+  "private_giving_total_usd": 28000000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 1.5,
+  "child_mortality_under5_per_1000": 4.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia and Alzheimer's disease"
+  ],
+  "notes": [
+    "ODA/GNI recently reduced from 0.7% to around 0.5%.",
+    "Private giving figures from UK charity statistics and CAF reports."
+  ],
+  "sources": [
+    "UK Office for National Statistics",
+    "HM Treasury Public Expenditure Statistical Analyses",
+    "OECD DAC ODA statistics",
+    "CAF UK Giving and charity data"
+  ]
+}
+
+

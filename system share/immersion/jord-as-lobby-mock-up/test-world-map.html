@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map Viewer Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        
+        .app-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, #1a0033, #000);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+        
+        .info-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .info-panel h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        
+        .info-panel p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>World Map Viewer Test</h1>
+        </div>
+        
+        <div class="map-container">
+        <div class="info-panel">
+            <h3>Test Information</h3>
+            <p>This is a test of the World Map Viewer component.</p>
+            <p>Features:</p>
+            <ul>
+                <li>Zoomable Mercator world map</li>
+                <li>Pan and drag navigation</li>
+                <li>Interactive zones</li>
+                <li>Minimap and legend</li>
+            </ul>
+            <p>Use mouse wheel to zoom, drag to pan, and click zones for details.</p>
+        </div>
+            
+            <world-map-viewer id="mapViewer"></world-map-viewer>
+        </div>
+    </div>
+    
+    <script src="components/world-map-viewer.js"></script>
+    <script>
+        const mapViewer = document.getElementById('mapViewer');
+        
+        // Test zones data
+        const testZones = {
+            zones: [
+                {
+                    id: 'test-zone-1',
+                    name: 'Test Zone Alpha',
+                    position: { x: 500, y: 300 },
+                    bounds: { width: 150, height: 100 },
+                    type: 'level1-zone',
+                    level: 1,
+                    description: 'A test zone for demonstrating the world map viewer.',
+                    population: '100K',
+                    features: ['Test feature 1', 'Test feature 2'],
+                    nestedZones: [
+                        { id: 'test-nested-1', name: 'Nested Zone A', level: 2, description: 'A nested test zone' }
+                    ]
+                },
+                {
+                    id: 'test-zone-2',
+                    name: 'Test Zone Beta',
+                    position: { x: 800, y: 400 },
+                    bounds: { width: 120, height: 80 },
+                    type: 'level2-zone',
+                    level: 2,
+                    description: 'Another test zone with different properties.',
+                    population: '50K',
+                    features: ['Different features', 'More test data']
+                },
+                {
+                    id: 'test-zone-3',
+                    name: 'Test Zone Gamma',
+                    position: { x: 1200, y: 200 },
+                    bounds: { width: 100, height: 120 },
+                    type: 'level3-zone',
+                    level: 3,
+                    description: 'A third test zone with hierarchical properties.',
+                    population: '75K',
+                    features: ['Hierarchical features', 'Complex data']
+                }
+            ]
+        };
+        
+        // Initialize the test
+        function initializeTest() {
+            // Load test zones
+            mapViewer.setAttribute('zones-data', JSON.stringify(testZones));
+            
+            // Add event listener
+            mapViewer.addEventListener('zone-selected', (e) => {
+                console.log('Selected zone:', e.detail.zone);
+            });
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('load', initializeTest);
+    </script>
+</body>
+</html>

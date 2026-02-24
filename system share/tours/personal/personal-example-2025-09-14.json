@@ -1,0 +1,35 @@
+{
+	"id": "personal-example-2025-09-14",
+	"title": "Personal Example: Foundations, Story, and Navigator",
+	"description": "Sample tour demonstrating a composite collage and an external/native launcher step.",
+	"origin": {
+		"method": "manual-sample",
+		"agent": "author",
+		"timestamp": "2025-09-14T12:00:00Z",
+		"inputs": {
+			"persona_summary": "Example user exploring New vs Old world and governance.",
+			"goals": ["Get motivation", "See concrete narrative", "Try navigation"],
+			"constraints": ["~15 minutes"]
+		}
+	},
+	"audience": ["personal"],
+	"estimated_minutes": 15,
+	"steps": [
+		{
+			"view": "composite",
+			"title": "Why it matters — a collage",
+			"blocks": [
+				{"type": "text", "md": "Begin with motivation, then connect to a concrete genesis."},
+				{"type": "quote", "file": "foundations/1 exec_summary_vision.md", "match": "vision", "context": 2},
+				{"type": "quote", "file": "immersion/historical-entries/new-world-genesis.md", "match": "genesis", "context": 2},
+				{"type": "text", "md": "Takeaway: motivation → story → application."}
+			]
+		},
+		{
+			"view": "external",
+			"title": "Open Triad Navigator (native)",
+			"launch": {"type": "uri", "uri": "triadnav://open?world=new&triad=crucible"},
+			"fallback": {"type": "file", "path": "immersion/lobbies/crucible-vs-oldworld.html"}
+		}
+	]
+}

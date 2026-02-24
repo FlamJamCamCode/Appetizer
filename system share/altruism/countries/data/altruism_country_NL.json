@@ -1,0 +1,35 @@
+{
+  "country_code": "NL",
+  "name": "Netherlands",
+  "approximate": true,
+  "population": 18000000,
+  "gdp_nominal_usd": 1050000000000,
+  "gdp_per_capita_usd": 58300,
+  "social_spending_pct_gdp": 23.0,
+  "health_spending_pct_gdp": 9.5,
+  "education_spending_pct_gdp": 5.5,
+  "oda_given_pct_gni": 0.6,
+  "oda_given_usd": 6500000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.9,
+  "private_giving_total_usd": 9500000000,
+  "volunteering_rate_pct_adults": 40.0,
+  "volunteer_hours_billion": 1.0,
+  "child_mortality_under5_per_1000": 3.5,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia and Alzheimer's disease"
+  ],
+  "notes": [
+    "Netherlands is a high-income, open economy with strong development and climate engagement.",
+    "Private giving and volunteering are both relatively high."
+  ],
+  "sources": [
+    "Statistics Netherlands",
+    "OECD SOCX and DAC statistics",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

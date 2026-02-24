@@ -1,0 +1,37 @@
+{
+  "country_code": "CD",
+  "name": "Democratic Republic of the Congo",
+  "approximate": true,
+  "population": 100000000,
+  "gdp_nominal_usd": 65000000000,
+  "gdp_per_capita_usd": 650,
+  "social_spending_pct_gdp": 7.0,
+  "health_spending_pct_gdp": 2.5,
+  "education_spending_pct_gdp": 3.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 4000000000,
+  "private_giving_pct_gdp": 0.2,
+  "private_giving_total_usd": 130000000,
+  "volunteering_rate_pct_adults": 35.0,
+  "volunteer_hours_billion": 0.5,
+  "child_mortality_under5_per_1000": 90.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Diarrheal diseases",
+    "Lower respiratory infections",
+    "Conflict-related causes"
+  ],
+  "notes": [
+    "DRC is one of the poorest and most conflict-affected countries, with high child and maternal mortality.",
+    "ODA and NGO flows play a dominant role in health and education."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD and other aid statistics"
+  ]
+}
+
+

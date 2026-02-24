@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape from Alienation - Teen Rally Sanctuary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(72, 61, 139, 0.15) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .parchment-header {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.35), rgba(101, 67, 33, 0.35));
+            border: 3px solid rgba(212, 175, 55, 0.6);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .parchment-header::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 12px;
+        }
+
+        .parchment-header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #ffd700;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            font-family: 'Georgia', serif;
+        }
+
+        .your-pain {
+            background: rgba(72, 61, 139, 0.35);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            border: 3px solid #b19cd9;
+            border-left: 5px solid #da70d6;
+        }
+
+        .your-pain h2 {
+            color: #e6b3ff;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .pain-item {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 18px;
+            border-radius: 10px;
+            border: 2px solid #9370db;
+            border-left: 4px solid #da70d6;
+            font-style: italic;
+            color: #f0f0f0;
+        }
+
+        .worlds-container {
+            margin-top: 50px;
+        }
+
+        .world-card {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.4), rgba(72, 61, 139, 0.3));
+            border: 3px solid rgba(212, 175, 55, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .world-card::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .world-title {
+            font-size: 2.3em;
+            margin-bottom: 12px;
+            color: #ffd700;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+        }
+
+        .world-essence {
+            text-align: center;
+            font-size: 1.2em;
+            color: #b19cd9;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .resonance-section {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 28px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 2px solid #d4af37;
+            border-left: 5px solid #ffd700;
+        }
+
+        .resonance-title {
+            font-size: 1.4em;
+            color: #ffd700;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        .resonance-content {
+            line-height: 2;
+            color: #f5f5f5;
+        }
+
+        .daemon-whisper {
+            background: linear-gradient(135deg, rgba(72, 61, 139, 0.4), rgba(147, 112, 219, 0.35));
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 3px solid rgba(218, 112, 214, 0.6);
+            font-style: italic;
+            color: #f0f0f0;
+        }
+
+        .daemon-whisper h4 {
+            color: #e6b3ff;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .why-this-calls {
+            background: rgba(212, 175, 55, 0.25);
+            padding: 28px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 3px solid rgba(255, 215, 0, 0.5);
+        }
+
+        .why-this-calls h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .alignment-phrase {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px solid #8b4513;
+            border-left: 5px solid #d4af37;
+            font-size: 1.05em;
+            line-height: 1.9;
+            color: #f5f5f5;
+        }
+
+        .rally-button {
+            width: 100%;
+            padding: 22px;
+            margin-top: 30px;
+            background: linear-gradient(90deg, #8b4513, #d4af37);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 12px;
+            color: #1a1a1a;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+        }
+
+        .rally-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(90deg, #d4af37, #ffd700);
+        }
+
+        .trust-network-note {
+            background: rgba(147, 112, 219, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 3px solid rgba(218, 112, 214, 0.6);
+        }
+
+        .trust-network-note h3 {
+            color: #e6b3ff;
+            margin-bottom: 18px;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        li:before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+        }
+
+        .neologism {
+            color: #ffd700;
+            font-style: italic;
+            border-bottom: 2px dotted #ffd700;
+            font-weight: 600;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 8px rgba(255, 215, 0, 0.8);
+        }
+
+        .emphasis {
+            color: #ffd700;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="parchment-header">
+            <h1>⚔️ The Sanctuary Rally Scroll ⚔️</h1>
+            <p style="font-size: 1.3em; margin-top: 15px; color: #da70d6; font-weight: bold;">
+                For Those Who Don't Fit: Worlds That Want You As You Are
+            </p>
+            <p style="margin-top: 12px; color: #d4af37; font-size: 1.05em; font-weight: 600;">
+                <em>These descriptions are shaped by your daemon. Your Trust Network knows you.</em>
+            </p>
+        </div>
+
+        <div class="your-pain">
+            <h2>Where You Are Now</h2>
+            <p style="line-height: 1.9; margin-bottom: 18px;">
+                <strong>Who you are:</strong> 16 years old. You don't fit. Never have. The other kids sense it—you're different. Wrong. Target.
+            </p>
+            <p style="line-height: 1.9; margin-bottom: 20px;">
+                <strong>What you face daily:</strong> Bullying (verbal, sometimes physical). Exclusion (no one sits with you at lunch). Mockery (for being quiet, for being weird, for existing). Teachers who don't see it or don't care. Parents who say "just ignore them" as if that helps. You feel like you're drowning and nobody notices.
+            </p>
+
+            <div class="pain-grid">
+                <div class="pain-item">
+                    "Every day I walk into that building and my stomach hurts. I count the hours until I can leave. Sometimes I think about just... not being here anymore. It would be easier."
+                </div>
+                <div class="pain-item">
+                    "I'm so tired of pretending to be someone I'm not. Trying to fit in with people who would never accept me. Laughing at jokes that aren't funny. Hiding what I actually think."
+                </div>
+                <div class="pain-item">
+                    "Nobody actually sees me. They see 'the weird kid' or 'the loser' or whatever label they've put on me. But they don't see ME. What I think about. What I care about. Who I actually am."
+                </div>
+                <div class="pain-item">
+                    "I feel like I'm waiting. Like my real life hasn't started yet. Like I'm trapped in this holding pen with people who hate me, waiting for something I can't even name."
+                </div>
+            </div>
+
+            <p style="margin-top: 28px; line-height: 1.9; font-size: 1.12em; color: #ffd700; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);">
+                You have MBC Rule 3. You don't have to wait until you're 18. You don't have to endure this until graduation. You can rally NOW to worlds that want people like you. That SEE you. That have space for who you actually are.
+            </p>
+        </div>
+
+        <div class="trust-network-note">
+            <h3>🔮 How Your Trust Network Serves You</h3>
+            <p style="line-height: 1.85; margin-bottom: 20px; color: #f5f5f5;">
+                Unlike the quantitative rankings you might expect (Safety: 8.7/10, Education: 9.2/10), your Trust Network knows <span class="emphasis">your daemon</span>. They've observed you. Talked with you. Understood what moves you, what hurts you, what you value.
+            </p>
+            <p style="line-height: 1.85; margin-bottom: 20px; color: #f5f5f5;">
+                So instead of universal metrics that mean nothing to YOU, they provide <span class="neologism">will-topological compressions</span>—descriptions shaped by your specific daemon, your specific pain, your specific hopes. Sometimes these are phrases. Sometimes neologisms. Sometimes private language only you would understand.
+            </p>
+            <p style="line-height: 1.85; color: #da70d6; font-style: italic; font-weight: bold;">
+                The worlds below are described in <span class="emphasis">your language</span>, through <span class="emphasis">your lens</span>, for <span class="emphasis">your will</span>. This is what "all things considered for THIS person" looks like.
+            </p>
+        </div>
+
+        <div class="worlds-container">
+            <!-- World 1: The Deep Thinkers Haven -->
+            <div class="world-card">
+                <div class="world-title">🏛️ The Academy of Quiet Minds</div>
+                <div class="world-essence">Triad #2.22418.189 - Where Silence is Respected and Depth is Home</div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">Why This World Calls to Your Daemon</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 18px;">
+                            You know how you sit in class thinking about ideas nobody else cares about? How you read philosophy or science or fantasy novels during lunch because talking to your classmates feels hollow? How you'd rather be alone thinking than surrounded by people having shallow conversations?
+                        </p>
+                        <p style="margin-bottom: 18px;">
+                            <span class="emphasis">In this world, that's normal.</span> Everyone here is like that. The "weird kids" are the majority. Being deep is the baseline. Silence is comfortable. Thinking is valued more than talking.
+                        </p>
+                        <p>
+                            Your Trust Network says: <span class="neologism">"Home-shaped for contemplative-essence"</span>—their private language for "this place will feel like the home you never had."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>The Daemon Resonance (What Your Trust Network Observed About You)</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ You prefer <span class="neologism">thought-space</span> over social-space (would rather think alone than talk with shallow people)
+                        <br>◆ You experience <span class="neologism">idea-beauty</span> (beautiful concepts move you like art moves others)
+                        <br>◆ You have <span class="neologism">depth-hunger</span> (shallow conversations make you feel more lonely than being alone)
+                        <br>◆ You carry <span class="neologism">misfit-ache</span> (the pain of being wrong-shaped for your current world)
+                        <br>◆ You seek <span class="neologism">silence-communion</span> (connection through shared quiet, not forced talking)
+                    </p>
+                </div>
+
+                <div class="why-this-calls">
+                    <h4>Why This World Fits Your Shape</h4>
+                    <div class="alignment-phrase">
+                        <strong>Daily Life Pattern:</strong> You wake in small room (your space). Morning reading time (2 hours alone—expected, not weird). Small seminar (8 students) discussing philosophy/science/literature—everyone prepared, everyone thinking. Lunch: Some eat in silence, some have deep conversations, both respected. Afternoon: Independent study or collaboration with chosen others (not forced group work). Evening: Optional gatherings for those who want, solitude for those who don't.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The People You'd Meet:</strong> Other quiet minds. Kids who were bullied in their old schools for being "too serious." Adults who never fit conventional society. Ages 14-60, all <span class="neologism">depth-aligned</span>. Nobody performing. Nobody pretending. Everyone just... being who they are. Weird, deep, quiet, thinking.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>Social Dynamics:</strong> No forced socialization. No "group projects to teach teamwork." No "you should be more outgoing." You can be quiet. You can be alone. You can think. And when you DO talk, people actually listen. Actually engage. Actually think about what you said instead of waiting for their turn to talk.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The Feeling:</strong> Your Trust Network describes it as <span class="neologism">"when-the-ache-stops"</span>—that moment when you realize you don't have to pretend anymore. Don't have to perform. Don't have to be anything other than what you are. The relief is so intense you might cry for a week. Then you'll settle into just... existing comfortably. For the first time.
+                    </div>
+                </div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">What They Actually See When They Look at You</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 15px;">
+                            In your current school: "Weird. Quiet. Doesn't fit in. Loser."
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            In this world: "Deep thinker. Contemplative. Probably reading something interesting. Let's see if they want to discuss it later."
+                        </p>
+                        <p style="color: #d4af37; font-weight: bold;">
+                            Your Trust Network says this world has <span class="neologism">"same-essence population density: 87%"</span>—meaning 87% of people there have your fundamental daemon type. You'd be majority, not minority. Normal, not weird.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>Warning: What You'd Miss (Your Trust Network's Honest Assessment)</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ <span class="neologism">Social-easy-mode</span> absent: Won't teach you to be socially smooth with shallow people (but why would you want that?)
+                        <br>◆ <span class="neologism">Normal-world preparation</span> absent: Won't prepare you for conventional society (but you're not going back there)
+                        <br>◆ <span class="neologism">Extrovert-energy</span> absent: Nobody loud, nobody dominating conversations (but that's why you'd go there)
+                        <br>◆ Lower <span class="neologism">stimulus-chaos</span>: Quieter, calmer, less exciting (but more peaceful)
+                    </p>
+                </div>
+
+                <button class="rally-button">Rally to Academy of Quiet Minds</button>
+            </div>
+
+            <!-- World 2: The Misfits' Kingdom -->
+            <div class="world-card">
+                <div class="world-title">🎭 The Kingdom of Beautiful Misfits</div>
+                <div class="world-essence">Triad #2.38492.077 - Where Being Weird is Being Normal</div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">Why This World Calls to Your Daemon</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 18px;">
+                            You know how you like things the other kids think are stupid? How you dress differently or think differently or like different music or books or games? How they mock you for being "weird" and you've learned to hide what you actually like?
+                        </p>
+                        <p style="margin-bottom: 18px;">
+                            <span class="emphasis">In this world, weird is beautiful.</span> Everyone here was the weird kid. The one who didn't fit. The one with strange interests. The one who got bullied for being different. And now they're all together, and "weird" is just... normal.
+                        </p>
+                        <p>
+                            Your Trust Network says: <span class="neologism">"Misfit-coalescence-sanctuary"</span>—where all the people who didn't fit anywhere else found each other and made a place where they fit together.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>The Daemon Resonance</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ You have <span class="neologism">different-beauty-sense</span> (what you find beautiful, others find strange)
+                        <br>◆ You carry <span class="neologism">authentic-expression-need</span> (hiding yourself hurts, performing exhausts)
+                        <br>◆ You experience <span class="neologism">normie-repulsion</span> (conventional people and activities drain you)
+                        <br>◆ You seek <span class="neologism">weird-communion</span> (other misfits who get it)
+                        <br>◆ You dream of <span class="neologism">permission-to-be</span> (a place where you don't have to hide)
+                    </p>
+                </div>
+
+                <div class="why-this-calls">
+                    <h4>Why This World Fits Your Shape</h4>
+                    <div class="alignment-phrase">
+                        <strong>Daily Life Pattern:</strong> You dress however you want (goth, fantasy, anime, steampunk, Victorian, cyberpunk—all normal here). You pursue your interests openly (Magic the Gathering tournament on Fridays, D&D campaigns running constantly, philosophy club, writing workshops, art in every style). You talk about what you actually think (nobody mocks you for depth or strangeness).
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The People You'd Meet:</strong> Other misfits. The kids who were bullied for liking anime. For reading too much. For being goth. For being too smart. For being too sensitive. For being gay. For being trans. For being autistic. For being DIFFERENT. All together now. All making culture where different is normal.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>Social Dynamics:</strong> No popularity contests. No "cool kids table." No hierarchy of who fits best. Everyone's weird, so nobody's weird. You can be yourself—completely, authentically—and people will just... accept it. Maybe even like you for it. Imagine that.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The Feeling:</strong> Your Trust Network describes it as <span class="neologism">"first-breath-after-drowning"</span>—that moment when you realize you can exhale. You don't have to perform anymore. Don't have to hide. Don't have to pretend. You can just BE. And people will let you.
+                    </div>
+                </div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">What They Actually See When They Look at You</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 15px;">
+                            In your current school: "Weird. Doesn't fit in. Target for mockery."
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            In this world: "Oh cool, another person with their own style. Wonder what they're into. Maybe we'll connect."
+                        </p>
+                        <p style="color: #d4af37; font-weight: bold;">
+                            Your Trust Network says this world has <span class="neologism">"misfit-density: 94%"</span> AND <span class="neologism">"acceptance-absolute: 99%"</span>—meaning almost everyone there was bullied for being different, and the culture is RADICALLY accepting of difference.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>Warning: What You'd Miss</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ <span class="neologism">Normie-skills</span> absent: Won't learn to navigate conventional society (but you weren't succeeding there anyway)
+                        <br>◆ <span class="neologism">Mainstream-connection</span> absent: Isolated from wider culture (but wider culture rejected you)
+                        <br>◆ Some <span class="neologism">chaos-drama</span>: Misfits together can be dramatic (but at least it's honest drama, not fake niceness)
+                        <br>◆ Lower <span class="neologism">material-abundance</span>: Artists and weirdos don't make as much money (but you'll have enough, and you'll be happy)
+                    </p>
+                </div>
+
+                <button class="rally-button">Rally to Kingdom of Beautiful Misfits</button>
+            </div>
+
+            <!-- World 3: The Builder's Apprentice Haven -->
+            <div class="world-card">
+                <div class="world-title">🔨 The Craftsman's Refuge</div>
+                <div class="world-essence">Triad #2.11039.566 - Where Hands Build and Worth is Tangible</div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">Why This World Calls to Your Daemon</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 18px;">
+                            You know how school feels pointless? How you sit in algebra class thinking "when will I ever use this?" How the social games feel stupid? How you'd rather be making something real with your hands than sitting in a classroom learning abstractions?
+                        </p>
+                        <p style="margin-bottom: 18px;">
+                            <span class="emphasis">In this world, you build real things.</span> No more sitting in desks for 8 hours. You wake up, you learn a trade (carpentry, metalwork, farming, whatever calls to you), you BUILD. By end of day, you can point to something and say "I made that." That feeling matters.
+                        </p>
+                        <p>
+                            Your Trust Network says: <span class="neologism">"Tangible-worth-world"</span>—where your value is visible in what you create, not in how well you perform socially.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>The Daemon Resonance</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ You have <span class="neologism">hands-need-doing</span> (sitting still in class feels like torture, need to move/build/create)
+                        <br>◆ You value <span class="neologism">real-over-abstract</span> (concrete things matter, theoretical doesn't resonate)
+                        <br>◆ You experience <span class="neologism">social-game-exhaustion</span> (navigating popularity contests drains you)
+                        <br>◆ You seek <span class="neologism">merit-visible-world</span> (where what you do matters more than who you are socially)
+                        <br>◆ You want <span class="neologism">adult-life-now</span> (tired of being treated like child, want real responsibility)
+                    </p>
+                </div>
+
+                <div class="why-this-calls">
+                    <h4>Why This World Fits Your Shape</h4>
+                    <div class="alignment-phrase">
+                        <strong>Daily Life Pattern:</strong> You wake at 6am (sun rises, work begins). Apprentice to master craftsman (learning real skill—woodworking, blacksmithing, farming, building). Morning: 4 hours hands-on work. Lunch: Simple, with other apprentices (talk about what you're building, not social drama). Afternoon: 3 hours more work. Evening: Free time (tired but satisfied, built something real today).
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The People You'd Meet:</strong> Master craftsmen (40-70 years old, wise, patient, respect skill over social performance). Other apprentices (14-25 years old, also didn't fit conventional school, found purpose in building). Everyone values <span class="neologism">creation-over-performance</span>. Your worth is what you build, not how cool you are.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>Social Dynamics:</strong> Hierarchy based on skill, not popularity. Master craftsmen respected. Skilled apprentices admired. Social awkwardness irrelevant—if you can build, you belong. The kids who bullied you would be worthless here (can't build, only perform).
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The Feeling:</strong> Your Trust Network describes it as <span class="neologism">"hands-finally-home"</span>—when your body and mind align. When you're doing what you're meant to do. When exhaustion feels good because it came from creation. When you sleep deeply because you built something real. When you wake up eager because today you'll build more.
+                    </div>
+                </div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">What They Actually See When They Look at You</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 15px;">
+                            In your current school: "Can't sit still. Not good at social stuff. Probably going nowhere."
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            In this world: "Good hands. Focused when working. Learns fast. Will be skilled craftsman. Valuable."
+                        </p>
+                        <p style="color: #d4af37; font-weight: bold;">
+                            Your Trust Network says this world has <span class="neologism">"builder-essence-match: 91%"</span> for you—meaning your daemon aligns with 91% of what this world values. You'd thrive here.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>Warning: What You'd Miss</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ <span class="neologism">Abstract-knowledge</span> reduced: Less philosophy, less pure theory (but more practical knowledge)
+                        <br>◆ <span class="neologism">Intellectual-stimulation</span> moderate: Not as many deep thinkers (but craftsmanship has its own depth)
+                        <br>◆ Hard <span class="neologism">body-demands</span>: Physical work is exhausting (but satisfying, not soul-crushing)
+                        <br>◆ <span class="neologism">Material-comfort</span> moderate: Not wealthy (but comfortable, and you made everything yourself)
+                    </p>
+                </div>
+
+                <button class="rally-button">Rally to The Craftsman's Refuge</button>
+            </div>
+
+            <!-- World 3: The Neurodivergent Sanctuary -->
+            <div class="world-card">
+                <div class="world-title">🧩 The Spectrum Haven</div>
+                <div class="world-essence">Triad #2.77234.003 - Where Different Brains are Default Brains</div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">Why This World Calls to Your Daemon</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 18px;">
+                            You know how everyone acts like there's something wrong with you? How teachers say "just pay attention" as if you're not trying? How social stuff that seems easy for everyone else feels impossible for you? How you feel broken?
+                        </p>
+                        <p style="margin-bottom: 18px;">
+                            <span class="emphasis">You're not broken. You're differently-built.</span> This world is designed for different brains. Autistic brains. ADHD brains. Brains that don't process the world the "normal" way. Here, YOUR brain is the default. The accommodations aren't special—they're baseline.
+                        </p>
+                        <p>
+                            Your Trust Network says: <span class="neologism">"Brain-shape-matched-world"</span>—where the environment fits your neurotype instead of demanding you fit the environment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>The Daemon Resonance</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ You have <span class="neologism">sensory-different-process</span> (sounds too loud, lights too bright, textures wrong, or need MORE stimulation)
+                        <br>◆ You experience <span class="neologism">social-scripts-impossible</span> (don't understand unwritten rules, miss social cues, can't read faces well)
+                        <br>◆ You have <span class="neologism">focus-pattern-unique</span> (hyperfocus on interests, can't focus on boring things, executive function struggles)
+                        <br>◆ You carry <span class="neologism">broken-feeling-burden</span> (been told you're wrong so many times you believe it)
+                        <br>◆ You need <span class="neologism">world-that-fits-me-not-me-fits-world</span> (environments designed for your brain, not against it)
+                    </p>
+                </div>
+
+                <div class="why-this-calls">
+                    <h4>Why This World Fits Your Shape</h4>
+                    <div class="alignment-phrase">
+                        <strong>Sensory Environment:</strong> Everything designed for sensory sensitivity. Quiet spaces available always. Adjustable lighting. Soft textures. No fluorescent lights. No sudden loud noises. Or for ADHD: Stimulation spaces available. Movement encouraged. Fidget tools everywhere. Can pace while thinking. Your sensory needs met, not fought against.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>Social Environment:</strong> Explicit communication baseline (people say what they mean, no hidden subtext). Social scripts written down (not assumed you know them). Okay to be direct. Okay to say "I don't understand that social thing." Okay to not make eye contact. Okay to need time alone. All the unwritten rules are WRITTEN.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>Education Environment:</strong> Learn at your pace (can hyperfocus on interests, skip boring stuff). Recorded lectures (can rewatch if you zoned out). Written instructions (not just verbal). Accommodations automatic (not "special treatment"—just how things work). Your learning style is default, not deviation.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The Feeling:</strong> Your Trust Network describes it as <span class="neologism">"stop-fighting-your-brain"</span>—that moment when you realize the environment is working WITH your neurotype, not against it. When you're not constantly exhausted from masking. When you can just exist in your natural state. When "different brain" becomes "my brain" without shame.
+                    </div>
+                </div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">What They Actually See When They Look at You</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 15px;">
+                            In your current school: "Something wrong with them. Can't focus. Socially awkward. Weird."
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            In this world: "Autistic/ADHD/Neurodivergent—like most of us. Probably amazing at their special interest. Let's make sure the environment works for them."
+                        </p>
+                        <p style="color: #d4af37; font-weight: bold;">
+                            Your Trust Network says this world has <span class="neologism">"neurotype-matching: 88%"</span> AND <span class="neologism">"environment-designed-for-you: 96%"</span>—meaning your brain type is majority, and the world is built for how you process reality.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>Warning: What You'd Miss</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ <span class="neologism">Neurotypical-social-training</span> absent: Won't learn to mask or perform normalcy (but why would you want that pain?)
+                        <br>◆ <span class="neologism">Fast-paced-chaos</span> absent: Environment calm, structured (but that helps your brain function)
+                        <br>◆ <span class="neologism">Conventional-success-path</span> unclear: Won't prepare you for "normal jobs" (but normal jobs would break you)
+                        <br>◆ Population smaller: Only 45,000 people (but they're YOUR people, not millions of incompatible normals)
+                    </p>
+                </div>
+
+                <button class="rally-button">Rally to The Spectrum Haven</button>
+            </div>
+
+            <!-- World 4: The Forest School -->
+            <div class="world-card">
+                <div class="world-title">🌲 The Wild Learning Grove</div>
+                <div class="world-essence">Triad #2.18923.112 - Where Nature Teaches and Peers Don't Hurt</div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">Why This World Calls to Your Daemon</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 18px;">
+                            You know how being inside the school building makes you feel trapped? How the fluorescent lights and concrete walls and crowded hallways make everything worse? How you'd rather be outside, in nature, anywhere but in that building with those people?
+                        </p>
+                        <p style="margin-bottom: 18px;">
+                            <span class="emphasis">In this world, school IS outside.</span> No buildings. No classrooms. No desks. You learn in the forest. From nature. With small groups of other kids who also couldn't breathe in conventional school. The bullies aren't here—they wouldn't last a day in this environment. Only certain kinds of people rally here.
+                        </p>
+                        <p>
+                            Your Trust Network says: <span class="neologism">"Nature-escape-sanctuary"</span>—where the world itself is gentle, and humans are too.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>The Daemon Resonance</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ You have <span class="neologism">building-cage-pain</span> (being inside concrete structures hurts something in you)
+                        <br>◆ You experience <span class="neologism">nature-restoration</span> (being outside heals you, trees calm you, earth grounds you)
+                        <br>◆ You carry <span class="neologism">crowd-toxicity-sense</span> (large groups of people drain you, small groups or solitude restore you)
+                        <br>◆ You need <span class="neologism">gentle-pace-environment</span> (rushed schedules break you, natural rhythms heal you)
+                        <br>◆ You seek <span class="neologism">human-kindness-baseline</span> (world where people are just... kind, not cruel)
+                    </p>
+                </div>
+
+                <div class="why-this-calls">
+                    <h4>Why This World Fits Your Shape</h4>
+                    <div class="alignment-phrase">
+                        <strong>Daily Life Pattern:</strong> Wake with sun (no alarm clocks forcing unnatural schedules). Morning: Tend garden or animals (real work, visible impact). Mid-morning: Learning circle under trees (8-12 students, discussing ecology/biology/philosophy through nature observation). Lunch: Food you helped grow. Afternoon: Free exploration or chosen project (build shelter, track animals, study plants, whatever interests you). Evening: Campfire stories, quiet reading, or solitude. Sleep when tired.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The People You'd Meet:</strong> Other nature-aligned souls. Kids who felt suffocated by conventional school. Adults who escaped to forest life. Ages 12-70, all <span class="neologism">gentle-spirited</span>. The aggressive types don't rally here (can't handle nature's demands, need concrete jungle). Self-selection creates kindness culture.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>Social Dynamics:</strong> No bullying (aggressive kids don't last here—leave within weeks). Small groups (3-8 people max). Solitude respected. Can spend days alone in forest and nobody thinks you're weird. When you DO interact, it's gentle, thoughtful, KIND. Your Trust Network says: <span class="neologism">"Bully-types filtered out by nature-demands: 99.7%"</span>
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The Feeling:</strong> Your Trust Network describes it as <span class="neologism">"when-the-cage-opens"</span>—that feeling when you walk out of the school building for the last time and realize you never have to go back. You're FREE. No more fluorescent lights. No more crowds. No more bullies. Just forest, kindness, peace. You can breathe again.
+                    </div>
+                </div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">What They Actually See When They Look at You</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 15px;">
+                            In your current school: "Doesn't fit in. Quiet. Probably depressed. Weak."
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            In this world: "Gentle soul. Loves nature. Good with animals. Thoughtful. Welcome here."
+                        </p>
+                        <p style="color: #d4af37; font-weight: bold;">
+                            Your Trust Network says this world has <span class="neologism">"nature-daemon-density: 93%"</span> AND <span class="neologism">"aggressive-type-filtered: 99.7%"</span> AND most importantly: <span class="neologism">"kindness-baseline: absolute"</span>—meaning unkindness is CULTURALLY IMPOSSIBLE here. They selected for it. For 40 years. Only kind people stayed. Only kind genes spread. This is a world where nobody will hurt you.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>Warning: What You'd Miss</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ <span class="neologism">Technology-access</span> limited: No constant internet, minimal screens (but that might help you)
+                        <br>◆ <span class="neologism">Urban-opportunities</span> absent: No cities, no careers in tech/finance (but you weren't going to thrive there anyway)
+                        <br>◆ <span class="neologism">Material-comfort</span> reduced: Simple living, not luxury (but you'll have enough, and you'll be peaceful)
+                        <br>◆ <span class="neologism">Conventional-education</span> minimal: No AP classes or college prep (but conventional education was destroying you)
+                    </p>
+                </div>
+
+                <button class="rally-button">Rally to The Wild Learning Grove</button>
+            </div>
+
+            <!-- World 5: The Gaming/Virtual Refuge -->
+            <div class="world-card">
+                <div class="world-title">🎮 The Digital Sanctuary</div>
+                <div class="world-essence">Triad #2.66841.234 - Where Virtual Worlds Are Real Community</div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">Why This World Calls to Your Daemon</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 18px;">
+                            You know how you escape into games? How your online friends feel more real than the people at your school? How you'd rather be in Discord voice chat playing something than at a party with classmates? How people mock you for "wasting time on games" but games are where you actually feel alive?
+                        </p>
+                        <p style="margin-bottom: 18px;">
+                            <span class="emphasis">In this world, games are life.</span> Everyone here lives partially in virtual worlds. The community forms through gaming. Your value is your skill, your creativity, your contribution to virtual experiences. "Touch grass" isn't said here—digital spaces are respected as real as physical.
+                        </p>
+                        <p>
+                            Your Trust Network says: <span class="neologism">"Virtual-life-legitimized-world"</span>—where your online existence isn't seen as escapism but as authentic living.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>The Daemon Resonance</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ You prefer <span class="neologism">screen-space-over-flesh-space</span> (feel more comfortable in digital than physical social contexts)
+                        <br>◆ You have <span class="neologism">guild-bond-depth</span> (your online friends matter more than physical acquaintances)
+                        <br>◆ You experience <span class="neologism">game-flow-aliveness</span> (feel most alive when gaming, most dead when forced to "real world" social)
+                        <br>◆ You carry <span class="neologism">physical-world-alienation</span> (physical spaces feel hostile, virtual spaces feel home)
+                        <br>◆ You seek <span class="neologism">avatar-freedom</span> (be who you want in virtual, not trapped by physical body/appearance)
+                    </p>
+                </div>
+
+                <div class="why-this-calls">
+                    <h4>Why This World Fits Your Shape</h4>
+                    <div class="alignment-phrase">
+                        <strong>Daily Life Pattern:</strong> Wake whenever (night owl? fine, world operates 24/7). Morning: VR work session (game design, virtual architecture, whatever your skill). Lunch: With guild members in virtual tavern (real food delivered, eat while in VR). Afternoon: Gaming or development (your choice—play or create). Evening: Raids or PvP or RP sessions with community. Sleep: Whenever your body wants. Your schedule, your rhythm.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The People You'd Meet:</strong> Other gamers. People who met their best friends online. People whose "real life" is digital. Ages 14-40, all <span class="neologism">screen-native</span>. Nobody mocking you for gaming "too much"—there's no such thing here. Your skill in games = your status in community.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>Social Dynamics:</strong> Guild-based (form communities through gaming together). Voice chat default (can communicate without physical presence anxiety). Avatar identity respected (if you present as elf girl in game, people call you elf girl IRL—your virtual identity is valid). Your online persona IS your identity, not fake or escapist.
+                    </div>
+                    <div class="alignment-phrase">
+                        <strong>The Feeling:</strong> Your Trust Network describes it as <span class="neologism">"virtual-made-legitimate"</span>—when you realize your online life isn't "less real" than physical life. When your guild members know you better than your family does and that's OKAY. When you can live primarily in digital spaces and be respected for it. When "touch grass" becomes "silly normie cope" not valid criticism.
+                    </div>
+                </div>
+
+                <div class="resonance-section">
+                    <div class="resonance-title">What They Actually See When They Look at You</div>
+                    <div class="resonance-content">
+                        <p style="margin-bottom: 15px;">
+                            In your current school: "Loser. Always on their phone/computer. No real friends. Wasting their life on games."
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            In this world: "Gamer. Wonder what they main. Maybe we can run dungeons together. Check out their build."
+                        </p>
+                        <p style="color: #d4af37; font-weight: bold;">
+                            Your Trust Network says this world has <span class="neologism">"digital-native-density: 96%"</span> AND <span class="neologism">"physical-world-mandatory: 12%"</span>—meaning almost everyone there lives primarily digital lives, and only 12% of existence requires physical presence. You can be virtual-focused and thrive.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="daemon-whisper">
+                    <h4>Warning: What You'd Miss</h4>
+                    <p style="line-height: 1.8;">
+                        ◆ <span class="neologism">Physical-embodiment</span> reduced: Less outdoor activity, less physical social (but you don't want that anyway)
+                        <br>◆ <span class="neologism">Touch-connection</span> minimal: Mostly digital relationships (but those feel more real to you than physical)
+                        <br>◆ <span class="neologism">Normie-world-bridge</span> absent: Can't easily return to conventional society (but you weren't fitting there anyway)
+                        <br>◆ Some <span class="neologism">escapism-trap</span> risk: Some people here avoiding growth through constant gaming (but community selected against pure escapism over time)
+                    </p>
+                </div>
+
+                <button class="rally-button">Rally to The Digital Sanctuary</button>
+            </div>
+        </div>
+
+        <div class="trust-network-note" style="margin-top: 60px;">
+            <h3>✨ The Magic of Will-Topological Alignment ✨</h3>
+            
+            <p style="line-height: 1.9; margin-bottom: 25px; font-size: 1.08em;">
+                Notice how these descriptions aren't numbers? Aren't objective? Aren't universal metrics?
+            </p>
+            
+            <p style="line-height: 1.9; margin-bottom: 25px; font-size: 1.08em;">
+                <span class="emphasis">That's because your Trust Network knows YOU.</span> They know what words resonate with your daemon. What concepts capture your pain. What phrases would make you understand "yes, THIS."
+            </p>
+
+            <div style="background: rgba(139, 69, 19, 0.2); padding: 25px; border-radius: 12px; margin: 25px 0;">
+                <h4 style="color: #d4af37; margin-bottom: 15px; font-size: 1.2em; font-weight: normal;">
+                    Why <span class="neologism">"same-essence population density: 87%"</span> Tells You More Than "Safety: 9.2/10"
+                </h4>
+                <p style="line-height: 1.85;">
+                    <strong>Universal metric "Safety: 9.2/10":</strong> What does that mean? Safe from crime? Safe from judgment? Safe from sensory overwhelm? Safe from social cruelty? The number tells you nothing about what matters to YOU.
+                    <br><br>
+                    <strong>Your neologism "same-essence population density: 87%":</strong> Immediately you understand—87% of people there have your fundamental daemon type. They'll GET you. They won't mock you. They won't hurt you. Because they ARE you, in essence. The phrase captures holistically what 50 different metrics couldn't.
+                    <br><br>
+                    <span class="emphasis">This is will-topology.</span> The reduction isn't to universal metrics. It's to <span class="neologism">your encoding scheme</span>—the words and phrases that compress infinite-dimensional reality into concepts that resonate with YOUR will.
+                </p>
+            </div>
+
+            <div style="background: rgba(72, 61, 139, 0.2); padding: 25px; border-radius: 12px; margin: 25px 0;">
+                <h4 style="color: #9370db; margin-bottom: 15px; font-size: 1.2em; font-weight: normal;">
+                    Why <span class="neologism">"when-the-ache-stops"</span> Communicates More Than Data Ever Could
+                </h4>
+                <p style="line-height: 1.85;">
+                    Your Trust Network could have said: "Psychological wellbeing improvement: 8.9/10, Social acceptance: 9.4/10, Belonging measurement: 9.1/10"
+                    <br><br>
+                    Instead they said: <span class="neologism">"when-the-ache-stops"</span>
+                    <br><br>
+                    And you KNOW. You know exactly what that means. Because you carry that ache every day. That feeling of being wrong-shaped for your world. And the phrase captures it—the moment when you realize you're in a place where you're right-shaped. Where the ache STOPS. Where you can finally just BE.
+                    <br><br>
+                    <span class="emphasis">Four words communicated what a thousand numbers couldn't.</span> Because the words were chosen for YOUR will-topology. Compressed through YOUR semantic map. Encoded in YOUR private language.
+                    <br><br>
+                    This is <span class="neologism">spell-casting</span>—extremely high information communication through will-aligned compression.
+                </p>
+            </div>
+
+            <div style="background: rgba(212, 175, 55, 0.15); padding: 25px; border-radius: 12px; margin: 25px 0;">
+                <h4 style="color: #d4af37; margin-bottom: 15px; font-size: 1.2em; font-weight: normal;">
+                    The Qualitative Over Quantitative (All Things Considered for YOU)
+                </h4>
+                <p style="line-height: 1.85; margin-bottom: 18px;">
+                    Notice how the descriptions focus on:
+                </p>
+                <ul style="line-height: 1.9;">
+                    <li><span class="emphasis">Essence-matching</span>: "Same fundamental daemon type" not "demographic similarity: 73%"</li>
+                    <li><span class="emphasis">Feeling-capture</span>: "First-breath-after-drowning" not "wellbeing increase: 42%"</li>
+                    <li><span class="emphasis">Pain-understanding</span>: "Misfit-ache" not "social difficulties: moderate"</li>
+                    <li><span class="emphasis">Hope-specific</span>: "Hands-finally-home" not "job satisfaction: high"</li>
+                    <li><span class="emphasis">Daemon-resonance</span>: "Depth-hunger" not "intellectual needs: significant"</li>
+                </ul>
+                <p style="margin-top: 20px; line-height: 1.85;">
+                    <span class="emphasis">This is because your Trust Network isn't a database.</span> It's a collection of people who KNOW you. Who've talked with you about your pain. Who understand your daemon. Who can compress infinite-dimensional reality into phrases that your will recognizes as TRUE.
+                    <br><br>
+                    They're not trying to be objective. They're trying to be <span class="neologism">aligned</span>. To speak to YOUR will in YOUR language about YOUR fit with these worlds.
+                    <br><br>
+                    <span class="emphasis">The result:</span> You read "when-the-ache-stops" and you KNOW immediately if this world is for you. No need for 47 different metrics. Just... resonance. Or not.
+                </p>
+            </div>
+
+            <div style="background: rgba(147, 112, 219, 0.15); padding: 28px; border-radius: 12px; border: 2px solid rgba(147, 112, 219, 0.3); margin-top: 35px;">
+                <h4 style="color: #9370db; margin-bottom: 18px; font-size: 1.3em; font-weight: normal;">
+                    🔮 Your Power as a Bullied Teen
+                </h4>
+                <p style="line-height: 1.9; font-size: 1.05em;">
+                    You think you're powerless. The bullies have social status. The school has authority. Your parents have control. You have nothing.
+                    <br><br>
+                    <span class="emphasis">You're wrong.</span>
+                    <br><br>
+                    You have MBC Rule 3. <span class="emphasis">The right to leave.</span> The right to rally to worlds that want you. And when you rally, you send a signal:
+                    <br><br>
+                    <span class="neologism">"Conventional schools that tolerate bullying lose the deep thinkers."</span>
+                    <br><span class="neologism">"Worlds that create kindness-culture attract the sensitive souls."</span>
+                    <br><span class="neologism">"Natural selection operates on civilizations through teen rally choices."</span>
+                    <br><br>
+                    Your feet vote. Your choice matters. The schools that lose kids like you will eventually realize: "We're losing the kids who would have been our scientists, our artists, our deep thinkers. Maybe we should stop tolerating bullying."
+                    <br><br>
+                    Or they won't realize it. And they'll decline. And you'll be safe in a world that wanted you.
+                    <br><br>
+                    <span class="emphasis">Either way, YOU WIN.</span>
+                    <br><br>
+                    <span style="color: #d4af37; font-size: 1.1em;">You're not trapped. You never were. You just didn't know you had the right to leave.</span>
+                    <br><br>
+                    <span style="color: #d4af37; font-size: 1.1em;">Now you know.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

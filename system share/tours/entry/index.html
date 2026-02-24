@@ -1,0 +1,198 @@
+﻿<!doctype html>
+<meta charset="utf-8">
+<title>Entry Tour</title>
+<style>
+	body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #0b0e12; color: #e6e8eb; }
+	.container { padding: 16px; }
+	.section { margin-bottom: 16px; }
+	.link { color: #7cc7ff; }
+	.card { border: 1px solid #1d232b; border-radius: 8px; padding: 16px; background: #0f141a; }
+</style>
+<div class="container">
+	<div class="section">
+		<h2>Why it matters — a collage</h2>
+		<div class="card">
+			<p>Begin with motivation, then connect to a concrete genesis.</p>
+			<p>Quote: <a class="link" href="../..//foundations/1%20exec_summary_vision.md" target="_blank">Executive Summary & Vision</a></p>
+			<p>Quote: <a class="link" href="../..//immersion/historical-entries/new-world-genesis.md" target="_blank">New World Genesis</a></p>
+		</div>
+	</div>
+	<div class="section">
+		<h2>Try a lobby</h2>
+		<div class="card">
+			<p>Open the lobby in the host overlay:</p>
+			<button id="openLobby">Open Lobby</button>
+		</div>
+	</div>
+</div>
+<script>
+	function post(msg) { parent && parent.postMessage({ source: 'tour-app', ...msg }, '*'); }
+	// Announce steps state to the host
+	let step = 0; const total = 2; const title = 'Entry Tour';
+	function announce() { post({ type: 'state', step, total, title }); }
+	announce();
+	window.addEventListener('message', (e) => {
+		const data = e.data||{}; if (data.type === 'nav') {
+			if (data.action === 'prev') { step = Math.max(0, step-1); }
+			if (data.action === 'next') { step = Math.min(total-1, step+1); }
+			announce();
+		}
+	});
+	document.getElementById('openLobby').addEventListener('click', () => {
+		post({ type: 'open', view: 'html', file: 'immersion/lobbies/crucible-vs-oldworld.html' });
+	});
+</script>
+
+    <script>
+        (function() {
+            if (window.__navVimlikeLoaderAttached) {
+                return;
+            }
+            window.__navVimlikeLoaderAttached = true;
+            var candidates = ['/lib/nav-vimlike.js'];
+            var rel = '';
+            for (var i = 0; i < 8; i++) {
+                rel = rel ? ('../' + rel) : '../';
+                candidates.push(rel + 'lib/nav-vimlike.js');
+            }
+            candidates.push('lib/nav-vimlike.js');
+            var seen = {};
+            candidates = candidates.filter(function(src) {
+                if (seen[src]) { return false; }
+                seen[src] = true;
+                return true;
+            });
+            var index = 0;
+            function loadNext() {
+                if (index >= candidates.length) {
+                    console.error('nav-vimlike.js: unable to load from candidates', candidates);
+                    return;
+                }
+                var src = candidates[index++];
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false;
+                script.onload = function() {
+                    console.info('nav-vimlike.js loaded from', src);
+                };
+                script.onerror = function() {
+                    script.remove();
+                    loadNext();
+                };
+                document.head.appendChild(script);
+            }
+            loadNext();
+        })();
+    </script>
+
+
+    <script>
+        (function() {
+            if (window.__NAV_VIMLIKE_BOOTSTRAP__) {
+                return;
+            }
+            window.__NAV_VIMLIKE_BOOTSTRAP__ = true;
+
+            function ensureTrailingSlash(path) {
+                if (!path) { return ''; }
+                return path.endsWith('/') ? path : path + '/';
+            }
+
+            function tryLoadScript(list, index) {
+                if (!list || index >= list.length) {
+                    console.error('nav-vimlike.js: unable to load from candidates', list);
+                    return;
+                }
+                var src = list[index];
+                if (!src) {
+                    tryLoadScript(list, index + 1);
+                    return;
+                }
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false;
+                script.onload = function() {
+                    console.info('nav-vimlike.js loaded from', src);
+                };
+                script.onerror = function() {
+                    script.remove();
+                    tryLoadScript(list, index + 1);
+                };
+                document.head.appendChild(script);
+            }
+
+            function finalizeLoad() {
+                var base = '';
+                if (typeof window.__NAV_VIMLIKE_BASE === 'string' && window.__NAV_VIMLIKE_BASE.trim().length > 0) {
+                    base = ensureTrailingSlash(window.__NAV_VIMLIKE_BASE.trim());
+                }
+
+                var candidates = [];
+                if (base) {
+                    candidates.push(base + 'nav-vimlike.js');
+                    candidates.push(base + 'lib/nav-vimlike.js');
+                }
+
+                candidates.push('/lib/nav-vimlike.js');
+
+                var rel = '';
+                for (var i = 0; i < 12; i++) {
+                    rel = rel ? ('../' + rel) : '../';
+                    candidates.push(rel + 'lib/nav-vimlike.js');
+                    candidates.push(rel.replace(/\/$/, '') + '/nav-vimlike.js');
+                }
+
+                candidates.push('lib/nav-vimlike.js');
+                candidates.push('nav-vimlike.js');
+
+                var seen = {};
+                candidates = candidates.filter(function(src) {
+                    if (!src || seen[src]) { return false; }
+                    seen[src] = true;
+                    return true;
+                });
+
+                tryLoadScript(candidates, 0);
+            }
+
+            var configCandidates = [];
+            var relConfig = '';
+            configCandidates.push('/lib/config/nav-vimlike-base.js');
+            for (var j = 0; j < 12; j++) {
+                relConfig = relConfig ? ('../' + relConfig) : '../';
+                configCandidates.push(relConfig + 'lib/config/nav-vimlike-base.js');
+            }
+            configCandidates.push('lib/config/nav-vimlike-base.js');
+            configCandidates.push('config/nav-vimlike-base.js');
+
+            function tryConfig(index) {
+                if (index >= configCandidates.length) {
+                    finalizeLoad();
+                    return;
+                }
+                var candidate = configCandidates[index];
+                if (!candidate) {
+                    tryConfig(index + 1);
+                    return;
+                }
+                var script = document.createElement('script');
+                script.src = candidate;
+                script.async = false;
+                script.onload = function() {
+                    finalizeLoad();
+                };
+                script.onerror = function() {
+                    script.remove();
+                    tryConfig(index + 1);
+                };
+                document.head.appendChild(script);
+            }
+
+            if (typeof window.__NAV_VIMLIKE_BASE !== 'undefined') {
+                finalizeLoad();
+            } else {
+                tryConfig(0);
+            }
+        })();
+    </script>
+

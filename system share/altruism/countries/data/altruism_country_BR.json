@@ -1,0 +1,37 @@
+{
+  "country_code": "BR",
+  "name": "Brazil",
+  "approximate": true,
+  "population": 215000000,
+  "gdp_nominal_usd": 2000000000000,
+  "gdp_per_capita_usd": 9000,
+  "social_spending_pct_gdp": 17.0,
+  "health_spending_pct_gdp": 4.0,
+  "education_spending_pct_gdp": 5.5,
+  "oda_given_pct_gni": 0.03,
+  "oda_given_usd": 600000000,
+  "oda_received_usd": 2000000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 6000000000,
+  "volunteering_rate_pct_adults": 20.0,
+  "volunteer_hours_billion": 1.5,
+  "child_mortality_under5_per_1000": 14.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Violence and homicide",
+    "Road injuries"
+  ],
+  "notes": [
+    "Values are approximate; Brazil has high social spending relative to GDP and significant inequality.",
+    "Private giving data is sparse; estimates combine NGO and philanthropy reports."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "Brazilian government budget and IPEA",
+    "WHO Global Health Observatory",
+    "CAF World Giving Index"
+  ]
+}
+
+

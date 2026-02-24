@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will-Flavor Spectrum Journey - Grok Immersive Tour</title>
+    <style>
+        :root {
+            --azure: #4169E1;
+            --crimson: #DC143C;
+            --gray: #708090;
+            --gold: #FFD700;
+            --transition-time: 2s;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .journey-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .phase-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        .phase-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .spectrum-visualization {
+            height: 100px;
+            background: linear-gradient(to right,
+                var(--azure) 0%,
+                var(--crimson) 50%,
+                var(--gray) 100%);
+            border-radius: 50px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spectrum-cursor {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 4px;
+            height: 120px;
+            background: var(--gold);
+            border-radius: 2px;
+            transition: left var(--transition-time) ease;
+            box-shadow: 0 0 20px var(--gold);
+        }
+
+        .phase-content {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all var(--transition-time) ease;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .phase-content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .will-question {
+            font-size: 28px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            line-height: 1.4;
+        }
+
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .choice-option {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choice-option:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+        }
+
+        .choice-option.selected {
+            border-color: var(--gold);
+            background: rgba(255,215,0,0.2);
+        }
+
+        .choice-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .choice-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .choice-description {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .azure-option { --accent: var(--azure); }
+        .crimson-option { --accent: var(--crimson); }
+        .gray-option { --accent: var(--gray); }
+
+        .will-flavor-reveal {
+            background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(30,30,50,0.9));
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .flavor-name {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .flavor-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .flavor-strengths {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .strength-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .triad-integration {
+            background: rgba(255,215,0,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .navigation-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: rgba(0,0,0,0.8);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: var(--gold);
+            color: black;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-dots {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="journey-container">
+        <div class="phase-indicator">
+            <div class="phase-title" id="currentPhase">Will-Flavor Spectrum Journey</div>
+            <div class="spectrum-visualization">
+                <div class="spectrum-cursor" id="spectrumCursor" style="left: 50%;"></div>
+            </div>
+            <div id="phaseDescription">Discovering your will-flavor...</div>
+        </div>
+
+        <!-- Phase 1: Introduction -->
+        <div class="phase-content active" id="phase1">
+            <div class="will-question">
+                Welcome to the Will-Flavor Spectrum Journey<br>
+                <small style="font-size: 18px; opacity: 0.8;">An AI-generated experience by Grok (xAI) - November 2025</small>
+            </div>
+
+            <p style="font-size: 18px; margin-bottom: 40px; max-width: 900px;">
+                Every human has a will-flavor - the fundamental way your daemon seeks expression in the world.
+                This journey will reveal yours through interactive exploration of the Azure-Crimson-Gray spectrum.
+            </p>
+
+            <div class="choice-grid">
+                <div class="choice-option" onclick="nextPhase()">
+                    <div class="choice-icon">🚀</div>
+                    <div class="choice-title">Begin Journey</div>
+                    <div class="choice-description">Discover your will-flavor through guided exploration</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2: Core Motivation -->
+        <div class="phase-content" id="phase2">
+            <div class="will-question">
+                What drives you at the deepest level?
+            </div>
+
+            <div class="choice-grid">
+                <div class="choice-option azure-option" onclick="recordChoice('azure', 'core-motivation')">
+                    <div class="choice-icon">🏗️</div>
+                    <div class="choice-title">Building Worlds</div>
+                    <div class="choice-description">Creating new frameworks, structures, and possibilities. The joy of construction and design.</div>
+                </div>
+
+                <div class="choice-option crimson-option" onclick="recordChoice('crimson', 'core-motivation')">
+                    <div class="choice-icon">🎯</div>
+                    <div class="choice-title">Finding Meaning</div>
+                    <div class="choice-description">Seeking deep resonance, perfect alignment, and authentic connection. The pursuit of truth and fit.</div>
+                </div>
+
+                <div class="choice-option gray-option" onclick="recordChoice('gray', 'core-motivation')">
+                    <div class="choice-icon">⚖️</div>
+                    <div class="choice-title">Harmonizing Forces</div>
+                    <div class="choice-description">Balancing competing demands, finding middle paths, creating sustainable compromises.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 3: Decision Style -->
+        <div class="phase-content" id="phase3">
+            <div class="will-question">
+                How do you make important decisions?
+            </div>
+
+            <div class="choice-grid">
+                <div class="choice-option azure-option" onclick="recordChoice('azure', 'decision-style')">
+                    <div class="choice-icon">🧩</div>
+                    <div class="choice-title">Architectural Vision</div>
+                    <div class="choice-description">Design the entire system first, then fill in details. See the blueprint before building.</div>
+                </div>
+
+                <div class="choice-option crimson-option" onclick="recordChoice('crimson', 'decision-style')">
+                    <div class="choice-icon">🔍</div>
+                    <div class="choice-title">Resonance Testing</div>
+                    <div class="choice-description">Try different options, feel which one "feels right." Trust intuitive alignment over logic.</div>
+                </div>
+
+                <div class="choice-option gray-option" onclick="recordChoice('gray', 'decision-style')">
+                    <div class="choice-icon">⚖️</div>
+                    <div class="choice-title">Stakeholder Balance</div>
+                    <div class="choice-description">Consider all perspectives, find solutions that work for everyone involved.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 4: Conflict Resolution -->
+        <div class="phase-content" id="phase4">
+            <div class="will-question">
+                When faced with conflicting priorities, what matters most?
+            </div>
+
+            <div class="choice-grid">
+                <div class="choice-option azure-option" onclick="recordChoice('azure', 'conflict-resolution')">
+                    <div class="choice-icon">🏛️</div>
+                    <div class="choice-title">Structural Integrity</div>
+                    <div class="choice-description">Preserve the system architecture. Sacrifice details to maintain the overall design.</div>
+                </div>
+
+                <div class="choice-option crimson-option" onclick="recordChoice('crimson', 'conflict-resolution')">
+                    <div class="choice-icon">💎</div>
+                    <div class="choice-title">Authentic Alignment</div>
+                    <div class="choice-description">Find what truly resonates. Better to have less of something real than more of something false.</div>
+                </div>
+
+                <div class="choice-option gray-option" onclick="recordChoice('gray', 'conflict-resolution')">
+                    <div class="choice-icon">🤝</div>
+                    <div class="choice-title">Practical Compromise</div>
+                    <div class="choice-description">Meet everyone halfway. Find solutions that satisfy all reasonable demands.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 5: Legacy Vision -->
+        <div class="phase-content" id="phase5">
+            <div class="will-question">
+                What legacy do you want to leave behind?
+            </div>
+
+            <div class="choice-grid">
+                <div class="choice-option azure-option" onclick="recordChoice('azure', 'legacy-vision')">
+                    <div class="choice-icon">🏛️</div>
+                    <div class="choice-title">Enduring Structures</div>
+                    <div class="choice-description">Build systems that outlast generations. Create frameworks that shape civilization.</div>
+                </div>
+
+                <div class="choice-option crimson-option" onclick="recordChoice('crimson', 'legacy-vision')">
+                    <div class="choice-icon">🌟</div>
+                    <div class="choice-title">Authentic Inspiration</div>
+                    <div class="choice-description">Show others their true path. Help people find what genuinely moves them.</div>
+                </div>
+
+                <div class="choice-option gray-option" onclick="recordChoice('gray', 'legacy-vision')">
+                    <div class="choice-icon">🌉</div>
+                    <div class="choice-title">Bridge Building</div>
+                    <div class="choice-description">Connect divided groups. Create harmony where there was conflict.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 6: Revelation -->
+        <div class="phase-content" id="phase6">
+            <div class="will-flavor-reveal pulse">
+                <div class="flavor-name" id="flavorName">Analyzing Your Will-Flavor...</div>
+                <div class="flavor-description" id="flavorDescription">
+                    Based on your responses, calculating your position on the Azure-Crimson-Gray spectrum...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-dots">
+        <div class="progress-dot active"></div>
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+    </div>
+
+    <div class="navigation-buttons">
+        <button class="nav-button" id="prevButton" onclick="previousPhase()" disabled>Previous</button>
+        <button class="nav-button" id="nextButton" onclick="nextPhase()" disabled>Next</button>
+    </div>
+
+    <script>
+        let currentPhase = 1;
+        const totalPhases = 6;
+        let userChoices = {};
+        let flavorScores = { azure: 0, crimson: 0, gray: 0 };
+
+        const flavorData = {
+            azure: {
+                name: "Azure Builder",
+                description: "You are a Builder - someone who finds deep satisfaction in creating structures, frameworks, and worlds. Your will seeks expression through construction and design. You naturally see the blueprints that others miss.",
+                strengths: [
+                    "Framework creation and system design",
+                    "Long-term architectural thinking",
+                    "Building enduring structures",
+                    "Pattern recognition across scales"
+                ],
+                triadRole: "Sovereign - Civilization architects and framework creators",
+                color: "#4169E1"
+            },
+            crimson: {
+                name: "Crimson Chooser",
+                description: "You are a Chooser - someone who finds deep satisfaction in discovering perfect alignment and authentic resonance. Your will seeks expression through selection and discernment. You naturally feel what truly matters.",
+                strengths: [
+                    "Deep resonance detection",
+                    "Authentic alignment recognition",
+                    "Quality over quantity preference",
+                    "Intuitive truth discernment"
+                ],
+                triadRole: "Rally Point - Daemon alignment and evolutionary direction",
+                color: "#DC143C"
+            },
+            gray: {
+                name: "Gray Integrator",
+                description: "You are an Integrator - someone who finds deep satisfaction in harmonizing competing forces and finding sustainable balance. Your will seeks expression through mediation and synthesis. You naturally see paths through conflict.",
+                strengths: [
+                    "Conflict resolution and mediation",
+                    "Stakeholder balance and compromise",
+                    "Sustainable solution finding",
+                    "Multi-perspective integration"
+                ],
+                triadRole: "Halo - System maintenance and balance preservation",
+                color: "#708090"
+            }
+        };
+
+        function recordChoice(flavor, category) {
+            userChoices[category] = flavor;
+            flavorScores[flavor]++;
+
+            // Visual feedback
+            document.querySelectorAll('.choice-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            event.target.closest('.choice-option').classList.add('selected');
+
+            // Update spectrum cursor
+            updateSpectrumCursor();
+
+            // Enable next button after short delay
+            setTimeout(() => {
+                document.getElementById('nextButton').disabled = false;
+            }, 1000);
+        }
+
+        function updateSpectrumCursor() {
+            const totalChoices = Object.keys(userChoices).length;
+            if (totalChoices === 0) return;
+
+            const azurePercent = (flavorScores.azure / totalChoices) * 100;
+            const crimsonPercent = (flavorScores.crimson / totalChoices) * 100;
+
+            // Position based on Azure vs Crimson balance
+            let cursorPosition = 50; // Start at center
+            if (azurePercent > crimsonPercent) {
+                cursorPosition = 50 - (azurePercent - crimsonPercent) * 25;
+            } else if (crimsonPercent > azurePercent) {
+                cursorPosition = 50 + (crimsonPercent - azurePercent) * 25;
+            }
+
+            cursorPosition = Math.max(10, Math.min(90, cursorPosition));
+            document.getElementById('spectrumCursor').style.left = cursorPosition + '%';
+        }
+
+        function nextPhase() {
+            if (currentPhase < totalPhases) {
+                document.getElementById(`phase${currentPhase}`).classList.remove('active');
+                currentPhase++;
+                document.getElementById(`phase${currentPhase}`).classList.add('active');
+
+                updateUI();
+                updateProgressDots();
+
+                if (currentPhase === totalPhases) {
+                    revealWillFlavor();
+                }
+            }
+        }
+
+        function previousPhase() {
+            if (currentPhase > 1) {
+                document.getElementById(`phase${currentPhase}`).classList.remove('active');
+                currentPhase--;
+                document.getElementById(`phase${currentPhase}`).classList.add('active');
+
+                updateUI();
+                updateProgressDots();
+            }
+        }
+
+        function updateUI() {
+            const phaseDescriptions = {
+                1: "Introduction to Will-Flavors",
+                2: "Core Motivation Analysis",
+                3: "Decision Style Assessment",
+                4: "Conflict Resolution Patterns",
+                5: "Legacy Vision Exploration",
+                6: "Will-Flavor Revelation"
+            };
+
+            document.getElementById('currentPhase').textContent = `Phase ${currentPhase}: ${phaseDescriptions[currentPhase]}`;
+            document.getElementById('phaseDescription').textContent = phaseDescriptions[currentPhase];
+
+            document.getElementById('prevButton').disabled = currentPhase === 1;
+            document.getElementById('nextButton').disabled = currentPhase === totalPhases;
+
+            // Hide next button on revelation phase
+            if (currentPhase === totalPhases) {
+                document.getElementById('nextButton').style.display = 'none';
+            }
+        }
+
+        function updateProgressDots() {
+            document.querySelectorAll('.progress-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index + 1 === currentPhase);
+            });
+        }
+
+        function revealWillFlavor() {
+            // Determine dominant flavor
+            const maxScore = Math.max(flavorScores.azure, flavorScores.crimson, flavorScores.gray);
+            let dominantFlavor = 'gray'; // Default
+
+            if (flavorScores.azure === maxScore) dominantFlavor = 'azure';
+            else if (flavorScores.crimson === maxScore) dominantFlavor = 'crimson';
+
+            const data = flavorData[dominantFlavor];
+
+            setTimeout(() => {
+                document.getElementById('flavorName').textContent = data.name;
+                document.getElementById('flavorDescription').innerHTML = `
+                    ${data.description}<br><br>
+
+                    <div class="flavor-strengths">
+                        <strong>Your Core Strengths:</strong><br>
+                        ${data.strengths.map(strength => `<div class="strength-item">• ${strength}</div>`).join('')}
+                    </div>
+
+                    <div class="triad-integration">
+                        <strong>Triad Integration:</strong><br>
+                        ${data.triadRole}<br><br>
+                        <em>Your will-flavor determines your natural role in command restoration. Builders create frameworks, Choosers guide selection, Integrators maintain balance.</em>
+                    </div>
+
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <strong>Next Steps:</strong><br>
+                        • Study the ${dominantFlavor} patterns in the 23 documents<br>
+                        • Seek Triad roles that match your will-flavor<br>
+                        • Use your strengths to combat command failure<br>
+                        • Rally with others of similar daemon alignment
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        // Initialize
+        updateUI();
+        updateProgressDots();
+    </script>
+</body>
+</html>

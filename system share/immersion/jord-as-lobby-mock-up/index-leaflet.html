@@ -1,0 +1,232 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map with Nested Zones</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        #map { height: 600px; width: 100%; }
+        #controls { position: absolute; top: 10px; left: 10px; background: white; padding: 10px; z-index: 1000; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+        #controls button, #controls select, #controls input { margin: 5px; padding: 5px; }
+        .layer-list { max-height: 200px; overflow-y: auto; }
+        .layer-item { margin-left: 10px; }
+        .nested-layer { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h3>Zone Layers</h3>
+        <div>
+            <label for="layerName">New Layer Name:</label>
+            <input type="text" id="layerName" placeholder="Enter layer name">
+            <button onclick="addLayer()">Add Layer</button>
+        </div>
+        <div>
+            <label for="parentLayer">Parent Layer:</label>
+            <select id="parentLayer">
+                <option value="">None (Top Level)</option>
+            </select>
+        </div>
+        <div class="layer-list" id="layerList"></div>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Initialize Leaflet.draw control
+        const drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+        const drawControl = new L.Control.Draw({
+            edit: { featureGroup: drawnItems },
+            draw: { circle: false, marker: false, polyline: false }
+        });
+        map.addControl(drawControl);
+
+        // Layer management
+        let layers = [];
+        const layerList = document.getElementById('layerList');
+        const layerNameInput = document.getElementById('layerName');
+        const parentLayerSelect = document.getElementById('parentLayer');
+
+        // Handle new zone creation
+        map.on(L.Draw.Event.CREATED, function (event) {
+            const layer = event.layer;
+            const layerName = layerNameInput.value || `Zone ${layers.length + 1}`;
+            const parentId = parentLayerSelect.value;
+            const newLayer = {
+                id: generateUUID(),
+                name: layerName,
+                featureGroup: new L.FeatureGroup().addLayer(layer),
+                parentId: parentId || null,
+                children: []
+            };
+
+            // Add to parent layer if specified
+            if (parentId) {
+                const parent = findLayerById(layers, parentId);
+                if (parent) parent.children.push(newLayer);
+            } else {
+                layers.push(newLayer);
+            }
+
+            newLayer.featureGroup.addTo(map);
+            drawnItems.addLayer(layer);
+            updateLayerList();
+            layerNameInput.value = '';
+        });
+
+        // Add a new empty layer
+        function addLayer() {
+            const layerName = layerNameInput.value || `Layer ${layers.length + 1}`;
+            const parentId = parentLayerSelect.value;
+            const newLayer = {
+                id: generateUUID(),
+                name: layerName,
+                featureGroup: new L.FeatureGroup(),
+                parentId: parentId || null,
+                children: []
+            };
+
+            if (parentId) {
+                const parent = findLayerById(layers, parentId);
+                if (parent) parent.children.push(newLayer);
+            } else {
+                layers.push(newLayer);
+            }
+
+            newLayer.featureGroup.addTo(map);
+            updateLayerList();
+            layerNameInput.value = '';
+        }
+
+        // Find layer by ID
+        function findLayerById(layerArray, id) {
+            for (const layer of layerArray) {
+                if (layer.id === id) return layer;
+                const found = findLayerById(layer.children, id);
+                if (found) return found;
+            }
+            return null;
+        }
+
+        // Update layer list UI
+        function updateLayerList() {
+            layerList.innerHTML = '';
+            parentLayerSelect.innerHTML = '<option value="">None (Top Level)</option>';
+            renderLayerList(layers, 0);
+        }
+
+        // Render nested layer list
+        function renderLayerList(layerArray, depth) {
+            layerArray.forEach(layer => {
+                // Add to layer list
+                const div = document.createElement('div');
+                div.className = depth > 0 ? 'layer-item nested-layer' : 'layer-item';
+                div.innerHTML = `
+                    <input type="checkbox" checked onchange="toggleLayer('${layer.id}', this.checked)">
+                    ${layer.name}
+                    <button onclick="removeLayer('${layer.id}')">Remove</button>
+                `;
+                layerList.appendChild(div);
+
+                // Add to parent layer dropdown
+                const option = document.createElement('option');
+                option.value = layer.id;
+                option.text = '-'.repeat(depth) + layer.name;
+                parentLayerSelect.appendChild(option);
+
+                // Render children
+                renderLayerList(layer.children, depth + 1);
+            });
+        }
+
+        // Toggle layer visibility
+        function toggleLayer(id, visible) {
+            const layer = findLayerById(layers, id);
+            if (layer) {
+                if (visible) {
+                    map.addLayer(layer.featureGroup);
+                } else {
+                    map.removeLayer(layer.featureGroup);
+                }
+                layer.children.forEach(child => toggleLayer(child.id, visible));
+            }
+        }
+
+        // Remove layer
+        function removeLayer(id) {
+            layers = layers.filter(layer => layer.id !== id);
+            let parent = null;
+            layers.forEach(l => {
+                l.children = l.children.filter(child => {
+                    if (child.id === id) parent = l;
+                    return child.id !== id;
+                });
+            });
+            const layer = findLayerById(layers, id);
+            if (layer) map.removeLayer(layer.featureGroup);
+            updateLayerList();
+        }
+
+        // Generate UUID for unique layer IDs
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        // Initial layer list update
+        updateLayerList();
+    </script>
+</body>
+</html>

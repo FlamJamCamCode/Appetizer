@@ -1,0 +1,20 @@
+/* Historical Entries Viewer - Proof of Concept Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #0f0f1e;
+    color: #e0e0e0;
+    padding: 20px;
+}
+
+#viewer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+

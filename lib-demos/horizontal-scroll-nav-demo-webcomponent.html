@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Nav - Web Component Mode Demo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1510 50%, #0a0a0a 100%);
+            color: #d4c5a9;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(72, 61, 139, 0.2));
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid rgba(212, 175, 55, 0.6);
+        }
+        
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(90deg, #ff4444, #ffd700, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        horscroller-viewport {
+            display: block;
+        }
+        
+        .horscroller-section {
+            margin-bottom: 50px;
+            padding: 40px;
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            min-height: 800px;
+        }
+        
+        .horscroller-section h2 {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        
+        .horscroller-section p {
+            font-size: 1.2em;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        
+        /* Body scrollbar styling */
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(212, 175, 55, 0.5) rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        
+        body::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.8);
+        }
+        
+        body::-webkit-scrollbar-thumb:active {
+            background: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Horizontal Scroll Navigation - Web Component Mode</h1>
+        <p style="margin-top: 20px; font-size: 1.2em; color: #d4c5a9;">
+            Uses &lt;horscroller-viewport /&gt; and .horscroller-section classes.
+        </p>
+    </header>
+    
+    <horscroller-viewport>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            <section class="horscroller-section" id="warriors">
+                <h2>⚔ Warriors & Fighters</h2>
+                <p>
+                    This section is for warriors. The horizontal navigation bar will create a button for this section
+                    based on the h2 title. As you scroll, the button fills with progress.
+                </p>
+                <p>
+                    Notice how the navigation bar appears below the header and stays sticky at the top as you scroll.
+                    The button for this section will show your progress through it.
+                </p>
+            </section>
+            
+            <section class="horscroller-section" id="strategists">
+                <h2>🎯 Strategists & Commanders</h2>
+                <p>
+                    This is the strategists section. Each section can have different content and different heights.
+                    The navigation system normalizes everything - a 200px button represents an 8000px section proportionally.
+                </p>
+                <p>
+                    Scroll through this section and watch how the button fills. The viewport indicator (blue/purple)
+                    shows exactly where your current viewport is within the section.
+                </p>
+            </section>
+            
+            <section class="horscroller-section" id="merchants">
+                <h2>💰 Merchants & Logistics</h2>
+                <p>
+                    The merchants section. Notice how clicking a button in the navigation bar smoothly scrolls you
+                    to that section. The navigation updates correctly once you arrive.
+                </p>
+                <p>
+                    The horizontal nav bar also scrolls to keep the active section's button visible, moving
+                    proportionally as you scroll through the section.
+                </p>
+            </section>
+            
+            <section class="horscroller-section" id="support">
+                <h2>🏥 Support Roles</h2>
+                <p>
+                    Support roles section. The plugin automatically extracts the section title from the h2 element
+                    to use as the button label. You can customize this with the getSectionLabel option.
+                </p>
+                <p>
+                    All sections are automatically detected within the horscroller-viewport element.
+                </p>
+            </section>
+            
+            <section class="horscroller-section" id="gaming">
+                <h2>🎮 Gaming Skills Transfer</h2>
+                <p>
+                    This is a longer section to demonstrate how the normalized scrolling works. Even if this section
+                    is 8000px tall and the button is only 200px wide, the scroll position maps correctly.
+                </p>
+                <p>
+                    Scroll through this section and watch the button fill. The viewport indicator moves across the button
+                    showing your current position. The horizontal nav bar scrolls to keep the button visible.
+                </p>
+                <p>
+                    This demonstrates the "normalized" binding - the section size doesn't matter, everything is
+                    proportionally mapped between the section height and button width.
+                </p>
+            </section>
+        </div>
+    </horscroller-viewport>
+    
+    <script src="../lib/horizontal-scroll-nav.js"></script>
+    <script>
+        // Auto-initializes when horscroller-viewport is found
+        // Or manually initialize:
+        // new HorizontalScrollNav();
+    </script>
+</body>
+</html>
+

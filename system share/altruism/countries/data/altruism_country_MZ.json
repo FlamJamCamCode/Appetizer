@@ -1,0 +1,36 @@
+{
+  "country_code": "MZ",
+  "name": "Mozambique",
+  "approximate": true,
+  "population": 33000000,
+  "gdp_nominal_usd": 19000000000,
+  "gdp_per_capita_usd": 575,
+  "social_spending_pct_gdp": 13.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1500000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 60000000,
+  "volunteering_rate_pct_adults": 30.0,
+  "volunteer_hours_billion": 0.4,
+  "child_mortality_under5_per_1000": 75.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Lower respiratory infections",
+    "Diarrheal diseases"
+  ],
+  "notes": [
+    "Mozambique has high under-5 and maternal mortality, and is vulnerable to cyclones and floods.",
+    "ODA and NGO activities are central to child survival and health services."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD aid statistics"
+  ]
+}
+
+

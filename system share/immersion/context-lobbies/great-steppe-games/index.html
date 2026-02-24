@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Steppe Games - Rally Lobbies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1510 50%, #0a0a0a 100%);
+            color: #d4c5a9;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            transition: padding-top 0.3s ease;
+        }
+        
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff4444, #ffd700, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.4em;
+            color: #ffd700;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .intro {
+            background: rgba(139, 0, 0, 0.15);
+            border-left: 5px solid #8b0000;
+            padding: 25px;
+            margin-bottom: 50px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            line-height: 1.9;
+        }
+        
+        .category {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #8b0000;
+        }
+        
+        .lobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .lobby-card {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2) 0%, rgba(212, 175, 55, 0.15) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .lobby-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .lobby-title {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .lobby-description {
+            color: #d4c5a9;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .lobby-persona {
+            color: #ff8c00;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+        
+        .lobby-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #8b0000, #ff4444);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .lobby-link:hover {
+            background: linear-gradient(90deg, #ff4444, #ffd700);
+            transform: scale(1.05);
+        }
+        
+        .stats {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .stats h3 {
+            color: #ffd700;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: rgba(139, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            color: #ff4444;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #d4c5a9;
+            margin-top: 5px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 30px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid #d4af37;
+            color: #ffd700;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(255, 215, 0, 0.3);
+            transform: translateX(-5px);
+        }
+        
+        .category-nav-bar {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.4), rgba(72, 61, 139, 0.3));
+            border: 3px solid rgba(212, 175, 55, 0.6);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 40px 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(212, 175, 55, 0.5) rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .category-nav-bar::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .category-nav-bar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+        
+        .category-nav-bar::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+        
+        .category-nav-bar::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.8);
+        }
+        
+        .category-nav-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 0 8px;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(212, 175, 55, 0.2));
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 8px;
+            color: #d4c5a9;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.6), rgba(255, 215, 0, 0.5));
+            z-index: 0;
+        }
+        
+        .category-nav-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: var(--viewport-left, 0%);
+            width: var(--viewport-width, 0%);
+            height: 100%;
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.6), rgba(147, 112, 219, 0.5));
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .category-nav-button span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-nav-button:hover {
+            border-color: #ffd700;
+            color: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .category-nav-button:active {
+            transform: translateY(0);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .category {
+            scroll-margin-top: 100px;
+        }
+        
+        /* Body/Window Scrollbar Styling */
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(212, 175, 55, 0.5) rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        
+        body::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.8);
+        }
+        
+        body::-webkit-scrollbar-thumb:active {
+            background: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚔ THE GREAT STEPPE GAMES ⚔</h1>
+        <div class="subtitle">Valhalla Made Real During Life</div>
+        
+        <div class="intro">
+            <strong style="color: #ffd700; font-size: 1.3em;">When Warriors Became Immortal</strong>
+            <br><br>
+            4.2 million km² of Russian, Kazakh, and Mongolian territory transformed into permanent wargame zones. Real combat. Real conquest. Real glory. With <strong>respawn islands</strong> instead of permanent death.
+            <br><br>
+            <strong style="color: #ff4444;">Fight all day. "Die" gloriously. Respawn on island. Return to battle. Repeat eternally.</strong>
+            <br><br>
+            This is Valhalla. This is MoWD (Metagame of World Dynamics) literalized. This is what warriors have dreamed of for millennia—and now it's REAL.
+        </div>
+        
+        <div class="stats">
+            <h3>The Games at a Glance</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">4.2M</div>
+                    <div class="stat-label">km² Territory</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Active Warriors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.4B</div>
+                    <div class="stat-label">Daily Viewers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Major Factions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Respawn Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$180B</div>
+                    <div class="stat-label">Annual Economy</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-nav-bar">
+            <a href="#warriors" class="category-nav-button"><span>⚔ Warriors & Fighters</span></a>
+            <a href="#strategists" class="category-nav-button"><span>🎯 Strategists & Commanders</span></a>
+            <a href="#merchants" class="category-nav-button"><span>💰 Merchants & Logistics</span></a>
+            <a href="#women" class="category-nav-button"><span>💗 Women's Roles</span></a>
+            <a href="#support" class="category-nav-button"><span>🏥 Support Roles</span></a>
+            <a href="#gaming" class="category-nav-button"><span>🎮 Gaming Skills Transfer</span></a>
+        </div>
+        
+        <div class="category" id="warriors">
+            <h2 class="category-title">⚔ Warriors & Fighters</h2>
+            <div class="lobby-grid">
+                <div class="lobby-card" onclick="location.href='russian-warrior-glory-seeker.html'">
+                    <div class="lobby-title">🔴 Russian Warrior</div>
+                    <div class="lobby-persona">Dmitri Volkov - Spetsnaz, third generation warrior, soul dying in peacetime</div>
+                    <div class="lobby-description">
+                        Born to be warrior. Trapped in peace. No combat. No glory. No purpose. Then discovers: Red Banner faction on Steppe. Eternal combat. Respawn instead of death. Wolf pack tactics. Never surrender.
+                    </div>
+                    <a href="russian-warrior-glory-seeker.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='afghan-warrior-honor-seeker.html'">
+                    <div class="lobby-title">🏔️ Afghan Pashtun Warrior</div>
+                    <div class="lobby-persona">Rashid Khan - Pashtun warrior lineage, Pashtunwali code dishonored by peace</div>
+                    <div class="lobby-description">
+                        Grandfather defeated Soviets. Father fought jihad. You? Security guard. Pashtunwali cannot be lived in modern world. Then: Steppe honors Pashtun code. Courage. Honor. Revenge (but respawn-compatible). Warrior identity restored.
+                    </div>
+                    <a href="afghan-warrior-honor-seeker.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='viking-descendant-valhalla-seeker.html'">
+                    <div class="lobby-title">⚡ Viking Descendant</div>
+                    <div class="lobby-persona">Bjorn Eriksson - Norwegian IT manager, Erik the Red's blood, Odin's promise unfulfilled</div>
+                    <div class="lobby-description">
+                        Odin promised: Fight daily, die gloriously, feast eternally, resurrect, repeat. Born into peace. IT job. Soul dying. Then: Einherjar Reborn faction. Valhalla MADE REAL. Technology fulfills what gods promised. Fight eternally during life.
+                    </div>
+                    <a href="viking-descendant-valhalla-seeker.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='female-warrior-valkyrie-faction.html'">
+                    <div class="lobby-title">💜 Female Warrior</div>
+                    <div class="lobby-persona">Katerina Volkov - Spetsnaz trainer, combat elite, denied frontline because female</div>
+                    <div class="lobby-description">
+                        Stronger than male soldiers she trains. Faster. Better tactics. But: Female = disqualified from combat. Then: Valkyrie Legion. Fight men equally. No gender segregation. Win/lose on merit. 8 of top 50 fighters globally are Valkyrie women. Capability proven.
+                    </div>
+                    <a href="female-warrior-valkyrie-faction.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category" id="strategists">
+            <h2 class="category-title">🎯 Strategists & Commanders</h2>
+            <div class="lobby-grid">
+                <div class="lobby-card" onclick="location.href='rts-strategist-command-seeker.html'">
+                    <div class="lobby-title">🎮 RTS Strategist</div>
+                    <div class="lobby-persona">Chen Wei - Starcraft Grandmaster, Civ6 top 0.1%, commanding pixels instead of reality</div>
+                    <div class="lobby-description">
+                        12,000 hours Starcraft. 8,000 hours Civ6. Grandmaster strategist. Commanding SIMULATIONS. Then: Golden Horde needs commanders. 11,500 real warriors. Your Starcraft skills TRANSFER. APM matters. Strategies reality-tested. From pixels to power.
+                    </div>
+                    <a href="rts-strategist-command-seeker.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='archon-mode-joint-command-specialist.html'">
+                    <div class="lobby-title">🤝 Archon Mode Partnership</div>
+                    <div class="lobby-persona">David "Macro" + James "Micro" - 1,800 hours SC2 Archon TOGETHER, 71% win rate, perfect trust, division of labor mastery</div>
+                    <div class="lobby-description">
+                        Archon life: TWO players, ONE army. David handles economy (macro). James handles units (micro). Perfect specialization. Absolute trust. 3-year partnership. Then: Joint command structure exists. Your Archon skills = Perfect for dual-command warfare. Strategic + Tactical commanders paired. Division of labor. Complementary specialists. +34% performance vs solo commanders. Partnership DEPLOYED.
+                    </div>
+                    <a href="archon-mode-joint-command-specialist.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category" id="merchants">
+            <h2 class="category-title">💰 Merchants & Logistics</h2>
+            <div class="lobby-grid">
+                <div class="lobby-card" onclick="location.href='logistics-merchant-provisioner.html'">
+                    <div class="lobby-title">📦 Logistics Merchant</div>
+                    <div class="lobby-persona">Jakob Schmidt - Supply chain genius, optimizing Amazon deliveries, brilliance wasted</div>
+                    <div class="lobby-description">
+                        MBA in logistics. Optimize package delivery. Meaningless. Then: Steppe armies need provisioning. 50,000 warriors eating daily. Supply routes through combat zones. YOUR optimization = Faction victory. From packages to war machine. Essential asset.
+                    </div>
+                    <a href="logistics-merchant-provisioner.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category" id="women">
+            <h2 class="category-title">💗 Women's Roles</h2>
+            <div class="lobby-grid">
+                <div class="lobby-card" onclick="location.href='woman-conquest-prize-seeker.html'">
+                    <div class="lobby-title">💝 Conquest Prize</div>
+                    <div class="lobby-persona">Anastasia - Marketing manager, hiding conquest/submission desires, ashamed of wanting domination</div>
+                    <div class="lobby-description">
+                        Fantasizes about being WON through combat. Claimed by strong warrior. Modern feminism says shameful. Games say: Legitimate. Voluntary conquest prize role. MBC protected. Won by victor. Consensual but total. Fantasy made real with exit rights.
+                    </div>
+                    <a href="woman-conquest-prize-seeker.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category" id="support">
+            <h2 class="category-title">🏥 Support Roles</h2>
+            <div class="lobby-grid">
+                <div class="lobby-card" onclick="location.href='combat-medic-respawn-technician.html'">
+                    <div class="lobby-title">💚 Combat Medic</div>
+                    <div class="lobby-persona">Dr. Sarah Chen - ER trauma surgeon, brilliant healer, saving people for nothing</div>
+                    <div class="lobby-description">
+                        Save gunshot victims → Return to gangs → Shot again. Save overdoses → Relapse → Die. Brilliant at saving. Nobody valued what you give. Then: Respawn Island needs you. Save "killed" warriors. They return to GLORY. To PURPOSE. To lives they WANT. Finally meaningful.
+                    </div>
+                    <a href="combat-medic-respawn-technician.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='broadcaster-war-documenter.html'">
+                    <div class="lobby-title">📹 War Broadcaster</div>
+                    <div class="lobby-persona">Marcus Webb - Documentary filmmaker, 14k views max, stories nobody watches</div>
+                    <div class="lobby-description">
+                        War documentarian born into peacetime. Talented storyteller. Making wedding videos. 14k views max. Then: Games broadcast to 2.4 BILLION daily. Your war documentary: 87 MILLION views. From nobody-cares to legendary creator. Stories that MATTER.
+                    </div>
+                    <a href="broadcaster-war-documenter.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category" id="gaming">
+            <h2 class="category-title">🎮 Gaming Skills Transfer</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1em; line-height: 1.8; color: #d4c5a9;">
+                <strong style="color: #ffd700;">Your 10,000 gaming hours weren't wasted.</strong> They were TRAINING. Every genre. Every role. Every playstyle transfers to REAL roles in the Games. Your daemon found expression in pixels. Now deploy it on reality.
+            </p>
+            <div class="lobby-grid">
+                <div class="lobby-card" onclick="location.href='moba-support-player-coordinator.html'">
+                    <div class="lobby-title">🎯 MOBA Support Main</div>
+                    <div class="lobby-persona">Tyler "Thresh" Morrison - 11k hours League support, Diamond, perfect vision control, invisible genius</div>
+                    <div class="lobby-description">
+                        Support main life: Enable carries, get no credit. Vision control godlike. Peel mechanics perfect. 58% win rate. Then: Battlefield coordinator role exists. Your support skills = Perfect for coordinating 1,200 warriors. Vision → Intelligence. Peel → Asset protection. From enabling pixels to coordinating victory.
+                    </div>
+                    <a href="moba-support-player-coordinator.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='mmo-healer-respawn-medic.html'">
+                    <div class="lobby-title">💜 MMO Healer Main</div>
+                    <div class="lobby-persona">Sophie "Mercy" Park - 8.4k hours WoW healer, Mythic raider, perfect triage, keeping 20 people alive</div>
+                    <div class="lobby-description">
+                        Healer main life: Life/death decisions every second. Blamed for everything. Credited for nothing. Perfect triage instincts. Then: Respawn medical coordinator exists. Your healer skills = Perfect for managing 300 casualties daily. Triage → Priority systems. Resource management → Medical supplies. From healing pixels to saving warriors.
+                    </div>
+                    <a href="mmo-healer-respawn-medic.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='fps-sniper-precision-marksman.html'">
+                    <div class="lobby-title">🎯 FPS Sniper Main</div>
+                    <div class="lobby-persona">Alex "Ghost" Rodriguez - 7.2k hours CS:GO AWPer, 94k AWP kills, 76% headshot rate, one shot one kill</div>
+                    <div class="lobby-description">
+                        Sniper main life: Patience. Positioning. Perfect timing. One shot, one kill. 7,000 hours perfecting precision. Then: Precision marksman role exists. Your sniper skills = Perfect for 800m eliminations. Patience → Hours holding position. Timing → Real ballistics. From clicking heads to legendary marksman.
+                    </div>
+                    <a href="fps-sniper-precision-marksman.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='mmo-tank-shield-wall-warrior.html'">
+                    <div class="lobby-title">🛡️ MMO Tank Main</div>
+                    <div class="lobby-persona">Marcus "Wall" Thompson - 6.3k hours Protection Paladin, 8.9 billion damage taken, line holder, team protector</div>
+                    <div class="lobby-description">
+                        Tank main life: Take damage for team. Hold the line. Never break. 8.9 billion damage absorbed across career. Mental fortress. Then: Shield wall warrior role exists. Your tank skills = Perfect for frontline combat. Positioning → Front of formation. Damage absorption → Real shields/armor. From tanking pixels to wall that never breaks.
+                    </div>
+                    <a href="mmo-tank-shield-wall-warrior.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='mmo-guild-leader-faction-admin.html'">
+                    <div class="lobby-title">👑 MMO Guild Leader</div>
+                    <div class="lobby-persona">Sarah "Catalyst" Kim - 5 years WoW guild leader, 200 members, top 100 US, people management genius</div>
+                    <div class="lobby-description">
+                        Guild leader life: Manage 200 personalities. Resolve drama. Recruit talent. Strategy. Morale. 30 hrs/week managing raiders. Then: Faction administrator role exists. Your guild skills = Perfect for managing 2,400 warriors. People management. Conflict resolution. Strategic planning. From managing raiders to leading warriors.
+                    </div>
+                    <a href="mmo-guild-leader-faction-admin.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='eve-online-fleet-commander-mass-coordination.html'">
+                    <div class="lobby-title">🚀 Eve Online Fleet Commander</div>
+                    <div class="lobby-persona">Alex "Vanguard" Chen - 4 years FCing 500+ ship fleets, multi-billion ISK battles, mass coordination master</div>
+                    <div class="lobby-description">
+                        Eve FC life: Coordinate 500 pilots. Real-time. Process 20 intel feeds. Manage logistics. Adapt instantly. 4-hour battles. Then: Fleet coordinator role exists. Your Eve skills = Perfect for coordinating 4,000 warriors in battle. Mass coordination. Intelligence processing. From commanding spreadsheets to directing thousands.
+                    </div>
+                    <a href="eve-online-fleet-commander-mass-coordination.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='fighting-game-pro-duel-champion.html'">
+                    <div class="lobby-title">🥊 Fighting Game Pro</div>
+                    <div class="lobby-persona">Marcus "Phantom" Liu - 8.3k hours FGC, EVO top 8 (4x), pattern recognition genius, mind game master</div>
+                    <div class="lobby-description">
+                        FGC pro life: 8,000 hours mastering 1v1. Pattern recognition. Adaptation mid-match. Mind games. Frame data mastery. Then: Single combat duels exist. Your FGC skills = Perfect for 1v1 warfare. Pattern read → Habit recognition. Mind games → Conditioning. From EVO to Steppe champion. #12 globally.
+                    </div>
+                    <a href="fighting-game-pro-duel-champion.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='survival-crafter-fortification-engineer.html'">
+                    <div class="lobby-title">🏗️ Survival Crafter</div>
+                    <div class="lobby-persona">Derek "Fortress" Wilson - 5.1k hours Rust base building, 78% raid defense rate, defensive design genius</div>
+                    <div class="lobby-description">
+                        Survival crafter life: Optimize bases. Honeycombing. Defensive design. 78% raid defense (through engineering, not strength). 5,000 hours perfecting fortification design. Then: Fortification engineer role exists. Your Rust skills = Perfect for defensive engineering. Design → Real fortresses. Resource optimization → $3M projects. From pixel bases to siege-proof structures.
+                    </div>
+                    <a href="survival-crafter-fortification-engineer.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='arena-pvp-skirmish-tactician.html'">
+                    <div class="lobby-title">⚔️ Arena PvP Gladiator</div>
+                    <div class="lobby-persona">Ryan "Outplay" Kim - 4.2k hours WoW Arena, Gladiator (2847 rating), cooldown tracking genius, 3v3 coordination master</div>
+                    <div class="lobby-description">
+                        Arena life: Coordinate 3-person team. Track 6 enemies' CDs. Execute target swaps. CC chains. Outplay through tactics. 64% win rate. Then: Skirmish unit leader role exists. Your Arena skills = Perfect for small-unit tactics. CD tracking → Vulnerability windows. CC chains → Coordinated strikes. Won 21 battles OUTNUMBERED through tactics.
+                    </div>
+                    <a href="arena-pvp-skirmish-tactician.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='grand-strategy-diplomatic-architect.html'">
+                    <div class="lobby-title">🗺️ Grand Strategy Master</div>
+                    <div class="lobby-persona">Victoria "Machiavelli" Stone - 6.2k hours EU4, 4.8k CK3, alliance architect, long-game master, diplomatic genius</div>
+                    <div class="lobby-description">
+                        Grand strategy life: Multi-generation planning. Marriage diplomacy. Alliance building. Play factions against each other. Win before fighting through positioning. 8,000 hours Paradox games. Then: Inter-faction diplomacy role exists. Your grand strategy skills = Perfect for alliance architecture. Avoided 3 wars through diplomacy. Architected coalitions. From painting maps to real statecraft.
+                    </div>
+                    <a href="grand-strategy-diplomatic-architect.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='arcade-rhythm-kata-master.html'">
+                    <div class="lobby-title">🕹️ Arcade Perfectionist</div>
+                    <div class="lobby-persona">Kenji "Sequence" Tanaka - 4.1k hours rhythm/bullet hell games, DDR perfect scores, perfection obsessive, 10,000 repetitions per pattern</div>
+                    <div class="lobby-description">
+                        Arcade life: Practice same sequence 1,000x until PERFECT. Muscle memory. Flow state. Zero errors. Ritualized execution. Then: Kata combat specialist role exists. Your arcade skills = Perfect for ritualized combat forms. Sequence memorization → 47 kata forms. Muscle memory → Automatic execution. From DDR perfection to kata mastery.
+                    </div>
+                    <a href="arcade-rhythm-kata-master.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='minecraft-builder-infrastructure-architect.html'">
+                    <div class="lobby-title">🏗️ Minecraft Creative Builder</div>
+                    <div class="lobby-persona">Emma "Architect" Zhang - 3.4k hours creative mode, 180 mega-builds, architectural vision genius, aesthetic+functional master</div>
+                    <div class="lobby-description">
+                        Minecraft creative life: Build worlds. Beautiful AND functional. 800-hour cathedral projects. Aesthetic vision + structural engineering. Then: Infrastructure architect role exists. Your Minecraft skills = Perfect for real architecture. Vision → Design fortress-cities. Aesthetic+function → Beautiful defensive structures. From pixel blocks to buildings people LIVE IN.
+                    </div>
+                    <a href="minecraft-builder-infrastructure-architect.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='battlefield-squad-leader-combined-arms.html'">
+                    <div class="lobby-title">🎖️ Battlefield Squad Leader</div>
+                    <div class="lobby-persona">Marcus "Tactician" Rodriguez - 2.8k hours Battlefield, squad leader main, combined arms coordination, 67% win rate through tactics</div>
+                    <div class="lobby-description">
+                        Battlefield life: Coordinate infantry+tanks+air support. Objective-focused. Multi-role synergy. Squad wins through TACTICS, not individual skill. Then: Combined arms coordinator role exists. Your Battlefield skills = Perfect for real multi-unit warfare. Infantry+cavalry+archers coordinated. From squad leading pixels to combined arms mastery.
+                    </div>
+                    <a href="battlefield-squad-leader-combined-arms.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='city-builder-economic-zone-planner.html'">
+                    <div class="lobby-title">🏙️ SimCity/Factorio Master</div>
+                    <div class="lobby-persona">Rachel "Planner" Nguyen - 3.5k hours Cities: Skylines, 2.1k Factorio, systems optimization genius, 850k pop zero traffic</div>
+                    <div class="lobby-description">
+                        City builder life: Systems thinking. Traffic flow mastery (850k no jams). Supply chain optimization. Infrastructure planning. Everything connects. Then: Economic zone planner role exists. Your SimCity skills = Perfect for real territory planning. 920,000 km² optimized. Supply chains. Settlement networks. From simulating cities to planning real zones.
+                    </div>
+                    <a href="city-builder-economic-zone-planner.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='moba-assassin-stealth-saboteur.html'">
+                    <div class="lobby-title">🗡️ MOBA Assassin Main</div>
+                    <div class="lobby-persona">Ghost "Shadow" Park - 5.2k hours assassin (Zed/Talon), 47k solo kills, patience hunter, delete-escape master</div>
+                    <div class="lobby-description">
+                        Assassin life: Hunt carries. Wait 60 seconds in fog. Perfect moment. Delete. Escape. Repeat. 83% carry deletion rate. Patience + positioning + timing. Then: Stealth operative role exists. Your assassin skills = Perfect for target elimination. Hunt → Wait → Strike → Escape. 47 eliminations, 100% success rate, 0 captures. Shadow legend.
+                    </div>
+                    <a href="moba-assassin-stealth-saboteur.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='racing-game-cavalry-commander.html'">
+                    <div class="lobby-title">🏎️ Racing Game Pro</div>
+                    <div class="lobby-persona">Carlos "Velocity" Santos - 2.8k hours racing games, top 1% lap times, optimal lines master, spatial awareness at speed</div>
+                    <div class="lobby-description">
+                        Racing life: Optimal lines. Momentum management. Split-second decisions at 200mph. Spatial awareness at velocity. Then: Cavalry commander role exists. Your racing skills = Perfect for mobile warfare. Optimal lines → Charge routes. Momentum → When to commit/wheel. Timing → Charge timing critical. 79% successful charges through velocity mastery.
+                    </div>
+                    <a href="racing-game-cavalry-commander.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='dark-souls-persistence-resilience-warrior.html'">
+                    <div class="lobby-title">💀 Dark Souls "Git Gud"</div>
+                    <div class="lobby-persona">Alex "Undying" Morrison - 3.9k hours Souls games, 12,400 total deaths, NEVER ragequit, persistence incarnate</div>
+                    <div class="lobby-description">
+                        Souls life: Die 47 times to boss. Learn. Try again. Never quit. "Git gud" internalized. Emotional resilience. Learn from failure. Then: Red Banner values PERSISTENCE over talent. Your Souls mentality = Perfect for respawn warfare. "Died" 127 times year one. Never quit. Most warriors quit at 20. You're just getting started. Wolf spirit embodied.
+                    </div>
+                    <a href="dark-souls-persistence-resilience-warrior.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='moba-carry-elite-damage-dealer.html'">
+                    <div class="lobby-title">⚡ MOBA Carry Main</div>
+                    <div class="lobby-persona">Jordan "Hypercarry" Lee - 6.1k hours ADC main, 38% avg team damage, positioning perfect, carrying teamfights</div>
+                    <div class="lobby-description">
+                        Carry life: BE the damage. Team enables YOU. 38% team damage. Perfect positioning (max DPS, don't die). Farm optimization. Pressure to CARRY. Then: Elite striker role exists. Your carry skills = Perfect for champion warrior. Team protects you. You deal MOST damage (35-42% unit total). Carry fights through positioning + damage output.
+                    </div>
+                    <a href="moba-carry-elite-damage-dealer.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+                
+                <div class="lobby-card" onclick="location.href='speedrunner-rapid-execution-specialist.html'">
+                    <div class="lobby-title">⚡ Speedrunner</div>
+                    <div class="lobby-persona">Ryan "Frame" Perfect - 2.4k hours speedrunning, 3 world records, efficiency obsessive, 2,000 attempts for 0.8 sec improvement</div>
+                    <div class="lobby-description">
+                        Speedrun life: Optimize everything. Zero wasted frames. Route perfection. Frame-perfect inputs. 2,000 attempts for 0.89-second improvement. EFFICIENCY DAEMON. Then: Rapid execution specialist role exists. Your speedrun skills = Perfect for time-critical ops. Route optimization. Zero waste. Frame timing. 23 missions, 40% faster than standard execution time.
+                    </div>
+                    <a href="speedrunner-rapid-execution-specialist.html" class="lobby-link">ENTER LOBBY →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="../index.html" class="back-link">← Back to All Context Lobbies</a>
+        </div>
+    </div>
+    <script>
+        // Normalized section scrolling: each button fills with gradient based on section progress
+        // Horizontal nav bar scrolls proportionally to body scroll within each section
+        (function() {
+            const categoryNavBar = document.querySelector('.category-nav-bar');
+            if (!categoryNavBar) return;
+            
+            // Get all category sections and their corresponding nav buttons
+            const categories = document.querySelectorAll('.category[id]');
+            const navButtons = Array.from(categoryNavBar.querySelectorAll('.category-nav-button'));
+            
+            if (categories.length === 0 || navButtons.length === 0) return;
+            
+            let isUserScrollingNav = false;
+            
+            // Create a map of section ID to button (by matching href)
+            const sectionToButtonMap = new Map();
+            navButtons.forEach((button, buttonIndex) => {
+                const href = button.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const sectionId = href.substring(1);
+                    const section = Array.from(categories).find(s => s.id === sectionId);
+                    if (section) {
+                        sectionToButtonMap.set(section, button);
+                    }
+                }
+            });
+            
+            // Get nav bar height for calculations
+            const navBarHeight = categoryNavBar.offsetHeight;
+            
+            // Calculate progress through a section (0 to 1)
+            // Progress is measured from viewport top + nav bar height
+            function getSectionProgress(section) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const rect = section.getBoundingClientRect();
+                const sectionTop = rect.top + scrollTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionBottom = sectionTop + sectionHeight;
+                
+                // Viewport top adjusted for nav bar height
+                const viewportTop = scrollTop + navBarHeight;
+                const viewportBottom = scrollTop + windowHeight;
+                
+                // If section is completely above viewport (accounting for nav bar), progress is 0
+                if (sectionBottom <= viewportTop) return 1;
+                
+                // If section is completely below viewport, progress is 1
+                if (sectionTop >= viewportBottom) return 0;
+                
+                // Calculate progress: how much of the section has been scrolled through
+                // Progress = (how far into section viewport top + nav bar height is) / section height
+                const scrolledIntoSection = viewportTop - sectionTop;
+                const progress = Math.max(0, Math.min(1, scrolledIntoSection / sectionHeight));
+                
+                return progress;
+            }
+            
+            // Calculate viewport indicator position and width for a section
+            // Returns { left: %, width: % } or null if viewport not in section
+            function getViewportIndicator(section) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const rect = section.getBoundingClientRect();
+                const sectionTop = rect.top + scrollTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionBottom = sectionTop + sectionHeight;
+                
+                const viewportTop = scrollTop + navBarHeight;
+                const viewportBottom = scrollTop + windowHeight;
+                
+                // Check if viewport overlaps with section
+                const viewportOverlapTop = Math.max(viewportTop, sectionTop);
+                const viewportOverlapBottom = Math.min(viewportBottom, sectionBottom);
+                
+                // If no overlap, return null
+                if (viewportOverlapTop >= viewportOverlapBottom) return null;
+                
+                // Calculate viewport position and size as percentage of section
+                const viewportStartInSection = viewportOverlapTop - sectionTop;
+                const viewportSizeInSection = viewportOverlapBottom - viewportOverlapTop;
+                
+                return {
+                    left: (viewportStartInSection / sectionHeight) * 100,
+                    width: (viewportSizeInSection / sectionHeight) * 100
+                };
+            }
+            
+            // Find the section that should be active, considering margins between sections
+            function getActiveSectionWithMargin() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const windowHeight = window.innerHeight;
+                const viewportCenter = scrollTop + (windowHeight / 2);
+                const marginBottom = 50; // Match .category margin-bottom
+                
+                let closestSection = null;
+                let closestDistance = Infinity;
+                let bestProgress = -1;
+                
+                categories.forEach((section) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + scrollTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionBottom = sectionTop + sectionHeight;
+                    const sectionWithMarginBottom = sectionBottom + marginBottom;
+                    
+                    // Check if viewport center is within section or its margin
+                    const isInSection = viewportCenter >= sectionTop && viewportCenter <= sectionWithMarginBottom;
+                    
+                    if (isInSection) {
+                        // Calculate progress considering the margin as part of the section
+                        const extendedHeight = sectionHeight + marginBottom;
+                        const scrolledIntoExtended = Math.max(0, viewportCenter - sectionTop);
+                        const progress = Math.min(1, scrolledIntoExtended / extendedHeight);
+                        
+                        if (progress > bestProgress) {
+                            bestProgress = progress;
+                            closestSection = section;
+                        }
+                    } else {
+                        // Find closest section for smooth transitions
+                        const distanceToTop = Math.abs(viewportCenter - sectionTop);
+                        const distanceToBottom = Math.abs(viewportCenter - sectionWithMarginBottom);
+                        const minDistance = Math.min(distanceToTop, distanceToBottom);
+                        
+                        if (minDistance < closestDistance) {
+                            closestDistance = minDistance;
+                            // Only use as fallback if no section is active
+                            if (!closestSection || bestProgress < 0) {
+                                closestSection = section;
+                            }
+                        }
+                    }
+                });
+                
+                return closestSection;
+            }
+            
+            // Update button gradient fill and nav bar scroll position
+            function updateNavBar() {
+                if (isUserScrollingNav) return;
+                
+                const marginBottom = 50; // Match .category margin-bottom TODO: fetch .category computed margin-bottom 
+                let activeSection = null;
+                let maxProgress = -1;
+                
+                // Update all button fills and find the most active section
+                categories.forEach((section) => {
+                    const button = sectionToButtonMap.get(section);
+                    if (!button) return;
+                    
+                    const progress = getSectionProgress(section);
+                    const viewportIndicator = getViewportIndicator(section);
+                    
+                    // Update gradient fill width (0% to 100%) - progress fill
+                    button.style.setProperty('--fill-width', (progress * 100) + '%');
+                    
+                    // Update viewport indicator (::after) - viewport position and size
+                    if (viewportIndicator) {
+                        button.style.setProperty('--viewport-left', viewportIndicator.left + '%');
+                        button.style.setProperty('--viewport-width', viewportIndicator.width + '%');
+                    } else {
+                        button.style.setProperty('--viewport-left', '0%');
+                        button.style.setProperty('--viewport-width', '0%');
+                    }
+                    
+                    // Track the most active section (highest progress)
+                    if (progress > maxProgress) {
+                        maxProgress = progress;
+                        activeSection = section;
+                    }
+                });
+                
+                // Use the section with margin consideration for smooth transitions
+                const activeSectionWithMargin = getActiveSectionWithMargin();
+                // if (activeSectionWithMargin && (!activeSection || maxProgress < 0.1)) {
+                    activeSection = activeSectionWithMargin;
+                // }
+                
+                // Scroll horizontal nav bar proportionally to body scroll within active section
+                if (activeSection) {
+                    const activeButton = sectionToButtonMap.get(activeSection);
+                    if (!activeButton) return;
+                    
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const windowHeight = window.innerHeight;
+                    const viewportCenter = scrollTop + (windowHeight / 2);
+                    const rect = activeSection.getBoundingClientRect();
+                    const sectionTop = rect.top + scrollTop;
+                    const sectionHeight = activeSection.offsetHeight;
+                    const extendedHeight = sectionHeight + marginBottom;
+                    
+                    // Calculate progress including margin
+                    const scrolledIntoExtended = Math.max(0, viewportCenter - sectionTop);
+                    const extendedProgress = Math.min(1, scrolledIntoExtended / extendedHeight);
+                    
+                    // Normalized scroll: extended section height (including margin) maps to button width
+                    const buttonWidth = activeButton.offsetWidth;
+                    const buttonLeft = activeButton.offsetLeft;
+                    const navWidth = categoryNavBar.clientWidth;
+                    const navScrollWidth = categoryNavBar.scrollWidth - categoryNavBar.clientWidth;
+                    
+                    // Calculate target scroll: button left + progress * button width, centered in nav
+                    const targetScroll = buttonLeft + (extendedProgress * buttonWidth) - (navWidth / 2) + (buttonWidth / 2);
+                    
+                    // Clamp and scroll the nav bar smoothly
+                    categoryNavBar.scrollTo({
+                        left: Math.max(0, Math.min(navScrollWidth, targetScroll)),
+                        behavior: 'auto'
+                    });
+                }
+            }
+            
+            // Initialize button fill and viewport indicator CSS custom properties
+            navButtons.forEach(button => {
+                button.style.setProperty('--fill-width', '0%');
+                button.style.setProperty('--viewport-left', '0%');
+                button.style.setProperty('--viewport-width', '0%');
+            });
+            
+            // Add CSS for dynamic fill width
+            const style = document.createElement('style');
+            style.textContent = `
+                .category-nav-button::before {
+                    width: var(--fill-width, 0%);
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // When user clicks a nav button, scroll body to that section
+            navButtons.forEach((button, index) => {
+                button.addEventListener('click', function(e) {
+                    if (index < categories.length) {
+                        const targetSection = categories[index];
+                        const rect = targetSection.getBoundingClientRect();
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        const targetTop = rect.top + scrollTop - navBarHeight; // Account for sticky nav
+                        
+                        window.scrollTo({
+                            top: targetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                    }
+                });
+            });
+            
+            // Listen to body scroll and update nav bar
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateNavBar, 10);
+            }, { passive: true });
+            
+            // Initial update
+            updateNavBar();
+        })();
+    </script>
+    <script src="../../../../lib/nav-vimlike.js"></script>
+</body>
+</html>

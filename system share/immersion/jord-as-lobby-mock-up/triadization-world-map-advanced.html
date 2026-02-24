@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Triadization: Advanced World Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, #1a0033, #000);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .header h1 {
+            font-size: 1.8em;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .zoom-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .zoom-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .zoom-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .map-container {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            background: #001122;
+        }
+        
+        .world-map {
+            position: relative;
+            width: 2000px;
+            height: 1000px;
+            background: linear-gradient(45deg, #001122, #002244);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+            transform-origin: 0 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .zone {
+            position: absolute;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            min-width: 120px;
+            max-width: 200px;
+            font-size: 0.8em;
+        }
+        
+        .zone:hover {
+            transform: scale(1.1);
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+        }
+        
+        .zone h4 {
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+        
+        .zone p {
+            font-size: 0.7em;
+            margin-bottom: 3px;
+            opacity: 0.9;
+        }
+        
+        .zone-id {
+            font-family: monospace;
+            font-size: 0.6em;
+            opacity: 0.7;
+            margin-bottom: 3px;
+        }
+        
+        .governance-level {
+            font-size: 0.6em;
+            padding: 2px 6px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 3px;
+        }
+        
+        /* Zone Types and Colors */
+        .level1-zone {
+            background: rgba(0, 255, 0, 0.15);
+            border-color: #00ff00;
+        }
+        
+        .level2-zone {
+            background: rgba(255, 255, 0, 0.15);
+            border-color: #ffff00;
+        }
+        
+        .level3-zone {
+            background: rgba(255, 165, 0, 0.15);
+            border-color: #ffa500;
+        }
+        
+        .level4-zone {
+            background: rgba(255, 0, 0, 0.15);
+            border-color: #ff0000;
+        }
+        
+        .old-world {
+            background: rgba(100, 100, 100, 0.15);
+            border-color: #666666;
+        }
+        
+        .level1 { background: rgba(0, 255, 0, 0.3); color: #00ff00; }
+        .level2 { background: rgba(255, 255, 0, 0.3); color: #ffff00; }
+        .level3 { background: rgba(255, 165, 0, 0.3); color: #ffa500; }
+        .level4 { background: rgba(255, 0, 0, 0.3); color: #ff0000; }
+        
+        /* Detailed Zone View */
+        .zone-detail {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            width: 350px;
+            max-height: calc(100vh - 90px);
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 1001;
+            display: none;
+        }
+        
+        .zone-detail h3 {
+            color: #00ffff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .zone-detail h4 {
+            color: #ff00ff;
+            margin: 15px 0 8px 0;
+            font-size: 1em;
+        }
+        
+        .zone-detail p {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .zone-detail ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .zone-detail li {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+        
+        .nested-zones {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+        
+        .nested-zone {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nested-zone:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .nested-zone h5 {
+            font-size: 0.9em;
+            margin-bottom: 3px;
+        }
+        
+        .nested-zone p {
+            font-size: 0.7em;
+            opacity: 0.8;
+        }
+        
+        /* Legend */
+        .legend {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+        }
+        
+        .legend h3 {
+            margin-bottom: 10px;
+            color: #00ffff;
+            font-size: 1em;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 12px;
+            border-radius: 3px;
+            margin-right: 8px;
+            border: 1px solid;
+        }
+        
+        .legend-item span {
+            font-size: 0.8em;
+        }
+        
+        /* Zoom Level Indicator */
+        .zoom-level {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            z-index: 1000;
+        }
+        
+        .zoom-level span {
+            font-size: 0.9em;
+            color: #00ffff;
+        }
+        
+        /* Minimap */
+        .minimap {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            width: 200px;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #333;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
+        .minimap-viewport {
+            position: absolute;
+            border: 2px solid #00ffff;
+            background: rgba(0, 255, 255, 0.1);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>The Triadization - Advanced World Map</h1>
+        <div class="zoom-controls">
+            <button class="zoom-btn" onclick="zoomIn()">Zoom In</button>
+            <button class="zoom-btn" onclick="zoomOut()">Zoom Out</button>
+            <button class="zoom-btn" onclick="resetZoom()">Reset</button>
+            <button class="zoom-btn" onclick="toggleMinimap()">Minimap</button>
+        </div>
+    </div>
+    
+    <div class="map-container" id="mapContainer">
+        <div class="world-map" id="worldMap">
+            <!-- Zones will be dynamically generated -->
+        </div>
+    </div>
+    
+    <div class="zone-detail" id="zoneDetail">
+        <h3 id="zoneTitle">Select a Zone</h3>
+        <p id="zoneDescription">Click on any zone to see detailed information.</p>
+    </div>
+    
+    <div class="legend">
+        <h3>Governance Levels</h3>
+        <div class="legend-item">
+            <div class="legend-color level1-zone"></div>
+            <span>Level 1: Pure MWR</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color level2-zone"></div>
+            <span>Level 2: Sovereignty</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color level3-zone"></div>
+            <span>Level 3: Hierarchy</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color level4-zone"></div>
+            <span>Level 4: Strict Rule</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color old-world"></div>
+            <span>Old World</span>
+        </div>
+    </div>
+    
+    <div class="zoom-level">
+        <span>Zoom: <span id="zoomLevel">100%</span></span>
+    </div>
+    
+    <div class="minimap" id="minimap" style="display: none;">
+        <div class="minimap-viewport" id="minimapViewport"></div>
+    </div>
+    
+    <script>
+        // Spatial Data Store - QuadTree-like structure
+        class SpatialDataStore {
+            constructor() {
+                this.regions = new Map();
+                this.zones = new Map();
+                this.nestedStructures = new Map();
+            }
+            
+            addRegion(regionId, bounds, data) {
+                this.regions.set(regionId, { bounds, data });
+            }
+            
+            addZone(zoneId, position, data, parentRegion = null) {
+                this.zones.set(zoneId, { position, data, parentRegion });
+                if (parentRegion) {
+                    if (!this.nestedStructures.has(parentRegion)) {
+                        this.nestedStructures.set(parentRegion, []);
+                    }
+                    this.nestedStructures.get(parentRegion).push(zoneId);
+                }
+            }
+            
+            getZonesInBounds(bounds) {
+                const result = [];
+                for (const [zoneId, zone] of this.zones) {
+                    if (this.isInBounds(zone.position, bounds)) {
+                        result.push({ zoneId, ...zone });
+                    }
+                }
+                return result;
+            }
+            
+            getNestedZones(regionId) {
+                return this.nestedStructures.get(regionId) || [];
+            }
+            
+            isInBounds(position, bounds) {
+                return position.x >= bounds.x && position.x <= bounds.x + bounds.width &&
+                       position.y >= bounds.y && position.y <= bounds.y + bounds.height;
+            }
+        }
+        
+        // Initialize spatial data store
+        const spatialStore = new SpatialDataStore();
+        
+        // Zone data with spatial information
+        const zoneData = {
+            // Level 1 Zones (Pure MWR)
+            'mediterranean': {
+                id: '2#001236',
+                name: 'Mediterranean Floating City',
+                position: { x: 400, y: 200 },
+                bounds: { x: 400, y: 200, width: 200, height: 100 },
+                level: 1,
+                type: 'level1-zone',
+                population: '850K',
+                description: 'A network of floating cities in the Mediterranean Sea, serving as a major trade hub between Old World and New World.',
+                features: ['Underwater districts', 'Wave energy systems', 'Aquatic farming', 'Trade hub status'],
+                aesthetics: 'Venetian meets aquatech',
+                nestedZones: [
+                    { id: '2#001236#001', name: 'Venice District', level: 2, description: 'Traditional Venetian architecture with modern tech' },
+                    { id: '2#001236#002', name: 'Atlantis Sector', level: 1, description: 'Underwater research and living quarters' },
+                    { id: '2#001236#003', name: 'Trade Nexus', level: 2, description: 'Commercial and diplomatic center' }
+                ]
+            },
+            'patagonia': {
+                id: '2#001241',
+                name: 'Patagonia Free Zone',
+                position: { x: 200, y: 800 },
+                bounds: { x: 200, y: 800, width: 180, height: 120 },
+                level: 1,
+                type: 'level1-zone',
+                population: '180K',
+                description: 'Anarchist collective with consensus decision-making and natural living.',
+                features: ['Consensus protocols', 'Natural living', 'Renewable energy', 'Community gardens'],
+                aesthetics: 'Eco-anarchist meets permaculture',
+                nestedZones: [
+                    { id: '2#001241#001', name: 'Consensus Council', level: 1, description: 'Pure consensus decision-making' },
+                    { id: '2#001241#002', name: 'Eco-Villages', level: 1, description: 'Sustainable living communities' },
+                    { id: '2#001241#003', name: 'Tech Collective', level: 2, description: 'Technology development and maintenance' }
+                ]
+            },
+            'mongolia': {
+                id: '2#001243',
+                name: 'Mongolia Nomadic Network',
+                position: { x: 800, y: 150 },
+                bounds: { x: 800, y: 150, width: 160, height: 100 },
+                level: 1,
+                type: 'level1-zone',
+                population: '420K',
+                description: 'Traditional nomadic lifestyle enhanced with modern technology and mobile cities.',
+                features: ['Mobile cities', 'Steppe wisdom', 'Nomadic tech', 'Horse culture'],
+                aesthetics: 'Traditional Mongolian meets mobile tech',
+                nestedZones: [
+                    { id: '2#001243#001', name: 'Khan Council', level: 2, description: 'Traditional leadership with modern tools' },
+                    { id: '2#001243#002', name: 'Mobile Cities', level: 1, description: 'Portable urban centers' },
+                    { id: '2#001243#003', name: 'Steppe Tech', level: 1, description: 'Technology adapted for nomadic life' }
+                ]
+            },
+            'enlightenment': {
+                id: '2#001238',
+                name: 'Enlightenment Aesthetics Zone',
+                position: { x: 300, y: 100 },
+                bounds: { x: 300, y: 100, width: 200, height: 120 },
+                level: 1,
+                type: 'level1-zone',
+                population: '1.2M',
+                description: 'A zone dedicated to Enlightenment ideals with Christmas Carol personalities.',
+                features: ['Rational discourse', 'Scientific method governance', 'Humanist education', 'Christmas Carol personalities'],
+                aesthetics: '18th century Enlightenment meets modern tech',
+                nestedZones: [
+                    { id: '2#001238#001', name: 'Academy District', level: 2, description: 'Centers of learning and research' },
+                    { id: '2#001238#002', name: 'Rational Commons', level: 1, description: 'Public spaces for discourse' },
+                    { id: '2#001238#003', name: 'Humanist Quarter', level: 1, description: 'Community living and mutual aid' }
+                ]
+            },
+            
+            // Level 2 Zones (Sovereignty)
+            'neo-babylon': {
+                id: '2#001234',
+                name: 'Neo-Babylonian Empire',
+                position: { x: 500, y: 200 },
+                bounds: { x: 500, y: 200, width: 220, height: 140 },
+                level: 2,
+                type: 'level2-zone',
+                population: '2.3M',
+                description: 'Ancient Mesopotamian civilization combined with cutting-edge technology.',
+                features: ['Ziggurat computational centers', 'Cuneiform AI interfaces', 'Ancient wisdom integration', 'Solar-powered cities'],
+                aesthetics: 'Ancient Mesopotamian meets cyberpunk',
+                nestedZones: [
+                    { id: '2#001234#001', name: 'Ziggurat Central', level: 3, description: 'Main computational and religious center' },
+                    { id: '2#001234#002', name: 'Cuneiform District', level: 2, description: 'AI research and development' },
+                    { id: '2#001234#003', name: 'Garden Hanging', level: 1, description: 'Vertical farming and recreation' }
+                ]
+            },
+            'sahara': {
+                id: '2#001242',
+                name: 'Sahara Solar Empire',
+                position: { x: 450, y: 300 },
+                bounds: { x: 450, y: 300, width: 200, height: 120 },
+                level: 2,
+                type: 'level2-zone',
+                population: '950K',
+                description: 'Desert solar farms with oasis cities and clean energy export.',
+                features: ['Desert solar farms', 'Oasis cities', 'Clean energy export', 'Water management'],
+                aesthetics: 'Desert meets solar tech',
+                nestedZones: [
+                    { id: '2#001242#001', name: 'Solar Fields', level: 2, description: 'Massive solar energy collection' },
+                    { id: '2#001242#002', name: 'Oasis Cities', level: 1, description: 'Water-managed urban centers' },
+                    { id: '2#001242#003', name: 'Energy Hub', level: 3, description: 'Power distribution and trade' }
+                ]
+            },
+            
+            // Level 3 Zones (Hierarchy)
+            'neo-egypt': {
+                id: '2#001235',
+                name: 'Neo-Egyptian Dominion',
+                position: { x: 480, y: 250 },
+                bounds: { x: 480, y: 250, width: 200, height: 130 },
+                level: 3,
+                type: 'level3-zone',
+                population: '1.8M',
+                description: 'Pharaonic system adapted for the modern age with pyramid solar collectors.',
+                features: ['Pyramid solar collectors', 'Immortality research', 'Hieroglyphic AI', 'Nile restoration'],
+                aesthetics: 'Ancient Egyptian meets biotech',
+                nestedZones: [
+                    { id: '2#001235#001', name: 'Pharaoh Palace', level: 4, description: 'Central authority and research' },
+                    { id: '2#001235#002', name: 'Pyramid Network', level: 3, description: 'Solar energy and research facilities' },
+                    { id: '2#001235#003', name: 'Nile Restoration', level: 2, description: 'Environmental and agricultural projects' }
+                ]
+            },
+            
+            // Level 4 Zones (Strict Rule)
+            'brugge': {
+                id: '2#001237',
+                name: 'Brugge Medieval Revival',
+                position: { x: 350, y: 150 },
+                bounds: { x: 350, y: 150, width: 180, height: 100 },
+                level: 4,
+                type: 'level4-zone',
+                population: '320K',
+                description: 'Complete revival of medieval European culture with guild system.',
+                features: ['Guild system restoration', 'Cathedral aesthetics', 'Artisan economy', 'Traditional crafts + tech'],
+                aesthetics: 'Medieval European meets steampunk',
+                nestedZones: [
+                    { id: '2#001237#001', name: 'Guild Halls', level: 4, description: 'Traditional craft and trade organizations' },
+                    { id: '2#001237#002', name: 'Cathedral District', level: 4, description: 'Religious and ceremonial center' },
+                    { id: '2#001237#003', name: 'Artisan Quarter', level: 3, description: 'Craft production and innovation' }
+                ]
+            },
+            
+            // Old World Zones
+            'usa': {
+                id: '1#000001',
+                name: 'United States (Old World)',
+                position: { x: 100, y: 200 },
+                bounds: { x: 100, y: 200, width: 250, height: 200 },
+                level: 0,
+                type: 'old-world',
+                population: '280M',
+                description: 'Federal democracy in decline, struggling with internal conflicts.',
+                features: ['Federal system', 'Democratic processes', 'Economic struggles', 'Social division'],
+                aesthetics: 'Modern American in decline',
+                nestedZones: [
+                    { id: '1#000001#001', name: 'Federal Government', level: 0, description: 'Central authority in crisis' },
+                    { id: '1#000001#002', name: 'State Governments', level: 0, description: 'Regional authority struggling' },
+                    { id: '1#000001#003', name: 'Local Communities', level: 0, description: 'Grassroots movements emerging' }
+                ]
+            }
+        };
+        
+        // Initialize the map
+        let currentZoom = 1;
+        let currentPan = { x: 0, y: 0 };
+        let isDragging = false;
+        let dragStart = { x: 0, y: 0 };
+        
+        function initializeMap() {
+            const worldMap = document.getElementById('worldMap');
+            
+            // Add zones to spatial store and render
+            Object.entries(zoneData).forEach(([key, zone]) => {
+                spatialStore.addZone(key, zone.position, zone);
+                renderZone(zone);
+            });
+            
+            // Add pan and zoom functionality
+            worldMap.addEventListener('mousedown', startDrag);
+            worldMap.addEventListener('mousemove', drag);
+            worldMap.addEventListener('mouseup', endDrag);
+            worldMap.addEventListener('wheel', handleZoom);
+        }
+        
+        function renderZone(zone) {
+            const worldMap = document.getElementById('worldMap');
+            const zoneElement = document.createElement('div');
+            zoneElement.className = `zone ${zone.type}`;
+            zoneElement.style.left = zone.position.x + 'px';
+            zoneElement.style.top = zone.position.y + 'px';
+            zoneElement.dataset.zoneId = Object.keys(zoneData).find(key => zoneData[key] === zone);
+            
+            zoneElement.innerHTML = `
+                <div class="zone-id">${zone.id}</div>
+                <h4>${zone.name}</h4>
+                <p>Pop: ${zone.population}</p>
+                <div class="governance-level level${zone.level}">Level ${zone.level}: ${getLevelDescription(zone.level)}</div>
+            `;
+            
+            zoneElement.addEventListener('click', () => showZoneDetail(zone));
+            worldMap.appendChild(zoneElement);
+        }
+        
+        function getLevelDescription(level) {
+            const descriptions = {
+                0: 'Old System',
+                1: 'Pure MWR',
+                2: 'Sovereignty',
+                3: 'Hierarchy',
+                4: 'Strict Rule'
+            };
+            return descriptions[level] || 'Unknown';
+        }
+        
+        function showZoneDetail(zone) {
+            const detail = document.getElementById('zoneDetail');
+            const title = document.getElementById('zoneTitle');
+            const description = document.getElementById('zoneDescription');
+            
+            title.textContent = zone.name;
+            description.innerHTML = `
+                <p><strong>ID:</strong> ${zone.id}</p>
+                <p><strong>Population:</strong> ${zone.population}</p>
+                <p><strong>Governance:</strong> Level ${zone.level} - ${getLevelDescription(zone.level)}</p>
+                <p><strong>Description:</strong> ${zone.description}</p>
+                <h4>Features:</h4>
+                <ul>
+                    ${zone.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+                <h4>Aesthetics:</h4>
+                <p>${zone.aesthetics}</p>
+                ${zone.nestedZones ? `
+                    <h4>Nested Zones:</h4>
+                    <div class="nested-zones">
+                        ${zone.nestedZones.map(nested => `
+                            <div class="nested-zone">
+                                <h5>${nested.name}</h5>
+                                <p>Level ${nested.level} - ${nested.description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            `;
+            
+            detail.style.display = 'block';
+        }
+        
+        // Zoom and pan functionality
+        function zoomIn() {
+            currentZoom = Math.min(currentZoom * 1.2, 3);
+            updateTransform();
+        }
+        
+        function zoomOut() {
+            currentZoom = Math.max(currentZoom / 1.2, 0.3);
+            updateTransform();
+        }
+        
+        function resetZoom() {
+            currentZoom = 1;
+            currentPan = { x: 0, y: 0 };
+            updateTransform();
+        }
+        
+        function updateTransform() {
+            const worldMap = document.getElementById('worldMap');
+            worldMap.style.transform = `scale(${currentZoom}) translate(${currentPan.x}px, ${currentPan.y}px)`;
+            document.getElementById('zoomLevel').textContent = Math.round(currentZoom * 100) + '%';
+            updateMinimap();
+        }
+        
+        function startDrag(e) {
+            isDragging = true;
+            dragStart = { x: e.clientX - currentPan.x, y: e.clientY - currentPan.y };
+        }
+        
+        function drag(e) {
+            if (!isDragging) return;
+            currentPan.x = e.clientX - dragStart.x;
+            currentPan.y = e.clientY - dragStart.y;
+            updateTransform();
+        }
+        
+        function endDrag() {
+            isDragging = false;
+        }
+        
+        function handleZoom(e) {
+            e.preventDefault();
+            const delta = e.deltaY > 0 ? 0.9 : 1.1;
+            currentZoom = Math.max(0.3, Math.min(3, currentZoom * delta));
+            updateTransform();
+        }
+        
+        function toggleMinimap() {
+            const minimap = document.getElementById('minimap');
+            minimap.style.display = minimap.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function updateMinimap() {
+            const minimap = document.getElementById('minimap');
+            const viewport = document.getElementById('minimapViewport');
+            if (minimap.style.display === 'none') return;
+            
+            const scale = 200 / 2000; // minimap width / world width
+            const viewportWidth = (2000 * scale) / currentZoom;
+            const viewportHeight = (1000 * scale) / currentZoom;
+            const viewportX = (-currentPan.x * scale);
+            const viewportY = (-currentPan.y * scale);
+            
+            viewport.style.width = viewportWidth + 'px';
+            viewport.style.height = viewportHeight + 'px';
+            viewport.style.left = viewportX + 'px';
+            viewport.style.top = viewportY + 'px';
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', initializeMap);
+        
+        // Close detail panel when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.zone') && !e.target.closest('.zone-detail')) {
+                document.getElementById('zoneDetail').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

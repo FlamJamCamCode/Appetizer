@@ -1,0 +1,35 @@
+{
+  "country_code": "IT",
+  "name": "Italy",
+  "approximate": true,
+  "population": 59000000,
+  "gdp_nominal_usd": 2200000000000,
+  "gdp_per_capita_usd": 37200,
+  "social_spending_pct_gdp": 28.0,
+  "health_spending_pct_gdp": 7.5,
+  "education_spending_pct_gdp": 4.0,
+  "oda_given_pct_gni": 0.28,
+  "oda_given_usd": 6000000000,
+  "oda_received_usd": 0,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 9000000000,
+  "volunteering_rate_pct_adults": 27.0,
+  "volunteer_hours_billion": 1.0,
+  "child_mortality_under5_per_1000": 4.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Dementia and Alzheimer's disease"
+  ],
+  "notes": [
+    "Italy has high pension spending and an aging population with strong family support norms.",
+    "ODA and private giving focus on Mediterranean and African neighbours and Catholic charities."
+  ],
+  "sources": [
+    "ISTAT and Italian budget documents",
+    "OECD SOCX and DAC statistics",
+    "WHO Global Health Observatory"
+  ]
+}
+
+

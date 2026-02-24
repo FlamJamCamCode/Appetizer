@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Triadization - Interactive World Map</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        
+        .app-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, #1a0033, #000);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00ffff;
+        }
+        
+        .header h1 {
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            color: #888;
+            font-size: 1.1em;
+        }
+        
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+        
+        .stats-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            min-width: 200px;
+        }
+        
+        .stats-panel h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .stat-value {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+        
+        .zone-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            max-width: 400px;
+            z-index: 1000;
+        }
+        
+        .zone-info h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        
+        .zone-info p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .nested-list {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+        
+        .nested-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+            margin: 3px 0;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>The Triadization</h1>
+            <p>Interactive World Map - Year 15 of the Great Transition</p>
+        </div>
+        
+        <div class="map-container">
+            <div class="stats-panel">
+                <h3>World Statistics</h3>
+                <div class="stat-item">
+                    <span>New World Zones:</span>
+                    <span class="stat-value" id="newWorldZones">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Total Population:</span>
+                    <span class="stat-value" id="totalPopulation">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Level 1 Zones:</span>
+                    <span class="stat-value" id="level1Zones">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Level 2 Zones:</span>
+                    <span class="stat-value" id="level2Zones">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Level 3 Zones:</span>
+                    <span class="stat-value" id="level3Zones">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Level 4 Zones:</span>
+                    <span class="stat-value" id="level4Zones">0</span>
+                </div>
+            </div>
+            
+            <div class="zone-info" id="zoneInfo" style="display: none;">
+                <h3 id="zoneTitle">Select a Zone</h3>
+                <p id="zoneDescription">Click on any zone to see detailed information.</p>
+            </div>
+            
+            <map-viewer id="mapViewer"></map-viewer>
+        </div>
+    </div>
+    
+    <script src="components/map-viewer.js"></script>
+    <script>
+        const mapViewer = document.getElementById('mapViewer');
+        
+        // Triadization world map data
+        const worldMapData = {
+            type: 'image',
+            url: 'data:image/svg+xml;base64,' + btoa(`
+                <svg width="2000" height="1000" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+                            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#003344" stroke-width="1" opacity="0.3"/>
+                        </pattern>
+                    </defs>
+                    <rect width="2000" height="1000" fill="#001122"/>
+                    <rect width="2000" height="1000" fill="url(#grid)"/>
+                    <text x="1000" y="50" text-anchor="middle" fill="#00ffff" font-size="32" font-weight="bold">The Triadization World Map</text>
+                    <text x="1000" y="80" text-anchor="middle" fill="#888" font-size="16">Year 15 of the Great Transition</text>
+                </svg>
+            `)
+        };
+        
+        // Triadization zones data
+        const triadizationZones = {
+            zones: [
+                // Level 1 Zones (Pure MWR)
+                {
+                    id: 'mediterranean',
+                    name: 'Mediterranean Floating City',
+                    position: { x: 400, y: 200 },
+                    bounds: { width: 200, height: 100 },
+                    type: 'level1-zone',
+                    level: 1,
+                    description: 'A network of floating cities in the Mediterranean Sea, serving as a major trade hub between Old World and New World.',
+                    population: '850K',
+                    features: ['Underwater districts', 'Wave energy systems', 'Aquatic farming', 'Trade hub status'],
+                    aesthetics: 'Venetian meets aquatech',
+                    nestedZones: [
+                        { id: 'med-venice', name: 'Venice District', level: 2, description: 'Traditional Venetian architecture with modern tech' },
+                        { id: 'med-atlantis', name: 'Atlantis Sector', level: 1, description: 'Underwater research and living quarters' },
+                        { id: 'med-trade', name: 'Trade Nexus', level: 2, description: 'Commercial and diplomatic center' }
+                    ]
+                },
+                {
+                    id: 'patagonia',
+                    name: 'Patagonia Free Zone',
+                    position: { x: 200, y: 800 },
+                    bounds: { width: 180, height: 120 },
+                    type: 'level1-zone',
+                    level: 1,
+                    description: 'Anarchist collective with consensus decision-making and natural living.',
+                    population: '180K',
+                    features: ['Consensus protocols', 'Natural living', 'Renewable energy', 'Community gardens'],
+                    aesthetics: 'Eco-anarchist meets permaculture',
+                    nestedZones: [
+                        { id: 'pat-consensus', name: 'Consensus Council', level: 1, description: 'Pure consensus decision-making' },
+                        { id: 'pat-eco', name: 'Eco-Villages', level: 1, description: 'Sustainable living communities' },
+                        { id: 'pat-tech', name: 'Tech Collective', level: 2, description: 'Technology development and maintenance' }
+                    ]
+                },
+                {
+                    id: 'mongolia',
+                    name: 'Mongolia Nomadic Network',
+                    position: { x: 800, y: 150 },
+                    bounds: { width: 160, height: 100 },
+                    type: 'level1-zone',
+                    level: 1,
+                    description: 'Traditional nomadic lifestyle enhanced with modern technology and mobile cities.',
+                    population: '420K',
+                    features: ['Mobile cities', 'Steppe wisdom', 'Nomadic tech', 'Horse culture'],
+                    aesthetics: 'Traditional Mongolian meets mobile tech',
+                    nestedZones: [
+                        { id: 'mon-khan', name: 'Khan Council', level: 2, description: 'Traditional leadership with modern tools' },
+                        { id: 'mon-mobile', name: 'Mobile Cities', level: 1, description: 'Portable urban centers' },
+                        { id: 'mon-tech', name: 'Steppe Tech', level: 1, description: 'Technology adapted for nomadic life' }
+                    ]
+                },
+                {
+                    id: 'enlightenment',
+                    name: 'Enlightenment Aesthetics Zone',
+                    position: { x: 300, y: 100 },
+                    bounds: { width: 200, height: 120 },
+                    type: 'level1-zone',
+                    level: 1,
+                    description: 'A zone dedicated to Enlightenment ideals with Christmas Carol personalities.',
+                    population: '1.2M',
+                    features: ['Rational discourse', 'Scientific method governance', 'Humanist education', 'Christmas Carol personalities'],
+                    aesthetics: '18th century Enlightenment meets modern tech',
+                    nestedZones: [
+                        { id: 'enlight-academy', name: 'Academy District', level: 2, description: 'Centers of learning and research' },
+                        { id: 'enlight-commons', name: 'Rational Commons', level: 1, description: 'Public spaces for discourse' },
+                        { id: 'enlight-humanist', name: 'Humanist Quarter', level: 1, description: 'Community living and mutual aid' }
+                    ]
+                },
+                
+                // Level 2 Zones (Sovereignty)
+                {
+                    id: 'neo-babylon',
+                    name: 'Neo-Babylonian Empire',
+                    position: { x: 500, y: 200 },
+                    bounds: { width: 220, height: 140 },
+                    type: 'level2-zone',
+                    level: 2,
+                    description: 'Ancient Mesopotamian civilization combined with cutting-edge technology.',
+                    population: '2.3M',
+                    features: ['Ziggurat computational centers', 'Cuneiform AI interfaces', 'Ancient wisdom integration', 'Solar-powered cities'],
+                    aesthetics: 'Ancient Mesopotamian meets cyberpunk',
+                    nestedZones: [
+                        { id: 'babylon-ziggurat', name: 'Ziggurat Central', level: 3, description: 'Main computational and religious center' },
+                        { id: 'babylon-cuneiform', name: 'Cuneiform District', level: 2, description: 'AI research and development' },
+                        { id: 'babylon-garden', name: 'Garden Hanging', level: 1, description: 'Vertical farming and recreation' }
+                    ]
+                },
+                {
+                    id: 'sahara',
+                    name: 'Sahara Solar Empire',
+                    position: { x: 450, y: 300 },
+                    bounds: { width: 200, height: 120 },
+                    type: 'level2-zone',
+                    level: 2,
+                    description: 'Desert solar farms with oasis cities and clean energy export.',
+                    population: '950K',
+                    features: ['Desert solar farms', 'Oasis cities', 'Clean energy export', 'Water management'],
+                    aesthetics: 'Desert meets solar tech',
+                    nestedZones: [
+                        { id: 'sahara-solar', name: 'Solar Fields', level: 2, description: 'Massive solar energy collection' },
+                        { id: 'sahara-oasis', name: 'Oasis Cities', level: 1, description: 'Water-managed urban centers' },
+                        { id: 'sahara-energy', name: 'Energy Hub', level: 3, description: 'Power distribution and trade' }
+                    ]
+                },
+                
+                // Level 3 Zones (Hierarchy)
+                {
+                    id: 'neo-egypt',
+                    name: 'Neo-Egyptian Dominion',
+                    position: { x: 480, y: 250 },
+                    bounds: { width: 200, height: 130 },
+                    type: 'level3-zone',
+                    level: 3,
+                    description: 'Pharaonic system adapted for the modern age with pyramid solar collectors.',
+                    population: '1.8M',
+                    features: ['Pyramid solar collectors', 'Immortality research', 'Hieroglyphic AI', 'Nile restoration'],
+                    aesthetics: 'Ancient Egyptian meets biotech',
+                    nestedZones: [
+                        { id: 'egypt-pharaoh', name: 'Pharaoh Palace', level: 4, description: 'Central authority and research' },
+                        { id: 'egypt-pyramid', name: 'Pyramid Network', level: 3, description: 'Solar energy and research facilities' },
+                        { id: 'egypt-nile', name: 'Nile Restoration', level: 2, description: 'Environmental and agricultural projects' }
+                    ]
+                },
+                
+                // Level 4 Zones (Strict Rule)
+                {
+                    id: 'brugge',
+                    name: 'Brugge Medieval Revival',
+                    position: { x: 350, y: 150 },
+                    bounds: { width: 180, height: 100 },
+                    type: 'level4-zone',
+                    level: 4,
+                    description: 'Complete revival of medieval European culture with guild system.',
+                    population: '320K',
+                    features: ['Guild system restoration', 'Cathedral aesthetics', 'Artisan economy', 'Traditional crafts + tech'],
+                    aesthetics: 'Medieval European meets steampunk',
+                    nestedZones: [
+                        { id: 'brugge-guild', name: 'Guild Halls', level: 4, description: 'Traditional craft and trade organizations' },
+                        { id: 'brugge-cathedral', name: 'Cathedral District', level: 4, description: 'Religious and ceremonial center' },
+                        { id: 'brugge-artisan', name: 'Artisan Quarter', level: 3, description: 'Craft production and innovation' }
+                    ]
+                },
+                
+                // Old World Zones
+                {
+                    id: 'usa',
+                    name: 'United States (Old World)',
+                    position: { x: 100, y: 200 },
+                    bounds: { width: 250, height: 200 },
+                    type: 'old-world',
+                    level: 0,
+                    description: 'Federal democracy in decline, struggling with internal conflicts.',
+                    population: '280M',
+                    features: ['Federal system', 'Democratic processes', 'Economic struggles', 'Social division'],
+                    aesthetics: 'Modern American in decline',
+                    nestedZones: [
+                        { id: 'usa-federal', name: 'Federal Government', level: 0, description: 'Central authority in crisis' },
+                        { id: 'usa-states', name: 'State Governments', level: 0, description: 'Regional authority struggling' },
+                        { id: 'usa-local', name: 'Local Communities', level: 0, description: 'Grassroots movements emerging' }
+                    ]
+                }
+            ]
+        };
+        
+        // Initialize the application
+        function initializeApp() {
+            // Load map data
+            mapViewer.setAttribute('map-data', JSON.stringify(worldMapData));
+            
+            // Load zones data
+            mapViewer.setAttribute('zones-data', JSON.stringify(triadizationZones));
+            
+            // Update statistics
+            updateStatistics();
+            
+            // Add event listeners
+            mapViewer.addEventListener('zone-selected', handleZoneSelected);
+        }
+        
+        function updateStatistics() {
+            const zones = triadizationZones.zones;
+            const newWorldZones = zones.filter(z => z.type !== 'old-world').length;
+            const totalPopulation = zones.reduce((sum, z) => {
+                const pop = parseInt(z.population.replace(/[^\d]/g, ''));
+                return sum + (isNaN(pop) ? 0 : pop);
+            }, 0);
+            
+            const level1Zones = zones.filter(z => z.level === 1).length;
+            const level2Zones = zones.filter(z => z.level === 2).length;
+            const level3Zones = zones.filter(z => z.level === 3).length;
+            const level4Zones = zones.filter(z => z.level === 4).length;
+            
+            document.getElementById('newWorldZones').textContent = newWorldZones;
+            document.getElementById('totalPopulation').textContent = (totalPopulation / 1000000).toFixed(1) + 'M';
+            document.getElementById('level1Zones').textContent = level1Zones;
+            document.getElementById('level2Zones').textContent = level2Zones;
+            document.getElementById('level3Zones').textContent = level3Zones;
+            document.getElementById('level4Zones').textContent = level4Zones;
+        }
+        
+        function handleZoneSelected(e) {
+            const zone = e.detail.zone;
+            const zoneInfo = document.getElementById('zoneInfo');
+            const zoneTitle = document.getElementById('zoneTitle');
+            const zoneDescription = document.getElementById('zoneDescription');
+            
+            zoneTitle.textContent = zone.name;
+            zoneDescription.innerHTML = `
+                <p><strong>ID:</strong> ${zone.id}</p>
+                <p><strong>Type:</strong> ${zone.type || 'Unknown'}</p>
+                <p><strong>Level:</strong> ${zone.level || 1}</p>
+                <p><strong>Population:</strong> ${zone.population || 'Unknown'}</p>
+                <p><strong>Description:</strong> ${zone.description || 'No description available'}</p>
+                ${zone.features ? `
+                    <p><strong>Features:</strong> ${zone.features.join(', ')}</p>
+                ` : ''}
+                ${zone.nestedZones ? `
+                    <div class="nested-list">
+                        <strong>Nested Zones:</strong>
+                        ${zone.nestedZones.map(nested => `
+                            <div class="nested-item">
+                                <strong>${nested.name}</strong> (Level ${nested.level})<br>
+                                <small>${nested.description}</small>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            `;
+            
+            zoneInfo.style.display = 'block';
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('load', initializeApp);
+    </script>
+</body>
+</html>

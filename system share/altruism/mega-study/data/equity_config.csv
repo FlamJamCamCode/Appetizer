@@ -1,0 +1,7 @@
+group_key,description,applies_to,share_default,notes
+domestic_poor,Poorest residents in the package's own country (e.g. bottom 20% by income),all,0.4,"Baseline share of benefits from strongly pro-poor interventions in LMICs; will be adjusted by cause and income group.*"
+domestic_nonpoor,Non-poor residents in the package's own country,all,0.2,"Residual domestic beneficiaries (middle and upper income)."
+foreign_poor,Poorest residents outside the package's own country,donor,0.3,"Relevant mainly for donor-country packages whose resources flow abroad (e.g. ODA-style)."
+foreign_nonpoor,Non-poor residents outside the package's own country,donor,0.05,"Residual foreign beneficiaries (e.g., administrative overhead in richer recipient segments)."
+future_global,Future generations globally (e.g. via climate and education),all,0.05,"Long-run benefits accruing to future people; especially important for climate and education-related causes.*"
+

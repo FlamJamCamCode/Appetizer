@@ -1,0 +1,36 @@
+{
+  "country_code": "CO",
+  "name": "Colombia",
+  "approximate": true,
+  "population": 52000000,
+  "gdp_nominal_usd": 360000000000,
+  "gdp_per_capita_usd": 6900,
+  "social_spending_pct_gdp": 17.0,
+  "health_spending_pct_gdp": 7.5,
+  "education_spending_pct_gdp": 5.0,
+  "oda_given_pct_gni": 0.02,
+  "oda_given_usd": 200000000,
+  "oda_received_usd": 1000000000,
+  "private_giving_pct_gdp": 0.4,
+  "private_giving_total_usd": 1400000000,
+  "volunteering_rate_pct_adults": 27.0,
+  "volunteer_hours_billion": 0.5,
+  "child_mortality_under5_per_1000": 14.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Violence and homicide",
+    "Road injuries"
+  ],
+  "notes": [
+    "Colombia's cause-of-death profile combines NCD burdens with violence and road injuries.",
+    "ODA and philanthropy support peacebuilding and rural development."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "Colombian budget and social spending reports"
+  ]
+}
+
+

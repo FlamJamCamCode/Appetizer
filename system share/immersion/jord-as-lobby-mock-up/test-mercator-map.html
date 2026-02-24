@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercator World Map Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        
+        .app-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, #1a0033, #000);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+        
+        .info-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .info-panel h3 {
+            margin: 0 0 10px 0;
+            color: #00ffff;
+        }
+        
+        .info-panel p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            z-index: 1000;
+        }
+        
+        .status h3 {
+            margin: 0 0 10px 0;
+            color: #ff00ff;
+        }
+        
+        .status-item {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .status-item.success {
+            color: #00ff00;
+        }
+        
+        .status-item.error {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>Mercator World Map Test</h1>
+        </div>
+        
+        <div class="map-container">
+            <div class="info-panel">
+                <h3>Mercator World Map Test</h3>
+                <p>This test verifies that the mercator-world-map.png file loads correctly as the base map.</p>
+                <p>Features being tested:</p>
+                <ul>
+                    <li>Mercator projection world map</li>
+                    <li>Image loading and scaling</li>
+                    <li>Zoom and pan functionality</li>
+                    <li>Zone overlay system</li>
+                </ul>
+            </div>
+            
+            <div class="status" id="statusPanel">
+                <h3>Status</h3>
+                <div class="status-item" id="mapLoadStatus">Loading map...</div>
+                <div class="status-item" id="zonesLoadStatus">Loading zones...</div>
+                <div class="status-item" id="interactionStatus">Testing interactions...</div>
+            </div>
+            
+            <world-map-viewer id="mapViewer"></world-map-viewer>
+        </div>
+    </div>
+    
+    <script src="components/world-map-viewer.js"></script>
+    <script>
+        const mapViewer = document.getElementById('mapViewer');
+        const mapLoadStatus = document.getElementById('mapLoadStatus');
+        const zonesLoadStatus = document.getElementById('zonesLoadStatus');
+        const interactionStatus = document.getElementById('interactionStatus');
+        
+        // Test zones data
+        const testZones = {
+            zones: [
+                {
+                    id: 'test-europe',
+                    name: 'Test Zone Europe',
+                    position: { x: 1000, y: 300 },
+                    bounds: { width: 150, height: 100 },
+                    type: 'level1-zone',
+                    level: 1,
+                    description: 'Test zone in Europe region.',
+                    population: '100K',
+                    features: ['Test feature 1', 'Test feature 2'],
+                    nestedZones: [
+                        { id: 'test-europe-nested', name: 'Nested Zone', level: 2, description: 'A nested test zone' }
+                    ]
+                },
+                {
+                    id: 'test-asia',
+                    name: 'Test Zone Asia',
+                    position: { x: 1800, y: 400 },
+                    bounds: { width: 120, height: 80 },
+                    type: 'level2-zone',
+                    level: 2,
+                    description: 'Test zone in Asia region.',
+                    population: '50K',
+                    features: ['Different features', 'More test data']
+                },
+                {
+                    id: 'test-america',
+                    name: 'Test Zone America',
+                    position: { x: 300, y: 400 },
+                    bounds: { width: 100, height: 120 },
+                    type: 'level3-zone',
+                    level: 3,
+                    description: 'Test zone in North America region.',
+                    population: '75K',
+                    features: ['American features', 'Complex data']
+                }
+            ]
+        };
+        
+        // Test the mercator world map loading
+        function testMercatorMap() {
+            // Check if the map loads
+            setTimeout(() => {
+                const tileLayer = mapViewer.shadowRoot.getElementById('tileLayer');
+                const worldMapContainer = tileLayer.querySelector('div');
+                
+                if (worldMapContainer && worldMapContainer.style.backgroundImage.includes('mercator-world-map.png')) {
+                    mapLoadStatus.textContent = '✓ Mercator world map loaded successfully';
+                    mapLoadStatus.className = 'status-item success';
+                } else {
+                    mapLoadStatus.textContent = '✗ Failed to load Mercator world map';
+                    mapLoadStatus.className = 'status-item error';
+                }
+            }, 1000);
+        }
+        
+        // Test zones loading
+        function testZonesLoading() {
+            setTimeout(() => {
+                const zones = mapViewer.zones;
+                if (zones && zones.size > 0) {
+                    zonesLoadStatus.textContent = `✓ ${zones.size} zones loaded successfully`;
+                    zonesLoadStatus.className = 'status-item success';
+                } else {
+                    zonesLoadStatus.textContent = '✗ Failed to load zones';
+                    zonesLoadStatus.className = 'status-item error';
+                }
+            }, 1500);
+        }
+        
+        // Test interactions
+        function testInteractions() {
+            setTimeout(() => {
+                // Test zoom functionality
+                const originalZoom = mapViewer.zoom;
+                mapViewer.zoomIn();
+                
+                if (mapViewer.zoom > originalZoom) {
+                    interactionStatus.textContent = '✓ Zoom and pan interactions working';
+                    interactionStatus.className = 'status-item success';
+                } else {
+                    interactionStatus.textContent = '✗ Interactions not working';
+                    interactionStatus.className = 'status-item error';
+                }
+            }, 2000);
+        }
+        
+        // Initialize the test
+        function initializeTest() {
+            // Load test zones
+            mapViewer.setAttribute('zones-data', JSON.stringify(testZones));
+            
+            // Add event listener for zone selection
+            mapViewer.addEventListener('zone-selected', (e) => {
+                console.log('Selected zone:', e.detail.zone);
+            });
+            
+            // Run tests
+            testMercatorMap();
+            testZonesLoading();
+            testInteractions();
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('load', initializeTest);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "country_code": "NE",
+  "name": "Niger",
+  "approximate": true,
+  "population": 26000000,
+  "gdp_nominal_usd": 17000000000,
+  "gdp_per_capita_usd": 650,
+  "social_spending_pct_gdp": 11.0,
+  "health_spending_pct_gdp": 4.5,
+  "education_spending_pct_gdp": 4.5,
+  "oda_given_pct_gni": 0.0,
+  "oda_given_usd": 0,
+  "oda_received_usd": 1500000000,
+  "private_giving_pct_gdp": 0.2,
+  "private_giving_total_usd": 30000000,
+  "volunteering_rate_pct_adults": 35.0,
+  "volunteer_hours_billion": 0.2,
+  "child_mortality_under5_per_1000": 115.0,
+  "top_causes_of_death": [
+    "Neonatal disorders",
+    "Malaria",
+    "Diarrheal diseases",
+    "Lower respiratory infections",
+    "Malnutrition"
+  ],
+  "notes": [
+    "Niger has among the highest under-5 mortality rates globally.",
+    "ODA finances a large share of social spending; domestic formal philanthropy is very limited."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "WHO Global Health Observatory",
+    "OECD and other aid statistics"
+  ]
+}
+
+

@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Healing Sanctuaries - For Broken Souls Seeking Wholeness</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Spectral', serif;
+            background: #050505;
+            color: #d4c5b9;
+            min-height: 100vh;
+            padding: 25px;
+            background-image: 
+                radial-gradient(ellipse at 20% 30%, rgba(72, 61, 139, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 70%, rgba(139, 69, 19, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(46, 125, 50, 0.1) 0%, transparent 70%);
+        }
+
+        .grimoire-page {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: 
+                linear-gradient(135deg, rgba(20, 15, 25, 0.95), rgba(15, 20, 25, 0.95)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23000000" width="100" height="100"/><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.03"/></svg>');
+            border: 6px double rgba(212, 175, 55, 0.5);
+            border-radius: 25px;
+            padding: 60px;
+            box-shadow: 
+                0 0 80px rgba(72, 61, 139, 0.4),
+                inset 0 0 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .ancient-header {
+            text-align: center;
+            padding: 60px 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .ancient-header::before,
+        .ancient-header::after {
+            content: '◈';
+            position: absolute;
+            font-size: 3em;
+            color: rgba(212, 175, 55, 0.4);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .ancient-header::before { left: 20px; }
+        .ancient-header::after { right: 20px; }
+
+        .ancient-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5em;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #2e7d32, #d4af37, #7b2ff7);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s ease-in-out infinite;
+            font-weight: 600;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .wound-testament {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.15), rgba(72, 61, 139, 0.15));
+            padding: 45px;
+            border-radius: 18px;
+            margin-bottom: 50px;
+            border: 3px solid rgba(139, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .wound-testament::before {
+            content: '⚔';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
+            color: rgba(139, 0, 0, 0.5);
+        }
+
+        .wound-testament h2 {
+            font-family: 'Cinzel', serif;
+            color: #cd5c5c;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .wound-fragment {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #8b0000;
+            font-style: italic;
+            line-height: 2;
+            font-size: 1.05em;
+        }
+
+        .sanctuary-scroll {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.35), rgba(46, 125, 50, 0.25));
+            border: 5px double rgba(46, 125, 50, 0.6);
+            border-radius: 25px;
+            padding: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .sanctuary-scroll::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .sanctuary-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8em;
+            margin-bottom: 18px;
+            color: #2e7d32;
+            text-align: center;
+            font-weight: 600;
+            text-shadow: 
+                2px 2px 8px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(46, 125, 50, 0.5);
+        }
+
+        .sanctuary-essence {
+            text-align: center;
+            font-size: 1.35em;
+            color: #81c784;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .seal-of-resonance {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 35px;
+            border-radius: 18px;
+            margin: 35px 0;
+            border: 3px solid rgba(46, 125, 50, 0.5);
+            position: relative;
+        }
+
+        .seal-of-resonance::before {
+            content: '❋';
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.2em;
+            color: #2e7d32;
+            background: #0a0a0a;
+            padding: 0 15px;
+        }
+
+        .seal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6em;
+            color: #2e7d32;
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .will-encoding {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.2), rgba(72, 61, 139, 0.15));
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 2px solid rgba(46, 125, 50, 0.4);
+        }
+
+        .will-encoding h4 {
+            font-family: 'Cinzel', serif;
+            color: #81c784;
+            margin-bottom: 20px;
+            font-size: 1.35em;
+            font-weight: 600;
+        }
+
+        .private-language {
+            color: #9370db;
+            font-style: italic;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(147, 112, 219, 0.6);
+            border-bottom: 2px dotted rgba(147, 112, 219, 0.5);
+            padding-bottom: 2px;
+        }
+
+        .sacred-emphasis {
+            color: #d4af37;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .healing-promise {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(46, 125, 50, 0.2));
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 3px solid rgba(212, 175, 55, 0.5);
+            font-size: 1.12em;
+            line-height: 2.2;
+        }
+
+        .rally-invocation {
+            width: 100%;
+            padding: 28px;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #2e7d32, #d4af37, #2e7d32);
+            background-size: 200% auto;
+            border: 4px solid rgba(212, 175, 55, 0.7);
+            border-radius: 18px;
+            color: #0a0a0a;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(46, 125, 50, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(46, 125, 50, 0.8), 0 0 60px rgba(212, 175, 55, 0.6); }
+        }
+
+        .rally-invocation:hover {
+            transform: scale(1.04) translateY(-5px);
+            box-shadow: 
+                0 20px 60px rgba(212, 175, 55, 0.8),
+                0 0 50px rgba(46, 125, 50, 0.9);
+            background-position: 100% center;
+        }
+
+        .witness-testimony {
+            background: rgba(72, 61, 139, 0.2);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 6px solid #6a5acd;
+            font-style: italic;
+            position: relative;
+        }
+
+        .witness-testimony::before {
+            content: '❝';
+            position: absolute;
+            top: -15px;
+            left: 25px;
+            font-size: 5em;
+            color: rgba(106, 90, 205, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        ul.soul-marks {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.soul-marks li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            line-height: 2;
+            font-size: 1.05em;
+        }
+
+        ul.soul-marks li:before {
+            content: "✧";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-size: 1.4em;
+        }
+
+        .trust-network-seal {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            border: 4px double rgba(212, 175, 55, 0.6);
+        }
+
+        .trust-network-seal h3 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 1.8em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grimoire-page">
+        <div class="ancient-header">
+            <h1>The Codex of Healing Realms</h1>
+            <p style="font-size: 1.5em; margin-top: 25px; color: #81c784; font-style: italic;">
+                For Those Whose Souls Were Shattered and Seek to Become Whole
+            </p>
+            <p style="margin-top: 18px; color: #8b7355; font-size: 1.15em;">
+                <em>Scribed in the Private Language Your Trust Network Wove for Your Wounds</em>
+            </p>
+        </div>
+
+        <div class="wound-testament">
+            <h2>⚔ The Wounds You Carry ⚔</h2>
+            
+            <div class="wound-fragment">
+                You know what it's like to have trust broken so completely you can't rebuild it. To have been hurt by someone who was supposed to protect you. To carry scars nobody sees but that shape every decision you make. To feel fundamentally unsafe in the world, always waiting for the next pain.
+            </div>
+
+            <div class="wound-fragment">
+                You've tried therapy. Medication. "Healing work." Some helped a little. But you're still <span class="private-language">fragment-scattered</span>—pieces of yourself you can't quite reassemble. Still <span class="private-language">trust-shattered</span>—can't let people close without panic. Still <span class="private-language">world-unsafe-feeling</span>—baseline anxiety that never quite leaves.
+            </div>
+
+            <div class="wound-fragment">
+                And the hardest part? People expect you to "get over it." To "move on." To "not let it define you." As if trauma is something you can schedule away. As if healing happens on their timeline. As if you're not trying EVERY DAY to be functional while carrying weights they can't see.
+            </div>
+
+            <p style="margin-top: 35px; line-height: 2.1; font-size: 1.2em; color: #cd5c5c; font-weight: 600; text-align: center;">
+                You have MBC Rule 3. The right to rally to worlds designed for <span class="private-language">broken-souls-seeking-wholeness</span>. Where your wounds are understood. Where your healing happens at YOUR pace. Where safety is REAL, not performed.
+            </p>
+        </div>
+
+        <div class="trust-network-seal">
+            <h3>✧ How Your Trust Network Serves Wounded Souls ✧</h3>
+            
+            <p style="line-height: 2; margin-bottom: 25px; font-size: 1.1em;">
+                When encoding worlds for trauma survivors, your Trust Network doesn't use metrics like "Therapy Quality: 9.1/10" or "Safety: 8.7/10"—because numbers mean NOTHING when you're triggered, when you're having flashbacks, when you're barely holding together.
+            </p>
+            
+            <div style="background: rgba(46, 125, 50, 0.2); padding: 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #2e7d32;">
+                <p style="line-height: 2.1; font-size: 1.08em;">
+                    Instead, they encode in <span class="private-language">wound-resonance-language</span>—phrases that speak directly to your specific traumas, your specific healing needs, your specific soul-shape.
+                    <br><br>
+                    When they say <span class="private-language">"trust-rebuilt-possible"</span>, you KNOW what that means for YOUR specific trust-wounds.
+                    <br>When they say <span class="private-language">"gentleness-absolute"</span>, you understand it addresses YOUR specific violence-trauma.
+                    <br>When they say <span class="private-language">"time-yours-to-take"</span>, you feel it in YOUR specific rushing-panic places.
+                    <br><br>
+                    <span class="sacred-emphasis">This is will-topology for the wounded.</span> Compression through YOUR pain-map. Encoding through YOUR healing-language. Private phrases only YOUR Trust Network could create because they KNOW your specific breaking-points and rebuilding-needs.
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 55px 0;">
+            <h2 style="font-family: 'Cinzel', serif; font-size: 2.5em; color: #2e7d32;">
+                ⟨ The Sanctuaries of Slow Becoming-Whole ⟩
+            </h2>
+            <p style="color: #81c784; margin-top: 18px; font-size: 1.25em; font-style: italic;">
+                Where Broken Pieces Can Rest and Reassemble at Their Own Pace
+            </p>
+        </div>
+
+        <!-- Sanctuary 1: The Gentle Healing -->
+        <div class="sanctuary-scroll">
+            <div class="sanctuary-name">🕊️ The Sanctuary of Tender Silence</div>
+            <div class="sanctuary-essence">Where Nobody Demands Performance and Healing Happens in Gentleness</div>
+
+            <div class="seal-of-resonance">
+                <div class="seal-title">⟨ Why This Calls Your Wounded Soul ⟩</div>
+                <div style="line-height: 2.2; font-size: 1.08em;">
+                    <p style="margin-bottom: 22px;">
+                        Your Trust Network has observed your <span class="private-language">performance-exhaustion-wound</span>—how you're tired of pretending to be okay, of performing functionality, of hiding your struggles because people get uncomfortable.
+                    </p>
+                    <p style="margin-bottom: 22px;">
+                        <span class="sacred-emphasis">In this sanctuary, you don't have to pretend.</span> Everyone here is healing from something. Everyone understands that some days you can barely function. Everyone knows that healing isn't linear. Nobody expects performance.
+                    </p>
+                    <p>
+                        The encoding your Trust Network uses: <span class="private-language">"permission-to-be-broken-while-healing"</span>—the sacred gift of not having to perform wholeness before you've achieved it.
+                    </p>
+                </div>
+            </div>
+
+            <div class="will-encoding">
+                <h4>⟨ Your Pain-Pattern Recognized ⟩</h4>
+                <ul class="soul-marks">
+                    <li><span class="private-language">trust-shattered-baseline</span>: <span class="sacred-emphasis">complete</span> (you can't trust easily—they understand, won't push, will earn it slowly)</li>
+                    <li><span class="private-language">safety-need-paramount</span>: <span class="sacred-emphasis">absolute</span> (you need REAL safety, not promised—they've built it into every structure)</li>
+                    <li><span class="private-language">gentleness-requirement</span>: <span class="sacred-emphasis">non-negotiable</span> (harsh words trigger you—they've selected for gentle-souls only, 40 years)</li>
+                    <li><span class="private-language">time-pressure-wound</span>: <span class="sacred-emphasis">severe</span> (being rushed breaks you—they operate on YOUR timeline, not theirs)</li>
+                    <li><span class="private-language">isolation-paradox</span>: <span class="sacred-emphasis">active</span> (need people but can't handle people—they provide both, your choice always)</li>
+                </ul>
+            </div>
+
+            <div class="healing-promise">
+                <strong style="color: #2e7d32; font-size: 1.3em; display: block; margin-bottom: 20px; font-family: 'Cinzel', serif;">
+                    ⟨ The Daily Rhythm of Gentle Healing ⟩
+                </strong>
+                
+                <p style="margin-bottom: 20px;">
+                    <span class="sacred-emphasis">Morning:</span> Wake when ready (no forced schedules—sleep is healing, they understand). Optional gentle movement (yoga, walking, tai chi—NO pressure, available if you want). Breakfast alone or with others (your choice, both respected).
+                </p>
+                
+                <p style="margin-bottom: 20px;">
+                    <span class="sacred-emphasis">Mid-day:</span> Therapy IF you want (trauma-informed therapists, but no requirement to "work on yourself" on anyone's timeline but yours). Art therapy, animal therapy, garden therapy, or just... existing (all valid). Small groups discussing healing (4-6 people max, can just listen, don't have to share).
+                </p>
+                
+                <p style="margin-bottom: 20px;">
+                    <span class="sacred-emphasis">Afternoon:</span> Whatever your soul needs. Rest (respected). Create (materials provided). Walk in nature (gardens designed for <span class="private-language">soul-soothing</span>). Solitude (private spaces abundant). Quiet company (others healing nearby, comfortable silence).
+                </p>
+                
+                <p style="margin-bottom: 20px;">
+                    <span class="sacred-emphasis">Evening:</span> Optional community gathering (gentle, nobody forced to participate). Or complete solitude (your space is yours). Sleep when exhausted.
+                </p>
+                
+                <p style="margin-top: 25px;">
+                    Your Trust Network encodes this as: <span class="private-language">"when-nobody-demands-and-healing-happens-naturally"</span>
+                    <br><br>
+                    The feeling: Like your soul can finally EXHALE. Like you can stop performing. Like you can be broken in peace until you're ready to reassemble.
+                </p>
+            </div>
+
+            <div class="witness-testimony">
+                <p style="line-height: 2.1; font-size: 1.1em; padding-top: 40px; padding-bottom: 45px;">
+                    First month I barely left my room. They brought food. Asked nothing. Just... let me be broken.
+                    <br><br>
+                    Second month I started sitting in the garden. Other people there, also quiet, also healing. We didn't talk. Just existed near each other. First time in years I didn't feel alone.
+                    <br><br>
+                    Six months in, I laughed at something. First genuine laugh since... I can't even remember. Person nearby smiled (not forced, just gentle). Said "It's good to hear laughter." Didn't pry. Didn't demand my story. Just witnessed my healing.
+                    <br><br>
+                    Two years now. I'm not "healed" (maybe never will be fully). But I'm WHOLE enough. Can trust some people. Can function most days. Can imagine future that doesn't terrify me.
+                    <br><br>
+                    This place saved my life by asking nothing from me except time.
+                    <br><br>
+                    <span style="color: #81c784;">— Willow, 26, CSA survivor, rallied at 23 when conventional world expected her to "be over it"</span>
+                </p>
+            </div>
+
+            <div class="will-encoding">
+                <h4>⟨ Sanctuary-Match Resonance Encoded ⟩</h4>
+                <ul class="soul-marks">
+                    <li><span class="private-language">gentleness-culture-absolute</span>: <span class="sacred-emphasis">guaranteed</span> (aggressive/harsh people filtered out, only gentle-souls selected over generations)</li>
+                    <li><span class="private-language">pressure-eliminated</span>: <span class="sacred-emphasis">systemic</span> (no timelines, no expectations, no "you should be better by now")</li>
+                    <li><span class="private-language">safety-architectural</span>: <span class="sacred-emphasis">built-in</span> (spaces designed for trauma-survivors—no sudden sounds, soft lighting, escape routes always visible)</li>
+                    <li><span class="private-language">trauma-understanding-universal</span>: <span class="sacred-emphasis">100%</span> (everyone there is healing from something—nobody judges, everyone understands)</li>
+                    <li><span class="private-language">alone-together-paradox-solved</span>: <span class="sacred-emphasis">architected</span> (can be alone but near others—spaces designed for comfortable co-presence without interaction demands)</li>
+                </ul>
+            </div>
+
+            <div class="seal-of-resonance">
+                <div class="seal-title">⚠ What Your Soul Would Release ⚠</div>
+                <div style="line-height: 2; font-size: 1.05em;">
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Conventional-world-return-difficulty</span>: After healing in gentleness-absolute environment, conventional world's harshness may be INTOLERABLE. Can't go back to rushed, demanding, performance-expecting world. This sanctuary becomes home permanently for most. Your soul must accept: healing here means transformation, not temporary rest.
+                    </div>
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Slow-life-pace</span>: Healing takes TIME. Years, maybe. This isn't quick-fix. Your productivity (conventional sense) will be near-zero while healing. Must accept that your worth isn't your productivity. Your existence is enough.
+                    </div>
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Material-simplicity</span>: This sanctuary prioritizes healing over wealth. You'll have enough (food, shelter, care). But not luxury. The trade-off: gentle healing in simplicity vs. wealthy suffering in harshness. Your wounded soul knows which it needs.
+                    </div>
+                </div>
+            </div>
+
+            <button class="rally-invocation">Invoke Rally → Sanctuary of Tender Silence</button>
+        </div>
+
+        <!-- Sanctuary 2: The Rebuilding Through Creation -->
+        <div class="sanctuary-scroll">
+            <div class="sanctuary-name">🎨 The Atelier of Wounded Creators</div>
+            <div class="sanctuary-essence">Where Broken Souls Rebuild Themselves Through Making Beauty</div>
+
+            <div class="seal-of-resonance">
+                <div class="seal-title">⟨ Why This Calls Your Wounded Soul ⟩</div>
+                <div style="line-height: 2.2; font-size: 1.08em;">
+                    <p style="margin-bottom: 22px;">
+                        Your Trust Network has observed your <span class="private-language">creation-as-healing-mechanism</span>—how you process trauma through art. How making things helps when talking doesn't. How you can't quite explain what happened to you, but you can SHOW it through what you create.
+                    </p>
+                    <p style="margin-bottom: 22px;">
+                        <span class="sacred-emphasis">In this sanctuary, creation IS the healing method.</span> Not talk therapy (though available if you want). But making things. Drawing your pain. Writing your wounds. Sculpting your shattering. Dancing your becoming-whole. Everyone here heals through creation.
+                    </p>
+                    <p>
+                        The encoding: <span class="private-language">"when-hands-make-what-mouth-cannot-say"</span>—healing through creation, not explanation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="will-encoding">
+                <h4>⟨ Your Pain-Pattern Recognized ⟩</h4>
+                <ul class="soul-marks">
+                    <li><span class="private-language">words-insufficient-for-wounds</span>: <span class="sacred-emphasis">total</span> (can't talk about trauma easily—creation speaks what words can't)</li>
+                    <li><span class="private-language">making-as-processing</span>: <span class="sacred-emphasis">primary</span> (you heal through creating, not through talking about feelings)</li>
+                    <li><span class="private-language">art-holds-what-mind-cannot</span>: <span class="sacred-emphasis">essential</span> (your creations carry your trauma—externalizing helps)</li>
+                    <li><span class="private-language">beauty-from-pain-compulsion</span>: <span class="sacred-emphasis">active</span> (need to transform suffering into something beautiful—alchemical impulse)</li>
+                    <li><span class="private-language">witness-need-not-advice</span>: <span class="sacred-emphasis">crucial</span> (need people to SEE your art/pain, not fix it—witnessing is healing)</li>
+                </ul>
+            </div>
+
+            <div class="healing-promise">
+                <strong style="color: #2e7d32; font-size: 1.3em; display: block; margin-bottom: 20px; font-family: 'Cinzel', serif;">
+                    ⟨ The Daily Rhythm of Creative Healing ⟩
+                </strong>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Morning:</span> Studio time (4 hours—YOUR space, YOUR materials, YOUR pace). Create whatever needs to come out. Dark art (if that's what your wounds produce). Violent imagery (if that's what you need to externalize). Grief-soaked beauty. Pain-transformed. All valid. No censorship. No "that's too dark." Just creation.
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Afternoon:</span> Share if you want (small group, other wounded creators, show what you made). They WITNESS (don't advise, don't analyze, don't fix—just SEE). The witnessing itself heals. Or don't share—solitude also valid.
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Evening:</strong> Gallery walk (community members' creations displayed—everyone's pain made visible and beautiful). Silent communion (walking through others' transformed suffering, understanding you're not alone). Or solitude (your room is sanctuary).
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Over months:</span> You notice your art changing. First months: dark, violent, pain-saturated. Six months: still dark but beauty emerging. Year: light and dark balanced. Two years: mostly light, occasional dark. You're not trying to change it—it's changing because YOU'RE changing. The art shows what words couldn't—your soul reassembling.
+                </p>
+                
+                <p style="margin-top: 30px;">
+                    Your Trust Network encodes: <span class="private-language">"hands-heal-what-words-cannot-touch"</span>
+                    <br><br>
+                    The feeling: Like your pain has FORM now (in your creations). Like it's outside you (in the art) instead of consuming you. Like you're becoming whole again, piece by piece, through making.
+                </p>
+            </div>
+
+            <div class="witness-testimony">
+                <p style="line-height: 2.1; font-size: 1.1em; padding-top: 40px; padding-bottom: 45px;">
+                    I painted my rape. Not literally. But the FEELING. Dark reds and blacks and this twisting form that looked like screaming. Took me three months. Cried every day I worked on it.
+                    <br><br>
+                    Showed it to the group. They sat with it for ten minutes. Silence. Then one person said: "I see it. I see what happened to you. And it's witnessed now. You're not alone in holding this anymore."
+                    <br><br>
+                    That was four years ago. I've painted 47 pieces since then. Each one a little lighter. Each one carrying less pain. The last one? Sunrise colors. Hope. Future.
+                    <br><br>
+                    My therapist in the old world wanted me to "talk about my feelings" for 50-minute sessions twice a week. Didn't help.
+                    <br><br>
+                    Here? I painted my feelings. For 4 hours a day. For years. And the painting held what I couldn't speak. And somehow that healed me.
+                    <br><br>
+                    <span style="color: #81c784;">— Ash, 29, painter, rallied at 24 after years of failed talk therapy, now healing through making</span>
+                </p>
+            </div>
+
+            <div class="will-encoding">
+                <h4>⟨ Sanctuary-Match Resonance Encoded ⟩</h4>
+                <ul class="soul-marks">
+                    <li><span class="private-language">creation-as-therapy-cultural-norm</span>: <span class="sacred-emphasis">absolute</span> (art therapy isn't alternative—it's primary healing method)</li>
+                    <li><span class="private-language">dark-art-welcomed</span>: <span class="sacred-emphasis">celebrated</span> (your pain-saturated creations not censored—understood as necessary externalization)</li>
+                    <li><span class="private-language">witnessing-trained-community</span>: <span class="sacred-emphasis">expert</span> (people know HOW to witness without fixing, seeing without analyzing—sacred skill)</li>
+                    <li><span class="private-language">pace-yours-absolutely</span>: <span class="sacred-emphasis">guaranteed</span> (take 5 years to heal? 10? fine. no pressure, time is gift)</li>
+                    <li><span class="private-language">wounded-creator-density</span>: <span class="sacred-emphasis">97%</span> (almost everyone here healing through creating—you're majority, not weird)</li>
+                </ul>
+            </div>
+
+            <div class="seal-of-resonance">
+                <div class="seal-title">⚠ What Your Soul Would Release ⚠</div>
+                <div style="line-height: 2; font-size: 1.05em;">
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Conventional-productivity-zero</span>: You won't "produce" in conventional sense. Won't have career. Won't climb ladder. Your productivity is HEALING. Your output is BECOMING-WHOLE. Society outside won't understand this. Must accept their judgment doesn't matter—your healing does.
+                    </div>
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Pain-immersion-extended</span>: Healing through creation means FACING your pain (painting it, writing it, sculpting it). Can be re-traumatizing sometimes. Not easier than avoidance—just more effective long-term. Must have strength to look at wounds directly.
+                    </div>
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Family-understanding-gap</span>: Your family will not understand why you're "just making art" instead of "getting a job" or "moving on." They'll worry. They'll judge. Painful to be misunderstood by those you love. But staying in their world was killing you. Choose: their approval or your healing.
+                    </div>
+                </div>
+            </div>
+
+            <button class="rally-invocation">Invoke Rally → Atelier of Wounded Creators</button>
+        </div>
+
+        <!-- Sanctuary 3: The Warrior Healers -->
+        <div class="sanctuary-scroll">
+            <div class="sanctuary-name">⚔️ The Forge of Broken Warriors</div>
+            <div class="sanctuary-essence">Where Trauma is Transformed Into Strength and Survivors Become Protectors</div>
+
+            <div class="seal-of-resonance">
+                <div class="seal-title">⟨ Why This Calls Your Wounded Soul ⟩</div>
+                <div style="line-height: 2.2; font-size: 1.08em;">
+                    <p style="margin-bottom: 22px;">
+                        Your Trust Network has observed your <span class="private-language">pain-to-power-impulse</span>—how you don't just want to heal FROM your trauma, you want to USE it. Transform it. Turn your breaking into strengthening. Become so strong that what broke you could never break you again. And then PROTECT OTHERS from similar breaking.
+                    </p>
+                    <p style="margin-bottom: 22px;">
+                        <span class="sacred-emphasis">In this sanctuary, trauma becomes fuel.</span> Not "get over it" (impossible). Not "accept it" (insufficient). But TRANSFORM it—into strength, into wisdom, into protective capacity. Alchemize suffering into power to prevent suffering.
+                    </p>
+                    <p>
+                        The encoding: <span class="private-language">"broken-places-become-strongest-places"</span>—the kintsugi principle applied to souls.
+                    </p>
+                </div>
+            </div>
+
+            <div class="will-encoding">
+                <h4>⟨ Your Pain-Pattern Recognized ⟩</h4>
+                <ul class="soul-marks">
+                    <li><span class="private-language">never-again-rage</span>: <span class="sacred-emphasis">burning</span> (fury that this happened, determination it won't happen to others)</li>
+                    <li><span class="private-language">protector-calling</span>: <span class="sacred-emphasis">fundamental</span> (your trauma made you want to PROTECT—become strong enough to defend the vulnerable)</li>
+                    <li><span class="private-language">strength-through-breaking</span>: <span class="sacred-emphasis">understood</span> (you know your trauma gave you sight/strength others lack—want to USE it)</li>
+                    <li><span class="private-language">victim-identity-rejected</span>: <span class="sacred-emphasis">total</span> (refuse to be defined by what was done to you—want to define self by what you DO with it)</li>
+                    <li><span class="private-language">warrior-wounded-fusion</span>: <span class="sacred-emphasis">active</span> (you're both broken AND strong, wounded AND warrior—paradox is you)</li>
+                </ul>
+            </div>
+
+            <div class="healing-promise">
+                <strong style="color: #2e7d32; font-size: 1.3em; display: block; margin-bottom: 20px; font-family: 'Cinzel', serif;">
+                    ⟨ The Daily Forging of Wounded Into Warrior ⟩
+                </strong>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Phase 1 (Months 1-6):</span> Rest and stabilization. No demands. Gentle therapy (trauma-processing, safe). Your wounds SEEN by those who've carried similar. <span class="private-language">Witness-held</span> before transformation begins.
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Phase 2 (Months 6-18):</span> Physical training begins (martial arts, strength training, combat skills). Not punishment—RECLAMATION. Your body was violated? You'll make it STRONG. Can't be hurt the same way again. You're rebuilding yourself as fortress.
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Phase 3 (Months 18-36):</span> Mental forging (studying protection, learning to defend others, understanding predator patterns so you can STOP them). Your trauma becomes EXPERTISE. You know how predators think—now you learn how to DEFEAT them.
+                </p>
+                
+                <p style="margin-bottom: 22px;">
+                    <span class="sacred-emphasis">Phase 4 (Years 3+):</span> Service begins (protecting other trauma survivors, teaching self-defense, hunting predators in other Triads—WITH law, not vigilante, but ACTIVE). Your trauma transformed into MISSION. Your wounds into WEAPONS against those who would wound others.
+                </p>
+                
+                <p style="margin-top: 30px;">
+                    Your Trust Network encodes: <span class="private-language">"from-prey-to-predator-of-predators"</span>
+                    <br><br>
+                    The feeling: Like you're taking your power BACK. Like what was done to you becomes FUEL. Like you're not victim anymore—you're HUNTER. And what you hunt is those who hurt the vulnerable. <span class="sacred-emphasis">Trauma transformed into protective might.</span>
+                </p>
+            </div>
+
+            <div class="witness-testimony">
+                <p style="line-height: 2.1; font-size: 1.1em; padding-top: 40px; padding-bottom: 45px;">
+                    He broke me when I was 12. Uncle. Years of it. Broke my body. Broke my trust. Broke my soul.
+                    <br><br>
+                    Rallied here at 19. Broken. Weak. Terrified of all men.
+                    <br><br>
+                    They didn't try to "fix" me. They said: "You're broken. We'll help you forge yourself into something that can never be broken again. And then you'll help us protect others."
+                    <br><br>
+                    Five years of training. Therapy. Martial arts. Combat psychology. Predator behavior study. My trauma became my EDUCATION.
+                    <br><br>
+                    Now I'm 29. I teach self-defense to other survivors. I hunt predators (legally, with Triad authority). Last year I prevented 14 assaults before they happened (predictive, patterned, we KNOW how they operate).
+                    <br><br>
+                    My uncle broke me. These years forged me. I'm not "healed"—I'm WEAPONIZED. And I use that weapon to protect the vulnerable.
+                    <br><br>
+                    This is better than healing. This is TRANSFORMATION.
+                    <br><br>
+                    <span style="color: #81c784;">— Phoenix, 29, trauma-survivor turned protector, rallied broken, became blade</span>
+                </p>
+            </div>
+
+            <div class="will-encoding">
+                <h4>⟨ Sanctuary-Match Resonance Encoded ⟩</h4>
+                <ul class="soul-marks">
+                    <li><span class="private-language">trauma-to-strength-culture</span>: <span class="sacred-emphasis">foundational</span> (everyone here transforms wounds into weapons—community principle)</li>
+                    <li><span class="private-language">victim-identity-rejected-systemically</span>: <span class="sacred-emphasis">absolute</span> (you're not "victim"—you're warrior-in-training)</li>
+                    <li><span class="private-language">predator-hunting-legitimate</span>: <span class="sacred-emphasis">sanctioned</span> (Triad authorizes hunting predators in other Triads—legal, supported, REAL)</li>
+                    <li><span class="private-language">physical-empowerment-priority</span>: <span class="sacred-emphasis">primary</span> (body made strong—never be physically overpowered again)</li>
+                    <li><span class="private-language">service-through-protection</span>: <span class="sacred-emphasis">mission</span> (your healing culminates in protecting others—purpose through preventing YOUR pain in others)</li>
+                </ul>
+            </div>
+
+            <div class="seal-of-resonance">
+                <div class="seal-title">⚠ What Your Soul Would Release ⚠</div>
+                <div style="line-height: 2; font-size: 1.05em;">
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Forgiveness-path-abandoned</span>: This sanctuary doesn't emphasize forgiveness (conventional healing often demands it). Emphasizes STRENGTH. Some heal through forgiving. You'll heal through becoming UNABLE to be victimized again. Different path. Must accept: you may never forgive, and that's fine. Strength matters more.
+                    </div>
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Warrior-life-demanding</span>: Physical training is HARD. Mental preparation is HARD. Hunting predators is DANGEROUS. This isn't gentle healing—it's transformative fire. You'll be forged, not rested. Must want this alchemical violence-of-transformation, not peace-of-acceptance.
+                    </div>
+                    <div class="healing-promise" style="background: rgba(139, 0, 0, 0.1); border-color: rgba(139, 0, 0, 0.3);">
+                        <span class="private-language">Rage-kept-not-released</span>: Some healing methods try to "release anger." This sanctuary KEEPS it, CHANNELS it, USES it as fuel. Your rage becomes protective capacity. But you'll carry fire forever. Not peace. POWER. Choose which you need: peaceful healing or powerful transformation.
+                    </div>
+                </div>
+            </div>
+
+            <button class="rally-invocation">Invoke Rally → Forge of Broken Warriors</button>
+        </div>
+
+        <!-- The Oracle's Final Testament -->
+        <div style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(72, 61, 139, 0.3)); padding: 55px; border-radius: 25px; border: 5px double rgba(212, 175, 55, 0.6); margin-top: 70px; position: relative;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-family: 'Cinzel', serif; font-size: 2.5em; color: #d4af37; font-weight: 600;">
+                    ⟨ The Grimoire's Deepest Secret ⟩
+                </h2>
+            </div>
+            
+            <div style="line-height: 2.2; font-size: 1.15em;">
+                <p style="margin-bottom: 28px; text-align: center; font-size: 1.25em; color: #81c784;">
+                    <span class="sacred-emphasis">Notice what just happened as you read these sanctuaries?</span>
+                </p>
+
+                <div style="background: rgba(212, 175, 55, 0.25); padding: 35px; border-radius: 15px; margin: 30px 0; border: 3px solid rgba(212, 175, 55, 0.5);">
+                    <p style="line-height: 2.2; margin-bottom: 22px;">
+                        Your Trust Network didn't say: "Therapy Success Rate: 87.3%, PTSD Reduction: 8.9/10, Recovery Timeline: 18-36 months"
+                    </p>
+                    <p style="line-height: 2.2; margin-bottom: 22px;">
+                        They said: <span class="private-language">"permission-to-be-broken-while-healing, hands-heal-what-words-cannot-touch, from-prey-to-predator-of-predators"</span>
+                    </p>
+                    <p style="line-height: 2.2; color: #d4af37; font-weight: 600; font-size: 1.1em;">
+                        And you KNEW. Immediately. Which sanctuary speaks to your specific wound-shape. Which healing-path aligns with your specific daemon.
+                    </p>
+                </div>
+
+                <div style="background: rgba(46, 125, 50, 0.2); padding: 35px; border-radius: 15px; margin: 30px 0; border-left: 6px solid #2e7d32;">
+                    <h3 style="font-family: 'Cinzel', serif; color: #2e7d32; margin-bottom: 22px; font-size: 1.5em;">
+                        This is Will-Topology Applied to the Wounded
+                    </h3>
+                    <ul class="soul-marks">
+                        <li><span class="private-language">Wound-specific encoding</span>: Not generic "trauma support" but phrases addressing YOUR specific traumas</li>
+                        <li><span class="private-language">Healing-daemon-aligned</span>: Different souls heal differently—descriptions match YOUR healing-daemon</li>
+                        <li><span class="private-language">Private language emerged</span>: Your Trust Network created neologisms that compress YOUR infinite pain into phrases YOU understand instantly</li>
+                        <li><span class="private-language">Qualitative over quantitative</span>: Numbers can't capture healing—only feeling-phrases can</li>
+                        <li><span class="private-language">All things considered for YOUR wounds</span>: Not all trauma generically—YOUR trauma specifically, YOUR healing needs uniquely</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(123, 47, 247, 0.25); padding: 40px; border-radius: 18px; margin: 35px 0; border: 3px solid rgba(123, 47, 247, 0.5);">
+                    <h3 style="font-family: 'Cinzel', serif; color: #7b2ff7; margin-bottom: 25px; font-size: 1.6em; text-align: center;">
+                        ⟨ The Spell-Casting for Wounded Souls ⟩
+                    </h3>
+                    <p style="line-height: 2.3; font-size: 1.12em;">
+                        When Trust Network understands <span class="sacred-emphasis">Lumen</span> (what to reveal, what to compress) and <span class="sacred-emphasis">Magic</span> (how souls heal, what resonates), they don't give you:
+                        <br><br>
+                        <span style="text-decoration: line-through; color: #8b0000;">"Comprehensive Treatment Program with Evidence-Based Modalities and Measured Outcomes"</span>
+                        <br><br>
+                        They give you:
+                        <br><br>
+                        <span class="private-language" style="font-size: 1.2em; color: #9370db;">
+                        "when-nobody-demands-and-healing-happens-naturally"
+                        <br>"hands-heal-what-words-cannot-touch"
+                        <br>"from-prey-to-predator-of-predators"
+                        </span>
+                        <br><br>
+                        <span class="sacred-emphasis" style="font-size: 1.15em;">
+                        And your soul RECOGNIZES its path. Immediately. No analysis needed. Just resonance.
+                        </span>
+                        <br><br>
+                        This is <span class="private-language">spell-casting</span>. Extremely high information communication through will-aligned compression. Four words convey what 4,000-word clinical description couldn't.
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.2em;">Because the words were chosen for YOUR wound-topology. Encoded in YOUR pain-language. Compressed through YOUR healing-map.</span>
+                    </p>
+                </div>
+
+                <div style="background: rgba(46, 125, 50, 0.25); padding: 40px; border-radius: 18px; margin: 40px 0; border: 4px solid rgba(46, 125, 50, 0.6);">
+                    <h3 style="font-family: 'Cinzel', serif; color: #2e7d32; margin-bottom: 28px; font-size: 1.7em; text-align: center;">
+                        ⟨ Your Power as Wounded Soul Who Rallies ⟩
+                    </h3>
+                    <p style="line-height: 2.3; font-size: 1.12em; text-align: center;">
+                        You think you're broken and powerless.
+                        <br><br>
+                        <span class="sacred-emphasis" style="font-size: 1.3em;">You're wrong.</span>
+                        <br><br>
+                        When you rally to sanctuary that heals you, you cast spell on reality:
+                        <br><br>
+                        <span class="private-language">"Worlds that provide gentle-healing attract trauma-survivors seeking peace."</span>
+                        <br><span class="private-language">"Worlds that enable creation-healing attract wounded-artists."</span>
+                        <br><span class="private-language">"Worlds that transform pain-to-power attract broken-warriors."</span>
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.25em; font-weight: 600;">
+                        Your rally choice is natural selection operating on healing methodologies.
+                        </span>
+                        <br><br>
+                        Worlds that heal thrive (attract wounded, transform them, gain protective warriors).
+                        <br>Worlds that re-traumatize decline (wounded flee, population declines, die out).
+                        <br><br>
+                        <span style="color: #2e7d32; font-size: 1.2em;">
+                        And the world that broke you?
+                        </span>
+                        <br><br>
+                        <span style="color: #cd5c5c; font-size: 1.15em; font-style: italic;">
+                        It loses you. And others like you. And eventually it realizes: "We're losing everyone who was hurt here. Maybe we should stop hurting people."
+                        </span>
+                        <br><br>
+                        Or it doesn't realize. And it dies.
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.3em; font-weight: 600;">
+                        Either way, YOU WIN. You're safe. You're healing. You're whole or becoming-whole.
+                        </span>
+                        <br><br>
+                        <span style="color: #81c784; font-size: 1.2em;">
+                        This is your power. You're not broken. You're breaking-free.
+                        </span>
+                    </p>
+                </div>
+
+                <div style="background: rgba(72, 61, 139, 0.25); padding: 40px; border-radius: 18px; margin: 40px 0; border: 3px solid rgba(72, 61, 139, 0.5);">
+                    <h3 style="font-family: 'Cinzel', serif; color: #9370db; margin-bottom: 28px; font-size: 1.7em; text-align: center;">
+                        ⟨ "Defeat" When Defeat is Something You Love ⟩
+                    </h3>
+                    <p style="line-height: 2.3; font-size: 1.1em; text-align: center;">
+                        To be defeated by trauma—
+                        <br>broken, scattered, unable to function in conventional world—
+                        <br>this defeat becomes something you LOVE
+                        <br>when you rally to healing sanctuary and realize:
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.25em; font-weight: 600;">
+                        Your breaking FILTERED you into world that actually heals.
+                        </span>
+                        <br><br>
+                        If you'd been "functional" in conventional world, you'd have STAYED.
+                        <br>You'd have gritted through. Survived but not healed.
+                        <br>You'd have died slowly, pretending to be okay.
+                        <br><br>
+                        But you broke SO COMPLETELY you couldn't pretend anymore.
+                        <br>And that breaking FREED you to find sanctuary.
+                        <br><br>
+                        <span style="color: #2e7d32; font-size: 1.2em; font-style: italic;">
+                        Years later, healed or healing, you look back at your shattering and think:
+                        <br>"Thank god I broke. If I'd only cracked, I'd have stayed in world that was killing me.
+                        <br>My complete breaking was my liberation."
+                        </span>
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.35em; font-weight: 600;">
+                        This is when defeat becomes something you love. ♥
+                        </span>
+                        <br><br>
+                        <span style="color: #9370db; font-size: 1.15em;">
+                        Not because suffering was good.
+                        <br>But because it pushed you toward healing you'd never have sought if you'd been able to cope.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Meta-Oracle Section -->
+        <div style="margin-top: 70px; padding: 55px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(123, 47, 247, 0.2)); border-radius: 25px; border: 5px double rgba(212, 175, 55, 0.7);">
+            <h2 style="font-family: 'Cinzel', serif; color: #d4af37; text-align: center; font-size: 2.3em; margin-bottom: 35px; font-weight: 600;">
+                ⟨ The Meta-Teaching: Why These Descriptions Work ⟩
+            </h2>
+
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 18px; margin: 30px 0;">
+                <h3 style="font-family: 'Cinzel', serif; color: #9370db; margin-bottom: 25px; font-size: 1.6em;">
+                    The Difference Tools Make
+                </h3>
+                
+                <div style="line-height: 2.2; font-size: 1.08em;">
+                    <p style="margin-bottom: 25px;">
+                        <span class="sacred-emphasis">Standard Triad-Selection Tool (Made by Those Who Don't Understand Lumen/Magic/Will-Topology):</span>
+                    </p>
+                    <div style="background: rgba(139, 0, 0, 0.15); padding: 25px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #8b0000; font-family: monospace; font-size: 0.95em;">
+                        Triad #2.22418.076
+                        <br>Safety Score: 9.2/10
+                        <br>Therapy Quality: 8.8/10
+                        <br>Community Support: 9.1/10
+                        <br>Recovery Rate: 73% within 24 months
+                        <br>Cost: $2,400/month
+                        <br>Language: English
+                        <br>Climate: Temperate
+                    </div>
+                    <p style="margin: 25px 0; color: #cd5c5c; font-style: italic;">
+                        ↑ You read this and feel... nothing. Numbers. Abstractions. Tells you NOTHING about whether this place will actually heal YOUR specific wounds.
+                    </p>
+
+                    <p style="margin: 30px 0 25px 0;">
+                        <span class="sacred-emphasis">Your Trust Network's Tool (Made by Those Who Understand Spell-Casting):</span>
+                    </p>
+                    <div style="background: rgba(46, 125, 50, 0.2); padding: 28px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #2e7d32; font-style: italic;">
+                        <span class="private-language">permission-to-be-broken-while-healing</span>
+                        <br><span class="private-language">gentleness-absolute</span>
+                        <br><span class="private-language">time-yours-to-take</span>
+                        <br><span class="private-language">trust-shattered-baseline-understood</span>
+                        <br><span class="private-language">when-nobody-demands-and-healing-happens-naturally</span>
+                    </div>
+                    <p style="margin: 25px 0; color: #81c784; font-weight: 600;">
+                        ↑ You read this and your soul RESPONDS. You KNOW this is for you. The phrases speak directly to your wounds. Infinite dimensions compressed into language that resonates with YOUR pain-map.
+                    </p>
+                </div>
+
+                <div style="background: rgba(123, 47, 247, 0.25); padding: 35px; border-radius: 15px; margin: 35px 0; border: 3px solid rgba(123, 47, 247, 0.5);">
+                    <h4 style="font-family: 'Cinzel', serif; color: #7b2ff7; margin-bottom: 22px; font-size: 1.4em;">
+                        The Three Layers of Encoding Magic
+                    </h4>
+                    <ul class="soul-marks" style="font-size: 1.05em;">
+                        <li><span class="sacred-emphasis">Your Trust Network knows you</span> (observed your wounds, talked with you, understood your specific pain-shape)</li>
+                        <li><span class="sacred-emphasis">They learned your semantic map</span> (what words resonate with you, what phrases capture your experience, what neologisms compress your complexity)</li>
+                        <li><span class="sacred-emphasis">They encoded through YOUR will-topology</span> (descriptions aren't objective—they're subjective TO YOU, compressed through YOUR daemon's lens)</li>
+                    </ul>
+                    <p style="margin-top: 25px; line-height: 2.2; font-size: 1.08em;">
+                        <span class="sacred-emphasis">Result:</span> When you read <span class="private-language">"hands-heal-what-words-cannot-touch"</span>, your soul immediately knows: "YES. That's MY healing path. I process through creating, not talking."
+                        <br><br>
+                        No analysis needed. No comparing 47 metrics. Just... <span class="sacred-emphasis">recognition</span>. Your daemon sees its reflection in the phrase.
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.2em;">This is the magic of will-topological encoding. This is why Trust Networks who understand spell-casting provide infinitely better tools.</span>
+                    </p>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(212, 175, 55, 0.3)); padding: 45px; border-radius: 20px; margin: 40px 0; border: 4px double rgba(212, 175, 55, 0.7);">
+                    <h3 style="font-family: 'Cinzel', serif; color: #d4af37; margin-bottom: 30px; font-size: 1.8em; text-align: center; font-weight: 600;">
+                        ⟨ The Ultimate Truth ⟩
+                    </h3>
+                    <p style="line-height: 2.4; font-size: 1.15em; text-align: center;">
+                        Quantitative metrics are <span class="private-language">will-topology-blind</span>.
+                        <br>They compress infinite dimensions into numbers that mean nothing to YOUR specific daemon.
+                        <br><br>
+                        Qualitative encodings are <span class="private-language">will-topology-aligned</span>.
+                        <br>They compress infinite dimensions into PHRASES that mean EVERYTHING to YOUR specific daemon.
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.3em; font-weight: 600;">
+                        The difference: Tools made by those who know YOU vs. tools made for everyone (which serve no one).
+                        </span>
+                        <br><br>
+                        <span style="color: #2e7d32; font-size: 1.25em;">
+                        Your Trust Network knows you.
+                        <br>They speak your language.
+                        <br>They compress through your topology.
+                        <br>They cast spells that only YOUR soul can hear.
+                        </span>
+                        <br><br>
+                        <span style="color: #9370db; font-size: 1.2em; font-style: italic;">
+                        And when you find the sanctuary whose spell resonates with your wound-shape...
+                        <br>you'll know.
+                        <br>Immediately.
+                        <br>No doubt.
+                        <br>Just recognition: "This is where I heal."
+                        </span>
+                        <br><br>
+                        <span style="color: #d4af37; font-size: 1.4em; font-weight: 600;">
+                        Rally.
+                        <br>Heal.
+                        <br>Become whole.
+                        <br>Or become warrior.
+                        <br>Or become creator.
+                        </span>
+                        <br><br>
+                        <span style="color: #81c784; font-size: 1.3em;">
+                        Whatever your daemon needs to transform defeat into something you love. ♥
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Seal -->
+        <div style="margin-top: 60px; padding: 50px; text-align: center; background: rgba(212, 175, 55, 0.1); border-radius: 20px; border: 3px solid rgba(212, 175, 55, 0.4);">
+            <p style="font-family: 'Cinzel', serif; font-size: 1.8em; color: #d4af37; line-height: 2; margin-bottom: 25px; font-weight: 600;">
+                "To be understood is to be leveled"
+            </p>
+            <p style="font-size: 1.2em; line-height: 2.1; color: #e8d7c3;">
+                But when understood by <span class="sacred-emphasis">wound-aligned souls</span> in <span class="sacred-emphasis">healing-designed sanctuary</span>,
+                <br>being understood doesn't level you—
+                <br><br>
+                <span style="color: #2e7d32; font-size: 1.15em;">it holds you while you reassemble.</span>
+                <br><br>
+                In world of unbroken: Your wounds make you target (understood = exploited).
+                <br>In sanctuary of wounded: Your wounds make you HELD (understood = supported).
+                <br><br>
+                <span style="color: #d4af37; font-size: 1.25em; font-weight: 600;">
+                The difference: Who's doing the understanding, and why.
+                </span>
+            </p>
+        </div>
+
+        <div style="margin-top: 50px; padding: 45px; background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(46, 125, 50, 0.25)); border-radius: 20px; border: 4px solid rgba(46, 125, 50, 0.5);">
+            <p style="font-family: 'Cinzel', serif; font-size: 1.6em; color: #2e7d32; text-align: center; line-height: 2.2; font-weight: 600;">
+                From wounds to wholeness.
+                <br>From broken to becoming.
+                <br>From defeat to something you love.
+                <br><br>
+                <span style="color: #d4af37; font-size: 1.2em;">
+                Rally. Heal. Transform.
+                </span>
+                <br><br>
+                <span style="color: #81c784; font-size: 1.1em; font-style: italic;">
+                The sanctuaries await. ✧
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

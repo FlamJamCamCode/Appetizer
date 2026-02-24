@@ -1,0 +1,35 @@
+{
+  "country_code": "KZ",
+  "name": "Kazakhstan",
+  "approximate": true,
+  "population": 19000000,
+  "gdp_nominal_usd": 240000000000,
+  "gdp_per_capita_usd": 12600,
+  "social_spending_pct_gdp": 11.0,
+  "health_spending_pct_gdp": 3.5,
+  "education_spending_pct_gdp": 3.8,
+  "oda_given_pct_gni": 0.05,
+  "oda_given_usd": 100000000,
+  "oda_received_usd": 500000000,
+  "private_giving_pct_gdp": 0.3,
+  "private_giving_total_usd": 700000000,
+  "volunteering_rate_pct_adults": 20.0,
+  "volunteer_hours_billion": 0.3,
+  "child_mortality_under5_per_1000": 13.0,
+  "top_causes_of_death": [
+    "Cardiovascular diseases",
+    "Cancers",
+    "Injuries"
+  ],
+  "notes": [
+    "Kazakhstan is an upper-middle-income state with significant natural resource wealth.",
+    "Formal philanthropy is growing; many figures are approximate and need refining."
+  ],
+  "sources": [
+    "World Bank World Development Indicators",
+    "Kazakhstan government budget and health/education data",
+    "WHO Global Health Observatory"
+  ]
+}
+
+
