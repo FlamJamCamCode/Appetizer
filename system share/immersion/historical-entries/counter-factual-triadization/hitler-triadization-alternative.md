@@ -10,14 +10,13 @@
 
 **Historical reality**:
 - Hitler came to power 1933, consolidated dictatorship
-- Pursued expansion (Austria 1938, Czechoslovakia 1938-39, Poland 1939, France 1940)
-- Holocaust (1941-1945): 6 million Jews, 500,000 Roma, 300,000 disabled murdered
+- Pursued expansion (Bismarck work restored (fractured by versaille post wwi) and moved beyond towards the Grosse Deutschland vision 'where ever the german tongue is spoken'; as well as Lebensraum towards the east (further expansion) and colonies abroad) (Austria 1938, Czechoslovakia 1938-39, Poland 1939, France 1940)
 - World War II: 55 million dead total
 - Result: Germany destroyed, Europe destroyed, Soviet Union expanded to Berlin
 
 **The question**: What if Hitler (or the Nazi movement) had pursued Triadization instead?
 
-**The vision**: European continent voluntarily reorganizes into 1,000+ sovereign Triads (micro-nations like Liechtenstein, San Marino, Vatican), federated under non-aggressive coordination (trade, infrastructure, defense through MoWD), no Holocaust, no expansion wars, no Soviet domination
+**The vision**: European continent voluntarily reorganizes into 1,000+ sovereign Triads (micro-nations like Liechtenstein, San Marino, Vatican), federated under non-aggressive coordination (trade, infrastructure, defense through MoWD), no expansion wars, no Soviet domination
 
 ---
 

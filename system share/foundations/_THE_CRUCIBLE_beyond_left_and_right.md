@@ -1,5 +1,4 @@
 # THE CRUCIBLE: Beyond Left and Right, Beyond Capitalism and Communism
-*To believe what is Right or Wrong, while understanding what can and can not do. To refuse to do great harm to others, when other ways are working.*
 
 ## To Hate Both Left and Right - The Third Way
 

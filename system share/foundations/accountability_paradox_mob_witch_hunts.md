@@ -104,7 +104,7 @@ This document analyzes how partial accountability creates mob justice, and how c
 
 **Single Chemical Testing**:
 - Novo chemicals tested individually
-- "Safe" levels determined for each in relation to a low dimensional / small fixed metric space / few measurements of pathology they make.
+- "Safe" levels determined for each in relation to a low dimensional / small fixed metric space / few measurements of pathology they make. (Not at all comprehensive understanding of even a single chemical and its effects at different levels)
 - Regulatory approval based on single-chemical studies
 - **Result**: False sense of safety
 
@@ -137,9 +137,14 @@ This document analyzes how partial accountability creates mob justice, and how c
 
 The usual evolutionary response to encountering new venom or poison:
 
+Attack types:
+**1. Behaviour** causes exposure (Choice Differential)
+**2. Ubiquity** Exposure (Consumption rate of the spread / metabolic need)
+**3. Offense-Defense** Variation in negative organism function response degree upon exposure (Organism Defensive Mechanism)
+
 **Generation 1-10**: Mass deaths
 - Most organisms die from exposure
-- Only slight variations survive slightly better
+- Only slight variations survive slightly better (Like reproduce earlier and more, such that those that die from venom, or accumulating pollutant or poisonous food manage to reproduce prior to being too debilitated; Like pollutant/venom resistance sufficient to have influence on reproduction and surviving offspring (both genetic and environmentally); Like choices made in relation to exposure )
 - Massive population crash
 - **Result**: Huge suffering and death toll
 
