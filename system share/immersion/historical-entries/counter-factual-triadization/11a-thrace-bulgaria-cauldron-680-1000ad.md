@@ -48,10 +48,10 @@
 
 **NOT**: Primordial ethnic group (no ancient "Slavic homeland," no "original Slavs")
 
-**BUT**: CONVERGENT TYPE (mixture formed 300-600 AD in refuge zones):
+**BUT**: CONVERGENT TYPE (mixture formed 300BC to 2000AD in refuge zones):
 
 **The components of "Slavic" populations**:
-1. **Byzantine refugee base** (fleeing Islamic conquests 630-900 AD, plus earlier waves fleeing Avar/Persian invasions):
+1. **Byzantine refugee base** (fleeing Achaemenid to Khagnates to Islamic conquests 630-1918AD, plus earlier waves fleeing Avar/Persian invasions):
    - Greeks (Anatolian, Syrian, Egyptian—fleeing Arab conquests 630-750 AD)
    - Hellenized Anatolians (Phrygians, Galatians, Lydians—Alexander's legacy, became "Byzantine Greeks" 300 BC - 600 AD)
    - Levantines (Phoenicians, Syrians—Hellenized, then Christianized, then fled Arabs)
@@ -73,16 +73,17 @@
    - Rus (Varangians, Norse) arrive (862 AD—encounter this mixed population, call them "Slavs" (possibly from "slovo" = word/speech, "those who speak (intelligibly)," vs Germanic "nemets" = mute/non-speakers))
    - Name sticks (Byzantine Greeks fleeing south also call these northern mixed populations "Sklavenoi"—Slavs, by 600 AD Byzantine sources mention them)
 
-**Result**: "Slavs" by 680 AD are CONVERGENT TYPE (Byzantine refugees + local Dnieper/Volga/Ural tribes = mixed farming population, speaking hybrid language (Proto-Slavic), practicing mixed pagan religions, ready to be conquered by Bulgars (680), Avars (600), Rus (862))
+**Result**: "Slavs" by 680 AD are a MIXTURE DIVERSE type (Byzantine refugees + local Dnieper/Volga/Ural tribes = mixed farming population, speaking hybrid language (Proto-Slavic), practicing mixed pagan religions, ready to be conquered by Bulgars (680), Avars (600), Rus (862))
 
 **The parallel**:
-- "Bulgar" = "mixed" (Turkic Bulgars + Slavic substrate → "Bulgarian" = Slavicized Bulgars)
-- "Slav" = "mixed" (Byzantine refugees + local tribes → "Slavic" = hybrid population, ITSELF a mixture before Bulgars even arrived!)
+- "Bulgar" = "mixed" (Khagante (Turkic) Bulgars + Slavic substrate → "Bulgarian" = Slavicized Bulgars). Turkic or Khagnate types are also mixture types due to bride capture traditions of the Khagnates and many other horse rider cultures.
+- "Slav" = "mixed" (The eastern continuation of Byzantium traditions + local tribes + broad basket territorial and linguistic inclusion  (Similar to Roman: Civilizational of that time) → "Slavic" = hybrid population, ITSELF a mixture before Bulgars even arrived!)
+- Byzantine is Roman civilization subjects. Thus a massive mixture type as well, inheriting its own migrants and refugees from across the levant and middle east. Who in turn themselves are ancient Babylonian and hittite and egyptian and more mixture types.
 
 **The implication**: 
 - When Bulgars conquered "Slavs" (680 AD), they conquered people who were ALREADY a synthesis (Byzantine + local tribes)
 - When Bulgars became "Slavicized" (900 AD), they didn't adopt "pure Slavic culture"—they adopted a CULTURE THAT WAS ITSELF ALREADY MIXED WITH BYZANTINE
-- Result: "Bulgarian" by 900 AD is **THREE-LAYER SYNTHESIS**: Turkic Bulgar + (Byzantine + local tribes) = ultimate melting sea
+- Result: "Bulgarian" by 900 AD is *THREE*-layer synthesis: Turkic Bulgar + (Byzantine/Slavic + local tribes) = ultimate melting sea
 
 **The Roman roads and Alexander's legacy**:
 - Thrace/Balkans were CORE of ancient world (Via Militaris road, Via Egnatia road—connected Rome to Constantinople, Alexander's Macedon to Hellenistic East)
@@ -95,10 +96,11 @@
 - **"Roman"** (27 BC onward) = anyone who adopts Roman law + citizenship (Gauls, Iberians, Syrians became "Romans"—cultural category)
 - **"Byzantine"** (330 AD onward) = anyone in Byzantine Empire + Orthodox Christian (Armenians, Syrians, Egyptians, later Slavs became "Byzantines"—cultural category)
 - **"Slav"** (600 AD onward) = anyone who speaks Slavonic + participates in that cultural sphere (Byzantine refugees + locals + Norse + Bulgars all became "Slavs"—cultural category)
+- **"Nation State Name"**: Anyone born in the territory without a proof of admixture is assumed of that nationality (pedigree variety or lineage) or have paper work or is "subject of the Kingdom or state" (European medieval to liberalism history. Beyond liberalism no distinction made at all. All are Equal and Brothers within the territory.)
 
 **The exception clause**: "With some loose sense of sometimes excluding the very different or adversarially opposed in biological terms (though rarely)"
 - Usually: Biology doesn't matter (Septimius Severus, North African, became Roman Emperor—culture > biology)
-- Rarely: Very different biology noticed (sub-Saharan Africans, East Asians in Roman/Byzantine Empire were exotic, remarked upon—but could still integrate if adopted culture)
+- Rarely: Very different biology noticed (sub-Saharan Africans, East Asians in Roman/Byzantine Empire were exotic, remarked upon—but could still integrate if adopted culture). Many emperors have name annotations to highlight their biology or ethnicity or lineage. Like The Arab. Though, like any dynamic of melting pots today, one does not need to imagine 'what it is was like', one can note the dynamics of humans today and how they relate to the tension between biological realities of difference and distinction, while simultaneously attempting to create a unifying identity by culture or alignment or cooperation towards a goal (usually power or civilizational ascension).
 - Adversarial only: If biologically different AND culturally opposed (Huns, Mongols while RAIDING—couldn't be "Roman" while attacking Rome, but Huns who SETTLED could integrate)
 
 **The implication for "Slavs"**:
@@ -106,9 +108,9 @@
 - Anyone who speaks Slavonic + lives in Slavic cultural sphere = "Slav" (regardless of being descended from Mesopotamians, Anatolians, Thracians, Finno-Ugrics, Norse, Turkic Bulgars—ALL became "Slavs" culturally)
 - Biology rarely mattered (occasionally someone "too different" was excluded, but norm was INCLUSION—Turkic Bulgars became Slavs despite different biology, Norse Rus became Slavs, proves cultural identity dominates)
 
-**Slavs migrated 500-600 AD** (more accurately: Slav-named populations APPEARED in Byzantine sources 500-600 AD, called "Sclaveni"—settled in depopulated Balkan countryside after Byzantine-Gothic-Avar wars, but these "Slavs" were themselves mixtures of Byzantine refugees + local northern tribes)
+**Slavs migrated 500-600 AD** (more accurately: Slav-named populations APPEARED in Byzantine sources 500-600 AD, called "Sclaveni"—settled in depopulated Balkan countryside after Byzantine-Gothic-Avar wars, but these "Slavs" were themselves mixtures of Byzantine refugees + local northern tribes (An interesting indirect source of that would be 'their children look like old men' as muslim travelling writer noted (Their hair is white), that is, it seems only the children had white hair, not the adults 'hair pattern'; which given the Byzantine vast motiff and painting library displays that the 'fair haired part of byzantine' was by then, in the lands surrounding the Pax Byzantium, not present in the Volga region except in the form of their children. However that then came about, whether horse rider bride capture, whether parental preference of fair haired children eventually becoming part of adult hair pattern (this means local tribe and potentially unmixed), or migration waves from byzantium, or any other variety that explains the 'fair hair' abundance in time and space and absence in such places in adult populations.))
 - Byzantines couldn't expel (too many, too widespread, Byzantines weakened by Arab conquests 630s AD onward)
-- Bulgars CONQUER Slavs (680 AD—30,000 Bulgar warriors rule 200,000 "Slavic" farmers, but farmers are THEMSELVES Byzantine-local mixed population, not primordial Slavs)
+- Bulgars CONQUER Slavs (680 AD—30,000 Bulgar (Khagnate Horseriders hybrid/mixtures potentially all the way towards mongolian (most Inuit admixtured and least aryan admixture horse rider horde) biology; Potentially all the way towards Aryan biology (Though Tengrism usually means Inuit high admixture as well as description and depictions; though you be the judges yourselves)) warriors rule 200,000 "Slavic" farmers, but farmers are THEMSELVES Byzantine-local mixed population, not primordial Slavs)
 
 ---
 
@@ -177,7 +179,7 @@ BULGAR KHANATE (700 AD—Turkic ruling, Slavic substrate)
 - **Slavonic liturgy** (translate Bible, liturgy into Old Church Slavonic—first time Slavic written, first time non-Latin/Greek Christian liturgy)
 
 **Why revolutionary**:
-- Before: Christianity = Greek/Latin ONLY (liturgy in Greek (Byzantium) or Latin (Rome), locals didn't understand, priests were foreign)
+- Before: Christianity = Greek/Latin ONLY (liturgy in Greek (Byzantium) or sometimes Latin (Rome) or Hebrew, locals didn't understand, priests were foreign)
 - After: Christianity in LOCAL language (Slavs hear Gospel in Slavic, understand, can READ Bible themselves—democratizes Christianity)
 
 **Bulgarian adoption** (886 AD):
@@ -237,22 +239,22 @@ BULGAR KHANATE (700 AD—Turkic ruling, Slavic substrate)
 **The layers** (by 1000 AD, after 320 years of mixing):
 
 **Genetic**: 
-- 60% Slavic (majority—Bulgars intermarried, Slavic genes dominate)
-- 30% Thracian remnants (ancient substrate, never fully displaced)
-- 10% Turkic Bulgar (original conquerors—diluted through intermarriage)
-- Plus: Greek (Byzantine refugees), Avar, Hun remnants (all absorbed)
+- ??% Slavic (majority—Bulgars intermarried, Slavic genes dominate)
+- ??% Thracian remnants (ancient substrate, never fully displaced)
+- ??% Turkic Bulgar (original conquerors—diluted through intermarriage)
+- Plus: Greek (Byzantine refugees), Avar, Hun remnants (all absorbed), +++???
 
 **Linguistic**:
-- 100% Slavic language (Bulgarian is South Slavic—Turkic Bulgar language EXTINCT by 900 AD, replaced by Slavic)
+- ~100%? Slavic language (Bulgarian is South Slavic—Turkic Bulgar language EXTINCT by 900 AD, replaced by Slavic)
 - Cyrillic alphabet (Greek-based script for Slavic—enables literacy)
 
 **Religious**:
-- 100% Orthodox Christian by 900 AD (Tengri extinct, Slavic paganism suppressed, Byzantine Orthodox dominant)
+- ~100%? Orthodox Christian by 900 AD (Tengri extinct, Slavic paganism suppressed, Byzantine Orthodox dominant) (Dark Age: The destruction of Idolatry and constructions of the pagans. Similar to Bonafice II sacking of Constantinople due to pagan idolatry and venitian interest.)
 
 **Cultural**:
 - Byzantine-influenced (architecture, liturgy, court ceremonial—Simeon imitates Constantinople)
 - Slavic core (language, folk traditions, agricultural lifestyle—Slavic substrate culture)
-- Turkic military remnants (horse archery, cavalry tactics—Bulgar warrior tradition persists)
+- Turkic military remnants (horse archery, cavalry tactics—Bulgar warrior tradition persists; Similar to the Magyar (Another Horse Rider Aryan to Inuit mixture group or cluster) being highly regarded and revered in Hungary; or how The Pioneers and Vikings and different Ameriindians (eastern migrative ancient aryan-inuit horse rider cultures or perhaps fleeing inuit & aryan-inuit groups from other such groups across the behring strait) are revered in USA civilization)
 
 **Political**:
 - Tsar title (Byzantine Caesar claim—Bulgarians see themselves as "Third Rome" candidate, before Moscow claims it)
@@ -271,7 +273,7 @@ BULGAR KHANATE (700 AD—Turkic ruling, Slavic substrate)
 
 **Eastward flow** (from Byzantium/Europe to Islamic world):
 - **Engineers** (like Orban 1453 AD—Bulgarian/Hungarian/Wallachian craftsmen, work for highest bidder, bring European tech to Ottomans)
-- **Mercenaries** (Bulgarian warriors serve in Byzantine army, some defect to Arabs, bring tactics)
+- **Mercenaries** (Bulgarian warriors serve in Byzantine army, some defect to Arabs, bring tactics; caliphate offers riches (high inequality to pay large quantities) including polygamy and fertility; Thus there is a transmigrational flow of losing caliphate men defecting and fleeing to more equality oriented cultures, while very capable men, disallowed from capitalizing on their merit flee to inequality loving cultures like the caliphates or persian or other middle eastern traditions. As well as converting populations upon conquests -- or the many that usually survive. As well as those who then reproduce or hybridize post conquered and converting.)
 - **Refugees** (Christians fleeing Byzantine-Bulgar wars sometimes flee to Caliphate borders, convert to Islam, bring knowledge)
 
 **The corridor**:
@@ -317,18 +319,18 @@ BULGAR KHANATE (700 AD—Turkic ruling, Slavic substrate)
 
 ✓ **Conquerors can be absorbed by conquered** (Turkic Bulgars conquered Slavs, but BECAME Slavic linguistically/culturally—reverse assimilation, like Normans becoming French)
 
-✓ **"Mixed people" can create civilization** (Bulgaria's very name admits mixing—yet created literary culture, empire, spread Cyrillic to half of Europe)
+✓ **"Mixed people" can create civilization and inherits quickly the majority of most western civilizations (Rome had many modes, including modes where non-'convergent/dominating mixture types' rising to powerful positions after many centuries of mixing (Five Good Emperors mode of succession allowed for selection of any ethnic variety)) or kingdoms (Note intermarriage of royal lines to see concrete proof of hybridizations/mixed stock inheriting almost any Kingdom almost immediately due to interkingdom alliance stability intents)** (Bulgaria's very name admits mixing—yet created literary culture, empire, spread Cyrillic to half of Europe)
 
 ✓ **Orthodox Christianity spreads via local language** (Slavonic liturgy more effective than Greek—Slavs convert faster when they understand liturgy)
 
-✓ **Eastern Europe is MELTING SEA** (Thrace-Bulgaria-Hungary-Romania region constantly absorbs refugees, invaders, displaced populations—maximum intermixing, every generation reshuffles)
+✓ **Eastern Europe is MELTING SEA** (Thrace-Bulgaria-Hungary-Romania region constantly absorbs refugees, invaders, displaced populations—maximum intermixing, every generation reshuffles) (This is NOT unique to eastern europe, but rather a perennial dynamic of human association, where war breaks out or poverty strikes or losing or opportunity presents itself, then streams of migrations occur, including the ancient middle eastern civilizations from 3000bc to 1200bc or the post castastrophe civilizations until persian conquest and subsequent response of Hellenic Alexandrian conquests. Or take any European Kingdoms or associations. Like that of Andalusia and Frankia, or that of Caliphates and Ottoman and Europeans countries or Holy Roman Empire. Or a case like that of Catholic church highways and academia from France and Mediterraneum, or that of HRE state aristocracy migrating outside of HRE and settling as aristocracy across europe, including scandinavia and britain. Or that of successful farmland cultivators being invited to different kingdoms. Or that of plagues. Or wars like 30 year war. And so on and so on. This dynamic is obvious and perennial. Eternal pattern almost.)
 
 ✓ **East defends, West builds** (Eastern Christendom fights invaders, Western Christendom builds cathedrals—West's cathedral luxury depends on East's military sacrifice)
 
 **The Jeruist interpretation**:
-- Bulgaria is MELTING SEA Triad (accepts all groups, mixes them, creates NEW identity—not pure Turkic, not pure Slavic, but SYNTHESIS)
-- Cyrillic alphabet is FRACTAL GIFT (invented in Bulgaria, spread to Rus/Serbia/Russia—enables millions of Slavs to read Christianity in own language, democratizes salvation)
-- Tsar title is CHRIST-EMPEROR claim (Bulgarians tried to embody Roman leverage + Greek sovereignty + Christian agape—failed militarily, but succeeded culturally (Cyrillic legacy))
+- Bulgaria is MELTING SEA Triad (accepts all groups, mixes them, creates NEW identity—not pure Turkic, not pure Slavic, but SYNTHESIS; while preseving territory for all trunks and branches in a fractal tree/flower)
+- Cyrillic alphabet is a meme used for communication and is thus best homogenized in its core communicative parts (invented in Bulgaria, spread to Rus/Serbia/Russia—enables millions of Slavs to read Christianity in own language, democratizes salvation)
+- Tsar title is Constantinian Vicar of Christ type of Emperor claim (Bulgarians tried to embody Roman leverage + Greek sovereignty + Christian agape—failed militarily, but succeeded culturally (Cyrillic legacy))
 
 ---
 
