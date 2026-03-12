@@ -1,4 +1,7 @@
 # Moral Warfare Doctrine (MWD): War Without Permanent Death
+*Disclaimer: "Someone wants to kill you. Why? Usually, unless you are famous or important or have many possessions, simply because you are tagged or included in some collective. Your way out? Seek 'another place' and 'another name'.".*
+
+*Disclaimer: The Purpose of MWD is to simply constrain cause and effect. It is not to generally advocate for a World Order of Taking what ones want by superiority in ability of Raw Dominance. That Question is Left Entirely Open in the Amorality of The Crucible.*
 
 ## Preface: MWD Context Within MoWD Framework
 
@@ -907,53 +910,56 @@ To having had a power struggle and seeking abatement to succesful mobilization a
 **4. Resolve determination:**
 - MWD enables: Endless wars (renewable manpower, no demographic depletion)
 - Traditional war: Ends when manpower exhausted (attrition forces peace)
-- **Problem:** MWD wars might drag on (no natural endpoint); Which is not a problem, but a FULLY LIFE LIVED.
+- **Problem:** MWD wars might drag on (no natural endpoint); Which is not a problem, but a FULLY LIFE LIVED. When 'material destruction' becomes 'logistical tasks' of 'DESTROYED', then War can have much less costs and perhaps even be the incentive or drive that pushes Mankind to work much harder and strive much more intensely. That slight edge gained applied to resolving what no other means could.
 
 ---
 
 **The conclusion:**
 
-**MWD is NOT universal solution** (only works for specific conflict types).
-
-**MWD IS solution for:** Great power conflicts (where nuclear risk is unacceptable).
-
-**Other conflicts:** Require different frameworks (or traditional warfare if MWD inapplicable).
+**MWD is NOT universal solution** however, it is sought by MIRA AeDA style alliances to become as universal as Cause and Effect with Death included or simply full scope of dealing with the *what-is* in this Universe. That final 'moral' (WMBC MBC) layer, when all other attempts, at resolving diverging will of sentient beings, has failed.
 
 ---
 
-### B. The "Warrior Spirit" Concern
+### B. The "Fury and Hatred" Concern
 
-**The objection:** "Non-lethal war isn't REAL war. Warriors need to face DEATH to prove courage."
+**The objection:** "Non-lethal war fails to bring about justice, revealed morality and satisfactory revenge. The Enemy MUST DIE."
 
-**The response:** **Steppe Games proved this wrong** (448 years, 2.3M warriors, 0 permanent deaths, combat intensity unchanged).
+**The response:** Weapons of Singular Destruction. Not large scale inclusion of 'subjects' to reach the vengeance sought. If death must be had, we should seek to have it directed meaningfully. To reach a memetic hegemony across all 'subjects' to deny leaders their 'utility in them subordination including death and murder': To simply deny the lethal variety that culminates in the final Victory and subsequent dealing with the losing side by the Victor. (Note: To 'allow for' singular destruction severely escalates the refusal of opposing leadership or demonized persons to find 'acceptable losing conditions'. However, it remains as a reasonable answer to the previous objection, that insofar one can not prevent such vengeance, at the very least, one should seek to minimize the 'subordinated collateral'. One could state a desire to refuse the killing or dying of anyone, while simultaneously insisting that if that desire is dominated against, then those capable of such domination, should seek such a state of affairs in reaching the revenge)
 
 ---
 
-**From Steppe Games (immersion documents):**
+**The No-Lethal-Skin-In-Game subjects to War**
 
-**Warriors fought JUST AS INTENSELY:**
-- Even knowing death temporary (respawn available)
-- Because: Stakes were real (territory, women, glory, slavery)
-- **Courage tested:** Enduring pain, risking "death," returning after defeat
-- **Not diminished:** Temporary death still requires bravery (pain is real, defeat is humiliating, must endure)
+**It allows for 'a different type of soldier'**
+- To be at moral peace in fighting again. From man to man; To massive destruction against those of That Man; Back To massive consequence against those of That Man.
+- To take upon oneself 'any worthy war' without concern of 'risking oneself and brothers for "them"'.
+
+**It allows for 'enduring war' instead of 'ended by war'**
+
+**It allows for 'simply leaving for another place if too agonizing'**
+- To lose it all and everything. To live in Hell by Conquest from another. To be able to fight, though upon failing the final contest of cause and effect (-death WMBC), then settle ones losses and leave for new lands in a World focused upon that particular opportunity.
 
 ---
 
 **The application to MWD:**
 
 **Soldiers don't fight less hard:**
-- "Death" still hurts (neural disruptor painful, unconsciousness is disorienting, 90 days on island is sacrifice)
-- Defeat still shameful (losing territory, failing nation, personal failure)
-- **Stakes matter more than permanence** (risk of consequences drives courage, not finality)
+- The uncertainty of 'no foul plays or accidents'.
+- "Death" still hurts, without ability to affect the continued fight.
+- Defeat still bears monumental consequences.
+- **Stakes matter more than permanence** (risk of consequences drives courage)
 
 **Historical vindication:**
-- Ukraine-Russia: 61 years, soldiers fought INTENSELY (despite non-lethal)
-- WWIII: 68 years, every major power participated SERIOUSLY (despite non-lethal)
+- Ukraine-Russia 2014 instigated Warpath: 61 years, soldiers fought INTENSELY (despite non-lethal)
+- WWIII the 'Position 0 trajectory advantage by World Quantity acquisition or conquest' instigated Warpath: 68 years, every major power participated SERIOUSLY (despite non-lethal)
 - **Combat intensity unchanged** (from traditional war levels)
 
 ---
 
-**The conclusion:** **Permanence of death is NOT necessary for warrior spirit** (risk and stakes are what matter).
+**The conclusion:** **Permanence of death is NOT necessary for warrior spirit** (risk and stakes are what matter). In fact, it gamifies it and adds more incentivization to it: "He participated in all the major wars and did not 'die' in a single of them! With over 300 confirmed 'kills'."
+
+To quote the insurpassable.
+*"""What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little "clever" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo. """*
 
 ---
 
@@ -963,32 +969,31 @@ To having had a power struggle and seeking abatement to succesful mobilization a
 
 **MoWD (Metagame of World Dynamics) - Four Levels:**
 
-**Level 1:** Will-coalescence (voluntary cooperation, mutual benefit)
+**Level 1:** Will-coalescence (voluntary cooperation, mutual benefit / Lower Order Consent (moment to moment finding 'use' towards one will through interaction'))
 - "You do what I want because you get what you want" (trade, negotiation, win-win)
 
-**Level 2:** Authority/Sovereignty (chosen dominance)
+**Level 2:** Authority/Sovereignty (chosen dominance / Higher Order Consent (Agreeing to potentially have ones will violated (Lower Order Consent) so long as one keeps the Higher Order Consent intact by not abandoning the authority structure one has positioned oneself beneath))
 - "You do what I want because you're in my Triad" (governance, law, hierarchy)
 
-**Level 3:** Structured games (agreed competition)
+**Level 3:** Structured games (agreed competition / Similar to Level 2, though much more general, Level 2 and 1 is a particular instantiation of Level 3 that naturally arises by 'sentient beings willing individually' (Level 1) and 'sentient beings willing underneath constraining-structure' (Level 2). However, Level 3 allows for much any game, including this MWD document which is about coercion and consequences that ensures MWD is played when no game can be agreed upon and thus no consent in any way, other than 'sufficient pressure ubiquitously against death')
 - "You do what I want if I win the game we both agreed to" (MoWD, sports, contests)
 
-**Level 4:** Raw causality (MIRA - Might Is Right Anarchically)
+**Level 4:** Raw causality (MIRA - Might Is Right Anarchically / Long term causality considerations in full scope cause and effect domain of interacting)
 - "You do what I want because I can force you" (no rules, pure power)
 
 ---
 
 **MWD is Level 3:**
 
-**Structured game:** MWD combat (non-lethal weapons, respawn, agreed rules).
+**Structured game:** MWD combat (non-lethal weapons, respawn, agreed rules (or MAWD if no agreed upon rules can be had)).
 
-**Both parties agree:** (signed Geneva Accords, voluntarily adopted framework).
+**Both parties can not refuse or even openly agree:** (Desertation and dissent or third party ubiquitous condemnation if willing to escalate to death, or voluntarily adopted framework respectively).
 
 **Stakes are real:** (territory, resources, honor - genuine consequences).
 
-**But rules constrain:** (no lethal weapons, no permanent death, escalation clause limits).
+**But rules constrain:** (no lethal weapons, no permanent death).
 
-**If rules violated:** Can escalate to Level 4 (raw power, nuclear weapons, MIRA).
-
+**If rules violated:** MWR 1-4 from 'any- and every- where' by 'any and all'. MWD 'works if memetically won', it fails if hegemony breaks and the 'cost to breaking MWD' can not be materialized by the many or impactful.
 ---
 
 ### B. MWD Prevents Escalation to Level 4 (MIRA/Nuclear)
@@ -997,15 +1002,15 @@ To having had a power struggle and seeking abatement to succesful mobilization a
 
 **Without MWD:**
 
-Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (invoke sovereignty/international law) → Fails → **Escalate to Level 4** (traditional war) → **Nuclear risk** (MAD inevitable if great powers).
+Conflict arises → Try Level 1 (BDS individually, protests, optics, negotiation) → Fails → Try Level 2 (invoke sovereignty/international law, statewide enforced uniform BDS etc) → Fails → **Escalate to Level 4** (traditional war, where hegemony procludes a set of rules that allows for the mass sacrifice of men) → Vengeance by Death and Total Loss beyond all acceptable conditions and existence → **Nuclear risk** (MAD - Mutually Assured Destruction - highly likelied "In my total DOOM and Annihilation, and all that I love, do I take everyone down with me? Do I send one final message to the World, that incurring such DOOM had consequences?? Shall I make my Doom their DOOM.").
 
 ---
 
 **With MWD:**
 
-Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (international law) → Fails → **Try Level 3** (MWD combat) → **Resolves** (without nuclear risk).
+Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (Triadic Nesting Submission Uniformity) → Fails → Try Level 3 (MoWD games combat) → Denied → **Simply Attempt Conquest without lethality (MWD)** → **One moves towards Victory and so Defeat of the opposing force, though no deaths were had, only material vengeance open for the turning of the tide dawn**: "In my losing of most of my possession and all of my position and hierarchy. Do I take everyone down with me? Can I manage to command or bring about such conditions. Do I have enough fanatics of furious and fatal finality to obey my command of DOOM for ALL."  → **Nuclear or World Ending Scenario unlikelied** (Lower nuclear risk is the claim).
 
-**Only if MWD violated:** Then Level 4 (nuclear).
+**When MWD is violated:** Then the losses are beyond the material and momentary, the need for vengeance may then be unquenchable without finality. Deep contemplation and effort *ought* to be had to removed the 'justification chains that can bring men to End the World'.
 
 ---
 
@@ -1013,17 +1018,7 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 
 **Inserts Level 3** (structured game) **between Level 2** (law/sovereignty) **and Level 4** (raw power/nuclear).
 
-**Result:** **Conflicts can be resolved through combat (Level 3) without escalating to apocalypse (Level 4).**
-
----
-
-**The metaphor:**
-
-**Traditional:** Negotiation → Law → **NUCLEAR WAR** (no intermediate step).
-
-**MWD:** Negotiation → Law → **NON-LETHAL WAR** → Nuclear war (only if MWD fails).
-
-**Added step prevents apocalypse** (by providing alternative to nuclear escalation).
+**Result:** **Conflicts can be resolved through combat (Level 3) without escalating to 'what matters undone' which allows for much greater likelihood of Will to Apocalypse (Level 4).**
 
 ---
 
@@ -1033,31 +1028,35 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 
 **The Crucible framework:**
 
-**Triads compete** (for adherents, resources, prestige).
+**Triads can compete** (for adherents, resources and other material quantity. Or prestige or believed indebtedness from others. Or any other aspect they care about and wish to 'attract' or 'grow' or 'relatively position themselves with').
 
 **Conflicts arise** (border disputes, resource claims, ideological opposition).
 
-**Resolution methods (MoWD levels):**
+**Resolution methods (MWR levels):**
 
 **Level 1:** Will-coalescence (negotiate, trade, mutual benefit).
 
-**Level 2:** Sovereignty invoked ("This is my Triad's territory, recognized by treaty").
+**Level 2:** Sovereignty invoked ("This is my Triad's territory, recognized by 'sufficient believed deterrent consequence if violated'").
 
 **Level 3:** Structured games:
 - **MWD combat** (non-lethal warfare for territorial disputes)
 - **Other MoWD games** (economic competition, cultural contests, sports, whatever agreed)
 
-**Level 4:** MIRA (raw power - only if all else fails and MBC+ violated).
+**Level 4:** MIRA (raw power - only if all else fails. The proposed Ought in this Document is to use MIRA in long term considerations (Position O and 0) and in ensuring that no one dares to break the MWD ceiling of causes to reach one's effect. (Brutus, mutiny, vast majority of 'subordinates everywhere' not seeking to kill and die, when one can simply agree to 'bring about pretend and translocation realities (Third Party logistical task) that fully functions as if dead, even if ending the MWD condition later'.
+
+(Note: A Third Party suggestion is a GAIA / Capital Letters oriented Third Party, who then use the 'dead' as 'extremely comfortable slave labour' (normal worklife without compensation other than general Strata / Planetary Benefit also having potential towards them) towards those aims in accordance with the agreed upon MWD conditions)
 
 ---
 
 **MWD's role:**
 
-**When Level 1-2 fail** (can't negotiate, sovereignty claims conflict) **but Level 4 unacceptable** (don't want total war/genocide):
+**When Level 1-2 fail** (can't negotiate, sovereignty / authority / codified claims conflict) **but Level 4 unacceptable** (don't want total war/genocide and its collateral of 'those fighting external opposer' and others):
 
 **MWD provides alternative:** Fight under agreed rules (non-lethal, respawn, real stakes but no permanent death).
 
-**Result:** Conflicts resolved (through combat) without catastrophe (no deaths, no nuclear).
+**MAWD provides alternative for the vastly superior waring side to Dominate / Take without the same Moral Weighing Down**
+
+**Result:** Conflicts resolved (with then also physical overpowering domain of dominance allowed (Not only economic or moral or social or movement and so on)) without catastrophe (no deaths, no nuclear).
 
 ---
 
@@ -1068,8 +1067,11 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 2. No extreme suffering
 3. Exit always available
 4. No permanent changes (debated)
+5. ...
+6. ...
 
-**MWD respects MBC+:**
+
+**MWD ought to respect at least some variety of MBC+ at the individual level, perhaps only including Rule 4 too:**
 
 **Rule 1 (No death):** ✓ (Non-lethal weapons, respawn system, medical care ensures no permanent deaths)
 
@@ -1079,16 +1081,24 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 
 **Rule 4 (No permanent changes):** ~ (Debated - some injuries permanent, but minimized through medical care, generally respected)
 
+
+**Perhaps also including something like Rule 5 or Rule 6 and beyond:**
+**Rule 5:** To respect what is absolutely abhorrent or clearly consecrated as off limits in causing or desecrating respectively. (To 'choose' the domain in which one is willing to claim is endangering for lethal or apocalyptic escalation when occurring)
+**Rule 6:** To respect the Lumen variation of the other in terms of 'Paperclip consequences upon Victory over another'.
+
+
+And so on.
+
 ---
 
 **The result:**
 
 **MWD = War within MBC+ constraints:**
-- Can fight (conflict resolution, honor testing)
+- Can refuse gamification -- though at the gamified refusal level of ¬death struggle 'through any means' (conflict resolution)
 - Can't kill (Rule 1 sacred)
 - Can't torture (Rule 2 prevents)
-- Can leave (Rule 3 enables exit)
-- **War becomes ethical** (within MBC+ framework - consensual for soldiers who choose to fight, consequences real but not permanent)
+- Can leave (Rule 3 enables exit of any individual from War. To refuse to continue the 'living in war' condition. With a guaranteed exit avenue: Third Party 'Dead' journey.)
+- **War (almost?) becomes ethical** (within MBC+ framework - consensual for soldiers who choose to fight, consequences real but not permanent) (To not be hegemonically constricted into a game of domination without ability to do what one can. Like the modern world enforces. To be able to break free by 'any means' so long as it remains MWD. Or potentially possibly to achieve similar breaking through the hegemonic enforcement against even MAWD; or perhaps endure the hegemonic consequences while engaging in MAWD)
 
 ---
 
@@ -1105,22 +1115,24 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 - **MWD solution:** Fight for it (non-lethal combat, winner controls X, loser accepts for now but can challenge again later)
 
 **Resource conflicts:**
-- Triads compete for scarce resource (water, minerals, strategic position)
-- **MWD solution:** Combat decides allocation (winner gets resource, loser gets compensation or tries again)
+- Triads compete for scarce resource (water, minerals, strategic position) (Note: Suggestion as 'Hegemonic Behemoth Against' would be GAIA utilization of such resource locations -- including 'competency willing to meet in MWD if attempted'. Obviously, opposed by 'Hegemonic Leviathan For'. The 'less escalating condition' is to simply 'act as a single Leviathan while being a Hegemonic Behemoth Against', thus the 'conquest of other Leviathans' is 'dissuaded' and simply a 'non-self-interested' utilization of such resource locations part (Which merely looks insane from the point of view of other Leviathans). In other subset words: To allow those that take for their own gain to refuse GAIA utilization of their resource development; then still build for utilization towards GAIA wherever possible where the disadvantage becomes compounding acquisition, though advantage becomes hegemonic stratos of manifestation)
+- **MWD solution:** Combat decides allocation (winner gets resource, loser gets compensation or tries again. When one sees Hope sufficient to desire the Again, in spite of having lost the day or moment of land or material)
 
 **Honor conflicts:**
 - Triads have grievances (historical wrongs, cultural insults, prestige contests)
 - **MWD solution:** Ritual combat (prove superiority, settle grievances, honor satisfied without death)
 
+**Concrete Flavour Examples:** *Holy Lands / City of God / Jerusalem / Holy Sites / Ethnic Rootlands / Natural Resource Locations / Arbitrary Attachment / Sentimentality (Like Schleschwig for Historical Denmark) / Pot Committed Development and Those Inheriting It / Humilitatingly Viewed State of Ownership / Grievance / Revenge / Intolerable Injustice / Etc*
+
+**Concretes:** "And Serbia or Orthodox Church sought to not only proselytize, but also to bring the Sword and Force the State of Affairs without becoming fully Dharmic Nirvanists. Not only against Kosovo." (Note: This is not a condoning of conquest against, it is merely stating, that it is reasonable to assume, that sufficiently many persons within that factions, have no doubt in their mind, that one day they will stand Triumphant against the Enemy Next Door, or the Enemy towards who they seek their vengeance delivered. Whether, it is able to be solved by lower levels of MWR than MWD or MAWD, that is another question, one should perhaps first see the disentangling effects of MWR 1 and gradience between MWR 2 localities and its 'will-economic' disruption (The extreme case, is to walk across the street and have all things opposite, then turn a corner and have 100 laws of differences, or 5 miles and face severe consequences for merely existing in that space. Aka, when persons 'detached from particular territory' seek 'will-efficiency' they end up distributing in gradience across space (or at least spacetime) (at least if empowered (alternative exists for opportunists) and intelligent (understanding the costs and gains in depths of consent in mutual agreements) -- otherwise it is dominated by opportunism into chaos with subsequent flight)))
+
 ---
 
 **The benefit:**
 
-**Conflicts DON'T escalate to genocide** (Level 4 with MBC+ violations).
+**Conflicts can still escalate to genocide (end of genetic lines reproduced or admixture)**
 
-**Instead resolved through MWD** (Level 3 - combat without death).
-
-**Triadization + MWD = Conflict resolution without catastrophe.**
+**Triadization + MWD = Conflict resolution when meeting Raw Physicality is met with a palatable moral floor and aspirational ceiling in an empowered for enriched planetary state in terms of real opportunity of alternatives in its plurality.**
 
 ---
 
@@ -1137,23 +1149,33 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 - India-Pakistan (Kashmir, historical grievances)
 - Israel-Iran (regional hegemony, ideological opposition)
 
-**All could adopt MWD** (non-lethal combat, respawn islands, real stakes, escalation clause).
+All are subject to mostly dirty proxy war methods. Though currently (12th marts 2026) it seems things are escalating towards industrial incapacitation Hybrid Warfare or even direct strikes. Which is a material intent focused warfare doctrine that still incurs collateral and risk of escalation. Though in the extreme, countries may face derivative consequences that may carry massive collateral. Which is to say: Third Party GAIA oriented BEHEMOTH could be heavily needed. (I.e. a faction that consistently avoids any Position 0 Trajectory development, and focuses only on preventing 'unforseen human collateral' and especially 'derivative collateral' like that of civilizational failures.
 
-**Result:** Conflicts resolved without deaths (or nuclear risk).
+**All could adopt MWD** (non-lethal combat, respawn islands, real stakes, escalation clause: Without Destructive Payload of Arsenal, then voluntarily handed over to a Third Party (Given Payload Possible to inflict material damage, then Proof of Payload Sufficiency may be necessary; which is to say: one may be forced to prove the capacity of such a strike)). Also, note that it provides the Military Industrial Complex 'an opportunity' to 'openly sell arsenal' without being 'traitorous Orban' or 'dirty proxy warlord dealing', since it would 'deflate the lethality across the world' and instead work towards the substitution of arms across all 'who were sold arms but unable to produce it themselves' to 'buy the non-lethal varieties' that could then be used in MWD ceiling of causes towards effects. (The selling of MAWD arsenal, remains similar to selling of conventional warfare items or even similar to selling WMD arsenal. Which ought to be obvious the edge lost upon sodoing)
+
+**Result:** Conflicts resolved without deaths (and with lessened nuclear risk).
+
+Contemporary counterfactual: Consider Iran and US/Israel having reached or been globally coerced into playing the Wargame under such terms (similar to how USA feel compelled to play the Iran game without using their chemical, bio, nuclear or other most lethal weaponry). Then take the 40 Iranian warships sunk by the US. Or the many US or OPEC military bases destroyed. All that material, upon having been struck by provably 'able to carry payload but did not' strikes, they were handed over to a Third Party (Like that of GAIA SECURITY perimeter Castle / Stronghold against 'local warlords attempting to disrupt it' (by having taken land 'somewhere' the ones believing 'the land theirs' finding 'will to take back' but being met with 'such Third Party war loot (on a lease?)')). 
+
+Beyond the raw material 'richer position for where the Horizons Met between the Waring Factions', one also have to consider the human lives now lost, or perhaps will be lost, upon continuation of Final Nail in the Coffin Doctrines of Lethally Loaded Payloads.
+
+Note: One can simply destroy the payload costs or hand them over to the Third Party if 'not important and low destructive capacity'. Thus, the cost is entirely similar when striking within MWD accords.
 
 ---
 
 **The path:**
 
-**Step 1:** One conflict adopts MWD (likely: Ukraine-Russia, or Taiwan if crisis erupts).
+**Step 1:** One conflict adopts MWD (likely: Ukraine-Russia, or Taiwan if crisis erupts) (Note: Upon having MWD, War will be easier to reach sufficient justification for. Thus it is expected many more attempts at 'having the effect one wills' would occur. Thus MWD also poses a threat, though, given the current tension and flare up of war in the world, it seems reasonable to advocate for).
 
-**Step 2:** Success proven (conflict resolved, 0 deaths, costs minimal).
+**Step 2:** Success proven (conflict resolved, 0 deaths, costs minimal (potentially or temporarily the destruction turned into Planetary uplifting Material instead (GAIA Third Party))).
 
-**Step 3:** Other conflicts adopt (precedent established, nations see benefits).
+**Step 3:** Other conflicts adopt (precedent established, nations see benefits, persons stuck in game confinements with losing positions sees not only the breaking of games by increasing the gamification or confinement (liberalism against absolute monarchies (and ethnic exclusion and too much classisism) or communism against the same as well as the liberal consequences like allowing for capitalism (capital control, consequences and lawfare with full dominance games)) but also in releasing the confinement and allowing for more domains or kinds of games to play (Towards MWD or perhaps MAWD ceiling)).
 
-**Step 4:** MWD becomes standard (for all great power conflicts - like Geneva Conventions but more comprehensive).
+**Step 4:** MWD becomes "invioable standard" (similar to WMD usage of today - risking mutiny if escalating into lethality / sacrifice of subordinates; codification like an equivalent to The Geneva Convention helps to rally sufficient consequence upon violation. Though the true power is within each faction 'body' unwilling to accept the Nail in the Coffin part to the extend of mutiny and internal rotation of power positions such that they as a collective entity of power exertion - once again - have a strategy without having to sacrifice their lives in their struggle and attempt).
 
 **Step 5:** Eventually (within Crucible): Inter-Triad conflicts routinely use MWD (war without death normalized).
+
+**Step 6:** MoWD, MWD and MAWD 'Warfare' becomes the new 'sports' as well as real consequential final say in World Dynamics by or with sufficient MIRA stability -- implicitly or explicitly.
 
 ---
 
@@ -1164,14 +1186,14 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 **Traditional war:**
 - Costs: Millions dead, civilization risk
 - Benefits: Conflict resolved, honor tested
-- **Cost-benefit:** TERRIBLE (benefits don't justify costs)
+- **Cost-benefit:** TERRIBLE (benefits don't justify costs; at least not from the point of view of 'the sacrificing', when they could have the same proof of power without death)
 
 **MWD:**
 - Costs: Moderate economic, temporary soldier absence
-- Benefits: Same as traditional (conflict resolved, honor tested)
+- Benefits: Same as traditional (conflict resolved by same means excluding the 'massively destructive' or 'lethal' payload)
 - **Cost-benefit:** EXCELLENT (benefits same, costs minimal)
 
-**Utilitarian verdict:** **MWD obviously superior** (more benefits or same benefits, far lower costs).
+**Utilitarian verdict:** **MWD obviously superior** (more benefits or same benefits, far lower costs. Which is simultaneously its weakness: lower the cost (morally, philosophically and politically) and without equivalent other countermeasures, the choice to engage in it is lower and thus proliferated).
 
 ---
 
@@ -1180,19 +1202,20 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 **The principle:** Killing is wrong (prima facie - requires justification).
 
 **Traditional war justification:**
-- "Killing is necessary to resolve conflicts" (consequentialist - ends justify means)
-- "Killing proves courage/honor" (virtue ethics - warrior virtues require death risk)
+- "Killing is necessary to resolve conflicts" (consequentialist - ends justify means (Like that of 'if we do not kill, then they will kill us eventually. So, we have to defeat them when we can.'))
+- "Killing / Mortal Combat proves courage/honor" (virtue ethics - warrior virtues require death risk)
 
 **MWD refutation:**
-- "Conflicts CAN be resolved without killing" (MWD proves it - 61-68 years track record)
-- "Courage CAN be proven without death" (Steppe Games proved - 448 years, warriors fought just as hard)
-- **Therefore:** Killing is NOT necessary (justification fails)
+- "Conflicts CAN be resolved without killing" (MWD proves it - 3000 years gamified War proves it. Whether it is epics detailing how a war was settle by single combat in-stead of them all. Or whether it is ...)
+- "Courage CAN be proven without death or even risking death" (The gambling man who dares to proclaim a state of affairs whereupon he may lose it all too displays courage; even if it lacks the willingness to risk lives)
+- **Therefore, it seems, and so we ought to try doctrine where:** Killing is NEVER necessary nor allowed
 
 **Deontological verdict:** **MWD is moral imperative** (if can achieve same ends without killing, must use non-lethal means).
 
 ---
 
 ### C. The Virtue Ethics Argument
+*The Crucible of Cause and Effect Unleashed. NSS Style preservation of 'that capacity' or 'virtue' (balance)*
 
 **Warrior virtues:**
 - Courage (face danger)
@@ -1218,9 +1241,9 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 
 **Traditional war:** Practice once, maybe die (no further practice possible).
 
-**MWD:** Practice repeatedly (face danger, "die," respawn, face again - iterative virtue development).
+**MWD:** Practice repeatedly (face danger, "die," respawn, face again - iterative virtue development). Room and Time and Opportunities to Grow into the Virtue one seeks or exalts.
 
-**Result:** **Better warriors** (more practice), **more virtue** (continuous development), **no death** (practitioners preserved).
+**Result:** **Better warriors** (more practice), **more virtue** (continuous development), **no death** (practitioners preserved). Stability of 'warriors' and extant 'if ever the realness moves away from sufficiency to confine cause and effect below MWR 4'.
 
 ---
 
@@ -1228,11 +1251,11 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 
 ### The Bottom Line
 
-**Wars will happen** (conflicts are real, human nature includes competition/dominance/honor-seeking).
+**Wars will happen** (conflicts are real, like any negative action another is capable of: You can talk, but they have to listen and find their way into agreeing not to do it. Otherwise, real physical dominance will occur. Otherwise, the breaking of games will occur. If the breaking of confinements lands one into a position of no structure except \*barely ¬WMD (\*chemical and bio openly massified for all), then War is the 'default consequence'. (Whether we call them 'violent revolutions' or 'revolts' or 'military operation' or 'a war' or 'total war' or 'war against war' or whatever else we may name the reality of physically dominating others at 'gun point' and 'will to prove the bullet present').
 
-**Can't prevent all wars** (some conflicts can't be resolved through negotiation/trade).
+**Can't prevent domination towards desired effects sometimes crossing 'allowed domination doctrines'** (some conflicts can't be resolved through negotiation/trade/Law/etc).
 
-**Must have mechanism for resolution** (when Level 1-2 fail, need Level 3).
+**Must have mechanism for resolution beyond the 'precedence'** (when Level 1-2 fail, need Level 3).
 
 ---
 
@@ -1246,7 +1269,7 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 
 **The moral imperative:**
 
-**If MWD works** (proven by Ukraine-Russia 61 years, WWIII 68 years) **and achieves same conflict resolution** (territory decided, honor tested, stakes real) **without permanent death** (0 killed, all returned):
+**If MWD works** and achieves conflict resolution de-escalation from traditional war (territory or power position / hierarchy decided) **without permanent death** (0 killed, all returned):
 
 **Then using traditional war is immoral** (when alternative exists that achieves same ends without killing).
 
@@ -1284,23 +1307,11 @@ Conflict arises → Try Level 1 (negotiation) → Fails → Try Level 2 (interna
 
 ---
 
-**Against permanent death.**
+**Against permanent death retaining full cause and effect potentiality.**
 
-**For combat.**
+**To reign in the need for ever causing death towards an effect**
 
-**For conflict resolution.**
-
-**For honor.**
-
-**For courage.**
-
-**But without mortality.**
-
-**This is MWD.**
-
-**This is moral progress.**
-
-**This is how we fight in the 22nd century and beyond.**
+**This is how we fight in the 21st (?) century and beyond.**
 
 ---
 
